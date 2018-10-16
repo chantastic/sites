@@ -1,14 +1,17 @@
 // const images = require('remark-images')
 // const emoji = require('remark-emoji')
 let highlight = require("remark-highlight.js");
+let withCSS = require("@zeit/next-css");
 
-const withMDX = require("@zeit/next-mdx")({
+let withMDX = require("@zeit/next-mdx")({
   extension: /.mdx?$/,
   options: {
     mdPlugins: [highlight]
   }
 });
 
-module.exports = withMDX({
-  pageExtensions: ["js", "jsx", "md", "mdx"]
-});
+module.exports = withCSS(
+  withMDX({
+    pageExtensions: ["js", "jsx", "md", "mdx"]
+  })
+);

@@ -1,3 +1,5 @@
+import "highlight.js/styles/tomorrow.css";
+
 ## Contents
 
 * [Stateless function](#stateless-function)
@@ -22,20 +24,20 @@
 
 [Stateless functions](https://facebook.github.io/react/docs/components-and-props.html) are a brilliant way to define highly reusable components. They don't hold `state`; they're just functions.
 
-```js
+```jsx
 const Greeting = () => <div>Hi there!</div>
 ```
 
 They get passed `props` and `context`.
 
-```js
+```jsx
 const Greeting = (props, context) =>
   <div style={{color: context.color}}>Hi {props.name}!</div>
 ```
 
 They can define local variables, where a function block is used.
 
-```js
+```jsx
 const Greeting = (props, context) => {
   const style = {
     fontWeight: "bold",
