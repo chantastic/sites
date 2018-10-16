@@ -20,9 +20,12 @@
   },
   "homepage": "https://github.com/chantastic/reactpatterns.com#readme",
   "dependencies": {
+    "@zeit/next-css": "^1.0.1",
     "@zeit/next-mdx": "^1.2.0",
+    "highlight.js": "^9.13.0",
     "next": "^7.0.2",
     "react": "^16.6.0-alpha.8af6728",
-    "react-dom": "^16.6.0-alpha.8af6728"
+    "react-dom": "^16.6.0-alpha.8af6728",
+    "remark-highlight.js": "^5.0.0"
   }
 }
