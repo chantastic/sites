@@ -15,5 +15,10 @@
   "bugs": {
     "url": "https://github.com/chantastic/reactpatterns.com/issues"
   },
-  "homepage": "https://github.com/chantastic/reactpatterns.com#readme"
+  "homepage": "https://github.com/chantastic/reactpatterns.com#readme",
+  "dependencies": {
+    "next": "^7.0.2",
+    "react": "^16.6.0-alpha.8af6728",
+    "react-dom": "^16.6.0-alpha.8af6728"
+  }
 }
