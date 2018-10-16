@@ -1,0 +1,19 @@
+{
+  "name": "reactpatterns.com",
+  "version": "0.0.1",
+  "description": "React Patterns and Practices. No nonsense.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/chantastic/reactpatterns.com.git"
+  },
+  "author": "Michael Chan <mijoch@gmail.com>",
+  "license": "BY-NC-SA",
+  "bugs": {
+    "url": "https://github.com/chantastic/reactpatterns.com/issues"
+  },
+  "homepage": "https://github.com/chantastic/reactpatterns.com#readme"
+}
