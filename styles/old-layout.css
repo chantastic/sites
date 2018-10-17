@@ -1,0 +1,63 @@
+html {
+  box-sizing: border-box;
+}
+*,
+:after,
+:before {
+  box-sizing: inherit;
+}
+html {
+  -webkit-font-smoothing: antialiased;
+}
+body {
+  font-size: 16px;
+  margin: 5vw 5vw 0;
+  color: #111;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 1em;
+}
+h2 {
+  margin-top: 12vw;
+}
+p {
+  font-family: Athelas, Georgia, serif;
+}
+pre code {
+  display: table;
+}
+code,
+pre {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+code,
+.highlight pre {
+  font-size: 0.9em;
+}
+#contents + ul {
+  text-decoration: none;
+  padding-left: 20px;
+}
+.black-link,
+#contents + ul li a {
+  color: #000;
+  text-decoration: none;
+}
+.black-link,
+#contents + ul li a:hover {
+  text-decoration: underline;
+}
+.highlight {
+  margin: 1rem 0;
+}
+.hljs {
+  margin: 2rem 0 3rem 0;
+  padding: 0;
+}
