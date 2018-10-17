@@ -1,9 +1,6 @@
 // const images = require('remark-images')
 // const emoji = require('remark-emoji')
-let mdPlugins = [
-  require("remark-slug"),
-  require("remark-highlight.js")
-];
+let mdPlugins = [require("remark-slug"), require("remark-highlight.js")];
 
 let withCSS = require("@zeit/next-css");
 let withMDX = require("@zeit/next-mdx")({
@@ -15,6 +12,11 @@ let withMDX = require("@zeit/next-mdx")({
 
 module.exports = withCSS(
   withMDX({
-    pageExtensions: ["js", "jsx", "md", "mdx"]
+    pageExtensions: ["js", "jsx", "md", "mdx"],
+    exportPathMap: async function(defaultPathMap) {
+      return {
+        "/": { page: "/" }
+      };
+    }
   })
 );
