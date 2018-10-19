@@ -3,7 +3,7 @@ import "../styles/old-layout.css";
 
 # React Patterns [on Github](https://github.com/chantastic/reactpatterns.com)
 
-## Table of Contents
+## Contents
 
 ## Function component
 
@@ -16,7 +16,7 @@ function Greeting() {
 }
 ```
 
-Collect `props` from the first argument of your function.  
+Collect `props` from the first argument of your function.
 
 ```jsx
 function Greeting(props) {
@@ -25,7 +25,7 @@ function Greeting(props) {
 ```
 
 Define any number of local variables to do what you need in your function components.  
-**And always return your React Component at the end.  **
+**And always return your React Component at the end. **
 
 ```jsx
 function Greeting(props) {
@@ -38,7 +38,7 @@ function Greeting(props) {
 }
 ```
 
-Set defaults for any required `props` using `defaultProps`.  
+Set defaults for any required `props` using `defaultProps`.
 
 ```jsx
 function Greeting(props) {
@@ -49,84 +49,88 @@ Greeting.defaultProps = {
 };
 ```
 
+---
+
+## Destructuring props
+
+[Destructuring assignment](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment) is a JavaScript feature.  
+It was added to the language in ES2015.  
+So it might not look familiar to you.
+
+It's the syntactic opposite of literal assignment.
+
+```js
+let person = { name: "chantastic" };
+let { name } = person;
+```
+
+Works with Arrays too.
+
+```js
+let things = ["one", "two"];
+let [first, second] = things;
+```
+
+Destructuring assignment is used a lot in [function components](#function-component).  
+These component declarations belowe are equivalent.
+
+```jsx
+function Greeting(props) {
+  return <div>Hi {props.name}!</div>;
+}
+
+function Greeting({ name }) {
+  return <div>Hi {name}!</div>;
+}
+```
+
+There's a syntax for collecting remaining `props` into an object.  
+It's called [rest parameter syntax](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameters) and looks like this.
+
+```jsx
+function Greeting({ name, ...restProps }) {
+  return <div>Hi {name}!</div>;
+}
+```
+
+Those three dots (`...`) take all the remaining properties and assign them to the object `restProps`.
+
+So, what do you do with `restProps` once you have it?  
+Keep reading...
+
+---
+
 ## JSX spread attributes
 
-Spread Attributes is a JSX feature. It's syntactic sugar for passing all of an object's properties as JSX attributes.
+Spread Attributes is a feature of [JSX](https://reactjs.org/docs/introducing-jsx.html).  
+It's a syntax for providing an object's properties as JSX attributes.
 
-These two examples are equivalent.
-
-```jsx
-/* props written as attributes */
-<main className="main" role="main">
-  {children}
-</main>;
-
-/* props "spread" from object */
-<main {...{ className: "main", role: "main", children }} />;
-```
-
-Use this to forward `props` to underlying components.
+Following the example from [Destructuring props](#destructuring-props),  
+We can **spread** `restProps` over our `<div>`.
 
 ```jsx
-const FancyDiv = props => <div className="fancy" {...props} />;
+function Greeting({ name, ...restProps }) {
+  return <div {...restProps}>Hi {name}!</div>;
+}
 ```
 
-Now, I can expect `FancyDiv` to add the attributes it's concerned with as well as those it's not.
+This makes `Greeting` super flexible.  
+We can pass DOM attributes to `Greeting` and trust that they'll be passed through to `div`.
 
 ```jsx
-<FancyDiv data-id="my-fancy-div">So Fancy</FancyDiv>
-
-// output: <div className="fancy" data-id="my-fancy-div">So Fancy</div>
+<Greeting name="Fancy pants" className="fancy-greeting" id="user-greeting" />
 ```
 
-Keep in mind that order matters. If `props.className` is defined, it'll clobber the `className` defined by `FancyDiv`
+Avoid forwarding non-DOM `props` to components.  
+Destructuring assignment is is popular because it gives you a way to separate component-specific props from DOM/platform-specific attributes.
 
 ```jsx
-<FancyDiv className="my-fancy-div" />
-
-// output: <div className="my-fancy-div"></div>
+function Greeting({ name, ...platformProps }) {
+  return <div {...platformProps}>Hi {name}!</div>;
+}
 ```
 
-We can make `FancyDiv`s className always "win" by placing it after the spread props `({...props})`.
-
-```jsx
-// my `className` clobbers your `className`
-const FancyDiv = props => <div {...props} className="fancy" />;
-```
-
-You should handle these types of props gracefully. In this case, I'll merge the author's `props.className` with the `className` needed to style my component.
-
-```jsx
-const FancyDiv = ({ className, ...props }) => (
-  <div className={["fancy", className].join(" ")} {...props} />
-);
-```
-
-## destructuring arguments
-
-[Destructuring assignment](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment) is an ES2015 feature. It pairs nicely with `props` in Function Components.
-
-These examples are equivalent.
-
-```jsx
-const Greeting = props => <div>Hi {props.name}!</div>;
-
-const Greeting = ({ name }) => <div>Hi {name}!</div>;
-```
-
-The [rest parameter syntax](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameters) (`...`) allows you to collect all the remaining properties in a new object.
-
-```jsx
-const Greeting = ({ name, ...props }) => <div>Hi {name}!</div>;
-```
-
-In turn, this object can use [JSX Spread Attributes](#jsx-spread-attributes) to forward `props` to the composed component.
-
-```jsx
-const Greeting = ({ name, ...props }) => <div {...props}>Hi {name}!</div>;
-```
-
-Avoid forwarding non-DOM `props` to composed components. Destructuring makes this very easy because you can create a new `props` object **without** component-specific `props`.
+---
 
 ## conditional rendering
 
