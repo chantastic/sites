@@ -174,7 +174,7 @@ You can't use regular if/else conditions inside a component definition. [The con
 
 ```jsx
 {
-  condition || <span>Rendered when `falsey`</span>;
+  condition || <span>Rendered when `falsy`</span>;
 }
 ```
 
@@ -185,7 +185,7 @@ You can't use regular if/else conditions inside a component definition. [The con
   condition ? (
     <span>Rendered when `truthy`</span>
   ) : (
-    <span>Rendered when `falsey`</span>
+    <span>Rendered when `falsy`</span>
   );
 }
 ```
@@ -197,7 +197,7 @@ You can't use regular if/else conditions inside a component definition. [The con
   condition ? (
     <span>Rendered when `truthy`</span>
   ) : (
-    <span>Rendered when `falsey`</span>
+    <span>Rendered when `falsy`</span>
   );
 }
 ```
