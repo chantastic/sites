@@ -3,29 +3,13 @@ import "../styles/old-layout.css";
 
 # React Patterns [on Github](https://github.com/chantastic/reactpatterns.com)
 
-## Contents
+## Table of Contents
 
-- [Stateless function](#stateless-function)
-- [JSX spread attributes](#jsx-spread-attributes)
-- [Destructuring arguments](#destructuring-arguments)
-- [Conditional rendering](#conditional-rendering)
-- [Children types](#children-types)
-- [Array as children](#array-as-children)
-- [Function as children](#function-as-children)
-- [Render callback](#render-callback)
-- [Children pass-through](#children-pass-through)
-- [Proxy component](#proxy-component)
-- [Style component](#style-component)
-- [Event switch](#event-switch)
-- [Layout component](#layout-component)
-- [Container component](#container-component)
-- [Higher-order component](#higher-order-component)
-- [State hoisting](#state-hoisting)
-- [Controlled input](#controlled-input)
 
-## Stateless function
+## Function component
 
-[Stateless functions](https://facebook.github.io/react/docs/components-and-props.html) are a brilliant way to define highly reusable components. They don't hold `state`; they're just functions.
+[Function components](https://reactjs.org/docs/components-and-props.html#function-and-class-components) are the simplest way to declare reusable components.  
+Their just functions.
 
 ```jsx
 function Greeting() {
@@ -134,7 +118,7 @@ const FancyDiv = ({ className, ...props }) => (
 
 ## destructuring arguments
 
-[Destructuring assignment](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment) is an ES2015 feature. It pairs nicely with `props` in Stateless Functions.
+[Destructuring assignment](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment) is an ES2015 feature. It pairs nicely with `props` in Function Components.
 
 These examples are equivalent.
 
@@ -533,7 +517,7 @@ const CommentList = ({ comments }) => (
 );
 ```
 
-We can create a new component responsible for fetching data and rendering the stateless `CommentList` component.
+We can create a new component responsible for fetching data and rendering the `CommentList` function component.
 
 ```jsx
 class CommentListContainer extends React.Component {
@@ -565,7 +549,7 @@ A [higher-order function](https://en.wikipedia.org/wiki/Higher-order_function) i
 
 If you're already using [container components](#container-component), these are just generic containers, wrapped up in a function.
 
-Let's start with our stateless `Greeting` component.
+Let's start with our `Greeting` component.
 
 ```jsx
 const Greeting = ({ name }) => {
@@ -606,11 +590,11 @@ Last step, we need to wrap our our `Greeting` component in `Connect`.
 const ConnectedMyComponent = Connect(Greeting);
 ```
 
-This is a powerful pattern for providing fetching and providing data to any number of [stateless function components](#stateless-function).
+This is a powerful pattern for providing fetching and providing data to any number of [function components](#function-component).
 
 ## State hoisting
 
-[Stateless functions](#stateless-function) don't hold state (as the name implies).
+[function-component](#function-component) don't hold state (as the name implies).
 
 Events are changes in state.
 Their data needs to be passed to stateful [container components](#container-component) parents.
@@ -649,10 +633,10 @@ class NameContainer extends React.Component {
 ```
 
 The state is _hoisted_ to the container, by the provided callback, where it's used to update local state.
-This sets a nice clear boundary and maximizes the re-usability of stateless function.
+This sets a nice clear boundary and maximizes the re-usability of function component.
 
-This pattern isn't limited to stateless functions.
-Because stateless function don't have lifecycle events,
+This pattern isn't limited to function components.
+Because function components don't have lifecycle events,
 you'll use this pattern with component classes as well.
 
 _[Controlled input](#controlled-input) is an important pattern to know for use with state hoisting_
@@ -709,5 +693,5 @@ This is a controlled input.
 It only updates the DOM when state has changed in our component.
 This is invaluable when creating consistent UIs.
 
-_If you're using [stateless functions](#stateless-function) for form elements,
+_If you're using [function components](#function-component) for form elements,
 read about using [state hoisting](#state-hoisting) to move new state up the component tree._
