@@ -5,11 +5,10 @@ import "../styles/old-layout.css";
 
 ## Table of Contents
 
-
 ## Function component
 
 [Function components](https://reactjs.org/docs/components-and-props.html#function-and-class-components) are the simplest way to declare reusable components.  
-Their just functions.
+They're just functions.
 
 ```jsx
 function Greeting() {
@@ -17,51 +16,36 @@ function Greeting() {
 }
 ```
 
-They get passed `props` and `context`.
+Collect `props` from the first argument of your function.  
 
 ```jsx
-const Greeting = (props, context) => (
-  <div style={{ color: context.color }}>Hi {props.name}!</div>
-);
+function Greeting(props) {
+  return <div>Hi {props.name}!</div>;
+}
 ```
 
-They can define local variables, where a function block is used.
+Define any number of local variables to do what you need in your function components.  
+**And always return your React Component at the end.  **
 
 ```jsx
-const Greeting = (props, context) => {
-  const style = {
+function Greeting(props) {
+  let style = {
     fontWeight: "bold",
     color: context.color
   };
 
-  return <div style={style}>{props.name}</div>;
-};
+  return <div style={style}>Hi {props.name}!</div>;
+}
 ```
 
-But you could get the same result by using other functions.
+Set defaults for any required `props` using `defaultProps`.  
 
 ```jsx
-const getStyle = context => ({
-  fontWeight: "bold",
-  color: context.color
-});
-
-const Greeting = (props, context) => (
-  <div style={getStyle(context)}>{props.name}</div>
-);
-```
-
-They can have defined `defaultProps`, `propTypes` and `contextTypes`.
-
-```jsx
-Greeting.propTypes = {
-  name: PropTypes.string.isRequired
-};
+function Greeting(props) {
+  return <div>Hi {props.name}!</div>;
+}
 Greeting.defaultProps = {
   name: "Guest"
-};
-Greeting.contextTypes = {
-  color: PropTypes.string
 };
 ```
 
@@ -73,10 +57,12 @@ These two examples are equivalent.
 
 ```jsx
 /* props written as attributes */
-<main className="main" role="main">{children}</main>;
+<main className="main" role="main">
+  {children}
+</main>;
 
 /* props "spread" from object */
-<main {...{className: "main", role: "main", children}} />;
+<main {...{ className: "main", role: "main", children }} />;
 ```
 
 Use this to forward `props` to underlying components.
