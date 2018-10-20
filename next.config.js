@@ -13,7 +13,8 @@ let withMDX = require("@zeit/next-mdx")({
   options: {
     mdPlugins,
     heading: "Contents",
-    maxDepth: 2
+    maxDepth: 2,
+    rel: "noreferrer"
   }
 });
 
