@@ -1,5 +1,6 @@
 import React from "react";
 import App, { Container } from "next/app";
+import Head from "next/head";
 import Router from "next/router";
 import { initGA, logPageView } from "../modules/analytics";
 
@@ -25,6 +26,14 @@ export default class MyApp extends App {
 
     return (
       <Container>
+        <Head>
+          <title key="title">React Patterns</title>
+          <meta
+            name="viewport"
+            content="initial-scale=1.0, width=device-width"
+            key="viewport"
+          />
+        </Head>
         <div style={{ maxWidth: "30em" }}>
           <Component {...pageProps} />
         </div>

@@ -1,5 +1,6 @@
 import "highlight.js/styles/github-gist.css";
 import "../styles/old-layout.css";
+import Head from "next/head";
 
 # React Patterns [on Github](https://github.com/chantastic/reactpatterns.com)
 
@@ -191,7 +192,7 @@ function MyButton({ className = "", ...props }) {
 You can't use if/else statements inside a component declarations.  
 So [conditional (ternary) operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator) and [short-curcuit evaluation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_Operators#Short-circuit_evaluation) are your friends.
 
-`if`
+### `if`
 
 ```jsx
 {
@@ -199,7 +200,7 @@ So [conditional (ternary) operator](https://developer.mozilla.org/en-US/docs/Web
 }
 ```
 
-`unless`
+### `unless`
 
 ```jsx
 {
@@ -207,7 +208,7 @@ So [conditional (ternary) operator](https://developer.mozilla.org/en-US/docs/Web
 }
 ```
 
-`if-else`
+### `if-else`
 
 ```jsx
 {
@@ -221,35 +222,25 @@ So [conditional (ternary) operator](https://developer.mozilla.org/en-US/docs/Web
 
 ## Children types
 
-React can render `children` of many types. In most cases it's either an `array` or a `string`.
+React can render `children` from most types.  
+In most cases it's either an `array` or a `string`.
 
-`string`
+### `String`
 
 ```jsx
 <div>Hello World!</div>
 ```
 
-`array`
+### `Array`
 
 ```jsx
 <div>{["Hello ", <span>World</span>, "!"]}</div>
 ```
 
-Functions may be used as children. However, it requires [coordination with the parent component](#render-callback) to be useful.
-
-`function`
-
-```jsx
-<div>
-  {(() => {
-    return "hello world!";
-  })()}
-</div>
-```
-
 ## Array as children
 
-Providing an array as `children` is a very common. It's how lists are drawn in React.
+Providing an array as `children` is a very common.  
+It's how lists are drawn in React.
 
 We use `map()` to create an array of React Elements for every value in the array.
 
@@ -279,21 +270,13 @@ This pattern can be combined with destructuring, JSX Spread Attributes, and othe
 
 ## Function as children
 
-Using a function as `children` isn't inherently useful.
+React components don't support functions as `children`.
+However, [render props](#render-props) is a pattern for creating components that take functions as children.
 
-```jsx
-<div>{() => { return "hello world!"}()}</div>
-```
+## Render prop
 
-However, it can be used in component authoring for some serious power. This technique is commonly referred to as `render callbacks`.
-
-This is a powerful technique used by libraries like [ReactMotion](https://github.com/chenglou/react-motion). When applied, rendering logic can be kept in the owner component, instead of being delegated.
-
-See [Render callbacks](#render-callback), for more details.
-
-## Render callback
-
-Here's a component that uses a Render callback. It's not useful, but it's an easy illustration to start with.
+Here's a component that uses a render callback.  
+It's not useful, but it's an easy illustration to start with.
 
 ```jsx
 const Width = ({ children }) => children(500);
