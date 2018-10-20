@@ -25,7 +25,7 @@ export default class MyApp extends App {
 
     return (
       <Container>
-        <div style={{ maxWidth: 800 }}>
+        <div style={{ maxWidth: "30em" }}>
           <Component {...pageProps} />
         </div>
       </Container>

@@ -10,10 +10,36 @@ html {
   -webkit-font-smoothing: antialiased;
 }
 body {
-  font-size: 20px;
+  font-size: 24px;
   margin: 5vw 5vw 0;
   color: #111;
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  line-height: 1.4;
+}
+@media (min-width: 0) {
+  body {
+    font-size: 16px;
+  }
+}
+@media (min-width: 480px) {
+  body {
+    font-size: 18px;
+  }
+}
+@media (min-width: 720px) {
+  body {
+    font-size: 20px;
+  }
+}
+@media (min-width: 960px) {
+  body {
+    font-size: 22px;
+  }
+}
+@media (min-width: 1200px) {
+  body {
+    font-size: 24px;
+  }
 }
 h1,
 h2,
@@ -61,4 +87,9 @@ code,
 .hljs {
   margin: 3rem 0 3.5rem 0;
   padding: 0;
+}
+code {
+  background-color: rgba(0, 0, 0, 0.08);
+  padding: 0.25em 0.25em;
+  margin: -0.25em 0;
 }

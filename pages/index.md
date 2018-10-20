@@ -25,7 +25,7 @@ function Greeting(props) {
 ```
 
 Define any number of local variables to do what you need in your function components.  
-**And always return your React Component at the end. **
+**Always return your React Component at the end. **
 
 ```jsx
 function Greeting(props) {
@@ -55,9 +55,9 @@ Greeting.defaultProps = {
 
 [Destructuring assignment](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment) is a JavaScript feature.  
 It was added to the language in ES2015.  
-So it might not look familiar to you.
+So it might not look familiar.
 
-It's the syntactic opposite of literal assignment.
+Think of it like the opposite of literal assignment.
 
 ```js
 let person = { name: "chantastic" };
@@ -131,6 +131,60 @@ function Greeting({ name, ...platformProps }) {
 ```
 
 ---
+
+## Merge destructured props with other values
+
+Components are abstractions.  
+Good abstractions allow for extension.
+
+Consider this component that uses a `class` attribute for style a `button`.
+
+```jsx
+function MyButton(props) {
+  return <button className="btn" {...props} />;
+}
+```
+
+This works great until we try to extend it with another class.
+
+```jsx
+<MyButton className="delete-btn">Delete...</MyButton>
+```
+
+In this case, `delete-btn` replaces `btn`.
+
+Order matters for [JSX spread attributes](#jsx-spread-attributes).  
+The `props.className` being spread is overriding the `className` in our component.
+
+We can change the order but now the `className` will **never** be anything but `btn`.
+
+```jsx
+function MyButton(props) {
+  return <button {...props} className="btn" />;
+}
+```
+
+We need to use destructuring assignment to get the incoming `className` and merge with the base `className`.  
+We can do this simply by adding all values to an array and joining them with an space.
+
+```jsx
+function MyButton({ className, ...props }) {
+  let classNames = ["btn", className].join(" ");
+
+  return <button className={classNames} {...props} />;
+}
+```
+
+To guard from `undefefined` showing up as a className,  
+Use [default values](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#Default_values_2).
+
+```jsx
+function MyButton({ className = "", ...props }) {
+  let classNames = ["btn", className].join(" ");
+
+  return <button className={classNames} {...props} />;
+}
+```
 
 ## conditional rendering
 
