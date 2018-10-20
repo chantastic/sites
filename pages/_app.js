@@ -33,6 +33,11 @@ export default class MyApp extends App {
             content="initial-scale=1.0, width=device-width"
             key="viewport"
           />
+          <meta
+            key="description"
+            name="description"
+            content="React patterns from beginners to advanced developers. Simple examples, short descriptions, and quality advice."
+          />
         </Head>
         <div style={{ maxWidth: "30em" }}>
           <Component {...pageProps} />
