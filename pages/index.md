@@ -186,9 +186,10 @@ function MyButton({ className = "", ...props }) {
 }
 ```
 
-## conditional rendering
+## Conditional rendering
 
-You can't use regular if/else conditions inside a component definition. [The conditional (ternary) operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator) is your friend.
+You can't use if/else statements inside a component declarations.  
+So [conditional (ternary) operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator) and [short-curcuit evaluation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_Operators#Short-circuit_evaluation) are your friends.
 
 `if`
 
@@ -206,19 +207,7 @@ You can't use regular if/else conditions inside a component definition. [The con
 }
 ```
 
-`if-else` (tidy one-liners)
-
-```jsx
-{
-  condition ? (
-    <span>Rendered when `truthy`</span>
-  ) : (
-    <span>Rendered when `falsy`</span>
-  );
-}
-```
-
-`if-else` (big blocks)
+`if-else`
 
 ```jsx
 {
