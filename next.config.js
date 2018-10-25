@@ -23,7 +23,8 @@ module.exports = withCSS(
     pageExtensions: ["js", "jsx", "md", "mdx"],
     exportPathMap: async function(defaultPathMap) {
       return {
-        "/": { page: "/" }
+        "/": { page: "/" },
+        "/hooks": { page: "/hooks" }
       };
     }
   })
