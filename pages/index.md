@@ -176,7 +176,7 @@ function MyButton({ className, ...props }) {
 }
 ```
 
-To guard from `undefefined` showing up as a className,  
+To guard from `undefined` showing up as a className,  
 Use [default values](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#Default_values_2).
 
 ```jsx
