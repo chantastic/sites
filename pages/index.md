@@ -73,7 +73,7 @@ let [first, second] = things;
 ```
 
 Destructuring assignment is used a lot in [function components](#function-component).  
-These component declarations belowe are equivalent.
+These component declarations below are equivalent.
 
 ```jsx
 function Greeting(props) {
