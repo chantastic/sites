@@ -73,7 +73,7 @@ let [first, second] = things;
 ```
 
 Destructuring assignment is used a lot in [function components](#function-component).  
-These component declarations belowe are equivalent.
+These component declarations below are equivalent.
 
 ```jsx
 function Greeting(props) {
@@ -123,7 +123,7 @@ We can pass DOM attributes to `Greeting` and trust that they'll be passed throug
 ```
 
 Avoid forwarding non-DOM `props` to components.  
-Destructuring assignment is is popular because it gives you a way to separate component-specific props from DOM/platform-specific attributes.
+Destructuring assignment is popular because it gives you a way to separate component-specific props from DOM/platform-specific attributes.
 
 ```jsx
 function Greeting({ name, ...platformProps }) {
