@@ -324,7 +324,7 @@ class WindowWidth extends React.Component {
   componentDidMount() {
     this.setState(
       { width: window.innerWidth },
-      window.addEventListener("resize", ({ target }) =>
+      () => window.addEventListener("resize", ({ target }) =>
         this.setState({ width: target.innerWidth })
       )
     );
