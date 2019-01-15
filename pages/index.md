@@ -2,7 +2,7 @@ import "highlight.js/styles/github-gist.css";
 import "../styles/old-layout.css";
 import Head from "next/head";
 
-# React Patterns [on Github](https://github.com/chantastic/reactpatterns.com)
+# React Patterns [on GitHub](https://github.com/chantastic/reactpatterns.com)
 
 ## Contents
 
