@@ -5,13 +5,13 @@
     {
       "src": "sites/reactpatterns.com/package.json",
       "use": "@now/next"
-    },
+    }
   ],
 
   "routes": [
     {
       "src": "/sites/reactpatterns.com/(.*)",
       "dest": "/reactpatterns.com/$1"
-    },
+    }
   ]
 }
