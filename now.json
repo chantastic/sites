@@ -1,1 +1,23 @@
-{}
+{
+  "version": 2,
+
+  "builds": [
+    {
+      "src": "sites/reactpatterns.com/package.json",
+      "use": "@now/next"
+    },
+    {
+      "src": "sites/vim.guide/package.json",
+      "use": "@now/next"
+    }
+  ],
+
+  "routes": [
+    {
+      "src": "/sites/reactpatterns.com/(.*)",
+      "dest": "/api/$1"
+    },
+
+    { "src": "/vim.guide/(.*)", "dest": "/vim.guide/$1" }
+  ]
+}
