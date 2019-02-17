@@ -10,7 +10,7 @@
 
   "routes": [
     {
-      "src": "/out/reactpatterns.com/(.*)",
+      "src": "/reactpatterns.com/(.*)",
       "dest": "/reactpatterns.com/$1"
     }
   ]
