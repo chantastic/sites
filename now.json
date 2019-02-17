@@ -3,15 +3,17 @@
 
   "builds": [
     {
-      "src": "sites/reactpatterns.com/package.json",
+      "src": "sites/vim.guide/package.json",
       "use": "@now/next"
     }
   ],
 
+  "alias": ["vim.guide"],
+
   "routes": [
     {
-      "src": "/reactpatterns.com/(.*)",
-      "dest": "/reactpatterns.com/$1"
+      "src": "/vim.guide/(.*)",
+      "dest": "/vim.guide/$1"
     }
   ]
 }
