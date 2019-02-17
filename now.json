@@ -13,7 +13,7 @@
   "routes": [
     {
       "src": "/vim.guide/(.*)",
-      "dest": "/vim.guide/$1"
+      "dest": "/$1"
     }
   ]
 }
