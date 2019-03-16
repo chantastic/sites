@@ -507,10 +507,12 @@ class HorizontalSplit extends React.Component {
   }
 
   render() {
-    <FlexContainer>
-      <div>{this.props.leftSide}</div>
-      <div>{this.props.rightSide}</div>
-    </FlexContainer>;
+    return (
+      <FlexContainer>
+        <div>{this.props.leftSide}</div>
+        <div>{this.props.rightSide}</div>
+      </FlexContainer>
+    );
   }
 }
 ```
