@@ -192,6 +192,8 @@ function MyButton({ className = "", ...props }) {
 You can't use if/else statements inside a component declarations.  
 So [conditional (ternary) operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator) and [short-curcuit evaluation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_Operators#Short-circuit_evaluation) are your friends.
 
+You should be aware that each time the condition switches between truthy or falsey between renders, the resulting component will be un/re-mounted, hence if the condition is likely to toggle regularly during the parent's lifetime, or the child has heavy mounting processes or side-effects you wish to only fire once, you may actually prefer keeping the component rendered while (eg.) toggling the `display` style property, or `classNames` prop, using lifecycle methods within the child, or injecting a reusable wrapper designed specifically to handle this case.
+
 ### `if`
 
 ```jsx
@@ -217,6 +219,14 @@ So [conditional (ternary) operator](https://developer.mozilla.org/en-US/docs/Web
   ) : (
     <span>Rendered when `falsy`</span>
   );
+}
+```
+
+### Permanently rendered to circumvent un/remounting
+
+```jsx
+{
+  <MyComponent style={{ display: condition ? 'block' : 'none' }}>Always rendered but visibly hidden when `falsey`</MyComponent>
 }
 ```
 
