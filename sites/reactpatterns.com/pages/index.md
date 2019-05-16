@@ -29,7 +29,7 @@ Define any number of local variables to do what you need in your function compon
 **Always return your React Component at the end. **
 
 ```jsx
-function Greeting(props) {
+function Greeting(props, context) {
   let style = {
     fontWeight: "bold",
     color: context.color
