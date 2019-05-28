@@ -26,6 +26,7 @@ module.exports = withCSS(
         "/": { page: "/" },
         "/hooks": { page: "/hooks" }
       };
-    }
+    },
+    target: "serverless"
   })
 );
