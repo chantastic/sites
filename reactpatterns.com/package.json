@@ -24,7 +24,7 @@
     "@zeit/next-css": "^1.0.1",
     "@zeit/next-mdx": "^1.2.0",
     "highlight.js": "^9.13.0",
-    "next": "^7.0.2",
+    "next": "^7.0.3",
     "react": "^16.6.0-alpha.8af6728",
     "react-dom": "^16.6.0-alpha.8af6728",
     "react-ga": "^2.5.3",
