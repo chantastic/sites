@@ -1,0 +1,7 @@
+{
+  "version": 2,
+  "name": "chan.dev",
+  "builds": [{ "src": "index.html", "use": "@now/static" }],
+
+  "alias": "chan.dev"
+}
