@@ -271,7 +271,7 @@ This pattern can be combined with destructuring, JSX Spread Attributes, and othe
 ## Function as children
 
 React components don't support functions as `children`.
-However, [render props](#render-props) is a pattern for creating components that take functions as children.
+However, [render props](#render-prop) is a pattern for creating components that take functions as children.
 
 ## Render prop
 
