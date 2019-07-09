@@ -166,7 +166,7 @@ function MyButton(props) {
 ```
 
 We need to use destructuring assignment to get the incoming `className` and merge with the base `className`.  
-We can do this simply by adding all values to an array and joining them with an space.
+We can do this simply by adding all values to an array and joining them with a space.
 
 ```jsx
 function MyButton({ className, ...props }) {
