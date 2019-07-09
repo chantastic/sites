@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `React Podcast`,
+    description: `Conversations with your favorite React devs`,
+    author: `@chantastic`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -30,5 +30,19 @@ module.exports = {
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
+    {
+      resolve: `gatsby-source-rss-feed`,
+      options: {
+        url: `https://rss.simplecast.com/podcasts/6265/rss`,
+        name: `Simplecast`,
+        // Optional
+        // Read parser document: https://github.com/bobby-brennan/rss-parser#readme
+        parserOption: {
+          customFields: {
+            item: ["itunes:duration", "itunes:episode"],
+          },
+        },
+      },
+    },
   ],
 }

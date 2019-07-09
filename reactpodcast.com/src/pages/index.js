@@ -1,21 +1,52 @@
 import React from "react"
-import { Link } from "gatsby"
+import { graphql, Link } from "gatsby"
 
 import Layout from "../components/layout"
-import Image from "../components/image"
+// import Image from "../components/image"
 import SEO from "../components/seo"
 
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link>
-  </Layout>
-)
+export default function IndexPage(props) {
+  console.log(props)
 
-export default IndexPage
+  return (
+    <Layout>
+      <SEO title="Home" />
+
+      <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
+        <ul>
+          {props.data.allFeedSimplecast.edges.map(({ node }) => (
+            <Link to={node.itunes.episode} aria-label={`View ${node.title}`}>
+              <li key={node.id}>{node.title}</li>
+            </Link>
+          ))}
+        </ul>
+      </div>
+      <Link to="/page-2/">Go to page 2</Link>
+    </Layout>
+  )
+}
+
+export const query = graphql`
+  {
+    allFeedSimplecast {
+      edges {
+        node {
+          author
+          title
+          link
+          itunes {
+            duration
+            episode
+          }
+          contentSnippet
+          content {
+            encoded
+          }
+          creator
+          pubDate
+          id
+        }
+      }
+    }
+  }
+`
