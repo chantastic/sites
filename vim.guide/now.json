@@ -1,6 +1,0 @@
-{
-  "version": 2,
-  "name": "vim.guide",
-  "builds": [{ "src": "package.json", "use": "@now/next" }],
-  "alias": ["vim.guide"]
-}

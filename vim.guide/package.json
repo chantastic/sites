@@ -2,7 +2,7 @@
   "scripts": {
     "build": "next build",
     "dev": "next",
-    "now-build": "next build"
+    "export": "npm run build && next export"
   },
   "dependencies": {
     "@zeit/next-css": "^1.0.1",
