@@ -1,4 +1,14 @@
 {
-  "name": "vim.guide",
-  "license": "MIT"
+  "scripts": {
+    "build": "next build",
+    "dev": "next",
+    "now-build": "next build"
+  },
+  "dependencies": {
+    "@zeit/next-css": "^1.0.1",
+    "next": "^8.0.0",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0",
+    "system-ui.css": "^2.0.0"
+  }
 }
