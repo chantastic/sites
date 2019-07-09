@@ -602,7 +602,7 @@ const Connect = ComposedComponent =>
 
 This is just a function that returns component that renders the component we passed as an argument.
 
-Last step, we need to wrap our our `Greeting` component in `Connect`.
+Last step, we need to wrap our `Greeting` component in `Connect`.
 
 ```jsx
 const ConnectedMyComponent = Connect(Greeting);
