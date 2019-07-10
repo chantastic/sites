@@ -1,0 +1,19 @@
+{
+  "name": "reactcheatsheet.com",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "author": "Michael Chan",
+  "license": "MIT",
+  "dependencies": {
+    "next": "^9.0.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  }
+}
