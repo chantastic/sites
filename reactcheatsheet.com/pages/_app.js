@@ -1,26 +1,7 @@
-import React from "react";
-import App, { Container } from "next/app";
+import App from "next/app";
+import Router from "next/router";
+import * as gtag from "../lib/gtag";
 
-class MyApp extends App {
-  static async getInitialProps({ Component, ctx }) {
-    let pageProps = {};
+Router.events.on("routeChangeComplete", url => gtag.pageview(url));
 
-    if (Component.getInitialProps) {
-      pageProps = await Component.getInitialProps(ctx);
-    }
-
-    return { pageProps };
-  }
-
-  render() {
-    const { Component, pageProps } = this.props;
-
-    return (
-      <Container>
-        <Component {...pageProps} />
-      </Container>
-    );
-  }
-}
-
-export default MyApp;
+export default App;
