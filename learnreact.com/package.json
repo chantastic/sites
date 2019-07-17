@@ -12,6 +12,7 @@
     "gatsby-plugin-react-helmet": "^3.1.2",
     "gatsby-plugin-sharp": "^2.2.7",
     "gatsby-source-filesystem": "^2.1.5",
+    "gatsby-source-youtube-v2": "^1.0.1",
     "gatsby-transformer-sharp": "^2.2.3",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
