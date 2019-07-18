@@ -35,6 +35,17 @@ module.exports = {
         maxVideos: 10000,
       },
     },
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        extensions: [".mdx", ".md"],
+        defaultLayouts: {
+          // posts: require.resolve("./src/components/posts-layout.js"),
+          default: require.resolve("./src/components/legacy-layout.js"),
+        },
+      },
+    },
+    `gatsby-plugin-react-helmet`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
