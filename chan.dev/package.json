@@ -1,12 +1,16 @@
 {
+  "name": "gatsby-starter-notes-theme",
+  "private": true,
+  "version": "0.0.1",
   "scripts": {
-    "dev": "next",
-    "build": "next build",
-    "start": "next start",
-    "export": "npm run build && next export"
+    "develop": "gatsby develop",
+    "start": "gatsby develop",
+    "build": "gatsby build"
   },
   "dependencies": {
-    "next": "^8.1.0",
+    "gatsby": "^2.13.31",
+    "gatsby-theme-blog": "^1.0.0",
+    "gatsby-theme-notes": "^1.0.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6"
   }
