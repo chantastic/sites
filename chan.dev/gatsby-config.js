@@ -14,20 +14,20 @@ module.exports = {
   ],
   siteMetadata: {
     // Used for the site title and SEO
-    title: `My Blog Title`,
+    title: `chan.dev`,
     // Used to provide alt text for your avatar
-    author: `My Name`,
+    author: `back on my old shit`,
     // Used for SEO
-    description: `My site description...`,
+    description: `weekly musings about creativity and web development`,
     // Used for social links in the root footer
     social: [
       {
         name: `twitter`,
-        url: `https://twitter.com/gatsbyjs`,
+        url: `https://twitter.com/chantastic`,
       },
       {
         name: `github`,
-        url: `https://github.com/gatsbyjs`,
+        url: `https://github.com/chantastic`,
       },
     ],
   },
