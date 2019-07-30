@@ -38,8 +38,12 @@ export default class MyApp extends App {
             name="description"
             content="React patterns from beginners to advanced developers. Simple examples, short descriptions, and quality advice."
           />
+          <link
+            href="https://fonts.googleapis.com/css?family=Merriweather:300,300i&display=swap"
+            rel="stylesheet"
+          />
         </Head>
-        <div style={{ maxWidth: "30em" }}>
+        <div style={{ maxWidth: "32em" }}>
           <Component {...pageProps} />
         </div>
       </Container>

@@ -4,6 +4,10 @@ import Head from "next/head";
 
 # React Patterns [on GitHub](https://github.com/chantastic/reactpatterns.com)
 
+Get the latest React patterns, tips, and tricks right to your inbox.  
+
+<script async data-uid="b3af526942" src="https://f.convertkit.com/b3af526942/aee6ebe0cb.js"></script>
+
 ## Contents
 
 ## Function component
@@ -322,9 +326,8 @@ class WindowWidth extends React.Component {
   }
 
   componentDidMount() {
-    this.setState(
-      { width: window.innerWidth },
-      () => window.addEventListener("resize", ({ target }) =>
+    this.setState({ width: window.innerWidth }, () =>
+      window.addEventListener("resize", ({ target }) =>
         this.setState({ width: target.innerWidth })
       )
     );

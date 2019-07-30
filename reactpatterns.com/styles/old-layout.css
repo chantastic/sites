@@ -11,6 +11,7 @@ html {
 }
 body {
   font-size: 24px;
+  font-size: 16px;
   margin: 5vw 5vw 0;
   color: #111;
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
@@ -54,7 +55,10 @@ h2 {
   margin-top: 12vw;
 }
 p {
-  font-family: Athelas, Georgia, serif;
+  /* font-family: Athelas, Georgia, serif; */
+  font-size: 0.9em;
+  line-height: 1.3em;
+  /* max-width: 32em; */
 }
 pre code {
   display: table;
@@ -85,11 +89,24 @@ code,
   margin: 1rem 0;
 }
 .hljs {
-  margin: 3rem 0 3.5rem 0;
-  padding: 0;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 1em;
+  margin-top: 1em;
+  margin-right: 0;
+  margin-bottom: 1em;
+  margin-left: -1em;
+  font-size: 0.85em;
+  /* max-width: 32em; */
 }
 code {
   background-color: rgba(0, 0, 0, 0.08);
   padding: 0.25em 0.25em;
   margin: -0.25em 0;
+}
+hr {
+  margin-top: 2em;
+  border-color: rgba(0, 0, 0, 0.4);
+  border-width: 0;
+  border-bottom-width: 1px;
+  max-width: 16em;
 }
