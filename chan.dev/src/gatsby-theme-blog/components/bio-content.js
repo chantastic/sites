@@ -1,5 +1,6 @@
 import React, { Fragment } from "react"
 import { Styled } from "theme-ui"
+import "../../gatsby-resp-image-image_override.css"
 
 /**
  * Change the content to add your own bio
