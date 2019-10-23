@@ -31,21 +31,21 @@ function MyApp() {
 
 `lazy` depends on `Suspense` to present a fallback while the lazily-loaded component is fetched.
 
-In that way, `Suspense` acts as a boundary for asyncronous data.  
+In that way, `Suspense` acts as a boundary for asynchronous data.  
 If a promise inside a `Suspense` boundary is pending,
 The `fallback` is presented.
 Once resolved, `children` are presented.
 
-### But Suspense needs a traslator
+### But Suspense needs a translator
 
 `Suspense` can't magically know all the promises it's `children` may or may not have.
 
 That's where `lazy` comes in.  
-It acts as a traslator.
+It acts as a translator.
 
 `lazy` wraps a dynamic `import` and communicates `Pending` and `Resolved` states to the nearest `Suspense` component boundary.
 ([code here](https://github.com/facebook/react/blob/master/packages/shared/ReactLazyComponent.js)).
-`Suspense` will resolve `fallback` or `children` accordigly.
+`Suspense` will resolve `fallback` or `children` accordingly.
 
 ## The future™️
 
