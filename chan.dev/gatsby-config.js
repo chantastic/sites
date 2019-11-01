@@ -6,6 +6,13 @@ module.exports = {
         basePath: `/blog`,
       },
     },
+    {
+      resolve: `gatsby-theme-notes`,
+      options: {
+        // basePath defaults to `/`
+        basePath: `/notes`,
+      },
+    },
   ],
   // Customize your site metadata:
   siteMetadata: {
