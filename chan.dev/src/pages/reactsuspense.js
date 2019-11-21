@@ -15,7 +15,7 @@ export default ({ data }) => (
     <br />
     Or get{" "}
     <a href="https://school.reactpatterns.com/p/subscription/?product_id=705894&coupon_code=MEETUP">
-      50% off with code <code>MEETUP</code>.
+      50% off all my courses with code <code>MEETUP</code>.
     </a>
     <h2>Learn other stuff about React and JavaScript</h2>
     <NewsletterEmbed />
