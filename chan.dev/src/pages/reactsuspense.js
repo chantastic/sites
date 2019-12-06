@@ -9,7 +9,7 @@ export default ({ data }) => (
       But the content is good.
     </p>
     <h2>Buy My React Suspense Course</h2>
-    <a href="https://school.reactpatterns.com/purchase?product_id=1507454">
+    <a href="https://egghead.io/courses/build-an-app-with-suspense-hooks-and-context">
       Buy it alone
     </a>
     <br />
