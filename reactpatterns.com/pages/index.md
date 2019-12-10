@@ -36,7 +36,7 @@ Define any number of local variables to do what you need in your function compon
 function Greeting(props) {
   let style = {
     fontWeight: "bold",
-    color: context.color
+    color: props.color
   };
 
   return <div style={style}>Hi {props.name}!</div>;
