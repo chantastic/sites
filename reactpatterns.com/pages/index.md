@@ -494,8 +494,8 @@ Consider a component that renders two `children` side-by-side.
 
 ```jsx
 <HorizontalSplit
-  leftSide={<SomeSmartComponent />}
-  rightSide={<AnotherSmartComponent />}
+  startSide={<SomeSmartComponent />}
+  endSide={<AnotherSmartComponent />}
 />
 ```
 
@@ -512,8 +512,8 @@ class HorizontalSplit extends React.Component {
   render() {
     return (
       <FlexContainer>
-        <div>{this.props.leftSide}</div>
-        <div>{this.props.rightSide}</div>
+        <div>{this.props.startSide}</div>
+        <div>{this.props.endSide}</div>
       </FlexContainer>
     );
   }
