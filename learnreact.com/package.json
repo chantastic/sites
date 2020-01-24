@@ -1,0 +1,27 @@
+{
+  "name": "learnreact.com",
+  "version": "0.0.0",
+  "description": "learnreact.com",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/chantastic/sites.git"
+  },
+  "author": "Michael Chan <mijoch@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/chantastic/sites/issues"
+  },
+  "homepage": "https://github.com/chantastic/sites#readme",
+  "dependencies": {
+    "next": "^9.2.1",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0"
+  }
+}
