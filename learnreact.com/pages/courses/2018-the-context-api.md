@@ -4,14 +4,14 @@ Want to join the ranks of open source projects like Redux, React Router, and Sty
 
 ## Lessons:
 
-- Overview
-- Setup
-- Create Context
-- Consume Context
-- Provide Context
-- A "shit" example
-- Use simple types, complex types, React Elements, and Components and context
-- Cascade Context
-- Stack Context
-- Modularize Context
-- Summary
+- [Overview](/lessons/2018-the-context-api-overview)
+- [Setup](/lessons/2018-the-context-api-setup)
+- [Create Context](/lessons/2018-the-context-api-create-context)
+- [Consume Context](/lessons/2018-the-context-api-consume-context)
+- [Provide Context](/lessons/2018-the-context-api-provide-context)
+- [A "shit" example](/lessons/2018-the-context-api-a-shit-example)
+- [Use simple types, complex types, React Elements, and Components and context](/lessons/2018-the-context-api-use-simple-types-complex-types-react-elements-and-components-as-context)
+- [Cascade Context](/lessons/2018-the-context-api-cascade-context)
+- [Stack Context](/lessons/2018-the-context-api-stack-context)
+- [Modularize Context](/lessons/2018-the-context-api-modularize-context)
+- [Summary](/lessons/2018-the-context-api-summary)

@@ -1,0 +1,11 @@
+<Head>
+  <title>Learn React | Essential React > Functional components</title>
+</Head>
+
+# Essential React
+
+## Functional components
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/CpwvYhV0DUY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+One of the coolest things about React is that we can define our own components, and those components are just function. That’s correct, they’re just functions. So if we wanted to use this all over the place, and use it like this, as “Greeting”, we just wrap it in a function. So we’ll call this “function Greeting”. No arguments here, and return this “Hello, React!” h1. Now to prove I don’t have anything up my sleeve, I’m going to use that older function declaration syntax to do the same thing. [example]. Good to go! Now, I like this newer, kind of terse, syntax a little bit better, so let’s stick with that!

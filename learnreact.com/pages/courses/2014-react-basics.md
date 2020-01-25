@@ -4,8 +4,8 @@
 
 ## Lessons
 
-- render - getting started
-- createElement
-- JSX
-- createClass
-- JSX Transformer
+- [render - getting started](/lessons/1-render-getting-started)
+- [createElement](/lessons/2-createelement)
+- [JSX](/lessons/3-jsx)
+- [createClass](/lessons/4-createclass)
+- [JSX Transformer](/lessons/5-jsx-transformer)
