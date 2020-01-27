@@ -142,8 +142,8 @@ It wraps any state update that happens via `onClick`.
 
 * Complete — the destination — a fully rendered next screen
 * Skeleton — "take a step forward" —  we transition but some data is still loading
-* Receded — "take a step backward" —
-* Pending — "stay awhile"
+* Receded — "take a step backward"
+* Pending — "stay a while"
 
 ### Default: Receded → Skeleton → Complete
 
@@ -157,7 +157,16 @@ The fallback will be shown when either is suspended.
 
 ### Preferred: Pending → Skeleton → Complete
 
+"Stay a while"  
+
+**Pending** is what you opt into with `useTransition()`.  
+
+* Pages stay interactive
+* Existing views remain visible
+
 ### Wrap Lazy Features in \<Suspense\>
+
+Wrap 
 
 ### Suspense Reveal “Train”
 
