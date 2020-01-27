@@ -1,0 +1,128 @@
+# Essential NPM
+
+Are you an NPM button masher? Do lack confidence when adding, updating, are removing dependencies? Are you worried you might change a dependency only to break your site? Essential NPM is for you. In it are the secrets of the NPM command line utility for application developers. In a few short lessons you'll gain total confidence in managing your dependencies with NPM
+
+## Lessons:
+
+<Index />
+
+export const lessons = [
+  {
+    title: "Course Overview",
+    videoEmbed: "https://www.youtube.com/embed/j4YTt1x4Ma0",
+    uri: "/lessons/2018-essential-npm-1-overview"
+  },
+  {
+    title: "Get NPM",
+    videoEmbed: "https://www.youtube.com/embed/CnwbLHWIN9U",
+    uri: "/lessons/2018-essential-npm-2-install-npm"
+  },
+  {
+    title: "npm help",
+    videoEmbed: "https://www.youtube.com/embed/c5dFkxcN8co",
+    uri: "/lessons/2018-essential-npm-3-npm-help"
+  },
+  {
+    title: "-h flag",
+    videoEmbed: "https://www.youtube.com/embed/5QvdS0ct0Js",
+    uri: "/lessons/2018-essential-npm-4-h-flag"
+  },
+  {
+    title: "npm install",
+    videoEmbed: "https://www.youtube.com/embed/lkZjVki_owA",
+    uri: "/lessons/2018-essential-npm-5-npm-install"
+  },
+  {
+    title: "npm ls",
+    videoEmbed: "https://www.youtube.com/embed/hxUUcR17OX8",
+    uri: "/lessons/2018-essential-npm-6-npm-ls"
+  },
+  {
+    title: "-g flag",
+    videoEmbed: "https://www.youtube.com/embed/D8Xp8nE052o",
+    uri: "/lessons/2018-essential-npm-7-g-flag"
+  },
+  {
+    title: "npm root",
+    videoEmbed: "https://www.youtube.com/embed/Hw_S6QAS3yw",
+    uri: "/lessons/2018-essential-npm-8-npm-root"
+  },
+  {
+    title: "npm uninstall",
+    videoEmbed: "https://www.youtube.com/embed/q2OiB5hP7qI",
+    uri: "/lessons/2018-essential-npm-9-npm-uninstall"
+  },
+  {
+    title: "npm init",
+    videoEmbed: "https://www.youtube.com/embed/f8AhcbIwc8A",
+    uri: "/lessons/2018-essential-npm-10-npm-init"
+  },
+  {
+    title: "package.json dependencies",
+    videoEmbed: "https://www.youtube.com/embed/RvzJNvnjyr0",
+    uri: "/lessons/2018-essential-npm-11-package-json-dependencies"
+  },
+  {
+    title: "npm outdated and npm update",
+    videoEmbed: "https://www.youtube.com/embed/8lM7ggbGiMw",
+    uri: "/lessons/2018-essential-npm-12-npm-outdated-and-npm-update"
+  },
+  {
+    title: "npm prune",
+    videoEmbed: "https://www.youtube.com/embed/nBgjNtP-1t4",
+    uri: "/lessons/2018-essential-npm-13-npm-prune"
+  },
+  {
+    title: "npm docs, npm repo, and npm issues",
+    videoEmbed: "https://www.youtube.com/embed/tDtNKYU6jKM",
+    uri: "/lessons/2018-essential-npm-14-npm-docs-npm-repo-and-npm-issues"
+  },
+  {
+    title: "npx",
+    videoEmbed: "https://www.youtube.com/embed/JT3tNDNkxeA",
+    uri: "/lessons/2018-essential-npm-15-npx"
+  },
+  {
+    title: "Course Summary",
+    videoEmbed: "https://www.youtube.com/embed/AhfXHzTCmTU",
+    uri: "/lessons/2018-essential-npm-16-summary"
+  }
+];
+
+export function Lesson({ title, course, videoEmbed, ...props }) {
+  return (
+    <article {...props}>
+      <Head>
+        <title>
+          Learn React | {course} > {title}
+        </title>
+      </Head>
+      <h2>
+        <a href="/courses/2018-essential-npm">{course}</a>
+      </h2>
+      <h1>{title}</h1>
+      <iframe
+        width="560"
+        height="315"
+        frameBorder="0"
+        allow="autoplay; encrypted-media"
+        allowFullScreen
+        src={videoEmbed}
+        {...props}
+      ></iframe>
+      <Index />
+    </article>
+  );
+}
+
+export function Index() {
+  return (
+    <ul>
+      {lessons.map((lesson, i) => (
+        <li key={i}>
+          <a href={lesson.uri}>{lesson.title}</a>
+        </li>
+      ))}
+    </ul>
+  );
+}
