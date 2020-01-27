@@ -1,0 +1,73 @@
+# React Basics (2014)
+
+(out of date) React Basics for v0.12
+
+## Lessons
+
+<Index />
+
+export const lessons = [
+  {
+    title: "render - getting started",
+    videoEmbed: "https://www.youtube.com/embed/CJ2dIz4T5nE",
+    uri: "/lessons/1-render-getting-started"
+  },
+  {
+    title: "createElement",
+    videoEmbed: "https://www.youtube.com/embed/zFCd7klQ-hw",
+    uri: "/lessons/2-createelement"
+  },
+  {
+    title: "JSX",
+    videoEmbed: "https://www.youtube.com/embed/pYtygU35n-0",
+    uri: "/lessons/3-jsx"
+  },
+  {
+    title: "createClass",
+    videoEmbed: "https://www.youtube.com/embed/chXpz3zmjmU",
+    uri: "/lessons/4-createclass"
+  },
+  {
+    title: "JSX Transformer",
+    videoEmbed: "https://www.youtube.com/embed/xiZ5nD_DAlY",
+    uri: "/lessons/5-jsx-transformer"
+  }
+].map(lesson => ({ ...lesson, course: "React Basics (2014)" }));
+
+export function Lesson({ title, course, videoEmbed, ...props }) {
+  return (
+    <article {...props}>
+      <Head>
+        <title>
+          Learn React | {course} > {title}
+        </title>
+      </Head>
+      <h2>
+        <a href="/courses/2014-react-basics">{course}</a>
+      </h2>
+      <h1>{title}</h1>
+      <iframe
+        width="560"
+        height="315"
+        frameBorder="0"
+        allow="autoplay; encrypted-media"
+        allowFullScreen
+        src={videoEmbed}
+        {...props}
+      ></iframe>
+      <Index />
+    </article>
+  );
+}
+
+export function Index() {
+  return (
+    <ul>
+      {lessons.map((lesson, i) => (
+        <li key={i}>
+          <a href={lesson.uri}>{lesson.title}</a>
+        </li>
+      ))}
+    </ul>
+  );
+}
