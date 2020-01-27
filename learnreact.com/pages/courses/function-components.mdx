@@ -1,3 +1,5 @@
+import * as YouTube from "../../components/youtube";
+
 <Head>
   <title>Learn React | Function Components</title>
 </Head>
@@ -10,50 +12,93 @@ Function components are the simplest way to write components in React. They don'
 
 <Index />
 
+export const lessons = [
+  {
+    title: "Get Started",
+    videoEmbed: "https://www.youtube.com/embed/Y-_-KhMx0qU",
+    uri: "/lessons/react-function-components-get-started"
+  },
+  {
+    title: "Declare Function Components",
+    videoEmbed: "https://www.youtube.com/embed/3A_KwTXZFkI",
+    uri: "/lessons/react-function-components-declare-function-components"
+  },
+  {
+    title: "Define Components with Arrow Functions",
+    videoEmbed: "https://www.youtube.com/embed/99x5bvUm9ug",
+    uri:
+      "/lessons/react-function-components-define-components-with-arrow-functions"
+  },
+  {
+    title: "Use props",
+    uri: "/lessons/react-function-componentns-use-props",
+    videoEmbed: "https://www.youtube.com/embed/JiFii5qySI0"
+  },
+  {
+    title: "Use defaultProps",
+    uri: "/lessons/react-function-components-use-defaultprops",
+    videoEmbed: "https://www.youtube.com/embed/Uo5C-PX-h1k"
+  },
+  {
+    title: "Use propTypes",
+    videoEmbed: "https://www.youtube.com/embed/oty7VGcXK44",
+    uri: "/lessons/react-function-components-use-proptypes"
+  },
+  {
+    title: "Use Destructuring Assignment",
+    videoEmbed: "https://www.youtube.com/embed/b_9FUiXM9_g",
+    uri: "/lessons/react-function-components-use-destructuring-assignment"
+  },
+  {
+    title: "Use Object Rest Properties and JSX Spread Attributes",
+    videoEmbed: "https://www.youtube.com/embed/GcxXpP0lBXo",
+    uri:
+      "/lessons/react-function-components-use-object-rest-properties-and-jsx-spread-attributes"
+  },
+  {
+    title: "Use Dynamic Tag Names",
+    videoEmbed: "https://www.youtube.com/embed/T7tb2nrQZ9Q",
+    uri: "/lessons/react-function-components-use-dynamic-tag-names"
+  },
+  {
+    title: "Use ref callbacks",
+    videoEmbed: "https://www.youtube.com/embed/mfv6Bse2Egg",
+    uri: "/lessons/react-function-components-use-ref-callbacks"
+  }
+].map(lesson => ({ ...lesson, course: "Function Components" }));
+
+export function Lesson({ title, course, videoEmbed, ...props }) {
+  return (
+    <article {...props}>
+      <Head>
+        <title>
+          Learn React | {course} > {title}
+        </title>
+      </Head>
+      <h2>{course}</h2>
+      <h1>{title}</h1>
+      <iframe
+        width="560"
+        height="315"
+        frameborder="0"
+        allow="autoplay; encrypted-media"
+        allowfullscreen
+        src={videoEmbed}
+        {...props}
+      ></iframe>
+      <Index />
+    </article>
+);
+}
+
 export function Index() {
   return (
     <ul>
-      <li>
-        <a href="/lessons/react-function-components-get-started">Get Started</a>
-      </li>
-      <li>
-        <a href="/lessons/react-function-components-declare-function-components">
-          Declare Function Components
-        </a>
-      </li>
-      <li>
-        <a href="/lessons/react-function-components-declare-function-components">
-          Define Components with Arrow Functions
-        </a>
-      </li>
-      <li>
-        <a href="/lessons/react-function-componentns-use-props">Use props</a>
-      </li>
-      <li>
-        <a href="/lessons/react-function-components-use-proptypes">
-          Use propTypes
-        </a>
-      </li>
-      <li>
-        <a href="/lessons/react-function-components-use-destructuring-assignment">
-          Use Destructuring Assignment
-        </a>
-      </li>
-      <li>
-        <a href="/lessons/react-function-components-use-object-rest-properties-and-jsx-spread-attributes">
-          Use Object Rest Properties and JSX Spread Attributes
-        </a>
-      </li>
-      <li>
-        <a href="/lessons/react-function-components-use-dynamic-tag-names">
-          Use Dynamic Tag Names
-        </a>
-      </li>
-      <li>
-        <a href="/lessons/react-function-components-use-ref-callbacks">
-          Use ref callbacks
-        </a>
-      </li>
+      {lessons.map(lesson => (
+        <li>
+          <a href={lesson.uri}>{lesson.title}</a>
+        </li>
+      ))}
     </ul>
   );
 }
