@@ -1,0 +1,104 @@
+# The Context API
+
+Want to join the ranks of open source projects like Redux, React Router, and Styled Components? You need to learn Context. Context is an API that allows you to distribute data to every component in a component tree without drilling prop-holes. This course is an in-depth look at the Context API, new in 16.3. It covers the the part system: Create, Consumer, and Provide. And explores the ergonomics of working with Context in your apps and components.
+
+## Lessons:
+
+<Index />
+
+export const lessons = [
+  {
+    title: "Overview",
+    videoEmbed: "https://www.youtube.com/embed/rjpAR8Ibhss",
+    uri: "/lessons/2018-the-context-api-overview"
+  },
+  {
+    title: "Setup",
+    videoEmbed: "https://www.youtube.com/embed/6cgv7djHUgk",
+    uri: "/lessons/2018-the-context-api-setup"
+  },
+  {
+    title: "Create Context",
+    videoEmbed: "https://www.youtube.com/embed/xER6Y82hJ4Q",
+    uri: "/lessons/2018-the-context-api-create-context"
+  },
+  {
+    title: "Consume Context",
+    videoEmbed: "https://www.youtube.com/embed/DdeFFGCfk2s",
+    uri: "/lessons/2018-the-context-api-consume-context"
+  },
+  {
+    title: "Provide Context",
+    videoEmbed: "https://www.youtube.com/embed/r7RbGwB9M-g",
+    uri: "/lessons/2018-the-context-api-provide-context"
+  },
+  {
+    title: 'A "shit" example',
+    videoEmbed: "https://www.youtube.com/embed/4kb-zw96pLY",
+    uri: "/lessons/2018-the-context-api-a-shit-example"
+  },
+  {
+    title:
+      "Use simple types, complex types, React Elements, and Components and context",
+    videoEmbed: "https://www.youtube.com/embed/G2rTIOos-Vo",
+    uri:
+      "/lessons/2018-the-context-api-use-simple-types-complex-types-react-elements-and-components-as-context"
+  },
+  {
+    title: "Cascade Context",
+    videoEmbed: "https://www.youtube.com/embed/b-ueriq7qQw",
+    uri: "/lessons/2018-the-context-api-cascade-context"
+  },
+  {
+    title: "Stack Context",
+    videoEmbed: "https://www.youtube.com/embed/K_c_YMvm-zI",
+    uri: "/lessons/2018-the-context-api-stack-context"
+  },
+  {
+    title: "Modularize Context",
+    videoEmbed: "https://www.youtube.com/embed/w11Mscl-Dyo",
+    uri: "/lessons/2018-the-context-api-modularize-context"
+  },
+  {
+    title: "Summary",
+    videoEmbed: "https://www.youtube.com/embed/Bx8l6983OXc",
+    uri: "/lessons/2018-the-context-api-summary"
+  }
+].map(lesson => ({ ...lesson, course: "The Context API" }));
+
+export function Lesson({ title, course, videoEmbed }) {
+  return (
+    <>
+      <Head>
+        <title>
+          Learn React | {course} > {title}
+        </title>
+      </Head>
+      <h2>
+        <a href="/courses/2018-the-context-api">{course}</a>
+      </h2>
+      <h1>{title}</h1>
+      <iframe
+        width="560"
+        height="315"
+        frameBorder="0"
+        allow="autoplay; encrypted-media"
+        allowFullScreen
+        src={videoEmbed}
+      ></iframe>
+      <Index />
+    </>
+  );
+}
+
+export function Index() {
+  return (
+    <ul>
+      {lessons.map((lesson, i) => (
+        <li key={i}>
+          <a href={lesson.uri}>{lesson.title}</a>
+        </li>
+      ))}
+    </ul>
+  );
+}

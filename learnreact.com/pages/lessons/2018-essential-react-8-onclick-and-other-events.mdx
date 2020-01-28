@@ -1,0 +1,9 @@
+import { Lesson, Index, lessons } from "../courses/2018-essential-react.mdx";
+
+<article>
+<Lesson {...lessons[7]} />
+
+Events are not like events in HTML, you’ll learn that very quickly. In HTML, we might have something that looks like this. [Example]. Because React is not HTML, we don’t do these strings. We will use expressions. We would put that in the curly braces, as we do with all of our expressions in JSX, provide an anonymous function that then calls `alert(“1 clap”)`. So, if we click on this, we should see an alert, right? Nope. No alert. So why not?. Well the second difference is that these attributes, or props, are camel cased. So we can’t do a lowercase on click, it’s going to be `onClick`. Now when we click on this we’ll get the alert that we expected. So the two big differences are that we camel cased these, so instead `onclick` all lowercase, it’s going to be a camel cased `onClick`, and we use these curly braces to provide an expression instead of a function in strings. This applies to all types of events that you might like to use, so `onMouseEnter` is one of the hover events, and we can do the same thing. [Example]. Now I don’t actually want that. That would be super annoying, so we will carry on without such nonsense.
+
+<Index />
+</article>

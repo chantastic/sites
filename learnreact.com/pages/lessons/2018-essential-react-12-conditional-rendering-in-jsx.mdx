@@ -1,0 +1,9 @@
+import { Lesson, Index, lessons } from "../courses/2018-essential-react.mdx";
+
+<article>
+<Lesson {...lessons[11]} />
+
+This button alone is not particularly inviting. I want a little bit more there, so I’d like to add a message that says “Be the first to clap this!”. Now because we have two adjacent React elements, we need to wrap this whole thing in some type of additional element. I’ll use a `div`. Now we have a very inviting, pleasant, message for the first person, but also the second, and the third, and the fourth, and the fifth. So how do we get this to show up only for the first person, and not all of the subsequent people to clap this. When we’re in this render block here, the render return, we don’t have access to key words like `if` and `else`. So we need to use something that works inside of these curly braces. Any type of expression. Now ternary and short circuit evaluation are really fancy words for things that solve this problem for us. [Example]. So what we want in the truthy case is to render this message, and in the falsy case, nothing I suppose. Let’s see if that worked. Hey! It did. Now this ternary is kind of like an if/else, so if the true case, this, else no. Now we don’t actually need all that, because we’re only displaying the one message in the truthy case, so we can use short circuit evaluation to get rid of this other case all together. And we do that with the `and` operator. This code will only get evaluated if this case is true. Otherwise it just doesn’t do anything. So it’s true then it’s zero, we click it, it’s not true anymore, it doesn't display. Now if we wanted the opposite to be true, we could use the `or` operator. While it’s not what we want, it’s not displaying for zero, and will display for every number after that. Change it back to `and`, and we have exactly what we’re looking for.
+
+<Index />
+</article>
