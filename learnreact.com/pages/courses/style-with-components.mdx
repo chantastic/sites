@@ -1,10 +1,17 @@
-# Style with Components
+import Layout from "../../components/layout";  
 
+<Layout>
+  <Head>
+    <title>Learn React | Style with Components</title>
+  </Head>
+
+# Style with Components
 Learn to compose React components for styling. Whether you prefer CSS, inline-styles, or a CSS-in-JS solution, you can use style components to keep your codebase clean and maintainable.
 
 ## Lessons:
 
 <Index />
+</Layout>
 
 export const lessons = [
   {
@@ -52,7 +59,7 @@ export const lessons = [
 
 export function Lesson({ title, course, videoEmbed }) {
   return (
-    <>
+    <Layout>
       <Head>
         <title>
           Learn React | {course} > {title}
@@ -61,7 +68,7 @@ export function Lesson({ title, course, videoEmbed }) {
       <h2>
         <a href="/courses/2018-the-context-api">{course}</a>
       </h2>
-      <h1>{title}</h1>
+      <h3>{title}</h3>
       <iframe
         width="560"
         height="315"
@@ -71,7 +78,7 @@ export function Lesson({ title, course, videoEmbed }) {
         src={videoEmbed}
       ></iframe>
       <Index />
-    </>
+    </Layout>
   );
 }
 

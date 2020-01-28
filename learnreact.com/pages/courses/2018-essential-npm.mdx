@@ -1,3 +1,10 @@
+import Layout from "../../components/layout";
+
+<Layout>
+  <Head>
+    <title>Learn React | Essential NPM</title>
+  </Head>
+
 # Essential NPM
 
 Are you an NPM button masher? Do lack confidence when adding, updating, are removing dependencies? Are you worried you might change a dependency only to break your site? Essential NPM is for you. In it are the secrets of the NPM command line utility for application developers. In a few short lessons you'll gain total confidence in managing your dependencies with NPM
@@ -5,6 +12,8 @@ Are you an NPM button masher? Do lack confidence when adding, updating, are remo
 ## Lessons:
 
 <Index />
+</Layout>
+
 
 export const lessons = [
   {
@@ -87,31 +96,32 @@ export const lessons = [
     videoEmbed: "https://www.youtube.com/embed/AhfXHzTCmTU",
     uri: "/lessons/2018-essential-npm-16-summary"
   }
-];
+].map(lesson => ({ ...lesson, course: "Essential NPM"}));
 
-export function Lesson({ title, course, videoEmbed, ...props }) {
+export function Lesson({ title, course, videoEmbed }) {
   return (
-    <article {...props}>
-      <Head>
-        <title>
-          Learn React | {course} > {title}
-        </title>
-      </Head>
-      <h2>
-        <a href="/courses/2018-essential-npm">{course}</a>
-      </h2>
-      <h1>{title}</h1>
-      <iframe
-        width="560"
-        height="315"
-        frameBorder="0"
-        allow="autoplay; encrypted-media"
-        allowFullScreen
-        src={videoEmbed}
-        {...props}
-      ></iframe>
-      <Index />
-    </article>
+    <Layout>
+      <article>
+        <Head>
+          <title>
+            Learn React | {course} > {title}
+          </title>
+        </Head>
+        <h2>
+          <a href="/courses/2018-essential-npm">{course}</a>
+        </h2>
+        <h3>{title}</h3>
+        <iframe
+          width="560"
+          height="315"
+          frameBorder="0"
+          allow="autoplay; encrypted-media"
+          allowFullScreen
+          src={videoEmbed}
+        ></iframe>
+        <Index />
+      </article>
+    </Layout>
   );
 }
 

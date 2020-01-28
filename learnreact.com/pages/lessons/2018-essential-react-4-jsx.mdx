@@ -1,9 +1,10 @@
 import { Lesson, Index, lessons } from "../courses/2018-essential-react.mdx";
+import Layout from "../../components/layout"
 
-<article>
+<Layout>
 <Lesson {...lessons[3]} />
 
 Creating elements with this syntax can be quite cumbersome, especially once you get to the point where you’re nesting elements. Most rect apps use a Javascript syntax extension called JSX. It looks a lot like HTML, but do not be confused, it is not HTML. Lets redefine our “What” with JSX. We’ll do an opening tag like we would with any HTML element, and in here type “Hello, React!”. You don’t need to add any additional strings or anything. Very simple. Now this syntax and this are identical. They are doing exactly the same thing, but this allows us to have a nicer authoring experience. One that feels a little bit more familiar if we’ve had years of writing HTML. It’s also a little bit more terse. React comes with a few “gotchas”, and these become a little bit worse when you’re working with JSX. For example, you might be used to saying class=”header”. In React that becomes the property name `className`. This is the same for event handlers. Say instead of having an `onclick` that is all lower case and looks like this, your `onClick` is going to be camel cased. This is the react version of that same thing. This applies for all of the events. Now, apart from being useful and a little bit weird, this is the syntax that I see in all of the react application I have ever seen or built. So like it or not, it’s just something that you get used to.
 
 <Index />
-</article>
+</Layout>

@@ -1,9 +1,10 @@
 import { Lesson, Index, lessons } from "../courses/2018-essential-react.mdx";
+import Layout from "../../components/layout"
 
-<article>
+<Layout>
 <Lesson {...lessons[12]} />
 
 Our component is almost perfect. There’s one little problem. In normal HTML life, we’d be able to put something inside of this, so we’d open and close this `clapCounter` tag, and put anything inside of it, so “Hello!”. But when we do that, nothing happens. We just get this same thing that we had before, but this is a place where React has us covered. This comes in as `children`, so wherever we want in this component, we can render out `this.props.children`. So maybe that’s at the end here, maybe it’s not. Maybe we want to go ahead and put that at the top. We can put it wherever we please. Now once that’s setup, we don’t have to just pass in text here as children, we can pass in our greeting component that we created early on. The one that takes a name prop. The one that is for some reason saying “React Bulbasaur” instead of “Hello Bulbasaur”. Let’s fix that. And just like that, with this little tiny line here, using `this.props.children`, we are able to compose some of these components together, so we can smush greeting inside of this `clapCounter`, and `clapCounter` still works. It still counts, and it still doesn’t render the message if we have more than one count. Everything composes together the way that we would expect them to in HTML, which is great. We’re going to learn a lot about composition in the next hand full of lessons using techniques that will allow us to share data between components. But for now, clap yourself on the back. You’ve done an amazing job with these components so far.
 
 <Index />
-</article>
+</Layout>

@@ -1,10 +1,17 @@
-# Essential React
+import Layout from "../../components/layout"
 
+<Layout>
+  <Head>
+    <title>Learn React | Essential React</title>
+  </Head>
+
+# Essential React
 Learn Essential React—the kind that makes you money. If you want to sound smart buzz-wordy at your next meet up, move along. This course is for doers. It moves fast from "Hello World" to advanced component composition, serving as a good overview of the best parts of React. Learn Essential React and start shipping code today!
 
 ## Lessons:
 
 <Index />
+</Layout>
 
 export const lessons = [
   {
@@ -147,7 +154,7 @@ export function Lesson({ title, course, videoEmbed }) {
       <h2>
         <a href="/courses/2018-essential-npm">{course}</a>
       </h2>
-      <h1>{title}</h1>
+      <h3>{title}</h3>
       <iframe
         width="560"
         height="315"

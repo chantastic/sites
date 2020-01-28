@@ -1,9 +1,10 @@
 import { Lesson, Index, lessons } from "../courses/2018-essential-react.mdx";
+import Layout from "../../components/layout"
 
-<article>
+<Layout>
 <Lesson {...lessons[2]} />
 
 The first thing we need to do is we need to include the libraries that are already being brought in for us, and that’s `React` and `ReactDOM`. Now react is what we are going to be focusing this course on, and that’s the api for components. `ReactDOM` is what helps us connect that to a website. Each platform has an independent package. Now for us that’s going to be `ReactDom` since we’re working on a web project, so let’s include those into our project now. First, we’re going to import `React` from `react`. This is assigning a local identity of React from our imported `mpm` package, and we’re going to import `ReactDOM` the same from the `mpm` package `react-dom`. Great! Now it’s a little more stable and less `refreshy`. Now, from these packages we’re going to learn about just two things. We’re going to learn about `React.createElement` and `ReactDOM.render`. These are the two functions that we are going to cover in this lesson, and they are all that we need to make a React app on the web. We’re already getting helpful errors saying that we aren’t using `ReactDOM.render` correctly. It’s pulling to the line, line 6. Now the way `ReactDOM` works is that it takes a `what` and a `where`, and it’s going to take that `what` and render it into the `where`. This project already has an HTML file with an empty `div` with an `id` of `root`, and that will be our `where`. So let’s collect that with just some regular old Javascript. [Example]. I am groot. Now that we have our `where` to find, we need to work on the `what`. And the `what` is going to be our new React element. The first argument for a React element is going to be the type of element that we want to render. Any type of HTML tag will work here when wrapped in a string like this,. The second argument is going to be the options for that element, so these are going to be like `className` and `id` and any data attributes. Things of that nature. Finally, in the last position we have the inner text, or the `children` of this element, and I’m just going to say `Hello React!`. And just like that, with just these few lines of code, we have our first working React app.
 
 <Index />
-</article>
+</Layout>
