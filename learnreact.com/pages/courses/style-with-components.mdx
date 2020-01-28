@@ -1,0 +1,88 @@
+# Style with Components
+
+Learn to compose React components for styling. Whether you prefer CSS, inline-styles, or a CSS-in-JS solution, you can use style components to keep your codebase clean and maintainable.
+
+## Lessons:
+
+<Index />
+
+export const lessons = [
+  {
+    title: "Get Started",
+    videoEmbed: "https://www.youtube.com/embed/xf5aMIxKTG8",
+    uri: "/lessons/2017-react-style-with-components-get-started"
+  },
+  {
+    title: "Extract a button component",
+    videoEmbed: "https://www.youtube.com/embed/lUamw2R8n5o",
+    uri: "/lessons/2017-react-style-with-components-extract-a-button-component"
+  },
+  {
+    title: "Compose button components",
+    videoEmbed: "https://www.youtube.com/embed/lva_Kzf4rTU",
+    uri: "/lessons/2017-react-style-with-components-compose-button-components"
+  },
+  {
+    title: "Merge classname props",
+    videoEmbed: "https://www.youtube.com/embed/-8UctUbqdPc",
+    uri: "/lessons/2017-react-style-with-components-merge-classname-props"
+  },
+  {
+    title: "Define a button API",
+    videoEmbed: "https://www.youtube.com/embed/xsliIzmTIWw",
+    uri: "/lessons/2017-react-style-with-components-define-a-button-api"
+  },
+  {
+    title: "Take tag name as a prop",
+    videoEmbed: "https://www.youtube.com/embed/yqmjEamk0tA",
+    uri: "/lessons/2017-react-style-with-components-take-tag-name-as-a-prop"
+  },
+  {
+    title: "Take component as a prop",
+    videoEmbed: "https://www.youtube.com/embed/Ujw8oC2ODiA",
+    uri: "/lessons/2017-react-style-with-components-take-component-as-a-prop"
+  },
+  {
+    title: "Swap CSS framework from bootstrap to Bulma and Foundation",
+    videoEmbed: "https://www.youtube.com/embed/dqqFbcZ7B7Q",
+    uri:
+      "/lessons/2017-react-style-with-components-swap-css-framework-from-bootstrap-to-bulma-or-foundation"
+  }
+].map(lesson => ({ ...lesson, course: "Style with Components" }));
+
+export function Lesson({ title, course, videoEmbed }) {
+  return (
+    <>
+      <Head>
+        <title>
+          Learn React | {course} > {title}
+        </title>
+      </Head>
+      <h2>
+        <a href="/courses/2018-the-context-api">{course}</a>
+      </h2>
+      <h1>{title}</h1>
+      <iframe
+        width="560"
+        height="315"
+        frameBorder="0"
+        allow="autoplay; encrypted-media"
+        allowFullScreen
+        src={videoEmbed}
+      ></iframe>
+      <Index />
+    </>
+  );
+}
+
+export function Index() {
+  return (
+    <ul>
+      {lessons.map((lesson, i) => (
+        <li key={i}>
+          <a href={lesson.uri}>{lesson.title}</a>
+        </li>
+      ))}
+    </ul>
+  );
+}
