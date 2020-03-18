@@ -16,10 +16,20 @@ These translations are not verified and links are not endorsements.
 
 [Chinese](https://reactpatterns.cn)
 
-## Function component
+## Element
 
-[Function components](https://reactjs.org/docs/components-and-props.html#function-and-class-components) are the simplest way to declare reusable components.  
-They're just functions.
+[Elements](https://reactjs.org/docs/glossary.html#elements) are anything inside angle brackets.
+
+```jsx
+<div></div>
+<Greeting />
+```
+
+[Components](#component) return Elements.
+
+## Component
+
+Define a [Component](https://reactjs.org/docs/glossary.html#components) by declaring a function that returns a React [Element](#element).
 
 ```jsx
 function Greeting() {
@@ -27,7 +37,21 @@ function Greeting() {
 }
 ```
 
-Collect `props` from the first argument of your function.
+## Expressions
+
+Use curly braces to [embed expressions](https://reactjs.org/docs/introducing-jsx.html#embedding-expressions-in-jsx) in [JSX](https://reactjs.org/docs/glossary.html#jsx).
+
+```jsx
+function Greeting() {
+  let name = "chantastic";
+
+  return <div>Hi {name}!</div>;
+}
+```
+
+## Props
+
+Take `props` as an argument to allow outside customizations of your Component.
 
 ```jsx
 function Greeting(props) {
@@ -35,21 +59,9 @@ function Greeting(props) {
 }
 ```
 
-Define any number of local variables to do what you need in your function components.  
-**Always return your React Component at the end. **
+## defaultProps
 
-```jsx
-function Greeting(props) {
-  let style = {
-    fontWeight: "bold",
-    color: props.color
-  };
-
-  return <div style={style}>Hi {props.name}!</div>;
-}
-```
-
-Set defaults for any required `props` using `defaultProps`.
+Specify default values for `props` with `defaultProps`.
 
 ```jsx
 function Greeting(props) {
