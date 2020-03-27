@@ -23,10 +23,7 @@ Spend the right \$60 and the mic will grow with you — getting you closer to to
 I made a little microsite to with my recommendation,
 Complete with samples.
 
-shutupandstarttalking.com
-
-If you don't want to visit that page,
-Just get the Samson Q2U, wherever you buy gear.
+[shutupandstarttalking.com](http://shutupandstarttalking.com)
 
 You'll love the way you sound on this thing.
 
