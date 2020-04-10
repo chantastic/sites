@@ -1,4 +1,4 @@
-import Link from "next/link";
+// import Link from "next/link";
 import Header from "../components/header";
 import AlphabetPage from "./alphabet/index";
 import "system-ui.css";

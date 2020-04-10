@@ -12,10 +12,6 @@ let pages = [
     lead: "Move BACK to the BEGINNING of a word"
   },
   {
-    letter: "d",
-    lead: "Change"
-  },
-  {
     letter: "c",
     lead: "Change"
   },
