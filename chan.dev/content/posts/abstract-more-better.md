@@ -14,13 +14,13 @@ They use "with" instead.
 
 Don't fall for it.
 
-Repeat it with "and":
+Repeat it with "and"...
 
 > Dropdown _and_ accessibility _and_ styling huh? Sounds overreach-y.
 
 Yes, it's hard to separate abstractions well.  
 No, it's not impossible.  
-No, separating at "and"s doesn't exclude you also providing a default composition.
+No, separating at "and"s doesn't preclude you from exporting a standard composition.
 
 While it might sound sweet to avoid understanding the individual complexities of all three problems _and_ their intersection, accepting overreaching abstractions exchanges the momentary discomfort of learning something with a long-term dependency on a personality or preference.
 
