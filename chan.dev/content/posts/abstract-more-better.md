@@ -36,12 +36,12 @@ The salesperson puts all their energy into the sale, not support.
 Stable abstractions are those with personalities removed.  
 They should live and die by their utility.
 
-Solutions that are properly separated by "and"s can composed, recompose, and decompose gracefully.
+Solutions that are properly separated by "and"s can compose, recompose, and decompose gracefully.
 
 Like evolution, useless abstractions fade away while useful ones replicate and extend their reach.
 
 Isolated accessibility tools can be remixed into new, unanticipated expressions of dropdowns.  
-Isolated styles can be partially applied to default browser elements and reach beyond zeitgeist of framework.
+Isolated styles can be partially applied to default browser elements and reach beyond the zeitgeist of framework.
 
 Mark might have you believe that I'm [anti-abstraction](https://twitter.com/markdalgleish/status/1250625893891891200), I'm not.  
 The problem is that we don't make enough, cleanly isolated abstractions.
@@ -49,4 +49,4 @@ The problem is that we don't make enough, cleanly isolated abstractions.
 I want abstractions — with standard interfaces — that can compose, recompose, and decompose gracefully over time.
 And I want lots of them so that product is never beholden to personality or preference.
 
-_(A [less popular version of "Hot Garbage: Clean Code is Dead"](https://www.youtube.com/watch?v=7ri10aE-Idc) covers with with code.)_
+_(A [less popular version of "Hot Garbage: Clean Code is Dead"](https://www.youtube.com/watch?v=7ri10aE-Idc) covers this with code.)_
