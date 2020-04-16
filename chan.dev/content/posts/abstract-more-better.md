@@ -5,7 +5,7 @@ date: 2020-04-16
 
 I have one rule when abstracting code: create one abstraction per problem.
 
-If you must say "and" when describe an abstraction, you haven't finished abstracting.
+If you say "and" when describing an abstraction, you aren't done abstracting.
 
 Unfortunately, people are sneaky with "and".  
 They use "with" instead.
