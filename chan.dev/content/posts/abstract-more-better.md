@@ -48,4 +48,4 @@ The problem is that we don't make enough, cleanly isolated abstractions.
 I want abstractions, with standard interfaces, that can compose, recompose, and decompose gracefully over time.
 And I want lots of them so that product is never beholden to personality or preference.
 
-_(I have a [less popular version of "Hot Garbage: Clean Code is Dead"](https://www.youtube.com/watch?v=7ri10aE-Idc) where I dive into code — showing cascading impact of seemingly benign abstractions.)_
+_(I have a [less popular version of "Hot Garbage: Clean Code is Dead"](https://www.youtube.com/watch?v=7ri10aE-Idc) where I dive into code — showing the dark impact of seemingly innocuous abstractions.)_
