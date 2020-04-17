@@ -50,3 +50,7 @@ I want abstractions — with standard interfaces — that can compose, recompose
 And I want lots of them so that product is never beholden to personality or preference.
 
 _(A [less popular version of "Hot Garbage: Clean Code is Dead"](https://www.youtube.com/watch?v=7ri10aE-Idc) covers this with code.)_
+
+<br />
+
+_Update: [Mark and I agreed all along](https://twitter.com/markdalgleish/status/1250913016587018242). [My favorite kind of fight](https://twitter.com/chantastic/status/1250568765839863809)._ 😂
