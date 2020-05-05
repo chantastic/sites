@@ -9,7 +9,7 @@ Google, you're smart — WE GET IT
 Maybe I'll be smart some day and care more about accuracy than being helpful  
 But TODAY, I don't know shit and I just want someone to show me _exactly_ how to do a thing.
 
-If you want these same,  
+If you want the same,  
 Here are the bloodied notes I took while getting pummeled by the Extending DevTools documentation
 
 ## Starting
@@ -35,17 +35,18 @@ Fix them in order
 
 `The 'manifest_version' key must be present and set to 2 (without quotes). See developer.chrome.com/extensions/manifestVersion.html for details.`
 
-- Do precisely what it says (`manifest_version`)
+- Do precisely what it says (`"manifest_version": 2`)
 - Hit `Retry` in Chrome
 
 `Required value 'name' is missing or invalid.`
 
-- Add a `name` field calling it whatever you want (you can rename it)
+- Add a `name` field calling it whatever you want (`"name": "Clever Extension Name"`)
+- You can rename it whenever
 - Hit `Retry` in Chrome
 
 `Required value 'version' is missing or invalid. It must be between 1-4 dot-separated integers each between 0 and 65536.`
 
-- Add `version` according to the spec. I start with `"0.0.1"`
+- Add `version` according to the spec. I start with `"version": "0.0.1"`
 - Hit `Retry` in Chrome
 
 Success!  
