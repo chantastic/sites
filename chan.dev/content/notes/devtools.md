@@ -70,7 +70,100 @@ It's the only place you're likely to see them as you develop
 
 ---
 
-Coming later...  
+## Create a DevTools page
+
+Every DevTools extension needs a "DevTools page"
+
+Defining one takes three steps
+
+### Add a `devtools_page` definition
+
+Add a `devtools_page` field to your `manifest.json`, pointing to an html file (`"devtools_page": "devtools.html"`)
+
+### Create that `devtools.html` file
+
+Create `devtools.html` in your project root with a standard html5 definition
+
+Add a script tag that sources `devtools.js`
+
+### Create that `devtools.js` file
+
+Create `devtools.html` to your project root
+
+In that file, throw an error — any error will do
+
+### Catch the error
+
+Open DevTools
+
+If you did everything right,  
+You'll see an `Errors` button appear in the Chrome extension manager.
+
+Congrats!  
+You've defined a DevTools page
+
+### Rant
+
+Seriously?  
+Visibility into my DevTools extension is SO bad that I have to throw an error to ensure that it's working??
+
+Why — and I can't stress this enough — the fuck do I need to create an html file to load a javascript file?  
+This field should 100% allow a JS file — background pages do.
+
+Oh shit, and background pages...  
+Fuck background pages
+
+To the uninitiated, it can sound a helluvah lot like "devtools page" and "background page" are the same thing  
+They ARE NOT and it's confusing as hell
+
+I WILL NOT talk about the "background page" in this tutorial just to avoid confusion
+
+### On naming your DevTools page
+
+I started with `main.html` and `main.js`  
+But changed them to `devtools.html` and `devtools.js`  
+So much of the documentation I encountered referred to these files as such
+
+### Examples
+
+What do your files look like?
+Here are mine:
+
+_manifest.json_
+
+```diff
+{
+  "name": "Clever Extension Name",
+  "manifest_version": 2,
+  "version": "0.0.1",
++  "devtools_page": "devtools.html"
+}
+```
+
+_devtools.html_
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <script src="devtools.js"></script>
+  </body>
+</html>
+```
+
+_devtools.js_
+
+```js
+throw "Hey! Looks like things are hooked up right."
+```
+
+---
+
+Coming later...
+
 Follow my ass on twitter: https://twitter.com/chantastic
 
 ## (add a devtools page/app)
