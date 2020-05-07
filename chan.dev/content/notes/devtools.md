@@ -1,4 +1,4 @@
-# DevTools
+# DevTools (WIP)
 
 Have you been punched in the face for asking a question?
 
@@ -162,13 +162,131 @@ throw "Hey! Looks like things are hooked up right."
 
 ---
 
+## Create an Elements sidebar pane
+
+Neither of us has our big person trunks yet  
+So, we ain't diving into the deep end of making our own DevTools panel
+
+We'll start with an Elements sidebar pane
+
+### Verbiage
+
+**DevTools panel**:  
+A top-level tab like `Inspector`, `Console`, `Network`, etc.
+
+**Elements sidebar pane**:  
+A tab nested inside the Elements panel like `Style`, `Event Listeners`, `Properties`, etc.
+
+### Add a sidebar to the Elements panel
+
+Update `devtools.js` to create a new Elements sidebar:
+
+```js
+chrome.devtools.panels.elements.createSidebarPane("My pane")
+```
+
+This creates a sidebar pane with the title you provide  
+(You can create more than one)
+
+### Reload DevTools
+
+Close and Open DevTools (`CMD + OPT + i` in macOS)  
+They don't automatically reload on filesystem changes
+
+Checkout your new `My Pane` tab in the far right of the Elements panel
+
+You made an empty Elements sidebar pane!
+
+---
+
+## Add a view to your Elements sidebar pane
+
+First, a rant...
+
+### Rant
+
+Chrome and Firefox have completely different interfaces for their async APIs
+
+Search for `devtools.panels.elements.createSidebarPane` and you could find docs using Chrome's callbacks or "standardized" promises
+
+It SUUUUUUUUUUUUUUUCKS
+
+Real world extension I've found use [webextension-polyfill](https://github.com/mozilla/webextension-polyfill) to let you use Promises _most_ places
+
+But — LOL again — this is all a big joke  
+Because Chrome dominates the market, they answer to nobody  
+So other browsers — that implement the promise-based APIs — not only implement callback versions for chrome compatibility THEY IMPLEMENT THE `chrome` global as well!!!
+
+It's hystarically bad
+
+Anyway, you just need to know how fucked it is so you don't get frustrated
+
+I'll stick with the `chrome` callback style APIs because that's what I learned  
+Use [webextension-polyfill](https://github.com/mozilla/webextension-polyfill) if you _must_ have promises, prefer reading the MDN docs, or feel righteous indignation over Chrome being a bully
+
+### Set pane content with an object
+
+Provide a callback function to `createSidebarPane`
+
+Send the message `setObject` with a random object
+
+```js
+chrome.devtools.panels.elements.createSidebarPane("My pane", (pane) => {
+  pane.setObject({ hey: "there!" })
+})
+```
+
+Restart DevTools  
+Open your pane  
+See the object you added
+
+### Set pane content with an expression
+
+You can set pane content with an expression  
+This isn't where we're headed in this doc  
+However, [this post](https://planningcenter.style/?path=/docs/elements-avatar--basic) is the best I found on the topic
+
+### Set pane content with html page
+
+This is where we're gonna live for a bit
+
+```diff
+chrome.devtools.panels.elements.createSidebarPane("My pane", (pane) => {
+-  pane.setObject({ hey: "there!" })
++  pane.setPage("my-sidebar-pane.html")
+})
+```
+
+Now make that html file  
+Mine looks like this:
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <script id="root">
+      Hey mom 👋
+    </script>
+  </body>
+</html>
+```
+
+(You sly devil. I see you seeing me getting ready to put React in this thing)
+
+Restart DevTools  
+Open your pane  
+See the new page
+
+Nice work, nerd!
+
+---
+
 Coming later...
 
 Follow my ass on twitter: https://twitter.com/chantastic
-
-## (add a devtools page/app)
-
-## (add a sidebar pane to Elements)
 
 ## (chrome.storage)
 
