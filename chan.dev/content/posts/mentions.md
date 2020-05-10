@@ -3,8 +3,6 @@ title: Mentions
 date: 2020-05-10
 ---
 
-mentions
-
 I'm stressing out about mentions
 
 I'm watching Rise of Skywalker with my 9yo  
@@ -38,6 +36,5 @@ Nothing good last forever
 We had a good run, mentions
 But I'm letting you go
 
-I'm sorry if my silence makes you feel snubbed —  
-That's never my intention  
+I'm sorry if my silence makes you feel snubbed — That's never my intention  
 I just have things to create and moments to savor
