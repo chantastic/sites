@@ -198,12 +198,12 @@ function MyButton({ className, ...props }) {
 }
 ```
 
-To guard from `undefined` showing up as a className,  
-Use [default values](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#Default_values_2).
+To guard from [falsy](https://developer.mozilla.org/en-US/docs/Glossary/Falsy) values showing up as a className,
+use [short-circuit evaluation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_Operators#Short-circuit_evaluation)
 
 ```jsx
-function MyButton({ className = "", ...props }) {
-  let classNames = ["btn", className].join(" ");
+function MyButton({ className, ...props }) {
+  let classNames = ["btn", className || ""].join(" ");
 
   return <button className={classNames} {...props} />;
 }
