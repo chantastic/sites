@@ -1,19 +1,16 @@
-import Link from "next/link";
 import Head from "next/head";
-import Layout from "../../components/blog-layout";
+import Layout, { siteTitle } from "../../components/layout";
+import utilStyles from "../../styles/utils.module.css";
 
-export default function FirstPost() {
+export default function Home() {
   return (
-    <Layout>
+    <Layout home>
       <Head>
-        <title>Static Post</title>
+        <title>{siteTitle}</title>
       </Head>
-      <h1>First Post</h1>
-      <h2>
-        <Link href="/">
-          <a>Back to home</a>
-        </Link>
-      </h2>
+      <section className={utilStyles.headingMd}>
+        <p>Hey, I'm chantastic 👋. These are my words.</p>
+      </section>
     </Layout>
   );
 }
