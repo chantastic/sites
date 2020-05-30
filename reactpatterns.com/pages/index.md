@@ -198,16 +198,19 @@ function MyButton({ className, ...props }) {
 }
 ```
 
-To guard from [falsy](https://developer.mozilla.org/en-US/docs/Glossary/Falsy) values showing up as a className,
-use [short-circuit evaluation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_Operators#Short-circuit_evaluation)
+To guard from `undefined` showing up as a className, you could update your logic to filter out `falsy` values:
 
 ```jsx
 function MyButton({ className, ...props }) {
-  let classNames = ["btn", className || ""].join(" ");
+  let classNames = ["btn", className].filter(Boolean).join(" ").trim();
 
   return <button className={classNames} {...props} />;
 }
 ```
+
+Bear in mind though that if an empty object is passed it'll be included in the class as well, resulting in: `btn [object Object]`.
+
+The better approach is to make use of available packages, like [classnames](https://www.npmjs.com/package/classnames) or [clsx](https://www.npmjs.com/package/clsx), that could be used to join classnames, relieving you from having to deal with it manually.
 
 ## Conditional rendering
 
