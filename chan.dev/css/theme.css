@@ -1,0 +1,58 @@
+body {
+  font-family: "PT Serif";
+  font-size: 1.1em;
+}
+p {
+  /* line-height: 1.75;
+  margin-bottom: 1.75em; */
+  font-family: "PT Serif", serif;
+  font-size: 1.1rem;
+  margin: 1.1em 0;
+  /* color: #2c3e50; */
+  text-rendering: optimizeLegibility;
+}
+h1 {
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  word-spacing: 0.05em;
+  line-height: 1.1em;
+  font-size: 1.8rem;
+  margin-top: 1em;
+  margin-bottom: 0;
+}
+@media (prefers-color-scheme: dark) {
+  html,
+  body {
+    background: #222;
+    color: hsl(0 0% 100% / 0.85);
+  }
+
+  h1 {
+    color: hsl(0 0% 100% / 0.95);
+  }
+
+  a[href] {
+    color: hsl(0 0% 100% / 0.86);
+  }
+  a[href]:visited {
+    color: hsl(0 0% 100% / 0.86);
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  html,
+  body {
+    background: white;
+    color: #222;
+  }
+  h1 {
+    color: black;
+  }
+  a[href] {
+    color: #222;
+  }
+  a[href]:visited {
+    color: #222;
+  }
+}
