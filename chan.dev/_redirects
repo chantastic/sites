@@ -1,3 +1,5 @@
+/blog/* /posts/:spat
+
 /react/concurrent/concurrent-ui-patterns--experimental /notes/react/concurrent/concurrent-ui-patterns--experimental/  
 /react/concurrent/introducing-concurrent-mode--experimental /notes/react/concurrent/introducing-concurrent-mode--experimental/
 /react/concurrent/suspense-for-data-fetching--experimental /notes/react/concurrent/suspense-for-data-fetching--experimental/ 
