@@ -1,4 +1,4 @@
-/blog/* /posts/:slpat
+/blog/* /posts/:splat
 
 /react/concurrent/concurrent-ui-patterns--experimental /notes/react/concurrent/concurrent-ui-patterns--experimental/  
 /react/concurrent/introducing-concurrent-mode--experimental /notes/react/concurrent/introducing-concurrent-mode--experimental/
