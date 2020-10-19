@@ -11,7 +11,7 @@ p {
   /* color: #2c3e50; */
   text-rendering: optimizeLegibility;
 }
-h1 {
+h1, h2 {
   font-family: "Source Sans Pro", sans-serif;
   font-weight: 900;
   letter-spacing: -0.02em;
@@ -28,7 +28,7 @@ h1 {
     color: hsl(0 0% 100% / 0.85);
   }
 
-  h1 {
+  h1, h2 {
     color: hsl(0 0% 100% / 0.95);
   }
 
@@ -46,7 +46,7 @@ h1 {
     background: white;
     color: #222;
   }
-  h1 {
+  h1, h2 {
     color: black;
   }
   a[href] {
