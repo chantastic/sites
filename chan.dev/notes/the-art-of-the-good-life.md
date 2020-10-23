@@ -1,3 +1,7 @@
+---
+layout: layouts/note.njk
+---
+
 # the art of the good life
 
 ## 2 The Fine Art of Correction
