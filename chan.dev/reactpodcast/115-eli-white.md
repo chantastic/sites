@@ -5,16 +5,27 @@ layout: layouts/note.njk
 
 ## Summary
 
-- Be upfront with your position and principles. This gives others the opportunity to quickly align and collaborate, or disagree and move on. It'll save a ton effort in the long game of product development
-- Be a generalist. Organize work around features and products, not platforms
-- When designing, optimize for local platform alignment not cross-platform uniformity
-- Solutions designed for the long haul don't own the whole problem. They can work in tandem with legacy and alternate systems to enhance overall productivity
+### Be opinionated
+
+Principles and positions gives others the opportunity to quickly align and collaborate, or disagree and move on. It'll save a ton effort in the long game of product development
+
+### Be a generalist
+
+Organize work around features and products, not platforms
+
+### Design for local alignment
+
+No user gives a shit about "cross-platform consistency". They want an experience that is locally consistent with other apps on the platform they use
+
+---
 
 ## Material
 
 Episode url: https://reactpodcast.com/episodes/115
 
 Jump to Discord discussion: https://discord.com/channels/105756917887950848/755466593261322301/768876858959593472
+
+---
 
 ## Minutes
 
