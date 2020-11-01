@@ -16,7 +16,7 @@ And from the moment I saw the [Talkboy in Home Alone 2](https://www.youtube.com/
 Below are 80 minutes of history, memories, and wisdom from Gammy on her 85th birthday.
 
 <audio controls preload="none" style="width: 100%">
-  <source src="https://media.chan.dev.s3.us-west-1.amazonaws.com/gammy-85-interview.mp3" type="audio/mpeg" />
+  <source src="https://s3-us-west-1.amazonaws.com/media.chan.dev/gammy-85-interview.mp3" type="audio/mpeg" />
   <p>
-    Your browser does not support the audio tag. a <a href="https://media.chan.dev.s3.us-west-1.amazonaws.com/gammy-85-interview.mp3">link to the audio</a> instead.</p>
+    Your browser does not support the audio tag. a <a href="https://s3-us-west-1.amazonaws.com/media.chan.dev/gammy-85-interview.mp3">link to the audio</a> instead.</p>
 </audio>
