@@ -2,10 +2,12 @@
 layout: layouts/base.njk
 templateClass: tmpl-post
 ---
-<h1 style="font-family: 'Source Sans Pro'; font-weight: 900">{{ title }}</h1>
-<time datetime="{{ date.toUTCString() }}"></time>
 
-{{ content | safe }}
+<main style="max-width: 32rem">
+  <h1 style="font-family: 'Source Sans Pro'; font-weight: 900">{{ title }}</h1>
+  <time datetime="{{ date.toUTCString() }}"></time>
+  {{ content | safe }}
+</main>
 
 <hr>
 <ul>
