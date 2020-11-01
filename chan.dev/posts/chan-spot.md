@@ -35,7 +35,7 @@ He loved creating a scenario where the outcome — however banal — made him f
 
 I have more important battles to battle than those against unwitting strangers at the supermarket.
 
-We all do.
+You do to.
 
 ---
 
