@@ -17,9 +17,9 @@ Cashier fluency,
 Number of items,  
 Variation in items…  
 But with the kids — well — those factors dissolve.  
-Just stick one in and see how it rolls.  
+Just stick one in and see how it rolls.
 
-As "those kids," my brothers and I prayed for the ideal outcome: wait in awkward silence as two sets of strangers decide if you're lost. Get the all clear. Then run back to dad's lane.  
+As "those kids," my brothers and I prayed for the ideal outcome: wait in awkward silence as two sets of strangers decide if you're lost. Get the all clear. Then run back to dad's lane.
 
 The other case was less pleasant. Dad drifts the corner with a full cart of groceries and shimmies between the strangers before and behind you. You unload as the mood falls from concern to outrage.
 
@@ -40,4 +40,4 @@ You do to.
 ---
 
 <small>This memory, inspired by [The Art of the Good Life](https://amzn.to/3keerys) (AmazonAffiliate).
-Chapter 1: Mental Accounting — How to Turn a Loss Into a WinÏ</small>
+[Chapter 1: Mental Accounting — How to Turn a Loss Into a Win]({{ '/notes/the-art-of-the-good-life/#1.-mental-accounting-—-how-to-turn-a-loss-into-a-win' | url }})</small>
