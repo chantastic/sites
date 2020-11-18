@@ -40,4 +40,4 @@ You do to.
 ---
 
 <small>This memory, inspired by [The Art of the Good Life](https://amzn.to/3keerys) (AmazonAffiliate).
-[Chapter 1: Mental Accounting — How to Turn a Loss Into a Win]({{ '/notes/the-art-of-the-good-life/#1.-mental-accounting-—-how-to-turn-a-loss-into-a-win' | url }})</small>
+[Chapter 1: Mental Accounting — How to Turn a Loss Into a Win]({{ '/notes/the-art-of-the-good-life/#1-mental-accounting' | url }})</small>
