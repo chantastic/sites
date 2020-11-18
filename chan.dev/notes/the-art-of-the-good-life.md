@@ -1,7 +1,8 @@
 ---
 layout: layouts/book-note.njk
 title: "The Art of the Good Life: 52 Surprising Shortcuts to Happiness, Wealth, and Success"
-tags: [book]
+tags:
+	- book
 ---
 
 ## 1. Mental Accounting — How to Turn a Loss into a Win
