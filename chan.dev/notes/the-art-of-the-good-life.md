@@ -154,8 +154,16 @@ Pain is progress.
 
 Why Timesavers Are Often Timewasters
 
-5 Counter-productivity
-Why time savers are often time wasters
+### Summary
+
+> The things own eventually own us
+
+Nothing is intrinsicly valuable.  
+If we know a thing is valuable in our life, use it.  
+But interogate your assumptions around optimization.  
+Know the full cost before saying yes — especially with technology which is "self-enlarging".
+
+### Notes
 
 - Car
   - the total cost of a thing
@@ -173,46 +181,43 @@ Why time savers are often time wasters
   - every additional centimeter of plumage has a counter-productivity effect
 - Smart homes are a horror movie scenario
 - Digital Cameras
-
   - The overwhelm of choice and editing
   - Exploitable
   - Hard drives
-
-- Technology is self-enlarging
+- <mark>Technology is self-enlarging</mark>
 - If it doesn't enhance your life, don't use it
-- "Try switching on your brain instead of reaching for the nearest gadget"
+- <mark>"Try switching on your brain instead of reaching for the nearest gadget"</mark>
 
----
+### Thoughts with friends
 
-## "strategic vacationing"
-
-- Dan: has already internalized this as "what's the full cost of this thing?"
-  - but do i just want to drive a car
+- Dan has already internalized this as "what's the full cost of this thing?"
+  - asks "but do i just want to drive a car?"
   - "oops. i forgot onions. i'll just jump back in the car and get those"
-- me: the creation of emergencies thru lack of planning and presence. "streaming" a grocery list in real time vs planning.
-  - dan: "we feel like we're good with money. but we spent more than we made this month and we don't know what it was on"
-    - paper cut expenses
-    - prime as an enabler
-- emily: when things aren't easy, we tend to over-maximize on planning. "we're getting groceries. let's get together with so-n-so and do this that and the other thing"
+- i posit that this <mark>creation of emergencies thru lack of planning and presence</mark> might be an enabled habit
+  - example: nellie "streaming" a grocery list to me in real time vs us planning
+- dan says "we feel like we're good with money. but we spent more than we made this month and we don't know what it was on"
+  - paper cut expenses
+  - Amazon Prime as an enabler
+- em offers a <mark>counterpoint: when things aren't easy, we tend to over-maximize on planning.</mark> "we're getting groceries. let's get together with so-n-so and do this that and the other thing"
   - not present in everything because you're "maximizing" — hyper productivity
   - paying for it the next day in "recovery"
-  - the emotional difficulty of intentionally not optimizing trips
-- ma: applying emilies experiences to a person who lives close to a grocery store
-- me: the practical that isn't part of his equation is "do a want to walk 16 miles to work? instead of working?"
-  - ma: the theme is "are you questioning your assumptions"
-- ma: credit cards as a strong counterproductively area.
-  - trigger: in a moment when you think to yourself "nailed it" ask "but did you?"
-- dan: "inboxers" group. the promise of "you'll never miss anything" and resulting anxiety.
-  - me: consolidation
-- me: the abolition of cleverness
-  - we see this is code a lot. not
-- me: seeing time. jane jacobs
-- dan: seeing like a state
-- ma: optimizations and interrogations
-  - dan: is productivity the actual bottleneck?\
-    - communication is the the bottleneck
-  - me: over-indexing on personal productivity over corporate productivity (communication)
-- ma: maybe the real friends productivity is the friends we made along the way
+  - it's emotionally challenging to intentionally not optimizing trips
+- ma asks how we can applying em's experiences (the discipline required to live far from everything) to a person who lives close to a grocery store
+- i complain a but about the practicals not considered in the author's equition: "do a want to walk 16 miles to work? instead of working?"
+  - ma suggests that theme of the chapter is "are you questioning your assumptions"
+- ma calls out credit cards as a strong counterproductivityy area
+- i suggest a mental trigger: <mark>in a moment when you think to yourself "nailed it" ask "but did you?"</mark>
+- dan harkens back to the "inboxers" group:
+  - tactics for combating notification lies: "you'll never miss anything" and resulting anxiety
+- i channel C.S. Lewis for a second and blert out "the abolition of cleverness"
+  - we see this is code a lot — the cost of cleverness
+- i go on a stupid tangent about Jane Jacobs again and <mark>the difference between observing artifacts and organism is in whether or not you account for time</mark> and the catholic principle of <mark>subsidiarity</mark>.
+- dan adds a book reference "Seeing like a State"
+- ma shares and i summarize here as <mark>"optimizations and interrogations" — inquiring of your assumptions</mark>
+  - dan inquires "is productivity the actual bottleneck?"
+    - we agree that <mark>communication is the the bottleneck</mark>
+  - i suggest that <mark>we over-indexing on personal productivity over corporate productivity (communication)</mark>
+- ma almost loses me by incorporating an old trope: "maybe the real productivity is the friends we made along the way"
 
 ## 6 The Negative Art of the Good Life
 
