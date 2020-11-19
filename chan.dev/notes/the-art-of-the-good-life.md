@@ -91,61 +91,68 @@ If we don't the choices — once we realize them — will make us useless.
 - i suggest <mark>"preciding"</mark> as the functional value of "pledges"
   - <mark>"decided until proven undecided"</mark>
 
-## 4 Block Box Thinking — Reality Doesn't Care About Your Feelings; or, Why Every False Step Improves Your Life
+## 4 Block Box Thinking
 
-the success after a failing. researchers mind. what is the virtuous change we can make
+Reality Doesn't Care About Your Feelings; or, Why Every False Step Improves Your Life
 
-"in aviation, everything we know is because someone died"
+### Summary
 
-radical exceptance
-black box thinking
+> Quick pain; quick progress
 
-shifting unhappinesa focus
+"Stay with the pain; don't shut this out. This is your pain. This is your burning hand. It's right here." — Tyler Durden
 
-"obscanterantous"
+We have to fight against pain avoidence.  
+We have to run into the spike.  
+We have to be brutal with ourselves if we plan to progress.  
+Pain is progress.
 
-berton russel: nothing is more fatiguing and more exasperating than the daily effort tk believe thjngs that daily become more incredible...
+### Notes
 
-"consider calmly the hypothesis that they are bad plays"
+- the success after a failing. researchers mind. <mark>what is the virtuous change we can make</mark>
+- "in aviation, everything we know is because someone died"
+- <mark>radical exceptance</mark>
+- unhappiness shifts it's focus
+  - Reference <mark> [Comaring down](https://basecamp.com/shapeup/3.5-chapter-14#compare-to-baseline) from Ryan Singer's Shape Up</mark>
+- <mark> [Obscurantist](https://en.wikipedia.org/wiki/Obscurantism): the practice of deliberately presenting information in an imprecise, abstruse manner designed to limit further inquiry and understanding. </mark>
+- "nothing is more fatiguing and more exasperating than the daily effort of believe things that daily become more incredible..." — Bertrand Russell, The Conquest of Happiness
+- <mark> "consider calmly the hypothesis that they are bad plays" </mark>
+- seeing others more clearly than we do ourselves.
+  - i've had a strategy at times to say to trusted advisors "i will do exactly what you tell me to do"
+- if you can't see where you've got a foot wrong, you will fall flat on your face again.
+- "don't wait for the consequences to unfold. if you don't deal with reality, it will deal with you"
+- "problems don't improve with age"
 
-seeing others more clearly than we do ourselves.
-i've had a strategy at times to say to trusted advisors "i will do exactly what you tell me to do"
+### Thoughts with friends
 
-if you can't where you've got a foot wrong, you will fall flat on your face again.
-
-"don't wait foe the consequences to unfold. if you don't deal with reality, it will deal with you"
-
-problems don't improve with age
-
----
-
-- em: annoyed that he said we're don't see our flaws clearly. feels just as critical of self as of others
-  - ally: feels the author has a "tone of authority as if everyone is the same"
-- me: i interpreted it as "it's easier to see when someone else is in the weeds than when we are in the weeds"
-- dma: it's so much easier to deconstruct when they went wrong
-- we put "us" and "them" on opposite ends of a spectrum "it's easy to see where things went wrong ------ it's complicated"
-  - allie feels like she feels like the opposite. she feels she sees where she went wrong, not 'it's complicated'"
-- dma as a tool for objectively noting your own life
-- emily: guided practice of "document what happened" not "how it felt"
+- em is annoyed that he said we don't see our flaws clearly. feels just as critical of herself as of others
+  - ally agrees and feels the author has a "tone of authority as if everyone is the same"
+- i interpret it as "it's easier to see when someone else is in the weeds than when we ourselves are"
+- ma thinks it's so much easier to deconstruct when others went wrong
+  - i suggest that we tende to put "us" and "them" on opposite ends of a continuum: "it's easy to see where things went wrong <------> it's complicated"
+  - allie feels the opposite. she sees where she went wrong and can easily justify why 'it's complicated' for others
+- ma shares journaling as a tool for objectively noting your own life
+- emily likes guided practice of <mark>"document what happened" not "how it felt"</mark>
   - easy to identify self as source of personal anxiety
-  - ma: therapist "you're telling the story wrong.
-- me: obscurantism. refocusing
-  - me: observing your own thoughts "i was the person who inserted the connective tissue between these two objectively unrelated things"
-- allie: this connects to the first chapter. "lying to yourself with or without intention"?
-- dma: back-solving. does this really well at work but not in personal life
-- chan: effective historian at planning center. wait, that's always been a liability. shit. maybe i should stop and just to that publicly instead. at least focus it to _only_ things that can be generalized
-  - emily feels baad this for work. has to reconstruct history every time
-- chan: "in aviation, everything we know is because someone died". feels true but an extreme version of truth
-  - dma is particular in its ability to have enough data
-  - me: measure first
-    - american hubris likes to "intentionally throw out the black box"
-      - the practical effects of that is that, when we have problems, we don't have the tools or capacity to have "productive thought" (ref to allie)
-    - ma: airline vs uber/lyft (prop 22). airlines feel this effect immediately.
-    - me: airlines front-loaded the pain and then developed a practice that informed every day after that. quick pain; quick progress. vs hubris first, solutions later.
-    - ma: it's easier to write fixes and never sit with the pain
--
+  - ma's therapist says "you're telling the story wrong"
+- i mention what a cool fucking word "obscurantist" is — <mark>de-focusing the core of your problem as a way to avoid finding a solution</mark>
+  - observing my own thoughts <mark>"i was the person who inserted the connective tissue between these two objectively unrelated things"</mark>
+- allie harkens back to [the first chapter](#1-mental-accounting) — <mark>"lying to yourself with or without intention"</mark>?
+- ma calls this "back-solving". does this really well at work but not in personal life
+  - see also [retroactive continuity (ret-con)](https://en.wikipedia.org/wiki/Retroactive_continuity)
+- <mark>i'm an effective historian at planning center... wait, that's always been a liability. shit. maybe i should stop and just do that publicly instead. at least focus it to _only_ things that can be generalized</mark>
+  - emily feels bad at this for work. has to reconstruct history every time
+- i mention the line "in aviation, everything we know is because someone died". feels true but an extreme version of truth
+  - dma asks "can we ever have enough data?"
+  - i suggest that we can always measure first. don't have to have _all_ data but definitely enough to prove a thesis
+    - <mark>american hubris likes to "intentionally throw out the black box"</mark>
+      - <mark>the practical effects of that is that, when we have problems, we don't have the tools or capacity to have "productive thought" (ref to allie)</mark>
+    - ma consideres airline vs uber/lyft (prop 22). airlines feel effects immediately
+    - i say that airlines front-loaded the pain and then developed a practice that informed every day after that. <mark>quick pain; quick progress</mark>. vs hubris first, solutions later.
+    - ma says (of work) it's easier to write fixes than to sit with the pain
 
-## 5 Counterproductivity Why Timesavers Are Often Timewasters
+## 5 Counterproductivity
+
+Why Timesavers Are Often Timewasters
 
 5 Counter-productivity
 Why time savers are often time wasters
