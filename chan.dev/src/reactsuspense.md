@@ -1,6 +1,5 @@
 ---
 layout: layouts/note.njk
-permalink: /reactsuspense/
 ---
 
 # React Suspense
