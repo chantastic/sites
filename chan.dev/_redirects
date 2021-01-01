@@ -1,4 +1,5 @@
 /blog/* /posts/:splat
+/discord https://discord.gg/q9ZdBgP
 
 /react/concurrent/concurrent-ui-patterns--experimental /notes/react/concurrent/concurrent-ui-patterns--experimental/  
 /react/concurrent/introducing-concurrent-mode--experimental /notes/react/concurrent/introducing-concurrent-mode--experimental/
