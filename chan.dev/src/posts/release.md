@@ -13,7 +13,7 @@ Carry less to move quickly.
 
 ---
 
-_At the end of my journals, I write my discover as an imperative. That's the bit above. But here's the unadulterated journal entry for context._
+_At the end of my journals, I write my discovery as an imperative. That's the bit above. But here's the unadulterated journal entry for context._
 
 ## Entry: Clarity
 
@@ -50,4 +50,4 @@ If you can't take it with you, what is worth keeping? What should I remove now? 
 
 It's time to let go and let go of the sinking.
 
-_\* It was actually Keith that introduced me to Clarity. But that's a less sexy story. The nameless introduced me to The Anniversary — a band with the greatest sound of all time._
+_\* It was actually Keith that introduced me to Clarity. But that's a less sexy story. The nameless introduced me to The Anniversary — my favorite band, with the greatest sound of all time._
