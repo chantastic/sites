@@ -55,7 +55,7 @@ Work on the walls and corners behind you first. These are the worst offenders fo
 
 ## Go forth!
 
-This non-nerd mic setup serve you well.
+This non-nerd, off-camera mic will serve you well.
 And it'll grow with you, should you decide to up your video game with a DSLR/mirrorless camera.
 
 ---
