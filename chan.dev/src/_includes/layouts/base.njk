@@ -3,10 +3,13 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ title or metadata.title }}</title>
-    <meta name="description" content="{{ description or metadata.description }}">
+    <title property="og:title">{{ title or metadata.title }}</title>
+    <meta name="description" property="og:description" content="{{ description or metadata.description }}">
     {% for property, content in og %}
       <meta property="og:{{property}}" content="{{content}}"/>
+    {% endfor %}
+    {% for property, content in twitter %}
+      <meta property="twitter:{{property}}" content="{{content}}"/>
     {% endfor %}
     <link rel="stylesheet" href="{{ '/css/index.css' | url }}">
     <link rel="stylesheet" href="{{ '/css/tmpl-book-note.css' | url }}">
