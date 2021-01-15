@@ -63,7 +63,7 @@ With nvm, run `nvm install 14` in the project root and you're good to go.
 
 #### Docker (optional)
 
-**UPDATE: [Dan Abramov](https://twitter.com/dan_abramov) clarified that Docker is totally optional. It's available for folks who prefer to run Postgres in a cointainer. The [README has been updated](https://github.com/reactjs/server-components-demo/commit/2b9eddd49b9648468ddeab9aee0e06eaf3edce5f) to make this even clearer.**
+**UPDATE: Docker is optional. It's available for folks who prefer to run Postgres in a cointainer. The [README has been updated](https://github.com/reactjs/server-components-demo/commit/2b9eddd49b9648468ddeab9aee0e06eaf3edce5f) to make this even clearer.**
 
 If you prefer not to install Postgres globally, you can use `docker-compose` to run the `server-components-demo`.  
 Find [platform-specific instructions here](https://docs.docker.com/compose/install/).
