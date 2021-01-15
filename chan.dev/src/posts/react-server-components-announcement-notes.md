@@ -37,13 +37,17 @@ He documented his findings and first impressions [in this gist](https://gist.git
 
 ### Complications
 
-The demo app is NOT straight forward.  
-I think this is related to two things:
+When exploring this demo, remember that it has two goals:
 
-- It's a full stack application
-- It's trying desperately not to use libraries like [react-router](https://reactrouter.com) for routing
+- Introduce folks to an experimental feature
+- Illuminate areas where framework builders ([Next.js](https://nextjs.org), [Remix](https://remix.run), etc…) can start integrating
 
-At this point, this demo feels geared toward meta-frawork creators, e.g., [Next.js](https://nextjs.org) and [Remix](https://remix.run)
+I'm in that first group of people.  
+If you're also in that group, stick to the [Interesting Things to Try](https://github.com/reactjs/server-components-demo#interesting-things-to-try) section of the README.  
+This section gently introduces you to the proposed developer workflow.
+
+If you go too far off course, you'll notice quickly that there is no Router.  
+This is where frameworks will pick up.
 
 ### Setup
 
@@ -70,11 +74,11 @@ Find [platform-specific instructions here](https://docs.docker.com/compose/insta
 
 On a mac, the quickest path to a demo is installing the [Docker Desktop Mac App](https://docs.docker.com/docker-for-mac/install/) — which includes `docker-compose`.
 
-#### Postgres DB
+#### Postgres Setup (only necessary if you didn't use Docker)
 
 _(if you don't want to endure this step, [Rodrigo Pombo](@pomber) has a [DB-less fork of `server-components-demo`](https://github.com/pomber/server-components-demo/))_
 
-[DB Setup] instructions are [here](https://github.com/reactjs/server-components-demo#db-setup).
+DB Setup instructions are [here](https://github.com/reactjs/server-components-demo#db-setup).
 
 [Platform-specefic installation instructions here](https://wiki.postgresql.org/wiki/Detailed_installation_guides).  
 On a mac, the quickest path to a demo is installing [Postgress.app](https://postgresapp.com).
@@ -106,4 +110,5 @@ Same sentiment for inline Postgres queries in `.server.js` components.
 ## First impressions
 
 All things considered, this is an enjoyable experiment.  
-Clearly this isn't intended for public consumption yet but I love seeing the concepts shared openly with a workable public demo.
+If you stick to the [Interesting Things to Try](https://github.com/reactjs/server-components-demo#interesting-things-to-try) section, there's a lot to be learned.
+I'm grateful to the React Team for openly sharing these experiments with a workable public demo.
