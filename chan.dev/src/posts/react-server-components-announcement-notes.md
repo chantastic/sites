@@ -106,6 +106,7 @@ Same sentiment for inline Postgres queries in `.server.js` components.
 
 - [verces/react-server-components](https://github.com/vercel/next-server-components)
 - [netlify/server-components-demo](https://github.com/netlify/react-server-components-demo)
+- [prisma/server-component-demo](https://github.com/prisma/server-components-demo)
 
 ## First impressions
 
