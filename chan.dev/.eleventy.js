@@ -75,6 +75,21 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("css");
   eleventyConfig.addPassthroughCopy("_redirects");
 
+  eleventyConfig.addShortcode("youtube", function (url) {
+    // https://stackoverflow.com/a/21607897
+    function getId(url) {
+      const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/;
+      const match = url.match(regExp);
+
+      return match && match[2].length === 11 ? match[2] : null;
+    }
+
+    const videoId = getId(url);
+    return `<div data-responsive-youtube-container>
+  <iframe src="//www.youtube.com/embed/${videoId}" frameborder="0" allowfullscreen></iframe>
+</div>`;
+  });
+
   /* Markdown Overrides */
   let markdownLibrary = markdownIt({
     html: true,

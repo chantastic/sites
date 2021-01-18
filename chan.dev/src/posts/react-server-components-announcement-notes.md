@@ -16,7 +16,7 @@ These notes are just a few ideas and links I'd like to hold onto for my next pas
 
 [server-components-demo](https://github.com/reactjs/server-components-demo)
 
-<iframe width="640" height="360" src="https://www.youtube.com/embed/TQQPAU21ZUw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+{% youtube "https://youtu.be/TQQPAU21ZUw" %}
 
 ## Discussion
 
