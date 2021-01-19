@@ -31,6 +31,7 @@
     "luxon": "^1.21.3",
     "markdown-it": "^8.4.2",
     "markdown-it-anchor": "^5.2.5",
+    "node-fetch": "^2.6.1",
     "request": "^2.88.2"
   },
   "dependencies": {}

@@ -5,6 +5,7 @@ const pluginSyntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const pluginNavigation = require("@11ty/eleventy-navigation");
 const markdownIt = require("markdown-it");
 const markdownItAnchor = require("markdown-it-anchor");
+const fetch = require("node-fetch");
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(pluginRss);
@@ -74,6 +75,14 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("img");
   eleventyConfig.addPassthroughCopy("css");
   eleventyConfig.addPassthroughCopy("_redirects");
+
+  eleventyConfig.addShortcode("tweet", async function (url) {
+    let { html } = await fetch(
+      `https://publish.twitter.com/oembed?url=${url}`
+    ).then((res) => res.json());
+
+    return html;
+  });
 
   eleventyConfig.addShortcode("youtube", function (url) {
     // https://stackoverflow.com/a/21607897
