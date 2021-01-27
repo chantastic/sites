@@ -16,8 +16,9 @@
     {# add article:section and article:tag with tags #}
     {# add og:image, og:image:secure_url, og:image:width, og:image:height #}
     <meta property="twitter:site" content="@chantastic" />
-    <meta property="og:image" content="https://res.cloudinary.com/chantastic/image/upload/l_text:Roboto_100_bold:chan%2edev,co_black/v1610689497/white-twitter-card_rrnh0v.jpg" />
-    <meta property="twitter:image" content="https://res.cloudinary.com/chantastic/image/upload/l_text:Roboto_100_bold:chan%2edev,co_black/v1610689497/white-twitter-card_rrnh0v.jpg" />
+    <meta property="og:image" content="{{ og.image or 'https://res.cloudinary.com/chantastic/image/upload/l_text:Roboto_100_bold:chan%2edev,co_black/v1610689497/white-twitter-card_rrnh0v.jpg'}}" />
+    <meta property="twitter:image" content="{{ og.image or 'https://res.cloudinary.com/chantastic/image/upload/l_text:Roboto_100_bold:chan%2edev,co_black/v1610689497/white-twitter-card_rrnh0v.jpg'}}" />
+    <meta property="twitter:card" content="summary_large_image" />
     
     {% for property, content in og %}
       <meta property="og:{{property}}" content="{{content}}"/>
