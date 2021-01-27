@@ -39,11 +39,29 @@ _italicized text_
 `inlinecode block`
 
 ```js
+// JS code block
 let yo = "blah";
 ```
 
 ```jsx
+// jsx code block
 function MyComponent({ name, ...props }) {
   return <div {...props}>Hello {name}!</div>;
 }
+```
+
+```diff
+// diff
+- function chant(message) {
++ export function chant(message) {
+  return [...Array(3)].map(() => `${message}!`).join(" ");
+}
+```
+
+```js/0,2-3
+// this
+// block
+// has
+// line
+// highlights
 ```

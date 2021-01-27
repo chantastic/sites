@@ -1,3 +1,13 @@
 pre[class*="language-"] {
   padding: 1rem;
 }
+
+.token.deleted {
+  color: #f92672;
+  text-decoration: none;
+}
+
+.token.inserted {
+  color: #a6e22e;
+  border-bottom: none;
+}
