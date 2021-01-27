@@ -56,7 +56,7 @@ console.log(hype("moduuuuuules"));
 
 Module effects _always_ run at import.
 
-In a mixed module, you can import the effects without exports but you can't exports without the effects.
+In a mixed module, you *can* import only the effects but you *can not* import only the exports.
 
 ## Side effect imports in the wild…
 
