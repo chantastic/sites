@@ -7,7 +7,7 @@ layout: layouts/post.njk
 Modules — in JavaScript — can be imported strictly for their side effects.
 
 ```js
-import "./module-with-side-effects.mjs";
+import "./string-utils.mjs";
 ```
 
 Notice.
@@ -18,8 +18,8 @@ We're simply importing the global effects of the module, as if the code lived in
 On the module side, simply write code with effects.
 
 ```js
-// file: ./module-with-side-effects.mjs
-console.info("module-with-side-effects loaded");
+// file: ./string-utils.mjs
+console.info("string-utils loaded.");
 ```
 
 ## Conditional side effects with dynamic imports
@@ -36,20 +36,25 @@ We can load modules with side effects conditionally, with an immediately invoked
 
 Here, you can imagine checking an environment variable before importing side effects.
 
-## Mixing side effects and exports
+## Don't mix side effects and exports
 
-Modules can contain a mix of exports and side effects.  
-I'd recommend _NOT_ mixing these but it's possible.
+Modules can contain a mix of exports and effects.  
+While there may be a good reason to do this, it also make your imports unpredictable.
 
-To utilize both a modules side-effects and and exports, you'll need to import them separately:
+Here's why I recommend avoiding the mix:
 
 ```js
-import "./module-with-side-effects.mjs"; // load side effects
-import hype from "./module-with-side-effects.mjs"; // load default export
+import hype from "./string-utils.mjs";
+// loads both exports AND side effects
 
-hype("moduuuuuules");
+console.log(hype("moduuuuuules"));
+// => string-utils loaded.
 // => MODUUUUUULES!!!
 ```
+
+Module effects _always_ run at import.
+
+In a mixed module, you can import the effects without exports but you can't exports without the effects.
 
 ## Side effect imports in the wild…
 
@@ -57,11 +62,9 @@ I see this style of import used with Webpack to import stylesheets.
 
 In this case, Webpack is packaging up CSS as JavaScript and appending it to the browser's [CSSOM](https://developer.mozilla.org/en-US/docs/Web/API/CSS_Object_Model).
 
-<script src="https://cdn.podia.com/embeds.js" async="async"></script>
-
 ## Go pro
 
 This is part of a course I'm build on modules at [lunch.dev](https://www.lunch.dev).  
 When live, members get access to this and other courses on React.
 
-<a href="https://www.lunch.dev/member" data-podia-embed="button" data-text="Join lunch.dev for videos">Join lunch.dev</a>
+{% lunch-dev-cta %}
