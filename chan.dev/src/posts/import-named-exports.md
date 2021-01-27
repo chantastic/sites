@@ -27,16 +27,16 @@ We can expose `hype` to other modules by prepending the `export` keyword.
 }
 ```
 
-Now `hype` is a _named export_ from the `string-utils` module.
+`hype` is now a _named export_ from the `string-utils` module.
 
-Now `export`-ing something doesn't mean it is automatically available throughout the codebase. Every `export` requires an `import`.
+Keep in mind that `export`-ing something doesn't mean it is automatically available throughout the codebase. Every `export` requires an `import`.
 
 ## Import named exports
 
 Anything one module exports can be imported and used by another module.
 
 ```js
-import { hype } from "./string-utilss.mjs";
+import { hype } from "./string-utils.mjs";
 
 console.log(hype("moduuuules"));
 // => MODUUUULES!!!
@@ -54,10 +54,10 @@ We can only import what we can access by name.
 So, the import statement below would fail (with our current module):
 
 ```js
-import { hype, chant /* oops. no chant */ } from "./string-utilss.mjs";
+import { hype, chant /* oops. no chant */ } from "./string-utils.mjs";
 
 // SyntaxError:
-// The requested module './string-utilss.mjs' does not provide an export named 'chant'
+// The requested module './string-utils.mjs' does not provide an export named 'chant'
 ```
 
 ## Import multiple named modules
