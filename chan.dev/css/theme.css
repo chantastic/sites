@@ -21,6 +21,7 @@ h1, h2 {
   margin-top: 1em;
   margin-bottom: 0;
 }
+/*
 @media (prefers-color-scheme: dark) {
   html,
   body {
@@ -39,6 +40,7 @@ h1, h2 {
     color: hsl(0 0% 100% / 0.86);
   }
 }
+*/
 
 @media (prefers-color-scheme: light) {
   html,
