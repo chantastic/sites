@@ -84,7 +84,14 @@ module.exports = function (eleventyConfig) {
     return html;
   });
 
-  eleventyConfig.addShortcode("youtube", function (url) {
+  eleventyConfig.addShortcode(
+    "lunch-dev-cta",
+    function (text = "Join lunch.dev for videos") {
+      return `<script src="https://cdn.podia.com/embeds.js" async="async"></script><a href="https://www.lunch.dev/member" data-podia-embed="button" data-text="${text}">${text}</a>`;
+    }
+  );
+
+  eleventyConfig.addShortcode("youtube-video", function (url) {
     // https://stackoverflow.com/a/21607897
     function getVideoIdFromYouTubeURL(url) {
       let regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/;

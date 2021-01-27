@@ -16,7 +16,7 @@ These notes are just a few ideas and links I'd like to hold onto for my next pas
 
 [server-components-demo](https://github.com/reactjs/server-components-demo)
 
-{% youtube "https://youtu.be/TQQPAU21ZUw" %}
+{% youtube-video "https://youtu.be/TQQPAU21ZUw" %}
 
 ## Discussion
 
@@ -107,6 +107,10 @@ Same sentiment for inline Postgres queries in `.server.js` components.
 - [verces/react-server-components](https://github.com/vercel/next-server-components)
 - [netlify/server-components-demo](https://github.com/netlify/react-server-components-demo)
 - [prisma/server-component-demo](https://github.com/prisma/server-components-demo)
+
+## Other references
+
+- [React Server Components by Addi Osmani](https://addyosmani.com/blog/react-server-components/)
 
 ## First impressions
 
