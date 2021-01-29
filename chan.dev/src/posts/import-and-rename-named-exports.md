@@ -2,6 +2,8 @@
 title: Import and Rename Named Exports
 date: 2021-01-27
 layout: layouts/post.njk
+og:
+  image: "https://chan.dev/og-image/import-and-rename-named-exports.jpg"
 ---
 
 JavaScript Modules have a syntax for remaning named exports, at import.

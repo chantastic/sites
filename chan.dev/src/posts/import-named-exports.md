@@ -2,6 +2,8 @@
 title: Import Named Exports
 date: 2021-01-26
 layout: layouts/post.njk
+og:
+  image: "https://chan.dev/og-image/import-named-exports.jpg"
 ---
 
 By default, expressions and assignments declared inside a module aren't available outside of that module.
