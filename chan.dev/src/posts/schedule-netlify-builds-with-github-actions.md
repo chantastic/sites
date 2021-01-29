@@ -82,7 +82,7 @@ If we want to keep data fresh, **we have to manually re-build the site at least 
 
 Using Netlify build hooks, we can automate those builds on a schedule!
 
-Paired with GitHub Actions, the cron job and build hook url stay in our code, not a third-party service.
+There are plenty of services that will run a cron job. What I like about a GitHub Actions based solution is that everything is kept in the repo. The source can be maintained and documented with the rest of the project!
 
 ## Resources
 
@@ -97,3 +97,5 @@ Paired with GitHub Actions, the cron job and build hook url stay in our code, no
 **Watch me and the lunch.dev crew struggle thru this the first time**
 
 {% youtube-video "https://youtu.be/155Q4gDU1Uo" %}
+
+<script async data-uid="25d3dad1c6" src="https://chantastic.ck.page/25d3dad1c6/index.js"></script>
