@@ -2,6 +2,8 @@
 title: Schedule Netlify Builds with GitHub Actions, Chron, and Webhooks
 date: 2021-01-28
 layout: layouts/post.njk
+og:
+  image: "https://chan.dev/og-image/schedule-a-netlify-builds-with-github-actions.jpg"
 ---
 
 ## Instructions
