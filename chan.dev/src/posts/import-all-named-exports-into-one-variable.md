@@ -63,7 +63,7 @@ import {
 By reducing moduling imports to a single reference, we eliminate the need to rename the colliding exports.
 
 ```js
-import * as Email from "./contact.js";
+import * as Email from "./email.js";
 import * as Contact from "./contact.js";
 
 // Email.List, Contact.List, Email.Item, Contact.Item, etc.
