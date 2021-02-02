@@ -68,7 +68,7 @@ Here's what to expect: https://github.com/LunchDevCommunity/community-calendar/a
 
 ## Extra credit
 
-Get fancy and ensure that nobody spams your build hook with a [GitHub Action environment variables](https://docs.github.com/en/actions/reference/encrypted-secrets#using-encrypted-secrets-in-a-workflow).
+Get fancy and ensure that nobody spams your build hook with a [GitHub Action secrets](https://docs.github.com/en/actions/reference/encrypted-secrets#using-encrypted-secrets-in-a-workflow).
 
 ## A Story
 
