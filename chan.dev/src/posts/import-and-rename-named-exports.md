@@ -32,7 +32,7 @@ What if the modules we're working in already has a `hype` function? Are we stuck
 
 Nope!
 
-We use the `as` keywoard to rename named exports locally.
+We use the `as` keyword to rename named exports locally.
 
 ```diff
 - import { hype, chant } from "./string-utils.mjs";
@@ -47,7 +47,7 @@ We can assign named exports to any free, local identifier.
 
 ## My take
 
-The `as` keyword gives us a way to avoid naming collisions, or use a name that's more contexctually accurate. This is great for working with modules in a codebase _and_ the larger npm ecosystem.
+The `as` keyword gives us a way to avoid naming collisions, or use a name that's more contextually accurate. This is great for working with modules in a codebase _and_ the larger npm ecosystem.
 
 However, I find this to be a less ideal form collision avoidance than importing all of a module's contents into a single variable.
 
