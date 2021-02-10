@@ -11,7 +11,8 @@ p {
   /* color: #2c3e50; */
   text-rendering: optimizeLegibility;
 }
-h1, h2 {
+h1,
+h2 {
   font-family: "Source Sans Pro", sans-serif;
   font-weight: 900;
   letter-spacing: -0.02em;
@@ -48,7 +49,8 @@ h1, h2 {
     background: white;
     color: #222;
   }
-  h1, h2 {
+  h1,
+  h2 {
     color: black;
   }
   a[href] {
@@ -57,4 +59,12 @@ h1, h2 {
   a[href]:visited {
     color: #222;
   }
+}
+
+/* custom */
+blockquote {
+  margin: 2rem 0;
+  padding: 0 2rem;
+  border-left: 4px solid #ddd;
+  display: block;
 }
