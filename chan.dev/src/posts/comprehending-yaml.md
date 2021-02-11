@@ -12,6 +12,16 @@ Before [yesterday's post](../a-non-comprehensive-guide-to-yaml-for-folks-who-lik
 
 And after sleeping on my exercise, I have a better picture of what's going on.
 
+- [YAML infers complex types](#yaml-infers-complex-types)
+- [YAML infers simple types](#yaml-infers-simple-types)
+- [YAML shorthand can be confusing](#yaml-shorthand-can-be-confusing)
+- [YAML patterns](#yaml-patterns)
+  - [Arrays of arrays](#array-of-arrays-%3A-sequence-of-sequences)
+  - [Arrays of objects](#array-of-objects-%3A-sequence-of-mappings)
+  - [Objects of arrays](#object-of-arrays-%3A-mapping-of-sequences)
+  - [Objects of objects](#object-of-objects-%3A-mapping-of-mappings)
+- [All mixed up](#all-mixed-up)
+
 ## YAML infers complex types
 
 As much as possible, YAML infers complex data structures by the data it composes.
@@ -117,7 +127,7 @@ The keys are strings and the values are numbers.
 
 After looking at so much JavaScript and JSON, this is a little unsettling but — in simple examples like this — there's a simplicity to the representation.
 
-## YAML's shorthand can be confusing
+## YAML shorthand can be confusing
 
 Below we have an array (sequence) of objects (mappings).
 
