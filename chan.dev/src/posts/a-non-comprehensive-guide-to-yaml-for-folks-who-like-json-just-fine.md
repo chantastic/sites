@@ -2,6 +2,8 @@
 title: A Non-Comprehensive Guide to YAML for Folks Who Like JSON Just Fine
 date: 2021-02-10
 layout: layouts/post.njk
+tags:
+  - yaml
 ---
 
 > YAML is a human friendly data serialization standard for all programming languages.
@@ -174,8 +176,12 @@ The National:
 **YAML**
 
 ```yaml
-Taylor Swift: { album_count: 9, label: Republic }
-The National: { album_count: 8, label: 4AD }
+Taylor Swift:
+  album_count: 9
+  label: Republic
+The National:
+  album_count: 8
+  label: 4AD
 ```
 
 **JSON**
