@@ -15,7 +15,7 @@ And it looks like the people who run in my circles are also excluded.
 
 ## Mapping to JSON
 
-Between Eleventy, GitHub Actions, and recent a forey into serverless, I'm using a more YAML. And I don't understand it.
+Between Eleventy, GitHub Actions, and a recent foray into serverless, I'm using a more YAML. And I don't understand it.
 
 This is mapping for my JSON-acquainted brain.
 
@@ -293,25 +293,25 @@ jobs:
 
 ### Complex types are inferred
 
-The structures of complex types are hidden in this YAML.  
-They get inferred by the structure of the types inside of them.
+The structures of complex types are hidden in YAML.  
+They get inferred by the structure of included data.
 
-So, keep a look out for `-` and `:` which indicate the containing structure.
+Keep a look out for `-` and `:` which indicate the containing structure.
 
 ### Dash `-`
 
 If you see a dash `-`, it means you're describing a single array item.  
-Which means you're in an array.
+This means you're in an array.
 
 ### Colon `:`
 
 If you see a color `:` separating two values, it means your describing a key-value pair.
-Which means your in an object.
+This means you're in an object.
 
 ### In the wild
 
-Since YAML is used primarily for configuration, it's likely that you're root type is `object`.  
-At least that's generally the case for Markdown Frontmatter, GitHub Actions, and CloudFormation templates.
+Since YAML is used often for configuration, it's likely that your root type is `object`.  
+At least that's the case for Markdown Frontmatter, GitHub Actions, and CloudFormation templates.
 
 ## Resources and further reading
 
