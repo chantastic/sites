@@ -9,13 +9,13 @@ layout: layouts/post.njk
 
 I don't know precisely which humans YAML is friendly to but I'm not one of them.
 
-And it looks like the people who run in my circles are also exempt.
+And it looks like the people who run in my circles are also excluded.
 
 {% tweet 'https://twitter.com/chantastic/status/1359601176434544640?s=20' %}
 
 ## Mapping to JSON
 
-Between Eleventy, GitHub Actions, and recent forey into serverless, I'm using a lot more YAML.
+Between Eleventy, GitHub Actions, and recent a forey into serverless, I'm using a more YAML. And I don't understand it.
 
 This is mapping for my JSON-acquainted brain.
 
@@ -24,9 +24,11 @@ This is mapping for my JSON-acquainted brain.
 - [Array of objects — one value](#array-of-objects-—-single-value)
 - [Array of objects — many values](#array-of-objects-—-many-values)
 - [Object of keyed arrays of strings](#object-of-keyed-arrays-of-strings)
-- [Array of array of mixed simple types](#array-of-array-of-mixed-simple-types)
+- [Object of keyed objects with mixed values](#object-of-keyed-objects-with-mixed-values)
+- [Array of arrays with mixed values](#array-of-arrays-with-mixed-values)
 - [Nodes (variables)](#nodes)
 - [Sample GitHub Action](#sample-github-action)
+- [Takeaways](#takeaways)
 - [Resources and further reading](#resources-and-further-reading)
 
 ## Comments
@@ -43,7 +45,7 @@ JSON doesn't support comments.
 
 ## Array of strings
 
-_YAML: Sequence of Scalars_
+> Sequence of Scalars
 
 **YAML**
 
@@ -61,13 +63,17 @@ _YAML: Sequence of Scalars_
 
 ## Array of objects — single value
 
-_YAML: Mapping Scalars to Scalars_
+> Mapping Scalars to Scalars
+
+**YAML**
 
 ```yaml
 - Evermore: 2020
 - Folklore: 2020
 - Lover: 2019
 ```
+
+**JSON**
 
 ```json
 [
@@ -85,7 +91,7 @@ _YAML: Mapping Scalars to Scalars_
 
 ## Array of objects — many values
 
-_YAML: Sequence of Mappings_
+> Sequence of Mappings
 
 **YAML**
 
@@ -118,7 +124,7 @@ _YAML: Sequence of Mappings_
 This syntax confused the shit out of me.  
 This code is auto-formatted by prettier putting the dash and the first property on the same line.
 
-The docs show the dash and first property on different lines which is much more legible.
+YAML docs show the dash and first property on different lines which is much more legible.
 
 ```
 -
@@ -133,23 +139,27 @@ The docs show the dash and first property on different lines which is much more 
 
 ## Object of keyed arrays of strings
 
-_YAML: Mapping Scalars to Sequences_
+> Mapping Scalars to Sequences
+
+**YAML**
 
 ```yaml
-taylor swift:
+Taylor Swift:
   - Evermore
   - Folklore
   - Lover
-the national:
+The National:
   - I Am Easy to Find
   - Sleep Well Beast
   - Trouble Will Find Me
 ```
 
+**JSON**
+
 ```json
 {
-  "taylor swift": ["Evermore", "Folklore", "Lover"],
-  "the national": [
+  "Taylor Swift": ["Evermore", "Folklore", "Lover"],
+  "The National": [
     "I Am Easy to Find",
     "Sleep Well Beast",
     "Trouble Will Find Me"
@@ -157,31 +167,9 @@ the national:
 }
 ```
 
-## Array of array of mixed simple types
+## Object of keyed objects with mixed values
 
-_YAML: Sequence of Sequences_
-
-**YAML**
-
-```yaml
-- [name, album_count, label]
-- [Taylor Swift, 9, Republic]
-- [The National, 8, 4AD]
-```
-
-**JSON**
-
-```json
-[
-  ["name", "album_count", "label"],
-  ["Taylor Swift", 9, "Republic"],
-  ["The National", 8, "4AD"]
-]
-```
-
-##
-
-_YAML: Mapping of Mappings_
+> Mapping of Mappings
 
 **YAML**
 
@@ -205,13 +193,35 @@ The National: { album_count: 8, label: 4AD }
 }
 ```
 
+## Array of arrays with mixed values
+
+> Sequence of Sequences
+
+**YAML**
+
+```yaml
+- [name, album_count, label]
+- [Taylor Swift, 9, Republic]
+- [The National, 8, 4AD]
+```
+
+**JSON**
+
+```json
+[
+  ["name", "album_count", "label"],
+  ["Taylor Swift", 9, "Republic"],
+  ["The National", 8, "4AD"]
+]
+```
+
 ## Nodes
 
 **YAML**
 
 ```yaml
 Folklore:
-  # Following node labeled SS
+  # Following node labeled TS and AD
   - &TS Taylor Swift
   - &AD Aaron Dressner
   - Jack Antonoff
@@ -223,8 +233,8 @@ I Am Easy to Find:
 
 **JSON**
 
-No JSON equivalent.  
-But this is the output from the above YAML.
+_No JSON equivalent._  
+_But this is the output from the above YAML._
 
 ```json
 {
@@ -278,6 +288,30 @@ jobs:
   }
 }
 ```
+
+## Takeaways
+
+### Complex types are inferred
+
+The structures of complex types are hidden in this YAML.  
+They get inferred by the structure of the types inside of them.
+
+So, keep a look out for `-` and `:` which indicate the containing structure.
+
+### Dash `-`
+
+If you see a dash `-`, it means you're describing a single array item.  
+Which means you're in an array.
+
+### Colon `:`
+
+If you see a color `:` separating two values, it means your describing a key-value pair.
+Which means your in an object.
+
+### In the wild
+
+Since YAML is used primarily for configuration, it's likely that you're root type is `object`.  
+At least that's generally the case for Markdown Frontmatter, GitHub Actions, and CloudFormation templates.
 
 ## Resources and further reading
 
