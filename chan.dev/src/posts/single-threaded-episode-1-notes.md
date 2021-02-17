@@ -8,7 +8,7 @@ Today [Jenn Creighton](https://twitter.com/gurlcode/) launched [single-threaded 
 
 Jenn joined me [on React Podcast in November](https://reactpodcast.com/episodes/118) and her episode is fire. Listening to it with the [Discord](https://events.lunch.dev/discord) crew unlocked new ways for us to talk about our feelings and experiences.
 
-So, we're getting the crew together to learn even more from Jenn, with [single-threaded episode parties](https://discord.com/channels/105756917887950848/809132246169944076/811641220613931020),  Wednesdays 10am PT.
+So, we're getting the crew together to learn even more from Jenn, with [single-threaded episode parties](https://discord.com/channels/105756917887950848/809132246169944076/811641220613931020), Wednesdays 10am PT.
 
 I'm amazed at how this first episode turned out. Jenn is a natural and [Erin Fox](https://anchor.fm/single-threaded/episodes/Erin-Fox-on-Interviewing-eqg5nn) is an incredible first guest.
 
@@ -36,25 +36,25 @@ _These are not direct quotes. They are summaries, as I heard them. Listen to the
 
 > Take-home challenges usually come with a time limit. Disregard it. They expect you to finish.
 > "Yeah. I Spent about 4 hours." In reality it was 12 and I didn't sleep.
-> — Erin @10:17
+> — Erin @0:17
 
 > Don't interview with your favorite company first. Save them for later in the process to get your interview skill back up.
-> Erin @10:19
+> Erin @0:19
 
 > Interview on Thursday or Friday. People feel better those days. Everyone is sad on Monday. No Monday interviews.
-> Erin @10:20
+> Erin @0:20
 
 > Sometimes, when you get rejected it's because the company can't properly support you and someone is looking out for you.
-> Jenn @10:24
+> Jenn @0:24
 
 > The more I interviewed the more I learned to not put all my eggs in one basket. It took awhile, to learn when to finally get excited, but in the end it's worth it to wait.
 > Erin in Discord Chat, answering how to not get attached any one position.
 
 > When you're waiting, or handling a rejection, do a thing you're good at. For me, that's be baking.
-> Erin @10:28
+> Erin @0:28
 
 > Date lots of companies
-> @10:31
+> @0:31
 
 Erin's list of questions to ask companies:
 
@@ -63,10 +63,10 @@ Erin's list of questions to ask companies:
 Erin's post on [interview red flags](https://medium.com/@erinfoox/you-have-a-typo-in-one-of-your-github-repos-interview-red-flags-b4853671b156).
 
 > When you get positive feedback, keep it in a file for your future resume.
-> Erin @10:43
+> Erin @0:43
 
 > Poppy (the things you like today) can change.
-> Erin @10:43
+> Erin @0:43
 
 ## Follow-up questions
 
