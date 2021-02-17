@@ -77,3 +77,9 @@ _(personal summary, note quote)_
 > Recipes are usually paired with a story. Stories are just as important as recipes.
 >
 > Code stories don't get passed down as much as they should. Solutions and patterns have a history that illustrates their value. It's important to share solutions with the stories that inspired them.
+
+## Keep in touch
+
+<br />
+
+<script async data-uid="25d3dad1c6" src="https://chantastic.ck.page/25d3dad1c6/index.js"></script>
