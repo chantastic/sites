@@ -1,5 +1,6 @@
-/blog/* /posts/:splat
+/blog/*  /posts/:splat
 /discord https://discord.gg/q9ZdBgP
+/avo     /posts/avo-a-bem-dialect-using-data-attributes/
 
 /react/concurrent/concurrent-ui-patterns--experimental /notes/react/concurrent/concurrent-ui-patterns--experimental/  
 /react/concurrent/introducing-concurrent-mode--experimental /notes/react/concurrent/introducing-concurrent-mode--experimental/
