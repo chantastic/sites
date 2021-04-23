@@ -68,3 +68,7 @@ blockquote {
   border-left: 4px solid #ddd;
   display: block;
 }
+
+code {
+  font-size: 1.7ex;
+}
