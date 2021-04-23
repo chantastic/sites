@@ -1,6 +1,8 @@
-/blog/*  /posts/:splat
+/blog/* /posts/:splat
 /discord https://discord.gg/q9ZdBgP
-/avo     /posts/avo-a-bem-dialect-using-data-attributes/
+/avo /posts/avo-a-bem-dialect-using-data-attributes/
+/colorway https://github.com/chantastic/colorway
+/youtube https://www.youtube.com/channel/UCXpmUxvG37qpckRHdkstf5w
 
 /react/concurrent/concurrent-ui-patterns--experimental /notes/react/concurrent/concurrent-ui-patterns--experimental/  
 /react/concurrent/introducing-concurrent-mode--experimental /notes/react/concurrent/introducing-concurrent-mode--experimental/
