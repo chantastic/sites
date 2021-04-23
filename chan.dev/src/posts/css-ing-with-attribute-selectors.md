@@ -65,24 +65,23 @@ Fortunately, there is a `*=` matcher to match a character set anywhere in the at
 
 Let's use it to turn urls with a fragment identifier green:
 
-```css
+```diff
 a[href=""],
 a[href="#"],
 a[href^="http:"] { color: red }
-
-a[href*="#"] { color: green }
++ a[href*="#"] { color: green }
 ```
 
 Warning! This selector is inclusive of URLS that *only* have a pound value, too! Meaning are placeholder links have also turned green.
 
 Not to fear, we can solve this by ensuring that the most specific rule is declared last:
 
-```css
-a[href*="#"] { color: green }
-
+```diff
++ a[href*="#"] { color: green }
 a[href=""],
 a[href="#"],
 a[href^="http:"] { color: red }
+- a[href*="#"] { color: green }
 ```
 
 ## Style by state
@@ -106,14 +105,14 @@ Up to this point, we've only used standard element attributes. We can take that 
 
 Let's wrap all of our debugging selectors into a new `data` attribute selector: `data-debug-links`.
 
-```scss
-[data-debug-links] {
+```diff
++ [data-debug-links] {
   a[href*="#"] { color: green }
 
   a[href=""],
   a[href="#"],
   a[href^="http:"] { color: red }
-}
++ }
 ```
 
 Now we can enable or disable this link debugging style by adding the `data-dubug-links` selector to a descendent.
