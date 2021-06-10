@@ -49,7 +49,6 @@ Hired:
 
 - ✅ Concurrent React
 - ✅ Concurrent Rendering
-- ✅ Concurrent Renderer
 - ✅ Concurrent Suspense
 - ✅ Legacy Suspense
 - ✅ Concurrent features and APIs
