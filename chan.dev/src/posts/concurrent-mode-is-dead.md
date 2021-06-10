@@ -1,5 +1,5 @@
 ---
-title: Concurrent Mode is Dead. Long live Concurent…
+title: Concurrent Mode is Dead. Long live Concurrent…
 date: 2021-06-09
 layout: layouts/post.njk
 ---
