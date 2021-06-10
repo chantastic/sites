@@ -8,9 +8,9 @@ Three years ago [Dan Abramov](https://mobile.twitter.com/dan_abramov/) introduce
 
 In the three years since, terminology took some twists and turns.
 
-"Suspense" was relegated to use with `React.lazy`.
+"Suspense" was limited to `React.lazy` in versions 16 and 17.
 
-"Async React" became "Concurrent Mode" — a top-down rendering mode that could be "enabled" for `Strict Mode`-compatible applications.
+"Async React" became "Concurrent Mode" — a top-down rendering mode that could be enabled for `Strict Mode`-compatible applications.
 
 React 18 has new-new language. And I'd like to start my tour of React 18 changes by rebasing on new terminology used in the [ReactWG](http://github.com/reactwg) (React Working Group).
 
@@ -20,9 +20,9 @@ React 18 has new-new language. And I'd like to start my tour of React 18 changes
 
 Instead of a concurrent mode, concurrency is possible in all React 18 apps.
 
-A "Concurrent Renderer" is used for the "Concurrent Rendering" of component trees where "Concurrent features and APIs" — like "Concurrent Suspense" — are used.
+React 18 adds a set of new features, sometimes called "concurrent features" or "concurrent APIs". These features rely on a new mechanism called "concurrent rendering" that weren't possible before it.
 
-It's a subtle but important shift.
+It's a subtle but important change.
 Concurrency is no longer something that you opt into at the root of your application. It's an enrichment that happens as you use "Concurrent features and APIs" like `startTransition`.
 
 Concurrent rendering is not a mode.
@@ -43,19 +43,22 @@ Here's the state of React 18 terminology shifts I've seen in [ReactWG discussion
 Fired:
 
 - ❌ Concurrent Mode
-- ❌ Suspense (unmodified)
 
 Hired:
 
 - ✅ Concurrent React
-- ✅ Concurrent Rendering
-- ✅ Concurrent Suspense
-- ✅ Legacy Suspense
+- ✅ Concurrent rendering
 - ✅ Concurrent features and APIs
 
 </div>
 
-Buckle up! You're about to see the word "concurrent" a loooooot.
+## Takeaway
+
+In React 18, Concurrent React is React. Concurrent features and APIs — like `startTransition` — expose controls for opting into concurrent rendering.
+
+## Acknowladgements
+
+This post was reviewed and improved by the fantastic folks in the reactwg. Lessons learned while writing this post are available via the [reactwg GitHub discussions](https://github.com/reactwg/react-18/discussions/45#discussioncomment-848441).
 
 ## Learn with me!
 
