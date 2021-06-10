@@ -28,9 +28,9 @@ Concurrency is no longer something that you opt into at the root of your applica
 Concurrent rendering is not a mode.
 Concurrent rendering is React.
 
-## New-new, React 18 termonology
+## New-new, React 18 terminology
 
-Here's the state of React 18 termonology shifts I've seen in [ReactWG discussions](https://github.com/reactwg/react-18/discussions):
+Here's the state of React 18 terminology shifts I've seen in [ReactWG discussions](https://github.com/reactwg/react-18/discussions):
 
 <div>
 <style>
