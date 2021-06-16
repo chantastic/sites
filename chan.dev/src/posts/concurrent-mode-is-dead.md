@@ -56,7 +56,7 @@ Hired:
 
 In React 18, Concurrent React is React. Concurrent features and APIs — like `startTransition` — expose controls for opting into concurrent rendering.
 
-## Acknowladgements
+## Acknowledgements
 
 This post was reviewed and improved by the fantastic folks in the reactwg. Lessons learned while writing this post are available via the [reactwg GitHub discussions](https://github.com/reactwg/react-18/discussions/45#discussioncomment-848441).
 
