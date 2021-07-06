@@ -1,0 +1,21 @@
+---
+layout: layouts/home.njk
+eleventyNavigation:
+  key: Talks
+  order: 3
+---
+
+<h1>Talks</h1>
+
+{% assign videos = talkVideos | reverse %}
+{% for video in talkVideos %}
+<article>
+    <a href="https://www.youtube.com/watch?v={{video.snippet.resourceId.videoId}}" target="_blank" rel="noreferrer">
+        <img src="{{video.snippet.thumbnails.high.url}}" alt="{{video.snippet.title}}" />
+        <dl>
+            <dt>Title</dt>
+            <dd>{{video.snippet.title}}</dd>
+        </dl>
+    </a>
+</article>
+{% endfor %}

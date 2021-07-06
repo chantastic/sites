@@ -6,6 +6,7 @@ const pluginNavigation = require("@11ty/eleventy-navigation");
 const markdownIt = require("markdown-it");
 const markdownItAnchor = require("markdown-it-anchor");
 const fetch = require("node-fetch");
+require("dotenv").config();
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(pluginRss);
