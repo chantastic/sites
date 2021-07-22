@@ -1,12 +1,31 @@
 ---
-layout: layouts/note.njk
+layout: layouts/resume.njk
 title: Michael Chan (WIP)
 ---
 
 _This page is WIP status_
 
-Sparking success in others.
-Activating change in others.
+<img src="https://res.cloudinary.com/chantastic/image/upload/v1626976663/chan.dev/B4qf8Va8_400x400-2-removebg-preview-2_roskcx.png" alt="Michael Chan">
+</img>
+
+## Qualities
+
+- catalytic
+- curious
+- listener
+
+Sparking success in teams and teammates.
+Activating change in teams and teammates.
+
+## Highlights
+
+### React Podcast
+
+### Frontend Architect
+
+- Specializing in cross-framework and cross-stack solutions to target Rails, React,
+
+---
 
 2021
 
@@ -80,8 +99,8 @@ Activating change in others.
   - 25k views
 
 2014
-- React patterns in CoffeeScript
-    -
+
+- ## React patterns in CoffeeScript
 - Built [Planning Center Services](https://www.planningcenter.com/blog/2014/11/live-3) in React.js. Architecture, developement, design, and coordination.
   - Features video: https://pcoservices.zendesk.com/hc/en-us/articles/360047742273-Using-Services-LIVE
 
