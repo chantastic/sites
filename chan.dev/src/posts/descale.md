@@ -6,11 +6,11 @@ date: 2021-09-04
 layout: layouts/post.njk
 ---
 
-Every couple of months, I have to "descale" the espresso machine.
+Every couple months, I have to "descale" the espresso machine.
 
 Apparently boiling water creates limescale. And, after a period of use, limescale deposits must be chemically removed. If not, they'll build up until all waterways are blocked.
 
-Today, as I spent on hour descaling machine, I realized that I've let my life get blocked. I stopped producing [React Podcast](https://reactpodcast.com), I've stopped writing here, and I have a small course — nearly done — that I just can't seem to share.
+Today, as I spent on hour descaling the machine, I realized that I've let my life get blocked. I stopped producing [React Podcast](https://reactpodcast.com), I've stopped writing here, and I have a small course — nearly done — that I just can't seem to share.
 
 Overnight, the limescale in my life — work politics, illness, injuries, relational hurts, Trump, COVID, inequality and injustice, money — built up to a point where I can't push anything thru me.
 
