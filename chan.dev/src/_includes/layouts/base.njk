@@ -16,8 +16,8 @@
     {# add article:section and article:tag with tags #}
     {# add og:image, og:image:secure_url, og:image:width, og:image:height #}
     <meta property="twitter:site" content="@chantastic" />
-    <meta property="og:image" content="{% if og.mage %}{{ og.image }}{% else %}https://res.cloudinary.com/chantastic/image/upload/c_fit,g_center,h_220,l_text:rubik_40_bold_line_spacing_0_center:{{title | encodeURIComponent or metadata.title | encodeURIComponent}},w_460,x_-112,y_-44/v1630109662/chan.dev/chan.dev-cloud.jpg{% endif %}" />
-    <meta property="twitter:image" content="{% if og.mage %}{{ og.image }}{% else %}https://res.cloudinary.com/chantastic/image/upload/c_fit,g_center,h_220,l_text:rubik_40_bold_line_spacing_0_center:{{title | encodeURIComponent or metadata.title | encodeURIComponent}},w_460,x_-112,y_-44/v1630109662/chan.dev/chan.dev-cloud.jpg{% endif %}" />
+    <meta property="og:image" content="{% if og.image %}{{ og.image }}{% else %}https://res.cloudinary.com/chantastic/image/upload/c_fit,g_center,h_220,l_text:rubik_40_bold_line_spacing_0_center:{{og_title | encodeURIComponent or title | encodeURIComponent or metadata.title | title | encodeURIComponent or metadata.title | encodeURIComponent}},w_460,x_-112,y_-44/v1630109662/chan.dev/chan.dev-cloud.jpg{% endif %}" />
+    <meta property="twitter:image" content="{% if og.image %}{{ og.image }}{% else %}https://res.cloudinary.com/chantastic/image/upload/c_fit,g_center,h_220,l_text:rubik_40_bold_line_spacing_0_center:{{og_title | encodeURIComponent or title | encodeURIComponent or metadata.title | encodeURIComponent}},w_460,x_-112,y_-44/v1630109662/chan.dev/chan.dev-cloud.jpg{% endif %}" />
     <meta property="twitter:card" content="summary_large_image" />
     
     {% for property, content in og %}
