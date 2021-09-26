@@ -1,0 +1,22 @@
+{
+  "name": "reactpatterns.com",
+  "version": "0.0.0",
+  "description": "reactpatterns.com the website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chantastic/sites.git"
+  },
+  "author": "Michael Chan <mijoch@gmail.com>",
+  "license": "CC-BY-NC-SA-4.0",
+  "bugs": {
+    "url": "https://github.com/chantastic/sites/issues"
+  },
+  "homepage": "https://github.com/chantastic/sites#readme",
+  "dependencies": {
+    "@11ty/eleventy": "^0.12.1"
+  }
+}
