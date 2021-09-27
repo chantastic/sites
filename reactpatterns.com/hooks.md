@@ -1,7 +1,3 @@
-import "highlight.js/styles/github-gist.css";
-import "../styles/old-layout.css";
-import Head from "next/head";
-
 # React Patterns / Hooks Preview (draft)
 
 _mixins for functional components_
@@ -72,9 +68,7 @@ function ClickCounter() {
   return (
     <div>
       <p>You clicked {count} times</p>
-      <button onClick={() => setCount(count + 1)}>
-        Click me
-      </button>
+      <button onClick={() => setCount(count + 1)}>Click me</button>
     </div>
   );
 }
@@ -219,17 +213,17 @@ We do this by returning an anonymous function at the end of our `useEffect` bloc
 ```jsx
 useEffect(() => {
   document.title = greetingText;
-  return () => document.title = "My App";
+  return () => (document.title = "My App");
 });
 ```
 
 Now, this function gets called every time this component renders.  
-So, *every time*, we are setting this title.
+So, _every time_, we are setting this title.
 
 ```jsx
 useEffect(() => {
   document.title = greetingText;
-  return () => document.title = "My App";
+  return () => (document.title = "My App");
 });
 ```
 
@@ -240,12 +234,12 @@ It's an array of the values React should track for updates.
 ```jsx
 useEffect(() => {
   document.title = greetingText;
-  return () => document.title = "My App";
+  return () => (document.title = "My App");
 }, [greetingText]);
 ```
 
 Now React will only update that title when the input (`greetingText`) changes.  
-This is what it looks like all together.  
+This is what it looks like all together.
 
 ```jsx
 import React, { useEffect } from "react";
@@ -255,7 +249,7 @@ function GreetingWithTitleChange(props) {
 
   useEffect(() => {
     document.title = greetingText;
-    return () => document.title = "My App";
+    return () => (document.title = "My App");
   }, [greetingText]);
 
   return <span>{greetingText}</span>;
@@ -265,9 +259,15 @@ function GreetingWithTitleChange(props) {
 ## To come...
 
 ## useContext
+
 ## Composing Hooks
+
 ## Creating Custom Hooks
+
 ## useReducer
+
 ## useMemo
+
 ## useLayoutEffect
+
 ## useMutationEffect

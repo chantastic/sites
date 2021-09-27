@@ -72,17 +72,17 @@ code,
 .highlight pre {
   font-size: 0.9em;
 }
-#contents + ul {
+.table-of-contents ul {
   text-decoration: none;
   padding-left: 20px;
 }
 .black-link,
-#contents + ul li a {
+.table-of-contents ul li a {
   color: #000;
   text-decoration: none;
 }
 .black-link,
-#contents + ul li a:hover {
+.table-of-contents ul li a:hover {
   text-decoration: underline;
 }
 .highlight {
@@ -109,4 +109,38 @@ hr {
   border-width: 0;
   border-bottom-width: 1px;
   max-width: 16em;
+}
+
+.direct-link {
+  font-family: monospace;
+  text-decoration: none;
+  font-style: normal;
+  margin-left: 0.1em;
+}
+a[href].direct-link,
+a[href].direct-link:visited {
+  color: transparent;
+}
+a[href].direct-link:focus,
+a[href].direct-link:focus:visited,
+:hover > a[href].direct-link,
+:hover > a[href].direct-link:visited {
+  color: #aaa;
+}
+
+.hljs {
+  display: block;
+  overflow: auto;
+}
+
+.external-link::after {
+  /* https://ux.stackexchange.com/a/136689 */
+  /* https://stackoverflow.com/a/25410621 */
+  content: " ";
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24px' height='24px' viewBox='0 0 24 24' style='cursor:pointer'%3E%3Cg stroke-width='2.1' stroke='%23666' fill='none' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='17 13.5 17 19.5 5 19.5 5 7.5 11 7.5'%3E%3C/polyline%3E%3Cpath d='M14,4.5 L20,4.5 L20,10.5 M20,4.5 L11,13.5'%3E%3C/path%3E%3C/g%3E%3C/svg%3E");
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  background-size: 1rem;
+  margin-left: .25rem;
 }

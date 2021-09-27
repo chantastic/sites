@@ -1,14 +1,14 @@
-import "highlight.js/styles/github-gist.css";
-import "../styles/old-layout.css";
-import Head from "next/head";
-
 # React Patterns [on GitHub](https://github.com/chantastic/reactpatterns.com)
 
 Get the latest React patterns, tips, and tricks right to your inbox.
 
-<script async data-uid="b3af526942" src="https://f.convertkit.com/b3af526942/aee6ebe0cb.js"></script>
+<div style="height: 82px">
+<script async data-uid="b3af526942" src="https://chantastic.ck.page/b3af526942/index.js"></script>
+</div>
 
 ## Contents
+
+[[toc]]
 
 ## Translations
 
@@ -68,7 +68,7 @@ function Greeting(props) {
   return <div>Hi {props.name}!</div>;
 }
 Greeting.defaultProps = {
-  name: "Guest"
+  name: "Guest",
 };
 ```
 
@@ -271,7 +271,7 @@ We use `map()` to create an array of React Elements for every value in the array
 
 ```jsx
 <ul>
-  {["first", "second"].map(item => (
+  {["first", "second"].map((item) => (
     <li>{item}</li>
   ))}
 </ul>
@@ -312,7 +312,7 @@ The component calls `children` as a function, with some number of arguments. Her
 To use this component, we give it a [function as `children`](#function-as-children).
 
 ```jsx
-<Width>{width => <div>window is {width}</div>}</Width>
+<Width>{(width) => <div>window is {width}</div>}</Width>
 ```
 
 We get this output.
@@ -325,7 +325,7 @@ With this setup, we can use this `width` to make rendering decisions.
 
 ```jsx
 <Width>
-  {width => (width > 600 ? <div>min-width requirement met!</div> : null)}
+  {(width) => (width > 600 ? <div>min-width requirement met!</div> : null)}
 </Width>
 ```
 
@@ -333,7 +333,7 @@ If we plan to use this condition a lot, we can define another components to enca
 
 ```jsx
 const MinWidth = ({ width: minWidth, children }) => (
-  <Width>{width => (width > minWidth ? children : null)}</Width>
+  <Width>{(width) => (width > minWidth ? children : null)}</Width>
 );
 ```
 
@@ -436,7 +436,7 @@ We can generate this output using a couple single-purpose components.
 ```jsx
 import classnames from "classnames";
 
-const PrimaryBtn = props => <Btn {...props} primary />;
+const PrimaryBtn = (props) => <Btn {...props} primary />;
 
 const Btn = ({ className, primary, ...props }) => (
   <button
@@ -550,7 +550,7 @@ Given this reusable `CommentList` component.
 ```jsx
 const CommentList = ({ comments }) => (
   <ul>
-    {comments.map(comment => (
+    {comments.map((comment) => (
       <li>
         {comment.body}-{comment.author}
       </li>
@@ -606,7 +606,7 @@ const Greeting = ({ name }) => {
 If it gets `props.name`, it's gonna render that data. Otherwise it'll say that it's "Connecting...". Now for the the higher-order bit.
 
 ```jsx
-const Connect = ComposedComponent =>
+const Connect = (ComposedComponent) =>
   class extends React.Component {
     constructor() {
       super();
@@ -647,12 +647,12 @@ It's accomplished by passing a callback from a container component to a child co
 ```jsx
 class NameContainer extends React.Component {
   render() {
-    return <Name onChange={newName => alert(newName)} />;
+    return <Name onChange={(newName) => alert(newName)} />;
   }
 }
 
 const Name = ({ onChange }) => (
-  <input onChange={e => onChange(e.target.value)} />
+  <input onChange={(e) => onChange(e.target.value)} />
 );
 ```
 
@@ -669,7 +669,7 @@ class NameContainer extends React.Component {
   }
 
   render() {
-    return <Name onChange={newName => this.setState({ name: newName })} />;
+    return <Name onChange={(newName) => this.setState({ name: newName })} />;
   }
 }
 ```
@@ -726,7 +726,7 @@ Then, changing the input is a matter of changing component state.
 return (
   <input
     value={this.state.name}
-    onChange={e => this.setState({ name: e.target.value })}
+    onChange={(e) => this.setState({ name: e.target.value })}
   />
 );
 ```

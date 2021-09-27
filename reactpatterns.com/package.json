@@ -1,36 +1,28 @@
 {
   "name": "reactpatterns.com",
-  "version": "0.0.1",
-  "description": "React Patterns and Practices. No nonsense.",
+  "version": "0.0.0",
+  "description": "reactpatterns.com the website",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "next",
-    "build": "next build",
-    "start": "next start",
-    "export": "npm run build && next export"
+    "build": "eleventy",
+    "serve": "eleventy --serve"
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/chantastic/reactpatterns.com.git"
+    "url": "git+https://github.com/chantastic/sites.git"
   },
   "author": "Michael Chan <mijoch@gmail.com>",
-  "license": "BY-NC-SA",
+  "license": "CC-BY-NC-SA-4.0",
   "bugs": {
-    "url": "https://github.com/chantastic/reactpatterns.com/issues"
+    "url": "https://github.com/chantastic/sites/issues"
   },
-  "homepage": "https://github.com/chantastic/reactpatterns.com#readme",
+  "homepage": "https://github.com/chantastic/sites#readme",
   "dependencies": {
-    "@zeit/next-css": "^1.0.1",
-    "@zeit/next-mdx": "^1.2.0",
-    "highlight.js": "^9.15.6",
-    "next": "^8.1.0",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "react-ga": "^2.5.7",
-    "remark-external-links": "^4.0.0",
-    "remark-highlight.js": "^5.1.0",
-    "remark-slug": "^5.1.1",
-    "remark-toc": "^5.1.1"
+    "@11ty/eleventy": "^0.12.1",
+    "markdown-it-anchor": "^8.3.1",
+    "markdown-it-highlightjs": "^3.5.0",
+    "markdown-it-link-attributes": "^3.0.0",
+    "markdown-it-table-of-contents": "^0.5.2"
   }
 }
