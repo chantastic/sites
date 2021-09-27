@@ -1,4 +1,4 @@
 [build]
   base = "reactpatterns.com/"
-  publish = "reactpatterns.com/_site"
+  publish = "_site"
   command = "DEBUG=* eleventy"
