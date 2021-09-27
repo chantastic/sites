@@ -1,0 +1,4 @@
+[build]
+  base = "react.holiday"
+  publish = "_site"
+  command = "DEBUG=* eleventy"
