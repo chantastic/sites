@@ -3,6 +3,8 @@ const mdi = require("markdown-it");
 module.exports = function (eleventyConfig) {
   eleventyConfig.setTemplateFormats(["md", "css"]);
 
+  eleventyConfig.addPassthroughCopy("_redirects");
+
   /* Markdown Overrides */
   let markdownLibrary = mdi({
     html: true,
