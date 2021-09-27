@@ -2,7 +2,9 @@
 
 Get the latest React patterns, tips, and tricks right to your inbox.
 
-<script async data-uid="b3af526942" src="https://f.convertkit.com/b3af526942/aee6ebe0cb.js"></script>
+<div style="height: 82px">
+<script async data-uid="b3af526942" src="https://chantastic.ck.page/b3af526942/index.js"></script>
+</div>
 
 ## Contents
 
