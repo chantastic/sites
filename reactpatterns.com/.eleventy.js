@@ -15,6 +15,14 @@ module.exports = function (eleventyConfig) {
       permalinkSymbol: "#",
     })
     .use(require("markdown-it-table-of-contents"), { includeLevel: [2] })
+    .use(require("markdown-it-link-attributes"), {
+      pattern: /^https?:\/\//,
+      attrs: {
+        target: "_blank",
+        rel: "noopener noreferrer",
+        class: "external-link",
+      },
+    })
     .use(require("markdown-it-highlightjs"));
   eleventyConfig.setLibrary("md", markdownLibrary);
 };

@@ -132,3 +132,15 @@ a[href].direct-link:focus:visited,
   display: block;
   overflow: auto;
 }
+
+.external-link::after {
+  /* https://ux.stackexchange.com/a/136689 */
+  /* https://stackoverflow.com/a/25410621 */
+  content: " ";
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24px' height='24px' viewBox='0 0 24 24' style='cursor:pointer'%3E%3Cg stroke-width='2.1' stroke='%23666' fill='none' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='17 13.5 17 19.5 5 19.5 5 7.5 11 7.5'%3E%3C/polyline%3E%3Cpath d='M14,4.5 L20,4.5 L20,10.5 M20,4.5 L11,13.5'%3E%3C/path%3E%3C/g%3E%3C/svg%3E");
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  background-size: 1rem;
+  margin-left: .25rem;
+}
