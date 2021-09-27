@@ -1,0 +1,19 @@
+{
+  "name": "react.holiday",
+  "version": "0.0.0",
+  "description": "react.holiday website source",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chantastic/sites.git"
+  },
+  "author": "Michael Chan <mijoch@gmail.com>",
+  "license": "CC-BY-NC-SA-4.0",
+  "bugs": {
+    "url": "https://github.com/chantastic/sites/issues"
+  },
+  "homepage": "https://github.com/chantastic/sites#readme"
+}
