@@ -72,17 +72,17 @@ code,
 .highlight pre {
   font-size: 0.9em;
 }
-#contents + ul {
+.table-of-contents ul {
   text-decoration: none;
   padding-left: 20px;
 }
 .black-link,
-#contents + ul li a {
+.table-of-contents ul li a {
   color: #000;
   text-decoration: none;
 }
 .black-link,
-#contents + ul li a:hover {
+.table-of-contents ul li a:hover {
   text-decoration: underline;
 }
 .highlight {
@@ -109,4 +109,21 @@ hr {
   border-width: 0;
   border-bottom-width: 1px;
   max-width: 16em;
+}
+
+.direct-link {
+  font-family: monospace;
+  text-decoration: none;
+  font-style: normal;
+  margin-left: 0.1em;
+}
+a[href].direct-link,
+a[href].direct-link:visited {
+  color: transparent;
+}
+a[href].direct-link:focus,
+a[href].direct-link:focus:visited,
+:hover > a[href].direct-link,
+:hover > a[href].direct-link:visited {
+  color: #aaa;
 }

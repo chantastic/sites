@@ -6,6 +6,8 @@ Get the latest React patterns, tips, and tricks right to your inbox.
 
 ## Contents
 
+[[toc]]
+
 ## Translations
 
 These translations are not verified and links are not endorsements.

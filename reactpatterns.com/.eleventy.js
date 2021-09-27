@@ -1,5 +1,4 @@
 const mdi = require("markdown-it");
-const mdiHjs = require("markdown-it-highlightjs");
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.setTemplateFormats(["md", "css"]);
@@ -9,6 +8,13 @@ module.exports = function (eleventyConfig) {
     html: true,
     breaks: true,
     linkify: true,
-  }).use(mdiHjs, {});
+  })
+    .use(require("markdown-it-anchor").default, {
+      permalink: true,
+      permalinkClass: "direct-link",
+      permalinkSymbol: "#",
+    })
+    .use(require("markdown-it-table-of-contents"), { includeLevel: [2] })
+    .use(require("markdown-it-highlightjs"));
   eleventyConfig.setLibrary("md", markdownLibrary);
 };
