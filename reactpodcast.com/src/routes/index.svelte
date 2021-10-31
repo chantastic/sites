@@ -1,2 +1,18 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script lang="ts">
+	import type * as Episodes from './episodes.json';
+	let data: Promise<Episodes.EpisodeCollection> = fetch(`/episodes.json`).then((res) => res.json());
+</script>
+
+{#await data}
+	<p>waiting for the promise to resolve...</p>
+{:then data}
+	<ul>
+		{#each data.episodes.collection as episode}
+			{#if episode.status === 'published'}
+				<li>{episode.title}</li>
+			{/if}
+		{/each}
+	</ul>
+{:catch error}
+	<p>Something went wrong: {error.message}</p>
+{/await}
