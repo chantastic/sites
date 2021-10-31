@@ -15,17 +15,13 @@
 			let episodes = await res.json();
 			let episode = episodes?.collection?.find((episode) => episode.slug === page.params.slug);
 
-			if (episode) {
-				return {
-					redirect: `/episodes/${episode.id}`,
-					status: 302
-				};
-			} else {
-				return {
-					status: 404,
-					error: new Error(`Could find ${`https://reactpodcast.com/${page.params.slug}`}`)
-				};
+			if (!episode) {
+				return;
 			}
+			return {
+				redirect: `/episodes/${episode.id}`,
+				status: 302
+			};
 		}
 
 		return {
