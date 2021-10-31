@@ -19,7 +19,7 @@
 				return;
 			}
 			return {
-				redirect: `/episodes/${episode.id}`,
+				redirect: `/episodes/${episode.title.replace(/[^a-zA-Z0-9]/g, '-')}_${episode.id}`,
 				status: 302
 			};
 		}

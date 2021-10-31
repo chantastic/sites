@@ -40,6 +40,17 @@
 	};
 </script>
 
+<svelte:head>
+	<title>{episode.title} on React Podcast with chantastic</title>
+	<link
+		rel="canonical"
+		href="https://reactpodcast.com/episodes/{episode.title.replace(
+			/[^a-zA-Z0-9]/g,
+			'-'
+		)}_{episode.id}"
+	/>
+</svelte:head>
+<a href="/">Home</a>
 {#await episode}
 	<p>waiting for the promise to resolve...</p>
 {:then episode}

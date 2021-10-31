@@ -45,6 +45,9 @@
 	};
 </script>
 
+<svelte:head>
+	<title>React Podcast with chantastic</title>
+</svelte:head>
 {#await episodes}
 	<p>waiting for the promise to resolve...</p>
 {:then episodes}
@@ -53,7 +56,9 @@
 			{#if episode.status === 'published'}
 				<li>
 					<strong>
-						<a href="episodes/{episode.id}">{episode.title}</a>
+						<a href="episodes/{episode.title.replace(/[^a-zA-Z0-9]/g, '-')}_{episode.id}"
+							>{episode.title}</a
+						>
 					</strong>
 					{episode.description}
 				</li>
