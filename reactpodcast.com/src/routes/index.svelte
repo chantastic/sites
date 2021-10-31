@@ -1,13 +1,35 @@
-<script lang="ts">
-	import type * as Episodes from './episodes.json';
-	let data: Promise<Episodes.EpisodeCollection> = fetch(`/episodes.json`).then((res) => res.json());
+<script context="module">
+	export const prerender = true;
+
+	export async function load({ fetch }) {
+		const url = `/episodes.json`;
+		const res = await fetch(url);
+
+		if (res.ok) {
+			return {
+				props: {
+					episodes: await res.json()
+				}
+			};
+		}
+
+		return {
+			status: res.status,
+			error: new Error(`Could not load ${url}`)
+		};
+	}
 </script>
 
-{#await data}
+<script lang="ts">
+	import type * as Episodes from './episodes.json';
+	export let episodes: Promise<Episodes.EpisodeCollection>;
+</script>
+
+{#await episodes}
 	<p>waiting for the promise to resolve...</p>
-{:then data}
+{:then episodes}
 	<ul>
-		{#each data.episodes.collection as episode}
+		{#each episodes.episodes.collection as episode}
 			{#if episode.status === 'published'}
 				<li>{episode.title}</li>
 			{/if}
