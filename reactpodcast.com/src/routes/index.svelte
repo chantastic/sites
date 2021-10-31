@@ -2,8 +2,14 @@
 	export const prerender = true;
 
 	export async function load({ fetch }) {
-		const url = `/episodes.json`;
-		const res = await fetch(url);
+		const PODCAST_ID = 'bdb43d4d-bd1d-4fbc-bd60-40f1e3299aa3';
+		const url = `https://api.simplecast.com/podcasts/${PODCAST_ID}/episodes?limit=1000&offset=0`;
+		const res = await fetch(url, {
+			method: 'GET',
+			headers: {
+				authorization: `Bearer ${import.meta.env.VITE_SIMPLECAST_TOKEN}`
+			}
+		});
 
 		if (res.ok) {
 			return {
@@ -21,17 +27,36 @@
 </script>
 
 <script lang="ts">
-	import type * as Episodes from './episodes.json';
-	export let episodes: Promise<Episodes.EpisodeCollection>;
+	export let episodes: Promise<EpisodeCollection>;
+
+	type Episode = {
+		id: string;
+		status: 'published' | 'draft';
+		title: string;
+		slug: string;
+		published_at: string;
+		image_path: string;
+		duration: number;
+		description: string;
+	};
+
+	type EpisodeCollection = {
+		collection: Episode[];
+	};
 </script>
 
 {#await episodes}
 	<p>waiting for the promise to resolve...</p>
 {:then episodes}
 	<ul>
-		{#each episodes.episodes.collection as episode}
+		{#each episodes.collection as episode}
 			{#if episode.status === 'published'}
-				<li>{episode.title}</li>
+				<li>
+					<strong>
+						{episode.title}
+					</strong>
+					{episode.description}
+				</li>
 			{/if}
 		{/each}
 	</ul>
