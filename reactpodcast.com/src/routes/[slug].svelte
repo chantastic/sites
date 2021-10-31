@@ -1,0 +1,36 @@
+<script context="module">
+	// export const prerender = true;
+
+	export async function load({ page, fetch }) {
+		const PODCAST_ID = 'bdb43d4d-bd1d-4fbc-bd60-40f1e3299aa3';
+		const url = `https://api.simplecast.com/podcasts/${PODCAST_ID}/episodes?limit=1000&offset=0`;
+		const res = await fetch(url, {
+			method: 'GET',
+			headers: {
+				authorization: `Bearer ${import.meta.env.VITE_SIMPLECAST_TOKEN}`
+			}
+		});
+
+		if (res.ok) {
+			let episodes = await res.json();
+			let episode = episodes?.collection?.find((episode) => episode.slug === page.params.slug);
+
+			if (episode) {
+				return {
+					redirect: `/episodes/${episode.id}`,
+					status: 302
+				};
+			} else {
+				return {
+					status: 404,
+					error: new Error(`Could find ${`https://reactpodcast.com/${page.params.slug}`}`)
+				};
+			}
+		}
+
+		return {
+			status: res.status,
+			error: new Error(`Could not load ${url}`)
+		};
+	}
+</script>
