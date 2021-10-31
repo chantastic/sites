@@ -1,9 +1,8 @@
 <script context="module">
 	export const prerender = true;
 
-	export async function load({ fetch }) {
-		const PODCAST_ID = 'bdb43d4d-bd1d-4fbc-bd60-40f1e3299aa3';
-		const url = `https://api.simplecast.com/podcasts/${PODCAST_ID}/episodes?limit=1000&offset=0`;
+	export async function load({ page, fetch }) {
+		const url = `https://api.simplecast.com/episodes/${page.params.id}`;
 		const res = await fetch(url, {
 			method: 'GET',
 			headers: {
@@ -14,7 +13,7 @@
 		if (res.ok) {
 			return {
 				props: {
-					episodes: await res.json()
+					episode: await res.json()
 				}
 			};
 		}
@@ -27,7 +26,7 @@
 </script>
 
 <script lang="ts">
-	export let episodes: Promise<EpisodeCollection>;
+	export let episode: Promise<Episode>;
 
 	type Episode = {
 		id: string;
@@ -39,27 +38,16 @@
 		duration: number;
 		description: string;
 	};
-
-	type EpisodeCollection = {
-		collection: Episode[];
-	};
 </script>
 
-{#await episodes}
+{#await episode}
 	<p>waiting for the promise to resolve...</p>
-{:then episodes}
-	<ul>
-		{#each episodes.collection as episode}
-			{#if episode.status === 'published'}
-				<li>
-					<strong>
-						<a href="episodes/{episode.id}">{episode.title}</a>
-					</strong>
-					{episode.description}
-				</li>
-			{/if}
-		{/each}
-	</ul>
+{:then episode}
+	<main>
+		<h1>{episode.title}</h1>
+		<p>{episode.description}</p>
+		<datetime>{episode.published_at}</datetime>
+	</main>
 {:catch error}
 	<p>Something went wrong: {error.message}</p>
 {/await}
