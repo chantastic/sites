@@ -27,6 +27,8 @@
 </script>
 
 <script lang="ts">
+	import { episodeSlug } from '../modules/paths';
+
 	export let episodes: Promise<EpisodeCollection>;
 
 	type Episode = {
@@ -56,9 +58,7 @@
 			{#if episode.status === 'published'}
 				<li>
 					<strong>
-						<a href="episodes/{episode.title.replace(/[^a-zA-Z0-9]/g, '-')}_{episode.id}"
-							>{episode.title}</a
-						>
+						<a href="episodes/{episodeSlug(episode)}">{episode.title}</a>
 					</strong>
 					{episode.description}
 				</li>
