@@ -26,6 +26,7 @@
 </script>
 
 <script lang="ts">
+	import { episodeSlug } from '../../modules/paths';
 	export let episode: Promise<Episode>;
 
 	type Episode = {
@@ -42,13 +43,7 @@
 
 <svelte:head>
 	<title>{episode.title} on React Podcast with chantastic</title>
-	<link
-		rel="canonical"
-		href="https://reactpodcast.com/episodes/{episode.title.replace(
-			/[^a-zA-Z0-9]/g,
-			'-'
-		)}_{episode.id}"
-	/>
+	<link rel="canonical" href="https://reactpodcast.com/episodes/{episodeSlug(episode)}" />
 </svelte:head>
 <a href="/">Home</a>
 {#await episode}

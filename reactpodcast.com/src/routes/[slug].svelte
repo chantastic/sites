@@ -1,4 +1,5 @@
 <script context="module">
+	import { episodeSlug } from '../modules/paths';
 	// export const prerender = true;
 
 	export async function load({ page, fetch }) {
@@ -19,7 +20,7 @@
 				return;
 			}
 			return {
-				redirect: `/episodes/${episode.title.replace(/[^a-zA-Z0-9]/g, '-')}_${episode.id}`,
+				redirect: `/episodes/${episodeSlug(episode)}`,
 				status: 302
 			};
 		}
