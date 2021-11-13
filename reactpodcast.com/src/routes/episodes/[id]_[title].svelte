@@ -38,6 +38,10 @@
 		image_path: string;
 		duration: number;
 		description: string;
+		long_description: string;
+		transcription: string;
+		audio_file_url: string;
+		audio_content_type: string;
 	};
 </script>
 
@@ -52,8 +56,27 @@
 	<main>
 		<h1>{episode.title}</h1>
 		<p>{episode.description}</p>
+		<audio controls>
+			<source src={episode.audio_file_url} type={episode.audio_content_type} />
+			Your browser does not support the <code>audio</code> element.
+		</audio>
 		<datetime>{episode.published_at}</datetime>
+		<div>{@html episode.long_description}</div>
+		<div>{@html episode.transcription}</div>
+		<!-- https://svelte.dev/tutorial/html-tags -->
+		<div id="log">
+			<pre>{JSON.stringify(episode, null, 2)}</pre>
+		</div>
 	</main>
 {:catch error}
 	<p>Something went wrong: {error.message}</p>
 {/await}
+
+<style>
+	#log {
+		display: none;
+	}
+	#log:target {
+		display: block;
+	}
+</style>
