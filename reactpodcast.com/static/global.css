@@ -1,0 +1,6 @@
+#log {
+	display: none;
+}
+#log:target {
+	display: block;
+}

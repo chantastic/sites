@@ -71,12 +71,3 @@
 {:catch error}
 	<p>Something went wrong: {error.message}</p>
 {/await}
-
-<style>
-	#log {
-		display: none;
-	}
-	#log:target {
-		display: block;
-	}
-</style>

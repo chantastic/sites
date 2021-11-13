@@ -50,6 +50,9 @@
 			{/if}
 		{/each}
 	</ul>
+	<div id="log">
+		<pre>{JSON.stringify(episodes, null, 2)}</pre>
+	</div>
 {:catch error}
 	<p>Something went wrong: {error.message}</p>
 {/await}
