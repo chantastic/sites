@@ -15,7 +15,8 @@
 			return {
 				props: {
 					episodes: await res.json()
-				}
+				},
+				maxage: 3600
 			};
 		}
 
