@@ -1,6 +1,6 @@
 <script context="module">
 	import { episodeSlug } from '../modules/paths';
-	// export const prerender = true;
+	export const prerender = true;
 
 	export async function load({ page, fetch }) {
 		const PODCAST_ID = 'bdb43d4d-bd1d-4fbc-bd60-40f1e3299aa3';

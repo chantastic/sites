@@ -30,21 +30,6 @@
 	import { episodeSlug } from '../modules/paths';
 
 	export let episodes: Promise<EpisodeCollection>;
-
-	type Episode = {
-		id: string;
-		status: 'published' | 'draft';
-		title: string;
-		slug: string;
-		published_at: string;
-		image_path: string;
-		duration: number;
-		description: string;
-	};
-
-	type EpisodeCollection = {
-		collection: Episode[];
-	};
 </script>
 
 <svelte:head>
