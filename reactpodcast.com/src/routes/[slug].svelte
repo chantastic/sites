@@ -22,6 +22,7 @@
 			return {
 				redirect: `/episodes/${episodeSlug(episode)}`,
 				status: 302
+				// cant add cache-control maxage
 			};
 		}
 

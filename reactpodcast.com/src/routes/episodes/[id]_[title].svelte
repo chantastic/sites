@@ -1,4 +1,6 @@
 <script context="module">
+	import * as datefn from 'date-fns';
+
 	export const prerender = true;
 
 	export async function load({ page, fetch }) {
@@ -11,10 +13,16 @@
 		});
 
 		if (res.ok) {
+			let episode = await res.json();
+
 			return {
 				props: {
-					episode: await res.json()
-				}
+					episode
+				},
+				maxage:
+					datefn.differenceInDays(new Date(Date.now()), new Date(episode.published_at)) >= 7
+						? 3600
+						: 0
 			};
 		}
 
