@@ -1,5 +1,5 @@
 <script context="module">
-	import { episodeSlug } from '../modules/paths';
+	import { episodeSlug } from '$lib/paths';
 	export const prerender = true;
 
 	export async function load({ page, fetch }) {
