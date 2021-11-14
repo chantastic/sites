@@ -34,8 +34,12 @@
 </script>
 
 <script lang="ts">
-	import { episodeSlug } from '../../modules/paths';
+	import { episodeSlug } from '../../../modules/paths';
+	import { setContext } from 'svelte';
+
 	export let episode: Promise<Episode>;
+
+	setContext('episode', episode);
 
 	type Episode = {
 		id: string;
@@ -62,16 +66,40 @@
 	<p>waiting for the promise to resolve...</p>
 {:then episode}
 	<main>
-		<h1>{episode.title}</h1>
-		<p>{episode.description}</p>
-		<audio controls>
-			<source src={episode.audio_file_url} type={episode.audio_content_type} />
-			Your browser does not support the <code>audio</code> element.
-		</audio>
-		<datetime>{episode.published_at}</datetime>
-		<div>{@html episode.long_description}</div>
-		<div>{@html episode.transcription}</div>
-		<!-- https://svelte.dev/tutorial/html-tags -->
+		<div data-window-content>
+			<div class="border-t-2 border-gray-100 pt-8">
+				<div>
+					<p class="text-sm leading-5 text-gray-500">
+						<time datetime={episode.published_at}>
+							{datefn.format(new Date(episode.published_at), 'MMM d, yyyy')}
+						</time>
+					</p>
+					<div>
+						<h1 class="mt-2 text-xl leading-7 font-semibold text-gray-900">
+							<a href="episodes/{episodeSlug(episode)}">{episode.title}</a>
+						</h1>
+						<p class="mt-3 text-base leading-6 text-gray-600">
+							{episode.description}
+						</p>
+						<iframe
+							title="Media player for episode {episode.title}"
+							class="my-8"
+							height="200px"
+							width="100%"
+							frameborder="no"
+							scrolling="no"
+							seamless
+							src="https://player.simplecast.com/{episode.id}?dark=true"
+						/>
+
+						<a href="/episodes/{episodeSlug(episode)}">Notes</a>
+						<a href="/episodes/{episodeSlug(episode)}/transcript">Transcript</a>
+						<slot {episode} />
+					</div>
+				</div>
+			</div>
+		</div>
+
 		<div id="log">
 			<pre>{JSON.stringify(episode, null, 2)}</pre>
 		</div>

@@ -25,5 +25,7 @@
     "typescript": "^4.4.3"
   },
   "type": "module",
-  "dependencies": {}
+  "dependencies": {
+    "@tailwindcss/typography": "^0.4.1"
+  }
 }
