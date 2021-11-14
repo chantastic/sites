@@ -57,10 +57,6 @@
 	};
 </script>
 
-<svelte:head>
-	<title>{episode.title} on React Podcast with chantastic</title>
-	<link rel="canonical" href="https://reactpodcast.com/episodes/{episodeSlug(episode)}" />
-</svelte:head>
 <a href="/">Home</a>
 {#await episode}
 	<p>waiting for the promise to resolve...</p>
