@@ -30,7 +30,7 @@
 </script>
 
 <script lang="ts">
-	import { episodeSlug } from '../modules/paths';
+	import { episodeSlug } from '$lib/paths';
 
 	export let episodes: Promise<EpisodeCollection>;
 </script>

@@ -34,7 +34,7 @@
 </script>
 
 <script lang="ts">
-	import { episodeSlug } from '../../../modules/paths';
+	import { episodeSlug } from '$lib/paths';
 	import { setContext } from 'svelte';
 
 	export let episode: Promise<Episode>;
