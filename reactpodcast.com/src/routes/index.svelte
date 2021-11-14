@@ -71,10 +71,6 @@
 								>
 							</div>
 						</li>
-						<!-- <li>
-							<a href="episodes/{episodeSlug(episode)}" data-episode-item>
-							</a>
-						</li> -->
 					{/if}
 				{/each}
 			</ul>
@@ -88,21 +84,11 @@
 {/await}
 
 <style>
-	[data-window-content] {
-		--window-content--max-width: 80ch;
-		--window-content--padding-inline: clamp(
-			1rem,
-			calc((100vw - var(--window-content--max-width)) / 2),
-			100vw
-		);
-		padding-inline-start: var(--window-content--padding-inline);
-		padding-inline-end: var(--window-content--padding-inline);
-	}
 	[data-unlist] {
 		list-style-type: none;
 		padding: unset;
 	}
-	[data-episode-list] * + * {
-		padding-top: clamp(2rem, 10vw, 5rem);
+	[data-episode-list] > * + * {
+		margin-block-start: clamp(2rem, 10vw, 5rem);
 	}
 </style>
