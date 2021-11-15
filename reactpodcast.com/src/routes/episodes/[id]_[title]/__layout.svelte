@@ -74,12 +74,14 @@
 						<h1 class="mt-2 text-xl leading-7 font-semibold text-gray-900">
 							<a href="episodes/{episodeSlug(episode)}">{episode.title}</a>
 						</h1>
-						<p class="mt-3 text-base leading-6 text-gray-600">
-							{episode.description}
-						</p>
+						<noscript class="my-8">
+							<audio src={episode.audio_file_url} class="w-full" controls>
+								Your browser does not support the <code>audio</code> element.
+							</audio>
+						</noscript>
 						<iframe
 							title="Media player for episode {episode.title}"
-							class="my-8"
+							class="my-4"
 							height="200px"
 							width="100%"
 							frameborder="no"
@@ -87,6 +89,10 @@
 							seamless
 							src="https://player.simplecast.com/{episode.id}?dark=true"
 						/>
+
+						<p class="mt-3 text-base leading-6 text-gray-600">
+							{episode.description}
+						</p>
 
 						<a href="/episodes/{episodeSlug(episode)}">Notes</a>
 						<a href="/episodes/{episodeSlug(episode)}/transcript">Transcript</a>
