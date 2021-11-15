@@ -57,13 +57,15 @@
 	};
 </script>
 
-<a href="/">Home</a>
+<header data-window-content class="my-4">
+	<a href="/">← All Episodes</a>
+</header>
 {#await episode}
 	<p>waiting for the promise to resolve...</p>
 {:then episode}
 	<main>
 		<div data-window-content>
-			<div class="border-t-2 border-gray-100 pt-8">
+			<div class="border-t-2 border-gray-100 pt-6">
 				<div>
 					<p class="text-sm leading-5 text-gray-500">
 						<time datetime={episode.published_at}>
@@ -79,16 +81,18 @@
 								Your browser does not support the <code>audio</code> element.
 							</audio>
 						</noscript>
-						<iframe
-							title="Media player for episode {episode.title}"
-							class="my-4"
-							height="200px"
-							width="100%"
-							frameborder="no"
-							scrolling="no"
-							seamless
-							src="https://player.simplecast.com/{episode.id}?dark=true"
-						/>
+						<div style="position:sticky; top: 0; z-index: 900; background-color: white;">
+							<iframe
+								title="Media player for episode {episode.title}"
+								class="my-4"
+								height="200px"
+								width="100%"
+								frameborder="no"
+								scrolling="no"
+								seamless
+								src="https://player.simplecast.com/{episode.id}?dark=true"
+							/>
+						</div>
 
 						<p class="mt-3 text-base leading-6 text-gray-600">
 							{episode.description}
