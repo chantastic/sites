@@ -5,7 +5,7 @@
 
 	export async function load({ fetch }) {
 		const PODCAST_ID = 'bdb43d4d-bd1d-4fbc-bd60-40f1e3299aa3';
-		const url = `https://api.simplecast.com/podcasts/${PODCAST_ID}/episodes?limit=10&offset=0`;
+		const url = `https://api.simplecast.com/podcasts/${PODCAST_ID}/episodes?limit=1000&offset=0`;
 		const res = await fetch(url, {
 			method: 'GET',
 			headers: {
@@ -78,10 +78,6 @@
 					{/if}
 				{/each}
 			</ul>
-
-			<div class="border-t-2 border-gray-100 py-6 mt-6">
-				<a href="/all">See all episodes →</a>
-			</div>
 		</main>
 	</div>
 	<div id="log">
