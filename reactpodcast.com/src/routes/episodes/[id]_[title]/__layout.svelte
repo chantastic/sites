@@ -74,7 +74,7 @@
 					</p>
 					<div>
 						<h1 class="mt-2 text-xl leading-7 font-semibold text-gray-900">
-							<a href="episodes/{episodeSlug(episode)}">{episode.title}</a>
+							<a href="/episodes/{episodeSlug(episode)}">{episode.title}</a>
 						</h1>
 						<noscript class="my-8">
 							<audio src={episode.audio_file_url} class="w-full" controls>
