@@ -43,6 +43,7 @@ AVO CSS is BEM-like naming escapes the class attribute. It's design allows for:
 ### Key-value
 
 ```css
+[data-avatar~="size:large"] {
   --avatar--size: 4rem;
 }
 ```
