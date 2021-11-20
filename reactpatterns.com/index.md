@@ -15,6 +15,8 @@ Get the latest React patterns, tips, and tricks right to your inbox.
 These translations are not verified and links are not endorsements.
 
 [Chinese](https://reactpatterns.cn)
+[Brazilian Portuguese](https://guiareact.org)
+
 
 ## Element
 
