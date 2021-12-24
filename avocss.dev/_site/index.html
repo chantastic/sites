@@ -1,0 +1,116 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://unpkg.com/mvp.css">
+	  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🥑</text></svg>">
+    <title>AVO CSS Methodoly with chantastic</title>
+    <style>
+      /* html,
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+          "Segoe UI Symbol";
+      }
+
+      h1 {
+        font-weight: 800;
+      } */
+    </style>
+  </head>
+  <body>
+    <main style="max-width: 60ch"><header>
+<h1>AVO 🥑 CSS</h1>
+<p>with <a href="https://twitter.com/chantastic">@chantastic</a></p>
+</header>
+<p>AVO CSS is BEM-like naming escapes the class attribute. It's design allows for:</p>
+<ul>
+<li>Improved copy-paste (no <code>class</code> =&gt; <code>className</code>)</li>
+<li>Low specificity</li>
+<li>High compatability with utility CSS libraries</li>
+<li>Grep-able selectors with special characters <code>@!:-_</code></li>
+<li>Clear composability</li>
+<li>Strong isolation</li>
+<li>Logical connection to components and props</li>
+</ul>
+<h2>Style</h2>
+<h3>Element</h3>
+<pre><code class="language-css">[data-avatar] {
+  --avatar--size: 3rem;
+  height: var(--avatar--size);
+  width: var(--avatar--size);
+}
+</code></pre>
+<h3>Value</h3>
+<pre><code class="language-css">[data-avatar~=&quot;inactive&quot;] {
+  opacity: 5;
+}
+</code></pre>
+<h3>Key-value</h3>
+<pre><code class="language-css">  --avatar--size: 4rem;
+}
+</code></pre>
+<h3>Composition</h3>
+<pre><code class="language-css">[data-user-header--profile-avatar] {
+  --avatar--size: 7rem;
+}
+[data-user-header--friend-avatar] {
+  --avatar--size: 2.5rem;
+}
+</code></pre>
+<h2>Articles</h2>
+<p>Read more about AVO 🥑 CSS and how it compares to BEM.</p>
+<ul>
+<li><a href="https://chan.dev/posts/compare-avo-and-standard-bem-conventions/">https://chan.dev/posts/avo-a-bem-dialect-using-data-attributes/</a></li>
+<li><a href="https://chan.dev/posts/compare-avo-and-standard-bem-conventions/">Compare AVO 🥑 and standard BEM Conventions</a></li>
+</ul>
+<h2>Videos and streams</h2>
+<h3>Build CSS APIs with Attribute Selectors</h3>
+<p><time>Nov 11, 2021</time></p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/MWFbo5KDyZY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<h3>Let's Build a Pure CSS Stack</h3>
+<p>Nov 11, 2021</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Cfo3M88RfDc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<h3>Let's Build a Pure CSS Stack</h3>
+<p>Nov 11, 2021</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Cfo3M88RfDc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<h3>Build neutral color scale into colorway — LIVE</h3>
+<p>Apr 15, 2021</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/0yXWhFmok9A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<h3>Building colorway media object with AVO — LIVE</h3>
+<p>Apr 13, 2021</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/q1uPAVbciAA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<h3>Building colorway media object with AVO — LIVE</h3>
+<p>Apr 9, 2021</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/rUsMX4j8Q9g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<h3>Building colorway with AVO — LIVE</h3>
+<p>Apr 8, 2021</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Nx3ZcnnQE-c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<h3>Building Colorway element: surface— LIVE</h3>
+<p>Mar 22, 2021</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/9yP8ewPMHNI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<h3>Building Colorway with AVO 🥑 and Storybook— LIVE</h3>
+<p>Mar 15, 2021</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/OZg6pP6bFs0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<h3>Building Colorway with AVO 🥑 and Storybook— LIVE</h3>
+<p>Mar 3, 2021</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/qWAoHIPEWQs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<h3>Data Attribute Selector Methodology — AVO 🥑 — LIVE</h3>
+<p>Feb 8, 2021</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/XoBZAc1d43Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<h3>Style with CSS Custom Properties</h3>
+<p>Jul 23, 2020</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/3iP3SZiFJhQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<h3>Style with CSS Custom Properties [livestream]</h3>
+<p>Jul 21, 2020</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/-FO6g0WQ7Rw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<footer>
+&copy; 2021, Michael Chan.
+</footer>
+</main>
+  </body>
+</html>
