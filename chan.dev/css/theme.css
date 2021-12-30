@@ -72,3 +72,10 @@ blockquote {
 code {
   font-size: 1.7ex;
 }
+
+[data-page-note] {
+  background-color: hsl(0, 0%, 90%);
+  padding: 1rem;
+  box-sizing: border-box;
+  border-left: 4px solid hsl(0, 0%, 0%);
+}

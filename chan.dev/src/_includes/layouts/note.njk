@@ -4,4 +4,17 @@ templateClass: tmpl-note
 ---
 <h1>{{ title }}</h1>
 
+{% if note %}
+<div
+  role="note"
+  aria-labelledby="page-note-heading"
+  data-page-note
+>
+  <p id="page-note-heading">
+    <strong>Note</strong>
+  </p>
+  <p>{{note}}</p>
+</div>
+{% endif %}
+
 {{ content | safe }}
