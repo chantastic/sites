@@ -121,7 +121,7 @@ module.exports = function (eleventyConfig) {
     permalink: true,
     permalinkClass: "direct-link",
     permalinkSymbol: "#",
-  });
+  }).use(require("markdown-it-table-of-contents"));
   eleventyConfig.setLibrary("md", markdownLibrary);
 
   // Browsersync Overrides

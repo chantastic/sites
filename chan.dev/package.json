@@ -25,6 +25,7 @@
   "homepage": "https://github.com/chantastic/sites#readme",
   "devDependencies": {
     "@11ty/eleventy": "^0.12.1",
+    "@11ty/eleventy-cache-assets": "^2.2.1",
     "@11ty/eleventy-navigation": "^0.1.6",
     "@11ty/eleventy-plugin-rss": "^1.1.1",
     "@11ty/eleventy-plugin-syntaxhighlight": "^3.1.0",
@@ -33,10 +34,9 @@
     "luxon": "^1.26.0",
     "markdown-it": "^8.4.2",
     "markdown-it-anchor": "^5.2.5",
+    "markdown-it-table-of-contents": "^0.6.0",
     "node-fetch": "^2.6.1",
     "request": "^2.88.2"
   },
-  "dependencies": {
-    "@11ty/eleventy-cache-assets": "^2.2.1"
-  }
+  "dependencies": {}
 }
