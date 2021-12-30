@@ -12,7 +12,7 @@ This is — by no means — an exhaustive list of San Diego's greatest food. B
 
 ## [Dija Mara](https://dijamara.com)
 
-Dija is about as far away from Oceanside as you can get in Oceanside. You in the door onto a different contient. We go here when we want to get away to a place where folks know more spices than pepper, and aren't afraid of heat and fish heads.
+Dija is about as far away from Oceanside as you can get in Oceanside. You walk thrue the door onto a different continent. We go here when we want to escape to a place where folks aren't afraid of heat and fish heads.
 
 ### Favorite dishes
 
@@ -31,7 +31,7 @@ Dija is about as far away from Oceanside as you can get in Oceanside. You in the
 
 ## [The Friendly](https://www.instagram.com/thefriendlysd/)
 
-This is the best burger in San Diego, period.
+This is the best burger in San Diego, full stop.
 
 One reviewer on Yelp said "this burger looks like it was run over by a truck". That's right. The burger looks like shit. But holy balls it's a bite of pure soul.
 
@@ -43,7 +43,7 @@ One reviewer on Yelp said "this burger looks like it was run over by a truck". T
 
 ## [Tribute Pizza](https://www.tributepizza.com)
 
-I love the Costo Combo. It's non-ironically one of my favirote pizzas. Hit me with an artisinal, wood-fired, classic combo tribute, in an abandoned postal service building and I'm so in I can't even see my way out.
+I love the Costo Combo. It's non-ironically one of my favirote pizzas. Hit me with an artisinal, wood-fired, classic combo tribute — in an abandoned postal service building and I'm so in I can't find my way out.
 
 Everything about this place is perfect.
 
@@ -54,7 +54,7 @@ Everything about this place is perfect.
 
 ## [Underbelly Ramen](https://godblessunderbelly.com)
 
-This is "white people" ramen — I won't dance around that. But shit, if it's not the best "white people" ramen out there. And if you like lots of tastes and cocktails, they crush it.
+This is "white people asian food" my grandmother warned me about — I won't dance around that. But shit, if it's not the best "white people" ramen out there. And if you like lots of tastes and cocktails, they crush it.
 
 ### Favorite dishes
 
@@ -72,7 +72,7 @@ This is "white people" ramen — I won't dance around that. But shit, if it's no
 
 ## [Tajima](https://tajimasandiego.com/tajima-convoy/)
 
-Their carnitas ramen is weird and terrific. Between the mexican border and an Asian college town, this is a unique culturale treat that is odd and delicious.
+Between the Mexico border and an Asian college town, carnitas ramen is a unique cultural mish-mash that is odd and delicious.
 
 ### Favorite dishes
 
@@ -80,7 +80,7 @@ Their carnitas ramen is weird and terrific. Between the mexican border and an As
 
 ## [Tasty Noodle House](https://www.tastynoodlehouse.us/san-diego)
 
-My brothers discovered this place after my dad passed. But if we'd discovered it while he was still living, it would have killed him. This is the hole-in-the-wall, pot-sticker slinging, bun filling, cash-discount, noodle shop of his dreams.
+My brothers discovered this place after my dad passed. But if we'd discovered it while he was still living, he would have wanted to die eating there. This is the hole-in-the-wall, pot-sticker-slinging, bun-filling, cash-discounting, noodle shop of his dreams.
 
 My grandma likes it; `nough said.
 
@@ -94,7 +94,7 @@ My grandma likes it; `nough said.
 
 ## [Prager Brothers Artizan Bread](https://www.pragerbrothers.com/)
 
-The prager brother make the best bread on planet earth. By brother moved to NYC this last year and said the only thing he misses is Prager Brother bread.
+The Prager Brothers make the best bread on planet earth. By brother moved to NYC this last year and said the only thing he misses is Prager Brother bread.
 
 ### Favorite dishes
 
