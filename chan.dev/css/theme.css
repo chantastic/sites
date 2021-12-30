@@ -1,13 +1,13 @@
 body {
   font-family: "PT Serif";
-  font-size: 1.1em;
+  /* font-size: 1em; */
 }
 p {
-  /* line-height: 1.75;
-  margin-bottom: 1.75em; */
+  line-height: 1.5;
+  margin-bottom: 1.75em;
   font-family: "PT Serif", serif;
-  font-size: 1.1rem;
-  margin: 1.1em 0;
+  /* font-size: 1rem; */
+  /* margin: 1.5em 0; */
   /* color: #2c3e50; */
   text-rendering: optimizeLegibility;
 }
@@ -17,7 +17,7 @@ h2 {
   font-weight: 900;
   letter-spacing: -0.02em;
   word-spacing: 0.05em;
-  line-height: 1.1em;
+  /* line-height: 1em; */
   font-size: 1.8rem;
   margin-top: 1em;
   margin-bottom: 0;
