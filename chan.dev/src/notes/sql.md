@@ -42,6 +42,11 @@ Some things:
 - https://developer.chrome.com/docs/devtools/storage/indexeddb/#refresh
 - https://stackoverflow.com/questions/12247380/offline-access-sqlite-or-indexed-db#12247517
 - https://softwareengineering.stackexchange.com/questions/219953/how-is-localstorage-different-from-indexeddb
+
+*SQLite stuff*
+
+- https://www.tutorialspoint.com/sqlite/sqlite_commands.htm
+- https://www.sqlitetutorial.net/sqlite-tutorial/sqlite-show-tables/
 - https://flaviocopes.com/sqlite-how-to-install/
 
 ### Insights
