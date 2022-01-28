@@ -13,7 +13,7 @@ Yes, it's almost February.
 I take my time and I'm good with me 😊
 
 I've believed that pressure is what makes me produce work.
-That belief is probably from my work-focus immigrant upbringing. Or maybe it's from a pull-quote I read by a productive but unhappy designer. Wherever it came from, it's belief I'd like to challenge.
+That belief is probably from my work-focused immigrant upbringing. Or maybe it's from a pull-quote I read by a productive but unhappy designer. Wherever it came from, it's a belief I'd like to challenge.
 
 I'm inspired by [Derek Sivers, who learned that stress earned him a mere 4% gain in his regular bike rides](https://sive.rs/relax).
 
@@ -23,6 +23,6 @@ But I'm inspired most by an article from Jonny Sun:
 
 > Most rocks, I assume, don’t turn into diamonds under extreme pressure. _— [#17. Rock (ordinary)](https://jonnysun.bulletin.com/17-rock)_
 
-Maybe I'm trying to damn hard to be a diamond.
+Why am I pushing to be a hard diamond, when I could be a happy rock?
 
 Let's play!
