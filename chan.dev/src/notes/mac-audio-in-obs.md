@@ -3,19 +3,19 @@ title: "Mac Audio in OBS"
 layout: layouts/note.njk
 ---
 
-There's no great way to get system audio into programs broadcast and recording apps like OBS.
+There's no great way to get system audio into broadcast and recording apps like OBS.
 
 This sucks.
 
 There are a couple paid apps that help.
 
-I've used the advanced [Loopback by Rogue Amoeba](https://rogueamoeba.com/loopback/). It's pretty intense.
+I've used the (advanced) [Loopback by Rogue Amoeba](https://rogueamoeba.com/loopback/). It's pretty intense and requires System Security Policy level modifications to work on new Macs.
 
 I've also used hardware solutions that include routing — Elgato Wave Link, and mixers like [Sound Devices Mixpre](https://amzn.to/3B1w79x).
 
-I wanted the simplest option I could find and [SWB Audio App](https://shinywhitebox.com/swb-audio-app) seems to be it, if you don't need to mix multiple sources together.
+I wanted the simplest option I could find. And if you don't need to mix multiple sources together, [SWB Audio App](https://shinywhitebox.com/swb-audio-app) seems to be it.
 
-At $12/year, it's affordable for what it does.
+I hate that a utility like this is a subscription but I guess the $12/yr pricing is appropriate if you make any amount of money on content. Definitely market priced.
 
 ## Steps
 
@@ -31,9 +31,9 @@ At $12/year, it's affordable for what it does.
 
 ## Notes
 
-SWB Audio App is not smart about audio switching in preview mode
+SWB Audio App is not smart about audio switching in preview mode.
 
-If you're switching between inputs, the easiest thing is to kill the preview before switching (built-in speakers to headphones, etc). Just do it last is the point
+If you're switching between inputs, the easiest thing is to kill the preview before switching (built-in speakers to headphones, etc). But even then it got confused and I had to jump into System Preferences.
 
 ## Taking it further
 
@@ -46,3 +46,5 @@ If you're switching between inputs, the easiest thing is to kill the preview bef
 - Audio routing on the Mac
   - System preferences
   - Audio Midi Setup
+
+Hit me up if you want to learn any more about this stuff
