@@ -91,6 +91,13 @@ module.exports = function (eleventyConfig) {
   });
 
   eleventyConfig.addShortcode(
+    "bug-me-on-twitter",
+    async function (text = "Bug me on twitter…") {
+      return `<a href="https://twitter.com/intent/tweet?screen_name=chantastic&ref_src=twsrc%5Etfw" class="twitter-mention-button" data-show-count="false">${text}</a>`;
+    }
+  );
+
+  eleventyConfig.addShortcode(
     "lunch-dev-cta",
     function (text = "Join lunch.dev for videos") {
       return `<script src="https://cdn.podia.com/embeds.js" async="async"></script><a href="https://www.lunch.dev/member" data-podia-embed="button" data-text="${text}">${text}</a>`;
@@ -100,7 +107,8 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addShortcode("youtube-video", function (url) {
     // https://stackoverflow.com/a/21607897
     function getVideoIdFromYouTubeURL(url) {
-      let regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/;
+      let regExp =
+        /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/;
       let match = url.match(regExp);
 
       return match && match[2].length === 11 ? match[2] : null;
@@ -117,11 +125,13 @@ module.exports = function (eleventyConfig) {
     html: true,
     breaks: true,
     linkify: true,
-  }).use(markdownItAnchor, {
-    permalink: true,
-    permalinkClass: "direct-link",
-    permalinkSymbol: "#",
-  }).use(require("markdown-it-table-of-contents"));
+  })
+    .use(markdownItAnchor, {
+      permalink: true,
+      permalinkClass: "direct-link",
+      permalinkSymbol: "#",
+    })
+    .use(require("markdown-it-table-of-contents"));
   eleventyConfig.setLibrary("md", markdownLibrary);
 
   // Browsersync Overrides

@@ -14,7 +14,7 @@ So I've limited it to four.
 I've chosen these four on their ability to build from one system to the next.
 
 I haven't been able to finish the detail sections of my recommendation.
-So, if you don't trust me, {% bug-me-on-twitter "Hey @chantastic! I have a question about your post https://chan.dev/microphones post.  " %}
+So, if you don't trust me, {% bug-me-on-twitter %}
 
 ## COVID CAVEAT
 
