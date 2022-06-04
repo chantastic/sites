@@ -4,23 +4,23 @@ layout: layouts/note.njk
 
 # Microphones (WIP)
 
-Let me tell you which microphones to start with .
+Let me tell you which microphones to start with.
 
-I own over 20 microphones  
-So I have strong and nuanced opinions  
-I know that isn't helpful when you're starting your podcast or livestream,  
-So I've limited it to four
+I own more than 20 microphones.
+So I have strong and nuanced opinions.
+I know that isn't helpful when you're starting your podcast or livestream,
+So I've limited it to four.
 
-I've chosen these four on their ability to build up to the next system
+I've chosen these four on their ability to build from one system to the next.
 
-I haven't been able to finish the detail sections of my recommendation  
-So, if you don't trust me, you'll have to wait
+I haven't been able to finish the detail sections of my recommendation.
+So, if you don't trust me, {% bug-me-on-twitter "Hey @chantastic! I have a question about your post https://chan.dev/microphones post.  " %}
 
 ## COVID CAVEAT
 
-Many of these items have limited stock or prices have been inflated  
-I've added B&H product links because they provide stock notifications  
-Heads up: Amazon links are affiliate links
+Many of these items have limited stock or prices have been inflated.
+I've added B&H product links because they provide stock notifications.
+Heads up: Amazon links are affiliate links.
 
 ---
 
@@ -46,13 +46,13 @@ Buy at: [Amazon](https://amzn.to/2LlQjtX), [B&H](https://www.bhphotovideo.com/c/
 - [Audio-Technica AT2005USB](AT2005USB)
 - [Audio-Technica AT2100x-USB](https://amzn.to/3dsCcz0)
 
-I used the AT2100USB to record the 2016-2018 episodes of [Bird Call Review](http://birdcallreview.com)  
-The two mics above are newer versions of that mic
+I used the AT2100USB to record the 2016-2018 episodes of [Bird Call Review](http://birdcallreview.com).
+The two mics above are newer versions of that mic.
 
-These are very similar to the Samson Q2u but don't include the same useful accessories  
-They also sound "thinner" to my ears and they have a blinding, blue "on" LED
+These are very similar to the Samson Q2u but don't include the same useful accessories.
+They also sound "thinner" to my ears and they have a blinding, blue "on" LED.
 
-But, pretty close if you can't find stock of the Samson Q2u
+But, pretty close if you can't find stock of the Samson Q2u.
 
 ### Why this works
 
@@ -68,21 +68,29 @@ But, pretty close if you can't find stock of the Samson Q2u
 
 ---
 
-## For \$150: Beringer XM8500 mic + Beringer U-PHORIA UMC22 interface
+## For \$200: Beringer XM8500 mic + Elgato Wave XLR
 
-Buy the mic: [Amazon](https://amzn.to/2YOFSqK), [B&H](https://www.bhphotovideo.com/c/product/215145-REG/Behringer_XM8500_XM8500_Dynamic_ULTRAVOICE.html)  
-Buy the interface: [Amazon](https://amzn.to/3fJ6z6m), [B&H](https://www.bhphotovideo.com/c/product/1113600-REG/behringer_umc202hd_audiophile_2x2_24_bit_192_khz.html)
+I know $60 to $200 is a big jump.
+If you can't spend at least $200, you're going to be best served by my $60 recommendation.
+
+https://amzn.to/3uxAo3D
+
+Buy the mic: [Amazon](https://amzn.to/2YOFSqK), [B&H](https://www.bhphotovideo.com/c/product/215145-REG/Behringer_XM8500_XM8500_Dynamic_ULTRAVOICE.html)
+Buy the interface: [Amazon](https://amzn.to/3uxAo3D)
 
 ### What you get for the extra money
 
-- Better audio (more editable with high 24-bit recording)
-- The ability to explore better (non-USB) mics
-- Ability to easily record more than one personal locally
+- Better audio
+  - 24-bit files are far more editable than 16-bit
+  - [ClipGuard](https://help.elgato.com/hc/en-us/articles/360044558992-Elgato-Wave-3-Clipguard) protects peaks from sounding terrible
+- Helpful software
+  - Wave Link is audio mixing software that's _only_ available for Elgato Wave mics. It makes mixing audio sources a breeze
+- Freedom to explore better (pro) mics
 
 ### Why this works
 
-- The Behringer is cheap with a decent mic preamp
-- The Behringer is cheap, sound good, and has decent output gain
+- The Elgato Wave XLR is cheap, sound good, and has decent output gain
+- Elgato Wave link makes mixing audio SUPER easy. This is notoriously difficult on a Mac
 - Good isolation from background sounds
 - A dedicated interface will give you access to 24-bit recording and multi-track capabilities
 
@@ -91,11 +99,11 @@ Buy the interface: [Amazon](https://amzn.to/3fJ6z6m), [B&H](https://www.bhphotov
 - Recording low-volume sources (a quiet voice or far from the mic)
 - Electro-magnetic interferance from nearby monitor
 
-(Details coming later...)
+(Details coming...)
 
 ## For \$300: Rode M2 + Behringer U-PHORIA UMC22 interface
 
-Buy the mic: [B&H](https://www.bhphotovideo.com/c/product/643205-REG/Rode_M2_M2_Professional_Condenser_Handheld.html/?ap=y&ap=y&smp=y&smp=y&lsft=BI%3A514&gclid=CjwKCAjw7-P1BRA2EiwAXoPWA-sPHgOOvIqS_JVRblPJFRuhLBqh21WPluLUPLeO2nH6qhCB6iisBxoCqlEQAvD_BwE) (Rode doesn't provide warrantees to Amazon customers)  
+Buy the mic: [B&H](https://www.bhphotovideo.com/c/product/643205-REG/Rode_M2_M2_Professional_Condenser_Handheld.html/?ap=y&ap=y&smp=y&smp=y&lsft=BI%3A514&gclid=CjwKCAjw7-P1BRA2EiwAXoPWA-sPHgOOvIqS_JVRblPJFRuhLBqh21WPluLUPLeO2nH6qhCB6iisBxoCqlEQAvD_BwE) (Rode doesn't provide warrantees to Amazon customers)
 Buy the interface: [Amazon](https://amzn.to/3bpeQcb), [B&H](https://www.bhphotovideo.com/c/product/1056157-REG/bugera_umc_22_u_phoria_umc22_2x2_usb.html)
 
 ### What you get for the extra money
@@ -117,7 +125,7 @@ Buy the interface: [Amazon](https://amzn.to/3bpeQcb), [B&H](https://www.bhphotov
 
 ## For \$650: Shure SM7B + MOTU M4
 
-Buy the mic: [Amazon](https://amzn.to/2Abpd6j), [B&H](https://www.bhphotovideo.com/c/product/225820-REG/Shure_SM7B_SM7B_Cardioid_Dynamic.html)  
+Buy the mic: [Amazon](https://amzn.to/2Abpd6j), [B&H](https://www.bhphotovideo.com/c/product/225820-REG/Shure_SM7B_SM7B_Cardioid_Dynamic.html)
 Buy the interface: [B&H](https://www.bhphotovideo.com/c/product/1514483-REG/motu_3140_m4_4x4_usb_c_audio.html)
 
 ### What you get for the extra money
@@ -144,15 +152,15 @@ Buy the interface: [B&H](https://www.bhphotovideo.com/c/product/1514483-REG/motu
 
 ### Don't I need a Cloud Lifter or FetHead for the SM7B?
 
-No  
-Those are for interfaces with worse preamps  
-The MOTU has preamps with a higher EIN (Equivalent Input Noise) than the Cloud Lifter and FetHead
+No.
+Those are for interfaces with worse preamps.
+The MOTU has preamps with a higher EIN (Equivalent Input Noise) than the Cloud Lifter and FetHead.
 
-(Details coming later...)
+(Details coming...)
 
 ## For \$1100: Shure SM7B + Sound Device MixPre-3 (my setup)
 
-Buy the mic: [Amazon](https://amzn.to/2Abpd6j), [B&H](https://www.bhphotovideo.com/c/product/225820-REG/Shure_SM7B_SM7B_Cardioid_Dynamic.html)  
+Buy the mic: [Amazon](https://amzn.to/2Abpd6j), [B&H](https://www.bhphotovideo.com/c/product/225820-REG/Shure_SM7B_SM7B_Cardioid_Dynamic.html)
 Buy the interface: [Amazon](https://amzn.to/2WNfwCL), [B&H](https://www.bhphotovideo.com/c/product/1503004-REG/sound_devices_mixpre_3_ii_3_channel.html)
 
 ### What you get for the extra money
@@ -177,19 +185,19 @@ Buy the interface: [Amazon](https://amzn.to/2WNfwCL), [B&H](https://www.bhphotov
 
 ### Why you might need to upgrade
 
-You don't  
-You have everything you need  
-Rent the rest if/when you need it
+You don't.
+You have everything you need.
+Rent the rest if/when you need it.
 
 ### Don't I need a Cloud Lifter or FetHead for the SM7B?
 
-No  
-Those are for interfaces with worse preamps
+No.
+Those are for interfaces with worse preamps.
 
-(Details coming later...)
+(Details coming...)
 
 ---
 
-This doc is a work in progress  
-The recommendations aren't likely to change any time soon  
-But I'll flesh out the decision-making nuances a bit
+This doc is a work in progress.
+The recommendations aren't likely to change any time soon.
+But I'll flesh out the decision-making nuances a bit.
