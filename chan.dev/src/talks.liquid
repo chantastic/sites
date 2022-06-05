@@ -7,7 +7,7 @@ eleventyNavigation:
 
 <h1>Talks</h1>
 
-{% assign videos = talkVideos | reverse %}
+{% assign videos = talkVideos %}
 {% for video in talkVideos %}
 <article>
     <a href="https://www.youtube.com/watch?v={{video.snippet.resourceId.videoId}}" target="_blank" rel="noreferrer">
