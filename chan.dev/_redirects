@@ -1,4 +1,5 @@
 /blog/* /posts/:splat
+/schedule/* https://savvycal.com/chantastic/:splat
 /discord https://discord.gg/q9ZdBgP
 /avo /posts/avo-a-bem-dialect-using-data-attributes/
 /colorway https://github.com/chantastic/colorway
