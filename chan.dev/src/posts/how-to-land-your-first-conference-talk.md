@@ -55,7 +55,9 @@ Let me make it easy. Here’s something you can copy and paste into a DM or emai
 ```
 Hey!
 
-I'd love to speak at your conference. Do you have a page with recommendations for talk propsals? If not, do you have favorite talks, from previous events, that I might review?
+I'd love to speak at your conference.
+Do you have a page with recommendations for talk proposals?
+If not, do you have a favorite talks I might review?
 
 Thank you!
 ```
