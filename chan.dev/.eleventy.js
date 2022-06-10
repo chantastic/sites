@@ -93,7 +93,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addShortcode(
     "bug-me-on-twitter",
     async function (text = "Bug me on twitter…") {
-      return `<a href="https://twitter.com/intent/tweet?screen_name=chantastic&ref_src=twsrc%5Etfw" class="twitter-mention-button" data-show-count="false">${text}</a>`;
+      return `<a href="https://twitter.com/intent/tweet?screen_name=chantastic&ref_src=twsrc%5Etfw" class="twitter-mention-button" data-show-count="false" target="_blank" rel="noopener noreferrer" >${text}</a>`;
     }
   );
 
