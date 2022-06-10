@@ -10,11 +10,11 @@ I’m no expert but I’ve been speaking at meetups and conferences since 2013. 
 
 Here are a few things you can do.
 
-🔁 Have spoken before
-👉 Be obvious
-🙋 Ask organizers what they look for
-🙀 Make a banger title
-😈 Be a nuisance on social
+🔁 [Have spoken before](#have-spoken-before)
+👉 [Have an obvious affiliation](#have-an-obvious-affiliation)
+🙋 [Ask organizers what they look for](#ask-organizers-what-they-looking-for)
+🙀 [Craft a banger title](#craft-a-banger-title)
+😈 [Be a nuisance on social](#be-a-nuisance-on-social)
 
 ## Have spoken before
 
@@ -34,9 +34,9 @@ So how do you sell yourself?
 
 Make it easy to visualize you, on stage, delivering your topic.
 
-## Be obvious
+## Have an obvious affiliation
 
-Experts speakers sell conference tickets. So propose a talk in your realm of expertise.
+Experts speakers sell conference tickets. So propose a talk in your realm of your perceived expertise.
 
 Do you work at AWS? Propose a talk on grokking the latest serverless/edge offerings.
 
@@ -62,7 +62,7 @@ Thank you!
 
 Short. Sweet. To the point. And now you’ve introduced yourself to the organizer. 🐥🐥🪨
 
-## Make a banger title
+## Craft a banger title
 
 A conference talk title needs to entice people in a single sentence.
 
