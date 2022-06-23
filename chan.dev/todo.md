@@ -1,5 +1,13 @@
 # chan.dev
 
+## Things I hate about working on this
+### Offline
+
+Here's a real problem with static site generators like this. Any thing that fails the build makes the entire site stop working. That means I can't really work on it offline.
+
+- twitter embed breaks pages
+- youtube fetch breaks pages (unless i have a cached result that is inside the max age)
+
 ## /talks
 * Jan 20, 2020. Everything You Need To Know About React Suspense by Michael Chan. https://www.youtube.com/watch?v=siIhGaWZNcE&list=PLnc_NxpmOxaPBbn1PysP30GB0_8aQGnAa&index=11
 * Aug 22, 2018. Michael Chan - Hot Garbage Clean Code is Dead https://www.youtube.com/watch?v=-NP_upexPFg&list=PLnc_NxpmOxaPBbn1PysP30GB0_8aQGnAa
