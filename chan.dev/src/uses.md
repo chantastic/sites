@@ -27,3 +27,45 @@ It'll get better.
 Yo, all the links here are affiliate links for Amazon.
 So, I'll get like a couple pennies for the link or something.
 But I put the full product name. So buy it wherever you like.
+
+# Packs and kit
+
+- AER Travel 2
+- [Peak Design](/peakdesign)
+  - Duffel
+  - Tech Pouch
+  - Wash Pouch
+
+# Computer hardware
+
+# Software and services
+
+- notion
+- DaVinci Resolve
+- Centered
+- CleanShot X
+- Figma
+- Frame.io
+- Hidden Bar
+- Loopback
+- Magnet
+- OBS
+- [Recut](/recut)
+- [Riverside](/riverside)
+- [Cloudinary](/cloudinary)
+- [Podia](/podia)
+
+# Other services
+
+- [Butcher Box](/butcherbox)
+
+# Online stores
+
+[B&H]()
+[Huckberry]()
+[REI]()
+
+# Courses
+
+- [Part-time YouTuber Academy, by Ali Abdaal](https://chan.dev/ptya)
+- [Mastering ConvertKit, by Brennan Dunn]()
