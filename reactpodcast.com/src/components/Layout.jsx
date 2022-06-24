@@ -165,8 +165,12 @@ export function Layout({ children }) {
             <div className="h-px bg-gradient-to-r from-slate-200/0 via-slate-200 to-slate-200/0 lg:hidden" />
             <ul className="mt-4 flex justify-center space-x-10 text-base font-medium leading-7 text-slate-700 sm:space-x-8 lg:block lg:space-x-0 lg:space-y-4">
               <li className="flex">
-                <Link href="/">
-                  <a className="group flex items-center">
+                <Link href="https://open.spotify.com/show/0HfSakJOFwFEa0ujCEK1pO">
+                  <a
+                    className="group flex items-center"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <svg
                       aria-hidden="true"
                       className="h-8 w-8 fill-slate-400 group-hover:fill-slate-600"
@@ -179,8 +183,12 @@ export function Layout({ children }) {
                 </Link>
               </li>
               <li className="flex">
-                <Link href="/">
-                  <a className="group flex items-center">
+                <Link href="https://podcasts.apple.com/us/podcast/react-podcast/id1341969432">
+                  <a
+                    className="group flex items-center"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <svg
                       aria-hidden="true"
                       className="h-8 w-8 fill-slate-400 group-hover:fill-slate-600"
@@ -207,8 +215,12 @@ export function Layout({ children }) {
                 </Link>
               </li>
               <li className="flex">
-                <Link href="/">
-                  <a className="group flex items-center">
+                <Link href="https://overcast.fm/itunes1341969432">
+                  <a
+                    className="group flex items-center"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <svg
                       aria-hidden="true"
                       className="h-8 w-8 fill-slate-400 group-hover:fill-slate-600"
@@ -221,8 +233,12 @@ export function Layout({ children }) {
                 </Link>
               </li>
               <li className="flex">
-                <Link href="/">
-                  <a className="group flex items-center">
+                <Link href="https://feeds.simplecast.com/JoR28o79">
+                  <a
+                    className="group flex items-center"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <svg
                       aria-hidden="true"
                       className="h-8 w-8 fill-slate-400 group-hover:fill-slate-600"
