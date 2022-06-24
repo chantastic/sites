@@ -132,13 +132,6 @@ function EpisodeEntry({ episode }) {
 export async function getStaticProps() {
   const feed = await parse('https://feeds.simplecast.com/JoR28o79')
 
-  Object.keys(
-    feed.items.map(({ ...item }) => {
-      console.log(item.itunes_episode)
-      return item
-    })
-  )
-
   return {
     props: {
       episodes: feed.items.map(
