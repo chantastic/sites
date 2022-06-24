@@ -11,14 +11,8 @@ export default function Home({ episodes }) {
   return (
     <>
       <Head>
-        <title>
-          Their Side - Conversations with the most tragically misunderstood
-          people of our time
-        </title>
-        <meta
-          name="description"
-          content="Conversations with the most tragically misunderstood people of our time."
-        />
+        <title>React Podcast with chantastic</title>
+        <meta name="description" content="Chats with your favorite devs." />
       </Head>
       <div className="pt-16 pb-12 sm:pb-4 lg:pt-12">
         <Container>

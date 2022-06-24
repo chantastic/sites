@@ -284,10 +284,15 @@ export function Layout({ children }) {
             <span className="ml-2.5">Hosted by</span>
           </h2>
           <div className="mt-2 flex text-sm font-bold leading-7 text-slate-900">
-            <span className="after:ml-6 after:text-slate-400 after:content-['/']">
-              Norm MacDonald
+            <span className="after:ml-6 after:text-slate-400">
+              <a
+                href="https://chan.dev"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                chantastic
+              </a>
             </span>
-            <span className="ml-6">Bob Saget</span>
           </div>
         </div>
       </div>

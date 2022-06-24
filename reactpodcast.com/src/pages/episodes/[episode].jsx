@@ -25,8 +25,8 @@ export default function Episode({ episode }) {
   return (
     <>
       <Head>
-        <title>{episode.title} - Their Side</title>
-        <meta name="description" content={episode.description} />
+        <title>{`${episode.title} - React Podcast with chantastic`}</title>
+        <meta name="description" content={episode.itunes_summary} />
       </Head>
       <article className="py-16 lg:py-36">
         <Container>
