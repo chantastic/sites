@@ -129,28 +129,6 @@ function EpisodeEntry({ episode }) {
   )
 }
 
-// export async function getStaticProps() {
-//   const feed = await parse('https://their-side-feed.vercel.app/api/feed')
-
-//   return {
-//     props: {
-//       episodes: feed.items.map(
-//         ({ id, title, description, enclosures, published }) => ({
-//           id,
-//           title: `${id}: ${title}`,
-//           published,
-//           description,
-//           audio: enclosures.map((enclosure) => ({
-//             src: enclosure.url,
-//             type: enclosure.type,
-//           }))[0],
-//         })
-//       ),
-//     },
-//     revalidate: 10,
-//   }
-// }
-
 export async function getStaticProps() {
   const feed = await parse('https://feeds.simplecast.com/JoR28o79')
 
