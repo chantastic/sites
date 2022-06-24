@@ -50,7 +50,7 @@ export default function Episode({ episode }) {
               </div>
             </div>
             <p className="ml-24 mt-3 text-lg font-medium leading-8 text-slate-700">
-              {episode.description}
+              {episode.itunes_summary}
             </p>
           </header>
           <hr className="my-12 border-gray-200" />
@@ -65,19 +65,30 @@ export default function Episode({ episode }) {
 }
 
 export async function getStaticProps({ params }) {
-  let feed = await parse('https://their-side-feed.vercel.app/api/feed')
+  let feed = await parse('https://feeds.simplecast.com/JoR28o79')
   let episode = feed.items
-    .map(({ id, title, description, content, enclosures, published }) => ({
-      id: id.toString(),
-      title: `${id}: ${title}`,
-      description,
-      content,
-      published,
-      audio: enclosures.map((enclosure) => ({
-        src: enclosure.url,
-        type: enclosure.type,
-      }))[0],
-    }))
+    .map(
+      ({
+        itunes_episode: id,
+        title,
+        description,
+        itunes_summary,
+        content,
+        enclosures,
+        published,
+      }) => ({
+        id: id.toString(),
+        title,
+        description,
+        itunes_summary,
+        content,
+        published,
+        audio: enclosures.map((enclosure) => ({
+          src: enclosure.url,
+          type: enclosure.type,
+        }))[0],
+      })
+    )
     .find(({ id }) => id === params.episode)
 
   if (!episode) {
@@ -95,10 +106,10 @@ export async function getStaticProps({ params }) {
 }
 
 export async function getStaticPaths() {
-  let feed = await parse('https://their-side-feed.vercel.app/api/feed')
+  let feed = await parse('https://feeds.simplecast.com/JoR28o79')
 
   return {
-    paths: feed.items.map(({ id }) => ({
+    paths: feed.items.map(({ itunes_episode: id }) => ({
       params: {
         episode: id.toString(),
       },

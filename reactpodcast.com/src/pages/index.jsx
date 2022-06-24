@@ -46,7 +46,7 @@ function EpisodeEntry({ episode }) {
         src: episode.audio.src,
         type: episode.audio.type,
       },
-      link: `/${episode.id}`,
+      link: `/episodes/${episode.id}`,
     }),
     [episode]
   )
@@ -63,7 +63,7 @@ function EpisodeEntry({ episode }) {
             id={`episode-${episode.id}-title`}
             className="mt-2 text-lg font-bold text-slate-900"
           >
-            <Link href={`/${episode.id}`}>
+            <Link href={`/episodes/${episode.id}`}>
               <a>{he.decode(episode.title)}</a>
             </Link>
           </h2>
@@ -156,7 +156,7 @@ export async function getStaticProps() {
 
   Object.keys(
     feed.items.map(({ ...item }) => {
-      console.log(item)
+      console.log(item.itunes_episode)
       return item
     })
   )
@@ -165,14 +165,14 @@ export async function getStaticProps() {
     props: {
       episodes: feed.items.map(
         ({
-          /*id, */ title,
+          itunes_episode: id,
+          title,
           description,
           itunes_summary,
           enclosures,
           published,
         }) => ({
-          id: title,
-          // title: `${id}: ${title}`,
+          id,
           title,
           published,
           description,
