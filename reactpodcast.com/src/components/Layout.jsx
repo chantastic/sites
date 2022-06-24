@@ -87,13 +87,10 @@ function AboutSection(props) {
           'lg:line-clamp-4': !isExpanded,
         })}
       >
-        In this show, Eric and Wes dig deep to get to the facts with guests who
-        have been labeled villains by a society quick to judge, without actually
-        getting the full story. Tune in every Thursday to get to the truth with
-        another misunderstood outcast as they share the missing context in their
-        tragic tale.
+        In this show chantastic talks with your favorite developers about their
+        work, what inspires them, and where they're going next.
       </p>
-      {!isExpanded && (
+      {/* {!isExpanded && (
         <button
           type="button"
           className="mt-2 hidden text-sm font-bold leading-6 text-pink-500 hover:text-pink-700 active:text-pink-900 lg:inline-block"
@@ -101,7 +98,7 @@ function AboutSection(props) {
         >
           Show more
         </button>
-      )}
+      )} */}
     </section>
   )
 }
@@ -143,12 +140,11 @@ export function Layout({ children }) {
           <div className="mt-10 text-center lg:mt-12 lg:text-left">
             <p className="text-xl font-bold text-slate-900">
               <Link href="/">
-                <a>Their Side</a>
+                <a>React Podcast</a>
               </Link>
             </p>
             <p className="mt-3 text-lg font-medium leading-8 text-slate-700">
-              Conversations with the most tragically misunderstood people of our
-              time.
+              Chats with your favorite devs.
             </p>
           </div>
           <AboutSection className="mt-12 hidden lg:block" />
