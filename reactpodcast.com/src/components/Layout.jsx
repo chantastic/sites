@@ -113,10 +113,15 @@ export function Layout({ children }) {
         <div className="hidden lg:sticky lg:top-0 lg:flex lg:w-16 lg:flex-none lg:items-center lg:whitespace-nowrap lg:py-12 lg:text-sm lg:leading-7 lg:[writing-mode:vertical-rl]">
           <span className="font-mono text-slate-500">Hosted by</span>
           <span className="mt-6 flex font-bold text-slate-900">
-            <span className="after:mt-6 after:text-slate-400 after:content-['/']">
-              Eric Gordon
+            <span className="after:mt-6 after:text-slate-400">
+              <a
+                href="https://chan.dev"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                chantastic
+              </a>
             </span>
-            <span className="mt-6">Wes Mantooth</span>
           </span>
         </div>
         <div className="relative z-10 mx-auto px-4 pb-4 pt-10 sm:px-6 md:max-w-2xl md:px-4 lg:min-h-full lg:flex-auto lg:border-x lg:border-slate-200 lg:py-12 lg:px-8 xl:px-12">
