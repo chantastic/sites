@@ -7,7 +7,7 @@ layout: layouts/post.njk
 
 I’m always on the hunt for contrast.
 It’s why I like comedy-horror so much.
-The juxtaposition a hero spitting a jocose one-liners, while being dismembered… it just hits.
+The juxtaposition of a hero spitting jocose one-liners, while being dismembered… it just hits.
 
 Our curse is that *every thing* becomes *every day*.
 
