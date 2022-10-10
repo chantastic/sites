@@ -9,41 +9,13 @@ const fetch = require("node-fetch");
 require("dotenv").config();
 
 module.exports = function (eleventyConfig) {
-  eleventyConfig.addPlugin(pluginRss);
-  eleventyConfig.addPlugin(pluginSyntaxHighlight);
-  eleventyConfig.addPlugin(pluginNavigation);
+  for (plugin of [pluginRss, pluginSyntaxHighlight, pluginNavigation]) {
+    eleventyConfig.addPlugin(plugin);
+  }
 
   eleventyConfig.setDataDeepMerge(true);
 
   eleventyConfig.addLayoutAlias("post", "layouts/post.njk");
-
-  eleventyConfig.addFilter("readableDate", (dateObj) => {
-    return DateTime.fromJSDate(dateObj, { zone: "utc" }).toFormat(
-      "LLL dd, yyyy"
-    );
-  });
-
-  // https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#valid-date-string
-  eleventyConfig.addFilter("htmlDateString", (dateObj) => {
-    return DateTime.fromJSDate(dateObj, { zone: "utc" }).toFormat("yyyy-LL-dd");
-  });
-
-  eleventyConfig.addFilter("encodeURIComponent", (str = "") => {
-    return encodeURIComponent(str);
-  });
-
-  // Get the first `n` elements of a collection.
-  eleventyConfig.addFilter("head", (array, n) => {
-    if (n < 0) {
-      return array.slice(n);
-    }
-
-    return array.slice(0, n);
-  });
-
-  eleventyConfig.addFilter("min", (...numbers) => {
-    return Math.min.apply(null, numbers);
-  });
 
   eleventyConfig.addCollection("tagList", function (collection) {
     let tagSet = new Set();
@@ -77,61 +49,18 @@ module.exports = function (eleventyConfig) {
     return [...tagSet];
   });
 
-  eleventyConfig.addPassthroughCopy("img");
-  eleventyConfig.addPassthroughCopy("css");
-  eleventyConfig.addPassthroughCopy("og-image");
-  eleventyConfig.addPassthroughCopy("_redirects");
+  for (filter of filters) {
+    eleventyConfig.addFilter(...filter);
+  }
 
-  eleventyConfig.addShortcode("tweet", async function (url) {
-    let { html } = await fetch(
-      `https://publish.twitter.com/oembed?url=${url}`
-    ).then((res) => res.json());
+  for (asset of ["img", "css", "og-image", "_redirects"]) {
+    eleventyConfig.addPassthroughCopy(asset);
+  }
 
-    return html;
-  });
+  for (shortcode of shortcodes) {
+    eleventyConfig.addShortcode(...shortcode);
+  }
 
-  eleventyConfig.addShortcode(
-    "bug-me-on-twitter",
-    async function (text = "Bug me on twitter…") {
-      return `<a href="https://twitter.com/intent/tweet?screen_name=chantastic&ref_src=twsrc%5Etfw" class="twitter-mention-button" data-show-count="false" target="_blank" rel="noopener noreferrer" >${text}</a>`;
-    }
-  );
-
-  eleventyConfig.addShortcode(
-    "lunch-dev-cta",
-    function (text = "Join lunch.dev for videos") {
-      return `<script src="https://cdn.podia.com/embeds.js" async="async"></script><a href="https://www.lunch.dev/member" data-podia-embed="button" data-text="${text}">${text}</a>`;
-    }
-  );
-
-  eleventyConfig.addShortcode("youtube-video", function (url) {
-    // https://stackoverflow.com/a/21607897
-    function getVideoIdFromYouTubeURL(url) {
-      let regExp =
-        /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/;
-      let match = url.match(regExp);
-
-      return match && match[2].length === 11 ? match[2] : null;
-    }
-
-    let embedCode = `<iframe src="//www.youtube.com/embed/${getVideoIdFromYouTubeURL(
-      url
-    )}" frameborder="0" allowfullscreen></iframe>`;
-    return `<div data-responsive-youtube-container>${embedCode}</div>`;
-  });
-
-  /* Markdown Overrides */
-  let markdownLibrary = markdownIt({
-    html: true,
-    breaks: true,
-    linkify: true,
-  })
-    .use(markdownItAnchor, {
-      permalink: true,
-      permalinkClass: "direct-link",
-      permalinkSymbol: "#",
-    })
-    .use(require("markdown-it-table-of-contents"));
   eleventyConfig.setLibrary("md", markdownLibrary);
 
   // Browsersync Overrides
@@ -177,3 +106,101 @@ module.exports = function (eleventyConfig) {
     },
   };
 };
+
+let markdownLibrary = markdownIt({
+  html: true,
+  breaks: true,
+  linkify: true,
+})
+  .use(markdownItAnchor, {
+    permalink: true,
+    permalinkClass: "direct-link",
+    permalinkSymbol: "#",
+  })
+  .use(require("markdown-it-table-of-contents"));
+
+let filters = [
+  [
+    "readableDate",
+    (dateObj) => {
+      return DateTime.fromJSDate(dateObj, { zone: "utc" }).toFormat(
+        "LLL dd, yyyy"
+      );
+    },
+  ],
+  [
+    // https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#valid-date-string
+    "htmlDateString",
+    (dateObj) => {
+      return DateTime.fromJSDate(dateObj, { zone: "utc" }).toFormat(
+        "yyyy-LL-dd"
+      );
+    },
+  ],
+  [
+    "encodeURIComponent",
+    (str = "") => {
+      return encodeURIComponent(str);
+    },
+  ],
+  [
+    // Get the first `n` elements of a collection.
+    "head",
+    (array, n) => {
+      if (n < 0) {
+        return array.slice(n);
+      }
+
+      return array.slice(0, n);
+    },
+  ],
+  [
+    "min",
+    (...numbers) => {
+      return Math.min.apply(null, numbers);
+    },
+  ],
+];
+
+let shortcodes = [
+  [
+    "tweet",
+    async function (url) {
+      let { html } = await fetch(
+        `https://publish.twitter.com/oembed?url=${url}`
+      ).then((res) => res.json());
+
+      return html;
+    },
+  ],
+  [
+    "bug-me-on-twitter",
+    async function (text = "Bug me on twitter…") {
+      return `<a href="https://twitter.com/intent/tweet?screen_name=chantastic&ref_src=twsrc%5Etfw" class="twitter-mention-button" data-show-count="false" target="_blank" rel="noopener noreferrer" >${text}</a>`;
+    },
+  ],
+  [
+    "lunch-dev-cta",
+    function (text = "Join lunch.dev for videos") {
+      return `<script src="https://cdn.podia.com/embeds.js" async="async"></script><a href="https://www.lunch.dev/member" data-podia-embed="button" data-text="${text}">${text}</a>`;
+    },
+  ],
+  [
+    "youtube-video",
+    function (url) {
+      // https://stackoverflow.com/a/21607897
+      function getVideoIdFromYouTubeURL(url) {
+        let regExp =
+          /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/;
+        let match = url.match(regExp);
+
+        return match && match[2].length === 11 ? match[2] : null;
+      }
+
+      let embedCode = `<iframe src="//www.youtube.com/embed/${getVideoIdFromYouTubeURL(
+        url
+      )}" frameborder="0" allowfullscreen></iframe>`;
+      return `<div data-responsive-youtube-container>${embedCode}</div>`;
+    },
+  ],
+];
