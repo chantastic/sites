@@ -15,3 +15,7 @@ However, that's assuming a lot of things.
 So I'm going to start with a very 1:1 file:page setup.
 This will mean that I have to create relationships between next/prev content manually.
 But that's fine, given how predictable the urls will be.
+
+## Content
+
+I'm going to split lowercase and uppercase visually so that I can split lessons where uppercase and lowercase versions of keys do something completely different.
