@@ -1,0 +1,22 @@
+---
+layout: "layouts/event.njk"
+---
+
+<h1>#NoVimber</h1>
+
+{%- assign posts = collections.novimber | pastOrPresent -%}
+
+<ul>
+  {%- for post in posts -%}
+    <li>
+      <a href="{{ post.url }}">
+        {% if post.data.key %}
+          <kbd>
+            {{ post.data.key }}
+          </kbd>
+        {% endif %}
+        {{ post.data.title }}
+      </a>
+    </li>
+  {%- endfor -%}
+</ul>

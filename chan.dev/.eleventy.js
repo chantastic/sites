@@ -158,6 +158,16 @@ let filters = [
       return Math.min.apply(null, numbers);
     },
   ],
+  [
+    "pastOrPresent",
+    (collection) => {
+      let result = collection.reduce((prev, current) => {
+        return new Date(current.date) > new Date() ? prev : [...prev, current];
+      }, []);
+
+      return result;
+    },
+  ],
 ];
 
 let shortcodes = [

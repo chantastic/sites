@@ -1,1 +1,4 @@
-{ "layout": "layouts/event.njk" }
+{
+  "tags": ["vim", "novimber"],
+  "layout": "layouts/event.njk"
+}
