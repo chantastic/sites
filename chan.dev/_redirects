@@ -10,6 +10,7 @@
 /avatars/latest https://res.cloudinary.com/chantastic/image/upload/v1626976663/chan.dev/2021-avatar.png
 /expensive /talks/expensive
 /novimber /event/2022/novimber/
+/1m /https://github.com/chantastic/one-million-ui-states
 
 /react/concurrent/concurrent-ui-patterns--experimental /notes/react/concurrent/concurrent-ui-patterns--experimental/
 /react/concurrent/introducing-concurrent-mode--experimental /notes/react/concurrent/introducing-concurrent-mode--experimental/
