@@ -21,9 +21,9 @@
   },
   "homepage": "https://github.com/chantastic/sites#readme",
   "dependencies": {
-    "@mdx-js/loader": "^1.6.18",
+    "@mdx-js/loader": "^2.1.5",
     "@next/mdx": "^9.5.4",
-    "next": "^9.5.4",
+    "next": "^13.0.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
   }
