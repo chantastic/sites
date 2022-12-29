@@ -6,6 +6,7 @@ const pluginNavigation = require("@11ty/eleventy-navigation");
 const markdownIt = require("markdown-it");
 const markdownItAnchor = require("markdown-it-anchor");
 const fetch = require("node-fetch");
+
 require("dotenv").config();
 
 module.exports = function (eleventyConfig) {
@@ -168,6 +169,18 @@ let filters = [
       return result;
     },
   ],
+  [
+    "inYear",
+    (collection, year) => {
+      let result = collection.reduce((prev, current) => {
+        return String(current.date.getFullYear()) === String(year)
+          ? [...prev, current]
+          : prev;
+      }, []);
+
+      return result;
+    },
+  ],
 ];
 
 let shortcodes = [
@@ -209,6 +222,19 @@ let shortcodes = [
         url
       )}" frameborder="0" allowfullscreen></iframe>`;
       return `<div data-responsive-youtube-container>${embedCode}</div>`;
+    },
+  ],
+  [
+    "schedule-chat",
+    function (text = "Schedule a chat with me") {
+      return `<script>window.SavvyCal=window.SavvyCal||function(){(SavvyCal.q=SavvyCal.q||[]).push(arguments)};</script>
+<script async src="https://embed.savvycal.com/v1/embed.js"></script>
+<script>
+  SavvyCal('init')
+</script>
+
+<a data-savvycal-embed href="https://savvycal.com/chantastic/chat">${text}</a>
+      `;
     },
   ],
 ];
