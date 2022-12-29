@@ -1,4 +1,4 @@
 [build]
   base = "chan.dev/"
   publish = "chan.dev/_site"
-  command = "DEBUG=* eleventy"
+  command = "npm run build"
