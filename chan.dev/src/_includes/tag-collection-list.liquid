@@ -1,0 +1,13 @@
+<ul>
+  {% for article in taglist %}
+    <li>
+      <a href="{{ article.url | url }}">
+        {% if article.data.title %}
+          {{ article.data.title }}
+        {% else %}
+          <code>{{ article.url }}</code>
+        {% endif %}
+      </a>
+    </li>
+  {% endfor %}
+</ul>

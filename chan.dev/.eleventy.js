@@ -170,6 +170,16 @@ let filters = [
     },
   ],
   [
+    "sortAlphabetically",
+    (collection) => {
+      let result = collection
+        .slice()
+        .sort((a, b) => a.localeCompare(b, "en", { sensitivity: "base" }));
+
+      return result;
+    },
+  ],
+  [
     "inYear",
     (collection, year) => {
       let result = collection.reduce((prev, current) => {
@@ -185,6 +195,7 @@ let filters = [
 
 let shortcodes = [
   [
+    // tweet <tab> in 'markdown' files
     "tweet",
     async function (url) {
       let { html } = await fetch(
@@ -207,6 +218,7 @@ let shortcodes = [
     },
   ],
   [
+    // youtube<tab> in 'markdown' files
     "youtube-video",
     function (url) {
       // https://stackoverflow.com/a/21607897
@@ -225,6 +237,7 @@ let shortcodes = [
     },
   ],
   [
+    // chat<tab> in 'markdown' files
     "schedule-chat",
     function (text = "Schedule a chat with me") {
       return `<script>window.SavvyCal=window.SavvyCal||function(){(SavvyCal.q=SavvyCal.q||[]).push(arguments)};</script>
