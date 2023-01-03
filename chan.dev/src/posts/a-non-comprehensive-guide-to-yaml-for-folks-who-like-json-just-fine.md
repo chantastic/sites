@@ -21,17 +21,7 @@ Between Eleventy, GitHub Actions, and a recent foray into serverless, I'm using 
 
 This is mapping for my JSON-acquainted brain.
 
-- [Comments](#comments)
-- [Array of strings](#array-of-strings)
-- [Array of objects — one value](#array-of-objects-—-single-value)
-- [Array of objects — many values](#array-of-objects-—-many-values)
-- [Object of keyed arrays of strings](#object-of-keyed-arrays-of-strings)
-- [Object of keyed objects with mixed values](#object-of-keyed-objects-with-mixed-values)
-- [Array of arrays with mixed values](#array-of-arrays-with-mixed-values)
-- [Nodes (variables)](#nodes)
-- [Sample GitHub Action](#sample-github-action)
-- [Takeaways](#takeaways)
-- [Resources and further reading](#resources-and-further-reading)
+[[toc]]
 
 ## Comments
 
@@ -128,7 +118,7 @@ This code is auto-formatted by prettier putting the dash and the first property 
 
 YAML docs show the dash and first property on different lines which is much more legible.
 
-```
+```yaml
 -
   name: Taylor Swift
   album_count: 9
