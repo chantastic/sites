@@ -1,0 +1,8 @@
+---
+title: Plays
+layout: layouts/home.njk
+---
+
+{% assign taglist = collections.play | sort: "data.title" %}
+{% include
+ "tag-collection-list.liquid" %}
