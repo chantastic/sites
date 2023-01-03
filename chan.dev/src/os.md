@@ -39,6 +39,12 @@ In urgent situations, I can schedule outside of my standard availability.
 
 [Link to _extended availability_ edit page 🔒](https://savvycal.com/availabilities/avail_01G57V2D2CKGXEQ139FYZD620E/edit)
 
+## Lunch availability
+
+| Day | Hours            |
+| :-- | :--------------- |
+| F   | 12:00pm - 1:30pm |
+
 ## Meeting duration
 
 All meetings will be fewer than 55 minutes.
