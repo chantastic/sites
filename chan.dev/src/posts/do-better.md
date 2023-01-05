@@ -1,7 +1,6 @@
 ---
 title: Do  Better
 date: 2019-10-17
-layout: layouts/post.njk
 ---
 
 Do better

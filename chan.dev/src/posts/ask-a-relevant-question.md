@@ -1,7 +1,6 @@
 ---
 title: Ask A Relevant Question
 date: 2019-04-10
-layout: layouts/post.njk
 ---
 
 Networking is hard.  

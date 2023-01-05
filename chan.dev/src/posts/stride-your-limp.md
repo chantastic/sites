@@ -1,7 +1,6 @@
 ---
 title: Stride Your Limp
 date: 2020-01-08
-layout: layouts/post.njk
 ---
 
 I don't trust anyone who doesn't walk with a limp — metaphorically, of course.

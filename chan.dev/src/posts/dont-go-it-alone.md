@@ -1,7 +1,6 @@
 ---
 title: Don't Go It Alone
 date: 2019-12-19
-layout: layouts/post.njk
 ---
 
 My dad taught me to trust no one.  

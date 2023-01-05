@@ -1,7 +1,6 @@
 ---
 title: Coordination
 date: 2020-05-27
-layout: layouts/post.njk
 ---
 
 I outed myself as a choir kid on [Chats with Kent](https://kentcdodds.com/chats-with-kent-podcast/seasons/03/episodes/michael-chan-teaches-you-how-to-break-into-the-industry) this month

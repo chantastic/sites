@@ -1,7 +1,6 @@
 ---
 title: ADR — Architecture Decision Record
 date: 2022-12-28
-layout: layouts/post.njk
 ---
 
 Decision fatigue is real and it sucks.

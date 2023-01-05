@@ -1,7 +1,6 @@
 ---
 title: You
 date: 2020-01-01
-layout: layouts/post.njk
 ---
 
 Thanks for letting me in this year.

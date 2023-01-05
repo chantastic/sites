@@ -1,7 +1,6 @@
 ---
 title: AVO 🥑 — A BEM Dialect Using Data Attributes
 date: 2021-02-08
-layout: layouts/post.njk
 ---
 
 ## Attribute Value-Object
@@ -16,10 +15,21 @@ As a BEM dialect, AVO observes the concepts of BEM but uses data attribute synta
 - [Video](#video)
 - [Goals](#goals)
 - [Attribute](#attribute)
+    - [CSS](#css)
+    - [HTML](#html)
 - [Value (boolean)](#value-boolean)
+    - [CSS](#css-1)
+    - [HTML](#html-1)
 - [Value-object (enumerable)](#value-object-enumerable)
+    - [CSS](#css-2)
+    - [HTML](#html-2)
 - [Value-object (unbounded)](#value-object-unbounded)
+    - [CSS](#css-3)
+    - [HTML](#html-3)
+    - [Warning](#warning)
 - [Relative](#relative)
+    - [CSS](#css-4)
+    - [HTML](#html-4)
 
 ## Video
 

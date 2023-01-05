@@ -1,7 +1,6 @@
 ---
 title: Do What Others Won't
 date: 2020-01-22
-layout: layouts/post.njk
 ---
 
 Yo

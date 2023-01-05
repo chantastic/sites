@@ -1,7 +1,6 @@
 ---
 title: My $500 lesson on copyright
 date: 2018-09-07
-layout: layouts/post.njk
 ---
 
 If you want to protect your work,

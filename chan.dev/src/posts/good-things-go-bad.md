@@ -1,7 +1,6 @@
 ---
 title: Good things go bad
 date: 2020-02-24
-layout: layouts/post.njk
 ---
 
 There’s no good time to eat an avocado.

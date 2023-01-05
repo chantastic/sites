@@ -1,7 +1,6 @@
 ---
 title: A Non-Comprehensive Guide to YAML for Folks Who Like JSON Just Fine
 date: 2021-02-10
-layout: layouts/post.njk
 tags:
   - yaml
 ---

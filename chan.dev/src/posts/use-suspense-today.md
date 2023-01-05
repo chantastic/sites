@@ -1,7 +1,6 @@
 ---
 title: Use Suspense Today
 date: 2019-10-23
-layout: layouts/post.njk
 ---
 
 Believe it or not, you've had access to `Suspense` for a year.

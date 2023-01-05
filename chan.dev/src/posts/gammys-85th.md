@@ -2,7 +2,6 @@
 title: Gammy's 85th
 description: A recorded interview withy my grandmother on her 85th birthday on finding love, lord, and lasting enthusiasm
 date: 2020-10-25
-layout: layouts/post.njk
 og:
   audio: https://s3-us-west-1.amazonaws.com/media.chan.dev/gammy-85-interview.mp3
 ---

@@ -1,7 +1,6 @@
 ---
 title: Failure
 date: 2019-03-27
-layout: layouts/post.njk
 ---
 
 👋 Hi!

@@ -4,7 +4,6 @@ date: 2022-01-28
 description:
 og:
   title: "2022: Year of Play"
-layout: layouts/post.njk
 ---
 
 My theme for 2022 is **play**.

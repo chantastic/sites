@@ -1,7 +1,6 @@
 ---
 title: Teach Your Kids Mixology
 date: 2020-05-13
-layout: layouts/post.njk
 ---
 
 I taught my kids to make mixed drinks for Mother's Day

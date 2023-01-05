@@ -1,7 +1,6 @@
 ---
 title: Share your by-products
 date: 2020-04-08
-layout: layouts/post.njk
 ---
 
 There's a chapter in Rework titled "Sell Your By-products".

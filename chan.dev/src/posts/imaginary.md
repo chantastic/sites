@@ -1,7 +1,6 @@
 ---
 title: Imaginary
 date: 2019-04-03
-layout: layouts/post.njk
 ---
 
 I've wanted to host React Podcast since its original launch in 2015.  

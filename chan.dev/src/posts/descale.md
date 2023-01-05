@@ -3,7 +3,6 @@ title: Descale
 description: "I let the buildup go unchecked. I broke me by using me without supporting me. I pushed thru — pressed on — knowing I was on borrowed time…"
 og_title: "Descale: On Cleaning Up Mental and Emotional Hardware"
 date: 2021-09-04
-layout: layouts/post.njk
 ---
 
 Every couple months, I have to "descale" the espresso machine.

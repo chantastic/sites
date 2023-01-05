@@ -1,7 +1,6 @@
 ---
 title: Import Default Export
 date: 2021-02-02
-layout: layouts/post.njk
 og:
   image: "https://chan.dev/og-image/import-default-export.jpg"
 ---

@@ -1,7 +1,6 @@
 ---
 title: My why
 date: 2018-09-05
-layout: layouts/post.njk
 ---
 
 My **why** showed up as a pink slip.

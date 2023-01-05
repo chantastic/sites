@@ -1,7 +1,6 @@
 ---
 title: What if Nothing Matters but Communication
 date: 2019-08-01
-layout: layouts/post.njk
 ---
 
 Last year I gave talk — [Hot Garbage: Clean Code is Dead](https://www.youtube.com/watch?v=-NP_upexPFg).

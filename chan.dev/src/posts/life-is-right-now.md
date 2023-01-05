@@ -1,7 +1,6 @@
 ---
 title: Life is Right Now
 date: 2019-07-24
-layout: layouts/post.njk
 ---
 
 I'm in bed with the flu.  

@@ -1,7 +1,6 @@
 ---
 title: You Can't Do in a Month What You Won't Do in a Day
 date: 2018-09-21
-layout: layouts/post.njk
 ---
 
 You can't do in a month what you can't do in a day.

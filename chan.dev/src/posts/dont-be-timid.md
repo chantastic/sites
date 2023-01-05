@@ -1,7 +1,6 @@
 ---
 title: Don't Be Timid
 date: 2019-10-02
-layout: layouts/post.njk
 ---
 
 People are simple.

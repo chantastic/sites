@@ -1,7 +1,6 @@
 ---
 title: Comprehending YAML
 date: 2021-02-11
-layout: layouts/post.njk
 tags:
   - yaml
 ---
@@ -13,14 +12,19 @@ Before [yesterday's post](../a-non-comprehensive-guide-to-yaml-for-folks-who-lik
 And after sleeping on my exercise, I have a better picture of what's going on.
 
 - [YAML infers complex types](#yaml-infers-complex-types)
+  - [Understanding inference](#understanding-inference)
 - [YAML infers simple types](#yaml-infers-simple-types)
+- [Takeaways](#takeaways)
 - [YAML shorthand can be confusing](#yaml-shorthand-can-be-confusing)
+  - [Takeaways](#takeaways-1)
 - [YAML patterns](#yaml-patterns)
-  - [Arrays of arrays](#array-of-arrays-%3A-sequence-of-sequences)
-  - [Arrays of objects](#array-of-objects-%3A-sequence-of-mappings)
-  - [Objects of arrays](#object-of-arrays-%3A-mapping-of-sequences)
-  - [Objects of objects](#object-of-objects-%3A-mapping-of-mappings)
+  - [Array of arrays : sequence of sequences](#array-of-arrays--sequence-of-sequences)
+  - [Array of objects : sequence of mappings](#array-of-objects--sequence-of-mappings)
+  - [Object of arrays : mapping of sequences](#object-of-arrays--mapping-of-sequences)
+  - [Object of objects : mapping of mappings](#object-of-objects--mapping-of-mappings)
 - [All mixed up](#all-mixed-up)
+- [Conclusion](#conclusion)
+- [Keep in touch](#keep-in-touch)
 
 ## YAML infers complex types
 

@@ -1,7 +1,6 @@
 ---
 title: The Secret of Narrative...
 date: 2019-08-08
-layout: layouts/post.njk
 ---
 
 I'm obsessed with narrative.

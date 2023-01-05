@@ -1,7 +1,6 @@
 ---
 title: Fail Up
 date: 2019-06-12
-layout: layouts/post.njk
 ---
 
 I learn slowly.

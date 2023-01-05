@@ -1,7 +1,6 @@
 ---
 title: Make the Cut
 date: 2019-10-23
-layout: layouts/post.njk
 ---
 
 Every idea starts as a conflated ball of ideas  

@@ -1,7 +1,6 @@
 ---
 title: More and Worse
 date: 2019-05-08
-layout: layouts/post.njk
 ---
 
 I don't have trouble doing a thing perfectly.  

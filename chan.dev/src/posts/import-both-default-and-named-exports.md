@@ -1,7 +1,6 @@
 ---
 title: Import Both Default and Named Exports
 date: 2021-02-05
-layout: layouts/post.njk
 og:
   image: "https://chan.dev/og-image/import-both-default-and-named-exports.jpg"
 ---

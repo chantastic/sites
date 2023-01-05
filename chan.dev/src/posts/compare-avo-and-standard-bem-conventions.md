@@ -1,7 +1,6 @@
 ---
 title: Compare AVO 🥑 and standard BEM Conventions
 date: 2021-02-08
-layout: layouts/post.njk
 ---
 
 ## AVO 🥑 : BEM (standard) syntax comparison
@@ -11,9 +10,10 @@ This is a chart, mapping AVO 🥑 syntax to standard BEM verbiage.
 AVO 🥑 is a syntactive dialect of [BEM's Block, Element, Modifier constructs](https://en.bem.info/methodology/quick-start/).  
 This reference describes AVO 🥑 naming conventions in BEM terms — as defined on [bem.info](https://en.bem.info/methodology/quick-start/).
 
-- [Block](#block)
-- [Element](#element)
-- [Modifier](#modifier)
+- [AVO 🥑 : BEM (standard) syntax comparison](#avo---bem-standard-syntax-comparison)
+  - [Block](#block)
+  - [Element](#element)
+  - [Modifier](#modifier)
 
 ### Block
 

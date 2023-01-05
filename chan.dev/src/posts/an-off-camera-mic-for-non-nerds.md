@@ -1,7 +1,6 @@
 ---
 title: An off-camera mic for non-nerds
 date: 2021-01-02
-layout: layouts/post.njk
 ---
 
 My friend [Dan](https://www.danott.co) asked me for a mic recommendation.  

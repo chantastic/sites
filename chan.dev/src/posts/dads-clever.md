@@ -1,7 +1,6 @@
 ---
 title: Dad's Clever
 date: 2020-04-29
-layout: layouts/post.njk
 ---
 
 When dad died, I wanted only one of his things:

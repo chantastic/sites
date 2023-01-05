@@ -1,7 +1,6 @@
 ---
 title: Are We There Yet?
 date: 2019-06-19
-layout: layouts/post.njk
 ---
 
 When my friend Mike and I got our first entry-level tech jobs, we'd daydream over lunch.  

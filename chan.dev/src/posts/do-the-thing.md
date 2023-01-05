@@ -1,7 +1,6 @@
 ---
 title: Do the Thing
 date: 2019-07-17
-layout: layouts/post.njk
 ---
 
 This is my modus operandi:

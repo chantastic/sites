@@ -2,7 +2,6 @@
 title: Release
 date: 2021-01-01
 description: Release. Some things lift, others pull. Let go of things that pull…
-layout: layouts/post.njk
 ---
 
 Release.  

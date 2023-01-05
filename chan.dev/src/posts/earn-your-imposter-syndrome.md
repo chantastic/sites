@@ -1,7 +1,6 @@
 ---
 title: Earn Your Imposter Syndrome
 date: 2020-01-29
-layout: layouts/post.njk
 ---
 
 "I'm getting into the field, how do I overcome my imposter syndrome?"

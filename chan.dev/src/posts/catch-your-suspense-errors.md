@@ -1,7 +1,6 @@
 ---
 title: Catch Your Suspense Errors
 date: 2019-10-30
-layout: layouts/post.njk
 ---
 
 Not every promise resolves.  

@@ -1,7 +1,6 @@
 ---
 title: But that shit ain't the truth
 date: 2020-05-06
-layout: layouts/post.njk
 ---
 
 It's my favorite cinematic transformation...

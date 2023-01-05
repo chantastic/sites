@@ -1,7 +1,6 @@
 ---
 title: Make a Foul
 date: 2020-02-26
-layout: layouts/post.njk
 ---
 
 "I want to see you make a foul!"

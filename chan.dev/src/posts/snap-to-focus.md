@@ -1,7 +1,6 @@
 ---
 title: Snap to Focus
 date: 2020-02-19
-layout: layouts/post.njk
 ---
 
 It's hard to make a great photo on a phone.

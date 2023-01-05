@@ -1,7 +1,6 @@
 ---
 title: Sound Epic in Audio
 date: 2019-05-01
-layout: layouts/post.njk
 ---
 
 Audio is becoming more important for communication.

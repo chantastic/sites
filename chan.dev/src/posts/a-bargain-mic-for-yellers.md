@@ -1,7 +1,6 @@
 ---
 title: A bargain mic for yellers
 date: 2021-02-21
-layout: layouts/post.njk
 ---
 
 Kevin and Bobby started a new podcast: [Essentially Useless](https://www.youtube.com/channel/UCYSOVLrjLDr7m5LIJs876mw).
@@ -26,7 +25,7 @@ This mic is the pinnacle of USB-mic technology, sporting a classy design, in an 
 
 When I started podcasting and streaming, the first first piece of outboard gear I needed was a limiter/compressor. But that's all I've needed.
 
-To keep a strong and peak-free audio signal, I tried the [DBX 286s ($229)](https://amzn.to/3dM0kQH) — which I *do not* recommend. I eventually landed on the [SoundDevices MixPre-3 ($899)](https://amzn.to/3pEGEQP) — which I love.
+To keep a strong and peak-free audio signal, I tried the [DBX 286s ($229)](https://amzn.to/3dM0kQH) — which I _do not_ recommend. I eventually landed on the [SoundDevices MixPre-3 ($899)](https://amzn.to/3pEGEQP) — which I love.
 
 But, $229 is the entry point for solving this issue with hardware. And that's outside of the $150 budget.
 
@@ -58,9 +57,9 @@ At a $15 difference, absolutely get the Wave:3. But if you can only find the Wav
 
 There are 3 major differences:
 
-* Wave:1 lacks a capacitive mute button
-* Wave:1's hardware dial only controls headphone volume (not gain or mic/pc mix)
-* Wave:1 has a max sample rate of 48kHz
+- Wave:1 lacks a capacitive mute button
+- Wave:1's hardware dial only controls headphone volume (not gain or mic/pc mix)
+- Wave:1 has a max sample rate of 48kHz
 
 Other than that, it's the same mic and all features can be controlled via [Elgato WaveLink software](https://help.elgato.com/hc/en-us/articles/360051604911-Wave-Link-Using-Elgato-Wave-microphone-and-Wave-Link-with-NVIDA-Broadcast).
 

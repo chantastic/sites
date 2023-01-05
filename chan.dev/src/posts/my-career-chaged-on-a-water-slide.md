@@ -1,7 +1,6 @@
 ---
 title: My Career Changed on a Water Slide
 date: 2019-08-14
-layout: layouts/post.njk
 ---
 
 There's a water slide at a local resort where my career changed.

@@ -1,7 +1,6 @@
 ---
 title: Unemployment
 date: 2020-03-18
-layout: layouts/post.njk
 ---
 
 On unemployment, you get a paper check.

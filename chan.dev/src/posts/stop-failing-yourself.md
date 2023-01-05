@@ -1,7 +1,6 @@
 ---
 title: Stop Failing Yourself
 date: 2019-11-27
-layout: layouts/post.njk
 ---
 
 If you want your life to be worse,  

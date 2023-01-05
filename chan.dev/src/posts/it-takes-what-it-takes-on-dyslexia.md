@@ -1,7 +1,6 @@
 ---
 title: It Takes what it Takes —  On Dyslexia
 date: 2019-10-09
-layout: layouts/post.njk
 ---
 
 I have dyslexia.

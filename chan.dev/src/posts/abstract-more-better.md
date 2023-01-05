@@ -1,7 +1,6 @@
 ---
 title: Abstract more, better
 date: 2020-04-16
-layout: layouts/post.njk
 ---
 
 I have one rule when abstracting code: create one abstraction per problem.

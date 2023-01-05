@@ -1,7 +1,6 @@
 ---
 title: How to land your first conference talk
 date: 2022-06-10
-layout: layouts/post.njk
 ---
 
 Folks ask me how to land a conference talk.

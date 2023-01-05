@@ -1,7 +1,6 @@
 ---
 title: Labor Well
 date: 2018-09-03
-layout: layouts/post.njk
 ---
 
 Krishna instructed Arjuna:

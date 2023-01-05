@@ -1,7 +1,6 @@
 ---
 title: Pay Attention
 date: 2019-11-06
-layout: layouts/post.njk
 ---
 
 As an adult, I'm often chasing novelty —  

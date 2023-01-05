@@ -1,7 +1,6 @@
 ---
 title: Listen
 date: 2020-06-03
-layout: layouts/post.njk
 ---
 
 I started this letter the way I started every letter — with something honest about me

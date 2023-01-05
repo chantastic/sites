@@ -1,7 +1,6 @@
 ---
 title: single-threaded notes, E1
 date: 2021-02-17
-layout: layouts/post.njk
 ---
 
 Today [Jenn Creighton](https://twitter.com/gurlcode/) launched [single-threaded podcast](https://anchor.fm/single-threaded). I'm thrilled 🥳

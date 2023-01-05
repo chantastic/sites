@@ -1,7 +1,6 @@
 ---
 title: Concurrent Mode is Dead. Long live Concurrent…
 date: 2021-06-09
-layout: layouts/post.njk
 ---
 
 Three years ago [Dan Abramov](https://mobile.twitter.com/dan_abramov/) introduced [Suspense and Async Rendering with React](https://www.youtube.com/watch?v=nLF0n9SACd4) at [JSConf Iceland 2018](https://2018.jsconf.is/speakers/dan-abramov/).

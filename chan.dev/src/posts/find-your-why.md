@@ -1,7 +1,6 @@
 ---
 title: Find Your Why
 date: 2018-09-04
-layout: layouts/post.njk
 ---
 
 You need a motive to convict someone of a crime.

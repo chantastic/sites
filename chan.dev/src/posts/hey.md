@@ -1,7 +1,6 @@
 ---
 title: Hey
 date: 2020-02-12
-layout: layouts/post.njk
 ---
 
 This week, Basecamp announced [HEY](https://hey.com) — a new email service.

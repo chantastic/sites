@@ -1,7 +1,6 @@
 ---
 title: Would You Mind?
 date: 2020-09-09
-layout: layouts/post.njk
 ---
 
 "Would you mind opening the door?" — asks a walking box

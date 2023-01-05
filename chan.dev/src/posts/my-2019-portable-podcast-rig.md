@@ -1,7 +1,6 @@
 ---
 title: My 2019 Portable Podcast Rig
 date: 2019-10-21
-layout: layouts/post.njk
 ---
 
 Just packed my portable podcast rig for the first time this year.  

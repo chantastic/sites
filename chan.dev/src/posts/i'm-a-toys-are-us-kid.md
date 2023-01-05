@@ -1,7 +1,6 @@
 ---
 title: I'm a Toys R Us kid
 date: 2019-09-18
-layout: layouts/post.njk
 ---
 
 The guy in front of me is closing the gap on 40.

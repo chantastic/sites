@@ -1,7 +1,6 @@
 ---
 title: Say What You See
 date: 2020-01-15
-layout: layouts/post.njk
 ---
 
 Pamela Stambaugh changed my life.

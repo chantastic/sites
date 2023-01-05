@@ -1,7 +1,6 @@
 ---
 title: Get the Raise
 date: 2019-06-26
-layout: layouts/post.njk
 ---
 
 This week, three of you asked me about salary negotiation.

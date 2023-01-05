@@ -1,7 +1,6 @@
 ---
 title: So, I Make My Bed
 date: 2019-11-20
-layout: layouts/post.njk
 ---
 
 My existential dread is a morning person.

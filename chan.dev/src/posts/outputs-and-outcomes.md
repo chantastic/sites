@@ -1,7 +1,6 @@
 ---
 title: Outputs and Outcomes
 date: 2019-05-29
-layout: layouts/post.njk
 ---
 
 When chasing an outcome, measure your output.

@@ -1,7 +1,6 @@
 ---
 title: Appear Consistent
 date: 2019-04-17
-layout: layouts/post.njk
 ---
 
 > Appear consistent.  

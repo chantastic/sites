@@ -1,7 +1,6 @@
 ---
 title: Mentions
 date: 2020-05-10
-layout: layouts/post.njk
 ---
 
 I'm stressing out about mentions
