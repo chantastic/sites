@@ -130,7 +130,7 @@ pre {
   padding: 0;
   list-style: none;
   float: left;
-  margin-left: 1em;
+  margin: 1rem 0 1rem 1em;
 }
 .nav-item {
   display: inline-block;
@@ -169,7 +169,7 @@ pre {
 }
 .postlist-link {
   display: inline-block;
-  padding: 0.25em 0.1875em; /* 4px 3px /16 */
+  /* padding: 0.25em 0.1875em; /* 4px 3px /16 */
 }
 .postlist-item-active .postlist-link {
   font-weight: bold;

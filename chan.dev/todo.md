@@ -2,7 +2,7 @@
 
 - [ ] add listing page for all sub directories
 - [ ] remov unused `/overlays` dir
-- [ ] 
+- [ ] remove styles: `index.css`
 
 ## Things I hate about working on this
 ### Offline

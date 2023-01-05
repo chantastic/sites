@@ -54,7 +54,7 @@
       </ul>
     </header>
 
-    <main {% if templateClass %} class="{{ templateClass }}" {% endif %}>
+    <main {% if templateClass %} class="prose prose-ol:list-none prose-ol:m-0 prose-ol:p-0 {{ templateClass }}" {% endif %}>
       {{ content | safe }}
     </main>
 
