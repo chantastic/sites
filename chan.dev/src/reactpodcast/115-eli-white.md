@@ -1,6 +1,5 @@
 ---
 title: "115: Eli White on Principles and React Native"
-layout: layouts/note.njk
 ---
 
 ## Summary

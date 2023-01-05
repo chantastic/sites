@@ -1,0 +1,4 @@
+{
+  "tags": ["react podcast"],
+  "layout": "layouts/note.njk"
+}

@@ -1,6 +1,5 @@
 ---
 title: "116: "
-layout: layouts/note.njk
 ---
 
 ## Summary

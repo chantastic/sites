@@ -1,5 +1,7 @@
 # chan.dev
 
+- [ ] add listing page for all sub directories
+
 ## Things I hate about working on this
 ### Offline
 
