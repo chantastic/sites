@@ -1,6 +1,8 @@
 # chan.dev
 
 - [ ] add listing page for all sub directories
+- [ ] remov unused `/overlays` dir
+- [ ] 
 
 ## Things I hate about working on this
 ### Offline
