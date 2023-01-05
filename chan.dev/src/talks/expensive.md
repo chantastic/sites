@@ -2,9 +2,6 @@
 title: "The Most Expensive Component in the World and How to Stop Writing It"
 date: 2021-07-06
 event: Mixed
-tags":
-  - talk
-layout": "layouts/post.njk"
 ---
 
 ## React India

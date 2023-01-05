@@ -2,9 +2,6 @@
 title: "Other talks without videos"
 date: 2021-07-06
 event: Mixed
-tags":
-  - talk
-layout": "layouts/post.njk"
 ---
 
 Full Stack Talks:
