@@ -1,6 +1,5 @@
 ---
 title: "Shure MV7 Review (WIP)"
-layout: layouts/note.njk
 ---
 
 [mv7]: https://amzn.to/3264TOL "Shure MV7 microphone on Amazon"

@@ -1,6 +1,5 @@
 ---
 title: "SQL Stuff (WIP)"
-layout: layouts/note.njk
 ---
 
 ## PlanetScale

@@ -1,6 +1,5 @@
 ---
 title: "Mac Audio in OBS"
-layout: layouts/note.njk
 ---
 
 There's no great way to get system audio into broadcast and recording apps like OBS.

@@ -1,5 +1,4 @@
 ---
-layout: layouts/note.njk
 ---
 
 Atem Mini Pro ISO — real-time impressions

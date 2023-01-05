@@ -1,5 +1,4 @@
 ---
-layout: layouts/note.njk
 ---
 
 # Suspense for Data Fetching (Experimental) — Summary

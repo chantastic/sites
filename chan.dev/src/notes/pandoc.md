@@ -1,6 +1,5 @@
 ---
 title: "Pandoc 🌱"
-layout: layouts/note.njk
 ---
 
 [[toc]]
@@ -209,11 +208,9 @@ pandoc my-markdown-file.md -o my-book.epub
 
 [Full list of ePub attributes](https://pandoc.org/MANUAL.html#epubs)
 
-
 ## Other docs I'd like to dive into but haven't yet.
 
-like to learn more: 
-
+like to learn more:
 
 ## Bug me for more…
 

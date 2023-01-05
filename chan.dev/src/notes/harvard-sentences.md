@@ -1,6 +1,5 @@
 ---
 title: "Harvard Sentences"
-layout: layouts/note.njk
 ---
 
 1. Oak is strong and also gives shade.

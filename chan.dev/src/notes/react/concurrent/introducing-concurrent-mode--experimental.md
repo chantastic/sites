@@ -1,5 +1,4 @@
 ---
-layout: layouts/note.njk
 ---
 
 # Introducing Concurrent Mode (Experimental) — Summary

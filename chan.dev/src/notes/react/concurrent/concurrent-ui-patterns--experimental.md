@@ -1,5 +1,4 @@
 ---
-layout: layouts/note.njk
 ---
 
 Ideally, state update the screen immediately.  

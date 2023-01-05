@@ -1,5 +1,4 @@
 ---
-layout: layouts/note.njk
 ---
 
 # Teachable: Sales Page Challenge Notes
