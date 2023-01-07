@@ -4,7 +4,7 @@ Date: 2023-01-07
 
 ## Status
 
-Accepted
+Superceded by [5. Use Node.js v16](0005-use-node-js-v16.md)
 
 ## Context
 
