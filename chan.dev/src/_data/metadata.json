@@ -15,6 +15,14 @@
   "author": {
     "name": "Michael Chan",
     "email": "mijoch@gmail.com",
-    "url": "https://chan.dev/about/"
+    "url": "https://chan.dev/about/",
+    "youtube": "https://www.youtube.com/@chantastic",
+    "twitter": "https://twitter.com/chantastic",
+    "mastodon": "https://hachyderm.io/@chantastic",
+    "github": "https://github.com/chantastic",
+    "instagram": "https://wwww.instagram.com/chantastic/",
+    "polywork": "https://www.polywork.com/chantastic",
+    "linkedin": "https://www.linkedin.com/in/chantastic/",
+    "twitch": "https://www.twitch.tv/lunchdev"
   }
 }
