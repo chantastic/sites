@@ -1,6 +1,8 @@
 ---
 title: Fair and Impartial
 date: 2019-09-25
+tags:
+  - post
 ---
 
 Monday morning, I walked into a courtroom with 64 other prospective jurors.

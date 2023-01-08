@@ -1,6 +1,8 @@
 ---
 title: My why
 date: 2018-09-05
+tags:
+  - post
 ---
 
 My **why** showed up as a pink slip.

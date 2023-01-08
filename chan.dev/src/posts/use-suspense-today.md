@@ -1,6 +1,8 @@
 ---
 title: Use Suspense Today
 date: 2019-10-23
+tags:
+  - post
 ---
 
 Believe it or not, you've had access to `Suspense` for a year.

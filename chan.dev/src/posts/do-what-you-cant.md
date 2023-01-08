@@ -1,6 +1,8 @@
 ---
 title: Do What You Can't
 date: 2020-02-05
+tags:
+  - post
 ---
 
 Last week I said you should "earn your imposter syndrome."

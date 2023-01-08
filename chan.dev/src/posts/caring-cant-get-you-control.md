@@ -1,6 +1,8 @@
 ---
 title: Caring Can't Get You Control
 date: 2019-05-22
+tags:
+  - post
 ---
 
 Ruby's been fighting cancer for 5 years.

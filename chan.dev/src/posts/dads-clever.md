@@ -1,6 +1,8 @@
 ---
 title: Dad's Clever
 date: 2020-04-29
+tags:
+  - post
 ---
 
 When dad died, I wanted only one of his things:

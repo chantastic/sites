@@ -1,6 +1,8 @@
 ---
 title: Listen
 date: 2020-06-03
+tags:
+  - post
 ---
 
 I started this letter the way I started every letter — with something honest about me

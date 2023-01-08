@@ -1,6 +1,8 @@
 ---
 title: Don't Go It Alone
 date: 2019-12-19
+tags:
+  - post
 ---
 
 My dad taught me to trust no one.  

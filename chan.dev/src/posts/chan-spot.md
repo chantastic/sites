@@ -1,6 +1,8 @@
 ---
 title: Chan Spot
 date: 2020-10-19
+tags:
+  - post
 ---
 
 He spent 15 minutes circling the parking lot for a "Chan Spot" — a space within 3 lines of a blue line.

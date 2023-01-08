@@ -1,6 +1,8 @@
 ---
 title: A bargain mic for yellers
 date: 2021-02-21
+tags:
+  - post
 ---
 
 Kevin and Bobby started a new podcast: [Essentially Useless](https://www.youtube.com/channel/UCYSOVLrjLDr7m5LIJs876mw).

@@ -1,6 +1,8 @@
 ---
 title: Compare AVO 🥑 and standard BEM Conventions
 date: 2021-02-08
+tags:
+  - post
 ---
 
 ## AVO 🥑 : BEM (standard) syntax comparison

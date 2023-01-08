@@ -3,6 +3,8 @@ title: Import Modules for Side Effects
 date: 2021-01-26
 og:
   image: "https://chan.dev/og-image/import-a-module-for-side-effects.jpg"
+tags:
+  - post
 ---
 
 Modules — in JavaScript — can be imported strictly for their side effects.

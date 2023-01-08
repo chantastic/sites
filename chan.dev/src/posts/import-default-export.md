@@ -3,6 +3,8 @@ title: Import Default Export
 date: 2021-02-02
 og:
   image: "https://chan.dev/og-image/import-default-export.jpg"
+tags:
+  - post
 ---
 
 There can only be one `default` export.

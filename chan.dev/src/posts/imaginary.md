@@ -1,6 +1,8 @@
 ---
 title: Imaginary
 date: 2019-04-03
+tags:
+  - post
 ---
 
 I've wanted to host React Podcast since its original launch in 2015.  

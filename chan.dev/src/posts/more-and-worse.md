@@ -1,6 +1,8 @@
 ---
 title: More and Worse
 date: 2019-05-08
+tags:
+  - post
 ---
 
 I don't have trouble doing a thing perfectly.  

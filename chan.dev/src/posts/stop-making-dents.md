@@ -1,6 +1,8 @@
 ---
 title: Stop making dents
 date: 2020-04-15
+tags:
+  - post
 ---
 
 Something most religions agree on is how cosmically unimportant an individual is.

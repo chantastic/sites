@@ -1,6 +1,8 @@
 ---
 title: The man and the monster
 date: 2020-04-01
+tags:
+  - post
 ---
 
 We have to achieve what Dr Jekyll couldn't.

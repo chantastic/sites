@@ -1,6 +1,8 @@
 ---
 title: A Hammer Doesn't Make a Chair
 date: 2019-05-15
+tags:
+  - post
 ---
 
 When I find a new hobby, I buy the dopest shit right away.

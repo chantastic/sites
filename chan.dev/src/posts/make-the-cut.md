@@ -1,6 +1,8 @@
 ---
 title: Make the Cut
 date: 2019-10-23
+tags:
+  - post
 ---
 
 Every idea starts as a conflated ball of ideas  

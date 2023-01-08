@@ -3,6 +3,8 @@ title: Import Default From Named Export
 date: 2021-02-03
 og:
   image: "https://chan.dev/og-image/import-default-from-named-export.jpg"
+tags:
+  - post
 ---
 
 Importing `default` can be nuanced. There are just so many ways to do it.

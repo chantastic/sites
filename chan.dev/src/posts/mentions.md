@@ -1,6 +1,8 @@
 ---
 title: Mentions
 date: 2020-05-10
+tags:
+  - post
 ---
 
 I'm stressing out about mentions

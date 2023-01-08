@@ -1,6 +1,8 @@
 ---
 title: Kill the Old You
 date: 2019-06-05
+tags:
+  - post
 ---
 
 I woke up on the first night of vacation with perfect clarity on two things.

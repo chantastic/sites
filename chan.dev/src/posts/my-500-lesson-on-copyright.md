@@ -1,6 +1,8 @@
 ---
 title: My $500 lesson on copyright
 date: 2018-09-07
+tags:
+  - post
 ---
 
 If you want to protect your work,

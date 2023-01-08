@@ -1,6 +1,8 @@
 ---
 title: Make a Foul
 date: 2020-02-26
+tags:
+  - post
 ---
 
 "I want to see you make a foul!"

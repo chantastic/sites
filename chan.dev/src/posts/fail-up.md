@@ -1,6 +1,8 @@
 ---
 title: Fail Up
 date: 2019-06-12
+tags:
+  - post
 ---
 
 I learn slowly.

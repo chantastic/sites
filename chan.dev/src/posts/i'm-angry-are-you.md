@@ -1,6 +1,8 @@
 ---
 title: I'm Angry. Are you?
 date: 2019-09-04
+tags:
+  - post
 ---
 
 My dad wanted to be white.

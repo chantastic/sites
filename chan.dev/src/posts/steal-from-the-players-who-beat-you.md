@@ -1,6 +1,8 @@
 ---
 title: Steal From the Players Who Beat You
 date: 2019-07-10
+tags:
+  - post
 ---
 
 My kids are deep into the card game Sushi Go.

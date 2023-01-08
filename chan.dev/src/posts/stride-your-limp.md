@@ -1,6 +1,8 @@
 ---
 title: Stride Your Limp
 date: 2020-01-08
+tags:
+  - post
 ---
 
 I don't trust anyone who doesn't walk with a limp — metaphorically, of course.
