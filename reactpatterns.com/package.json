@@ -19,7 +19,7 @@
   },
   "homepage": "https://github.com/chantastic/sites#readme",
   "dependencies": {
-    "@11ty/eleventy": "^0.12.1",
+    "@11ty/eleventy": "^1.0.2",
     "markdown-it-anchor": "^8.3.1",
     "markdown-it-highlightjs": "^3.5.0",
     "markdown-it-link-attributes": "^3.0.0",
