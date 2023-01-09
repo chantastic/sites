@@ -14,6 +14,6 @@
   "author": "Michael Chan <mijoch@gmail.com>",
   "license": "CC-BY-NC-SA-4.0",
   "dependencies": {
-    "@11ty/eleventy": "^0.12.1"
+    "@11ty/eleventy": "^1.0.2"
   }
 }
