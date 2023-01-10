@@ -116,6 +116,7 @@ let markdownLibrary = markdownIt({
     permalinkClass: "direct-link",
     permalinkSymbol: "#",
   })
+  .use(require("markdown-it-deflist"))
   .use(require("markdown-it-table-of-contents"));
 
 let filters = [

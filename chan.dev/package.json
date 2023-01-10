@@ -41,6 +41,7 @@
     "luxon": "^1.26.0",
     "markdown-it": "^13.0.1",
     "markdown-it-anchor": "^5.2.5",
+    "markdown-it-deflist": "^2.1.0",
     "markdown-it-table-of-contents": "^0.6.0",
     "request": "^2.88.2",
     "tailwindcss": "^3.1.8"
