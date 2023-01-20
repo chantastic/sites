@@ -2,11 +2,15 @@
 import Layout from "../../layouts/Layout.astro";
 import { getCollection } from "astro:content";
 
-const blogPosts = await getCollection("posts", ({ data }) => {
+let blogPosts = await getCollection("posts", ({ data }) => {
   if (data.publishDate) {
     return true;
   }
   return false;
+});
+
+blogPosts.sort((a, b) => {
+  return b.data.publishDate - a.data.publishDate; // what do i need to do to make this stop warning?
 });
 ---
 
