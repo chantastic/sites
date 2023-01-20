@@ -1,4 +1,5 @@
 ---
+import Layout from "../../layouts/Layout.astro";
 import { getCollection, CollectionEntry } from "astro:content";
 
 export async function getStaticPaths() {
@@ -17,12 +18,18 @@ const { entry } = Astro.props;
 const { Content } = await entry.render();
 ---
 
-<h2>{entry.data.title}</h2>
-{
-  entry.data.publishDate && (
-    <time datetime={entry.data.publishDate.toISOString()}>
-      {entry.data.publishDate.toDateString()}
-    </time>
-  )
-}
-<Content />
+<Layout title="yo">
+  <main>
+    <article>
+      <h1>{entry.data.title}</h1>
+      {
+        entry.data.publishDate && (
+          <time datetime={entry.data.publishDate.toISOString()}>
+            {entry.data.publishDate.toDateString()}
+          </time>
+        )
+      }
+      <Content />
+    </article>
+  </main>
+</Layout>

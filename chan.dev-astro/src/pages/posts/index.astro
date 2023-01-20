@@ -1,4 +1,5 @@
 ---
+import Layout from "../../layouts/Layout.astro";
 import { getCollection } from "astro:content";
 
 const blogPosts = await getCollection("posts", ({ data }) => {
@@ -9,12 +10,16 @@ const blogPosts = await getCollection("posts", ({ data }) => {
 });
 ---
 
-<ul>
-  {
-    blogPosts.map((post) => (
-      <li>
-        <a href={post.slug}>{post.data.title}</a>
-      </li>
-    ))
-  }
-</ul>
+<Layout title="Welcome to Astro.">
+  <main>
+    <ul>
+      {
+        blogPosts.map((post) => (
+          <li>
+            <a href={post.slug}>{post.data.title}</a>
+          </li>
+        ))
+      }
+    </ul>
+  </main>
+</Layout>
