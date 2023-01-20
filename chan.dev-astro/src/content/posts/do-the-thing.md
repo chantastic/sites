@@ -1,6 +1,6 @@
 ---
 title: Do the Thing
-date: 2019-07-17
+publishDate: 2019-07-17
 tags:
   - post
 ---

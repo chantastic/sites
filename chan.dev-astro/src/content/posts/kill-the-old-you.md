@@ -1,6 +1,6 @@
 ---
 title: Kill the Old You
-date: 2019-06-05
+publishDate: 2019-06-05
 tags:
   - post
 ---

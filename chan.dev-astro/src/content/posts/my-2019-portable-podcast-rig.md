@@ -1,12 +1,12 @@
 ---
 title: My 2019 Portable Podcast Rig
-date: 2019-10-21
+publishDate: 2019-10-21
 tags:
   - post
 ---
 
 Just packed my portable podcast rig for the first time this year.  
-It's changed a lot and I thought I'd fill interested nerds in on the updates.
+It's changed a lot and I thought I'd fill interested nerds in on the uppublishDates.
 
 ## Case
 

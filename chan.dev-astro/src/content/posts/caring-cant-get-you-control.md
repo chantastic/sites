@@ -1,6 +1,6 @@
 ---
 title: Caring Can't Get You Control
-date: 2019-05-22
+publishDate: 2019-05-22
 tags:
   - post
 ---
@@ -8,7 +8,7 @@ tags:
 Ruby's been fighting cancer for 5 years.
 
 She won some kind of shit lottery.  
-Born 14 weeks premature, she recovered to start chemotherapy only weeks after her due date.  
+Born 14 weeks premature, she recovered to start chemotherapy only weeks after her due publishDate.  
 Retinoblastoma took half of her vision.  
 And, as that treatment wrapped, she was diagnosed with another tumor causing mutation — neurofibromatosis.
 

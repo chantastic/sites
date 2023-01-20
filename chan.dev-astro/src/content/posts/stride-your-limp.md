@@ -1,6 +1,6 @@
 ---
 title: Stride Your Limp
-date: 2020-01-08
+publishDate: 2020-01-08
 tags:
   - post
 ---

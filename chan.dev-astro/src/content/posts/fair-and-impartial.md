@@ -1,6 +1,6 @@
 ---
 title: Fair and Impartial
-date: 2019-09-25
+publishDate: 2019-09-25
 tags:
   - post
 ---

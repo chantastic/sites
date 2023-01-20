@@ -1,6 +1,6 @@
 ---
 title: I'm a Toys R Us kid
-date: 2019-09-18
+publishDate: 2019-09-18
 tags:
   - post
 ---

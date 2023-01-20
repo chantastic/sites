@@ -1,6 +1,6 @@
 ---
 title: Earn Your Imposter Syndrome
-date: 2020-01-29
+publishDate: 2020-01-29
 tags:
   - post
 ---

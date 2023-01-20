@@ -1,7 +1,7 @@
 ---
 title: Schedule Netlify Builds with GitHub Actions, Cron, and Webhooks
 description: "Netlify build hooks are webhooks with one function: re-build your site when called. Any POST request to your Netlify build hook triggers a build. And you can POST to this hook right from your repo, using GitHub Actions…"
-date: 2021-01-28
+publishDate: 2021-01-28
 og:
   image: "https://chan.dev/og-image/schedule-netlify-builds-with-github-actions.jpg"
 tags:
@@ -77,7 +77,7 @@ Get fancy and ensure that nobody spams your build hook with a [GitHub Action sec
 
 Over at [lunch.dev](https://www.lunch.dev), we've built a [calendar of events](https://events.lunch.dev) in [Eleventy](https://www.11ty.dev) (a slick static site generator).
 
-Events are listed under **Upcoming** and **Past** event headings based on their date. Because Eleventy generates static sites, that deterimation happens at build time.
+Events are listed under **Upcoming** and **Past** event headings based on their publishDate. Because Eleventy generates static sites, that deterimation happens at build time.
 
 If we want to keep data fresh, **we have to manually re-build the site at least once per day**.
 

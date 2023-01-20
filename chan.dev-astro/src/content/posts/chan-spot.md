@@ -1,6 +1,6 @@
 ---
 title: Chan Spot
-date: 2020-10-19
+publishDate: 2020-10-19
 tags:
   - post
 ---

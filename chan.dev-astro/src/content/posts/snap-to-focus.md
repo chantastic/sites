@@ -1,6 +1,6 @@
 ---
 title: Snap to Focus
-date: 2020-02-19
+publishDate: 2020-02-19
 tags:
   - post
 ---

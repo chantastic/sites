@@ -1,6 +1,6 @@
 ---
 title: Find Your Why
-date: 2018-09-04
+publishDate: 2018-09-04
 tags:
   - post
 ---

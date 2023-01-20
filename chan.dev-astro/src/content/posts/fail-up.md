@@ -1,6 +1,6 @@
 ---
 title: Fail Up
-date: 2019-06-12
+publishDate: 2019-06-12
 tags:
   - post
 ---

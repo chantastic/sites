@@ -1,6 +1,6 @@
 ---
 title: Hey
-date: 2020-02-12
+publishDate: 2020-02-12
 tags:
   - post
 ---
@@ -19,7 +19,7 @@ We had baggage — everyone does.
 We knew we couldn't be casual about the details.
 But we didn't want to overwhelm our young relationship with "the big stuff".
 
-So, we committed to enjoying each other in person — calm, fun, positive dates only.
+So, we committed to enjoying each other in person — calm, fun, positive publishDates only.
 We relegated "the big stuff" to email.
 
 Email gave us time to think about big things...

@@ -1,6 +1,6 @@
 ---
 title: Don't Go It Alone
-date: 2019-12-19
+publishDate: 2019-12-19
 tags:
   - post
 ---

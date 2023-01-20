@@ -1,7 +1,7 @@
 ---
 title: Twice
 description: "For any goal, break the project into small parts with a pass-fail criteria. Then pass… or fail."
-date: 2022-08-24
+publishDate: 2022-08-24
 tags:
   - post
 ---

@@ -1,6 +1,6 @@
 ---
 title: Do What Others Won't
-date: 2020-01-22
+publishDate: 2020-01-22
 tags:
   - post
 ---

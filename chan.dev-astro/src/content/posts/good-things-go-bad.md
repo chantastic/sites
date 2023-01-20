@@ -1,6 +1,6 @@
 ---
 title: Good things go bad
-date: 2020-02-24
+publishDate: 2020-02-24
 tags:
   - post
 ---

@@ -1,6 +1,6 @@
 ---
 title: Import and Rename Named Exports
-date: 2021-01-27
+publishDate: 2021-01-27
 og:
   image: "https://chan.dev/og-image/import-and-rename-named-exports.jpg"
 tags:

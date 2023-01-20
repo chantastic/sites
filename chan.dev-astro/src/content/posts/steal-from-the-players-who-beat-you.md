@@ -1,6 +1,6 @@
 ---
 title: Steal From the Players Who Beat You
-date: 2019-07-10
+publishDate: 2019-07-10
 tags:
   - post
 ---

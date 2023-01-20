@@ -1,6 +1,6 @@
 ---
 title: Abstract more, better
-date: 2020-04-16
+publishDate: 2020-04-16
 tags:
   - post
 ---
@@ -55,4 +55,4 @@ _(A [less popular version of "Hot Garbage: Clean Code is Dead"](https://www.yout
 
 <br />
 
-_Update: [Mark and I agreed all along](https://twitter.com/markdalgleish/status/1250913016587018242). [My favorite kind of fight](https://twitter.com/chantastic/status/1250568765839863809)._ 😂
+_UppublishDate: [Mark and I agreed all along](https://twitter.com/markdalgleish/status/1250913016587018242). [My favorite kind of fight](https://twitter.com/chantastic/status/1250568765839863809)._ 😂

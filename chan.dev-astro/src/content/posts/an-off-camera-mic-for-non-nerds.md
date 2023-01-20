@@ -1,6 +1,6 @@
 ---
 title: An off-camera mic for non-nerds
-date: 2021-01-02
+publishDate: 2021-01-02
 tags:
   - post
 ---

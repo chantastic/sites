@@ -1,6 +1,6 @@
 ---
 title: Catch Your Suspense Errors
-date: 2019-10-30
+publishDate: 2019-10-30
 tags:
   - post
 ---

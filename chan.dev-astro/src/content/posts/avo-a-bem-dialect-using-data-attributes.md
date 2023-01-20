@@ -1,6 +1,6 @@
 ---
 title: AVO 🥑 — A BEM Dialect Using Data Attributes
-date: 2021-02-08
+publishDate: 2021-02-08
 tags:
   - post
 ---

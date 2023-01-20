@@ -1,6 +1,6 @@
 ---
 title: You Can't Do in a Month What You Won't Do in a Day
-date: 2018-09-21
+publishDate: 2018-09-21
 tags:
   - post
 ---

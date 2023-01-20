@@ -1,6 +1,6 @@
 ---
 title: Concurrent Mode is Dead. Long live Concurrent…
-date: 2021-06-09
+publishDate: 2021-06-09
 tags:
   - post
 ---

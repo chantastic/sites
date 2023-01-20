@@ -1,6 +1,6 @@
 ---
 title: Stop Failing Yourself
-date: 2019-11-27
+publishDate: 2019-11-27
 tags:
   - post
 ---

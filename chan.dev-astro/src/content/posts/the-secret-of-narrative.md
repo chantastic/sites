@@ -1,6 +1,6 @@
 ---
 title: The Secret of Narrative...
-date: 2019-08-08
+publishDate: 2019-08-08
 tags:
   - post
 ---

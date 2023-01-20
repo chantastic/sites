@@ -1,7 +1,7 @@
 ---
 title: Contrast
 description: "We’re capable of struggling on one axis of life and thriving on another. And while I pine for a sugary, static, undisrupted life… its complexity that keeps contrast high — across experiences."
-date: 2022-08-31
+publishDate: 2022-08-31
 tags:
   - post
 ---

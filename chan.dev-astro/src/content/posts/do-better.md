@@ -1,6 +1,6 @@
 ---
 title: Do  Better
-date: 2019-10-17
+publishDate: 2019-10-17
 tags:
   - post
 ---

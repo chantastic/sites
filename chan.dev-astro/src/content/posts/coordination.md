@@ -1,6 +1,6 @@
 ---
 title: Coordination
-date: 2020-05-27
+publishDate: 2020-05-27
 tags:
   - post
 ---

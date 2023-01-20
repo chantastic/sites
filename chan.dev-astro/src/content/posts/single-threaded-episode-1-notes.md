@@ -1,6 +1,6 @@
 ---
 title: single-threaded notes, E1
-date: 2021-02-17
+publishDate: 2021-02-17
 tags:
   - post
 ---
@@ -54,7 +54,7 @@ _These are not direct quotes. They are summaries, as I heard them. Listen to the
 > When you're waiting, or handling a rejection, do a thing you're good at. For me, that's be baking.
 > Erin @0:28
 
-> Date lots of companies
+> publishDate lots of companies
 > @0:31
 
 Erin's list of questions to ask companies:

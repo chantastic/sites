@@ -1,6 +1,6 @@
 ---
 title: Dad's Clever
-date: 2020-04-29
+publishDate: 2020-04-29
 tags:
   - post
 ---

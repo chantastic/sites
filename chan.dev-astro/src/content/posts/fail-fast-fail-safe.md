@@ -1,6 +1,6 @@
 ---
 title: Fail Fast. Fail Safe
-date: 2018-09-17
+publishDate: 2018-09-17
 tags:
   - post
 ---

@@ -1,6 +1,6 @@
 ---
 title: Are We There Yet?
-date: 2019-06-19
+publishDate: 2019-06-19
 tags:
   - post
 ---
@@ -42,7 +42,7 @@ We miss the moment
 And find ourselves in a perpetual state of asking  
 "Are we there yet?"
 
-By realizing dreams — even old and outdated one — we celebrated the victories that got us there.  
+By realizing dreams — even old and outpublishDated one — we celebrated the victories that got us there.  
 We remember who we've been and realize who we are.
 
 Where are you at today?  

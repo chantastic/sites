@@ -1,6 +1,6 @@
 ---
 title: Import All Named Exports into One Variable
-date: 2021-02-01
+publishDate: 2021-02-01
 og:
   image: "https://chan.dev/og-image/import-all-named-exports-into-one-variable.jpg"
 tags:

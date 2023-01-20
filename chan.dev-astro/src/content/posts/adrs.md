@@ -1,6 +1,6 @@
 ---
 title: ADR — Architecture Decision Record
-date: 2022-12-28
+publishDate: 2022-12-28
 tags:
   - post
 ---
@@ -34,7 +34,7 @@ I saw this tweet by Charity Majors and the term "decision record" hooked me.
 
 The [Architecture Decision Record is a document format described by Michael Nygard](http://thinkrelevance.com/blog/2011/11/15/documenting-architecture-decisions). Each record requires a few pieces of information:
 
-- date
+- publishDate
 - decision
 - status
 - context
@@ -53,6 +53,6 @@ And if you're using them, let me know how they're working!
 
 <!--
 Some follow up:
-- On the power of making a decision (most productive time at work coming from a mandate: "just use Rails")
+- On the power of making a decision (most productive time at work coming from a manpublishDate: "just use Rails")
 - Doc on ADR tools
 -->

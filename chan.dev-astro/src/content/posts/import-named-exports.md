@@ -1,6 +1,6 @@
 ---
 title: Import Named Exports
-date: 2021-01-26
+publishDate: 2021-01-26
 og:
   image: "https://chan.dev/og-image/import-named-exports.jpg"
 tags:

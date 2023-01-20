@@ -1,6 +1,6 @@
 ---
 title: Make the Cut
-date: 2019-10-23
+publishDate: 2019-10-23
 tags:
   - post
 ---

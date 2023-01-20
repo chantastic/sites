@@ -1,6 +1,6 @@
 ---
 title: Import Both Default and Named Exports
-date: 2021-02-05
+publishDate: 2021-02-05
 og:
   image: "https://chan.dev/og-image/import-both-default-and-named-exports.jpg"
 tags:

@@ -1,6 +1,6 @@
 ---
 title: I'm Angry. Are you?
-date: 2019-09-04
+publishDate: 2019-09-04
 tags:
   - post
 ---

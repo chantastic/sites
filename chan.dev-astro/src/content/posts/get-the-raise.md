@@ -1,6 +1,6 @@
 ---
 title: Get the Raise
-date: 2019-06-26
+publishDate: 2019-06-26
 tags:
   - post
 ---

@@ -1,6 +1,6 @@
 ---
 title: Astro
-date: 2023-01-16
+publishDate: 2023-01-16
 tags:
   - post
 ---

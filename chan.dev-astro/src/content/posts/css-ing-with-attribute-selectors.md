@@ -1,6 +1,6 @@
 ---
 title: CSS-ing with Attribute Selectors
-date: 2021-04-22
+publishDate: 2021-04-22
 tags:
   - post
 ---

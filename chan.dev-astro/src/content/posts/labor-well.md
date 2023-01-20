@@ -1,6 +1,6 @@
 ---
 title: Labor Well
-date: 2018-09-03
+publishDate: 2018-09-03
 tags:
   - post
 ---

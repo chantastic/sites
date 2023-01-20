@@ -1,6 +1,6 @@
 ---
 title: My Career Changed on a Water Slide
-date: 2019-08-14
+publishDate: 2019-08-14
 tags:
   - post
 ---

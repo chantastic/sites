@@ -1,6 +1,6 @@
 ---
 title: More and Worse
-date: 2019-05-08
+publishDate: 2019-05-08
 tags:
   - post
 ---
@@ -28,7 +28,7 @@ Marriage, bills, kids — one with cancer, and a prematurely widowed mother...
 At 35, I have to realize that  
 Now is not a time for "less but better".
 
-Games, recitals, campouts, dates, birthdays, conferences, volunteering, and family gatherings...  
+Games, recitals, campouts, publishDates, birthdays, conferences, volunteering, and family gatherings...  
 These are the components of my life.  
 When I'm lucky,  
 I get a brief moments to push the needle on speaking, writing, or asking the perfect question.

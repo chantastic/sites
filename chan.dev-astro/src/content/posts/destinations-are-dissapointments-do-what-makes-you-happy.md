@@ -1,6 +1,6 @@
 ---
 title: Destinations are Disappointments. Do What Makes You Happy
-date: 2019-07-03
+publishDate: 2019-07-03
 tags:
   - post
 ---
