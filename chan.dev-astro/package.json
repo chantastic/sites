@@ -12,6 +12,8 @@
   },
   "devDependencies": {
     "@astrojs/rss": "^2.1.0-beta.0",
-    "astro": "^2.0.0-beta.3"
+    "astro": "^2.0.0-beta.3",
+    "markdown-it": "^13.0.1",
+    "sanitize-html": "^2.8.1"
   }
 }
