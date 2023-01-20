@@ -5,7 +5,7 @@ import MarkdownIt from "markdown-it";
 
 const parser = new MarkdownIt();
 
-export async function get() {
+export async function get(context) {
   const posts = await getCollection("posts", ({ data }) => {
     if (data.publishDate) {
       return true;
@@ -16,7 +16,7 @@ export async function get() {
   return rss({
     title: "chan.dev",
     description: "chantastic tech",
-    site: "https://chan.dev/",
+    site: context.site,
     items: posts.map((post) => ({
       title: post.data.title,
       pubDate: post.data.publishDate,
