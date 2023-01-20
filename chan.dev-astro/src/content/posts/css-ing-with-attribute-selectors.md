@@ -2,7 +2,6 @@
 title: CSS-ing with Attribute Selectors
 publishDate: 2021-04-22
 tags:
-  - post
 ---
 
 <mark>_This post will be given as a [lightning talk with lunch.dev](https://events.lunch.dev/lightning/). It's posted here so folks can read along._</mark>
@@ -22,7 +21,9 @@ Attribute selectors can target any attribute. `href` from an `<a>` tag, `src` fr
 As syntax goes, attribute selectors wrap the name of the target attribute in brackets.
 
 ```css
-[href] { color: red };
+[href] {
+  color: red;
+}
 ```
 
 This line turns anything with an `href` attribute red.
@@ -30,7 +31,9 @@ This line turns anything with an `href` attribute red.
 We have to be careful because other elements like `<link>` also have an `href` attribute. Combining attributes selectors with other selectors is a common for scoping intent.
 
 ```css
-a[href] { color: red };
+a[href] {
+  color: red;
+}
 ```
 
 While `<links href>` is `display:none` by default, it's a good practice to be explicit with attribute selectors.
@@ -43,7 +46,9 @@ We can use them to identify placeholder links by scoping our `href` selector to 
 
 ```css
 a[href=""],
-a[href="#"] { color: red }
+a[href="#"] {
+  color: red;
+}
 ```
 
 `=` selects an exact match for the attribute value. As shown above, we need to add a case for every exact match we want.
@@ -55,7 +60,9 @@ We can match the beginning of a value as well. Let's add another case for insecu
 ```css
 a[href=""],
 a[href="#"],
-a[href^="http:"] { color: red }
+a[href^="http:"] {
+  color: red;
+}
 ```
 
 `^=` matches any value that start with the provided string.
@@ -73,7 +80,7 @@ a[href^="http:"] { color: red }
 + a[href*="#"] { color: green }
 ```
 
-Warning! This selector is inclusive of URLS that *only* have a pound value, too! Meaning are placeholder links have also turned green.
+Warning! This selector is inclusive of URLS that _only_ have a pound value, too! Meaning are placeholder links have also turned green.
 
 Not to fear, we can solve this by ensuring that the most specific rule is declared last:
 

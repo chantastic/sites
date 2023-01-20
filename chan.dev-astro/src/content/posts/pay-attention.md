@@ -2,7 +2,6 @@
 title: Pay Attention
 publishDate: 2019-11-06
 tags:
-  - post
 ---
 
 As an adult, I'm often chasing novelty —  

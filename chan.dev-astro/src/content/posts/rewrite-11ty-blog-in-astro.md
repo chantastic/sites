@@ -2,7 +2,6 @@
 title: Astro
 publishDate: 2023-01-16
 tags:
-  - post
 ---
 
 I’m re-writing my site in Astro. You can find [my reasons for leaving 11ty here]().

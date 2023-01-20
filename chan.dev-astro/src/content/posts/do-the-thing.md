@@ -2,7 +2,6 @@
 title: Do the Thing
 publishDate: 2019-07-17
 tags:
-  - post
 ---
 
 This is my modus operandi:

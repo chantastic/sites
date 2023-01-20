@@ -2,7 +2,6 @@
 title: My Career Changed on a Water Slide
 publishDate: 2019-08-14
 tags:
-  - post
 ---
 
 There's a water slide at a local resort where my career changed.

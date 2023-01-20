@@ -4,7 +4,6 @@ publishDate: 2021-02-05
 og:
   image: "https://chan.dev/og-image/import-both-default-and-named-exports.jpg"
 tags:
-  - post
 ---
 
 We can mix and match import styles to keep code tidy and direct.

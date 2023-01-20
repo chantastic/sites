@@ -2,7 +2,6 @@
 title: Snap to Focus
 publishDate: 2020-02-19
 tags:
-  - post
 ---
 
 It's hard to make a great photo on a phone.

@@ -3,13 +3,12 @@ title: Twice
 description: "For any goal, break the project into small parts with a pass-fail criteria. Then pass… or fail."
 publishDate: 2022-08-24
 tags:
-  - post
 ---
 
 It was a week before my 2002 Digital Multimedia Arts final that it became clear:  
 **It takes me twice as long to do anything.**
 
-Indifferent to my *intention*, my *attention* waxes and wanes.
+Indifferent to my _intention_, my _attention_ waxes and wanes.
 A can’t force it into submission.
 I can only show up, sit down, and hover the “buy” button — as the product of my focus goes in and out of stock.
 

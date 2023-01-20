@@ -2,7 +2,6 @@
 title: Unemployment
 publishDate: 2020-03-18
 tags:
-  - post
 ---
 
 On unemployment, you get a paper check.

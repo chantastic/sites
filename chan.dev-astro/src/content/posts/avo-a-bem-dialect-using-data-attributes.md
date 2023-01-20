@@ -2,7 +2,6 @@
 title: AVO 🥑 — A BEM Dialect Using Data Attributes
 publishDate: 2021-02-08
 tags:
-  - post
 ---
 
 ## Attribute Value-Object
@@ -63,7 +62,11 @@ AVO 🥑 elements use empty [attribute selectors](https://developer.mozilla.org/
 #### HTML
 
 ```html
-<img data-avatar src="https://placekitten.com/200/200" alt="cute kitten" />
+<img
+  data-avatar
+  src="https://placekitten.com/200/200"
+  alt="cute kitten"
+/>
 ```
 
 ## Value (boolean)
@@ -143,7 +146,11 @@ This allows for indeterminate values `status:<undefined>` to be extended with in
 
 ```css
 [data-avatar*="status:"] {
-  --avatar--border: clamp(2px, calc(var(--avatar--size) * 0.1), 5px) solid transparent;
+  --avatar--border: clamp(
+      2px,
+      calc(var(--avatar--size) * 0.1),
+      5px
+    ) solid transparent;
 }
 ```
 

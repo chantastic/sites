@@ -3,7 +3,6 @@ title: React Server Components Announcement Notes
 publishDate: 2021-01-14
 description: Three weeks after the React Server Components event, I finally sat down to learn what everything was about. Here are my initial notes…
 tags:
-  - post
 ---
 
 Three weeks after the announcement of React Server Components, I finally sat down [with friends](https://twitter.com/chantastic/status/1349710359049940992?s=20) to watch the event.

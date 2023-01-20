@@ -2,7 +2,6 @@
 title: Would You Mind?
 publishDate: 2020-09-09
 tags:
-  - post
 ---
 
 "Would you mind opening the door?" — asks a walking box

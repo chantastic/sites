@@ -2,7 +2,6 @@
 title: Get the Raise
 publishDate: 2019-06-26
 tags:
-  - post
 ---
 
 This week, three of you asked me about salary negotiation.

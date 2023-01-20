@@ -2,7 +2,6 @@
 title: Life is Right Now
 publishDate: 2019-07-24
 tags:
-  - post
 ---
 
 I'm in bed with the flu.  

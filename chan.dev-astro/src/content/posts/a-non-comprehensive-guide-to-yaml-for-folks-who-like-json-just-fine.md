@@ -2,7 +2,6 @@
 title: A Non-Comprehensive Guide to YAML for Folks Who Like JSON Just Fine
 publishDate: 2021-02-10
 tags:
-  - post
   - yaml
 ---
 
@@ -119,12 +118,10 @@ This code is auto-formatted by prettier putting the dash and the first property 
 YAML docs show the dash and first property on different lines which is much more legible.
 
 ```yaml
--
-  name: Taylor Swift
+- name: Taylor Swift
   album_count: 9
   label: Republic
--
-  name: The National
+- name: The National
   album_count: 8
   label: 4AD
 ```
@@ -234,7 +231,11 @@ _But this is the output from the above YAML._
 
 ```json
 {
-  "Folklore": ["Taylor Swift", "Aaron Dressner", "Jack Antonoff"],
+  "Folklore": [
+    "Taylor Swift",
+    "Aaron Dressner",
+    "Jack Antonoff"
+  ],
   "Lover": ["Taylor Swift"],
   "I Am Easy to Find": ["Aaron Dressner"]
 }

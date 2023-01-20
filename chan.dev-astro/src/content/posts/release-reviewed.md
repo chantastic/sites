@@ -3,7 +3,6 @@ title: "Release: Reviewed"
 publishDate: 2021-12-31
 description: I got kneecapped then re-capped my knees.
 tags:
-  - post
 ---
 
 A man walks into a bar.  

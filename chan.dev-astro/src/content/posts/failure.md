@@ -2,7 +2,6 @@
 title: Failure
 publishDate: 2019-03-27
 tags:
-  - post
 ---
 
 👋 Hi!

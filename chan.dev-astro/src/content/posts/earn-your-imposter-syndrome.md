@@ -2,7 +2,6 @@
 title: Earn Your Imposter Syndrome
 publishDate: 2020-01-29
 tags:
-  - post
 ---
 
 "I'm getting into the field, how do I overcome my imposter syndrome?"

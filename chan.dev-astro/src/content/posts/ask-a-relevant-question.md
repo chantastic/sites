@@ -2,7 +2,6 @@
 title: Ask A Relevant Question
 publishDate: 2019-04-10
 tags:
-  - post
 ---
 
 Networking is hard.  

@@ -2,7 +2,6 @@
 title: Destinations are Disappointments. Do What Makes You Happy
 publishDate: 2019-07-03
 tags:
-  - post
 ---
 
 Sheryl Crow has possessed my mind.

@@ -2,7 +2,6 @@
 title: Find Your Why
 publishDate: 2018-09-04
 tags:
-  - post
 ---
 
 You need a motive to convict someone of a crime.

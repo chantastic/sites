@@ -4,7 +4,6 @@ publishDate: 2021-02-01
 og:
   image: "https://chan.dev/og-image/import-all-named-exports-into-one-variable.jpg"
 tags:
-  - post
 ---
 
 We can import all of a JavaScript module's contents into a single variable with `* as`.

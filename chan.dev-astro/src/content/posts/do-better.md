@@ -2,7 +2,6 @@
 title: Do  Better
 publishDate: 2019-10-17
 tags:
-  - post
 ---
 
 Do better

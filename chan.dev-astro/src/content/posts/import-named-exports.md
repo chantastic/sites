@@ -4,7 +4,6 @@ publishDate: 2021-01-26
 og:
   image: "https://chan.dev/og-image/import-named-exports.jpg"
 tags:
-  - post
 ---
 
 By default, expressions and assignments declared inside a module aren't available outside of that module.
@@ -57,7 +56,10 @@ We can only import what we can access by name.
 So, the import statement below would fail (with our current module):
 
 ```js
-import { hype, chant /* oops. no chant */ } from "./string-utils.mjs";
+import {
+  hype,
+  chant /* oops. no chant */,
+} from "./string-utils.mjs";
 
 // SyntaxError:
 // The requested module './string-utils.mjs' does not provide an export named 'chant'

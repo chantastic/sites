@@ -2,7 +2,6 @@
 title: Are We There Yet?
 publishDate: 2019-06-19
 tags:
-  - post
 ---
 
 When my friend Mike and I got our first entry-level tech jobs, we'd daydream over lunch.  

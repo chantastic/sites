@@ -2,7 +2,6 @@
 title: Don't Be Timid
 publishDate: 2019-10-02
 tags:
-  - post
 ---
 
 People are simple.

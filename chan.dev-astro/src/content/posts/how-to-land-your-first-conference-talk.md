@@ -2,7 +2,6 @@
 title: How to land your first conference talk
 publishDate: 2022-06-10
 tags:
-  - post
 ---
 
 Folks ask me how to land a conference talk.

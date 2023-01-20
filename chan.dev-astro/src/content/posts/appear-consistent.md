@@ -2,7 +2,6 @@
 title: Appear Consistent
 publishDate: 2019-04-17
 tags:
-  - post
 ---
 
 > Appear consistent.  

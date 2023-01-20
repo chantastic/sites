@@ -2,7 +2,6 @@
 title: Fail Fast. Fail Safe
 publishDate: 2018-09-17
 tags:
-  - post
 ---
 
 ![rough sketch of Baymax from Disneyland](/img/fail-fast-fail-safe-image.jpeg)

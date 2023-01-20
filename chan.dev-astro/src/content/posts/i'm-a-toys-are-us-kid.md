@@ -2,7 +2,6 @@
 title: I'm a Toys R Us kid
 publishDate: 2019-09-18
 tags:
-  - post
 ---
 
 The guy in front of me is closing the gap on 40.

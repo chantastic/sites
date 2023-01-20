@@ -2,7 +2,6 @@
 title: Outputs and Outcomes
 publishDate: 2019-05-29
 tags:
-  - post
 ---
 
 When chasing an outcome, measure your output.

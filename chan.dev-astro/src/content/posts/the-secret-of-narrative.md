@@ -2,7 +2,6 @@
 title: The Secret of Narrative...
 publishDate: 2019-08-08
 tags:
-  - post
 ---
 
 I'm obsessed with narrative.

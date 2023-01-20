@@ -2,7 +2,6 @@
 title: It Takes what it Takes —  On Dyslexia
 publishDate: 2019-10-09
 tags:
-  - post
 ---
 
 I have dyslexia.

@@ -2,7 +2,6 @@
 title: An off-camera mic for non-nerds
 publishDate: 2021-01-02
 tags:
-  - post
 ---
 
 My friend [Dan](https://www.danott.co) asked me for a mic recommendation.  

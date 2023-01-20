@@ -2,7 +2,6 @@
 title: Do What Others Won't
 publishDate: 2020-01-22
 tags:
-  - post
 ---
 
 Yo

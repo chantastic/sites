@@ -4,7 +4,6 @@ description: "I let the buildup go unchecked. I broke me by using me without sup
 og_title: "Descale: On Cleaning Up Mental and Emotional Hardware"
 publishDate: 2021-09-04
 tags:
-  - post
 ---
 
 Every couple months, I have to "descale" the espresso machine.

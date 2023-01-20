@@ -2,7 +2,6 @@
 title: Comprehending YAML
 publishDate: 2021-02-11
 tags:
-  - post
   - yaml
 ---
 

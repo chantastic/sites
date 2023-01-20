@@ -4,7 +4,6 @@ publishDate: 2021-01-26
 og:
   image: "https://chan.dev/og-image/import-a-module-for-side-effects.jpg"
 tags:
-  - post
 ---
 
 Modules — in JavaScript — can be imported strictly for their side effects.
@@ -57,7 +56,7 @@ console.log(hype("moduuuuuules"));
 
 Module effects _always_ run at import.
 
-In a mixed module, you *can* import only the effects but you *can not* import only the exports.
+In a mixed module, you _can_ import only the effects but you _can not_ import only the exports.
 
 ## Side effect imports in the wild…
 

@@ -2,13 +2,12 @@
 title: Labor Well
 publishDate: 2018-09-03
 tags:
-  - post
 ---
 
 Krishna instructed Arjuna:
 “We have a right to our labor, but not to the fruits of our labor.”
 What did he mean?
-He meant that we control the *way* we work but not the outcome of our work.
+He meant that we control the _way_ we work but not the outcome of our work.
 We own our process,
 Not the plan.
 

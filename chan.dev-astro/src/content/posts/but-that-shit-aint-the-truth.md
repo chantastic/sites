@@ -2,7 +2,6 @@
 title: But that shit ain't the truth
 publishDate: 2020-05-06
 tags:
-  - post
 ---
 
 It's my favorite cinematic transformation...

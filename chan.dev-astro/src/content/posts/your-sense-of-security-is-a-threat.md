@@ -2,7 +2,6 @@
 title: Your Sense of Security is a Threat
 publishDate: 2019-08-28
 tags:
-  - post
 ---
 
 All of our fighting is over a sense of security.

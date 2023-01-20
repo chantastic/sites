@@ -2,7 +2,6 @@
 title: You
 publishDate: 2020-01-01
 tags:
-  - post
 ---
 
 Thanks for letting me in this year.

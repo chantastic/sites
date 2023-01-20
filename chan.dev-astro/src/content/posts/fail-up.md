@@ -2,7 +2,6 @@
 title: Fail Up
 publishDate: 2019-06-12
 tags:
-  - post
 ---
 
 I learn slowly.

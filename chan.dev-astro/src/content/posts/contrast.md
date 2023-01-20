@@ -3,14 +3,13 @@ title: Contrast
 description: "We’re capable of struggling on one axis of life and thriving on another. And while I pine for a sugary, static, undisrupted life… its complexity that keeps contrast high — across experiences."
 publishDate: 2022-08-31
 tags:
-  - post
 ---
 
 I’m always on the hunt for contrast.
 It’s why I like comedy-horror so much.
 The juxtaposition of a hero spitting jocose one-liners, while being dismembered… it just hits.
 
-Our curse is that *every thing* becomes *every day*.
+Our curse is that _every thing_ becomes _every day_.
 
 Climbing Mt. Everest is a lifetime goal for many. But for a sherpa, it’s a day job. By contrast, a sherpa’s lifetime goal may seem comparatively banal to us.
 

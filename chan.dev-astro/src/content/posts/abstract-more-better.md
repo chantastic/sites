@@ -2,7 +2,6 @@
 title: Abstract more, better
 publishDate: 2020-04-16
 tags:
-  - post
 ---
 
 I have one rule when abstracting code: create one abstraction per problem.

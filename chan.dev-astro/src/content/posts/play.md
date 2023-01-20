@@ -5,7 +5,6 @@ description:
 og:
   title: "2022: Year of Play"
 tags:
-  - post
 ---
 
 My theme for 2022 is **play**.

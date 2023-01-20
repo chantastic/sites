@@ -2,7 +2,6 @@
 title: Stop Failing Yourself
 publishDate: 2019-11-27
 tags:
-  - post
 ---
 
 If you want your life to be worse,  

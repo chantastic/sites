@@ -2,7 +2,6 @@
 title: Say What You See
 publishDate: 2020-01-15
 tags:
-  - post
 ---
 
 Pamela Stambaugh changed my life.

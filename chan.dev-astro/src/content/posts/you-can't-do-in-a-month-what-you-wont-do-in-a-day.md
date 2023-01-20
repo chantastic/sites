@@ -2,7 +2,6 @@
 title: You Can't Do in a Month What You Won't Do in a Day
 publishDate: 2018-09-21
 tags:
-  - post
 ---
 
 You can't do in a month what you can't do in a day.
