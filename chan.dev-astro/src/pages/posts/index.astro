@@ -1,7 +1,12 @@
 ---
 import { getCollection } from "astro:content";
 
-const blogPosts = await getCollection("posts");
+const blogPosts = await getCollection("posts", ({ data }) => {
+  if (data.publishDate) {
+    return true;
+  }
+  return false;
+});
 ---
 
 <ul>
