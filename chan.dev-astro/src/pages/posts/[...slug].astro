@@ -18,7 +18,11 @@ const { Content } = await entry.render();
 ---
 
 <h2>{entry.data.title}</h2>
-<time datetime={entry.data.publishDate.toISOString()}>
-  {entry.data.publishDate.toDateString()}
-</time>
+{
+  entry.data.publishDate && (
+    <time datetime={entry.data.publishDate.toISOString()}>
+      {entry.data.publishDate.toDateString()}
+    </time>
+  )
+}
 <Content />

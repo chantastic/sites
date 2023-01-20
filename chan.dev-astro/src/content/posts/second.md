@@ -1,6 +1,5 @@
 ---
 title: Second
-publishDate: 2022-01-19
 ---
 
 ## Let's see…
