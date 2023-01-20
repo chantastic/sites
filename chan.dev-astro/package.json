@@ -11,6 +11,6 @@
     "astro": "astro"
   },
   "devDependencies": {
-    "astro": "^1.9.2"
+    "astro": "^2.0.0-beta.3"
   }
 }
