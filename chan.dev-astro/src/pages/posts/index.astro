@@ -1,26 +1,17 @@
 ---
-import Layout from "../../layouts/Layout.astro";
-import { getCollection } from "astro:content";
+import Layout from "@layouts/Layout.astro";
+import { getPostsCollection } from "@modules/post.mjs";
 
-let blogPosts = await getCollection("posts", ({ data }) => {
-  if (data.publishDate) {
-    return true;
-  }
-  return false;
-});
-
-blogPosts.sort((a, b) => {
-  return b.data.publishDate - a.data.publishDate; // what do i need to do to make this stop warning?
-});
+let posts = await getPostsCollection();
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout title="Life, by chantastic | chan.dev">
   <main>
     <ul>
       {
-        blogPosts.map((post) => (
+        posts.map((post) => (
           <li>
-            <a href={`/posts/${post.slug}`}>
+            <a href={`/${post.slug}`}>
               {post.data.title}
             </a>
           </li>
