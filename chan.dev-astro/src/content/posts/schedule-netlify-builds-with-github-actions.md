@@ -12,7 +12,7 @@ tags:
 Add this GitHub Action to your repo at
 `.github/workflows/schedule-netlify-build.yml`
 
-```yml
+```yaml
 # .github/workflows/schedule-netlify-build.yml
 
 name: Schedule Netlify Build
