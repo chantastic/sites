@@ -4,12 +4,9 @@ title: Thursday
 
 ## Brief
 
-Today is empathy day at work.
-
-Take meetings and be visible in social/discord.
-
-Today is the best day for evening dates and hangouts
-
+Today is empathy day at work.  
+Take meetings and be visible in social/discord.  
+Today is the best day for evening dates and hangouts.  
 Everything that _needs_ to be done during the week should be wrapped up by today.
 
 <dl>

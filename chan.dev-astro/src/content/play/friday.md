@@ -4,13 +4,10 @@ title: Friday
 
 ## Brief
 
-Today is about exploration
-
-Meet people for lunch.
-
-Take calls.
-
-Do hobby work.
+Today is about exploration.  
+Meet people for lunch.  
+Take calls.  
+Do hobby work.  
 
 <dl>
   <dt>Location</dt>

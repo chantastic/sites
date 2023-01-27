@@ -4,10 +4,8 @@ title: Tuesday
 
 ## Brief
 
-Record everything.
-
-Anything recorded gets recorded today.
-
+Record everything.  
+Anything recorded gets recorded today.  
 Because home; do dinner prep pre-TNL dinner.
 
 <dl>

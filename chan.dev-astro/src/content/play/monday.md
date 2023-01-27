@@ -4,12 +4,10 @@ title: Monday
 
 ## Brief
 
-Hit it hard.
-
-Get out of the house.
-
-Frontload the meetings.
-Leave time to document and and schedule follow-up items.
+Hit it hard.  
+Get out of the house.  
+Frontload the meetings.  
+Leave time to document and and schedule follow-up items.  
 
 <dl>
   <dt>Location</dt>
