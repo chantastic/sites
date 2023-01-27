@@ -7,6 +7,13 @@ const posts = defineCollection({
   }),
 });
 
+const play = defineCollection({
+  schema: z.object({
+    title: z.string(),
+  }),
+});
+
 export const collections = {
   posts: posts,
+  play: play,
 };
