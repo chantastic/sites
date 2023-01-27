@@ -18,7 +18,7 @@ const { entry } = Astro.props;
 const { Content } = await entry.render();
 ---
 
-<Layout title={`${entry.data.title} | chan.dev`}>
+<Layout title={`Play: ${entry.data.title} | chan.dev`}>
   <main>
     <article>
       <h1>{entry.data.title}</h1>
