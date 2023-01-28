@@ -20,7 +20,7 @@ Between Eleventy, GitHub Actions, and a recent foray into serverless, I'm using 
 
 This is mapping for my JSON-acquainted brain.
 
-[[toc]]
+## Outline
 
 ## Comments
 

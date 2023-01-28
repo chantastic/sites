@@ -7,7 +7,7 @@ title: Monday
 Hit it hard.  
 Get out of the house.  
 Frontload the meetings.  
-Leave time to document and and schedule follow-up items.  
+Leave time to document and and schedule follow-up items.
 
 <dl>
   <dt>Location</dt>
@@ -21,8 +21,6 @@ Leave time to document and and schedule follow-up items.
 </dl>
 
 ## Outline
-
-[[toc]]
 
 ## Schedule
 

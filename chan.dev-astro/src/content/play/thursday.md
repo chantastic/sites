@@ -22,8 +22,6 @@ Everything that _needs_ to be done during the week should be wrapped up by today
 
 ## Outline
 
-[[toc]]
-
 ## Schedule
 
 ### Startup

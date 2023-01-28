@@ -7,7 +7,7 @@ title: Friday
 Today is about exploration.  
 Meet people for lunch.  
 Take calls.  
-Do hobby work.  
+Do hobby work.
 
 <dl>
   <dt>Location</dt>
@@ -21,8 +21,6 @@ Do hobby work.
 </dl>
 
 ## Outline
-
-[[toc]]
 
 ## Schedule
 

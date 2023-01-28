@@ -19,8 +19,6 @@ Tell people what you're doing. Automate what you can.
 
 ## Outline
 
-[[toc]]
-
 ## Schedule
 
 ### Startup

@@ -21,8 +21,6 @@ Because home; do dinner prep pre-TNL dinner.
 
 ## Outline
 
-[[toc]]
-
 ## Schedule
 
 ### Startup
