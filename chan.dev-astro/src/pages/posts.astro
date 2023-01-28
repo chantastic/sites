@@ -1,8 +1,8 @@
 ---
 import Layout from "@layouts/Layout.astro";
-import { getPostsCollection } from "@modules/post.mjs";
+import { getPostCollection } from "@modules/post.mjs";
 
-let posts = await getPostsCollection();
+let posts = await getPostCollection();
 ---
 
 <Layout title="Life, by chantastic | chan.dev">
@@ -11,9 +11,7 @@ let posts = await getPostsCollection();
       {
         posts.map((post) => (
           <li>
-            <a href={`/${post.slug}`}>
-              {post.data.title}
-            </a>
+            <a href={`/${post.slug}`}>{post.data.title}</a>
           </li>
         ))
       }

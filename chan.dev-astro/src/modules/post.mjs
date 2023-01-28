@@ -1,7 +1,7 @@
 import { getCollection } from "astro:content";
 
-export async function getPostsCollection() {
-  let posts = await getCollection("posts", ({ data }) => {
+export async function getPostCollection() {
+  let posts = await getCollection("post", ({ data }) => {
     if (data.publishDate) {
       return true;
     }
