@@ -6,16 +6,14 @@ title: Wednesday
 
 Tell people what you're doing. Automate what you can.
 
-<dl>
-  <dt>Location</dt>
-  <dd><a href="/mode/coworking">Coworking space</a></dd>
+Location
+: [Coworking space](/mode/coworking)
 
-  <dt>Mode</dt>
-  <dd><a href="/mode/market">Market</a></dd>
+Mode
+: [Market](/mode/market)
 
-  <dt>Interruptable</dt>
-  <dd>Yes</dd>
-</dl>
+Interruptable
+: No
 
 ## Outline
 

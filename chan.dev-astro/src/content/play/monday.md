@@ -9,16 +9,14 @@ Get out of the house.
 Frontload the meetings.  
 Leave time to document and and schedule follow-up items.
 
-<dl>
-  <dt>Location</dt>
-  <dd><a href="/mode/coworking">Coworking space</a></dd>
+Location
+: [Coworking space](/mode/coworking)
 
-  <dt>Mode</dt>
-  <dd><a href="/mode/manage">Manage</a></dd>
+Mode
+: [Manage](/mode/manage)
 
-  <dt>Interruptable</dt>
-  <dd>No</dd>
-</dl>
+Interruptable
+: No
 
 ## Outline
 

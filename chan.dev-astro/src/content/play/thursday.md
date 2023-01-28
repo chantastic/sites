@@ -9,16 +9,14 @@ Take meetings and be visible in social/discord.
 Today is the best day for evening dates and hangouts.  
 Everything that _needs_ to be done during the week should be wrapped up by today.
 
-<dl>
-  <dt>Location</dt>
-  <dd><a href="/mode/coworking">Coworking space</a></dd>
+Location
+: [Coworking space](/mode/coworking)
 
-  <dt>Mode</dt>
-  <dd><a href="/mode/maintain">Maintain</a></dd>
+Mode
+: [Maintain](/mode/maintain)
 
-  <dt>Interruptable</dt>
-  <dd>Yes</dd>
-</dl>
+Interruptable
+: Yes
 
 ## Outline
 

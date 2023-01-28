@@ -9,16 +9,14 @@ Meet people for lunch.
 Take calls.  
 Do hobby work.
 
-<dl>
-  <dt>Location</dt>
-  <dd>Home</dd>
+Location
+: Home
 
-  <dt>Mode</dt>
-  <dd><a href="/mode/meander">Meander</a></dd>
+Mode
+: [Meander](/mode/meander)
 
-  <dt>Interruptable</dt>
-  <dd>Yes</dd>
-</dl>
+Interruptable
+: Yes
 
 ## Outline
 

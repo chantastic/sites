@@ -8,16 +8,14 @@ Record everything.
 Anything recorded gets recorded today.  
 Because home; do dinner prep pre-TNL dinner.
 
-<dl>
-  <dt>Location</dt>
-  <dd>Home</dd>
+Location
+: Home
 
-  <dt>Mode</dt>
-  <dd><a href="/mode/make">Make</a></dd>
+Mode
+: [Make](/mode/make)
 
-  <dt>Interruptable</dt>
-  <dd>No</dd>
-</dl>
+Interruptable
+: No
 
 ## Outline
 
