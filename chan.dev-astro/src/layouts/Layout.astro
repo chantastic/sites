@@ -1,6 +1,6 @@
 ---
 export interface Props {
-	title: string;
+  title: string;
 }
 
 const { title } = Astro.props;
@@ -8,15 +8,71 @@ const { title } = Astro.props;
 
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<link rel="alternate" type="application/rss+xml" title="RSS Feed for chan.dev" href="/feed/rss.xml" />
-		<title>{title}</title>
-	</head>
-	<body class="prose">
-		<slot />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title="RSS Feed for chan.dev"
+      href="/feed/rss.xml"
+    />
+    <title>{title}</title>
+    <style is:global>
+      /* Direct Links / Markdown Headers */
+      .heading--direct-link {
+        font-family: sans-serif;
+        text-decoration: none;
+        font-style: normal;
+        margin-left: 0.1em;
+      }
+      a[href].heading--direct-link,
+      a[href].heading--direct-link:visited {
+        color: transparent;
+      }
+      a[href].heading--direct-link:focus,
+      a[href].heading--direct-link:focus:visited,
+      :hover > a[href].heading--direct-link,
+      :hover > a[href].heading--direct-link:visited {
+        color: #aaa;
+      }
+
+      .heading--direct-link-icon > svg {
+        margin-inline: 0.25em;
+      }
+      .heading--direct-link-icon > svg {
+        display: inline-block;
+      }
+
+      /* screen-reader hider */
+      .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border-width: 0;
+      }
+
+      .focus\:not-sr-only:focus,
+      .focus\:not-sr-only:focus-visible {
+        position: static;
+        width: auto;
+        height: auto;
+        padding: 0;
+        margin: 0;
+        overflow: visible;
+        clip: auto;
+        white-space: normal;
+      }
+    </style>
+  </head>
+  <body class="prose">
+    <slot />
+  </body>
 </html>
