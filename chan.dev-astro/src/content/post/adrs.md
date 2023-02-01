@@ -18,7 +18,11 @@ For me, it started small with a folder of markdown files called `decisions`. It 
 
 Earlier this year, I learned that [Shopify uses "decision logs" to unite their teams](https://youtu.be/2LMaihPQKus?t=1717) around decisions.
 
-{% youtube-video 'https://youtu.be/2LMaihPQKus?t=1717' %}
+<div data-responsive-youtube-container>
+
+https://youtu.be/2LMaihPQKus?t=1717
+
+</div>
 
 But how is a decision log tracked? What's the format? How are changes superseded?
 
@@ -29,7 +33,9 @@ And I didn't get into the nitty-gritty of Shopify's approach with Ryan.
 
 I saw this tweet by Charity Majors and the term "decision record" hooked me.
 
-{% tweet 'https://twitter.com/mipsytipsy/status/1601441441196040192?s=20' %}
+https://twitter.com/mipsytipsy/status/1601441441196040192?s=20
+
+https://twitter.com/forrestbrazeal/status/1593354888821592066?s=20
 
 The [Architecture Decision Record is a document format described by Michael Nygard](http://thinkrelevance.com/blog/2011/11/15/documenting-architecture-decisions). Each record requires a few pieces of information:
 

@@ -8,6 +8,8 @@ import rehype_autolink_headings from "rehype-autolink-headings";
 import { h, s } from "hastscript";
 import remark_external_links from "remark-external-links";
 import remark_obsidian from "remark-obsidian";
+import remark_embedder from "@remark-embedder/core";
+import oembed_transformer from "@remark-embedder/transformer-oembed";
 
 export default defineConfig({
   site: import.meta.env.DEV
@@ -26,9 +28,18 @@ export default defineConfig({
         },
       ],
       remark_deflist,
+      [
+        remark_obsidian,
+        { markdownFolder: `${process.cwd()}/src/content` },
+      ],
+      [
+        remark_embedder,
+        {
+          transformers: [oembed_transformer],
+        },
+      ],
       // https://www.reliablesoft.net/noreferrer-noopener/#noreferrer-vs-nofollow
       [remark_external_links, { rel: "noopener" }],
-      [remark_obsidian, { markdownFolder: `${process.cwd()}/src/content` }],
     ],
     rehypePlugins: [
       // https://docs.astro.build/en/guides/markdown-content/#heading-ids-and-plugins
