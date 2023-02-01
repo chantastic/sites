@@ -7,6 +7,7 @@ import { rehypeHeadingIds } from "@astrojs/markdown-remark";
 import rehype_autolink_headings from "rehype-autolink-headings";
 import { h, s } from "hastscript";
 import remark_external_links from "remark-external-links";
+import remark_obsidian from "remark-obsidian";
 
 export default defineConfig({
   site: import.meta.env.DEV
@@ -27,6 +28,7 @@ export default defineConfig({
       remark_deflist,
       // https://www.reliablesoft.net/noreferrer-noopener/#noreferrer-vs-nofollow
       [remark_external_links, { rel: "noopener" }],
+      [remark_obsidian, { markdownFolder: `${process.cwd()}/src/content` }],
     ],
     rehypePlugins: [
       // https://docs.astro.build/en/guides/markdown-content/#heading-ids-and-plugins

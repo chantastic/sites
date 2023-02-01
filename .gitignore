@@ -4,3 +4,4 @@ node_modules
 .next
 pages/hooks.md
 out/
+.obsidian/
