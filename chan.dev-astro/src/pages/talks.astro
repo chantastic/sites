@@ -1,0 +1,86 @@
+---
+import Layout from "@layouts/Layout.astro";
+let url = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet%2CcontentDetails&maxResults=50&playlistId=PLnc_NxpmOxaPBbn1PysP30GB0_8aQGnAa&key=${
+  import.meta.env.YOUTUBE_API_KEY
+}`;
+
+async function fetchData(url: RequestInfo | URL) {
+  try {
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error(`Error fetching data: ${error}`);
+    return null;
+  }
+}
+
+function truncateTitle(str: string | null | undefined) {
+  if (typeof str !== "string") {
+    return "";
+  }
+
+  if (str.length > 55) {
+    return str.slice(0, 55) + "...";
+  }
+
+  return str;
+}
+
+let videos = await fetchData(url);
+---
+
+<!-- https://tailwindui.com/components/application-ui/lists/grid-lists --><!-- TODO: this page should not have `prose` on it -->
+<Layout title="Life, by chantastic | chan.dev">
+  <div class="prose">
+    <h1>Talks</h1>
+  </div>
+  <ul
+    role="list"
+    class="grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-3 sm:gap-x-6 lg:grid-cols-4 xl:gap-x-8"
+  >
+    {
+      videos.items.map(
+        (video: {
+          snippet: {
+            publishedAt: unknown;
+            resourceId: { videoId: any };
+            thumbnails: {
+              high: { url: string | null | undefined };
+            };
+            title: string | null | undefined;
+          };
+        }) => (
+          <li class="relative">
+            <a
+              href={`https://www.youtube.com/watch?v=${video.snippet.resourceId.videoId}`}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <div class="group aspect-w-10 aspect-h-7 block w-full overflow-hidden rounded-lg bg-gray-100 focus-within:ring-2 focus-within:ring-indigo-500 focus-within:ring-offset-2 focus-within:ring-offset-gray-100">
+                <img
+                  src={video.snippet.thumbnails.high.url}
+                  alt={video.snippet.title}
+                />
+              </div>
+              <p class="pointer-events-none mt-2 block text-sm font-medium text-gray-900">
+                {truncateTitle(video.snippet.title)}
+              </p>
+              <p class="pointer-events-none block text-sm font-medium text-gray-500">
+                {new Date(
+                  video.snippet.publishedAt
+                ).toLocaleDateString("en-US", {
+                  year: "numeric",
+                  month: "short",
+                })}
+              </p>
+            </a>
+          </li>
+        )
+      )
+    }
+  </ul>
+</Layout>
