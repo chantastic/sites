@@ -1,5 +1,6 @@
 ---
 title: Ask A Relevant Question
+description: "Improve networking by targeting key individuals and asking relevant questions. Build genuine relationships through active listening and thoughtful inquiry."
 publishDate: 2019-04-10
 tags:
 ---

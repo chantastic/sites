@@ -1,6 +1,7 @@
 ---
 title: A bargain mic for yellers
 publishDate: 2021-02-21
+description: "Discover the budget-friendly Elgato Wave:3 mic, perfect for streamers & podcasters. Tame loud audio peaks with Clipguard technology & enjoy clear audio."
 tags:
 ---
 

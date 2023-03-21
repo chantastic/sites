@@ -1,5 +1,6 @@
 ---
 title: Find Your Why
+description: "Discover your 'why' to drive success. Strong motives guide brilliant leaders and great organizations, ensuring clarity and purpose in your work."
 publishDate: 2018-09-04
 tags:
 ---

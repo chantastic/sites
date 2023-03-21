@@ -1,5 +1,6 @@
 ---
 title: Imaginary
+description: "Take action. Don't daydream. Stop out of your imaginary world and embrace real opportunities that make a difference."
 publishDate: 2019-04-03
 tags:
 ---

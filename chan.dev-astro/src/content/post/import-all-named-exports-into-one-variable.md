@@ -1,5 +1,6 @@
 ---
 title: Import All Named Exports into One Variable
+description: "Discover how to import all named exports into one variable using *. Learn its benefits in application code, and how it can prevent export name collisions."
 publishDate: 2021-02-01
 og:
   image: "https://chan.dev/og-image/import-all-named-exports-into-one-variable.jpg"

@@ -1,6 +1,7 @@
 ---
 title: A Non-Comprehensive Guide to YAML for Folks Who Like JSON Just Fine
 publishDate: 2021-02-10
+description: "Master YAML with this beginner-friendly guide for JSON lovers. Learn key differences, structures, and examples for GitHub Actions, and serverless configurations"
 tags:
   - yaml
 ---

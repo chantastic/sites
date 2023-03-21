@@ -1,5 +1,6 @@
 ---
 title: Fail Up
+description: "Embrace failure as a learning opportunity. Tenacity and persistence are key to improvement. Keep trying until you find the right solution."
 publishDate: 2019-06-12
 tags:
 ---

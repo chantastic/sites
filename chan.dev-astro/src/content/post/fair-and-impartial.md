@@ -1,5 +1,6 @@
 ---
 title: Fair and Impartial
+description: "Jury duty reveals the emotional impact of personal stories. Acknowledge that everyone has a hidden struggle and practice empathy in daily life."
 publishDate: 2019-09-25
 tags:
 ---

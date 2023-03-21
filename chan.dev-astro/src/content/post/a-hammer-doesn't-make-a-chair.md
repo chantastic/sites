@@ -1,6 +1,7 @@
 ---
 title: A Hammer Doesn't Make a Chair
 publishDate: 2019-05-15
+description: "Embrace the truth that tools don't make things, you do. Invest in quality gear, but remember, it's your creativity that brings it to life. Make something today!"
 tags:
 ---
 

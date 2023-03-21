@@ -1,5 +1,6 @@
 ---
 title: Import Default From Named Export
+description: "Discover new ways to import default exports in JavaScript. Use aliases to rename during import, and understand the nuances of working with default exports."
 publishDate: 2021-02-03
 og:
   image: "https://chan.dev/og-image/import-default-from-named-export.jpg"

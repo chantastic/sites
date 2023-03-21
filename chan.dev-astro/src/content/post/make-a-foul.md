@@ -1,5 +1,6 @@
 ---
 title: Make a Foul
+description: "Sometimes, success means taking risks and making mistakes; embrace the process, learn from your fouls, and grow into a better version of yourself."
 publishDate: 2020-02-26
 tags:
 ---

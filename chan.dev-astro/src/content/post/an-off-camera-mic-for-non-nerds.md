@@ -1,5 +1,6 @@
 ---
 title: An off-camera mic for non-nerds
+description: "Improve online coaching with an off-camera mic like the Rode VideoMic NTG for cozy conversations. Optimize sound quality with positioning and environment."
 publishDate: 2021-01-02
 tags:
 ---

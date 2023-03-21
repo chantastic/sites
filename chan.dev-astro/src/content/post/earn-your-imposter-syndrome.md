@@ -1,5 +1,6 @@
 ---
 title: Earn Your Imposter Syndrome
+description: "Earn imposter syndrome by being bold and achieving success. Transform your fear into courage and let your achievements prove your worth."
 publishDate: 2020-01-29
 tags:
 ---

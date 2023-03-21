@@ -1,5 +1,6 @@
 ---
 title: Import Named Exports
+description: "Explore the power of named exports in JavaScript modules while understanding the potential downside of naming collisions and their solutions."
 publishDate: 2021-01-26
 og:
   image: "https://chan.dev/og-image/import-named-exports.jpg"

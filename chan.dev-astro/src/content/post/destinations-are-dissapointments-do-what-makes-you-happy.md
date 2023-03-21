@@ -1,5 +1,6 @@
 ---
 title: Destinations are Disappointments. Do What Makes You Happy
+description: "Focus on what brings joy, not external validation, to avoid disappointment and embrace true happiness in daily activities like writing, podcasting, or cooking."
 publishDate: 2019-07-03
 tags:
 ---

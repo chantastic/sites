@@ -1,5 +1,6 @@
 ---
 title: Dad's Clever
+description: "Explore the value of a $9 Chinese cleaver as a cherished memory of a late father, and the importance of using everyday tools to create lasting memories."
 publishDate: 2020-04-29
 tags:
 ---

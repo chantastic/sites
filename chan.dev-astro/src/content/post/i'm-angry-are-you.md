@@ -1,5 +1,6 @@
 ---
 title: I'm Angry. Are you?
+description: "Reflections on racial experiences and the anger it can provoke, while seeking ways to overcome wounds and foster understanding and unity."
 publishDate: 2019-09-04
 tags:
 ---

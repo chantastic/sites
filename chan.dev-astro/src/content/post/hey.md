@@ -1,5 +1,6 @@
 ---
 title: Hey
+description: "Discover the role of email in fostering healthy communication habits in a couple's relationship, as they navigate through life's 'big stuff.'"
 publishDate: 2020-02-12
 tags:
 ---
@@ -18,7 +19,7 @@ We had baggage — everyone does.
 We knew we couldn't be casual about the details.
 But we didn't want to overwhelm our young relationship with "the big stuff".
 
-So, we committed to enjoying each other in person — calm, fun, positive publishDates only.
+So, we committed to enjoying each other in person — calm, fun, positive dates only.
 We relegated "the big stuff" to email.
 
 Email gave us time to think about big things...

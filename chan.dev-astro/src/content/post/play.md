@@ -1,7 +1,6 @@
 ---
 title: "Play"
 publishDate: 2022-01-28
-description:
 og:
   title: "2022: Year of Play"
 tags:
