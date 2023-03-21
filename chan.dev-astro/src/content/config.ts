@@ -4,6 +4,8 @@ const post = defineCollection({
   schema: z.object({
     title: z.string(),
     publishDate: z.date().optional(),
+    description: z.string().optional(),
+    // og: title, description, image, url
   }),
 });
 

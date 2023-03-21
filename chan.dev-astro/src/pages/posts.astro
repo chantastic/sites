@@ -1,11 +1,12 @@
 ---
+import PostMeta from "@components/header-post-meta.astro";
 import Layout from "@layouts/Layout.astro";
 import { getPostCollection } from "@modules/post.mjs";
 
 let posts = await getPostCollection();
 ---
 
-<Layout title="Life, by chantastic | chan.dev">
+<Layout>
   <main class="prose">
     <ul>
       {
@@ -17,4 +18,10 @@ let posts = await getPostCollection();
       }
     </ul>
   </main>
+  <PostMeta
+    title="All posts"
+    description="All my languishing hopes and dreams…"
+    url="https://"
+    slot="page-meta"
+  />
 </Layout>

@@ -1,11 +1,12 @@
 ---
 import Layout from "@layouts/Layout.astro";
+import PostMeta from "@components/header-post-meta.astro";
 import { getCollection } from "astro:content";
 
 let plays = await getCollection("play");
 ---
 
-<Layout title="A chantastic playbook | chan.dev">
+<Layout>
   <main>
     <ul>
       {
@@ -17,4 +18,10 @@ let plays = await getCollection("play");
       }
     </ul>
   </main>
+  <PostMeta
+    title="Plays"
+    description="My aspirations at organized, intentional activity."
+    url="https://chan.dev"
+    slot="page-meta"
+  />
 </Layout>

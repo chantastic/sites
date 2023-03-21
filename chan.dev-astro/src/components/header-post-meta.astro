@@ -1,0 +1,36 @@
+---
+export interface Props {
+  title: string;
+  description: string;
+  url: string;
+}
+
+let { title, description, url } = Astro.props;
+let domainAugmentedTitle = `${title} | chan.dev`;
+let uriEncodedTitle = encodeURIComponent(title);
+let defaultOGImage = `https://res.cloudinary.com/chantastic/image/upload/c_fit,g_center,h_220,l_text:rubik_40_bold_line_spacing_0_center:${uriEncodedTitle},w_460,x_-112,y_-44/v1630109662/chan.dev/chan.dev-cloud.jpg`;
+---
+
+<title>{domainAugmentedTitle}</title>
+<meta name="description" content={description} />
+
+<!-- Generic Open Graph -->
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:site_name" content="chan.dev" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content={url} />
+<meta property="og:image" content={defaultOGImage} />
+
+<!-- article -->
+<meta property="article:publisher" content="https://chan.dev" />
+
+<!-- Twitter Meta Tags -->
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@chantastic" />
+<meta name="twitter:creator" content="@chantastic" />
+<meta name="twitter:domain" content="chan.dev" />
+<meta name="twitter:url" content={url} />
+<meta name="twitter:image" content={defaultOGImage} />

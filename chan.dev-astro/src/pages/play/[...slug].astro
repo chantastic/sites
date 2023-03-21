@@ -1,5 +1,6 @@
 ---
 import Layout from "@layouts/Layout.astro";
+import PostMeta from "@components/header-post-meta.astro";
 import { getCollection, CollectionEntry } from "astro:content";
 
 export async function getStaticPaths() {
@@ -25,4 +26,10 @@ const { Content } = await entry.render();
       <Content />
     </article>
   </main>
+  <PostMeta
+    title={entry.data.title}
+    description={""}
+    url={`https://chan.dev/play/${entry.slug}`}
+    slot="page-meta"
+  />
 </Layout>
