@@ -1,5 +1,6 @@
 ---
 title: Pay Attention
+description: "Chasing novelty can be exciting, but sometimes the best gift is simply giving attention. Cherish moments spent with loved ones and focus on being present."
 publishDate: 2019-11-06
 tags:
 ---

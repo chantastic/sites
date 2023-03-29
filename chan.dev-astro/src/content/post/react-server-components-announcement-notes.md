@@ -1,7 +1,7 @@
 ---
 title: React Server Components Announcement Notes
 publishDate: 2021-01-14
-description: Three weeks after the React Server Components event, I finally sat down to learn what everything was about. Here are my initial notes…
+description: "React Server Components announcement notes cover new packages, demo app insights, setup, and impressions. Learn how to use the server-components-demo, view deployment examples, and explore additional resources. Gain insights into this experimental feature's benefits and limitations."
 tags:
 ---
 
