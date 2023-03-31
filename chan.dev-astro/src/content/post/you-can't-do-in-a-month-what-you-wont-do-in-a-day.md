@@ -1,5 +1,6 @@
 ---
 title: You Can't Do in a Month What You Won't Do in a Day
+description: "Procrastination and perfectionism hinder progress. Focus on daily tasks and make progress towards your goals."
 publishDate: 2018-09-21
 tags:
 ---

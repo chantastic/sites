@@ -1,5 +1,6 @@
 ---
 title: Stop making dents
+description: "Religions remind us of our fleeting existence. Instead of striving to 'make a dent,' embrace peace, learn from the past, and share your knowledge. How can you be generous with today?"
 publishDate: 2020-04-15
 tags:
 ---

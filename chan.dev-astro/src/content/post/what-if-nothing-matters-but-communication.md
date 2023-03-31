@@ -1,5 +1,6 @@
 ---
 title: What if Nothing Matters but Communication
+description: "Communication matters more than being right; a united team can achieve more than an individualized one. Focus on discussion, education, and ongoing conversation."
 publishDate: 2019-08-01
 tags:
 ---

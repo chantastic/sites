@@ -1,5 +1,6 @@
 ---
 title: Use Suspense Today
+description: "Use React's Suspense and lazy for code-splitting, displaying fallbacks during component fetching, and handling asynchronous data efficiently."
 publishDate: 2019-10-23
 tags:
 ---
