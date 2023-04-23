@@ -46,7 +46,7 @@ let videos = await fetchData(url);
       videos.items.map(
         (video: {
           snippet: {
-            publishedAt: unknown;
+            publishedAt: string | number | Date;
             resourceId: { videoId: any };
             thumbnails: {
               high: { url: string | null | undefined };
@@ -62,7 +62,7 @@ let videos = await fetchData(url);
             >
               <div class="group aspect-w-10 aspect-h-7 block w-full overflow-hidden rounded-lg bg-gray-100 focus-within:ring-2 focus-within:ring-indigo-500 focus-within:ring-offset-2 focus-within:ring-offset-gray-100">
                 <img
-                  src={video.snippet.thumbnails.high.url}
+                  src={video.snippet.thumbnails.high?.url}
                   alt={video.snippet.title}
                 />
               </div>
