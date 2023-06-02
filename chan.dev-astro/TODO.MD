@@ -1,6 +1,6 @@
 ## todo
 
-- [-] set up deployment
+- [-] update anything with a relative path to `@`-prefixed path
 
 ---
 

@@ -2,7 +2,7 @@ import rss from "@astrojs/rss";
 import { getPostCollection } from "@modules/post.mjs";
 import sanitizeHtml from "sanitize-html";
 import MarkdownIt from "markdown-it";
-import site from "../../metadata.json";
+import site from "@src/metadata.json";
 
 const parser = new MarkdownIt();
 
