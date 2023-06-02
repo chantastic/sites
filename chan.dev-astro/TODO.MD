@@ -76,8 +76,8 @@
 [ ] /sitemap.xml
 [ ] /tags-list
 [ ] /tags
-[ ] /talks
-[ ] /uses
+[-] /talks
+[-] /uses
 [-] /redirects
 [ ] todo.md
 
