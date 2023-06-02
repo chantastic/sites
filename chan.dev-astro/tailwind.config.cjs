@@ -23,19 +23,20 @@ module.exports = {
               padding: "2px 4px",
               whiteSpace: "nowrap",
             },
+            "dl + dl": {
+              marginTop: "1.25rem",
+            },
             dl: {
-              display: "flex",
-              flexFlow: "row wrap",
-              border: "1px solid currentColor",
-              padding: "1rem",
+              marginBottom: "1.25rem",
             },
             dt: {
-              flexBasis: "20%",
-              textAlign: "start",
+              fontWeight: "700",
+            },
+            "dd + dt": {
+              marginTop: "1.25rem",
             },
             dd: {
-              flexBasis: "70%",
-              flexGrow: 1,
+              paddingLeft: "1rem",
             },
           },
         },
