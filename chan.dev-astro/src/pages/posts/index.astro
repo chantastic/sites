@@ -2,22 +2,13 @@
 import PostMeta from "@components/header-post-meta.astro";
 import Layout from "@layouts/Layout.astro";
 import { getPostCollection } from "@modules/post.mjs";
+import PostList from "@components/post-list.astro";
 
 let posts = await getPostCollection();
 ---
 
 <Layout>
-  <main class="prose">
-    <ul>
-      {
-        posts.map((post) => (
-          <li>
-            <a href={`/${post.slug}`}>{post.data.title}</a>
-          </li>
-        ))
-      }
-    </ul>
-  </main>
+  <main class="prose"><PostList posts={posts} /></main>
   <PostMeta
     title="All posts"
     description="All my languishing hopes and dreams…"

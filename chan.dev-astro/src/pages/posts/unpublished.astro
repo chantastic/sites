@@ -1,0 +1,27 @@
+---
+import PostMeta from "@components/header-post-meta.astro";
+import Layout from "@layouts/Layout.astro";
+import { getCollection } from "astro:content";
+import PostList from "@components/post-list.astro";
+
+let posts = await getCollection("post", ({ data }) => {
+  return !data.publishDate;
+});
+---
+
+<Layout>
+  <main class="prose">
+    <h1>Unpublished posts</h1>
+    <p>
+      These posts are public but don't have a `publishDate`.
+      Consiquently, they won't show up in a feed.
+    </p>
+    <PostList posts={posts} />
+  </main>
+  <PostMeta
+    title="All posts"
+    description="All my languishing hopes and dreams…"
+    url="https://"
+    slot="page-meta"
+  />
+</Layout>
