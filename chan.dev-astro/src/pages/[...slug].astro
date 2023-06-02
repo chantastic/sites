@@ -2,6 +2,7 @@
 import Layout from "@layouts/Layout.astro";
 import PostMeta from "@components/header-post-meta.astro";
 import { getCollection, CollectionEntry } from "astro:content";
+import site, { git } from "../metadata.json";
 
 export async function getStaticPaths() {
   const docs = await getCollection("post");
@@ -19,7 +20,7 @@ const { entry } = Astro.props;
 const { Content } = await entry.render();
 ---
 
-<Layout title={`${entry.data.title} | chan.dev`}>
+<Layout title={`${entry.data.title} | ${site.title}`}>
   <main class="prose">
     <article>
       <h1>{entry.data.title}</h1>
@@ -32,6 +33,15 @@ const { Content } = await entry.render();
       }
       <Content />
     </article>
+    <section id="nerd">
+      <p>Nerd stuff</p>
+      <a
+        target="_blank"
+        rel="noreferrer noopener"
+        href=`https://github.com/${git.repo}/commits/main/${git.path}/src/content/${entry.collection}/${entry.id}`
+        >File history</a
+      >
+    </section>
   </main>
   <PostMeta
     slot="page-meta"
@@ -40,3 +50,14 @@ const { Content } = await entry.render();
     url={`http://chan.dev/${entry.slug}`}
   />
 </Layout>
+
+<style is:global>
+  #nerd {
+    box-sizing: border-box;
+    padding: 1rem;
+    background-color: #ddd;
+  }
+  #nerd:not(:target) {
+    display: none;
+  }
+</style>

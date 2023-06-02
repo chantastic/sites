@@ -2,6 +2,7 @@ import rss from "@astrojs/rss";
 import { getPostCollection } from "@modules/post.mjs";
 import sanitizeHtml from "sanitize-html";
 import MarkdownIt from "markdown-it";
+import site from "../../metadata.json";
 
 const parser = new MarkdownIt();
 
@@ -9,7 +10,7 @@ export async function get(context) {
   let posts = await getPostCollection();
 
   return rss({
-    title: "chan.dev",
+    title: site.title,
     description: "chantastic tech",
     site: context.site,
     items: posts.map((post) => ({

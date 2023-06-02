@@ -1,6 +1,7 @@
 ---
 import GoogleFonts from "@components/header-google-fonts.astro";
 import GlobalStyles from "@components/header-global-styles.astro";
+import site from "../metadata.json";
 ---
 
 <!DOCTYPE html>
@@ -13,7 +14,7 @@ import GlobalStyles from "@components/header-global-styles.astro";
     <link
       rel="alternate"
       type="application/rss+xml"
-      title="RSS Feed for chan.dev"
+      title=`RSS Feed for ${site.title}`
       href="/feed/rss.xml"
     />
     <GoogleFonts />

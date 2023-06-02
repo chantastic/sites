@@ -1,4 +1,5 @@
 ---
+import site from "../metadata.json";
 export interface Props {
   title: string;
   description: string;
@@ -6,7 +7,7 @@ export interface Props {
 }
 
 let { title, description, url } = Astro.props;
-let domainAugmentedTitle = `${title} | chan.dev`;
+let domainAugmentedTitle = `${title} | site.title`;
 let uriEncodedTitle = encodeURIComponent(title);
 let defaultOGImage = `https://res.cloudinary.com/chantastic/image/upload/c_fit,g_center,h_220,l_text:rubik_40_bold_line_spacing_0_center:${uriEncodedTitle},w_460,x_-112,y_-44/v1630109662/chan.dev/chan.dev-cloud.jpg`;
 ---
@@ -17,13 +18,13 @@ let defaultOGImage = `https://res.cloudinary.com/chantastic/image/upload/c_fit,g
 <!-- Generic Open Graph -->
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
-<meta property="og:site_name" content="chan.dev" />
+<meta property="og:site_name" content=`${site.title}` />
 <meta property="og:type" content="article" />
 <meta property="og:url" content={url} />
 <meta property="og:image" content={defaultOGImage} />
 
 <!-- article -->
-<meta property="article:publisher" content="https://chan.dev" />
+<meta property="article:publisher" content=`${site.url}` />
 
 <!-- Twitter Meta Tags -->
 <meta name="twitter:title" content={title} />
@@ -31,6 +32,6 @@ let defaultOGImage = `https://res.cloudinary.com/chantastic/image/upload/c_fit,g
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@chantastic" />
 <meta name="twitter:creator" content="@chantastic" />
-<meta name="twitter:domain" content="chan.dev" />
+<meta name="twitter:domain" content={site.title} />
 <meta name="twitter:url" content={url} />
 <meta name="twitter:image" content={defaultOGImage} />

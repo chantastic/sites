@@ -10,11 +10,12 @@ import remark_external_links from "remark-external-links";
 import remark_obsidian from "remark-obsidian";
 import remark_embedder from "@remark-embedder/core";
 import oembed_transformer from "@remark-embedder/transformer-oembed";
+import site from "./src/metadata.json"
 
 export default defineConfig({
   site: import.meta.env.DEV
     ? "http:localhost:3000"
-    : "https://chan.dev",
+    : site.url,
   integrations: [tailwind(), sitemap()],
   markdown: {
     remarkPlugins: [

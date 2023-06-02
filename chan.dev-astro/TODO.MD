@@ -56,7 +56,7 @@
 
 ## Individual pages
 
-[ ] /metadata.json
+[-] /metadata.json
 [-] /404
 [-] /archive (deleted, I guess)
 [ ] /bio
