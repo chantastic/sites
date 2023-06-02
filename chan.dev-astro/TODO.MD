@@ -1,6 +1,6 @@
 ## todo
 
-- [ ] set up deployment
+- [-] set up deployment
 
 ---
 
@@ -57,8 +57,8 @@
 ## Individual pages
 
 [ ] /metadata.json
-[ ] /404
-[ ] /archive
+[-] /404
+[-] /archive (deleted, I guess)
 [ ] /bio
 [ ] /davinci-resolve
 [ ] /devtools
