@@ -50,9 +50,7 @@
 [ ] /play/_
 [ ] /posts/_
 [ ] /reactpodcast/_
-[ ] /styleguide/_
-[ ] /talks/_
-[ ] /adrs/_
+[-] /styleguide/_
 
 ## Individual pages
 
