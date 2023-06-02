@@ -43,12 +43,12 @@ https://www.youtube.com/playlist?list=PLnc_NxpmOxaNqdGvUg8RBi8ZTaZGPdqBD
 
 If you walk away with ONE THING. let it be ci and ca
 
-- `ci"` - change inside double-quotes
-- `ca"` - change around double-quotes
-  - `p` - place cut below
-  - `P` - place cut above
-- `cit` - change inside tag
-- `cat` - change aronud tag
+- <kbd>ci"</kbd> - change inside double-quotes
+- <kbd>ca"</kbd> - change around double-quotes
+  - <kbd>p</kbd> - place cut below
+  - <kbd>P</kbd> - place cut above
+- <kbd>cit</kbd> - change inside tag
+- <kbd>cat</kbd> - change aronud tag
 
 ## VISUAL
 
@@ -56,88 +56,88 @@ If you walk away with ONE THING. let it be ci and ca
 
 - like shift (use arrow keys)
 - can't start in middle of word. have to start at the beginning
-- visual select with surround `S`
+- visual select with surround <kbd>S</kbd>
 
-- u (cover this because i use it a lot)
-- upgrade d, c, (s)
-- viw
-- vaw
-  - w
-  - e
-- vi"
-- va" (from " to {} in React)
-- cs"` (vim surround)
+- <kbd>u</kbd> (cover this because i use it a lot)
+- upgrade <kbd>d,</kbd> <kbd>c,</kbd> <kbd>s</kbd>
+- <kbd>viw</kbd>
+- <kbd>vaw</kbd>
+  - <kbd>w</kbd>
+  - <kbd>e</kbd>
+- <kbd>vi"</kbd>
+- <kbd>va"</kbd> (from " to {} in React)
+- <kbd>cs"`</kbd> (vim surround)
 
-  - (ys)?
-  - ?? cs"{`
-    - cs"{ then ysi{`
+  - <kbd>(ys)?</kbd>
+  - ?? <kbd>cs"{`</kbd>
+    - <kbd>cs"{</kbd> then <kbd>ysi{`</kbd>
   - (t) (f)??
 
 - SKIP VISUAL MODE
 
   - fewer keypresses
   - removes step from what you would do with a mouse
-  - ci"
-  - ct.
-  - cT"
-  - cit / cat
-  - (you can do the same with `d`)
-  - dd
-  - C
-  - S
+  - <kbd>ci"</kbd>
+  - <kbd>ct.</kbd>
+  - <kbd>cT"</kbd>
+  - <kbd>cit</kbd> / <kbd>cat</kbd>
+  - (you can do the same with <kbd>d</kbd>)
+  - <kbd>dd</kbd>
+  - <kbd>C</kbd>
+  - <kbd>S</kbd>
   - (every delete is a cut, which is nice)
 
 - Navigation
-  - o O
-  - ^ 0 $
+  - <kbd>o</kbd> <kbd>O</kbd>
+  - <kbd>^</kbd> <kbd>0</kbd> <kbd>$</kbd>
   - (% not working)
-  - { / } ( for stepping thru big blocks of code)
-  - ( / ) (includes first line)
-  - G
-  - gg
-  - #g
-  - gf
-  - ZZ
+  - <kbd>{</kbd> / <kbd>}</kbd> ( for stepping thru big blocks of code)
+  - <kbd>(</kbd> / <kbd>)</kbd> (includes first line)
+  - <kbd>G</kbd>
+  - <kbd>gg</kbd>
+  - <kbd>#g</kbd>
+  - <kbd>gf</kbd>
+  - <kbd>ZZ</kbd>
 - Quitting
 
-  - ZQ
-  - ZZ
-  - z and g are overloaded
-  - ^d / ^u (half pages)
-  - ^f / ^b (whole pages)
-  - zz / zt / zb
-  - H / M / L
+  - <kbd>ZQ</kbd>
+  - <kbd>ZZ</kbd>
+  - <kbd>z</kbd> and <kbd>g</kbd> are overloaded
+  - <kbd>^d</kbd> / <kbd>^u</kbd> (half pages)
+  - <kbd>^f</kbd> / <kbd>^b</kbd> (whole pages)
+  - <kbd>zz</kbd> / <kbd>zt</kbd> / <kbd>zb</kbd>
+  - <kbd>H</kbd> / <kbd>M</kbd> / <kbd>L</kbd>
   - - (next line with at first character)
   - - (prev line with at first character)
   - preferring cmd-shift [] to vims way
 
 - MISC (most useful in markdown if not using prettier)
 
-  - <<
-  - > >
-  - ^I / ^O
+  - <kbd><<</kbd>
+  - <kbd>>></kbd>
+  - <kbd>^I</kbd> / <kbd>^O</kbd>
 
 - OTHER MODES
 
-  - ^V (visual block)
-  - R (ascii, certain css values like colors)
-  - ^R (redo)
-  - I
-  - O
-  - A
+  - <kbd>^V</kbd> (visual block)
+  - <kbd>R</kbd> (ascii, certain css values like colors)
+  - <kbd>^R</kbd> (redo)
+  - <kbd>I</kbd>
+  - <kbd>O</kbd>
+  - <kbd>A</kbd>
 
 - Search
 
-  - /
-    - n
-    - N
-  - ?
+  - <kbd>/</kbd>
+    - <kbd>n</kbd>
+    - <kbd>N</kbd>
+  - <kbd>?</kbd>
 
-- :s/some-term/replacement-term/g
-- :%s/some-term/replacement-term/g
-- (using range)
+- <kbd>:s/some-term/replacement-term/g</kbd>
+- <kbd>:%s/some-term/replacement-term/g</kbd>
+- <kbd>(using range)</kbd>
 - great stuff here: https://vim.fandom.com/wiki/Search_and_replace
 
 Things I prefer VS Code for
 
-- TAGS plugin vs (cst<)
+- TAGS plugin vs (<kbd>cst<</kbd>)
