@@ -56,6 +56,7 @@
 
 ## Individual pages
 
+[-] redirect /post/* -> /*
 [-] /metadata.json
 [-] /404
 [-] /archive (deleted, I guess)
