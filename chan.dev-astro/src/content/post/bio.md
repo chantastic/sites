@@ -1,5 +1,7 @@
 ---
-layout: ../layouts/MarkdownLayout.astro
+title: "Bio"
+dateCreated: 2022-08-05
+dateModified: 2023-06-02
 ---
 
 ## Latest

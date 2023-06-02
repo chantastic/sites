@@ -60,23 +60,14 @@
 [-] /metadata.json
 [-] /404
 [-] /archive (deleted, I guess)
-[ ] /bio
-[ ] /davinci-resolve
-[ ] /devtools
-[ ] /food
-[ ] /index
-[ ] /microphones
-[ ] /modes
-[ ] /notes
-[ ] /now
-[ ] /os
-[ ] /page-list
-[ ] /plays
-[ ] /reactsuspense
-[ ] /resume
-[ ] /sitemap.xml
-[ ] /tags-list
-[ ] /tags
+[-] /bio
+[-] /davinci-resolve
+[-] /devtools
+[-] /microphones
+[-] /now
+[-] /os
+[-] /reactsuspense
+[-] /resume
 [-] /talks
 [-] /uses
 [-] /redirects

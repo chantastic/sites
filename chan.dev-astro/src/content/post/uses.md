@@ -1,5 +1,7 @@
 ---
-layout: ../layouts/MarkdownLayout.astro
+title: "Uses"
+dateCreated: 2021-09-18
+dateModified: 2022-06-22
 ---
 
 Hey there, Frontend Horse friends.
