@@ -10,12 +10,11 @@ import remark_external_links from "remark-external-links";
 import remark_obsidian from "remark-obsidian";
 import remark_embedder from "@remark-embedder/core";
 import oembed_transformer from "@remark-embedder/transformer-oembed";
-import site from "./src/metadata.json"
+import remark_obsidian_callout from "remark-obsidian-callout";
+import site from "./src/metadata.json";
 
 export default defineConfig({
-  site: import.meta.env.DEV
-    ? "http:localhost:3000"
-    : site.url,
+  site: import.meta.env.DEV ? "http:localhost:3000" : site.url,
   integrations: [tailwind(), sitemap()],
   markdown: {
     remarkPlugins: [
@@ -41,6 +40,7 @@ export default defineConfig({
       ],
       // https://www.reliablesoft.net/noreferrer-noopener/#noreferrer-vs-nofollow
       [remark_external_links, { rel: "noopener" }],
+      remark_obsidian_callout,
     ],
     rehypePlugins: [
       // https://docs.astro.build/en/guides/markdown-content/#heading-ids-and-plugins
