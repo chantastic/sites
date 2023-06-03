@@ -1,6 +1,10 @@
 ## todo
 
 - [-] update anything with a relative path to `@`-prefixed path
+- [x] fix line highlighting
+- [ ] add [callout style](https://help.obsidian.md/Editing+and+formatting/Callouts)
+- [ ] add lunchdev cta
+- [x] figure out why `post.url` getter isn't working (i think because i'm using content collections and not the filesystem)
 
 ---
 
@@ -9,13 +13,7 @@
   - [ ] JSON
 - [ ] add sitemap (plugin doesn't work with 2.0)
 - [ ] add favicon
-- [ ] add redirects file
-  - [ ] add /posts/_ -> /_ redirect
-- markdown
-  - add toc
-  - dl
-  - heading linking
-- Use rest params to
+- [ ] Use rest params to
 
 # 2023-03-17
 
@@ -36,6 +34,13 @@
 
 ## Data
 
+### Existing
+
+[-] /tags/_
+[-] /mode/_
+
+### New
+
 [ ] images
 [ ] /coding/_
 [ ] /criteria/_
@@ -43,36 +48,45 @@
 [ ] /feed/_
 [ ] /food/_
 [ ] /meta/_
-[ ] /mode/_
 [ ] /notes/_
 [ ] /os/_
 [ ] /overlays/_
 [ ] /play/_
 [ ] /posts/_
-[ ] /reactpodcast/_
-[-] /styleguide/_
+[ ] /reactpodcast/\_
+[ ] /adrs/\_
 
 ## Individual pages
 
-[-] redirect /post/* -> /*
-[-] /metadata.json
-[-] /404
-[-] /archive (deleted, I guess)
-[-] /bio
-[-] /davinci-resolve
-[-] /devtools
-[-] /microphones
-[-] /now
-[-] /os
-[-] /reactsuspense
-[-] /resume
-[-] /talks
-[-] /uses
-[-] /redirects
-[ ] todo.md
+[ ] /food (how to i make this scale? tags?)
+[ ] /index (what do i want on this page?)
+[ ] /modes (how do i make this scale? tags?)
+[ ] /sitemap.xml
 
 [ ] Additions, maybe a "top posts" query that uses usefathom data? to show on my 404 page?
 [ ] Hide sections by fragment. Use them for todos. Let others find them
 [ ] Set up icons
 
 ## Double check
+
+## Questions
+
+- Where should I put the static pages long-term? (e.g., /davinci-resolve)
+- Can I get `prose` styles for definition lists? (e.g., /davinci-reslove)
+  - https://twitter.com/chantastic/status/1664660347490570240?s=20
+- What's the best way to integrate with [blog schema](https://schema.org/Blog)? Update dates vs publish dates?
+  - `dateCreated`
+  - `dateModified`
+  - `datePublished`
+  - if it's ever been modified, show history
+- Should now be a page or some type of object?
+- Could I statically analize the commits for files that change regularly (/now, /resume, etc.) and point to previous versions on GH?
+  - Easier may be a `#nerds` fragment that shows links. I can easily link out to history on GH using a url schema: `https://github.com/chantastic/{repo}/commits/main/{path-to}/{file}`
+- Resume from LinkedIn data?
+- Should I make a drafts page?
+
+## Decisions
+
+- add `#nerd` fragment to posts to quickly get to git history
+- For now, I'm puting statig pages directly in pages
+- Without a publish date, posts are still available at the corresponding URL BUT don't show up in the feed
