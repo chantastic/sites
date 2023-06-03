@@ -3,7 +3,6 @@ title: "Release: Reviewed"
 publishDate: 2021-12-31
 description: I got kneecapped then re-capped my knees.
 # decsription: "In 2021, I faced unexpected changes but learned to release and let go. As the big things in my life shifted, I adapted. Now, I look forward to a fresh start in 2022."
-tags:
 ---
 
 A man walks into a bar.  

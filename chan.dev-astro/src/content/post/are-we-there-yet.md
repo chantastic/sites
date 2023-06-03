@@ -2,7 +2,6 @@
 title: Are We There Yet?
 description: "Celebrate achievements by realizing old dreams before moving on to new ones. Appreciate victories and remember how far you've come."
 publishDate: 2019-06-19
-tags:
 ---
 
 When my friend Mike and I got our first entry-level tech jobs, we'd daydream over lunch.  

@@ -2,7 +2,6 @@
 title: Failure
 description: "Embrace failure as a chance to grow. Pick up abandoned projects, face shame, and continue your journey with newfound wisdom and determination."
 publishDate: 2019-03-27
-tags:
 ---
 
 👋 Hi!

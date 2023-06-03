@@ -2,7 +2,6 @@
 title: CSS-ing with Attribute Selectors
 description: "Discover the power of CSS attribute selectors, their syntax, and practical applications, including styling by value, state, and custom data attributes."
 publishDate: 2021-04-22
-tags:
 ---
 
 <mark>_This post will be given as a [lightning talk with lunch.dev](https://events.lunch.dev/lightning/). It's posted here so folks can read along._</mark>

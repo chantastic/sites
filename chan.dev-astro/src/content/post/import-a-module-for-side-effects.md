@@ -4,7 +4,6 @@ description: "Explore the concept of importing JavaScript modules solely for the
 publishDate: 2021-01-26
 og:
   image: "https://chan.dev/og-image/import-a-module-for-side-effects.jpg"
-tags:
 ---
 
 Modules — in JavaScript — can be imported strictly for their side effects.

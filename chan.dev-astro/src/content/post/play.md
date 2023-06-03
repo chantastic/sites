@@ -4,7 +4,6 @@ description: "Embrace play. Be inspired by others and choose happiness over pres
 publishDate: 2022-01-28
 og:
   title: "2022: Year of Play"
-tags:
 ---
 
 My theme for 2022 is **play**.

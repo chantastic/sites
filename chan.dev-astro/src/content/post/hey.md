@@ -2,7 +2,6 @@
 title: Hey
 description: "Discover the role of email in fostering healthy communication habits in a couple's relationship, as they navigate through life's 'big stuff.'"
 publishDate: 2020-02-12
-tags:
 ---
 
 This week, Basecamp announced [HEY](https://hey.com) — a new email service.

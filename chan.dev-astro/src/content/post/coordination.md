@@ -2,7 +2,6 @@
 title: Coordination
 description: "Reflect on coordination in teamwork, its importance, challenges in software development, and the value of past experiences in shaping one's career."
 publishDate: 2020-05-27
-tags:
 ---
 
 I outed myself as a choir kid on [Chats with Kent](https://kentcdodds.com/chats-with-kent-podcast/seasons/03/episodes/michael-chan-teaches-you-how-to-break-into-the-industry) this month

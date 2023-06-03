@@ -2,7 +2,6 @@
 title: Compare AVO 🥑 and standard BEM Conventions
 description: "Discover the differences between AVO 🥑 and standard BEM conventions for naming CSS blocks, elements, and modifiers, with side-by-side examples."
 publishDate: 2021-02-08
-tags:
 ---
 
 ## AVO 🥑 : BEM (standard) syntax comparison

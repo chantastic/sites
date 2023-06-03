@@ -2,7 +2,6 @@
 title: single-threaded notes, E1
 description: "Single-Threaded Podcast: A new podcast by Jenn Creighton, discussing candid career experiences in the tech industry. The first episode features Erin Fox, providing insights into the interview process and advice for job seekers."
 publishDate: 2021-02-17
-tags:
 ---
 
 Today [Jenn Creighton](https://twitter.com/gurlcode/) launched [single-threaded podcast](https://anchor.fm/single-threaded). I'm thrilled 🥳

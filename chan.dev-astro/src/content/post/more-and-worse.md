@@ -2,7 +2,6 @@
 title: More and Worse
 description: "Embrace 'more and worse' as a way to balance life's demands and find fulfillment. Learn to focus, prioritize, and make the most of brief moments of better."
 publishDate: 2019-05-08
-tags:
 ---
 
 I don't have trouble doing a thing perfectly.  

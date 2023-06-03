@@ -2,7 +2,6 @@
 title: Snap to Focus
 description: "How quickly do you jump to certain emotions or thoughts? Choose where to focus, in order to create a positive and healthy mindset."
 publishDate: 2020-02-19
-tags:
 ---
 
 It's hard to make a great photo on a phone.

@@ -2,7 +2,6 @@
 title: Do the Thing
 description: "Conquer ego and embrace the simplicity of creation by focusing on your initial ideas, resisting the urge to pursue grander goals that may prevent progress."
 publishDate: 2019-07-17
-tags:
 ---
 
 This is my modus operandi:

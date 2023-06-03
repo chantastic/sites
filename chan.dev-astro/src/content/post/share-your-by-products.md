@@ -2,7 +2,6 @@
 title: Share your by-products
 description: "Share your by-products: As knowledge workers, we produce a lot of 'creative exhaust.' If you can't sell your by-products, consider sharing them with others."
 publishDate: 2020-04-08
-tags:
 ---
 
 There's a chapter in Rework titled "Sell Your By-products".

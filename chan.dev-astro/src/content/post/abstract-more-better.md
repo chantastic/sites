@@ -2,7 +2,6 @@
 title: Abstract more, better
 description: "Create clear abstractions by isolating problems, avoiding overreach, and focusing on utility. Embrace composable solutions for long-term flexibility."
 publishDate: 2020-04-16
-tags:
 ---
 
 I have one rule when abstracting code: create one abstraction per problem.

@@ -4,7 +4,6 @@ description: "Netlify build hooks are webhooks with one function: re-build your 
 publishDate: 2021-01-28
 og:
   image: "https://chan.dev/og-image/schedule-netlify-builds-with-github-actions.jpg"
-tags:
 ---
 
 ## Instructions

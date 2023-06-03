@@ -2,7 +2,6 @@
 title: Life is Right Now
 description: "Life's fleeting moments are precious; seize the day and make the most of every opportunity to connect with loved ones and create unforgettable memories."
 publishDate: 2019-07-24
-tags:
 ---
 
 I'm in bed with the flu.  

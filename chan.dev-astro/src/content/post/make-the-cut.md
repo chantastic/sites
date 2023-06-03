@@ -2,7 +2,6 @@
 title: Make the Cut
 publishDate: 2019-10-23
 description: "Discover how to transform ideas by cutting away biases and fears, just like a bonsai artist or a skilled butcher. Patience and vision lead to perfection."
-tags:
 ---
 
 Every idea starts as a conflated ball of ideas  

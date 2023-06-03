@@ -2,7 +2,6 @@
 title: Appear Consistent
 description: "Build a reputation through consistency in work habits. Embrace weekly commitments to transform your productivity and overcome self-doubt."
 publishDate: 2019-04-17
-tags:
 ---
 
 > Appear consistent.  

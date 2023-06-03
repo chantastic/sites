@@ -2,7 +2,6 @@
 title: I'm a Toys R Us kid
 description: "Experience a hilarious anecdote about a dad riding a skateboard, as the author explores the relatable feeling of growing older and embracing youthfulness."
 publishDate: 2019-09-18
-tags:
 ---
 
 The guy in front of me is closing the gap on 40.

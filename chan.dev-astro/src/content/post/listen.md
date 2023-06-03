@@ -2,7 +2,6 @@
 title: Listen
 description: "Amplify Black voices and take action; now is the time to listen, learn, and contribute to the fight against systemic racism and injustice. #blacklivesmatter"
 publishDate: 2020-06-03
-tags:
 ---
 
 I started this letter the way I started every letter — with something honest about me

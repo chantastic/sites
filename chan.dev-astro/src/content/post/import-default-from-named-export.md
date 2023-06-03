@@ -4,7 +4,6 @@ description: "Discover new ways to import default exports in JavaScript. Use ali
 publishDate: 2021-02-03
 og:
   image: "https://chan.dev/og-image/import-default-from-named-export.jpg"
-tags:
 ---
 
 Importing `default` can be nuanced. There are just so many ways to do it.

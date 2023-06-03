@@ -2,7 +2,6 @@
 title: The Secret of Narrative...
 description: "Share transformation, not information. Rewrite your story to connect with your audience and make it engaging. Can transformation help you tell a better story?"
 publishDate: 2019-08-08
-tags:
 ---
 
 I'm obsessed with narrative.

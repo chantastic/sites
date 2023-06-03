@@ -2,7 +2,6 @@
 title: Steal From the Players Who Beat You
 description: "Trying harder isn't always the answer. Instead, learn from those who succeed, adopt their strategies, and change your direction. What's holding you back?"
 publishDate: 2019-07-10
-tags:
 ---
 
 My kids are deep into the card game Sushi Go.

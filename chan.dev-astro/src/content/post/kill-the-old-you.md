@@ -2,7 +2,6 @@
 title: Kill the Old You
 description: "Embark on a journey of self-transformation and leave the old you behind, learning from past mistakes to build a better, more genuine version of yourself."
 publishDate: 2019-06-05
-tags:
 ---
 
 I woke up on the first night of vacation with perfect clarity on two things.

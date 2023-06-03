@@ -4,7 +4,6 @@ description: "Explore the power of named exports in JavaScript modules while und
 publishDate: 2021-01-26
 og:
   image: "https://chan.dev/og-image/import-named-exports.jpg"
-tags:
 ---
 
 By default, expressions and assignments declared inside a module aren't available outside of that module.

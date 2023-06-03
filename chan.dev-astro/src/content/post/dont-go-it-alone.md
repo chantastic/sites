@@ -2,7 +2,6 @@
 title: Don't Go It Alone
 description: "High-level success requires trust in others. Embrace collaboration for increased productivity, fulfillment, and growth—don't go it alone."
 publishDate: 2019-12-19
-tags:
 ---
 
 My dad taught me to trust no one.  

@@ -2,7 +2,6 @@
 title: Stop Failing Yourself
 description: "Perfectionism holds you back from sharing your work. Don't let fear of criticism stop you from growing. Embrace imperfection, share your creations, and watch your life improve. Are you hiding from your potential?"
 publishDate: 2019-11-27
-tags:
 ---
 
 If you want your life to be worse,  

@@ -2,7 +2,6 @@
 title: Don't Be Timid
 description: "Entertain by being bold and unapologetic, shedding your ego, and embracing risks. Audiences seek inspiration in your fearlessness and authenticity"
 publishDate: 2019-10-02
-tags:
 ---
 
 People are simple.

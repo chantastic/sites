@@ -2,7 +2,6 @@
 title: Fail Fast. Fail Safe
 publishDate: 2018-09-17
 description: "Embrace mistakes to fuel creativity. Apply rough sketching techniques to coding: explore options, avoid early abstractions, and learn from errors."
-tags:
 ---
 
 ![rough sketch of Baymax from Disneyland](/img/fail-fast-fail-safe-image.jpeg)

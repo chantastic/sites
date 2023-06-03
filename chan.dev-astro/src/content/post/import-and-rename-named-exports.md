@@ -4,7 +4,6 @@ description: "Learn how to import and rename named exports in JavaScript. Avoid 
 publishDate: 2021-01-27
 og:
   image: "https://chan.dev/og-image/import-and-rename-named-exports.jpg"
-tags:
 ---
 
 JavaScript Modules have a syntax for remaning named exports, at import.

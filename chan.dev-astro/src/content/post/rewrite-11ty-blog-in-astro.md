@@ -2,7 +2,6 @@
 title: Astro
 description: "Rewriting a site in Astro for content-forward conventions, 'islands' concept, React productivity, and easy UI library demos integration."
 publishDate: 2023-01-16
-tags:
 ---
 
 I’m re-writing my site in Astro. You can find [my reasons for leaving 11ty here]().
