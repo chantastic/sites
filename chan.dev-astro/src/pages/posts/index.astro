@@ -1,7 +1,7 @@
 ---
 import PostMeta from "@components/header-post-meta.astro";
 import Layout from "@layouts/Layout.astro";
-import { getPostCollection } from "@modules/post.mjs";
+import { getPostCollection } from "@modules/post";
 import PostList from "@components/post-list.astro";
 
 let posts = await getPostCollection();

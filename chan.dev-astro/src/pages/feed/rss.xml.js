@@ -1,5 +1,5 @@
 import rss from "@astrojs/rss";
-import { getPostCollection } from "@modules/post.mjs";
+import { getPostCollection } from "@modules/post.ts";
 import sanitizeHtml from "sanitize-html";
 import MarkdownIt from "markdown-it";
 import site from "@src/metadata.json";
