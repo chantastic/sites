@@ -1,0 +1,29 @@
+---
+import Layout from "@layouts/Layout.astro";
+import PostMeta from "@components/header-post-meta.astro";
+import { getPostCollectionTags } from "@modules/post";
+import site from "@src/metadata.json";
+
+let tags = await getPostCollectionTags();
+---
+
+<Layout>
+  <main class="prose">
+    <h1>Tags</h1>
+    <ul>
+      {
+        tags.map((tag) => (
+          <li>
+            <a href={`/tag/${tag}`}>{tag}</a>
+          </li>
+        ))
+      }
+    </ul>
+  </main>
+  <PostMeta
+    slot="page-meta"
+    title={`Tag index | ${site.title}`}
+    description="Find chantastic posts by tag…"
+    url={`http://chan.dev/tags`}
+  />
+</Layout>

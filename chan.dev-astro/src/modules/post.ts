@@ -32,3 +32,23 @@ export async function getPostCollection() {
 
   return result;
 }
+
+export async function getPostCollectionTags() {
+  let posts = await getCollection("post", ({ data }) => {
+    if (data.tags) {
+      return true;
+    }
+    return false;
+  });
+
+  let result = [
+    ...new Set(
+      posts
+        .map(({ data }) => data.tags)
+        .filter(Boolean)
+        .flat()
+    ),
+  ];
+
+  return result;
+}

@@ -1,0 +1,61 @@
+---
+import Layout from "@layouts/Layout.astro";
+import { getCollection, CollectionEntry } from "astro:content";
+import PostMeta from "@components/header-post-meta.astro";
+import site from "@src/metadata.json";
+
+export async function getStaticPaths() {
+  let posts = await getCollection("post", ({ data }) => {
+    if (data.tags) {
+      return true;
+    }
+    return false;
+  });
+
+  const tags = [
+    ...new Set(
+      posts
+        .map((post) => post.data.tags)
+        .filter(Boolean)
+        .flat()
+    ),
+  ];
+
+  return tags.map((tag) => ({
+    params: { tag },
+    props: {
+      posts: posts.filter((post) =>
+        post.data.tags?.includes(tag as string)
+      ),
+    },
+  }));
+}
+
+interface Props {
+  posts: CollectionEntry<"post">[];
+}
+
+const { tag } = Astro.params;
+const { posts } = Astro.props;
+---
+
+<Layout>
+  <main class="prose">
+    <h1>Tag: {tag}</h1>
+    <ul>
+      {
+        posts.map((post) => (
+          <li>
+            <a href={`/${post.slug}`}>{post.data.title}</a>
+          </li>
+        ))
+      }
+    </ul>
+  </main>
+  <PostMeta
+    slot="page-meta"
+    title={`Tag: ${tag} | ${site.title}`}
+    description={`chantastic posts tagged: ${tag}`}
+    url={`http://chan.dev/tags/${tag}`}
+  />
+</Layout>
