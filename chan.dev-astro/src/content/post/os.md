@@ -2,6 +2,7 @@
 title: "OS"
 dateCreated: 2022-12-28
 dateModified: 2023-01-03
+tags: [os]
 ---
 
 ## Calendar
@@ -64,4 +65,4 @@ Exceptions granted for:
 
 ### SavvyCal
 
-[Details on managing SavvyCal](./savvycal)
+[Details on managing SavvyCal](/savvycal)

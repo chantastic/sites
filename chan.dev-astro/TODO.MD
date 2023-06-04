@@ -38,23 +38,17 @@
 
 [-] /tags/_
 [-] /mode/_
+[-] /meta/_
+[-] /food/_
+[-] /coding/_
+[-] /posts/_
+[-] /play/_
 
 ### New
 
 [ ] images
-[ ] /coding/_
 [ ] /criteria/_
-[ ] /event/_
-[ ] /feed/_
-[ ] /food/_
-[ ] /meta/_
-[ ] /notes/_
-[ ] /os/_
 [ ] /overlays/_
-[ ] /play/_
-[ ] /posts/_
-[ ] /reactpodcast/\_
-[ ] /adrs/\_
 
 ## Individual pages
 

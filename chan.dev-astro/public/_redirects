@@ -25,8 +25,17 @@
 /youtube https://www.youtube.com/channel/UCXpmUxvG37qpckRHdkstf5w
 /1m https://github.com/chantastic/one-million-ui-states
 
+# moved collection pages
+/coding/markdown /markdown
+/food/sandiego /best-food-in-san-diego-and-north-county
+/meta/newsletter /newsletter
+
 # moved collections
-/modes/* /tags/modes/:spat
+/food /tags/food
+/modes /tags/mode
+/plays /tags/play
+/mode/* /:spat
+/play/* /:spat
 
 # affiliate short links
 /ali https://ptya.samcart.com/referral/7hetAhRm/X5lBN0HbJaYRK9om

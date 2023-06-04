@@ -1,7 +1,7 @@
 ---
 title: Manage
 layout: "@layouts/MarkdownLayout.astro"
-tags: ["mode"]
+tags: [mode]
 dateCreated: 2023-01-03
 ---
 
