@@ -6,7 +6,13 @@ const post = defineCollection({
     publishDate: z.date().optional(),
     description: z.string().optional(),
     tags: z.array(z.string()).optional(),
-    // og: title, description, image, url
+    og: z
+      .object({
+        title: z.string().optional(),
+        audio: z.string().url().optional(),
+        image: z.string().url().optional(),
+      })
+      .optional(),
   }),
 });
 

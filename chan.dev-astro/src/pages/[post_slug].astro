@@ -47,6 +47,7 @@ const { Content } = await entry.render();
     slot="page-meta"
     title={entry.data.title}
     description={entry.data.description}
+    og={entry.data.og}
     url={`http://chan.dev/${entry.slug}`}
   />
 </Layout>

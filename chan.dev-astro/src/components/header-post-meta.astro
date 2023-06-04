@@ -1,12 +1,20 @@
 ---
 import site from "@src/metadata.json";
+import type { CollectionEntry } from "astro:content";
+
 export interface Props {
   title: string;
   description?: string;
   url: string;
+  og?: {
+    title?: string;
+    image?: string;
+    audio?: string;
+  }; // lock in type from CollectionEntry<"post">
 }
 
-let { title, description, url } = Astro.props;
+let { title, description, url, og } = Astro.props;
+console.log(Astro.props)
 let domainAugmentedTitle = `${title} | ${site.title}`;
 let uriEncodedTitle = encodeURIComponent(title);
 let defaultOGImage = `https://res.cloudinary.com/chantastic/image/upload/c_fit,g_center,h_220,l_text:rubik_40_bold_line_spacing_0_center:${uriEncodedTitle},w_460,x_-112,y_-44/v1630109662/chan.dev/chan.dev-cloud.jpg`;
@@ -16,7 +24,7 @@ let defaultOGImage = `https://res.cloudinary.com/chantastic/image/upload/c_fit,g
 <meta name="description" content={description} />
 
 <!-- Generic Open Graph -->
-<meta property="og:title" content={title} />
+<meta property="og:title" content={og?.title || title} />
 <meta
   property="og:description"
   content={description || title}
@@ -24,17 +32,31 @@ let defaultOGImage = `https://res.cloudinary.com/chantastic/image/upload/c_fit,g
 <meta property="og:site_name" content=`${site.title}` />
 <meta property="og:type" content="article" />
 <meta property="og:url" content={url} />
-<meta property="og:image" content={defaultOGImage} />
+<meta
+  property="og:image"
+  content={og?.image || defaultOGImage}
+/>
+{
+  og?.audio && (
+    <meta
+      property="og:audio"
+      content={og?.audio}
+    />
+  )
+}
 
 <!-- article -->
 <meta property="article:publisher" content=`${site.url}` />
 
 <!-- Twitter Meta Tags -->
-<meta name="twitter:title" content={title} />
+<meta name="twitter:title" content={og?.title || title} />
 <meta name="twitter:description" content={description} />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@chantastic" />
 <meta name="twitter:creator" content="@chantastic" />
 <meta name="twitter:domain" content={site.title} />
 <meta name="twitter:url" content={url} />
-<meta name="twitter:image" content={defaultOGImage} />
+<meta
+  name="twitter:image"
+  content={og?.image || defaultOGImage}
+/>

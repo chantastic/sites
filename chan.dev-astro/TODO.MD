@@ -5,7 +5,7 @@
 - [ ] alternative feeds
   - [ ] Atom
   - [ ] JSON
-- [ ] Add open graph image
+- [-] Add open graph image
 - [ ] Add images to posts
 - [ ] remaining data types
   - [ ] /reactpodcast
@@ -26,12 +26,13 @@
 - [ ] Additions, maybe a "top posts" query that uses usefathom data? to show on my 404 page?
 - [ ] Add related posts data type to posts
 - [ ] Hide sections by fragment. Use them for todos. Let others find them
+- [ ] Add better descriptions to main pages
 
 # 2023-03-17
 
-[ ] add OG images to pages
+[-] add OG images to pages
 [ ] add default description
-[ ] clear up OG type based on content
+[-] clear up OG type based on content
 [ ] sort out article options [https://ogp.me/#type_article]
 [ ] og:title - i have some alternate titles that look better in the card.
 [ ] remove hard-coded data (like my url, twitter config, etc)
