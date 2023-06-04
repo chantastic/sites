@@ -1,6 +1,8 @@
 ---
 title: Post
 layout: "@layouts/MarkdownLayout.astro"
+dateCreated: 2020-12-24
+dateModified: 2023-06-03
 ---
 
 # Post Styleguide

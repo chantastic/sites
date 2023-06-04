@@ -8,11 +8,12 @@ let posts = await getPostCollection();
 ---
 
 <Layout>
-  <main class="prose"><PostList posts={posts} /></main>
+  <main class="prose">
+    <PostList posts={posts} />
+  </main>
   <PostMeta
-    title="All posts"
-    description="All my languishing hopes and dreams…"
-    url="https://"
+    title="All chantastic posts"
+    url="https://chan.dev/posts"
     slot="page-meta"
   />
 </Layout>

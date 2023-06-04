@@ -4,9 +4,7 @@ description: "Tackle tasks others won't to build dependability, boosting career 
 publishDate: 2020-01-22
 ---
 
-Yo
-
-When I was interviewing contractors to refinish the wood floors of my 70 year old house, they told me:  
+When I was interviewing contractors to refinish the wood **floors** of my 70 year old house, they told me:  
 "This job is too dangerous.  
 Here's a card for the only guy crazy enough to do it."  
 I hired that guy and paid him twice as much as the others estimated.

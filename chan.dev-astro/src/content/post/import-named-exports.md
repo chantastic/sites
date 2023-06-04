@@ -99,9 +99,10 @@ In future posts I'll share a handful of strategies to compensate for and avoid n
 
 ## Go pro
 
-This is part of a course I'm creating on modules at [lunch.dev](https://www.lunch.dev).  
+This is part of a course I'm build on modules at [lunch.dev](https://www.lunch.dev).  
 When live, members get access to this and other courses on React.
 
 <script src="https://cdn.podia.com/embeds.js" async="async"></script>
+<a
+href="https://www.lunch.dev/member" data-podia-embed="button" data-text="Join lunch.dev for this course">Join lunch.dev for this course</a>
 
-<a href="https://www.lunch.dev/member" data-podia-embed="button" data-text="Join lunch.dev for videos">Join lunch.dev</a>
