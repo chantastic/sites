@@ -41,6 +41,12 @@
 [-] /meta/_
 [-] /food/_
 [-] /coding/_
+[ ] /event/_
+[ ] /feed/_
+[ ] /os/_
+[ ] /notes/_
+[ ] /decisions/_
+[ ] /reactpodcast/_
 [-] /posts/_
 [-] /play/_
 
