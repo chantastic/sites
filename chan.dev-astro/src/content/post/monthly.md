@@ -1,5 +1,6 @@
 ---
 title: Monthly reset
+tags: [play]
 ---
 
 ## Auto maintenance

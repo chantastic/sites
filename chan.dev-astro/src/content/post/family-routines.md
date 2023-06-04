@@ -1,5 +1,6 @@
 ---
 title: Family Routines
+tags: [play]
 ---
 
 ## Standard morning (6:45 - 7:25)

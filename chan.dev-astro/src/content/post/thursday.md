@@ -1,5 +1,6 @@
 ---
 title: Thursday
+tags: [play]
 ---
 
 ## Brief
@@ -10,10 +11,10 @@ Today is the best day for evening dates and hangouts.
 Everything that _needs_ to be done during the week should be wrapped up by today.
 
 Location
-: [Coworking space](/mode/coworking)
+: [Coworking space](/coworking)
 
 Mode
-: [Maintain](/mode/maintain)
+: [Maintain](/maintain)
 
 Interruptable
 : Yes

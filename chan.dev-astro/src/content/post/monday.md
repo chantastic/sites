@@ -1,5 +1,6 @@
 ---
 title: Monday
+tags: [play]
 ---
 
 ## Brief
@@ -10,10 +11,10 @@ Frontload the meetings.
 Leave time to document and and schedule follow-up items.
 
 Location
-: [Coworking space](/mode/coworking)
+: [Coworking space](/coworking)
 
 Mode
-: [Manage](/mode/manage)
+: [Manage](/manage)
 
 Interruptable
 : No

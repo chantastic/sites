@@ -10,13 +10,6 @@ const post = defineCollection({
   }),
 });
 
-const play = defineCollection({
-  schema: z.object({
-    title: z.string(),
-  }),
-});
-
 export const collections = {
-  post: post,
-  play: play,
+  post,
 };

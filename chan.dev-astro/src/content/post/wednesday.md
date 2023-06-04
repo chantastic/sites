@@ -1,5 +1,6 @@
 ---
 title: Wednesday
+tags: [play]
 ---
 
 ## Brief
@@ -7,10 +8,10 @@ title: Wednesday
 Tell people what you're doing. Automate what you can.
 
 Location
-: [Coworking space](/mode/coworking)
+: [Coworking space](/coworking)
 
 Mode
-: [Market](/mode/market)
+: [Market](/market)
 
 Interruptable
 : No

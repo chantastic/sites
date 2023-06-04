@@ -1,5 +1,6 @@
 ---
 title: Enter PDT
+tags: [play]
 ---
 
 - Update devices time (PDT/GMT-7)
@@ -8,4 +9,4 @@ title: Enter PDT
   - Go Pro
   - MixPre-3
 
-See: [Leave PDT](/play/leave-pdt)
+See: [Leave PDT](/leave-pdt)

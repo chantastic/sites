@@ -1,5 +1,6 @@
 ---
 title: Friday
+tags: [play]
 ---
 
 ## Brief
@@ -13,7 +14,7 @@ Location
 : Home
 
 Mode
-: [Meander](/mode/meander)
+: [Meander](/meander)
 
 Interruptable
 : Yes

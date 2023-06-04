@@ -1,5 +1,6 @@
 ---
 title: Sunday
+tags: [play]
 ---
 
 ## Brief

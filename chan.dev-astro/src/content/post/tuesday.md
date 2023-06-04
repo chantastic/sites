@@ -1,5 +1,6 @@
 ---
 title: Tuesday
+tags: [play]
 ---
 
 ## Brief
@@ -12,7 +13,7 @@ Location
 : Home
 
 Mode
-: [Make](/mode/make)
+: [Make](/make)
 
 Interruptable
 : No
