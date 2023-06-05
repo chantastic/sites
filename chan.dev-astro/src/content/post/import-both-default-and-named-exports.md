@@ -3,7 +3,7 @@ title: Import Both Default and Named Exports
 description: "How to efficiently import both default and named exports in JavaScript, keeping your code clean and well-organized by mixing these import styles"
 publishDate: 2021-02-05
 og:
-  image: "https://chan.dev/og-image/import-both-default-and-named-exports.jpg"
+  image: "https://res.cloudinary.com/chantastic/image/upload/v1685927001/chan.dev/import-default-from-named-export.jpg"
 tags: [code]
 ---
 

@@ -3,7 +3,7 @@ title: Import and Rename Named Exports
 description: "Learn how to import and rename named exports in JavaScript. Avoid naming collisions and maintain control in your modules, using the as keyword."
 publishDate: 2021-01-27
 og:
-  image: "https://chan.dev/og-image/import-and-rename-named-exports.jpg"
+  image: "https://res.cloudinary.com/chantastic/image/upload/v1685927001/chan.dev/import-and-rename-named-exports.jpg"
 tags: [code]
 ---
 

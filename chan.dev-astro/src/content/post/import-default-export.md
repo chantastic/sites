@@ -3,7 +3,7 @@ title: Import Default Export
 description: "Explore the power and limitations of JavaScript's default exports and how to use them with named exports to maintain a better developer experience."
 publishDate: 2021-02-02
 og:
-  image: "https://chan.dev/og-image/import-default-export.jpg"
+  image: "https://res.cloudinary.com/chantastic/image/upload/v1685927001/chan.dev/import-default-export.jpg"
 tags: [code]
 ---
 

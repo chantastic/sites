@@ -3,7 +3,7 @@ title: Import Named Exports
 description: "Explore the power of named exports in JavaScript modules while understanding the potential downside of naming collisions and their solutions."
 publishDate: 2021-01-26
 og:
-  image: "https://chan.dev/og-image/import-named-exports.jpg"
+  image: "https://res.cloudinary.com/chantastic/image/upload/v1685927001/chan.dev/import-named-exports.jpg"
 ---
 
 By default, expressions and assignments declared inside a module aren't available outside of that module.

@@ -6,7 +6,7 @@
   - [ ] Atom
   - [ ] JSON
 - [-] Add open graph image
-- [ ] Add images to posts
+- [-] Add images to posts
 - [ ] remaining data types
   - [ ] /reactpodcast
   - [ ] /events

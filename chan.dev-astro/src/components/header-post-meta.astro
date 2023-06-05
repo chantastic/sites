@@ -14,7 +14,6 @@ export interface Props {
 }
 
 let { title, description, url, og } = Astro.props;
-console.log(Astro.props)
 let domainAugmentedTitle = `${title} | ${site.title}`;
 let uriEncodedTitle = encodeURIComponent(title);
 let defaultOGImage = `https://res.cloudinary.com/chantastic/image/upload/c_fit,g_center,h_220,l_text:rubik_40_bold_line_spacing_0_center:${uriEncodedTitle},w_460,x_-112,y_-44/v1630109662/chan.dev/chan.dev-cloud.jpg`;
