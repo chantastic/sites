@@ -2,15 +2,17 @@
 
 ### SHIPIT
 
-- [ ] alternative feeds
-  - [ ] Atom
-  - [ ] JSON
+- [-] alternative feeds
+  - [x] Atom
+  - [-] JSON
 - [-] Add open graph image
 - [-] Add images to posts
 - [ ] remaining data types
   - [ ] /reactpodcast
   - [ ] /events
   - [-] /decisions
+    - [ ] add new decisions
+- [ ] reduce filter duplication
 
 ## SKIPIT
 

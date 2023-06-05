@@ -2,6 +2,9 @@
 /blog/* /:splat
 /posts/* /:splat
 
+# moved
+/feed/feed.json /feeds/feed.json
+
 # sitemap
 /sitemap.xml /sitemap-index.xml
 
