@@ -5,8 +5,8 @@ import { getCollection, CollectionEntry } from "astro:content";
 import site, { git } from "@src/metadata.json";
 
 export async function getStaticPaths() {
-  const docs = await getCollection("post");
-  return docs.map((entry) => ({
+  const posts = await getCollection("post");
+  return posts.map((entry) => ({
     params: { post_slug: entry.slug },
     props: { entry },
   }));

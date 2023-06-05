@@ -4,7 +4,9 @@ import Layout from "@layouts/Layout.astro";
 import { getCollection } from "astro:content";
 import { compareByDate } from "@modules/collection";
 
-let decisions = await getCollection("decision");
+let decisions = await getCollection("decision", ({ data }) =>
+  data.status.startsWith("Supercedes")
+);
 
 decisions.sort((a, b) =>
   compareByDate(a.data.date, b.data.date)

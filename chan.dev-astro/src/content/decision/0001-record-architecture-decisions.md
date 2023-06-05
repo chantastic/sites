@@ -1,10 +1,8 @@
-# 1. Record architecture decisions
-
-Date: 2022-12-29
-
-## Status
-
-Accepted
+---
+title: "1. Record architecture decisions"
+status: "Accepted"
+date: 2022-12-29
+---
 
 ## Context
 

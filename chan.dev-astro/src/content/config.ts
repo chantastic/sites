@@ -17,7 +17,11 @@ const post = defineCollection({
 });
 
 const decision = defineCollection({
-  schema: z.object({}),
+  schema: z.object({
+    title: z.string(),
+    status: z.string(),
+    date: z.date(),
+  }),
 });
 
 export const collections = {

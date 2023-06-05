@@ -2,7 +2,6 @@
 import Layout from "@layouts/Layout.astro";
 import { getCollection, CollectionEntry } from "astro:content";
 import PostMeta from "@components/header-post-meta.astro";
-import site from "@src/metadata.json";
 
 export async function getStaticPaths() {
   let posts = await getCollection("post", ({ data }) => {
@@ -21,32 +20,32 @@ export async function getStaticPaths() {
     ),
   ];
 
-  return tags.map((tag) => ({
-    params: { tag },
+  return tags.map((tag_name) => ({
+    params: { tag_name },
     props: {
-      posts: posts.filter((post) =>
-        post.data.tags?.includes(tag as string)
+      entries: posts.filter((post) =>
+        post.data.tags?.includes(tag_name as string)
       ),
     },
   }));
 }
 
 interface Props {
-  posts: CollectionEntry<"post">[];
+  entries: CollectionEntry<"post">[];
 }
 
-const { tag } = Astro.params;
-const { posts } = Astro.props;
+const { tag_name } = Astro.params;
+const { entries } = Astro.props;
 ---
 
 <Layout>
   <main class="prose">
-    <h1>Tag: {tag}</h1>
+    <h1>Tag: {tag_name}</h1>
     <ul>
       {
-        posts.map((post) => (
+        entries.map((entry) => (
           <li>
-            <a href={`/${post.slug}`}>{post.data.title}</a>
+            <a href={`/${entry.slug}`}>{entry.data.title}</a>
           </li>
         ))
       }
@@ -54,7 +53,7 @@ const { posts } = Astro.props;
   </main>
   <PostMeta
     slot="page-meta"
-    title={`chantastic posts tagged: ${tag}`}
-    url={`http://chan.dev/tags/${tag}`}
+    title={`chantastic posts tagged: ${tag_name}`}
+    url={`http://chan.dev/tags/${tag_name}`}
   />
 </Layout>

@@ -1,0 +1,45 @@
+---
+import Layout from "@layouts/Layout.astro";
+import { getCollection, CollectionEntry } from "astro:content";
+import PostMeta from "@components/header-post-meta.astro";
+
+export async function getStaticPaths() {
+  let decisions = await getCollection("decision");
+
+  return decisions.map((entry) => ({
+    params: { decision_slug: entry.slug },
+    props: {
+      entry,
+    },
+  }));
+}
+
+interface Props {
+  entry: CollectionEntry<"decision">;
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+---
+
+<Layout>
+  <main class="prose">
+    <h1>{entry.data.title}</h1>
+    <time datetime={entry.data.date.toISOString()}>
+      {entry.data.date.toDateString()}
+    </time>
+    <p>
+      <span
+        class="px-4 py-2 font-semibold text-sm bg-cyan-500 text-white rounded-full shadow-sm"
+      >
+        {entry.data.status}
+      </span>
+    </p>
+    <Content />
+  </main>
+  <PostMeta
+    slot="page-meta"
+    title={`chantastic decision: ${entry.data.title}`}
+    url={`http://chan.dev/decision/${entry.data.title}`}
+  />
+</Layout>

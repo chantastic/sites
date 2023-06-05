@@ -27,6 +27,7 @@
 - [ ] Add related posts data type to posts
 - [ ] Hide sections by fragment. Use them for todos. Let others find them
 - [ ] Add better descriptions to main pages
+- [ ] Configure decisions template direction. This will allow me to use a template without screwing up Astro's special collection directories. https://github.com/npryce/adr-tools/blob/master/src/adr-new
 
 # 2023-03-17
 

@@ -1,10 +1,8 @@
-# 6. Only publish post collection
-
-Date: 2023-01-07
-
-## Status
-
-Accepted
+---
+title: "6. Only publish post collection"
+status: "Accepted"
+date: 2023-01-07
+---
 
 ## Context
 

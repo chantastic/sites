@@ -1,12 +1,8 @@
-# 5. Use Node.js v16
-
-Date: 2023-01-07
-
-## Status
-
-Accepted
-
-Supercedes [4. Use node.js v18](0004-use-node-js-v18.md)
+---
+title: "5. Use Node.js v16"
+status: "Supercedes [4. Use node.js v18](/decisions/0004-use-node-js-v18.md)"
+date: 2023-01-07
+---
 
 ## Context
 

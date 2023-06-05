@@ -2,7 +2,6 @@
 import Layout from "@layouts/Layout.astro";
 import PostMeta from "@components/header-post-meta.astro";
 import { getPostCollectionTags } from "@modules/post";
-import site from "@src/metadata.json";
 
 let tags = await getPostCollectionTags();
 ---

@@ -1,10 +1,8 @@
-# 7. Prefer markdown plugins over shortcodes
-
-Date: 2023-01-10
-
-## Status
-
-Accepted
+---
+title: "7. Prefer markdown plugins over shortcodes"
+status: "Accepted"
+date: 2023-01-10
+---
 
 ## Context
 

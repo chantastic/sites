@@ -1,10 +1,8 @@
-# 2. Create collection urls outside of directories
-
-Date: 2023-01-03
-
-## Status
-
-Accepted
+---
+title: "2. Create collection urls outside of directories"
+status: "Accepted"
+date: 2023-01-03
+---
 
 ## Context
 
