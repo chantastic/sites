@@ -9,7 +9,7 @@ It's changed a lot and I thought I'd fill interested nerds in on the uppublishDa
 
 ## Case
 
-![Case](https://res.cloudinary.com/chantastic/image/upload/c_scale,w_646/v1685921258/chan.dev/my-2019-portable-podcast-rig_case_open.png)
+![Case](https://res.cloudinary.com/chantastic/image/upload/c_scale,w_1292/v1685921258/chan.dev/my-2019-portable-podcast-rig_case_open.png)
 
 When I bought my [Zoom H6 Portable Recorder](https://amzn.to/35V2sPF), a [Gator Titan Series case](https://amzn.to/2MTTOba) was included as a promo.  
 I've since sold the H6 but kept the case because it's great.  
@@ -19,7 +19,7 @@ I like this case because it fits easily inside one half of my carry-on sized rol
 
 ## Recorder
 
-![Recorder](https://res.cloudinary.com/chantastic/image/upload/c_scale,w_646/v1685921258/chan.dev/my-2019-portable-podcast-rig_recorder.png)
+![Recorder](https://res.cloudinary.com/chantastic/image/upload/c_scale,w_1292/v1685921258/chan.dev/my-2019-portable-podcast-rig_recorder.png)
 
 I use the [Sound Devices MixPre](https://amzn.to/2P4gFDP) as my portable recorder.  
 It's also the recorder I use for my remote interviews.
@@ -35,7 +35,7 @@ It's a great portable recorder for the price.
 
 ## Microphones
 
-![Microphones](https://res.cloudinary.com/chantastic/image/upload/c_scale,w_646/v1685921253/chan.dev/my-2019-portable-podcast-rig_microphones.png)
+![Microphones](https://res.cloudinary.com/chantastic/image/upload/c_scale,w_1292/v1685921253/chan.dev/my-2019-portable-podcast-rig_microphones.png)
 
 I travel with two [Rode M2](https://www.bhphotovideo.com/c/product/643205-REG/Rode_M2_M2_Professional_Condenser_Handheld.html) handheld condeser microphones.
 
@@ -71,7 +71,7 @@ A mic that can be used directly with USB.
 
 A list of all teh accessories I use
 
-![accessories](https://res.cloudinary.com/chantastic/image/upload/c_scale,w_646/v1685921255/chan.dev/my-2019-portable-podcast-rig_accessories.png)
+![accessories](https://res.cloudinary.com/chantastic/image/upload/c_scale,w_1292/v1685921255/chan.dev/my-2019-portable-podcast-rig_accessories.png)
 
 ### Windscreen
 
@@ -95,7 +95,7 @@ Bring at least one backup.
 
 ## Battery
 
-![battery](https://res.cloudinary.com/chantastic/image/upload/c_scale,w_646/v1685921256/chan.dev/my-2019-portable-podcast-rig_battery.png)
+![battery](https://res.cloudinary.com/chantastic/image/upload/c_scale,w_1292/v1685921256/chan.dev/my-2019-portable-podcast-rig_battery.png)
 
 I use the [Sound Devices MX-LMount Battery Sled](https://amzn.to/2qwhWct) and [RAVPower NPF5500 batteries](https://www.amazon.com/NP-F550-RAVPower-Battery-CCD-SC55-Replacement/dp/B0761SH551/ref=sr_1_1?keywords=ravpower+l-series&qid=1571695955&sr=8-1).
 
