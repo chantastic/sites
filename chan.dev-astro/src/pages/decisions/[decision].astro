@@ -1,0 +1,35 @@
+---
+import Layout from "@layouts/Layout.astro";
+import { getCollection, CollectionEntry } from "astro:content";
+import PostMeta from "@components/header-post-meta.astro";
+import site from "@src/metadata.json";
+
+export async function getStaticPaths() {
+  let decisions = await getCollection("decision");
+
+  return decisions.map((decision) => ({
+    params: { decision: decision.slug },
+    props: {
+      decision,
+    },
+  }));
+}
+
+interface Props {
+  decision: CollectionEntry<"decision">;
+}
+
+const { tag } = Astro.params;
+const { decision } = Astro.props;
+---
+
+<Layout>
+  <main class="prose">
+    <h1>{decision.title}</h1>
+  </main>
+  <PostMeta
+    slot="page-meta"
+    title={`chantastic decision: ${tag}`}
+    url={`http://chan.dev/decisions/${tag}`}
+  />
+</Layout>

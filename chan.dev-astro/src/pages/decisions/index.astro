@@ -1,0 +1,23 @@
+---
+import PostMeta from "@components/header-post-meta.astro";
+import Layout from "@layouts/Layout.astro";
+import { getCollection } from "astro:content";
+
+let decisions = await getCollection("decision", (entry) => {
+  if (entry.slug === "templates/template") return false;
+  return true;
+});
+---
+
+<Layout>
+  <main class="prose">
+    <ul>
+      {decisions.map((decision) => <li>{decision.slug}</li>)}
+    </ul>
+    <PostMeta
+      title="All chantastic decisions"
+      url="https://chan.dev/decisions"
+      slot="page-meta"
+    />
+  </main>
+</Layout>

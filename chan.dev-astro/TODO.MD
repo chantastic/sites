@@ -10,7 +10,7 @@
 - [ ] remaining data types
   - [ ] /reactpodcast
   - [ ] /events
-  - [ ] /decisions
+  - [-] /decisions
 
 ## SKIPIT
 
@@ -39,10 +39,6 @@
 [ ] find way to access shared site data AND custom environment variables
 
 # 2023-04-20
-
-## Data
-
-[ ] /decisions/\_
 
 ### New
 
