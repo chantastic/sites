@@ -2,20 +2,17 @@
 
 ### SHIPIT
 
-- [-] alternative feeds
-  - [x] Atom
-  - [-] JSON
-- [-] Add open graph image
-- [-] Add images to posts
 - [ ] remaining data types
   - [ ] /reactpodcast
   - [ ] /events
-  - [-] /decisions
-    - [ ] add new decisions
 - [ ] reduce filter duplication
 
 ## SKIPIT
 
+- [ ] Tighten up ADRs
+  - [ ] Customize template directory
+  - [ ] Add new decisions
+- [ ] add full url helper
 - [ ] add [callout style](https://help.obsidian.md/Editing+and+formatting/Callouts)
 - [ ] callout
 - [ ] add favicon

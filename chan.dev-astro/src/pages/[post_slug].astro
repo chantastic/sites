@@ -3,6 +3,7 @@ import Layout from "@layouts/Layout.astro";
 import PostMeta from "@components/header-post-meta.astro";
 import { getCollection, CollectionEntry } from "astro:content";
 import site, { git } from "@src/metadata.json";
+import config from "../../astro.config.mjs";
 
 export async function getStaticPaths() {
   const posts = await getCollection("post");
@@ -48,7 +49,7 @@ const { Content } = await entry.render();
     title={entry.data.title}
     description={entry.data.description}
     og={entry.data.og}
-    url={`http://chan.dev/${entry.slug}`}
+    url={new URL(entry.slug, config.site).toString()}
   />
 </Layout>
 

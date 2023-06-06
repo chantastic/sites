@@ -1,4 +1,5 @@
 import { getCollection } from "astro:content";
+import { compareByDate } from "@modules/collection";
 
 export async function getPostCollection() {
   let result = await getCollection("post", ({ data }) => {
@@ -8,27 +9,9 @@ export async function getPostCollection() {
     return false;
   });
 
-  result.sort((a, b) => {
-    // https://stackoverflow.com/a/73522819
-    let [bDate, aDate] = [
-      b.data.publishDate,
-      a.data.publishDate,
-    ];
-
-    if (!aDate && !bDate) {
-      return 0;
-    }
-    if (!aDate) {
-      return -1;
-    }
-    if (!bDate) {
-      return 1;
-    }
-
-    return (
-      new Date(bDate).getTime() - new Date(aDate).getTime()
-    );
-  });
+  result.sort((a, b) =>
+    compareByDate(a.data.publishDate, b.data.publishDate)
+  );
 
   return result;
 }

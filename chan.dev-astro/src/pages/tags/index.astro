@@ -2,6 +2,7 @@
 import Layout from "@layouts/Layout.astro";
 import PostMeta from "@components/header-post-meta.astro";
 import { getPostCollectionTags } from "@modules/post";
+import config from "../../../astro.config.mjs";
 
 let tags = await getPostCollectionTags();
 ---
@@ -21,7 +22,7 @@ let tags = await getPostCollectionTags();
   </main>
   <PostMeta
     slot="page-meta"
+    url={new URL("", config.site).toString()}
     title={`Find chantastic posts by tag…`}
-    url={`http://chan.dev/tags`}
   />
 </Layout>

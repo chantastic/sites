@@ -3,6 +3,7 @@ import PostMeta from "@components/header-post-meta.astro";
 import Layout from "@layouts/Layout.astro";
 import { getCollection } from "astro:content";
 import { compareByDate } from "@modules/collection";
+import config from "../../../astro.config.mjs";
 
 let decisions = await getCollection("decision", ({ data }) =>
   data.status.startsWith("Supercedes")
@@ -26,10 +27,13 @@ decisions.sort((a, b) =>
         ))
       }
     </ul>
-    <PostMeta
-      title="All chantastic decisions"
-      url="https://chan.dev/decisions"
-      slot="page-meta"
-    />
   </main>
+  <PostMeta
+    title="All chantastic decisions"
+    url={new URL(
+      "/decisions/supercedes",
+      config.site
+    ).toString()}
+    slot="page-meta"
+  />
 </Layout>

@@ -14,7 +14,9 @@ import remark_obsidian_callout from "remark-obsidian-callout";
 import site from "./src/metadata.json";
 
 export default defineConfig({
-  site: import.meta.env.DEV ? "http:localhost:3000" : site.url,
+  site: import.meta.env.DEV
+    ? "http://localhost:3000"
+    : site.url,
   integrations: [tailwind(), sitemap()],
   markdown: {
     remarkPlugins: [

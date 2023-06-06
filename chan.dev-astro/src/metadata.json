@@ -1,16 +1,12 @@
 {
   "title": "chan.dev",
   "url": "https://chan.dev/",
-  "description": "",
+  "description": "Incoherant ramblings, by chantastic",
   "feed": {
-    "subtitle": "",
-    "filename": "feed.xml",
-    "path": "/feed/feed.xml",
+    "path": "/feeds",
+    "rssFilename": "rss.xml",
+    "jsonFilename": "feed.json",
     "id": "https://chan.dev/"
-  },
-  "jsonfeed": {
-    "path": "/feed/feed.json",
-    "url": "https://chan.dev/feed/feed.json"
   },
   "author": {
     "name": "Michael Chan",

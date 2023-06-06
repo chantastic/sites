@@ -1,6 +1,6 @@
 ---
 import site from "@src/metadata.json";
-import type { CollectionEntry } from "astro:content";
+import config from "../../astro.config.mjs";
 
 export interface Props {
   title: string;
@@ -35,17 +35,10 @@ let defaultOGImage = `https://res.cloudinary.com/chantastic/image/upload/c_fit,g
   property="og:image"
   content={og?.image || defaultOGImage}
 />
-{
-  og?.audio && (
-    <meta
-      property="og:audio"
-      content={og?.audio}
-    />
-  )
-}
+{og?.audio && <meta property="og:audio" content={og?.audio} />}
 
 <!-- article -->
-<meta property="article:publisher" content=`${site.url}` />
+<meta property="article:publisher" content={config.site} />
 
 <!-- Twitter Meta Tags -->
 <meta name="twitter:title" content={og?.title || title} />

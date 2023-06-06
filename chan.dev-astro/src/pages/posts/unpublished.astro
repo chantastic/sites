@@ -3,6 +3,7 @@ import PostMeta from "@components/header-post-meta.astro";
 import Layout from "@layouts/Layout.astro";
 import { getCollection } from "astro:content";
 import PostList from "@components/post-list.astro";
+import config from "../../../astro.config.mjs";
 
 let posts = await getCollection("post", ({ data }) => {
   return !data.publishDate;
@@ -20,7 +21,7 @@ let posts = await getCollection("post", ({ data }) => {
   </main>
   <PostMeta
     title="All chantastic posts"
-    url="https://chan.dev/posts/unpublished"
+    url={new URL("posts/unpublished", config.site).toString()}
     slot="page-meta"
   />
 </Layout>

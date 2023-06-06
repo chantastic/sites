@@ -3,6 +3,7 @@ import PostMeta from "@components/header-post-meta.astro";
 import Layout from "@layouts/Layout.astro";
 import { getPostCollection } from "@modules/post";
 import PostList from "@components/post-list.astro";
+import config from "../../../astro.config.mjs";
 
 let posts = await getPostCollection();
 ---
@@ -13,7 +14,7 @@ let posts = await getPostCollection();
   </main>
   <PostMeta
     title="All chantastic posts"
-    url="https://chan.dev/posts"
+    url={new URL("posts", config.site).toString()}
     slot="page-meta"
   />
 </Layout>

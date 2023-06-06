@@ -3,7 +3,7 @@ title: Schedule Netlify Builds with GitHub Actions, Cron, and Webhooks
 description: "Netlify build hooks are webhooks with one function: re-build your site when called. Any POST request to your Netlify build hook triggers a build. And you can POST to this hook right from your repo, using GitHub Actions…"
 publishDate: 2021-01-28
 og:
-  image: "https://chan.dev/og-image/schedule-netlify-builds-with-github-actions.jpg"
+  image: "https://res.cloudinary.com/chantastic/image/upload/v1685927001/chan.dev/schedule-netlify-builds-with-github-actions.jpg"
 ---
 
 ## Instructions

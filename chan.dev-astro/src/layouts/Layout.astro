@@ -15,15 +15,14 @@ import site from "@src/metadata.json";
       rel="alternate"
       type="application/rss+xml"
       title=`RSS Feed for ${site.title}`
-      href="/feed/rss.xml"
+      href={`${site.feed.path}/${site.feed.rssFilename}`}
     />
     <link rel="sitemap" href="/sitemap-index.xml" />
     <GoogleFonts />
     <GlobalStyles />
     <slot name="page-meta">
       <title>
-        A stream of incoherant ramblings, by chantastic |
-        chan.dev
+        {site.description} | {site.title}
       </title>
     </slot>
   </head>
