@@ -3,7 +3,7 @@ import { getPostCollection } from "@modules/post.ts";
 import sanitizeHtml from "sanitize-html";
 import MarkdownIt from "markdown-it";
 import site from "@src/metadata.json";
-import config from "../../../astro.config.mjs";
+import { url } from "@modules/site";
 
 const parser = new MarkdownIt();
 
@@ -13,11 +13,11 @@ export async function get() {
   return rss({
     title: site.title,
     description: site.description,
-    site: config.site,
+    site: import.meta.env.SITE,
     items: posts.map((post) => ({
       title: post.data.title,
       pubDate: post.data.publishDate,
-      link: new URL(post.slug, config.site).toString(),
+      link: url(post.slug),
       content: sanitizeHtml(parser.render(post.body)),
     })),
     customData: `<language>en-us</language>`,

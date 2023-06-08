@@ -2,7 +2,7 @@
 import Layout from "@layouts/Layout.astro";
 import { getCollection, CollectionEntry } from "astro:content";
 import PostMeta from "@components/header-post-meta.astro";
-import config from "../../../astro.config.mjs";
+import * as site from "@modules/site";
 
 export async function getStaticPaths() {
   let decisions = await getCollection("decision");
@@ -41,9 +41,6 @@ const { Content } = await entry.render();
   <PostMeta
     slot="page-meta"
     title={`chantastic decision: ${entry.data.title}`}
-    url={new URL(
-      `/decisions/${entry.data.title}`,
-      config.site
-    ).toString()}
+    url={site.url(`/decisions/${entry.slug}`)}
   />
 </Layout>

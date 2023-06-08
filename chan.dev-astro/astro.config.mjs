@@ -11,12 +11,11 @@ import remark_obsidian from "remark-obsidian";
 import remark_embedder from "@remark-embedder/core";
 import oembed_transformer from "@remark-embedder/transformer-oembed";
 import remark_obsidian_callout from "remark-obsidian-callout";
-import site from "./src/metadata.json";
 
 export default defineConfig({
   site: import.meta.env.DEV
     ? "http://localhost:3000"
-    : site.url,
+    : "https://chan.dev",
   integrations: [tailwind(), sitemap()],
   markdown: {
     remarkPlugins: [

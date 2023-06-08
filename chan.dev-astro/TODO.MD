@@ -9,6 +9,7 @@
 
 ## SKIPIT
 
+- [ ] rename `header-post-meta` now that it's no longer just `Post`s
 - [ ] Tighten up ADRs
   - [ ] Customize template directory
   - [ ] Add new decisions
