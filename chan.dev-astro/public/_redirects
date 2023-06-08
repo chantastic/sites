@@ -11,7 +11,7 @@
 # short links to posts
 /avo /posts/avo-a-bem-dialect-using-data-attributes/
 /expensive /talks/expensive
-/novimber /event/2022/novimber/
+/novimber /lessons/novimber/2022/
 
 # moved posts
 /react/concurrent/concurrent-ui-patterns--experimental /notes/react/concurrent/concurrent-ui-patterns--experimental/
@@ -35,6 +35,7 @@
 /coding/markdown /markdown
 /food/sandiego /best-food-in-san-diego-and-north-county
 /meta/newsletter /newsletter
+/event/2022/novimber/* /lessons/novimber/2022/:splat
 
 # moved collections
 /food /tags/food

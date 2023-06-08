@@ -1,0 +1,71 @@
+---
+import Layout from "@layouts/Layout.astro";
+import { getCollection, CollectionEntry } from "astro:content";
+import PostMeta from "@components/header-post-meta.astro";
+import * as site from "@modules/site";
+
+export async function getStaticPaths() {
+  let lessons = await getCollection("lesson");
+
+  let course_years = lessons.reduce(
+    (
+      courses: { [index: string]: string[] },
+      lesson: CollectionEntry<"lesson">
+    ) => {
+      let [course_name, year] = lesson.slug.split("/");
+
+      if (courses?.[course_name]?.includes(year)) {
+        return courses;
+      }
+
+      if (courses?.[course_name]) {
+        return {
+          ...courses,
+          [course_name]: [...courses[course_name], year],
+        };
+      }
+
+      return { ...courses, [course_name]: [year] };
+    },
+    {}
+  );
+
+  return Object.entries(course_years).map(
+    ([course_name, years]) => ({
+      params: {
+        course_name,
+      },
+      props: { years },
+    })
+  );
+}
+
+interface Props {
+  years: string[];
+}
+
+const { course_name } = Astro.params;
+const { years } = Astro.props;
+---
+
+<Layout>
+  <main class="prose">
+    <h1>{course_name}</h1>
+    <ul>
+      {
+        years.map((year) => (
+          <li>
+            <a href={`/lessons/${course_name}/${year}`}>
+              {year}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </main>
+  <PostMeta
+    title={`chantastic course: ${course_name}`}
+    url={site.url(`/lessons/${course_name}`)}
+    slot="page-meta"
+  />
+</Layout>

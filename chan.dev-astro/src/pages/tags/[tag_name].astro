@@ -2,7 +2,7 @@
 import Layout from "@layouts/Layout.astro";
 import { getCollection, CollectionEntry } from "astro:content";
 import PostMeta from "@components/header-post-meta.astro";
-import config from "../../../astro.config.mjs";
+import * as site from "@modules/site";
 
 export async function getStaticPaths() {
   let posts = await getCollection("post", ({ data }) => {
@@ -55,6 +55,6 @@ const { entries } = Astro.props;
   <PostMeta
     slot="page-meta"
     title={`chantastic posts tagged: ${tag_name}`}
-    url={new URL(`/tags/${tag_name}`, config.site).toString()}
+    url={site.url(`/tags/${tag_name}`)}
   />
 </Layout>

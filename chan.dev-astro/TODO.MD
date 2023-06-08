@@ -4,11 +4,12 @@
 
 - [ ] remaining data types
   - [ ] /reactpodcast
-  - [ ] /events
+  - [-] /events
 - [ ] reduce filter duplication
 
 ## SKIPIT
 
+- [ ] make a courses json collection and link with lessons
 - [ ] rename `header-post-meta` now that it's no longer just `Post`s
 - [ ] Tighten up ADRs
   - [ ] Customize template directory
@@ -81,3 +82,29 @@
   - _next13_
 - esmodules
 - os
+
+## Decisions.txt from events/novimber/2022
+
+```
+# Project decisions
+
+## url
+- `event/2022/novimber`
+- short url `/novimber`
+
+## plural or not
+I had naturally decided to use `event/` (singular) but but looks like i have `/talks` (plural) already.
+I'm gonna go with singular but it kinda sucks.
+
+## Dynamic of static
+I'm feeling the tension to "set this up write."
+Right now that means something like having a big bucket of `vim`-marked cnotent that I then collect into this event.
+However, that's assuming a lot of things.
+So I'm going to start with a very 1:1 file:page setup.
+This will mean that I have to create relationships between next/prev content manually.
+But that's fine, given how predictable the urls will be.
+
+## Content
+
+I'm going to split lowercase and uppercase visually so that I can split lessons where uppercase and lowercase versions of keys do something completely different.
+```

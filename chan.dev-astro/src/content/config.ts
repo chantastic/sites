@@ -24,7 +24,17 @@ const decision = defineCollection({
   }),
 });
 
+const lesson = defineCollection({
+  schema: z.object({
+    title: z.string(),
+    description: z.string(),
+    date: z.date(),
+    keys: z.array(z.string()).optional(),
+  }),
+});
+
 export const collections = {
   post,
   decision,
+  lesson,
 };
