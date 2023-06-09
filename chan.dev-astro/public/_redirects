@@ -1,6 +1,7 @@
 # It's a *digital garden* baby
 /blog/* /:splat
 /posts/* /:splat
+/notes/* /:splat
 
 # moved
 /feed/feed.json /feeds/feed.json

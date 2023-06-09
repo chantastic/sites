@@ -6,6 +6,8 @@
   - [ ] /reactpodcast
   - [-] /events
 - [ ] reduce filter duplication
+- [ ] get `dateCreated`, `dateModified`, and `datePublished` for all posts
+- [ ] move `publishDate` to `datePublished` for blog schema consistency
 
 ## SKIPIT
 
