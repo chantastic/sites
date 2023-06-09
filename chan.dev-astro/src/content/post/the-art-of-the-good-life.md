@@ -6,10 +6,9 @@ dateCreated: 2020-10-22
 
 ## 1 Mental Accounting
 
-How to Turn a Loss into a Win
-	
-Related post: [[/chan-spot|Chan Spot]]
+How to Turn a Loss into a Win  
 
+Related post: [Chan Spot](/chan-spot)
 
 ## 2 The Fine Art of Correction
 

@@ -3,6 +3,7 @@ title: Chan Spot
 description: "Explore the story of 'Chan Spot' and a father's pursuit for the ideal parking spot and quickest checkout lane, shedding light on our need to feel victorious."
 publishDate: 2020-10-19
 ---
+
 He spent 15 minutes circling the parking lot for a "Chan Spot" — a space within 3 lines of a blue line.
 
 Now it's time to check out out and he distributes his three children across the open lanes — where they wait for judgement on the eternal question:
@@ -39,4 +40,4 @@ You do to.
 ---
 
 <small>This memory, inspired by [The Art of the Good Life](https://amzn.to/3keerys) (AmazonAffiliate).
-[Chapter 1: Mental Accounting — How to Turn a Loss Into a Win]({{ '/notes/the-art-of-the-good-life/#1-mental-accounting' | url }})</small>
+[Chapter 1: Mental Accounting — How to Turn a Loss Into a Win](/the-art-of-the-good-life/#1-mental-accounting)</small>
