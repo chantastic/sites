@@ -1,6 +1,6 @@
 ---
 title: Sitemap
-description: ""
+description: "Generate sitemaps for optimal website indexing. Learn techniques to aid search engines in discovering and indexing your public (and hidden) pages."
 publishDate: 2023-06-15
 ---
 
