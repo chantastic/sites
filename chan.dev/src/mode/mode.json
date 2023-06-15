@@ -1,6 +1,0 @@
-{
-  "tags": ["mode"],
-  "layout": "layouts/tag-basic",
-  "return_url": "/modes",
-  "collection_title": "Mode"
-}

@@ -1,6 +1,0 @@
-{
-  "tags": ["play"],
-  "layout": "layouts/tag-basic",
-  "return_url": "/plays",
-  "collection_title": "Play"
-}

@@ -1,4 +1,0 @@
-[build]
-  base = "chan.dev/"
-  publish = "chan.dev/_site"
-  command = "npm run build"
