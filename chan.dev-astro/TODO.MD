@@ -2,6 +2,10 @@
 
 ### SHIPIT
 
+- [ ] Add links to home and page structures
+  - [ ] post template
+  - [ ] 
+
 - [-] remaining data types
   - [-] /reactpodcast
   - [-] /events

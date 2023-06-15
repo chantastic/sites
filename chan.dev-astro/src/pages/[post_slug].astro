@@ -24,14 +24,12 @@ const { Content } = await entry.render();
 <Layout title={`${entry.data.title} | ${metadata.title}`}>
   <main class="prose">
     <article>
-      <h1>{entry.data.title}</h1>
-      {
-        entry.data.publishDate && (
-          <time datetime={entry.data.publishDate.toISOString()}>
-            {entry.data.publishDate.toDateString()}
-          </time>
-        )
-      }
+      <small>
+        <a href="/" class="go-home">⇠ chan.dev</a>
+      </small>
+      <h1 class="mb-2 mt-6">
+        {entry.data.title}
+      </h1>
       <Content />
     </article>
     <section id="nerd">
