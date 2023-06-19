@@ -1,6 +1,7 @@
 ---
 import GoogleFonts from "@components/header-google-fonts.astro";
 import GlobalStyles from "@components/header-global-styles.astro";
+import HeadAnalytics from "@components/head-analytics.astro";
 import site from "@src/metadata.json";
 ---
 
@@ -20,6 +21,7 @@ import site from "@src/metadata.json";
     <link rel="sitemap" href="/sitemap-index.xml" />
     <GoogleFonts />
     <GlobalStyles />
+    <HeadAnalytics />
     <slot name="page-meta">
       <title>
         {site.description} | {site.title}
