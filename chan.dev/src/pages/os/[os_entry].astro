@@ -1,0 +1,64 @@
+---
+import Layout from "@layouts/Layout.astro";
+import PostMeta from "@components/header-post-meta.astro";
+import { getCollection, CollectionEntry } from "astro:content";
+import metadata, { git } from "@src/metadata.json";
+import * as site from "@modules/site";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("os");
+  return posts.map((entry) => ({
+    params: { os_entry: entry.slug },
+    props: { entry },
+  }));
+}
+
+interface Props {
+  entry: CollectionEntry<"os">;
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+---
+
+<Layout title={`${entry.data.title} | ${metadata.title}`}>
+  <main class="prose">
+    <article>
+      <small>
+        <a href="/" class="go-home">⇠ chan.dev</a>
+      </small>
+      <h1 class="mb-2 mt-6">
+        <a href={`/${entry.collection}`}>{entry.collection}</a> /
+        {entry.data.title}
+      </h1>
+      <Content />
+    </article>
+    <section id="nerd">
+      <p>Nerd stuff</p>
+      <a
+        target="_blank"
+        rel="noreferrer noopener"
+        href=`https://github.com/${git.repo}/commits/main/${git.path}/src/content/${entry.collection}/${entry.id}`
+        >File history</a
+      >
+    </section>
+  </main>
+  <PostMeta
+    slot="page-meta"
+    title={entry.data.title}
+    description={entry.data.description}
+    og={entry.data.og}
+    url={site.url(entry.slug)}
+  />
+</Layout>
+
+<style>
+  #nerd {
+    box-sizing: border-box;
+    padding: 1rem;
+    background-color: #ddd;
+  }
+  #nerd:not(:target) {
+    display: none;
+  }
+</style>

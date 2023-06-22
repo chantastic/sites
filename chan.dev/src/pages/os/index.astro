@@ -1,0 +1,31 @@
+---
+// import PostMeta from "@components/header-post-meta.astro";
+import Layout from "@layouts/Layout.astro";
+import { getCollection } from "astro:content";
+import { compareByDate } from "@modules/collection";
+// import * as site from "@modules/site";
+
+let entries = await getCollection("os");
+
+entries.sort((a, b) => compareByDate(a.data.date, b.data.date));
+---
+
+<Layout>
+  <main class="prose">
+    <h1>OS</h1>
+    <ul>
+      {
+        entries.map((entry) => (
+          <li>
+            <a href={`/os/${entry.slug}`}>{entry.data.title}</a>
+          </li>
+        ))
+      }
+    </ul>
+  </main>
+  <!-- <PostMeta
+    title="all chantastic decisions"
+    url={site.url("/decisions")}
+    slot="page-meta"
+  /> -->
+</Layout>
