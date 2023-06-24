@@ -3,6 +3,8 @@ import GoogleFonts from "@components/header-google-fonts.astro";
 import GlobalStyles from "@components/header-global-styles.astro";
 import HeadAnalytics from "@components/head-analytics.astro";
 import site from "@src/metadata.json";
+
+const { title } = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -24,7 +26,7 @@ import site from "@src/metadata.json";
     <HeadAnalytics />
     <slot name="page-meta">
       <title>
-        {site.description} | {site.title}
+        {title} | {site.title}
       </title>
     </slot>
   </head>
