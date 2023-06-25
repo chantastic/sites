@@ -3,6 +3,7 @@ import Layout from "@layouts/Layout.astro";
 import PostMeta from "@components/header-post-meta.astro";
 import PostNotWritten from "@components/body-page-not-written.astro";
 import { getCollection, CollectionEntry } from "astro:content";
+import { git } from "@src/metadata.json";
 import * as site from "@modules/site";
 
 export async function getStaticPaths() {
