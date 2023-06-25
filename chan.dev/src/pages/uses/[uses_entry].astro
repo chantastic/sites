@@ -1,0 +1,80 @@
+---
+import Layout from "@layouts/Layout.astro";
+import PostMeta from "@components/header-post-meta.astro";
+import PostNotWritten from "@components/body-page-not-written.astro";
+import { getCollection, CollectionEntry } from "astro:content";
+import * as site from "@modules/site";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("uses");
+  return posts.map((entry) => ({
+    params: { uses_entry: entry.slug },
+    props: { entry },
+  }));
+}
+
+interface Props {
+  entry: CollectionEntry<"uses">;
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+
+let path = `/${entry.collection}/${entry.slug}`;
+let title;
+
+if (entry.data.manufacturer && entry.data.model) {
+  title = `${entry.data.manufacturer} ${entry.data.model}`;
+} else {
+  title = entry.slug;
+}
+---
+
+<Layout title={title}>
+  <main class="prose">
+    <article>
+      <small>
+        <a href="/" class="go-home">⇠ chan.dev</a>
+      </small>
+      <h1 class="mb-2 mt-6">
+        <a href={`/${entry.collection}`}>uses</a> /
+        {title}
+      </h1>
+      {
+        entry.body ? (
+          <Content />
+        ) : (
+          <PostNotWritten path={path} />
+        )
+      }
+      <Content />
+    </article>
+    <section id="nerd">
+      <p>Nerd stuff</p>
+      <a
+        target="_blank"
+        rel="noreferrer noopener"
+        href=`https://github.com/${git.repo}/commits/main/${git.path}/src/content${path}`
+        >File history</a
+      >
+    </section>
+  </main>
+  <PostMeta
+    slot="page-meta"
+    title={title}
+    description={`My experience owning the ${title}`}
+    og={entry.data.og}
+    url={site.url(path)}
+  />
+</Layout>
+
+<style>
+  #nerd {
+    box-sizing: border-box;
+    padding: 1rem;
+    background-color: #ddd;
+  }
+  #nerd:not(:target) {
+    display: none;
+  }
+</style>

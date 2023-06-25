@@ -1,0 +1,17 @@
+---
+const props = Astro.props;
+---
+
+<p>
+  I haven't written this post. But I'd like to!
+  <br />
+  Hit me up on twitter to let me know you're interested.
+  <br />
+  <a
+    href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(
+      `Hey @chantastic! I'd like you to finish your post: chan.dev${
+        props.path || "/"
+      }`
+    )}`}>Bug me on twitter…</a
+  >
+</p>

@@ -1,0 +1,101 @@
+---
+import PostMeta from "@components/header-post-meta.astro";
+import Layout from "@layouts/Layout.astro";
+import { getCollection, CollectionEntry } from "astro:content";
+import { compareByDate } from "@modules/collection";
+import * as site from "@modules/site";
+
+let entries: CollectionEntry<"uses">[] = await getCollection(
+  "uses"
+);
+
+entries.sort((a, b) => compareByDate(a.data.date, b.data.date));
+
+function getStatusColor(status) {
+  switch (status) {
+    case "active":
+      return "fill-green-500";
+    case "inactive":
+      return "fill-yellow-500";
+    case "replaced":
+      return "fill-red-500";
+    default:
+      return "fill-gray-400";
+  }
+}
+---
+
+<Layout>
+  <main class="prose">
+    <h1>uses</h1>
+    <ul>
+      {
+        entries
+          .filter(
+            (entry) =>
+              entry.data.status &&
+              entry.data.status === "active"
+          )
+          .map((entry) => {
+            let { collection, slug, data } = entry;
+            let title =
+              data.manufacturer && data.model
+                ? [
+                    data.manufacturer,
+                    data.model,
+                    data.size && `[${data.size}]`,
+                  ]
+                    .filter(Boolean)
+                    .join(" ")
+                : slug;
+
+            return (
+              <li>
+                {entry.body ? (
+                  <a href={`/${collection}/${slug}`}>{title}</a>
+                ) : (
+                  <span>{title}</span>
+                )}
+                {entry.data.status && (
+                  <span class="inline-flex items-center gap-x-1.5 rounded-md px-2 py-1 text-xs font-medium text-gray-900 ring-1 ring-inset ring-gray-200">
+                    <svg
+                      class={`h-1.5 w-1.5 ${getStatusColor(
+                        entry.data.status
+                      )}`}
+                      viewBox="0 0 6 6"
+                      aria-hidden="true"
+                    >
+                      <circle cx="3" cy="3" r="3" />
+                    </svg>
+
+                    {entry.data.status === "replaced" ? (
+                      entry.data.replaced_by ? (
+                        <>
+                          Replaced by:
+                          <a
+                            href={`/uses/${entry.data.replaced_by}`}
+                          >
+                            {entry.data.replaced_by}
+                          </a>
+                        </>
+                      ) : (
+                        "Replaced"
+                      )
+                    ) : (
+                      entry.data.status
+                    )}
+                  </span>
+                )}
+              </li>
+            );
+          })
+      }
+    </ul>
+  </main>
+  <PostMeta
+    title="/uses"
+    description="chantastic products!"
+    url={site.url("/uses")}
+    slot="page-meta"
+  />
+</Layout>
