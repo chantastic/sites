@@ -44,3 +44,72 @@ date: 2022-06-23
 
 - [USB C Hub](/TODO)
 - [Logitech Wireless Presenter R400](/TODO)
+
+---
+
+## Road trip Snacks
+
+### Kids like
+
+- Chedder bunnies
+- Seaweed
+- Unreal coconut chocolate (Costco)
+- Dried mango (Costco)
+- Bubbly water (Ruby)
+- Mint crackers
+
+### Kids don't like
+
+- Bear snacks (Rock)
+- Go Macro Kids (Rock)
+
+---
+
+## Rock
+
+- iPad
+- Switch
+  - Case
+  - Power pack
+  - Controllers
+- Cables
+  - USB-C wall charger
+  - USB-C to USB-C (Switch)
+  - USB-C to Lightning (iPad)
+- Headphones
+- Books
+- Water bottle
+- Snacks
+- Swim goggles
+- Toys/games
+  - Loges
+  - Card game
+- Pencil and paper
+
+## Road trip
+
+- Pillow
+- Airsoft
+
+---
+
+## Ruby
+
+- iPad
+  - USB-C to lightning cable
+  - USB-C wall charger
+- Drawing supplies
+  - Paper
+  - Pen and pencil
+  - Colored markers
+  - Coloring pages
+- Books
+- Lovie and stuffies
+- Sunglasses
+- Water bottle
+- Hat
+- Distractables/fidgits
+
+## Road trip
+
+- Pillow
