@@ -82,7 +82,7 @@ date: 2022-06-23
 - Snacks
 - Swim goggles
 - Toys/games
-  - Loges
+  - Legos
   - Card game
 - Pencil and paper
 
