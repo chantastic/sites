@@ -3,5 +3,6 @@
   "newLinkFormat": "absolute",
   "promptDelete": false,
   "alwaysUpdateLinks": true,
-  "trashOption": "none"
+  "trashOption": "none",
+  "attachmentFolderPath": "./"
 }

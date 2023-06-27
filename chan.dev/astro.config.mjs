@@ -17,6 +17,9 @@ export default defineConfig({
     ? "http://localhost:3000"
     : "https://chan.dev",
   integrations: [tailwind(), sitemap()],
+  experimental: {
+    assets: true,
+  },
   markdown: {
     remarkPlugins: [
       [
@@ -33,12 +36,12 @@ export default defineConfig({
         remark_obsidian,
         { markdownFolder: `${process.cwd()}/src/content` },
       ],
-      [
-        remark_embedder,
-        {
-          transformers: [oembed_transformer],
-        },
-      ],
+      // [
+      //   remark_embedder,
+      //   {
+      //     transformers: [oembed_transformer],
+      //   },
+      // ],
       // https://www.reliablesoft.net/noreferrer-noopener/#noreferrer-vs-nofollow
       [remark_external_links, { rel: "noopener" }],
       remark_obsidian_callout,
