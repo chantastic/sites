@@ -1,3 +1,7 @@
 {
-  "useMarkdownLinks": false
+  "useMarkdownLinks": true,
+  "newLinkFormat": "absolute",
+  "promptDelete": false,
+  "alwaysUpdateLinks": true,
+  "trashOption": "none"
 }
