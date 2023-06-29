@@ -5,7 +5,7 @@ import PostMeta from "@components/header-post-meta.astro";
 import * as site from "@modules/site";
 
 export async function getStaticPaths() {
-  let lessons = await getCollection("lesson");
+  let lessons = await getCollection("lessons");
 
   const course_years = [
     ...new Set(
@@ -16,7 +16,6 @@ export async function getStaticPaths() {
       })
     ),
   ];
-  console.log(course_years);
 
   let result = course_years.map((course_year) => {
     let [course_name, year] = course_year.split("|");
@@ -30,13 +29,12 @@ export async function getStaticPaths() {
       },
     };
   });
-  // console.log(result);
 
   return result;
 }
 
 interface Props {
-  entries: CollectionEntry<"lesson">[];
+  entries: CollectionEntry<"lessons">[];
 }
 
 const { course_name, year } = Astro.params;

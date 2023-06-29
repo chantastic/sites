@@ -5,12 +5,12 @@ import PostMeta from "@components/header-post-meta.astro";
 import * as site from "@modules/site";
 
 export async function getStaticPaths() {
-  let lessons = await getCollection("lesson");
+  let lessons = await getCollection("lessons");
 
   let course_years = lessons.reduce(
     (
       courses: { [index: string]: string[] },
-      lesson: CollectionEntry<"lesson">
+      lesson: CollectionEntry<"lessons">
     ) => {
       let [course_name, year] = lesson.slug.split("/");
 

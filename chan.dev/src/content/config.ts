@@ -24,7 +24,7 @@ const decision = defineCollection({
   }),
 });
 
-const lesson = defineCollection({
+const lessons = defineCollection({
   schema: z.object({
     title: z.string(),
     description: z.string().optional(),
@@ -65,7 +65,7 @@ const uses = defineCollection({
 export const collections = {
   post,
   decision,
-  lesson,
+  lessons,
   os,
   uses,
 };
