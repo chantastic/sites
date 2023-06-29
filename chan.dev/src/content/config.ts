@@ -16,7 +16,7 @@ const posts = defineCollection({
   }),
 });
 
-const decision = defineCollection({
+const decisions = defineCollection({
   schema: z.object({
     title: z.string(),
     status: z.string(),
@@ -64,7 +64,7 @@ const uses = defineCollection({
 
 export const collections = {
   posts,
-  decision,
+  decisions,
   lessons,
   os,
   uses,

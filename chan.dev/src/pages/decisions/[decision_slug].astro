@@ -5,7 +5,7 @@ import PostMeta from "@components/header-post-meta.astro";
 import * as site from "@modules/site";
 
 export async function getStaticPaths() {
-  let decisions = await getCollection("decision");
+  let decisions = await getCollection("decisions");
 
   return decisions.map((entry) => ({
     params: { decision_slug: entry.slug },

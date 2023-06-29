@@ -4,14 +4,14 @@ import Layout from "@layouts/Layout.astro";
 import { getCollection } from "astro:content";
 import * as site from "@modules/site";
 
-let decisions = await getCollection("lessons");
+let lessons = await getCollection("lessons");
 ---
 
 <Layout>
   <main class="prose">
     <ul>
       {
-        decisions.map((entry) => (
+        lessons.map((entry) => (
           <li>
             <a href={`/lessons/${entry.slug}`}>{entry.id}</a>
           </li>
@@ -20,7 +20,7 @@ let decisions = await getCollection("lessons");
     </ul>
   </main>
   <PostMeta
-    title="All chantastic decisions"
+    title="All chantastic lessons"
     url={site.url("/lessons")}
     slot="page-meta"
   />

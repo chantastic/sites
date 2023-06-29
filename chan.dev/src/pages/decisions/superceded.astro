@@ -5,7 +5,7 @@ import { getCollection } from "astro:content";
 import { compareByDate } from "@modules/collection";
 import * as site from "@modules/site";
 
-let decisions = await getCollection("decision", ({ data }) =>
+let decisions = await getCollection("decisions", ({ data }) =>
   data.status.startsWith("Superceded")
 );
 

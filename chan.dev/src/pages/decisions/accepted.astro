@@ -6,7 +6,7 @@ import { compareByDate } from "@modules/collection";
 import * as site from "@modules/site";
 
 let decisions = await getCollection(
-  "decision",
+  "decisions",
   ({ data }) => data.status === "Accepted"
 );
 
