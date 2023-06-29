@@ -72,3 +72,58 @@ date: 2022-06-29
   </script>
 </body>
 ```
+
+---
+Ideas from 
+
+- 01. Raw React & JSX
+  - Recommended VS Code / DevTools Extensions
+      - Tools and how to use them
+      - Keyboard shortcuts & scripts
+  - How you organize your screens when developing
+      - Editor, browser preview, terminal, etc.
+  - Compare raw DOM manipulation vs. React
+  - Comparing createRoot() and render()
+  - JSX children strings vs. elements
+  - Interpolation tricks
+  - When to spread props vs. pass individually
+  - Naming conventions and when to use them
+  - Philosophy of using props vs. composing children
+- 02. Styling & Forms
+  - Common gotchas that affect performance
+  - Assigning types to props with TypeScript
+  - When to use fragments or not
+- 03. Rendering Arrays
+  - Importance of the key prop when rendering lists
+  - Resetting component stat by changing keys
+  - Fixing "Uncontrolled input to controlled" error
+      - Controlled input values managed by React state, Uncontrolled by DOM state
+      - Show how error occurs when value changes from undefined
+      - Explain how to decide when to use which
+- 04. useState and useEffect Hooks
+  - Watch Local Storage for changes
+  - To useMemo or not to useMemo?
+      - Examples of when to use a different hook instead
+- 05. Tic-Tac-Toe part 1
+  - Quick refactor a class component to hooks
+- 06. Tic-Tac-Toe part 2
+- 07. useRef and useEffect
+  - Example of useRef
+      - Tracking mount state or storing references to DOM elements
+      - (Different example than vanilla-tilt)
+  - Using useEffect for an HTTP Request
+  - Handling an async callback
+- 08. Error Boundaries
+  - What is an Error Boundary?
+      - Include error reseting 
+- 09. useReducer & useCallback
+  - Comparing useLayoutEffect to useEffect / other hooks
+- 10. useReducer
+  - Redux-style useReducer
+  - Other uses for useReducer
+- 11. Context
+  - Context & useContext vs. Redux style useReducer
+- 12. Advanced Context
+  - What makes a component future proof?
+- 13. Flexible Compound Components
+  - Handling error bubbling effectively
