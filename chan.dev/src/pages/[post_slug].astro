@@ -6,7 +6,7 @@ import metadata, { git } from "@src/metadata.json";
 import * as site from "@modules/site";
 
 export async function getStaticPaths() {
-  const posts = await getCollection("post");
+  const posts = await getCollection("posts");
   return posts.map((entry) => ({
     params: { post_slug: entry.slug },
     props: { entry },
@@ -14,7 +14,7 @@ export async function getStaticPaths() {
 }
 
 interface Props {
-  entry: CollectionEntry<"post">;
+  entry: CollectionEntry<"posts">;
 }
 
 const { entry } = Astro.props;
