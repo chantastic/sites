@@ -1,15 +1,10 @@
 ---
-import PostMeta from "@components/header-post-meta.astro";
 import Layout from "@layouts/Layout.astro";
-import { getCollection } from "astro:content";
-import { compareByDate } from "@modules/collection";
-import * as site from "@modules/site";
+import PostMeta from "@components/header-post-meta.astro";
+import * as DECISIONS from "@pages/decisions/decisions";
+import * as SITE from "@modules/site";
 
-let decisions = await getCollection("decisions");
-
-decisions.sort((a, b) =>
-  compareByDate(a.data.date, b.data.date)
-);
+let decisions = await DECISIONS.getCollection();
 ---
 
 <Layout>
@@ -18,7 +13,7 @@ decisions.sort((a, b) =>
       {
         decisions.map((decision) => (
           <li>
-            <a href={`/decisions/${decision.slug}`}>
+            <a href={`/${DECISIONS.path(decision.slug)}`}>
               {decision.data.title}
             </a>
           </li>
@@ -27,8 +22,9 @@ decisions.sort((a, b) =>
     </ul>
   </main>
   <PostMeta
-    title="all chantastic decisions"
-    url={site.url("/decisions")}
+    title={DECISIONS.title()}
+    description="chantastic's professional decisions and how they age"
+    url={SITE.url(DECISIONS.path())}
     slot="page-meta"
   />
 </Layout>

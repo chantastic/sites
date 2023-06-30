@@ -1,13 +1,14 @@
 ---
 import Layout from "@layouts/Layout.astro";
-import { getCollection, CollectionEntry } from "astro:content";
 import PostMeta from "@components/header-post-meta.astro";
-import * as site from "@modules/site";
+import * as DECISIONS from "@pages/decisions/decisions";
+import * as COLLECTION from "@modules/collection";
+import * as SITE from "@modules/site";
 
 export async function getStaticPaths() {
-  let decisions = await getCollection("decisions");
+  let entries = await DECISIONS.getCollection();
 
-  return decisions.map((entry) => ({
+  return entries.map((entry) => ({
     params: { decision_slug: entry.slug },
     props: {
       entry,
@@ -16,18 +17,22 @@ export async function getStaticPaths() {
 }
 
 interface Props {
-  entry: CollectionEntry<"decision">;
+  entry: DECISIONS.CollectionEntry;
 }
 
 const { entry } = Astro.props;
 const { Content } = await entry.render();
+
+const formattedEntryDate = COLLECTION.formatDate(
+  entry.data.date
+);
 ---
 
 <Layout>
   <main class="prose">
     <h1>{entry.data.title}</h1>
-    <time datetime={entry.data.date.toISOString()}>
-      {entry.data.date.toDateString()}
+    <time datetime={formattedEntryDate}>
+      {formattedEntryDate}
     </time>
     <p>
       <span
@@ -40,7 +45,7 @@ const { Content } = await entry.render();
   </main>
   <PostMeta
     slot="page-meta"
-    title={`chantastic decision: ${entry.data.title}`}
-    url={site.url(`/decisions/${entry.slug}`)}
+    title={DECISIONS.title(entry.data.title)}
+    url={SITE.url(DECISIONS.path(entry.slug))}
   />
 </Layout>

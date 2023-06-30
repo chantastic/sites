@@ -1,4 +1,5 @@
 import { z, defineCollection } from "astro:content";
+import { collectionSchema as decisions } from "@pages/decisions/decisions";
 
 const posts = defineCollection({
   schema: z.object({
@@ -13,14 +14,6 @@ const posts = defineCollection({
         image: z.string().url().optional(),
       })
       .optional(),
-  }),
-});
-
-const decisions = defineCollection({
-  schema: z.object({
-    title: z.string(),
-    status: z.string(),
-    date: z.date(),
   }),
 });
 

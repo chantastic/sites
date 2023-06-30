@@ -18,3 +18,24 @@ export function compareByDate(
 
   return new Date(bDate).getTime() - new Date(aDate).getTime();
 }
+
+export type maybeString = string | undefined;
+
+export function constructPathFromSegments(
+  ...segments: maybeString[]
+) {
+  return segments.filter(Boolean).join("/");
+}
+
+export function prefixCollectionTitle(collectionName: String) {
+  return `chantastic ${collectionName}`;
+}
+
+export function formatDate(
+  date: Date,
+  options: Intl.DateTimeFormatOptions | undefined = {
+    dateStyle: "medium",
+  }
+) {
+  return date.toLocaleString("en-US", options);
+}
