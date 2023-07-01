@@ -1,11 +1,11 @@
 ---
 import Layout from "@layouts/Layout.astro";
-import { getCollection, CollectionEntry } from "astro:content";
 import PostMeta from "@components/header-post-meta.astro";
+import * as LESSONS from "@pages/lessons/lessons";
 import * as site from "@modules/site";
 
 export async function getStaticPaths() {
-  let lessons = await getCollection("lessons");
+  let lessons = await LESSONS.getCollection();
 
   const course_years = [
     ...new Set(
@@ -34,7 +34,7 @@ export async function getStaticPaths() {
 }
 
 interface Props {
-  entries: CollectionEntry<"lessons">[];
+  entries: LESSONS.CollectionEntry[];
 }
 
 const { course_name, year } = Astro.params;
@@ -48,7 +48,7 @@ const { entries } = Astro.props;
       {
         entries.map((entry) => (
           <li>
-            <a href={`/lessons/${entry.slug}`}>
+            <a href={`/${LESSONS.path(entry.slug)}`}>
               {entry.data.title}
             </a>
           </li>
@@ -57,8 +57,8 @@ const { entries } = Astro.props;
     </ul>
   </main>
   <PostMeta
-    title={`chantastic course ${course_name} in ${year}`}
-    url={site.url(`/lessons/${course_name}/${year}`)}
+    title={`chantastic course: ${course_name}, ${year}`}
+    url={site.url(LESSONS.path())}
     slot="page-meta"
   />
 </Layout>

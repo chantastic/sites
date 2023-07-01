@@ -1,7 +1,7 @@
 ---
 import Layout from "@layouts/Layout.astro";
 import PostMeta from "@components/header-post-meta.astro";
-import * as site from "@modules/site";
+import * as SITE from "@modules/site";
 
 let url = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet%2CcontentDetails&maxResults=50&playlistId=PLnc_NxpmOxaPBbn1PysP30GB0_8aQGnAa&key=${
   import.meta.env.YOUTUBE_API_KEY
@@ -89,6 +89,6 @@ let videos = await fetchData(url);
   <PostMeta
     slot="page-meta"
     title="chantastic talks"
-    url={site.url("/talks")}
+    url={SITE.url("/talks")}
   />
 </Layout>

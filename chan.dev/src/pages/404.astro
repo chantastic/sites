@@ -1,5 +1,5 @@
 ---
-import site from "@src/metadata.json"
+import * as SITE from "@modules/site";
 ---
 
 <!DOCTYPE html>
@@ -11,7 +11,7 @@ import site from "@src/metadata.json"
       name="viewport"
       content="width=device-width, initial-scale=1.0"
     />
-    <title>404 | {site.title}</title>
+    <title>{SITE.appendSiteTitle("404")}</title>
   </head>
   <body class="prose p-4">
     <h1>404: Page not found</h1>
