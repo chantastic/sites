@@ -1,20 +1,20 @@
 ---
 import PostMeta from "@components/header-post-meta.astro";
 import Layout from "@layouts/Layout.astro";
-import { getPostCollection } from "@modules/post";
 import PostList from "@components/post-list.astro";
+import * as POSTS from "@pages/posts/posts";
 import * as site from "@modules/site";
 
-let posts = await getPostCollection();
+let posts = await POSTS.getCollection();
 ---
 
-<Layout>
+<Layout content_path={POSTS.path()}>
   <main class="prose">
     <PostList posts={posts} />
   </main>
   <PostMeta
     title="chantastic posts"
-    url={site.url("posts")}
+    url={site.url(POSTS.path())}
     slot="page-meta"
   />
 </Layout>

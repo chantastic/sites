@@ -2,11 +2,10 @@
 import Layout from "@layouts/Layout.astro";
 import PostMeta from "@components/header-post-meta.astro";
 import Nerd from "@components/main-nerd.astro";
-import { getCollection, CollectionEntry } from "astro:content";
-import * as site from "@modules/site";
+import * as POSTS from "@pages/posts/posts";
 
 export async function getStaticPaths() {
-  const posts = await getCollection("posts");
+  const posts = await POSTS.getCollection();
   return posts.map((entry) => ({
     params: { post_slug: entry.slug },
     props: { entry },
@@ -14,7 +13,7 @@ export async function getStaticPaths() {
 }
 
 interface Props {
-  entry: CollectionEntry<"posts">;
+  entry: POSTS.CollectionEntry;
 }
 
 const { entry } = Astro.props;
@@ -40,5 +39,5 @@ const { Content } = await entry.render();
     og={entry.data.og}
     url={site.url(entry.slug)}
   />
-  <Nerd content_path={`${site.url(entry.id)}`} />
+  <Nerd content_path={POSTS.path(entry.id)} />
 </Layout>

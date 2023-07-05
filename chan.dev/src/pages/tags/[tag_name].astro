@@ -5,7 +5,7 @@ import PostMeta from "@components/header-post-meta.astro";
 import * as site from "@modules/site";
 
 export async function getStaticPaths() {
-  let posts = await getCollection("post", ({ data }) => {
+  let posts = await getCollection("posts", ({ data }) => {
     if (data.tags) {
       return true;
     }
@@ -32,7 +32,7 @@ export async function getStaticPaths() {
 }
 
 interface Props {
-  entries: CollectionEntry<"post">[];
+  entries: CollectionEntry<"posts">[];
 }
 
 const { tag_name } = Astro.params;
