@@ -1,10 +1,16 @@
 ## 2023-06-04
 
-### SHIPIT
+### QoL
 
+- change `PostMeta` to use `uri` instead of `url` would allow me to stop importing site in many places
+- unify around `let` `const`. clearly i don't care which
+- check links that aren't properly redirecting (`mode` and `play` seem to be offenders)
+
+### SHIPIT
+- [ ] Can I make my current content-collection process more automated or do types dictate that I do it by hand?
 - [ ] Add links to home and page structures
   - [ ] post template
-  - [ ] 
+  - [ ]
 
 - [-] remaining data types
   - [-] /reactpodcast

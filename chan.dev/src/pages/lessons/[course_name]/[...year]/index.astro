@@ -39,9 +39,14 @@ interface Props {
 
 const { course_name, year } = Astro.params;
 const { entries } = Astro.props;
+
+const content_path = LESSONS.path(
+  String(course_name),
+  String(year)
+);
 ---
 
-<Layout>
+<Layout content_path={content_path}>
   <main class="prose">
     <h1>{course_name} {year}</h1>
     <ul>
@@ -58,7 +63,7 @@ const { entries } = Astro.props;
   </main>
   <PostMeta
     title={`chantastic course: ${course_name}, ${year}`}
-    url={site.url(LESSONS.path())}
+    url={site.url(content_path)}
     slot="page-meta"
   />
 </Layout>

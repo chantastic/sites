@@ -7,7 +7,7 @@ import * as SITE from "@modules/site";
 let decisions = await DECISIONS.getCollection();
 ---
 
-<Layout>
+<Layout content_path={DECISIONS.path()}>
   <main class="prose">
     <ul>
       {

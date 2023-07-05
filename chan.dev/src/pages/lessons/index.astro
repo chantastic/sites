@@ -7,14 +7,14 @@ import * as site from "@modules/site";
 let lessons = await LESSONS.getCollection();
 ---
 
-<Layout>
+<Layout content_path={LESSONS.path()}>
   <main class="prose">
     <ul>
       {
         lessons.map((entry) => (
           <li>
             <a href={`/${LESSONS.path(entry.slug)}`}>
-              {entry.id}
+              {entry.slug}
             </a>
           </li>
         ))

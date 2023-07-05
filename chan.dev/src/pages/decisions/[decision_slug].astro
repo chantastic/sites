@@ -28,7 +28,7 @@ const formattedEntryDate = COLLECTION.formatDate(
 );
 ---
 
-<Layout>
+<Layout content_path={DECISIONS.path(entry.id)}>
   <main class="prose">
     <h1>{entry.data.title}</h1>
     <time datetime={formattedEntryDate}>

@@ -28,14 +28,13 @@ interface Props {
   entry: LESSONS.CollectionEntry;
 }
 
-const { lesson_name } = Astro.params;
 const { entry } = Astro.props;
 const { Content } = await entry.render();
 ---
 
-<Layout>
+<Layout content_path={LESSONS.path(entry.id)}>
   <main class="prose">
-    <h1>{entry.slug}</h1>
+    <h1>{entry.data.title}</h1>
     {
       entry.data.keys && (
         <>
@@ -48,8 +47,8 @@ const { Content } = await entry.render();
     <Content />
   </main>
   <PostMeta
-    title={String(lesson_name)}
-    url={site.url(`/${LESSONS.path(entry.slug)}`)}
+    title={String(entry.data.title)}
+    url={site.url(LESSONS.path(entry.slug))}
     slot="page-meta"
   />
 </Layout>

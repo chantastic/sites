@@ -2,10 +2,15 @@
 import GoogleFonts from "@components/header-google-fonts.astro";
 import GlobalStyles from "@components/header-global-styles.astro";
 import HeadAnalytics from "@components/head-analytics.astro";
+import Nerd from "@components/main-nerd.astro";
+import StyleDebug from "@components/style-debug.astro";
 import site from "@src/metadata.json";
-import * as SITE from "@modules/site";
 
-const { title } = Astro.props;
+const { content_path } = Astro.props;
+
+interface Props {
+  content_path?: string;
+}
 ---
 
 <!DOCTYPE html>
@@ -27,15 +32,13 @@ const { title } = Astro.props;
     <HeadAnalytics />
     <slot name="page-meta">
       <title>
-        {SITE.appendSiteTitle(site.title)}
+        {site.title}
       </title>
     </slot>
   </head>
   <body style="padding: 1rem" id="body">
     <slot />
-  </body><style is:global>
-    #body:is(:target) a[href*="TODO"] {
-      color: red;
-    }
-  </style>
+    {content_path && <Nerd content_path={content_path} />}
+    <StyleDebug />
+  </body>
 </html>

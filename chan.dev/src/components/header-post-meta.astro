@@ -22,7 +22,10 @@ let defaultOGImage = `https://res.cloudinary.com/chantastic/image/upload/c_fit,g
 <meta name="description" content={description} />
 
 <!-- Generic Open Graph -->
-<meta property="og:title" content={og?.title || title} />
+<meta
+  property="og:title"
+  content={og?.title || domainAugmentedTitle}
+/>
 <meta
   property="og:description"
   content={description || title}
@@ -43,7 +46,7 @@ let defaultOGImage = `https://res.cloudinary.com/chantastic/image/upload/c_fit,g
 />
 
 <!-- Twitter Meta Tags -->
-<meta name="twitter:title" content={og?.title || title} />
+<meta name="twitter:title" content={og?.title || domainAugmentedTitle} />
 <meta name="twitter:description" content={description} />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@chantastic" />

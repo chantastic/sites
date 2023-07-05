@@ -48,7 +48,7 @@ const { course_name } = Astro.params;
 const { years } = Astro.props;
 ---
 
-<Layout>
+<Layout content_path={LESSONS.path(String(course_name))}>
   <main class="prose">
     <h1>{course_name}</h1>
     <ul>
