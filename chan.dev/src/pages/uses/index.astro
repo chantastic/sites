@@ -1,17 +1,14 @@
 ---
 import PostMeta from "@components/header-post-meta.astro";
 import Layout from "@layouts/Layout.astro";
-import { getCollection, CollectionEntry } from "astro:content";
-import { compareByDate } from "@modules/collection";
+import * as USES from "@pages/uses/uses";
 import * as site from "@modules/site";
 
-let entries: CollectionEntry<"uses">[] = await getCollection(
-  "uses"
-);
+let entries = await USES.getCollection();
 
-entries.sort((a, b) => compareByDate(a.data.date, b.data.date));
-
-function getStatusColor(status) {
+function getStatusColor(
+  status: USES.CollectionEntry["data"]["status"]
+) {
   switch (status) {
     case "active":
       return "fill-green-500";
@@ -25,9 +22,9 @@ function getStatusColor(status) {
 }
 ---
 
-<Layout>
+<Layout content_path={USES.path()}>
   <main class="prose">
-    <h1>uses</h1>
+    <h1>/uses</h1>
     <ul>
       {
         entries
@@ -37,7 +34,7 @@ function getStatusColor(status) {
               entry.data.status === "active"
           )
           .map((entry) => {
-            let { collection, slug, data } = entry;
+            let { slug, data } = entry;
             let title =
               data.manufacturer && data.model
                 ? [
@@ -52,7 +49,7 @@ function getStatusColor(status) {
             return (
               <li>
                 {entry.body ? (
-                  <a href={`/${collection}/${slug}`}>{title}</a>
+                  <a href={`/${USES.path(slug)}`}>{title}</a>
                 ) : (
                   <span>{title}</span>
                 )}
@@ -73,7 +70,9 @@ function getStatusColor(status) {
                         <>
                           Replaced by:
                           <a
-                            href={`/uses/${entry.data.replaced_by}`}
+                            href={`/${USES.path(
+                              entry.data.replaced_by
+                            )}`}
                           >
                             {entry.data.replaced_by}
                           </a>
@@ -95,7 +94,7 @@ function getStatusColor(status) {
   <PostMeta
     title="/uses"
     description="chantastic products"
-    url={site.url("/uses")}
+    url={site.url(USES.path())}
     slot="page-meta"
   />
 </Layout>

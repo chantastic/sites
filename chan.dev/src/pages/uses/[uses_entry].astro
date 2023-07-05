@@ -2,11 +2,11 @@
 import Layout from "@layouts/Layout.astro";
 import PostMeta from "@components/header-post-meta.astro";
 import PostNotWritten from "@components/body-page-not-written.astro";
-import { getCollection, CollectionEntry } from "astro:content";
+import * as USES from "@pages/uses/uses";
 import * as site from "@modules/site";
 
 export async function getStaticPaths() {
-  const posts = await getCollection("uses");
+  const posts = await USES.getCollection();
   return posts.map((entry) => ({
     params: { uses_entry: entry.slug },
     props: { entry },
@@ -14,13 +14,12 @@ export async function getStaticPaths() {
 }
 
 interface Props {
-  entry: CollectionEntry<"uses">;
+  entry: USES.CollectionEntry;
 }
 
 const { entry } = Astro.props;
 const { Content } = await entry.render();
 
-let path = `${entry.collection}/${entry.slug}`;
 let title;
 
 if (entry.data.manufacturer && entry.data.model) {
@@ -30,21 +29,21 @@ if (entry.data.manufacturer && entry.data.model) {
 }
 ---
 
-<Layout content_path={`${path}.md`}>
+<Layout content_path={USES.path(entry.id)}>
   <main class="prose">
     <article>
       <small>
         <a href="/" class="go-home">⇠ chan.dev</a>
       </small>
       <h1 class="mb-2 mt-6">
-        <a href={`/${entry.collection}`}>uses</a> /
+        <a href={`/${USES.path()}`}>uses</a> /
         {title}
       </h1>
       {
         entry.body ? (
           <Content />
         ) : (
-          <PostNotWritten path={path} />
+          <PostNotWritten path={USES.path(entry.slug)} />
         )
       }
       <Content />
@@ -54,6 +53,6 @@ if (entry.data.manufacturer && entry.data.model) {
     slot="page-meta"
     title={title}
     description={`${title} review`}
-    url={site.url(path)}
+    url={site.url(USES.path(entry.slug))}
   />
 </Layout>
