@@ -5,7 +5,8 @@ import Nerd from "@components/main-nerd.astro";
 import * as POSTS from "@pages/posts/posts";
 
 export async function getStaticPaths() {
-  const posts = await POSTS.getCollection();
+  const posts = await POSTS.getCollection(() => true);
+
   return posts.map((entry) => ({
     params: { post_slug: entry.slug },
     props: { entry },
