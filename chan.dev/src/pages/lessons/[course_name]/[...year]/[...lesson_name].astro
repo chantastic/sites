@@ -2,7 +2,6 @@
 import Layout from "@layouts/Layout.astro";
 import PostMeta from "@components/header-post-meta.astro";
 import * as LESSONS from "@pages/lessons/lessons";
-import * as site from "@modules/site";
 
 export async function getStaticPaths() {
   let lessons = await LESSONS.getCollection();
@@ -48,7 +47,7 @@ const { Content } = await entry.render();
   </main>
   <PostMeta
     title={String(entry.data.title)}
-    url={site.url(LESSONS.path(entry.slug))}
+    path={LESSONS.path(entry.slug)}
     slot="page-meta"
   />
 </Layout>

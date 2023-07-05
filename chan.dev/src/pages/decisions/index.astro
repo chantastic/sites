@@ -2,9 +2,9 @@
 import Layout from "@layouts/Layout.astro";
 import PostMeta from "@components/header-post-meta.astro";
 import * as DECISIONS from "@pages/decisions/decisions";
-import * as SITE from "@modules/site";
 
 let decisions = await DECISIONS.getCollection();
+console.log(DECISIONS.path())
 ---
 
 <Layout content_path={DECISIONS.path()}>
@@ -24,7 +24,7 @@ let decisions = await DECISIONS.getCollection();
   <PostMeta
     title={DECISIONS.title()}
     description="chantastic's professional decisions and how they age"
-    url={SITE.url(DECISIONS.path())}
+    path={DECISIONS.path()}
     slot="page-meta"
   />
 </Layout>

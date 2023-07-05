@@ -2,7 +2,6 @@
 import PostMeta from "@components/header-post-meta.astro";
 import Layout from "@layouts/Layout.astro";
 import * as USES from "@pages/uses/uses";
-import * as site from "@modules/site";
 
 let entries = await USES.getCollection();
 
@@ -94,7 +93,7 @@ function getStatusColor(
   <PostMeta
     title="/uses"
     description="chantastic products"
-    url={site.url(USES.path())}
+    path={USES.path()}
     slot="page-meta"
   />
 </Layout>

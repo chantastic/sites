@@ -3,7 +3,6 @@ import Layout from "@layouts/Layout.astro";
 import PostMeta from "@components/header-post-meta.astro";
 import PostNotWritten from "@components/body-page-not-written.astro";
 import * as USES from "@pages/uses/uses";
-import * as site from "@modules/site";
 
 export async function getStaticPaths() {
   const posts = await USES.getCollection();
@@ -53,6 +52,6 @@ if (entry.data.manufacturer && entry.data.model) {
     slot="page-meta"
     title={title}
     description={`${title} review`}
-    url={site.url(USES.path(entry.slug))}
+    path={USES.path(entry.slug)}
   />
 </Layout>

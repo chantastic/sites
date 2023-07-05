@@ -3,7 +3,6 @@ import PostMeta from "@components/header-post-meta.astro";
 import Layout from "@layouts/Layout.astro";
 import PostList from "@components/post-list.astro";
 import * as POSTS from "@pages/posts/posts";
-import * as site from "@modules/site";
 
 let posts = await POSTS.getCollection(({ data }) => {
   return !data.publishDate;
@@ -21,7 +20,7 @@ let posts = await POSTS.getCollection(({ data }) => {
   </main>
   <PostMeta
     title="unpublished chantastic posts"
-    url={site.url(POSTS.path("unpublished"))}
+    path={POSTS.path("unpublished")}
     slot="page-meta"
   />
 </Layout>

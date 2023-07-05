@@ -2,7 +2,6 @@
 import PostMeta from "@components/header-post-meta.astro";
 import Layout from "@layouts/Layout.astro";
 import * as OS from "@pages/os/os";
-import * as SITE from "@modules/site";
 
 let entries = await OS.getCollection();
 ---
@@ -24,7 +23,7 @@ let entries = await OS.getCollection();
   </main>
   <PostMeta
     title="a chantastic OS"
-    url={SITE.url(OS.path())}
+    path={OS.path()}
     slot="page-meta"
   />
 </Layout>

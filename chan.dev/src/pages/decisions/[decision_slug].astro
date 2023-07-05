@@ -3,7 +3,6 @@ import Layout from "@layouts/Layout.astro";
 import PostMeta from "@components/header-post-meta.astro";
 import * as DECISIONS from "@pages/decisions/decisions";
 import * as COLLECTION from "@modules/collection";
-import * as SITE from "@modules/site";
 
 export async function getStaticPaths() {
   let entries = await DECISIONS.getCollection();
@@ -46,6 +45,6 @@ const formattedEntryDate = COLLECTION.formatDate(
   <PostMeta
     slot="page-meta"
     title={DECISIONS.title(entry.data.title)}
-    url={SITE.url(DECISIONS.path(entry.slug))}
+    path={DECISIONS.path(entry.slug)}
   />
 </Layout>

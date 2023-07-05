@@ -2,7 +2,6 @@
 import PostMeta from "@components/header-post-meta.astro";
 import Layout from "@layouts/Layout.astro";
 import * as LESSONS from "@pages/lessons/lessons";
-import * as site from "@modules/site";
 
 let lessons = await LESSONS.getCollection();
 ---
@@ -24,7 +23,7 @@ let lessons = await LESSONS.getCollection();
   <PostMeta
     title={LESSONS.title()}
     description="A collection of small, focused, action-oriented lessons by chantastic."
-    url={site.url(LESSONS.path())}
+    path={LESSONS.path()}
     slot="page-meta"
   />
 </Layout>

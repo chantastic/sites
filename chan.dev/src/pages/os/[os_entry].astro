@@ -2,7 +2,6 @@
 import Layout from "@layouts/Layout.astro";
 import PostMeta from "@components/header-post-meta.astro";
 import * as OS from "@pages/os/os";
-import * as site from "@modules/site";
 
 export async function getStaticPaths() {
   const posts = await OS.getCollection();
@@ -39,6 +38,6 @@ const { Content } = await entry.render();
   <PostMeta
     slot="page-meta"
     title={entry.data.title}
-    url={site.url(OS.path(entry.slug))}
+    path={OS.path(entry.slug)}
   />
 </Layout>

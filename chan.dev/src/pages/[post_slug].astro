@@ -37,7 +37,7 @@ const { Content } = await entry.render();
     title={entry.data.title}
     description={entry.data.description}
     og={entry.data.og}
-    url={site.url(entry.slug)}
+    path={entry.slug}
   />
   <Nerd content_path={POSTS.path(entry.id)} />
 </Layout>

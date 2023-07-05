@@ -2,7 +2,6 @@
 import Layout from "@layouts/Layout.astro";
 import PostMeta from "@components/header-post-meta.astro";
 import { getPostCollectionTags } from "@modules/post";
-import * as site from "@modules/site";
 
 let tags = await getPostCollectionTags();
 ---
@@ -22,7 +21,7 @@ let tags = await getPostCollectionTags();
   </main>
   <PostMeta
     slot="page-meta"
-    url={site.url("tags")}
-    title={`find chantastic posts by tag…`}
+    path="tags"
+    title="find chantastic posts by tag…"
   />
 </Layout>

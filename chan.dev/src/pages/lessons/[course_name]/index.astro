@@ -2,7 +2,6 @@
 import Layout from "@layouts/Layout.astro";
 import PostMeta from "@components/header-post-meta.astro";
 import * as LESSONS from "@pages/lessons/lessons";
-import * as site from "@modules/site";
 
 export async function getStaticPaths() {
   let lessons = await LESSONS.getCollection();
@@ -70,7 +69,7 @@ const { years } = Astro.props;
   </main>
   <PostMeta
     title={`chantastic course: ${course_name}`}
-    url={site.url(LESSONS.path(String(course_name)))}
+    path={LESSONS.path(String(course_name))}
     slot="page-meta"
   />
 </Layout>

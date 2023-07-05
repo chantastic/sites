@@ -3,7 +3,6 @@ import PostMeta from "@components/header-post-meta.astro";
 import Layout from "@layouts/Layout.astro";
 import PostList from "@components/post-list.astro";
 import * as POSTS from "@pages/posts/posts";
-import * as site from "@modules/site";
 
 let posts = await POSTS.getCollection();
 ---
@@ -14,7 +13,7 @@ let posts = await POSTS.getCollection();
   </main>
   <PostMeta
     title="chantastic posts"
-    url={site.url(POSTS.path())}
+    path={POSTS.path()}
     slot="page-meta"
   />
 </Layout>
