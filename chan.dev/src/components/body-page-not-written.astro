@@ -1,5 +1,7 @@
 ---
 const props = Astro.props;
+
+const path = new URL(props.path, "htps://chan.dev/").toString();
 ---
 
 <p>
@@ -9,9 +11,7 @@ const props = Astro.props;
   <br />
   <a
     href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(
-      `Hey @chantastic! I'd like you to finish your post: chan.dev${
-        props.path || "/"
-      }`
+      `Hey @chantastic! I'd like you to finish your post: ${path}`
     )}`}>Bug me on twitter…</a
   >
 </p>
