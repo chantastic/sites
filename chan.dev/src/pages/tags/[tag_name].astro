@@ -1,10 +1,10 @@
 ---
 import Layout from "@layouts/Layout.astro";
-import { getCollection, CollectionEntry } from "astro:content";
+import * as POSTS from "@pages/posts/posts";
 import PostMeta from "@components/header-post-meta.astro";
 
 export async function getStaticPaths() {
-  let posts = await getCollection("posts", ({ data }) => {
+  const posts = await POSTS.getCollection(({ data }) => {
     if (data.tags) {
       return true;
     }
@@ -31,7 +31,7 @@ export async function getStaticPaths() {
 }
 
 interface Props {
-  entries: CollectionEntry<"posts">[];
+  entries: POSTS.CollectionEntry[];
 }
 
 const { tag_name } = Astro.params;

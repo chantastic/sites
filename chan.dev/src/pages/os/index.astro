@@ -3,7 +3,7 @@ import PostMeta from "@components/header-post-meta.astro";
 import Layout from "@layouts/Layout.astro";
 import * as OS from "@pages/os/os";
 
-let entries = await OS.getCollection();
+const entries = await OS.getCollection();
 ---
 
 <Layout content_path={OS.path()}>

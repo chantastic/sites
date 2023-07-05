@@ -2,7 +2,7 @@
 import Layout from "@layouts/Layout.astro";
 import PostMeta from "@components/header-post-meta.astro";
 
-let url = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet%2CcontentDetails&maxResults=50&playlistId=PLnc_NxpmOxaPBbn1PysP30GB0_8aQGnAa&key=${
+const url = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet%2CcontentDetails&maxResults=50&playlistId=PLnc_NxpmOxaPBbn1PysP30GB0_8aQGnAa&key=${
   import.meta.env.YOUTUBE_API_KEY
 }`;
 
@@ -32,7 +32,7 @@ function truncateTitle(str: string | null | undefined) {
   return str;
 }
 
-let videos = await fetchData(url);
+const videos = await fetchData(url);
 ---
 
 <!-- https://tailwindui.com/components/application-ui/lists/grid-lists --><!-- TODO: this page should not have `prose` on it -->

@@ -26,7 +26,7 @@ export async function getCollection(
   sort = (a: CollectionEntry, b: CollectionEntry) =>
     Number(b.id.slice(0, 4)) - Number(a.id.slice(0, 4))
 ) {
-  let result = await ASTRO_CONTENT.getCollection(
+  const result = await ASTRO_CONTENT.getCollection(
     COLLECTION_NAME,
     filter
   );

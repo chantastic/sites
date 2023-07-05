@@ -4,14 +4,14 @@ import PostMeta from "@components/header-post-meta.astro";
 import * as LESSONS from "@pages/lessons/lessons";
 
 export async function getStaticPaths() {
-  let lessons = await LESSONS.getCollection();
+  const lessons = await LESSONS.getCollection();
 
-  let course_years = lessons.reduce(
+  const course_years = lessons.reduce(
     (
       courses: { [index: string]: string[] },
       lesson: LESSONS.CollectionEntry
     ) => {
-      let [course_name, year] = lesson.slug.split("/");
+      const [course_name, year] = lesson.slug.split("/");
 
       if (courses?.[course_name]?.includes(year)) {
         return courses;

@@ -2,7 +2,7 @@ import { getCollection } from "astro:content";
 import { compareByDate } from "@modules/collection";
 
 export async function getPostCollection() {
-  let result = await getCollection("posts", ({ data }) => {
+  const result = await getCollection("posts", ({ data }) => {
     if (data.publishDate) {
       return true;
     }
@@ -17,14 +17,14 @@ export async function getPostCollection() {
 }
 
 export async function getPostCollectionTags() {
-  let posts = await getCollection("posts", ({ data }) => {
+  const posts = await getCollection("posts", ({ data }) => {
     if (data.tags) {
       return true;
     }
     return false;
   });
 
-  let result = [
+  const result = [
     ...new Set(
       posts
         .map(({ data }) => data.tags)

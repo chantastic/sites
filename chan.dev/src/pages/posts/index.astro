@@ -4,7 +4,7 @@ import Layout from "@layouts/Layout.astro";
 import PostList from "@components/post-list.astro";
 import * as POSTS from "@pages/posts/posts";
 
-let posts = await POSTS.getCollection();
+const posts = await POSTS.getCollection();
 ---
 
 <Layout content_path={POSTS.path()}>

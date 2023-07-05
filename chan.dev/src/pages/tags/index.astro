@@ -3,7 +3,7 @@ import Layout from "@layouts/Layout.astro";
 import PostMeta from "@components/header-post-meta.astro";
 import { getPostCollectionTags } from "@modules/post";
 
-let tags = await getPostCollectionTags();
+const tags = await getPostCollectionTags();
 ---
 
 <Layout>

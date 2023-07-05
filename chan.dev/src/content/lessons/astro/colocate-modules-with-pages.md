@@ -41,7 +41,7 @@ export async function getCollection(
   filter = () => true,
   sort = compareCollectionByDate
 ): Promise<CollectionEntry[]> {
-  let result = await ASTRO_CONTENT.getCollection(
+  const result = await ASTRO_CONTENT.getCollection(
     COLLECTION_NAME,
     filter
   );

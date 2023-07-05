@@ -3,7 +3,7 @@ import Layout from "@layouts/Layout.astro";
 import PostMeta from "@components/header-post-meta.astro";
 import * as DECISIONS from "@pages/decisions/decisions";
 
-let decisions = await DECISIONS.getCollection();
+const decisions = await DECISIONS.getCollection();
 console.log(DECISIONS.path())
 ---
 

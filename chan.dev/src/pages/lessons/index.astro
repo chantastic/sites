@@ -3,7 +3,7 @@ import PostMeta from "@components/header-post-meta.astro";
 import Layout from "@layouts/Layout.astro";
 import * as LESSONS from "@pages/lessons/lessons";
 
-let lessons = await LESSONS.getCollection();
+const lessons = await LESSONS.getCollection();
 ---
 
 <Layout content_path={LESSONS.path()}>

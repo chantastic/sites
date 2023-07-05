@@ -129,7 +129,7 @@ Multiple definitions
 
 ```js
 // JS code block
-let yo = "blah";
+const yo = "blah";
 ```
 
 ```jsx

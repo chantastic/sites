@@ -25,7 +25,7 @@ export async function getCollection(
   filter?: (entry: CollectionEntry) => unknown,
   sort = (a: CollectionEntry, b: CollectionEntry) => 0
 ) {
-  let result = await ASTRO_CONTENT.getCollection(
+  const result = await ASTRO_CONTENT.getCollection(
     COLLECTION_NAME,
     filter
   );

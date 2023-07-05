@@ -4,12 +4,12 @@ import Layout from "@layouts/Layout.astro";
 import PostList from "@components/post-list.astro";
 import * as POSTS from "@pages/posts/posts";
 
-let posts = await POSTS.getCollection(({ data }) => {
+const posts = await POSTS.getCollection(({ data }) => {
   return !data.publishDate;
 });
 ---
 
-<Layout>
+<Layout content_path={POSTS.path()}>
   <main class="prose">
     <h1>Unpublished posts</h1>
     <p>

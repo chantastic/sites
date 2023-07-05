@@ -5,7 +5,7 @@ import * as DECISIONS from "@pages/decisions/decisions";
 import * as COLLECTION from "@modules/collection";
 
 export async function getStaticPaths() {
-  let entries = await DECISIONS.getCollection();
+  const entries = await DECISIONS.getCollection();
 
   return entries.map((entry) => ({
     params: { decision_slug: entry.slug },

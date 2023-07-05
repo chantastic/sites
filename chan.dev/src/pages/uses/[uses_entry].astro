@@ -19,13 +19,10 @@ interface Props {
 const { entry } = Astro.props;
 const { Content } = await entry.render();
 
-let title;
-
-if (entry.data.manufacturer && entry.data.model) {
-  title = `${entry.data.manufacturer} ${entry.data.model}`;
-} else {
-  title = entry.slug;
-}
+const title =
+  entry.data.manufacturer && entry.data.model
+    ? `${entry.data.manufacturer} ${entry.data.model}`
+    : entry.slug;
 ---
 
 <Layout content_path={USES.path(entry.id)}>

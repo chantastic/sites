@@ -4,20 +4,20 @@ import PostMeta from "@components/header-post-meta.astro";
 import * as LESSONS from "@pages/lessons/lessons";
 
 export async function getStaticPaths() {
-  let lessons = await LESSONS.getCollection();
+  const lessons = await LESSONS.getCollection();
 
   const course_years = [
     ...new Set(
       lessons.map((entry) => {
-        let [course, year] = entry.slug.split("/");
+        const [course, year] = entry.slug.split("/");
         // returning a string because Set won't dedup complex objects
         return [course, year].join("|");
       })
     ),
   ];
 
-  let result = course_years.map((course_year) => {
-    let [course_name, year] = course_year.split("|");
+  const result = course_years.map((course_year) => {
+    const [course_name, year] = course_year.split("|");
 
     return {
       params: { course_name, year },

@@ -1,7 +1,6 @@
 ---
 import Layout from "@layouts/Layout.astro";
 import PostMeta from "@components/header-post-meta.astro";
-import Nerd from "@components/main-nerd.astro";
 import * as POSTS from "@pages/posts/posts";
 
 export async function getStaticPaths() {
@@ -21,7 +20,7 @@ const { entry } = Astro.props;
 const { Content } = await entry.render();
 ---
 
-<Layout>
+<Layout content_path={POSTS.path(entry.id)}>
   <main class="prose">
     <article>
       <small>
@@ -40,5 +39,4 @@ const { Content } = await entry.render();
     og={entry.data.og}
     path={entry.slug}
   />
-  <Nerd content_path={POSTS.path(entry.id)} />
 </Layout>

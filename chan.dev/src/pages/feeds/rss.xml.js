@@ -8,7 +8,7 @@ import { url } from "@modules/site";
 const parser = new MarkdownIt();
 
 export async function get() {
-  let posts = await getPostCollection();
+  const posts = await getPostCollection();
 
   return rss({
     title: site.title,
