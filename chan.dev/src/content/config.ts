@@ -1,6 +1,7 @@
 import { z, defineCollection } from "astro:content";
 import { collectionSchema as decisions } from "@pages/decisions/decisions";
 import { collectionSchema as lessons } from "@pages/lessons/lessons";
+import { collectionSchema as os } from "@pages/os/os";
 
 const posts = defineCollection({
   schema: z.object({
@@ -15,13 +16,6 @@ const posts = defineCollection({
         image: z.string().url().optional(),
       })
       .optional(),
-  }),
-});
-
-const os = defineCollection({
-  schema: z.object({
-    title: z.string(),
-    date: z.date(),
   }),
 });
 
