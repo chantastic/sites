@@ -1,9 +1,11 @@
 ---
 import Layout from "@layouts/Layout.astro";
 import PostMeta from "@components/header-post-meta.astro";
-import { getPostCollectionTags } from "@modules/post";
+import * as POSTS from "@pages/posts/posts";
 
-const tags = await getPostCollectionTags();
+const posts = await POSTS.getCollection(POSTS.entryHasTags);
+
+const tags = POSTS.extractTags(posts);
 ---
 
 <Layout>

@@ -1,5 +1,5 @@
 import rss from "@astrojs/rss";
-import { getPostCollection } from "@modules/post.ts";
+import * as POSTS from "@pages/posts/posts";
 import sanitizeHtml from "sanitize-html";
 import MarkdownIt from "markdown-it";
 import site from "@src/metadata.json";
@@ -8,7 +8,7 @@ import { url } from "@modules/site";
 const parser = new MarkdownIt();
 
 export async function get() {
-  const posts = await getPostCollection();
+  const posts = await POSTS.getCollection();
 
   return rss({
     title: site.title,

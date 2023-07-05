@@ -22,7 +22,11 @@ export async function getCollection(
     }
     return false;
   },
-  sort = (a: CollectionEntry, b: CollectionEntry) => 0
+  sort = (a: CollectionEntry, b: CollectionEntry) =>
+    COLLECTION.compareByDate(
+      a.data.publishDate,
+      b.data.publishDate
+    )
 ) {
   const result = await ASTRO_CONTENT.getCollection(
     COLLECTION_NAME,
@@ -47,3 +51,21 @@ export const collectionSchema = defineCollection({
       .optional(),
   }),
 });
+
+export function entryHasTags(entry: CollectionEntry) {
+  if (entry.data.tags) {
+    return true;
+  }
+  return false;
+}
+
+export function extractTags(entries: CollectionEntry[]) {
+  return [
+    ...new Set(
+      entries
+        .map(({ data }) => data.tags)
+        .filter(Boolean)
+        .flat()
+    ),
+  ];
+}
