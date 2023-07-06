@@ -9,11 +9,11 @@ const { title, description } = Astro.props;
 <Layout>
   <main class="prose">
     <slot />
-    <PostMeta
-      slot="page-meta"
-      title={`chantastic styleguide: ${title}`}
-      description={description}
-      path={SITE.url()}
-    />
   </main>
+  <PostMeta
+    slot="page-meta"
+    title={`chantastic styleguide: ${title}`}
+    description={description}
+    path={SITE.url()}
+  />
 </Layout>

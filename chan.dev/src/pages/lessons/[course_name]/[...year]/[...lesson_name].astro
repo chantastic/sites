@@ -58,10 +58,10 @@ const { Content } = await entry.render();
       }
       <Content />
     </main>
-    <PostMeta
-      title={String(entry.data.title)}
-      path={LESSONS.path(entry.slug)}
-      slot="page-meta"
-    />
   </div>
+  <PostMeta
+    title={String(entry.data.title)}
+    path={LESSONS.path(entry.slug)}
+    slot="page-meta"
+  />
 </Layout>
