@@ -1,6 +1,8 @@
 ---
 import Layout from "@layouts/Layout.astro";
+import PostMeta from "@components/header-post-meta.astro";
 import License from "@components/license.astro";
+import * as SITE from "@modules/site";
 ---
 
 <Layout>
@@ -67,4 +69,10 @@ import License from "@components/license.astro";
       </p>
     </main>
   </div>
+  <PostMeta
+    slot="page-meta"
+    title={"The incoherant ramblings of chantastic."}
+    description={"chantastic shares everything. A compendium of curiosity, creation, and coding."}
+    path={SITE.url()}
+  />
 </Layout>

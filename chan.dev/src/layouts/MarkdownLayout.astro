@@ -1,5 +1,19 @@
 ---
 import Layout from "@layouts/Layout.astro";
+import PostMeta from "@components/header-post-meta.astro";
+import * as SITE from "@modules/site";
+
+const { title, description } = Astro.props;
 ---
 
-<Layout><main class="prose"><slot /></main></Layout>
+<Layout>
+  <main class="prose">
+    <slot />
+    <PostMeta
+      slot="page-meta"
+      title={`chantastic styleguide: ${title}`}
+      description={description}
+      path={SITE.url()}
+    />
+  </main>
+</Layout>

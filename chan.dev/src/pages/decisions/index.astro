@@ -4,7 +4,6 @@ import PostMeta from "@components/header-post-meta.astro";
 import * as DECISIONS from "@pages/decisions/decisions";
 
 const decisions = await DECISIONS.getCollection();
-console.log(DECISIONS.path());
 ---
 
 <Layout content_path={DECISIONS.path()}>
