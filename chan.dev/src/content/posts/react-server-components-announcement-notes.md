@@ -75,7 +75,7 @@ On a mac, the quickest path to a demo is installing the [Docker Desktop Mac App]
 
 #### Postgres Setup (only necessary if you didn't use Docker)
 
-_(if you don't want to endure this step, [Rodrigo Pombo](@pomber) has a [DB-less fork of `server-components-demo`](https://github.com/pomber/server-components-demo/))_
+_(if you don't want to endure this step, [Rodrigo Pombo](https://twitter.com/pomber) has a [DB-less fork of `server-components-demo`](https://github.com/pomber/server-components-demo/))_
 
 DB Setup instructions are [here](https://github.com/reactjs/server-components-demo#db-setup).
 

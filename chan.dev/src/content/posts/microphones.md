@@ -44,7 +44,7 @@ Buy at: [Amazon](https://amzn.to/2LlQjtX), [B&H](https://www.bhphotovideo.com/c/
 
 ### Suitable and similar alternatives
 
-- [Audio-Technica AT2005USB](AT2005USB)
+- [Audio-Technica AT2005USB](https://amzn.to/3rkbvJ1)
 - [Audio-Technica AT2100x-USB](https://amzn.to/3dsCcz0)
 
 I used the AT2100USB to record the 2016-2018 episodes of [Bird Call Review](http://birdcallreview.com).

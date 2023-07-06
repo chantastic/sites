@@ -13,7 +13,7 @@ dateCreated: 2020-10-31
 This test was run to compare the natural sound of the [Shure MV7][mv7] compared to the [Shure SM7B][sm7b].
 
 Every mic has a different sweet spot.  
-But as a first step, I set this mic up in the same position I set my [SM7B](sm7b) in — pointed at the corner of my mouth, at a 45 degree angle, with the capsule about 4-5" away.
+But as a first step, I set this mic up in the same position I set my [SM7B][] in — pointed at the corner of my mouth, at a 45 degree angle, with the capsule about 4-5" away.
 
 Here are the results:
 
