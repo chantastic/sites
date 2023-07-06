@@ -8,5 +8,3 @@ keys:
   - G
   - "[#]G"
 ---
-
-[back to NoVimber](../)

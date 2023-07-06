@@ -7,5 +7,3 @@ keys:
   - dd
   - D
 ---
-
-[back to NoVimber](../)

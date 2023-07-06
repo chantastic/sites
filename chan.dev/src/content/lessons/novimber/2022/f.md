@@ -6,5 +6,3 @@ keys:
   - f
   - F
 ---
-
-[back to NoVimber](../)
