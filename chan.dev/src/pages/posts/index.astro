@@ -8,12 +8,14 @@ const posts = await POSTS.getCollection();
 ---
 
 <Layout content_path={POSTS.path()}>
-  <main class="prose">
-    <PostList posts={posts} />
-  </main>
-  <PostMeta
-    title="chantastic posts"
-    path={POSTS.path()}
-    slot="page-meta"
-  />
+  <div class="prose">
+    <small>
+      ⇠ <a href="/">chan.dev</a>
+    </small>
+    <main class="mt-4">
+      <h1>Posts</h1>
+      <PostList posts={posts} />
+    </main>
+  </div>
+  <PostMeta title="chantastic posts" path={POSTS.path()} slot="page-meta" />
 </Layout>

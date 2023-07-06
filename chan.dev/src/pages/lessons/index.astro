@@ -7,19 +7,23 @@ const lessons = await LESSONS.getCollection();
 ---
 
 <Layout content_path={LESSONS.path()}>
-  <main class="prose">
-    <ul>
-      {
-        lessons.map((entry) => (
-          <li>
-            <a href={`/${LESSONS.path(entry.slug)}`}>
-              {entry.slug}
-            </a>
-          </li>
-        ))
-      }
-    </ul>
-  </main>
+  <div class="prose">
+    <small>
+      ⇠ <a href="/">chan.dev</a>
+    </small>
+    <main class="mt-4">
+      <h1>Lessons</h1>
+      <ul>
+        {
+          lessons.map((entry) => (
+            <li>
+              <a href={`/${LESSONS.path(entry.slug)}`}>{entry.slug}</a>
+            </li>
+          ))
+        }
+      </ul>
+    </main>
+  </div>
   <PostMeta
     title={LESSONS.title()}
     description="A collection of small, focused, action-oriented lessons by chantastic."

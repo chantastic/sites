@@ -22,26 +22,30 @@ interface Props {
 const { entry } = Astro.props;
 const { Content } = await entry.render();
 
-const formattedEntryDate = COLLECTION.formatDate(
-  entry.data.date
-);
+const formattedEntryDate = COLLECTION.formatDate(entry.data.date);
 ---
 
 <Layout content_path={DECISIONS.path(entry.id)}>
-  <main class="prose">
-    <h1>{entry.data.title}</h1>
-    <time datetime={formattedEntryDate}>
-      {formattedEntryDate}
-    </time>
-    <p>
-      <span
-        class="px-4 py-2 font-semibold text-sm bg-cyan-500 text-white rounded-full shadow-sm"
-      >
-        {entry.data.status}
-      </span>
-    </p>
-    <Content />
-  </main>
+  <div class="prose">
+    <small>
+      ⇠ <a href="/">chan.dev</a>
+      / <a href={`/${DECISIONS.path()}`}>{DECISIONS.COLLECTION_NAME}</a>
+    </small>
+    <main class="mt-4">
+      <h1>{entry.data.title}</h1>
+      <time datetime={formattedEntryDate}>
+        {formattedEntryDate}
+      </time>
+      <p>
+        <span
+          class="px-4 py-2 font-semibold text-sm bg-cyan-500 text-white rounded-full shadow-sm"
+        >
+          {entry.data.status}
+        </span>
+      </p>
+      <Content />
+    </main>
+  </div>
   <PostMeta
     slot="page-meta"
     title={DECISIONS.title(entry.data.title)}

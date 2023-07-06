@@ -9,21 +9,22 @@ const tags = POSTS.extractTags(posts);
 ---
 
 <Layout>
-  <main class="prose">
-    <h1>Tags</h1>
-    <ul>
-      {
-        tags.map((tag) => (
-          <li>
-            <a href={`/tags/${tag}`}>{tag}</a>
-          </li>
-        ))
-      }
-    </ul>
-  </main>
-  <PostMeta
-    slot="page-meta"
-    path="tags"
-    title="find chantastic posts by tag…"
-  />
+  <div class="prose">
+    <small>
+      ⇠ <a href="/">chan.dev</a>
+    </small>
+    <main class="mt-4">
+      <h1>Tags</h1>
+      <ul>
+        {
+          tags.map((tag) => (
+            <li>
+              <a href={`/tags/${tag}`}>{tag}</a>
+            </li>
+          ))
+        }
+      </ul>
+    </main>
+  </div>
 </Layout>
+<PostMeta slot="page-meta" path="tags" title="find chantastic posts by tag…" />

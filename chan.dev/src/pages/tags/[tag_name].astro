@@ -39,18 +39,24 @@ const { entries } = Astro.props;
 ---
 
 <Layout>
-  <main class="prose">
-    <h1>Tag: {tag_name}</h1>
-    <ul>
-      {
-        entries.map((entry) => (
-          <li>
-            <a href={`/${entry.slug}`}>{entry.data.title}</a>
-          </li>
-        ))
-      }
-    </ul>
-  </main>
+  <div class="prose">
+    <small>
+      ⇠ <a href="/">chan.dev</a>
+      / <a href={`/tags`}>tags</a>
+    </small>
+    <main class="mb-4">
+      <h1>Tag: {tag_name}</h1>
+      <ul>
+        {
+          entries.map((entry) => (
+            <li>
+              <a href={`/${entry.slug}`}>{entry.data.title}</a>
+            </li>
+          ))
+        }
+      </ul>
+    </main>
+  </div>
   <PostMeta
     slot="page-meta"
     title={`chantastic posts tagged: ${tag_name}`}

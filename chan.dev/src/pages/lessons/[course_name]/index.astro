@@ -29,14 +29,12 @@ export async function getStaticPaths() {
     {}
   );
 
-  return Object.entries(course_years).map(
-    ([course_name, years]) => ({
-      params: {
-        course_name,
-      },
-      props: { years },
-    })
-  );
+  return Object.entries(course_years).map(([course_name, years]) => ({
+    params: {
+      course_name,
+    },
+    props: { years },
+  }));
 }
 
 interface Props {
@@ -48,25 +46,26 @@ const { years } = Astro.props;
 ---
 
 <Layout content_path={LESSONS.path(String(course_name))}>
-  <main class="prose">
-    <h1>{course_name}</h1>
-    <ul>
-      {
-        years.map((year) => (
-          <li>
-            <a
-              href={`/${LESSONS.path(
-                String(course_name),
-                String(year)
-              )}`}
-            >
-              {year}
-            </a>
-          </li>
-        ))
-      }
-    </ul>
-  </main>
+  <div class="prose">
+    <small>
+      ⇠ <a href="/">chan.dev</a>
+      / <a href={`/${LESSONS.path()}`}>{LESSONS.COLLECTION_NAME}</a>
+    </small>
+    <main class="mt-4">
+      <h1>{course_name}</h1>
+      <ul>
+        {
+          years.map((year) => (
+            <li>
+              <a href={`/${LESSONS.path(String(course_name), String(year))}`}>
+                {year}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </main>
+  </div>
   <PostMeta
     title={`chantastic course: ${course_name}`}
     path={LESSONS.path(String(course_name))}

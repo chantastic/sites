@@ -35,25 +35,33 @@ const { Content } = await entry.render();
 ---
 
 <Layout content_path={LESSONS.path(entry.id)}>
-  <main class="prose">
-    <h1>
-      <a href={`/${LESSONS.path(course_name, year)}`}>{entry.data.title}</a>
-      {year}
-    </h1>
-    {
-      entry.data.keys && (
-        <>
-          {entry.data.keys.map((key) => (
-            <kbd>{key}</kbd>
-          ))}
-        </>
-      )
-    }
-    <Content />
-  </main>
-  <PostMeta
-    title={String(entry.data.title)}
-    path={LESSONS.path(entry.slug)}
-    slot="page-meta"
-  />
+  <div class="prose">
+    <small>
+      ⇠ <a href="/">chan.dev</a>
+      / <a href={`/${LESSONS.path()}`}>lessons</a>
+      / <a href={`/${LESSONS.path(course_name)}`}>{course_name}</a>
+      / <a href={`/${LESSONS.path(course_name, year)}`}>{year}</a>
+    </small>
+    <main class="mt-4">
+      <h1>
+        {entry.data.title}
+        {year}
+      </h1>
+      {
+        entry.data.keys && (
+          <>
+            {entry.data.keys.map((key) => (
+              <kbd>{key}</kbd>
+            ))}
+          </>
+        )
+      }
+      <Content />
+    </main>
+    <PostMeta
+      title={String(entry.data.title)}
+      path={LESSONS.path(entry.slug)}
+      slot="page-meta"
+    />
+  </div>
 </Layout>

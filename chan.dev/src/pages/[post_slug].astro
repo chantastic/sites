@@ -21,17 +21,18 @@ const { Content } = await entry.render();
 ---
 
 <Layout content_path={POSTS.path(entry.id)}>
-  <main class="prose">
-    <article>
-      <small>
-        <a href="/" class="go-home">⇠ chan.dev</a>
-      </small>
-      <h1 class="mb-2 mt-6">
+  <div class="prose">
+    <small>
+      ⇠ <a href="/">chan.dev</a>
+      / <a href={`/${POSTS.COLLECTION_NAME}`}>posts</a>
+    </small>
+    <main class="mt-4">
+      <h1>
         {entry.data.title}
       </h1>
       <Content />
-    </article>
-  </main>
+    </main>
+  </div>
   <PostMeta
     slot="page-meta"
     title={entry.data.title}

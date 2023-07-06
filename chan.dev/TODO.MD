@@ -3,6 +3,10 @@
 ### QoL
 
 - check links that aren't properly redirecting (`mode` and `play` seem to be offenders)
+- rework layout
+  - implement breadcrumbs better
+  - possibly with slots
+  - now that `prose` application is split from `main`, it may make sense to take `class` as a Layout prop
 
 ### SHIPIT
 

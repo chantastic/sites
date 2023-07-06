@@ -7,23 +7,22 @@ const entries = await OS.getCollection();
 ---
 
 <Layout content_path={OS.path()}>
-  <main class="prose">
-    <h1>{OS.COLLECTION_NAME.toUpperCase()}</h1>
-    <ul>
-      {
-        entries.map((entry) => (
-          <li>
-            <a href={`/${OS.path(entry.slug)}`}>
-              {entry.data.title}
-            </a>
-          </li>
-        ))
-      }
-    </ul>
-  </main>
-  <PostMeta
-    title="a chantastic OS"
-    path={OS.path()}
-    slot="page-meta"
-  />
+  <div class="prose">
+    <small>
+      <a href="/">⇠ chan.dev</a>
+    </small>
+    <main class="mt-4">
+      <h1>{OS.COLLECTION_NAME.toUpperCase()}</h1>
+      <ul>
+        {
+          entries.map((entry) => (
+            <li>
+              <a href={`/${OS.path(entry.slug)}`}>{entry.data.title}</a>
+            </li>
+          ))
+        }
+      </ul>
+    </main>
+  </div>
+  <PostMeta title="a chantastic OS" path={OS.path()} slot="page-meta" />
 </Layout>

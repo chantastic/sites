@@ -4,23 +4,29 @@ import PostMeta from "@components/header-post-meta.astro";
 import * as DECISIONS from "@pages/decisions/decisions";
 
 const decisions = await DECISIONS.getCollection();
-console.log(DECISIONS.path())
+console.log(DECISIONS.path());
 ---
 
 <Layout content_path={DECISIONS.path()}>
-  <main class="prose">
-    <ul>
-      {
-        decisions.map((decision) => (
-          <li>
-            <a href={`/${DECISIONS.path(decision.slug)}`}>
-              {decision.data.title}
-            </a>
-          </li>
-        ))
-      }
-    </ul>
-  </main>
+  <div class="prose">
+    <small>
+      ⇠ <a href="/">chan.dev</a>
+    </small>
+    <main class="mt-4">
+      <h1>Decisions</h1>
+      <ul>
+        {
+          decisions.map((decision) => (
+            <li>
+              <a href={`/${DECISIONS.path(decision.slug)}`}>
+                {decision.data.title}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </main>
+  </div>
   <PostMeta
     title={DECISIONS.title()}
     description="chantastic's professional decisions and how they age"

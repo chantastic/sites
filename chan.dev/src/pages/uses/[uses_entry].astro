@@ -26,15 +26,13 @@ const title =
 ---
 
 <Layout content_path={USES.path(entry.id)}>
-  <main class="prose">
-    <article>
-      <small>
-        <a href="/" class="go-home">⇠ chan.dev</a>
-      </small>
-      <h1 class="mb-2 mt-6">
-        <a href={`/${USES.path()}`}>uses</a> /
-        {title}
-      </h1>
+  <div class="prose">
+    <small>
+      ⇠ <a href="/">chan.dev</a>
+      / <a href={`/${USES.path()}`}>uses</a>
+    </small>
+    <main class="mt-4">
+      <h1>{title}</h1>
       {
         entry.body ? (
           <Content />
@@ -43,8 +41,8 @@ const title =
         )
       }
       <Content />
-    </article>
-  </main>
+    </main>
+  </div>
   <PostMeta
     slot="page-meta"
     title={title}
