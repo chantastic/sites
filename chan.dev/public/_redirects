@@ -2,6 +2,8 @@
 /blog/* /:splat
 /posts/* /:splat
 /notes/* /:splat
+/mode/* /:splat
+/play/* /:splat
 
 # moved
 /feed/feed.json /feeds/feed.json
@@ -38,12 +40,10 @@
 /meta/newsletter /newsletter
 /event/2022/novimber/* /lessons/novimber/2022/:splat
 
-# moved collections
+# moved tags
 /food /tags/food
 /modes /tags/mode
 /plays /tags/play
-/mode/* /:spat
-/play/* /:spat
 
 # affiliate short links
 /ali https://ptya.samcart.com/referral/7hetAhRm/X5lBN0HbJaYRK9om
