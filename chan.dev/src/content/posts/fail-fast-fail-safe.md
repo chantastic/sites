@@ -4,7 +4,7 @@ publishDate: 2018-09-17
 description: "Embrace mistakes to fuel creativity. Apply rough sketching techniques to coding: explore options, avoid early abstractions, and learn from errors."
 ---
 
-![rough sketch of Baymax from Disneyland](/img/fail-fast-fail-safe-image.jpeg)
+![rough sketch of Baymax from Disneyland](https://res.cloudinary.com/chantastic/image/upload/v1685921246/chan.dev/fail-fast-fail-safe-image.jpg)
 
 You won't get anything right on your first attempt.
 You can't.

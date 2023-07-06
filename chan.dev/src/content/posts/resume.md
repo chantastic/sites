@@ -6,7 +6,7 @@ dateModified: 2021-08-27
 
 _This page is WIP status_
 
-<img src="https://res.cloudinary.com/chantastic/image/upload/v1626976663/chan.dev/B4qf8Va8_400x400-2-removebg-preview-2_roskcx.png" alt="Michael Chan">
+<img src="https://res.cloudinary.com/chantastic/image/upload/v1626976663/chan.dev/2021-avatar.png" alt="Michael Chan">
 </img>
 
 ## Qualities
