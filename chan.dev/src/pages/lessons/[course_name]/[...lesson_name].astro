@@ -7,17 +7,16 @@ export async function getStaticPaths() {
   const lessons = await LESSONS.getCollection();
 
   const result = lessons
-    .filter((entry) => entry.slug.split("/").length === 3)
+    .filter((entry) => entry.slug.split("/").length === 2)
     .map((entry) => {
-      const [course_name, year, lesson_name] = entry.slug.split("/");
+      const [course_name, lesson_name] = entry.slug.split("/");
 
       return {
         params: {
           course_name,
-          year,
           lesson_name,
         },
-        props: { entry, course_name, year },
+        props: { entry, course_name },
       };
     });
 
@@ -27,28 +26,18 @@ export async function getStaticPaths() {
 interface Props {
   entry: LESSONS.CollectionEntry;
   course_name: string;
-  year: string;
 }
 
-const { entry, course_name, year } = Astro.props;
+const { entry, course_name } = Astro.props;
 const { Content } = await entry.render();
 ---
 
 <Layout content_path={LESSONS.path(entry.id)}>
   <main class="prose">
+    oenuth
     <h1>
-      <a href={`/${LESSONS.path(course_name, year)}`}>{entry.data.title}</a>
-      {year}
+      <a href={`/${LESSONS.path(course_name)}`}>{entry.data.title}</a>
     </h1>
-    {
-      entry.data.keys && (
-        <>
-          {entry.data.keys.map((key) => (
-            <kbd>{key}</kbd>
-          ))}
-        </>
-      )
-    }
     <Content />
   </main>
   <PostMeta
