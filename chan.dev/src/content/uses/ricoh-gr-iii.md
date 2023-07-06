@@ -5,6 +5,7 @@ tags: [camera, photo]
 status: active
 frequency: daily
 acquisition: purchased
+links: [https://amzn.to/43fafEl]
 ---
 
 The RICOH GR III is the best camera I've ever owned.  

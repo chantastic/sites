@@ -10,40 +10,40 @@ date: 2022-06-23
 
 ## Mobile power pack
 
-- [Anker 622 Magnetic Battery (MagGo) — Updated](/uses/anker-622-magnetic-battery-maggo)
+- [Anker 622 Magnetic (MagGo) Power Bank — Updated](/uses/anker-622-magnetic-battery-maggo-power-bank)
 
 ## Cowork power pack
 
-- [Anker Nano II](/TODO)
-- [Cable Matters USB C to USB C Cable](/TODO)
+- [Anker Nano II](/uses/anker-nano-ii-65w-charger)
+- [Cable Matters USB C to USB C Cable](/uses/cable-matters-usb-c-cable)
 
 ## Trip power pack
 
-- [Anker 735 Charger (GaNPrime 65W)](/TODO)
-- [Cable Matters USB C to USB C Cable](/TODO)
-- [Anker Powerline II 3-in-1 Cable](/TODO)
-- [RavPower PD Pioneer 20000mAh 60W 2-Ports Power Bank](/TODO)
+- [Anker 735 Charger (GaNPrime 65W)](/uses/anker-735-ganprime-65w-charger)
+- [Cable Matters USB C to USB C Cable](/uses/cable-matters-usb-c-cable)
+- [Anker Powerline II 3-in-1 Cable](/uses/anker-powerline-ii-3-in-1-cable)
+- [evatronic PD Pioneer 20000mAh 60W 2-Ports Power Bank](/uses/evatronic-pd-pioneer-60w-power-bank)
 
 ## Multi-day residence
 
-- [Xbox Series S](/TODO)
-  - [Controller](/TODO)
-  - [HDMI](/TODO)
-- [Anker 637 Magnetic Charging Station (MagGo)](/TODO)
+- [Xbox Series S](/uses/microsoft-xbox-series-s)
+  - Controller
+  - HDMI
+- [Anker 637 Magnetic Charging Station (MagGo)](/uses/anker-637-magnetic-desktop-maggo-charger)
 
 ## Photo camera pack
 
 - [RICOH GR III](/uses/ricoh-gr-iii)
-- [Anker PowerCore 10000 PD Redux, 10000mAh Portable Charger USB-C Power Delivery (18W)](/TODO)
+- [Anker PowerCore 10000 PD Redux, 10000mAh Portable Charger USB-C Power Delivery (25W)](/uses/anker-powercore-10000-redux-battery-bank)
 
 ## Other photo options
 
-- [MANTISPOD VLOGGING TRIPOD](/TODO)
+- [PGYTECH MANTISPOD PRO vlogging tripod](/uses/pgytech-mantispod-pro-tripod)
 
 ## Other presenting options
 
-- [USB C Hub](/TODO)
-- [Logitech Wireless Presenter R400](/TODO)
+- USB C Hub
+- [Logitech R400 Wireless Presenter](/uses/logitech-r400-wireless-presenter)
 
 ---
 

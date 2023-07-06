@@ -34,13 +34,30 @@ const title =
     <main class="mt-4">
       <h1>{title}</h1>
       {
+        entry.data.links &&
+          entry.data.links.map((link) => (
+            <div>
+              <a href={link}>
+                Buy {link.includes("amzn.to") ? "on Amazon" : "now"}
+              </a>
+            </div>
+          ))
+      }
+      {
         entry.body ? (
           <Content />
         ) : (
           <PostNotWritten path={USES.path(entry.slug)} />
         )
       }
-      <Content />
+      {
+        entry.data.links && (
+          <small>
+            Links are affiliate links. As an affiliate, I recieve a small
+            commission on the purchase.
+          </small>
+        )
+      }
     </main>
   </div>
   <PostMeta
