@@ -29,9 +29,6 @@ function getStatusColor(status: USES.CollectionEntry["data"]["status"]) {
       <ul>
         {
           entries
-            .filter(
-              (entry) => entry.data.status && entry.data.status === "active"
-            )
             .map((entry) => {
               const { slug, data } = entry;
               const title =
@@ -47,11 +44,7 @@ function getStatusColor(status: USES.CollectionEntry["data"]["status"]) {
 
               return (
                 <li>
-                  {entry.body ? (
-                    <a href={`/${USES.path(slug)}`}>{title}</a>
-                  ) : (
-                    <span>{title}</span>
-                  )}
+                  <a href={`/${USES.path(slug)}`}>{title}</a>
                   {entry.data.status && (
                     <span class="inline-flex items-center gap-x-1.5 rounded-md px-2 py-1 text-xs font-medium text-gray-900 ring-1 ring-inset ring-gray-200">
                       <svg

@@ -6,6 +6,7 @@ date: 2022-06-23
 ## Standard travel
 
 - iPad Pro + Pencil
+- [MacBook](/uses/m1-macbook-pro)
 - [Trip power pack](#trip-power-pack)
 
 ## Mobile power pack
@@ -34,7 +35,7 @@ date: 2022-06-23
 ## Photo camera pack
 
 - [RICOH GR III](/uses/ricoh-gr-iii)
-- [Anker PowerCore 10000 PD Redux, 10000mAh Portable Charger USB-C Power Delivery (25W)](/uses/anker-powercore-10000-redux-battery-bank)
+- [Anker PowerCore 10000 PD Redux, 10000mAh Portable Charger USB-C Power Delivery (25W)](/uses/anker-powercore-10000-redux-power-bank)
 
 ## Other photo options
 
