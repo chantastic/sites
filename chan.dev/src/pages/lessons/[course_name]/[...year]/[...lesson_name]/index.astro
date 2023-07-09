@@ -7,7 +7,6 @@ export async function getStaticPaths() {
   const lessons = await LESSONS.getCollection();
 
   const result = lessons
-    .filter((entry) => entry.slug.split("/").length === 3)
     .map((entry) => {
       const [course_name, year, lesson_name] = entry.slug.split("/");
 
