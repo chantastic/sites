@@ -3,79 +3,22 @@ title: Monday
 tags: [play]
 ---
 
-## Brief
+## Marriage power hour
 
-Hit it hard.  
-Get out of the house.  
-Frontload the meetings.  
-Leave time to document and and schedule follow-up items.
+-   What deadlines do we need to meet?
+-   What social plans do we have?
+-   What will we be eating?
+-   What has to be deferred?
 
-Location
-: [Coworking space](/coworking)
+## Chromatic team meeting
 
-Mode
-: [Manage](/manage)
+-   What were the weekly YouTube views since last week?
+-   What did we learn about video (production, marketing, Storybook, or termonology) this week?
+-   Do I need help with anything?
+-   Can I offer help with anything?
 
-Interruptable
-: No
+## Weekly planning
 
-## Outline
-
-## Schedule
-
-### Startup
-
-```
- 6:45 Wake
- 6:55 Walk
-      - Breakfast bites
-      - Pills and supplements
- 7:15 Power Hour with Nellie
-      - Coffee out
-```
-
-### Morning
-
-```
- 8:30 DX weekly team meeting
- 9:30 Plan Chromatic work for week
-      - Add items to calendar
-      - Update tasks
-      - Any additional admin needed
-11:00 Walk
-```
-
-### Day
-
-```
-13:00 Lunch
-13:30 Walk
-
-15:30 Walk
-
-17:30 Shutdown
-      - Walk to Jiu Jitsu for pickup
-```
-
-### Evening
-
-```
-18:00 Dinner
-
-20:00 Personal time
-      - help make lunch for kids
-      - wash face
-      - brush teeth
-      - PJs
-20:30 Lights out, screens off
-      - Shower (in preparation for recording day)
-      - Read books, write in journal
-
-22:00 Wilt
-```
-
-## TODO
-
-- Monday Discord event?
-- Discord newsletter?
-- When is best daily time to take pills?
+-   What are the three projects I'll complete?
+-   What must be deferred?
+-   What is a process I can improve to say yes more?
