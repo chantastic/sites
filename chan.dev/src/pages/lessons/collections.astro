@@ -1,0 +1,37 @@
+---
+import Layout from "@layouts/Layout.astro";
+import PostMeta from "@components/header-post-meta.astro";
+import * as LESSONS from "@pages/lessons/lessons";
+
+const lessons = await LESSONS.getCollection();
+
+const collections =
+  LESSONS.getUniqueSegmentValuesFromCollection(lessons);
+---
+
+<Layout>
+  <div class="prose">
+    <small>
+      ⇠ <a href="/">chan.dev</a>
+      / <a href={`/${LESSONS.path()}`}>lessons</a>
+    </small>
+    <main class="prose">
+      <h1>Lesson collections</h1>
+      {
+        collections.map((collection) => (
+          <li>
+            <a href={`/${LESSONS.path(collection)}`}>
+              {collection}
+            </a>
+          </li>
+        ))
+      }
+    </main>
+  </div>
+  <PostMeta
+    title="chantastic lesson on programming, sorted by topic"
+    description="Ongoing collections of lessons I've learned while programming."
+    path={`${LESSONS.path()}/collections`}
+    slot="page-meta"
+  />
+</Layout>

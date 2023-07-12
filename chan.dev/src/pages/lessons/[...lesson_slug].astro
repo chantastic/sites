@@ -1,0 +1,82 @@
+---
+import Layout from "@layouts/Layout.astro";
+import PostMeta from "@components/header-post-meta.astro";
+import * as LESSONS from "@pages/lessons/lessons";
+
+export async function getStaticPaths() {
+  const lessons = await LESSONS.getCollection();
+
+  const result = lessons.map((entry) => {
+    return {
+      params: {
+        lesson_slug: entry.slug,
+      },
+      props: { entry },
+    };
+  });
+
+  return result;
+}
+
+interface Props {
+  entry: LESSONS.CollectionEntry;
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+
+const [collection_name, maybe_collection_year] =
+  entry.slug.split("/");
+---
+
+<Layout content_path={LESSONS.path(entry.id)}>
+  <div class="prose">
+    {
+      Number(maybe_collection_year) ? (
+        <>
+          <small>
+            ⇠ <a href="/">chan.dev</a>/{" "}
+            <a href={`/${LESSONS.path()}`}>lessons</a>/{" "}
+            <a href={`/${LESSONS.path(collection_name)}`}>
+              {collection_name}
+            </a>
+            /{" "}
+            <a
+              href={`/${LESSONS.path(
+                collection_name,
+                maybe_collection_year
+              )}`}
+            >
+              {maybe_collection_year}
+            </a>
+          </small>
+          <main class="mt-4">
+            <h1>
+              {entry.data.title}, {maybe_collection_year}
+            </h1>
+            <Content />
+          </main>
+        </>
+      ) : (
+        <>
+          <small>
+            ⇠ <a href="/">chan.dev</a>/{" "}
+            <a href={`/${LESSONS.path()}`}>lessons</a>/{" "}
+            <a href={`/${LESSONS.path(collection_name)}`}>
+              {collection_name}
+            </a>
+          </small>
+          <main class="mt-4">
+            <h1>{entry.data.title}</h1>
+            <Content />
+          </main>
+        </>
+      )
+    }
+  </div>
+  <PostMeta
+    title={String(entry.data.title)}
+    path={LESSONS.path(entry.slug)}
+    slot="page-meta"
+  />
+</Layout>
