@@ -1,0 +1,29 @@
+<style is:global>
+  #body:is(:target) a[href=""] {
+    color: red;
+  }
+
+  #body:is(:target) main a[href]:hover::before {
+    content: "[";
+  }
+  #body:is(:target) main a[href]:hover::after {
+    content: "](" attr(href) ' "' attr(title) '")';
+  }
+
+  .hidden-video-script {
+    display: none;
+    border: 1px solid gray;
+    padding: 1rem;
+  }
+  .hidden-video-script *:first-child {
+    padding-block-start: 0;
+    margin-block-start: 0;
+  }
+  .hidden-video-script *:last-child {
+    padding-block-end: 0;
+    margin-block-end: 0;
+  }
+  #body:is(:target) .hidden-video-script {
+    display: block;
+  }
+</style>

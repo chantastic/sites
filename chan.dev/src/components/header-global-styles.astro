@@ -38,13 +38,17 @@
     padding-bottom: 56.25%;
     margin: 1em 0;
   }
-
   [data-responsive-youtube-container] > iframe {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
+  }
+  [data-responsive-youtube-container] {
+    /* match tailwindcss prose styles for code */
+    border-radius: 6px;
+    overflow: hidden;
   }
 
   /* tweet embed */

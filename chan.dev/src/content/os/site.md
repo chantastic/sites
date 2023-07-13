@@ -7,5 +7,6 @@ date: 2022-06-24
 
 | url option | result                                   |
 | :--------- | :--------------------------------------- |
-| `#nerd`    | Shows git links                          |
+| `#nerd`    | Shows git links.                         |
+| `#social`  | Shows package for social sharing.        |
 | `#body`    | Enables visual debugging on entire body. |

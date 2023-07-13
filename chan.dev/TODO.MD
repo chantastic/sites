@@ -1,3 +1,19 @@
+## 2023-07-12
+
+- Write post on "ghost astro files" ones with no template but just styles and scripts
+  - example 'main-hidden-social.astro'
+- Unify "hidden" layout styles
+- Custom OG for lessons
+- Codify `#social` data into `lesson` schema
+- Create view for lessons without corresponding videos
+- Use JavaSript to augment fragment-hidden content
+  - This is probably best encapsulated in in an astro component for each
+  - e.g., `#social` should present the alt-tag that's currently in the social image. though, this could also be solved with the OG schema, mentioned above.
+- Add prettier styling
+  - I think prettier makes more sense VS Code workspace only because I can selectively ignore wierd markdown stuff. And that can move aronud with me.
+- app: file system ascii generator. inspiration: https://ascii-tree-generator.com/
+- add some type of CTA at the end of every post. likely segmented newsletter signup
+
 ## 2023-06-04
 
 ### QoL
