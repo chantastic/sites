@@ -57,7 +57,9 @@ I hate magic numbers like `56.25%`, and I would have tried to avoid it until giv
 It'll look like this:
 
 <div data-responsive-youtube-container>
+
 https://youtu.be/u63pOK6Zyog
+
 </div>
 
 Embed responsively!
