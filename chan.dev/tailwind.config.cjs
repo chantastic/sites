@@ -38,6 +38,10 @@ module.exports = {
             dd: {
               paddingLeft: "1rem",
             },
+            img: {
+              borderRadius: "6px",
+              outline: "1px solid hsla(0, 0%, 0%, .25)"
+            }
           },
         },
       },
