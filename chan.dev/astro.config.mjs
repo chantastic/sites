@@ -13,16 +13,6 @@ import remark_obsidian_callout from "remark-obsidian-callout";
 import remark_directive from "remark-directive";
 import { visit } from "unist-util-visit";
 
-// exclude collection files.
-// astro does this when building but not sitemap
-const excludedPaths = [
-  "decisions/decisions",
-  "lessons/lessons",
-  "os/os",
-  "posts/posts",
-  "uses/uses",
-];
-
 function process_remark_directives() {
   // note: this function acts mutably
   return (tree) => {
@@ -76,15 +66,10 @@ function process_remark_directives() {
 }
 
 export default defineConfig({
-	site: import.meta.env.DEV ? "http://localhost:3000" : "https://chan.dev",
-  integrations: [
-    tailwind(),
-    sitemap({
-      filter: (page) =>
-				excludedPaths.filter((path) => page.includes(path)).length ===
-				0,
-    }),
-  ],
+  site: import.meta.env.DEV
+    ? "http://localhost:3000"
+    : "https://chan.dev",
+  integrations: [tailwind(), sitemap({})],
   experimental: {
     assets: true,
   },
@@ -95,14 +80,11 @@ export default defineConfig({
         remark_toc,
         {
           maxDepth: 2,
-					heading: "toc|outline|contents|table[ -]of[ -]contents?",
+          heading:
+            "toc|outline|contents|table[ -]of[ -]contents?",
         },
       ],
       remark_deflist,
-      // [
-      //   remark_obsidian,
-      //   { markdownFolder: `${process.cwd()}/src/content` },
-      // ],
       [
         remark_embedder,
         {
