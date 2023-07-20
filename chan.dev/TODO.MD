@@ -1,5 +1,21 @@
+## 2023-07-18
+
+- add copy paste for blocks.
+- add headings (to copy into video timestamps, maybe with prefixed `00:00`)
+- add images
+- convert links to fully qualified ones
+
 ## 2023-07-12
 
+- change #social to #share
+  - add features
+    - raw markdown output
+    - all links are fully qualified links (no relative)
+    - include copy-able canonical url
+    - add social callouts and newsletter callouts
+      - do these in-content so they can be easily tailored AND copied into cross-posts
+    - possibly remove accessible heading links? `Section titled`
+- unify all publishing profiles
 - Write post on "ghost astro files" ones with no template but just styles and scripts
   - example 'main-hidden-social.astro'
 - Unify "hidden" layout styles
