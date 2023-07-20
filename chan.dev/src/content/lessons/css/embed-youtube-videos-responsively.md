@@ -1,5 +1,6 @@
 ---
 title: Embed YouTube videos responsively
+description: Embed YouTube videos into personal sites with a responsive container that plays nice in flex and grid layouts.
 date: 2023-07-12
 ---
 
@@ -8,7 +9,7 @@ LOVE THAT!
 
 But, the default embed isn't responsive so it is guaranteed to look shit wherever you embed it.
 
-I've drug this snippet around the internet with me for years.
+I've dragged this snippet around the internet with me for years.
 
 ```css
 /* youtube embed wrapper */
@@ -38,7 +39,7 @@ I hate magic numbers like `56.25%`, and I would have tried to avoid it until giv
 1. Copy a YouTube embed from the share sheet.
 2. Paste that embed in an HTML or markdown file.
 3. Wrap it in a block-element container with the `data-responsive-youtube-container` selector.
-4. Enjoy cointainer-aware responsive videos!
+4. Enjoy container-aware responsive videos!
 
 ```html
 <div data-responsive-youtube-container>
