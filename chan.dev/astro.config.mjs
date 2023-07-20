@@ -7,7 +7,6 @@ import { rehypeHeadingIds } from "@astrojs/markdown-remark";
 import rehype_autolink_headings from "rehype-autolink-headings";
 import { h, s } from "hastscript";
 import remark_external_links from "remark-external-links";
-import remark_obsidian from "remark-obsidian";
 import remark_embedder from "@remark-embedder/core";
 import oembed_transformer from "@remark-embedder/transformer-oembed";
 import remark_obsidian_callout from "remark-obsidian-callout";
@@ -46,10 +45,10 @@ export default defineConfig({
 				},
 			],
 			remark_deflist,
-			[
-				remark_obsidian,
-				{ markdownFolder: `${process.cwd()}/src/content` },
-			],
+      // [
+      //   remark_obsidian,
+      //   { markdownFolder: `${process.cwd()}/src/content` },
+      // ],
 			[
 				remark_embedder,
 				{

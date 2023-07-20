@@ -23,7 +23,6 @@
     "rehype-autolink-headings": "^6.1.1",
     "remark-deflist": "^1.0.0",
     "remark-external-links": "^9.0.1",
-    "remark-obsidian": "^1.4.0",
     "remark-obsidian-callout": "^1.1.3",
     "remark-toc": "^8.0.1",
     "sanitize-html": "^2.11.0",
