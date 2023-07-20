@@ -1,6 +1,6 @@
 ---
 title: Kent C. Dodds is great, btw
-date: 2023-07-20
+publishDate: 2023-07-19
 ---
 
 Kent is my real-life Ted Lasso.
