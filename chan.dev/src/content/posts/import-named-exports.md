@@ -71,16 +71,16 @@ We can import as many named exports as we like!
 
 Let's implement and export a `chant` function:
 
-```js/6-8
+```diff
 // file: string-utils.mjs
 
 export function hype(message) {
   return `${message.toUpperCase()}!!!`;
 }
 
-export function chant(message) {
-  return [...Array(3)].map(() => message).join("! ");
-}
++ export function chant(message) {
++   return [...Array(3)].map(() => message).join("! ");
++ }
 ```
 
 ```js
@@ -103,6 +103,6 @@ This is part of a course I'm build on modules at [lunch.dev](https://www.lunch.d
 When live, members get access to this and other courses on React.
 
 <script src="https://cdn.podia.com/embeds.js" async="async"></script>
+
 <a
 href="https://www.lunch.dev/member" data-podia-embed="button" data-text="Join lunch.dev for this course">Join lunch.dev for this course</a>
-

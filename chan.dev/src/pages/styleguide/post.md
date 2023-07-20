@@ -148,6 +148,8 @@ function MyComponent({ name, ...props }) {
 }
 ```
 
+**This is not supported in Astro's installation of shiki yet.**
+
 ```js/0,2-3
 // this
 // block

@@ -15,11 +15,11 @@ import * as stringUtils from "./string-utils.mjs";
 
 Now `stringUtils` can reference any exports in `string-utils.mjs` using property access syntax.
 
-```js/2-3
+```diff
 import * as stringUtils from "./string-utils.mjs";
 
-stringUtils.chant("we will");
-stringUtils.hype("rock you");
++ stringUtils.chant("we will");
++ stringUtils.hype("rock you");
 ```
 
 ## Where is this a good practice?

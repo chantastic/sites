@@ -37,7 +37,7 @@ pandoc
 
 Run `pandoc` with no arguments to open a Pandoc shell. Type some markdown there and hit <kbd>CTRL-D</kbd> twice and see the resulting HTML.
 
-```txt
+```
 chantastic@local % pandoc
 Hello *pandoc*!
 
@@ -63,7 +63,7 @@ When fed multiple source files, it combines them.
 pandoc file1.md file2.md file3.md
 ```
 
-```txt
+```
 chantastic@local % pandoc file1.md file2.md file3.md
 
 <h2 id="this-is-file-one">This is File One</h2>
