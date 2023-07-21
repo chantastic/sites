@@ -55,12 +55,21 @@ const { entry } = Astro.props;
   main();
 
   function removeHeadingLinks() {
-    const nodes = document.querySelectorAll(
-      ".heading--direct-link"
-    );
+    const nodes = document.querySelectorAll(".heading--direct-link");
+
     nodes.forEach((node) => node.remove());
   }
-
+    
+  function swapSourceToPNG() {
+    if (import.meta.env.PROD) {
+      let nodes = document.querySelectorAll("img");
+      nodes.forEach(
+        (node) =>
+          (node.src = node.src.replace(/\S{7}\.webp$/, ".png"))
+      );
+    }
+  }
+  
   function main() {
     addEventListener("hashchange", handlePostLoad);
     addEventListener("DOMContentLoaded", handlePostLoad);
@@ -69,6 +78,7 @@ const { entry } = Astro.props;
   function handlePostLoad() {
     if (window.location.hash === "#share") {
       removeHeadingLinks();
+      swapSourceToPNG();
     }
   }
 </script>
