@@ -9,33 +9,41 @@ interface Props {
 }
 
 const { entry } = Astro.props;
+const maybeContent = await entry?.render();
 ---
 
 <div id="share" class="prose">
   {
     entry && (
-        <h2>Metadata</h2>
-        <dl>
-          <dt>Title: </dt>
-          <dd>{entry.data.title}</dd>
-          <dt>Slug: </dt>
-          <dd>{entry.slug}</dd>
-          <dt>Canonical url: </dt>
-          <dd>{url(POSTS.path(entry.slug)).toString()}</dd>
-          {entry.data.publishDate &&
-            <dt>publishDate: </dt>
-            <dd>{COLLECTION.formatDate(entry.data.publishDate)}</dd>
-          }
-          {entry.data.tags && 
-            <dt>tags: </dt>
-            <dd>{(entry.data.tags).map((tag: string) => tag).join(", ")}</dd>
-          }
-          <dt>Other common tags:</dt>
-          <dd>{['web-development', 'coding', 'productivity', 'career', 'react', 'tutorial'].join(', ')}</dd>
-        </dl>
+        <>
+          <h2>Metadata</h2>
+          <dl>
+            <dt>Title: </dt>
+            <dd>{entry.data.title}</dd>
+            <dt>Slug: </dt>
+            <dd>{entry.slug}</dd>
+            <dt>Canonical url: </dt>
+            <dd>{url(POSTS.path(entry.slug)).toString()}</dd>
+            {entry.data.publishDate &&
+              <dt>publishDate: </dt>
+              <dd>{COLLECTION.formatDate(entry.data.publishDate)}</dd>
+            }
+            {entry.data.tags && 
+              <dt>tags: </dt>
+              <dd>{(entry.data.tags).map((tag: string) => tag).join(", ")}</dd>
+            }
+            <dt>Other common tags:</dt>
+            <dd>{['web-development', 'coding', 'productivity', 'career', 'react', 'tutorial'].join(', ')}</dd>
+          </dl>
 
-        <h2>Raw markdown</h2>
-        <ASTRO.Code code={entry.body} lang="markdown" wrap />
+          <h2>Raw markdown</h2>
+          <ASTRO.Code code={entry.body} lang="markdown" wrap />
+
+          {maybeContent?.headings && 
+            <h2>Headings with timestamps (for video description)</h2>
+            <pre>{[{ text: entry.data.title }, ...maybeContent.headings].map((heading) => `00:00 ${heading.text}\n`)}</pre>
+          }
+        </>
     )
   }
 </div>
@@ -64,8 +72,11 @@ const { entry } = Astro.props;
     if (import.meta.env.PROD) {
       let nodes = document.querySelectorAll("img");
       nodes.forEach(
-        (node) =>
-          (node.src = node.src.replace(/_\S{7}\.webp$/, ".png"))
+        (node) => {
+          if (node.src.endsWith(".webp")) {
+            node.src = node.src.replace(/_\S{1,10}\.webp$/, ".png")
+          }
+        }
       );
     }
   }
