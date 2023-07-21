@@ -1,5 +1,5 @@
 ---
-import * as POSTS from "@pages/posts/posts";
+import type * as POSTS from "@pages/posts/posts";
 import * as ASTRO from "astro/components"
 import * as COLLECTION from "@modules/collection";
 import { url } from "@modules/site";
@@ -23,7 +23,7 @@ const maybeContent = await entry?.render();
             <dt>Slug: </dt>
             <dd>{entry.slug}</dd>
             <dt>Canonical url: </dt>
-            <dd>{url(POSTS.path(entry.slug)).toString()}</dd>
+            <dd>{url(entry.slug)}</dd>
             {entry.data.publishDate &&
               <dt>publishDate: </dt>
               <dd>{COLLECTION.formatDate(entry.data.publishDate)}</dd>
