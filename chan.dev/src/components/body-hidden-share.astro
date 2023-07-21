@@ -65,7 +65,7 @@ const { entry } = Astro.props;
       let nodes = document.querySelectorAll("img");
       nodes.forEach(
         (node) =>
-          (node.src = node.src.replace(/\S{7}\.webp$/, ".png"))
+          (node.src = node.src.replace(/_\S{7}\.webp$/, ".png"))
       );
     }
   }
