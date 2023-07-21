@@ -1,4 +1,10 @@
 {
-  "recommendations": ["astro-build.astro-vscode"],
+  "recommendations": [
+    "astro-build.astro-vscode",
+    "esbenp.prettier-vscode",
+    "formulahendry.auto-rename-tag",
+    "github.copilot",
+    "eliostruyf.vscode-front-matter"
+  ],
   "unwantedRecommendations": []
 }
