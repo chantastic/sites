@@ -3,13 +3,22 @@ title: Doc blocks for component documentation
 date: 2023-07-10
 ---
 
-Storybook [doc blocks][] help you document and share UI components with generated **interface documentation**, **interactive playgrounds**, and **copy-pasteable source code**.
+<div data-responsive-youtube-container>
+
+https://youtu.be/uAA1JvLcl-w
+
+</div>
+
+Storybook [doc blocks][] help you document and share UI components with generated **interface documentation**,
+**interactive playgrounds**,
+and **copy-pasteable source code**.
 
 Let's take a look at **all** the [doc blocks][] _you_ can use to quickly document and share UI components.
 
-<section class="hidden-video-script">
+:::hidden-script
+
 Let's dive in…
-</section>
+:::
 
 ## Prerequisite
 
@@ -33,10 +42,16 @@ https://youtu.be/BLUmt0j7OLY
   </div>
 </div>
 
-Today I'm working in a CSF file,
+## Setup
+
+I'm working in a CSF file,
 using a custom docs page template.
 
-```typescript
+<!-- prettier-ignore -->
+```jsx
+// Button.stories.jsx
+// Found in /examples after `npm storybook init`
+
 import type { Meta, StoryObj } from "@storybook/react";
 
 const meta = {
@@ -44,7 +59,11 @@ const meta = {
   component: Button,
   parameters: {
     docs: {
-      page: () => <>/* WORKING HERE */</>,
+      page: () => (
+        <>
+          {/* 👷 WORKING HERE 👷 */}
+        </>
+      ),
     },
   },
 };
@@ -72,58 +91,61 @@ export const Secondary: Story = {
 Let's start our component documentation with title and description.
 
 First, import doc blocks from `@storybook/blocks` module.
-I'll leave this empty for now and VS Code will import them as I use them.
 
 ```ts
 import {} from "@storybook/blocks";
 ```
 
+(I'll leave this import block empty — with the expectation that VS Code will import named exports as I use them.)
+
 ### Title
 
 The [Title component][] renderes a styled `h1` tag.
 
-Without props, it displays the auto-title or `title`, defined in component `Meta`.
+Without props, it displays the auto-title or `title`, defined in component `meta`.
 But it also accepts `children` if you want to override that default.
 
-```jsx
-<Title />;
+<!-- prettier-ignore -->
+<!-- ```jsx
+<Title />
 
-{
-  /* or */
-}
+{/* or */}
 
-<Title>Override title</Title>;
-```
+<Title>Override title</Title>
+``` -->
+
+![Alt text](./storybook-doc-blocks-for-component-documentation/title-component.png)
 
 ### Description
 
 The [Description component][] renderes a styled `p` tag.
 
-It displays the JSDoc comment, from component source code.
-Use of the `children` prop was deprecated in Storybook 7.
+It displays the JSDoc comment, above the component declaration.
+Earlier versions of `Description` took a `children` prop. But this option was deprecated in version 7.
 
+<!-- prettier-ignore -->
 ```jsx
-{
-  /* Uses JSDoc comment description  */
-}
-<Description />;
+{/* Uses JSDoc comment description. */}
+
+<Description />
+
+{/* Use of `children` is deprecated in v7, and later. */}
 ```
 
 ### Subtitle
 
 Finally, the [Subtitle component][] renders a styled `h2` tag.
 
-Without props, it displays the component meta value `parameters.componentSubtitle`.
-And it accepts `children`, for custom values.
+Without props, it displays the component meta value `para$$meters.componentSubtitle`.
+And it accepts `children`, for cust./om values.
 
+<!-- prettier-ignore -->
 ```jsx
-<Subtitle />;
+<Subtitle />
 
-{
-  /* or */
-}
+{/* or */}
 
-<Subtitle>Something else</Subtitle>;
+<Subtitle>Something else</Subtitle>
 ```
 
 <section class="hidden-video-script">
@@ -139,25 +161,29 @@ _How_ to generate documentation from source code, in Storybook.
 
 ---
 
-## Genreate copy-pasteable examples and source code
+## Generate copy-pasteable examples and source code
 
-### `Story`
+Storbook isn't just a stickerbook of visual components.
+You can display source code for every story.
+This makes it easy for teammates to copy and paste exactly the code they need.
 
-By default, the [Story component][] renders your first story component directly into the document.
+### Story
+
+The [Story component][] (without props) displays your first story component directly into the document.
 
 ```jsx
 <Story />
 ```
 
-### `Source`
+### Source
 
-We can use the [Source component][] to display a copy-pasteable snippet for using this component elsewhere.
+The [Source component][] to display a copy-pasteable snippet of the code used to produce that story.
 
 ```jsx
 <Source />
 ```
 
-### `Canvas`
+### Canvas
 
 The [Canvas component][] is like both `Story` and `Source` combined.
 It wraps a story in a little box with a collapsable source code accordian.
@@ -168,15 +194,17 @@ It wraps a story in a little box with a collapsable source code accordian.
 
 ### Pass components using the of prop
 
-All the these components story components take an `of` prop, where we can pass a story object.
+All the these story components take an `of` prop, where we can pass a story object.
 In this file, we have a `Secondary` story.
+So let's add Story, Source, and Canvas, for the `Secondary` story as well.
 
 ```diff
-- <Story />
+<Story />
+<Source />
+<Canvas />
+
 + <Story of={Secondary} />
-- <Source />
 + <Source of={Secondary} />
-- <Canvas />
 + <Canvas of={Secondary} />
 ```
 
@@ -205,14 +233,13 @@ _How_ to generate copy-pasteable source code and examples in Storybook.
 
 ## Genreate interactive documentation
 
-<section class="hidden-video-script">
+:::hidden-script
 
 **Short #3**
 
 This is…  
 _How_ to generate interactive documentation with Storybook.
-
-</section>
+:::
 
 ### `Primary`
 
@@ -249,22 +276,11 @@ Each with the titles and descriptions of their stories.
 
 I hope that you're inspired to start communicating your components thru clear, interactive documentation, using Storybook and doc blocks.
 
-The new reference docs on [storybook.js.org](storybook.js.org/docs) are incredible. They go into details far beyond what we can cover in quick tips like this.
+The new reference docs on [storybook.js.org][] are incredible. They go into details far beyond what we can cover in quick tips like this.
 
-Check them out.
+:::hidden-script
 
-- [Title component][]
-- [Description component][]
-- [Argtypes component][]
-- [Subtitle component][]
-- [Canvas component][]
-- [Controls component][]
-- [Primary component][]
-- [Source component][]
-- [Stories component][]
-- [Story component][]
-
-<section class="hidden-video-script">
+### Video outro
 
 If you'd like to continue learning with me, check out one of these recent videos on related component documentation topics.
 
@@ -272,9 +288,9 @@ That's it for today.
 I'm chantastic.
 I'll see you in the next one.
 Bye!
+:::
 
-</section>
-
+[storybook.js.org]: https://storybook.js.org/ "Storybook home"
 [doc blocks]: https://storybook.js.org/docs/react/writing-docs/doc-blocks "Storybook doc blocks documentation"
 [docs page templates]: https://youtu.be/q8SY4yyNE6Q "Storybook docs page templates introduction video"
 [mdx documentation]: https://youtu.be/BLUmt0j7OLY "MDX in Storybook introduction video"
