@@ -1,10 +1,8 @@
-# 9. Use collections for courses
-
-Date: 2023-07-21
-
-## Status
-
-Accepted
+---
+title: "9. Use collections for courses"
+status: "Accepted"
+date: 2023-01-10
+---
 
 ## Context
 
@@ -12,6 +10,7 @@ This is related to [0006 only publish post collection](0006-only-publish-post-co
 But it clarifies where curses should go.
 
 Courses have different attributes.
+
 - They may have a branded name
 - They may be scoped by year
 - They may repeat year over year
