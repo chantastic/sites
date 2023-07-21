@@ -66,10 +66,25 @@ function process_remark_directives() {
   };
 }
 
+function exchange_relative_links_with_absolute() {
+  return (tree) => {
+    visit(tree, (node) => {
+      if (
+        ["link", "definition"].includes(node?.type) &&
+        node.url.startsWith("/")
+      ) {
+        node.url = new URL(node.url, site).toString();
+      }
+    });
+  };
+}
+
+const site = import.meta.env.DEV
+  ? "http://localhost:3000"
+  : "https://chan.dev";
+
 export default defineConfig({
-  site: import.meta.env.DEV
-    ? "http://localhost:3000"
-    : "https://chan.dev",
+  site,
   integrations: [
     tailwind(),
     sitemap({}),
@@ -86,6 +101,7 @@ export default defineConfig({
   },
   markdown: {
     remarkPlugins: [
+      exchange_relative_links_with_absolute,
       [
         // https://github.com/remarkjs/remark-toc
         remark_toc,
