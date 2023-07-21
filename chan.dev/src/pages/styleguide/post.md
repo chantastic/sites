@@ -148,14 +148,58 @@ function MyComponent({ name, ...props }) {
 }
 ```
 
-**This is not supported in Astro's installation of shiki yet.**
+### Code frame
 
-```js/0,2-3
-// this
-// block
-// has
-// line
-// highlights
+[expressive-code/plugin-frame](https://github.com/expressive-code/expressive-code/tree/main/packages/%40expressive-code/plugin-frames)
+
+```js title="some.js"
+// the block has attribute `title="some.js"`
+let some = "javascirpt";
+```
+
+```js
+// can-also-use-first-comment-with-suffix.js
+let some = "javascirpt";
+```
+
+```sh frame="terminal" title="install chantastic"
+# frame="terminal"
+# title="install chantastic"
+> npm install chantastic
+```
+
+### Code text markers
+
+[expressive-code/plugin-frame](https://github.com/expressive-code/expressive-code/tree/main/packages/%40expressive-code/plugin-text-markers)
+
+```js {4, 12-15} "this will be marked" /ye[sp]/
+//    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+//    This is the meta information of this code
+//    block. It contains 3 text markers:
+//    - Line range: {4, 12-15}
+//    - Plaintext search: "this will be marked"
+//    - Regular expression search: /ye[sp]/
+```
+
+```diff lang="js"
+  function thisIsJavaScript() {
+    // This entire block gets highlighted as JavaScript,
+    // and we can still add diff markers to it!
+-   console.log('Old code to be removed')
++   console.log('New and shiny code!')
+  }
+```
+
+```js del={1-3} ins={5-7} ins='// "this was inserted too' ins=/\/\/\sye[sp]/
+function thisFunctionWasDeleted() {
+  return ":sadface:";
+}
+function thisFunctionWasInserted() {
+  return ":happyface:";
+}
+
+// "this was inserted too"
+// yep
 ```
 
 ## Details

@@ -12,6 +12,7 @@ import oembed_transformer from "@remark-embedder/transformer-oembed";
 import remark_obsidian_callout from "remark-obsidian-callout";
 import remark_directive from "remark-directive";
 import { visit } from "unist-util-visit";
+import astro_expressive_code from "astro-expressive-code";
 
 function process_remark_directives() {
   // note: this function acts mutably
@@ -69,7 +70,17 @@ export default defineConfig({
   site: import.meta.env.DEV
     ? "http://localhost:3000"
     : "https://chan.dev",
-  integrations: [tailwind(), sitemap({})],
+  integrations: [
+    tailwind(),
+    sitemap({}),
+    astro_expressive_code({
+      frames: {
+        styleOverrides: {
+          frameBoxShadowCssValue: "none",
+        },
+      },
+    }),
+  ],
   experimental: {
     assets: true,
   },
