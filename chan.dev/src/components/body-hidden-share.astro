@@ -1,0 +1,52 @@
+---
+import * as POSTS from "@pages/posts/posts";
+import * as ASTRO from "astro/components"
+import * as COLLECTION from "@modules/collection";
+import { url } from "@modules/site";
+
+interface Props {
+  entry?: POSTS.CollectionEntry
+}
+
+const { entry } = Astro.props;
+---
+
+<div id="share" class="prose">
+  {
+    entry && (
+        <h2>Metadata</h2>
+        <dl>
+          <dt>Title: </dt>
+          <dd>{entry.data.title}</dd>
+          <dt>Slug: </dt>
+          <dd>{entry.slug}</dd>
+          <dt>Canonical url: </dt>
+          <dd>{url(POSTS.path(entry.slug)).toString()}</dd>
+          {entry.data.publishDate &&
+            <dt>publishDate: </dt>
+            <dd>{COLLECTION.formatDate(entry.data.publishDate)}</dd>
+          }
+          {entry.data.tags && 
+            <dt>tags: </dt>
+            <dd>{(entry.data.tags).map((tag: string) => tag).join(", ")}</dd>
+          }
+          <dt>Other common tags:</dt>
+          <dd>{['web-development', 'coding', 'productivity', 'career', 'react', 'tutorial'].join(', ')}</dd>
+        </dl>
+
+        <h2>Raw markdown</h2>
+        <ASTRO.Code code={entry.body} lang="markdown" wrap />
+    )
+  }
+</div>
+
+<style>
+  #share {
+    box-sizing: border-box;
+    padding: 1rem;
+    background-color: #f0f0f0;
+  }
+  #share:not(:target) {
+    display: none;
+  }
+</style>

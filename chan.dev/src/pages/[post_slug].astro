@@ -20,7 +20,7 @@ const { entry } = Astro.props;
 const { Content } = await entry.render();
 ---
 
-<Layout content_path={POSTS.path(entry.id)}>
+<Layout content_path={POSTS.path(entry.id)} entry={entry}>
   <div class="prose">
     <small>
       ⇠ <a href="/">chan.dev</a>
