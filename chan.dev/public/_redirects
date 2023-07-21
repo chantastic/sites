@@ -4,6 +4,9 @@
 /notes/* /:splat
 /mode/* /:splat
 /play/* /:splat
+/lessons/astro/* /:splat
+/lessons/css/* /:splat
+/lessons/storybook/* /:splat
 
 # moved
 /feed/feed.json /feeds/feed.json
@@ -21,6 +24,7 @@
 /react/concurrent/introducing-concurrent-mode--experimental /notes/react/concurrent/introducing-concurrent-mode--experimental/
 /react/concurrent/suspense-for-data-fetching--experimental /notes/react/concurrent/suspense-for-data-fetching--experimental/
 /teachable/sales-page-challenge /teachable-sales-page-challenge/
+/lessons/marchdown/container-plugin /remark-directive
 
 # short links to outside platforms
 /avatars/latest https://res.cloudinary.com/chantastic/image/upload/v1626976663/chan.dev/2021-avatar.png
