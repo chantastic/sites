@@ -72,7 +72,7 @@ Lover: 2019
 
 It breaks:
 
-```
+```sh
 YAMLException: end of the stream or a document separator is expected at line 2, column 9: Folklore: 2020
 ```
 

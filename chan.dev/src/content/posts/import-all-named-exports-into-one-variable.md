@@ -15,7 +15,7 @@ import * as stringUtils from "./string-utils.mjs";
 
 Now `stringUtils` can reference any exports in `string-utils.mjs` using property access syntax.
 
-```diff
+```diff lang="js"
 import * as stringUtils from "./string-utils.mjs";
 
 + stringUtils.chant("we will");

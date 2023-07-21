@@ -11,7 +11,7 @@ But things get weird in practice.
 
 Let's look at why [Prettier]() — a tool designed to format code beuatifully — makes this HTML uglier.
 
-```markdown
+```md
 <section>
   <div class="flex gap-x-3">
     <div class="w-1/2">
@@ -33,7 +33,7 @@ Some **other** markdown.
 Let's start with a simplistic example.
 And work our way up.
 
-```markdown
+```md
 <div>
   A _little_ markdown.
 </div>
@@ -49,7 +49,7 @@ And work our way up.
 Here, the word `_little_` is treated as raw text and not markdown.
 But it *can* be processed as markdown by adding a newline between the opining `div` and text content.
 
-```markdown
+```md
 <div>
 
   A _little_ markdown.
@@ -69,7 +69,7 @@ Markdown in HTML.
 
 But what if you have more than one level of nesting?
 
-```markdown
+```md
 <div><!-- first level -->
   <div><!-- second level -->
 
@@ -125,7 +125,7 @@ And it doesn't end there.
 Most AST-based markdown formatters will correct that to have new lines above and below the markdown.
 And this introduces another problem
 
-```markdown
+```md
 <section>
   <div>
     <div>
@@ -137,7 +137,7 @@ A _liiiiittle_ markdown.
 </section>
 ```
 
-```markdown
+```md
 <div class="flex gap-x-3">
   <div class="w-1/2">
 
@@ -170,7 +170,7 @@ It's great that I can just drop in a [tailwindcss flex recipe](https://v1.tailwi
 Anything that I want parsed as markdown requires surronding newlines.
 And that's not all!
 
-```
+```html
 <div class="flex gap-x-3">
   <div class="w-1/2">
 

@@ -73,7 +73,7 @@ Fortunately, there is a `*=` matcher to match a character set anywhere in the at
 
 Let's use it to turn urls with a fragment identifier green:
 
-```diff
+```diff lang="css"
 a[href=""],
 a[href="#"],
 a[href^="http:"] { color: red }
@@ -84,7 +84,7 @@ Warning! This selector is inclusive of URLS that _only_ have a pound value, too!
 
 Not to fear, we can solve this by ensuring that the most specific rule is declared last:
 
-```diff
+```diff lang="css"
 + a[href*="#"] { color: green }
 a[href=""],
 a[href="#"],
@@ -113,7 +113,7 @@ Up to this point, we've only used standard element attributes. We can take that 
 
 Let's wrap all of our debugging selectors into a new `data` attribute selector: `data-debug-links`.
 
-```diff
+```diff lang="css"
 + [data-debug-links] {
   a[href*="#"] { color: green }
 

@@ -33,7 +33,7 @@ jobs:
 
 Determine a build schedule and use [crontab.guru](https://crontab.guru) to describe it as a cron schedule expression.
 
-```diff
+```diff lang="yaml"
 -    # This one runs at 800 UTC daily
 -   - cron: "0 8 * * *"
 +    # This one runs every 6 hours
@@ -54,7 +54,7 @@ _You have to name your hook. The name doesn't make much difference as long as it
 
 ### Paste your build hook into the GitHub Action
 
-```diff
+```diff lang="yaml"
 -        run: curl -X POST -d {} #YOUR_BUILD_HOOK_URL#
 +        run: curl -X POST -d {} https://api.netlify.com/build_hooks/#GENERATED_BUILD_HOOK_URL
 ```

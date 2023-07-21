@@ -198,11 +198,11 @@ All the these story components take an `of` prop, where we can pass a story obje
 In this file, we have a `Secondary` story.
 So let's add Story, Source, and Canvas, for the `Secondary` story as well.
 
-```diff
-<Story />
-<Source />
-<Canvas />
+```diff lang="jsx"
 
+- <Story />
+- <Source />
+- <Canvas />
 + <Story of={Secondary} />
 + <Source of={Secondary} />
 + <Canvas of={Secondary} />

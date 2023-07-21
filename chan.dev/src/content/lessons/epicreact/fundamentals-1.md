@@ -57,16 +57,16 @@ date: 2022-06-29
 - The append stays the same.
 - Be sure to remember that `createElement`, `getElementById`, `setAttribute`, and `append` are all part of the browser's DOM API. The best place to learn more about browser DOM APIs on MDN.
 
-```diff
+```diff lang="html"
 <body>
   <script type="module">
     const element = document.createElement("div");
     element.textContent = "Hello World";
     element.className = "container";
 
--   const rootElement = document.getElementById("root");
-+   const rootElement = document.createElement('div')
-+   rootElement.setAttribute('id', 'root')
+-    const rootElement = document.getElementById("root");
++    const rootElement = document.createElement('div')
++    rootElement.setAttribute('id', 'root')
 
     rootElement.append(element);
   </script>
@@ -74,14 +74,15 @@ date: 2022-06-29
 ```
 
 ---
-Ideas from 
 
-- 01. Raw React & JSX
+Ideas from
+
+- 1.  Raw React & JSX
   - Recommended VS Code / DevTools Extensions
-      - Tools and how to use them
-      - Keyboard shortcuts & scripts
+    - Tools and how to use them
+    - Keyboard shortcuts & scripts
   - How you organize your screens when developing
-      - Editor, browser preview, terminal, etc.
+    - Editor, browser preview, terminal, etc.
   - Compare raw DOM manipulation vs. React
   - Comparing createRoot() and render()
   - JSX children strings vs. elements
@@ -89,34 +90,34 @@ Ideas from
   - When to spread props vs. pass individually
   - Naming conventions and when to use them
   - Philosophy of using props vs. composing children
-- 02. Styling & Forms
+- 2.  Styling & Forms
   - Common gotchas that affect performance
   - Assigning types to props with TypeScript
   - When to use fragments or not
-- 03. Rendering Arrays
+- 3.  Rendering Arrays
   - Importance of the key prop when rendering lists
   - Resetting component stat by changing keys
   - Fixing "Uncontrolled input to controlled" error
-      - Controlled input values managed by React state, Uncontrolled by DOM state
-      - Show how error occurs when value changes from undefined
-      - Explain how to decide when to use which
-- 04. useState and useEffect Hooks
+    - Controlled input values managed by React state, Uncontrolled by DOM state
+    - Show how error occurs when value changes from undefined
+    - Explain how to decide when to use which
+- 4.  useState and useEffect Hooks
   - Watch Local Storage for changes
   - To useMemo or not to useMemo?
-      - Examples of when to use a different hook instead
-- 05. Tic-Tac-Toe part 1
+    - Examples of when to use a different hook instead
+- 5.  Tic-Tac-Toe part 1
   - Quick refactor a class component to hooks
-- 06. Tic-Tac-Toe part 2
-- 07. useRef and useEffect
+- 6.  Tic-Tac-Toe part 2
+- 7.  useRef and useEffect
   - Example of useRef
-      - Tracking mount state or storing references to DOM elements
-      - (Different example than vanilla-tilt)
+    - Tracking mount state or storing references to DOM elements
+    - (Different example than vanilla-tilt)
   - Using useEffect for an HTTP Request
   - Handling an async callback
-- 08. Error Boundaries
+- 8.  Error Boundaries
   - What is an Error Boundary?
-      - Include error reseting 
-- 09. useReducer & useCallback
+    - Include error reseting
+- 9.  useReducer & useCallback
   - Comparing useLayoutEffect to useEffect / other hooks
 - 10. useReducer
   - Redux-style useReducer

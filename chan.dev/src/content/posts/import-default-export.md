@@ -29,7 +29,7 @@ import Highlander from "./highlander.js";
 
 We can assign the default export to any variable name, without fuss.
 
-```diff
+```diff lang="js"
 - import Highlander from "./highlander.js";
 + import LiterallyAnything from "./highlander.js";
 ```

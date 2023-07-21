@@ -9,7 +9,7 @@ plugin: `remark-obsidian`
 
 ## Settings in `astro.config.mjs`
 
-```
+```js
 [
   remark_obsidian,
   { markdownFolder: `${process.cwd()}/src/content` },

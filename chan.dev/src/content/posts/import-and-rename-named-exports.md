@@ -35,7 +35,7 @@ Nope!
 
 We use the `as` keyword to rename named exports locally.
 
-```diff
+```diff lang="js"
 - import { hype, chant } from "./string-utils.mjs";
 + import {
 +   hype as hypeText,

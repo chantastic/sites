@@ -19,7 +19,7 @@ import { default as Highlander } from "./highlander.js";
 
 The lines below yield identical results.
 
-```diff
+```diff lang="js"
 - import Highlander from "./highlander.js";
 + import { default as Highlander } from "./highlander.js";
 ```

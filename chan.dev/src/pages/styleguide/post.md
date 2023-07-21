@@ -140,7 +140,7 @@ function MyComponent({ name, ...props }) {
 }
 ```
 
-```diff
+```diff lang="js"
 // diff
 - function chant(message) {
 + export function chant(message) {

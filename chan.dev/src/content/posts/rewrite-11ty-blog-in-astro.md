@@ -24,7 +24,7 @@ When I say “in-depth” I mean, it really seems like they’re assuming you’
 
 ## Installation
 
-```
+```sh
 npm create astro@latest
 ```
 
@@ -33,7 +33,7 @@ You'll select a starting template and typescript preferences.
 
 You can chose between three project types:
 
-```
+```sh
 ❯   a few best practices (recommended)
     a personal website starter kit
     an empty project
@@ -45,7 +45,7 @@ But for this particular project (a port from a previous site), I'm looking for a
 
 I chose `a few best practices (recommended)` because it has the common folder structure of `components`, `layouts`, and `pages` is seem "best practice" in Astro.
 
-```
+```sh
 ╭─────╮ Houston:
 │ ◠ ◡ ◠ Let's build something awesome!
 ╰─────╯

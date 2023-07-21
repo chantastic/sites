@@ -11,13 +11,13 @@ Incompatible with obsidian plugin.
 
 `textDirective`
 
-```
+```md
 :i[the content]{id="content"}
 ```
 
 `leafDirective`
 
-```
+```md
 ::hr
 ::br
 ```
@@ -61,7 +61,7 @@ What I want is a way to abstract repeated markup for embeds, intent links, wordy
 
 This is the full syntax sample shown in documentation:
 
-```markdown
+```md
 
 ```
 
@@ -71,14 +71,14 @@ Let's break that down into the practical use cases shown above.
 
 ### Details element
 
-```markdown
+```md
 <details>
     <summary>Details</summary>
     Something small enough to escape casual notice.
 </details>
 ```
 
-```markdown
+```md
 :::my-container
 
 Any _markdown_ I want.
@@ -106,7 +106,7 @@ I just want a few repeatable snippets for:
 This is a test
 :::
 
-```markdown
+```md
 :::visually-hidden
 
 This description makes visible content accessible via assistive technologies.
@@ -175,7 +175,7 @@ Most AST-based markdown formatters will correct that to have new lines above and
 And this introduces another problem
 
 <!-- prettier-ignore-start -->
-```markdown
+```md
 <section>
   <div>
     <div>
@@ -186,7 +186,7 @@ A _liiiiittle_ markdown.
 </section>
 ```
 
-```markdown
+```md
 <div class="flex gap-x-3">
   <div class="w-1/2">
 
@@ -220,7 +220,7 @@ And that's not all!
 
 <!-- prettier-ignore-start -->
 
-```markdown
+```md
 <div class="flex gap-x-3">
   <div class="w-1/2">
     <div>

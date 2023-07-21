@@ -19,7 +19,7 @@ I include `(GFM)` where GFM-specific syntax is demonstrated.
 
 ## Headings
 
-```markdown
+```md
 # Heading level 1
 
 ## Heading level 2
@@ -35,7 +35,7 @@ I include `(GFM)` where GFM-specific syntax is demonstrated.
 
 ## Blockquote
 
-```markdown
+```md
 > This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet,
 > consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus.
 > Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.
@@ -69,7 +69,7 @@ I include `(GFM)` where GFM-specific syntax is demonstrated.
 
 ### Unordered
 
-```markdown
+```md
 - Folklore
 - Evermore
 - Midnights
@@ -80,7 +80,7 @@ I include `(GFM)` where GFM-specific syntax is demonstrated.
 Ordered lists are alway consecutive.  
 The only number that makes a difference is first. Anything other than `1`, sets the `start` value on the `<ol>`.
 
-```markdown
+```md
 8. Folklore
 1. Folklore
 1. Evermore
@@ -100,7 +100,7 @@ output:
 
 ## Lists of paragraphs
 
-```
+```md
 1.  This is a list item with two paragraphs. Lorem ipsum dolor
     sit amet, consectetuer adipiscing elit. Aliquam hendrerit
     mi posuere lectus.
@@ -114,7 +114,7 @@ output:
 
 ## Lists with markdown
 
-````markdown
+````md
 - A list item with a blockquote:
   > This is a blockquote
   > inside a list item.
@@ -126,17 +126,17 @@ output:
 
 ## Code inline
 
-```markdown
+```md
 `<em>love it!</em>`
 ```
 
-```markdown
+```md
 `` There is a literal backtick (`) here. ``
 ```
 
 ## Code block (GFM)
 
-````markdown
+````md
 ```js
 let GOAT = "Taylor Swift";
 console.log(GOAT);
@@ -147,8 +147,8 @@ console.log(GOAT);
 
 Add more backticks for infinite nesting.
 
-`````markdown
-````markdown
+`````md
+````md
 ```js
 let GOAT = "Taylor Swift";
 console.log(GOAT);
@@ -158,7 +158,7 @@ console.log(GOAT);
 
 ## Horizontal Rule
 
-```markdown
+```md
 ---
 ```
 
@@ -169,19 +169,19 @@ Someone recommended thinking of it as calling a named function with the url. It'
 
 ### Basic
 
-```markdown
+```md
 [chan.dev](https://chan.dev/ "optional title")
 ```
 
 ### Automatic
 
-```markdown
+```md
 <https://chan.dev>
 ```
 
 ### Automatic entity encoded email
 
-```markdown
+```md
 <address@example.com>
 ```
 
@@ -203,45 +203,45 @@ _This last part more interesting than anything else. Surely bots decode this._
 
 **Reference**
 
-```markdown
+```md
 [chan.dev][site]
 ```
 
 ## Emphasis
 
-```markdown
+```md
 _produced an <em> context_
 **produced an <strong> context**
 ```
 
 ### Mid-word emphasis
 
-```markdown
+```md
 un*frigging*believable
 ```
 
 ### Escape empahasis
 
-```markdown
+```md
 un\*frigging\*believable
 ```
 
 ## Emphasis
 
-```markdown
+```md
 _this is emphasized!_
 ```
 
 **Definition**
 
-```markdown
+```md
 [site]: https://chan.dev/ "Optional Title Here"
 ```
 
 - NOT case sensetive.
 - CAN be defined anywhere in the document.
 
-```markdown
+```md
 I get 10 times more traffic from [Google][] than from
 [Yahoo][] or [MSN][].
 
@@ -252,7 +252,7 @@ I get 10 times more traffic from [Google][] than from
 
 **Shorthand reference**
 
-```markdown
+```md
 <!-- when referencing this definition -->
 
 [my site]: https://chan.dev
@@ -265,7 +265,7 @@ I get 10 times more traffic from [Google][] than from
 
 ## Image
 
-```markdown
+```md
 ![Alt text](/path/to/img.jpg)
 
 ![Alt text](/path/to/img.jpg "Optional title")
@@ -273,7 +273,7 @@ I get 10 times more traffic from [Google][] than from
 
 ### Reference style
 
-```markdown
+```md
 ![Alt text][id]
 
 [id]: url/to/image "Optional title attribute"
@@ -295,19 +295,14 @@ _Markdown can go in here if you leave extra line breaks._
 
 </details>
 
-```md
+```html
 <details>
-<summary>Some disclosure</summary>
+  <summary>Some disclosure</summary>
 
-_Markdown can go in here if you leave extra line breaks._
-
+  _Markdown can go in here if you leave extra line breaks._
 </details>
 ```
 
 ### markdown-it plugins
 
 [markdown-it-container](https://github.com/markdown-it/markdown-it-container) can be used to create definition lists.
-
-```
-
-```

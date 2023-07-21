@@ -20,7 +20,7 @@ Here, `hype` is only available to other functions inside `string-utils.mjs`.
 
 We can expose `hype` to other modules by prepending the `export` keyword.
 
-```diff
+```diff lang="js" "export"
 // file: string-utils.mjs
 
 - function hype(message) {
@@ -71,7 +71,7 @@ We can import as many named exports as we like!
 
 Let's implement and export a `chant` function:
 
-```diff
+```diff lang="js"
 // file: string-utils.mjs
 
 export function hype(message) {

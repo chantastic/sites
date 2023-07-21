@@ -40,7 +40,7 @@ So, I keep this setting stored in my [chan.dev][] [workspace][].
 And only _this_ project is impacted by the setting.
 
 ```json
-// {myworkspace}.vscode/settings.json
+// chan.dev/.vscode/settings.json
 {
   "explorer.sortOrder": "mixed"
 }

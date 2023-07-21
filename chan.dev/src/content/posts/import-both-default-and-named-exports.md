@@ -22,7 +22,7 @@ import {
 
 We can tidy it up a smidge by splitting the default export and named export import statements — using a comma.
 
-```diff
+```diff lang="js"
 - import {
 -   default as cheeseburger,
 -   bun,

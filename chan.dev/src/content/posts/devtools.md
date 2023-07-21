@@ -59,7 +59,7 @@ You should now see your extension loaded
 What does your `manifest.json` look like?  
 Mine looks like this:
 
-```
+```json
 {
   "name": "Clever Extension Name",
   "manifest_version": 2,
@@ -135,7 +135,7 @@ Here are mine:
 
 _manifest.json_
 
-```diff
+```diff lang="json"
 {
   "name": "Clever Extension Name",
   "manifest_version": 2,
@@ -257,7 +257,7 @@ However, [this post](https://planningcenter.style/?path=/docs/elements-avatar--b
 
 This is where we're gonna live for a bit
 
-```diff
+```diff lang="js"
 chrome.devtools.panels.elements.createSidebarPane("My pane", (pane) => {
 -  pane.setObject({ hey: "there!" })
 +  pane.setPage("my-sidebar-pane.html")
