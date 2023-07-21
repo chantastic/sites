@@ -1,3 +1,17 @@
+## 2023-07-20
+- add headings, for video
+```
+const { Content, headings } = await entry.render();
+---
+<section>
+  <pre>
+    <code>{entry.body}</code>
+  </pre>
+  {/* prettier-ignore */}
+  <pre>{[{ text: entry.data.title }, ...headings].map((heading) => `00:00 ${heading.text}\n`)}</pre>
+</section>
+```
+
 ## 2023-07-18
 
 - add copy paste for blocks.
