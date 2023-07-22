@@ -1,34 +1,35 @@
+## Things I'd like to flesh out next time we post:
+
+- what tags have large audiences on each network?
+- are there any parts of the publish process that are still difficult or failing
+
+## 2023-07-21
+
+- add `Copy as rich text` button
+- add `Copy as plain text` button
+- add `Copy as markdown` button
+- add social content to post frontmatter
+  - post body
+  - post image
+    - alt
+  - post link
+- add ability to grab image alt somehow?
+- add copy buttons to all metadata?
+- fix all bad callouts
+  - copy as png?
+
 ## 2023-07-20
-- add headings, for video
-```
-const { Content, headings } = await entry.render();
----
-<section>
-  <pre>
-    <code>{entry.body}</code>
-  </pre>
-  {/* prettier-ignore */}
-  <pre>{[{ text: entry.data.title }, ...headings].map((heading) => `00:00 ${heading.text}\n`)}</pre>
-</section>
-```
 
-## 2023-07-18
-
-- add copy paste for blocks.
-- add headings (to copy into video timestamps, maybe with prefixed `00:00`)
-- add images
-- convert links to fully qualified ones
+- collect tags from code snippets? (i could parse the markdown source)
+- replace bad links to newsletter
+- add tags to each post
+- add tag count to tag pages
 
 ## 2023-07-12
 
-- change #social to #share
-  - add features
-    - raw markdown output
-    - all links are fully qualified links (no relative)
-    - include copy-able canonical url
-    - add social callouts and newsletter callouts
-      - do these in-content so they can be easily tailored AND copied into cross-posts
-    - possibly remove accessible heading links? `Section titled`
+- add features
+  - add social callouts and newsletter callouts
+    - do these in-content so they can be easily tailored AND copied into cross-posts
 - unify all publishing profiles
 - Write post on "ghost astro files" ones with no template but just styles and scripts
   - example 'main-hidden-social.astro'
@@ -48,6 +49,8 @@ const { Content, headings } = await entry.render();
 
 ### QoL
 
+- detail directive
+- [automate posting to dev.to](https://developers.forem.com/api/v1)
 - check links that aren't properly redirecting (`mode` and `play` seem to be offenders)
 - rework layout
   - implement breadcrumbs better
