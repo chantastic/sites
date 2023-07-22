@@ -27,10 +27,20 @@ const { Content } = await entry.render();
       / <a href={`/${POSTS.COLLECTION_NAME}`}>posts</a>
     </small>
     <main class="mt-4">
-      <h1>
-        {entry.data.title}
-      </h1>
+      <h1>{entry.data.title}</h1>
+      {
+        !entry.data.publishDate ? (
+          <>
+            <p class="bg-green-100 p-6 text-green-800 border-green-800 border-0 border-l-4">
+              🌱 This post is in the growth phase. It may still
+              be useful as it grows up.
+            </p>
+            <Content />
+          </>
+        ) : (
       <Content />
+        )
+      }
     </main>
   </div>
   <PostMeta
