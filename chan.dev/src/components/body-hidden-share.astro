@@ -2,6 +2,8 @@
 import type * as POSTS from "@pages/posts/posts";
 import * as ASTRO from "astro/components"
 import * as COLLECTION from "@modules/collection";
+import { Content as CrossPostDetails } from "@components/body-hidden-share-cross-post-details.md";
+import { Content as SocialPostDetails } from "@components/body-hidden-share-social-post-details.md";
 import { url } from "@modules/site";
 
 interface Props {
@@ -16,6 +18,10 @@ const maybeContent = await entry?.render();
   {
     entry && (
         <>
+          <h2>Publications</h2>
+          <CrossPostDetails />
+          <h2>Social</h2>
+          <SocialPostDetails />
           <h2>Metadata</h2>
           <dl>
             <dt>Title: </dt>
