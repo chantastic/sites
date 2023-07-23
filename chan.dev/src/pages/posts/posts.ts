@@ -42,6 +42,7 @@ export const collectionSchema = defineCollection({
     publishDate: z.date().optional(),
     description: z.string().optional(),
     tags: z.array(z.string()).optional(),
+    references: z.array(z.string().url()).optional(),
     og: z
       .object({
         title: z.string().optional(),

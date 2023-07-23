@@ -38,10 +38,28 @@ const { Content } = await entry.render();
             <Content />
           </>
         ) : (
-      <Content />
+          <Content />
         )
       }
     </main>
+    <footer>
+      {
+        entry.data.references && (
+          <small>
+            <h2>References</h2>
+            <ol>
+              {entry.data.references.map((reference) => (
+                <li>
+                  <a href={reference} target="_blank">
+                    {reference}
+                  </a>
+                </li>
+              ))}
+            </ol>
+          </small>
+        )
+      }
+    </footer>
   </div>
   <PostMeta
     slot="page-meta"

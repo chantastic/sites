@@ -2,7 +2,7 @@
 title: Fix VS Code Explorer for Content Projects
 publishDate: 2023-07-20
 tags:
-  - VS Code
+  - vscode
 ---
 
 The [VS Code explorer][] displays folders at the top of a directory.
