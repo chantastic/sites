@@ -1,6 +1,6 @@
 ---
 title: Create remark plugin
-tags: web, markdown
+tags: [web, markdown]
 references:
   - https://unifiedjs.com/learn/guide/create-a-plugin/
 ---

@@ -1,6 +1,6 @@
 ---
 title: How to Debug Server Objects in Astro
-tags: web, astro
+tags: [web, astro]
 references:
   - https://docs.astro.build/en/reference/api-reference/#debug-
 ---

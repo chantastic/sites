@@ -1,11 +1,9 @@
 ---
 title: Astro
-tags: web, astro, 11ty
+tags: [web, astro, 11ty]
 description: "Rewriting a site in Astro for content-forward conventions, 'islands' concept, React productivity, and easy UI library demos integration."
 publishDate: 2023-01-16
 ---
-
-Test
 
 I’m re-writing my site in Astro. You can find [my reasons for leaving 11ty here]().
 
