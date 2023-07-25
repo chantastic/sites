@@ -1,5 +1,6 @@
 ---
 title: Fix VS Code Explorer for Content Projects
+description: Stop fighting the VS Code Explorer. Use mixed sort order for content projects.
 publishDate: 2023-07-20
 tags: [vscode]
 ---
@@ -48,3 +49,10 @@ And only _this_ project is impacted by the setting.
 [chan.dev]: https://chan.dev/ "The irrational home web home of chantastic"
 [workspace]: https://code.visualstudio.com/docs/editor/workspaces 'What is a VS Code "workspace"?'
 [VS Code explorer]: https://code.visualstudio.com/docs/getstarted/userinterface#_explorer
+
+<iframe width="315" height="560"
+src="https://www.youtube.com/embed/RvYvyzsnFm8"
+title="YouTube video player"
+frameborder="0"
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+allowfullscreen></iframe>
