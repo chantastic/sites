@@ -51,6 +51,10 @@ const { Content } = await entry.render();
         >Tweet this article</a
       >
       <a
+        href=`https://twitter.com/search?q=${encodeURIComponent(SITE.url(entry.slug))}`
+        >Discuss on Twitter</a
+      >
+      <a
         target="_blank"
         rel="noreferrer noopener"
         href=`https://github.com/chantastic/sites/blob/main/chan.dev/src/content/${POSTS.path(entry.id)}`
