@@ -2,6 +2,7 @@
 import Layout from "@layouts/Layout.astro";
 import PostMeta from "@components/header-post-meta.astro";
 import * as POSTS from "@pages/posts/posts";
+import * as SITE from "@modules/site";
 
 export async function getStaticPaths() {
   const posts = await POSTS.getCollection(() => true);
@@ -43,6 +44,12 @@ const { Content } = await entry.render();
       }
     </main>
     <footer>
+      <a
+        href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(
+          `I just read "${entry.data.title}" by @chantastic\n\n`
+        )}&url=${encodeURIComponent(SITE.url(entry.slug))}`}
+        >Tweet this article</a
+      >
       <a
         target="_blank"
         rel="noreferrer noopener"
