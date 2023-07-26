@@ -6,7 +6,7 @@ import * as LESSONS from "@pages/lessons/lessons";
 const lessons = await LESSONS.getCollection();
 ---
 
-<Layout content_path={LESSONS.path()}>
+<Layout>
   <div class="prose">
     <small>
       ⇠ <a href="/">chan.dev</a>
@@ -17,7 +17,9 @@ const lessons = await LESSONS.getCollection();
         {
           lessons.map((entry) => (
             <li>
-              <a href={`/${LESSONS.path(entry.slug)}`}>{entry.slug}</a>
+              <a href={`/${LESSONS.path(entry.slug)}`}>
+                {entry.slug}
+              </a>
             </li>
           ))
         }

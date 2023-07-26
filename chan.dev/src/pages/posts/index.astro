@@ -7,7 +7,7 @@ import * as POSTS from "@pages/posts/posts";
 const posts = await POSTS.getCollection();
 ---
 
-<Layout content_path={POSTS.path()}>
+<Layout>
   <div class="prose">
     <small>
       ⇠ <a href="/">chan.dev</a>
@@ -17,5 +17,9 @@ const posts = await POSTS.getCollection();
       <PostList posts={posts} />
     </main>
   </div>
-  <PostMeta title="chantastic posts" path={POSTS.path()} slot="page-meta" />
+  <PostMeta
+    title="chantastic posts"
+    path={POSTS.path()}
+    slot="page-meta"
+  />
 </Layout>

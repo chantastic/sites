@@ -6,7 +6,7 @@ import * as OS from "@pages/os/os";
 const entries = await OS.getCollection();
 ---
 
-<Layout content_path={OS.path()}>
+<Layout>
   <div class="prose">
     <small>
       <a href="/">⇠ chan.dev</a>
@@ -17,12 +17,18 @@ const entries = await OS.getCollection();
         {
           entries.map((entry) => (
             <li>
-              <a href={`/${OS.path(entry.slug)}`}>{entry.data.title}</a>
+              <a href={`/${OS.path(entry.slug)}`}>
+                {entry.data.title}
+              </a>
             </li>
           ))
         }
       </ul>
     </main>
   </div>
-  <PostMeta title="a chantastic OS" path={OS.path()} slot="page-meta" />
+  <PostMeta
+    title="a chantastic OS"
+    path={OS.path()}
+    slot="page-meta"
+  />
 </Layout>

@@ -20,11 +20,13 @@ const { entry } = Astro.props;
 const { Content } = await entry.render();
 ---
 
-<Layout content_path={OS.path(entry.id)}>
+<Layout>
   <div class="prose">
     <small>
       ⇠ <a href="/">chan.dev</a>
-      / <a href={`/${OS.path()}`}>{entry.collection.toUpperCase()}</a>
+      / <a href={`/${OS.path()}`}
+        >{entry.collection.toUpperCase()}</a
+      >
     </small>
     <main class="mt-4">
       <h1>

@@ -25,7 +25,7 @@ const title =
     : entry.slug;
 ---
 
-<Layout content_path={USES.path(entry.id)}>
+<Layout>
   <div class="prose">
     <small>
       ⇠ <a href="/">chan.dev</a>
@@ -38,7 +38,8 @@ const title =
           entry.data.links.map((link) => (
             <div>
               <a href={link}>
-                Buy {link.includes("amzn.to") ? "on Amazon" : "now"}
+                Buy{" "}
+                {link.includes("amzn.to") ? "on Amazon" : "now"}
               </a>
             </div>
           ))
@@ -53,8 +54,8 @@ const title =
       {
         entry.data.links && (
           <small>
-            Links are affiliate links. As an affiliate, I recieve a small
-            commission on the purchase.
+            Links are affiliate links. As an affiliate, I
+            recieve a small commission on the purchase.
           </small>
         )
       }

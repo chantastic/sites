@@ -29,7 +29,7 @@ const [collection_name, maybe_collection_year] =
   entry.slug.split("/");
 ---
 
-<Layout content_path={LESSONS.path(entry.id)}>
+<Layout>
   <div class="prose">
     {
       Number(maybe_collection_year) ? (

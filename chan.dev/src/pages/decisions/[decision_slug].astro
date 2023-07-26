@@ -22,14 +22,18 @@ interface Props {
 const { entry } = Astro.props;
 const { Content } = await entry.render();
 
-const formattedEntryDate = COLLECTION.formatDate(entry.data.date);
+const formattedEntryDate = COLLECTION.formatDate(
+  entry.data.date
+);
 ---
 
-<Layout content_path={DECISIONS.path(entry.id)}>
+<Layout>
   <div class="prose">
     <small>
       ⇠ <a href="/">chan.dev</a>
-      / <a href={`/${DECISIONS.path()}`}>{DECISIONS.COLLECTION_NAME}</a>
+      / <a href={`/${DECISIONS.path()}`}
+        >{DECISIONS.COLLECTION_NAME}</a
+      >
     </small>
     <main class="mt-4">
       <h1>{entry.data.title}</h1>

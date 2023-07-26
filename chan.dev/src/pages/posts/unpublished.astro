@@ -9,7 +9,7 @@ const posts = await POSTS.getCollection(({ data }) => {
 });
 ---
 
-<Layout content_path={POSTS.path()}>
+<Layout>
   <div class="prose">
     <small>
       ⇠ <a href="/">chan.dev</a>
@@ -18,8 +18,8 @@ const posts = await POSTS.getCollection(({ data }) => {
     <main class="mt-4">
       <h1>Unpublished posts</h1>
       <p>
-        These posts are public but don't have a `publishDate`. Consiquently,
-        they won't show up in a feed.
+        These posts are public but don't have a `publishDate`.
+        Consiquently, they won't show up in a feed.
       </p>
       <PostList posts={posts} />
     </main>
