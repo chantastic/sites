@@ -2,7 +2,7 @@
 import Layout from "@layouts/Layout.astro";
 import PostMeta from "@components/header-post-meta.astro";
 import * as POSTS from "@pages/posts/posts";
-import * as SITE from "@modules/site";
+import ShareBar from "@components/post-share-bar.astro";
 
 export async function getStaticPaths() {
   const posts = await POSTS.getCollection(() => true);
@@ -44,34 +44,25 @@ const { Content } = await entry.render();
       }
     </main>
     <footer>
-      <a
-        href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(
-          `I just read "${entry.data.title}" by @chantastic\n\n`
-        )}&url=${encodeURIComponent(SITE.url(entry.slug))}`}
-        >Tweet this article</a
-      >
-      <a
-        href=`https://twitter.com/search?q=${encodeURIComponent(SITE.url(entry.slug))}`
-        >Discuss on Twitter</a
-      >
-      <a
-        target="_blank"
-        rel="noreferrer noopener"
-        href=`https://github.com/chantastic/sites/blob/main/chan.dev/src/content/${POSTS.path(entry.id)}`
-        >Edit on GitHub</a
-      >
+      <small>
+        <ShareBar entry={entry} />
+      </small>
       {
         entry.data.references && (
           <small>
             <h2>References</h2>
             <ol>
-              {entry.data.references.map((reference) => (
-                <li>
-                  <a href={reference} target="_blank">
-                    {reference}
-                  </a>
-                </li>
-              ))}
+              {entry.data.references.map(
+                (
+                  reference: POSTS.CollectionEntry["data"]["references"][0]
+                ) => (
+                  <li>
+                    <a href={reference} target="_blank">
+                      {reference}
+                    </a>
+                  </li>
+                )
+              )}
             </ol>
           </small>
         )

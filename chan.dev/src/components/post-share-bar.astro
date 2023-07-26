@@ -1,0 +1,27 @@
+---
+import * as POSTS from "@pages/posts/posts";
+import * as SITE from "@modules/site";
+
+const { entry } = Astro.props;
+---
+
+<div class="flex py-4 mt-12 border-t-2 border-gray-100">
+  <a
+    href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(
+      `I just read "${entry.data.title}" by @chantastic\n\n`
+    )}&url=${encodeURIComponent(SITE.url(entry.slug))}`}
+    >Tweet this article</a
+  >
+  <div class="mx-[auto]"></div>
+  <a
+    href=`https://twitter.com/search?q=${encodeURIComponent(SITE.url(entry.slug))}`
+    >Discuss on Twitter</a
+  >
+  <div class="mx-3">&middot;</div>
+  <a
+    target="_blank"
+    rel="noreferrer noopener"
+    href=`https://github.com/chantastic/sites/blob/main/chan.dev/src/content/${POSTS.path(entry.id)}`
+    >Edit on GitHub</a
+  >
+</div>
