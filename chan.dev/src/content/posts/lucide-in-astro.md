@@ -2,9 +2,10 @@
 title: Add Lucide Icons to Astro
 publishDate: 2023-07-31
 tags: [astro, svg]
+description: "How to add Lucide icons to an Astro site."
 ---
 
-![Alt text](./lucide-in-astro.png)
+![spaceship launching from fictional planet with Astro and Lucide logos](./lucide-in-astro.png)
 
 There's no first-class [Lucide][] integration for [Astro][].
 But making a custom one isn't too hard.
