@@ -58,7 +58,7 @@ Add the `lucide` package.
 pnpm install lucide
 ```
 
-In the standard `lucide` package, icons are exported as JSON arrays with the following contents.
+In the standard `lucide` package, icons are exported as JSON arrays with the following contents:
 
 `[0]`: `"svg"`   
 `[1]`: element attributes  
@@ -131,7 +131,7 @@ const componentChildren = children
 
 ## Extract `LucideIcon` component
 
-Now that can render icons, let's extract this code as a reusable component.
+Now that we can render icons, let's extract this code as a reusable component.
 
 1. Move the relevant code to `src/components/lucide-icon.astro`
 1. Refactor to `icon` as a prop
@@ -203,7 +203,7 @@ But you may find this cumbersome.
 
 If so, create a facade for `LucideIcon` that exposes your favorite icons via `string` interface.
 
-This could look something like this.
+This could look something like this:
 
 ```astro title="my-fav-icons.astro"
 ---
@@ -247,7 +247,7 @@ const componentAttributes = {...attributes, ...props}
 
 ## Go further with TypeScript
 
-`lucide` does not expose it's `IconNode` type for external use.
+`lucide` does not expose its `IconNode` type for external use.
 
 So, if you want to use [my code above](#) in TypeScript, you'll need to get clever.
 
@@ -270,5 +270,5 @@ type Props = {
 
 ## That's it!
 
-I hope that you found this useful in build an Astro site.
-If you'd like to see Astro tips and trips, bug me Twitte/X or Discord 😄
+I hope that you found this useful in building an Astro site.
+If you'd like to see more Astro tips and tricks, bug me on Twitter/X or Discord. 😄
