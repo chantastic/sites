@@ -13,7 +13,7 @@ But making a custom one isn't too hard.
 [Lucide]: https://lucide.dev/ "Lucide SVG icon set"
 [astro]: https://astro.build/ "Astro: all-in-one web framework designed for speed"
 
-This is the component I made to do the job.
+This is the component I made to do the job:
 
 ```astro
 ---
