@@ -22,6 +22,7 @@
     "astro": "^2.9.6",
     "astro-expressive-code": "^0.19.0",
     "hastscript": "^7.2.0",
+    "lucide": "^0.263.0",
     "markdown-it": "^13.0.1",
     "rehype-autolink-headings": "^6.1.1",
     "remark-deflist": "^1.0.0",

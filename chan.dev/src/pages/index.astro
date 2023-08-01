@@ -3,6 +3,8 @@ import Layout from "@layouts/Layout.astro";
 import PostMeta from "@components/header-post-meta.astro";
 import License from "@components/license.astro";
 import * as SITE from "@modules/site";
+import LucideIcon from "@components/lucide-icon.astro";
+import * as Icons from "lucide";
 ---
 
 <Layout>
@@ -11,10 +13,13 @@ import * as SITE from "@modules/site";
       <h1>chan.dev</h1>
       <p>Hey! I'm chan.</p>
       <p>
-        This site's a bit of a mess isn't it. I'm hoping it gets better. But if
-        it doesn't that's ok too.
+        This site's a bit of a mess isn't it. I'm hoping it gets
+        better. But if it doesn't that's ok too.
       </p>
-      <p>Here are all of the places you can see things I'm working on:</p>
+      <p>
+        Here are all of the places you can see things I'm
+        working on:
+      </p>
       <h2><a href="/posts">Posts</a></h2>
       <p>Everything I've written online.</p>
       <ul>
@@ -23,11 +28,12 @@ import * as SITE from "@modules/site";
             <a href="/posts">Published</a> — Stuff I've sent.
           </li>
           <li>
-            <a href="/posts/unpublished">Unpublished</a> — Those with a potentila
-            future.
+            <a href="/posts/unpublished">Unpublished</a> — Those
+            with a potentila future.
           </li>
           <li>
-            <a href="/tags">Tags</a> — Haphazardly organized loosely by interest.
+            <a href="/tags">Tags</a> — Haphazardly organized loosely
+            by interest.
           </li>
         </ul>
         <li></li>
@@ -35,22 +41,26 @@ import * as SITE from "@modules/site";
 
       <h2><a href="/lessons">Lessons</a></h2>
       <p>
-        <a href="/lessons">Isolated lessons</a> that I capture while I learn and
-        teach <a href="/lessons/epicreact">React</a>,
+        <a href="/lessons">Isolated lessons</a> that I capture while
+        I learn and teach <a href="/lessons/epicreact">React</a
+        >,
         <a href="/lessons/storybook">Storybook</a>, <a
           href="/lessons/novimber/2022">Vim</a
         >, and more…
       </p>
 
       <h2><a href="/talks">Talks</a></h2>
-      <p>Public, <a href="/talks">recorded talks</a> of mine.</p>
+      <p>
+        Public, <a href="/talks">recorded talks</a> of mine.
+      </p>
 
       <h2><a href="/uses">Uses</a></h2>
       <p>The <a href="/uses">things I use</a> to do my work.</p>
 
       <h2><a href="/decisions">Decisions</a></h2>
       <p>
-        The <a href="/decisions">decisions I've made</a> building this site.
+        The <a href="/decisions">decisions I've made</a> building
+        this site.
       </p>
 
       <h2><a href="/os">OS</a></h2>
@@ -58,11 +68,37 @@ import * as SITE from "@modules/site";
         My <a href="/decisions">personal operating system</a>.
       </p>
 
-      <h2>Socials</h2>
-      <ul>
-        <li><a href="https://youtube.com/@chantastic">YouTube</a></li>
-        <li><a href="https://twitter/chantastic">Twitter</a></li>
-      </ul>
+      <section>
+        <h2>Social</h2>
+        <div class="flex gap-3">
+          <a
+            href="https://www.youtube.com/@chantastic"
+            target="_blank"
+          >
+            <LucideIcon icon={Icons.Youtube} />
+          </a>
+          <a
+            href="https://twitter.com/chantastic"
+            target="_blank"
+          >
+            <LucideIcon icon={Icons.Twitter} />
+          </a>
+          <a
+            href="https://www.instagram.com/chantastic/"
+            target="_blank"
+          >
+            <LucideIcon icon={Icons.Instagram} />
+          </a>
+          <a
+            href="https://github.com/chantastic"
+            target="_blank"
+          >
+            <LucideIcon icon={Icons.Github} />
+          </a>
+        </div>
+      </section>
+
+      <hr />
 
       <p>
         <License year="2023" />

@@ -38,6 +38,9 @@ devDependencies:
   hastscript:
     specifier: ^7.2.0
     version: 7.2.0
+  lucide:
+    specifier: ^0.263.0
+    version: 0.263.0
   markdown-it:
     specifier: ^13.0.1
     version: 13.0.1
@@ -2674,6 +2677,10 @@ packages:
   /lru-cache@7.18.3:
     resolution: {integrity: sha512-jumlc0BIUrS3qJGgIkWZsyfAM7NCWiBcCDhnd+3NNM5KbBmLTgHVfWBcg6W+rLUsIpzpERPsvwUP7CckAQSOoA==}
     engines: {node: '>=12'}
+    dev: true
+
+  /lucide@0.263.0:
+    resolution: {integrity: sha512-Z3CXtFWyZdPDG8i5TOZjP0dXfVK1T6tUdoAFdsdWW32HAJJ0eErN3frh2rt366qaM7fApduNpzCZJqlIdoAjsQ==}
     dev: true
 
   /magic-string@0.27.0:
