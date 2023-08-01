@@ -40,7 +40,7 @@ const { lessons } = Astro.props;
       / <a href={`/${LESSONS.path()}`}>lessons</a>
     </small>
     <main class="mt-4">
-      <h1>{collection_name}</h1>
+      <h1 class="tracking-tight">{collection_name}</h1>
       <ul>
         {
           lessons.map((entry: LESSONS.CollectionEntry) => (

@@ -37,54 +37,57 @@ const videos = await fetchData(url);
 
 <!-- https://tailwindui.com/components/application-ui/lists/grid-lists --><!-- TODO: this page should not have `prose` on it -->
 <Layout>
-  <div class="prose">
-    <h1>Talks</h1>
-  </div>
-  <ul
-    role="list"
-    class="grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-3 sm:gap-x-6 lg:grid-cols-4 xl:gap-x-8"
-  >
-    {
-      videos.items.map(
-        (video: {
-          snippet: {
-            publishedAt: string | number | Date;
-            resourceId: { videoId: any };
-            thumbnails: {
-              high: { url: string | null | undefined };
+  <main>
+    <div class="prose mb-8">
+      <h1 class="tracking-tight">Talks</h1>
+    </div>
+
+    <ul
+      role="list"
+      class="grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-3 sm:gap-x-6 lg:grid-cols-4 xl:gap-x-8"
+    >
+      {
+        videos.items.map(
+          (video: {
+            snippet: {
+              publishedAt: string | number | Date;
+              resourceId: { videoId: any };
+              thumbnails: {
+                high: { url: string | null | undefined };
+              };
+              title: string | null | undefined;
             };
-            title: string | null | undefined;
-          };
-        }) => (
-          <li class="relative">
-            <a
-              href={`https://www.youtube.com/watch?v=${video.snippet.resourceId.videoId}`}
-              target="_blank"
-              rel="noreferrer"
-            >
-              <div class="group aspect-w-10 aspect-h-7 block w-full overflow-hidden rounded-lg bg-gray-100 focus-within:ring-2 focus-within:ring-indigo-500 focus-within:ring-offset-2 focus-within:ring-offset-gray-100">
-                <img
-                  src={video.snippet.thumbnails.high?.url}
-                  alt={video.snippet.title}
-                />
-              </div>
-              <p class="pointer-events-none mt-2 block text-sm font-medium text-gray-900">
-                {truncateTitle(video.snippet.title)}
-              </p>
-              <p class="pointer-events-none block text-sm font-medium text-gray-500">
-                {new Date(
-                  video.snippet.publishedAt
-                ).toLocaleDateString("en-US", {
-                  year: "numeric",
-                  month: "short",
-                })}
-              </p>
-            </a>
-          </li>
+          }) => (
+            <li class="relative">
+              <a
+                href={`https://www.youtube.com/watch?v=${video.snippet.resourceId.videoId}`}
+                target="_blank"
+                rel="noreferrer"
+              >
+                <div class="group aspect-w-10 aspect-h-7 block w-full overflow-hidden rounded-lg bg-gray-100 focus-within:ring-2 focus-within:ring-indigo-500 focus-within:ring-offset-2 focus-within:ring-offset-gray-100">
+                  <img
+                    src={video.snippet.thumbnails.high?.url}
+                    alt={video.snippet.title}
+                  />
+                </div>
+                <p class="pointer-events-none mt-2 block text-sm font-medium text-gray-900">
+                  {truncateTitle(video.snippet.title)}
+                </p>
+                <p class="pointer-events-none block text-sm font-medium text-gray-500">
+                  {new Date(
+                    video.snippet.publishedAt
+                  ).toLocaleDateString("en-US", {
+                    year: "numeric",
+                    month: "short",
+                  })}
+                </p>
+              </a>
+            </li>
+          )
         )
-      )
-    }
-  </ul>
+      }
+    </ul>
+  </main>
   <PostMeta
     slot="page-meta"
     title="chantastic talks"
