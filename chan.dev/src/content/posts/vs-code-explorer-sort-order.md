@@ -6,7 +6,7 @@ tags: [vscode]
 ---
 
 The [VS Code explorer][] displays folders at the top of a directory.
-This is a common heirarchy that I like it _most_ cases.
+This is a common hierarchy that I like it _most_ cases.
 
 **But I hate it for content.**
 
@@ -17,7 +17,7 @@ I want to see my files and folders all _mixed_ up together.
 
 ## How to change the setting
 
-To change the default behavior, open Settings and find the option for `Explorer: Sort Order`
+To change the default behavior, open Settings and find the option for `Explorer: Sort Order`.
 
 ![Screenshot of VS Code Settings, for the option Explorer: Sort Order. Selected is the `mixed` option.](./vs-code-explorer-sort-order/vs-code-settings_explorer-sort-order-mixed.png)
 
