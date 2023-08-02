@@ -1,8 +1,10 @@
 ---
+// import { getEntries } from "astro:content";
 import Layout from "@layouts/Layout.astro";
 import PostMeta from "@components/header-post-meta.astro";
-import * as POSTS from "@pages/posts/posts";
 import ShareBar from "@components/post-share-bar.astro";
+import * as POSTS from "@pages/posts/posts";
+// import * as ENTITIES from "@pages/entities/entities";
 
 export async function getStaticPaths() {
   const posts = await POSTS.getCollection(() => true);
@@ -19,6 +21,14 @@ interface Props {
 
 const { entry } = Astro.props;
 const { Content } = await entry.render();
+
+// const relatedEntities: ENTITIES.CollectionEntry[] =
+//   await getEntries(entry.data.shoutouts);
+
+// const twitterShoutouts =
+//   ENTITIES.getPlatformShortoutsForRelatedEntities("twitter")(
+//     relatedEntities
+//   );
 ---
 
 <Layout entry={entry}>

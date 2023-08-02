@@ -3,6 +3,7 @@ title: Add Lucide Icons to Astro
 publishDate: 2023-07-31
 tags: [astro, svg]
 description: "How to add Lucide icons to an Astro site."
+shoutouts: [astro, lucide]
 tldr: |
   - **Craft a Custom Lucide Integration with Astro**: Learn how to create a tailored integration of Lucide's SVG icons with Astro.
   - **Build an Astro Component for Lucide Icons**: Follow the guide to convert Lucide's JSON icons into inline SVGs in an Astro site.
@@ -61,17 +62,18 @@ This [is just one of many ways to add Lucide icons to a site](https://lucide.dev
 
 Add the `lucide` package.
 
-```zsh title="install lucide" frame="terminal
+```zsh title="install lucide" frame="terminal"
 pnpm install lucide
 ```
 
 In the standard `lucide` package, icons are exported as JSON arrays with the following contents:
 
-`[0]`: `"svg"`   
+`[0]`: `"svg"`  
 `[1]`: element attributes  
-`[2]`: children  
+`[2]`: children
 
-```js title="lucide/dist/esm/icons/accessibility.js"
+```js
+// lucide/dist/esm/icons/accessibility.js
 [
   "svg",
   {

@@ -1,6 +1,6 @@
 import * as ASTRO_CONTENT from "astro:content";
 import * as COLLECTION from "@modules/collection";
-import { z, defineCollection } from "astro:content";
+import { z, reference, defineCollection } from "astro:content";
 
 export const COLLECTION_NAME = "posts";
 
@@ -44,6 +44,7 @@ export const collectionSchema = defineCollection({
     tags: z.array(z.string()).optional(),
     tldr: z.string().optional(),
     references: z.array(z.string().url()).optional(),
+    shoutouts: z.array(reference("entities")).optional(),
     og: z
       .object({
         title: z.string().optional(),
