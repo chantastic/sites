@@ -45,6 +45,12 @@ module.exports = {
             ".expressive-code": {
               marginBlock: "24px",
             },
+            "code::before": {
+              content: "none",
+            },
+            "code::after": {
+              content: "none",
+            },
           },
         },
       },
