@@ -36,7 +36,10 @@ const maybeContent = await entry?.render();
             }
             {entry.data.tags && 
               <dt>tags: </dt>
-              <dd>{(entry.data.tags).map((tag: string) => tag).join(", ")}</dd>
+            }
+            {entry.data.tldr && 
+              <dt>tl;dr: </dt>
+              <dd><pre>{entry.data.tldr}</pre></dd>
             }
             <dt>Other common tags:</dt>
             <dd>{['web-development', 'coding', 'productivity', 'career', 'react', 'tutorial'].join(', ')}</dd>

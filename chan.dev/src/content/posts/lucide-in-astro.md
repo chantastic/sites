@@ -3,6 +3,13 @@ title: Add Lucide Icons to Astro
 publishDate: 2023-07-31
 tags: [astro, svg]
 description: "How to add Lucide icons to an Astro site."
+tldr: |
+  - **Craft a Custom Lucide Integration with Astro**: Learn how to create a tailored integration of Lucide's SVG icons with Astro.
+  - **Build an Astro Component for Lucide Icons**: Follow the guide to convert Lucide's JSON icons into inline SVGs in an Astro site.
+  - **Extract a Reusable `LucideIcon` Component**: Make a flexible and reusable component for various use cases.
+  - **Enhance the Integration with Custom Features**: Explore options for custom attributes, favorite icons, and TypeScript integration.
+  - **Achieve Accessibility and Customization**: Implement customized Lucide icons with desired attributes in Astro components.
+  - **Tailor Icon Implementation to Your Needs**: Understand that this method offers a specific solution among many ways to add Lucide icons. 🛠️🎨
 ---
 
 ![spaceship launching from fictional planet with Astro and Lucide logos](./lucide-in-astro.png)

@@ -311,12 +311,25 @@ This means you're in an object.
 Since YAML is used often for configuration, it's likely that your root type is `object`.  
 At least that's the case for Markdown Frontmatter, GitHub Actions, and CloudFormation templates.
 
+### TODO
+
+Sections I'd like to add:
+
+- [ ] Multi-line strings
+  - Block scalar
+    - [ ] `>` [folding style](https://yaml.org/spec/1.2-old/spec.html#style/block/folded)
+    - [ ] `|` [literal style](https://yaml.org/spec/1.2-old/spec.html#style/block/literal)
+  - Block scalar, [block chomping indicators](https://yaml.org/spec/1.2-old/spec.html#chomping//)
+    - `-` strip
+    - `+` keep
+
 ## Resources and further reading
 
 - [Official YAML 1.2 Documentation at yaml.org](https://yaml.org/spec/1.2/spec.html#Preview)
 - YAML to JSON web converters
   - https://jsonformatter.org/yaml-to-json
   - https://onlineyamltools.com/convert-yaml-to-json
+  - https://stackoverflow.com/a/21699210/754775
 
 ## Keep in touch
 
