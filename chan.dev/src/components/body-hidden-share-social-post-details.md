@@ -24,6 +24,17 @@
 <details>
 <summary>LinkedIn (tbd)</summary>
 
+  <dd>
+    <dt>
+      Can I post articles via linked in with canonical url?
+    </dt>
+    <dd>
+      https://www.silverbackstrategies.com/blog/seo/does-your-website-benefit-from-medium-and-linkedin-seo-tactics/
+      <dd>
+        https://www.quora.com/I-already-have-articles-in-my-LinkedIn-How-can-I-add-canonical-url-for-those-articles-so-that-they-point-to-my-actual-blog-articles
+      </dd>
+    </dd>
+  </dd>
 </details>
 
 <details>
@@ -34,4 +45,17 @@
 <details>
 <summary>instagram (soon)</summary>
 
+</details>
+
+<details>
+<summary>Facebook (tbd)</summary>
+
+<dl>
+    <dt>
+    Can I post articles via facebook with canonical url?
+    </dt>
+    <dd>
+    https://www.silverbackstrategies.com/blog/seo/does-your-website-benefit-from-medium-and-linkedin-seo-tactics/
+    </dd>
+</dl>
 </details>

@@ -45,12 +45,16 @@ const maybeContent = await entry?.render();
             }
           </dl>
 
-          <h2>Raw markdown</h2>
-          <ASTRO.Code code={entry.body} lang="markdown" wrap />
+          <details>
+            <summary><span class="font-black">Raw markdown</span></summary>
+            <ASTRO.Code code={entry.body} lang="markdown" wrap />
+          </details>
 
           {maybeContent?.headings && 
-            <h2>Headings with timestamps (for video description)</h2>
-            <pre>{[{ text: entry.data.title }, ...maybeContent.headings].map((heading) => `00:00 ${heading.text}\n`)}</pre>
+            <details>
+              <summary><span class="font-black">Headings as video timpestamps</span></summary>
+              <pre>{[{ text: entry.data.title }, ...maybeContent.headings].map((heading) => `00:00 ${heading.text}\n`)}</pre>
+            </details>
           }
         </>
     )
