@@ -19,6 +19,8 @@
 <details>
 <summary><a href="https://www.polywork.com/home" target="_blank">polywork ⤤︎</a></summary>
 
+<details>
+<summary><a href="https://www.tumblr.com/new" target="_blank">tumblr ⤤︎</a></summary>
 </details>
 
 <details>
