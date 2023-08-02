@@ -1,3 +1,8 @@
+---
+title: Cross-posting to Hashnode
+date: 2023-08-02
+---
+
 - <a href="https://hashnode.com/draft/" target="_blank">Start draft ⤤︎</a>
 - Copy and paste from post body
   - Add cover image
