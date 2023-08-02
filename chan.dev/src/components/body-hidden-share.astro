@@ -2,7 +2,7 @@
 import type * as POSTS from "@pages/posts/posts";
 import * as ASTRO from "astro/components"
 import * as COLLECTION from "@modules/collection";
-import { Content as CrossPostDetails } from "@components/body-hidden-share-cross-post-details.md";
+import CrossPostDetails from "@components/body-hidden-share-cross-post-details.astro";
 import { Content as SocialPostDetails } from "@components/body-hidden-share-social-post-details.md";
 import { url } from "@modules/site";
 
@@ -36,13 +36,13 @@ const maybeContent = await entry?.render();
             }
             {entry.data.tags && 
               <dt>tags: </dt>
+              <dd>{(entry.data.tags).map((tag: string, i: number) => <>{i !== 0 && ", "}<code>{tag}</code></>)} <em>(specific)</em></dd>
+              <dd>{['web-development', 'coding', 'productivity', 'career', 'react', 'tutorial'].map((tag: string, i: number) => <>{i !== 0 && ", "}<code>{tag}</code></>)} <em>(generic)</em></dd>
             }
             {entry.data.tldr && 
               <dt>tl;dr: </dt>
               <dd><pre>{entry.data.tldr}</pre></dd>
             }
-            <dt>Other common tags:</dt>
-            <dd>{['web-development', 'coding', 'productivity', 'career', 'react', 'tutorial'].join(', ')}</dd>
           </dl>
 
           <h2>Raw markdown</h2>
@@ -57,7 +57,7 @@ const maybeContent = await entry?.render();
   }
 </div>
 
-<style>
+<style is:global>
   #share {
     box-sizing: border-box;
     padding: 1rem;
@@ -65,6 +65,13 @@ const maybeContent = await entry?.render();
   }
   #share:not(:target) {
     display: none;
+  }
+  #share details[open] {
+    padding: 0 1rem 1rem;
+    background-color: rgb(255 255 255 / 80%);
+  }
+  #share details[open] > summary {
+    margin-inline-start: -1rem;
   }
 </style>
 

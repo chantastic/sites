@@ -152,6 +152,8 @@ function MyComponent({ name, ...props }) {
 
 [expressive-code/plugin-frame](https://github.com/expressive-code/expressive-code/tree/main/packages/%40expressive-code/plugin-frames)
 
+**prefer 'title' to comment for clean cross-posting**
+
 ```js title="some.js"
 // the block has attribute `title="some.js"`
 let some = "javascirpt";
