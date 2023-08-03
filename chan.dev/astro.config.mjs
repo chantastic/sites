@@ -99,6 +99,9 @@ export default defineConfig({
   experimental: {
     assets: true,
   },
+  image: {
+    service: sharpImageService(),
+  },
   markdown: {
     remarkPlugins: [
       exchange_relative_links_with_absolute,
