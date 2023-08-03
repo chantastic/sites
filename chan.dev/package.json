@@ -38,5 +38,12 @@
   },
   "volta": {
     "node": "20.5.0"
+  },
+  "dependencies": {
+    "@astrojs/react": "^2.2.1",
+    "@types/react": "^18.0.21",
+    "@types/react-dom": "^18.0.6",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
   }
 }

@@ -13,7 +13,7 @@ import remark_obsidian_callout from "remark-obsidian-callout";
 import remark_directive from "remark-directive";
 import { visit } from "unist-util-visit";
 import astro_expressive_code from "astro-expressive-code";
-
+import react from "@astrojs/react";
 function process_remark_directives() {
   // note: this function acts mutably
   return (tree) => {
@@ -83,6 +83,7 @@ const site = import.meta.env.DEV
   ? "http://localhost:3000"
   : "https://chan.dev";
 
+// https://astro.build/config
 export default defineConfig({
   site,
   integrations: [
@@ -99,6 +100,7 @@ export default defineConfig({
         },
       },
     }),
+    react(),
   ],
   experimental: {
     assets: true,
@@ -127,7 +129,12 @@ export default defineConfig({
         },
       ],
       // https://www.reliablesoft.net/noreferrer-noopener/#noreferrer-vs-nofollow
-      [remark_external_links, { rel: "noopener" }],
+      [
+        remark_external_links,
+        {
+          rel: "noopener",
+        },
+      ],
       remark_obsidian_callout,
       remark_directive,
       process_remark_directives,
@@ -172,7 +179,10 @@ export default defineConfig({
             ),
             h(
               "span",
-              { "is:raw": true, className: "sr-only" },
+              {
+                "is:raw": true,
+                className: "sr-only",
+              },
               `Section titled ${element.children[0].value}`
             ),
           ],
