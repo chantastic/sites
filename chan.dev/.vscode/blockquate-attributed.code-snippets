@@ -1,0 +1,15 @@
+{
+  "blockquote-attributed": {
+    "scope": "html, markdown",
+    "prefix": "blockquate-attributed",
+    "body": [
+      "<figure>",
+      "\t<blockquote>$0</blockquote>",
+      "\t<figcaption>",
+      "\t\t&mdash; ${1:author}, <cite>${2:work}</cite>",
+      "\t</figcaption>",
+      "</figure>"
+    ],
+    "description": "Blockquote with attribution"
+  }
+}
