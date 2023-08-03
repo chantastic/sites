@@ -1,4 +1,4 @@
-import { defineConfig } from "astro/config";
+import { defineConfig, sharpImageService } from "astro/config";
 import tailwind from "@astrojs/tailwind";
 import sitemap from "@astrojs/sitemap";
 import remark_toc from "remark-toc";
@@ -87,7 +87,11 @@ export default defineConfig({
   site,
   integrations: [
     tailwind(),
-    sitemap({}),
+    sitemap({
+      // I'm building dedicated share pages that I don't want indexed.
+      // Ultimately, this may be better as a dynamic route.
+      filter: (page) => !page.endsWith("/share/"),
+    }),
     astro_expressive_code({
       frames: {
         styleOverrides: {
