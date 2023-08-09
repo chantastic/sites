@@ -11,9 +11,7 @@ function formatEntityPlatformForPost(entity: CollectionEntry) {
   return function (platform: CollectionEntry["data"]) {
     switch (platform) {
       case "twitter": {
-        return `@${
-          new URL(entity.data[platform]).pathname.split("/")[1]
-        }`;
+        return `@${new URL(entity.data[platform]).pathname.split("/")[1]}`;
       }
       case "mastodon": {
         const url = new URL(entity.data[platform]);
@@ -30,14 +28,10 @@ function formatEntityPlatformForPost(entity: CollectionEntry) {
   };
 }
 
-export function getPlatformShortoutsForRelatedEntities(
-  platform: string
-) {
+export function getPlatformShortoutsForRelatedEntities(platform: string) {
   return function (relatedEntities: CollectionEntry[]) {
     return relatedEntities
-      .filter(
-        (entity: CollectionEntry) => entity.data[platform]
-      )
+      .filter((entity: CollectionEntry) => entity.data[platform])
       .map((entity: CollectionEntry) =>
         formatEntityPlatformForPost(entity)(platform)
       );
@@ -45,11 +39,12 @@ export function getPlatformShortoutsForRelatedEntities(
 }
 
 export const collectionSchema = defineCollection({
-  type: 'data',
+  type: "data",
   schema: z.object({
     name: z.string(),
-    type: z.enum(['Person', 'Organization']), // https://schema.org/Person // https://schema.org/Organization
+    type: z.enum(["Person", "Organization"]), // https://schema.org/Person // https://schema.org/Organization
 
+    avatar: z.string().url().optional(),
     bluesky: z.string().url().optional(),
     discord: z.string().url().optional(),
     github: z.string().url().optional(),
@@ -58,6 +53,7 @@ export const collectionSchema = defineCollection({
     site: z.string().url().optional(),
     twitter: z.string().url().optional(),
     youtube: z.string().url().optional(),
+    threads: z.string().url().optional(),
     hashtag: z.string().optional(),
   }),
 });
