@@ -1,10 +1,24 @@
+## 2023-08-09
+
+Share page
+
+- get images back
+- Discrete (tabs)
+  - images only
+  - prose only
+  - code only
+  - script only
+  - metadata only
+
 ## 2023-08-08
+
 - JSON-LD. There are so many tasks around the site to add this.
   - main web page
   - link entities
   - /uses as `#Thing`
+  - implement images for posts
 - `card.json` idea. but how does CORS work on static sites. try it?
-- 
+-
 
 ---
 

@@ -1,7 +1,16 @@
 ---
+import type * as POSTS from "@pages/posts/posts";
+
+interface Props {
+  entry: POSTS.CollectionEntry;
+}
+
+const { entry } = Astro.props;
 ---
 
-<details>
+{JSON.stringify(entry.data.shoutouts)}
+
+<!-- <details>
 <summary><a href="https://twitter.com/compose/tweet" target="_blank">twitter︎ ⤤︎</a></summary>
 
 </details>
@@ -60,4 +69,4 @@
     https://www.silverbackstrategies.com/blog/seo/does-your-website-benefit-from-medium-and-linkedin-seo-tactics/
     </dd>
 </dl>
-</details>
+</details> -->

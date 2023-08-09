@@ -24,6 +24,7 @@ const { entry } = Astro.props;
 
 import sanitizeHtml from "sanitize-html";
 import MarkdownIt from "markdown-it";
+import BodyHidden from "@components/body-hidden.astro";
 // import site from "@src/metadata.json";
 // import { url } from "@modules/site";
 
@@ -58,9 +59,7 @@ const simpleHTMLBody = sanitizeHtml(parser.render(entry.body));
             <h2>References</h2>
             <ol>
               {entry.data.references.map(
-                (
-                  reference: POSTS.CollectionEntry["data"]["references"][0]
-                ) => (
+                (reference: POSTS.CollectionEntry["data"]["references"][0]) => (
                   <li>
                     <a href={reference} target="_blank">
                       {reference}
@@ -74,12 +73,12 @@ const simpleHTMLBody = sanitizeHtml(parser.render(entry.body));
       }
     </footer>
     <BodyHiddenShare entry={entry} />
-    <PostMeta
-      slot="page-meta"
-      title={entry.data.title}
-      description={entry.data.description}
-      og={entry.data.og}
-      path={entry.slug}
-    />
   </div>
+  <PostMeta
+    slot="page-meta"
+    title={entry.data.title}
+    description={entry.data.description}
+    og={entry.data.og}
+    path={entry.slug}
+  />
 </Layout>

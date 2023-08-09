@@ -1,32 +1,29 @@
 ---
 title: Doc blocks for design system documentation
+description: |
+  Document design systems with three components from Storybook Doc Blocks
 dateCreated: 2023-07-10
 publishDate: 2023-08-08
 tags:
   - storybook
   - systems
+shoutouts: [storybook]
+tldr: |
+  **TL;DR Summary: Doc blocks for design system documentation**
+
+  🎛️ **Display design systems with three components from "@storybook/blocks"**
+  1. 🎨 **`ColorPalette` for color systems**:
+  2. 🖋️ **`Typeset` for typography sets**:
+  3. 🔍 **`IconGallery` for icons**:
+  4. 📚 **Additional Resources**:
+    - [Storybook docs page](https://storybook.js.org/docs/)
+    - [Chromatic YouTube channel](https://www.youtube.com/@chromaticui).
 ---
 
 ![Illustration of a big machine made of shapes and letters illustrating a design system coming together.](./storybook-doc-blocks-for-design-system-documentation/storybook-doc-blocks-for-design-system-documentation_cover.png)
 
 If you document design systems, I'm about to save you a _ton_ of time.
 Because Storybook comes with lesser-known components for organizing colors, typography, and icons.
-
-:::hidden-script
-
-Let's dive in…
-:::
-
-:::hidden-script
-
-SHORT TEMPLATE:
-
-**pre**  
-I love this component for documenting {topic} in Storybook.
-
-**post**  
-This is a great pre-baked component for {topic} systems in component libraries and design systems.
-:::
 
 ## ColorPalette
 
@@ -201,10 +198,3 @@ See full [`IconGallery` API reference](https://storybook.js.org/docs/react/api/d
 ## Learn more…
 
 Find in-depth references for each component on the [Storybook docs page](https://storybook.js.org/docs/) and [Chromatic YouTube channel](https://www.youtube.com/@chromaticui).
-
-:::hidden-script
-
-That's it for today.
-Subscribe for more design system and compont library development tips with me.
-I'm chantastic and I'll see you in the next one!
-:::
