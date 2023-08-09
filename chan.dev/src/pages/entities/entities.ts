@@ -45,6 +45,7 @@ export function getPlatformShortoutsForRelatedEntities(
 }
 
 export const collectionSchema = defineCollection({
+  type: 'data',
   schema: z.object({
     name: z.string(),
 
