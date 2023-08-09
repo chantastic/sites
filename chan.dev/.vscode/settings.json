@@ -1,3 +1,7 @@
 {
-    "explorer.sortOrder": "mixed"
+  "explorer.sortOrder": "mixed",
+  // "editor.lineNumbers": "off",
+  // "terminal.integrated.fontSize": 15,
+  // "editor.fontSize": 16,
+  // "window.zoomLevel": 1
 }
