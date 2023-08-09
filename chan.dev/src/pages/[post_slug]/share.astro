@@ -80,5 +80,8 @@ const simpleHTMLBody = sanitizeHtml(parser.render(entry.body));
     description={entry.data.description}
     og={entry.data.og}
     path={entry.slug}
-  />
+  >
+    <!-- canonical url -->
+    <link rel="canonical" href={url(entry.slug)} />
+  </PostMeta>
 </Layout>
