@@ -1,0 +1,7 @@
+{
+  "Script": {
+    "prefix": "directive-script",
+    "body": [":::hidden-script ", "", "$0$TM_SELECTED_TEXT", ":::"],
+    "description": "Remark directive: `hidden-script`"
+  }
+}
