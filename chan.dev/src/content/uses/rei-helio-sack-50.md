@@ -1,7 +1,7 @@
 ---
 manufacturer: REI Co-op
-model: Helio Sack 50
-size: Medium
+model: Helio Sack 50 Sleeping Bag
+size: Regular
 tags: [camping, outdoor]
 status: active
 frequency: severaly times a year

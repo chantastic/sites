@@ -13,3 +13,6 @@ date: 2023-07-23
 - One Night Werewolf
 - tic tac toe
 - hangman
+- Markdown plugin that does calculations on todos and can update text inside the surrounding block (not exactly a game)
+  - `In just {total} steps`
+  - `{incomplete}/{total} tasks remain`
