@@ -1,3 +1,50 @@
+## 2023-08-08
+- JSON-LD. There are so many tasks around the site to add this.
+  - main web page
+  - link entities
+  - /uses as `#Thing`
+- `card.json` idea. but how does CORS work on static sites. try it?
+- 
+
+---
+
+TODO:
+
+Notes: - can sub `astro` for `javascript` (or `js`) - easy CTA's
+for - personal site - social media - YouTube - links -
+prioritize home office
+
+- make a markdown component
+- add pre-hand-off section
+- add shoutout metadata (it'd be nice if these were referenced as objects)
+- truble shooting
+  - generate TL;DR and description from chatgpt
+
+## 2023-07-25 TODO
+
+- [ ] what features need to be added
+- [ ] what publishing guidelines need to be clarified
+- [ ] what additional content needs to be generated (thumbnails and such)
+- [ ] what metadata should be required (description, etc)
+- [ ] what to publish where
+
+### Features
+
+- develop link style
+- add copy links
+- globalize images in markdown output
+- translate youtube embed for dev.to tag
+- dev.to allows copy/paste
+- add description
+- (M: check how posts unfurl)
+
+why can't we have HTML? #invisible-tech-things
+
+- posting shorts
+  - twitter: accepts SRT
+  - no videos on blsky
+  - hachyderm accepts plain text only
+
 ## Things I'd like to flesh out next time we post:
 
 - what tags have large audiences on each network?
