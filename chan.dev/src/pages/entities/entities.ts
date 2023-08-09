@@ -48,6 +48,7 @@ export const collectionSchema = defineCollection({
   type: 'data',
   schema: z.object({
     name: z.string(),
+    type: z.enum(['Person', 'Organization']), // https://schema.org/Person // https://schema.org/Organization
 
     bluesky: z.string().url().optional(),
     discord: z.string().url().optional(),

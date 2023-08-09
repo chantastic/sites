@@ -1,17 +1,19 @@
 ---
-import { ViewTransitions } from 'astro:transitions';
+import { ViewTransitions } from "astro:transitions";
 import GoogleFonts from "@components/header-google-fonts.astro";
 import GlobalStyles from "@components/header-global-styles.astro";
 import HeadAnalytics from "@components/head-analytics.astro";
 import BodyHidden from "@components/body-hidden.astro";
 import site from "@src/metadata.json";
 import type * as POSTS from "@pages/posts/posts";
+import { url } from "@modules/site";
 
 interface Props {
-  entry?: POSTS.CollectionEntry;
+  entry: POSTS.CollectionEntry;
 }
 
 const { entry } = Astro.props;
+let content = await entry?.render();
 ---
 
 <!DOCTYPE html>
@@ -37,9 +39,81 @@ const { entry } = Astro.props;
       </title>
     </slot>
     <ViewTransitions />
+    {
+      entry?.collection === "posts" && (
+        <>
+          <script
+            type="application/ld+json"
+            set:html={JSON
+              .stringify
+              //   {
+              //   "@context": "http://schema.org",
+              //   "@type": "WebPage",
+              //   name: entry.title,
+              //   // image,
+              //   // url,
+              //   url: url(entry.slug),
+              // }
+              // how do i reference types (for publisher)?
+              ({
+                "@context": "https://schema.org",
+                "@type": "BlogPosting",
+                headline: entry.data.title,
+                // image: "https://benborgers.com/assets/json-ld.png",
+                publisher: {
+                  "@type": "Organization",
+                  name: "chantastic, llc",
+                  url: "https://chan.dev",
+                  // logo: {
+                  //   "@type": "ImageObject",
+                  //   url: "https://benborgers.com/assets/index.png",
+                  //   width: "1200",
+                  //   height: "630",
+                  // },
+                },
+                url: url(entry.slug),
+                datePublished: entry.data.publishDate,
+                // dateCreated: "2020-01-06T00:00:00.000Z",
+                // dateModified: "2020-01-06T00:00:00.000Z",
+                description: entry.data.description,
+                author: {
+                  "@type": "Person",
+                  name: "chantastic",
+                  url: "https://chan.dev",
+                },
+                mainEntityOfPage: {
+                  "@type": "WebPage",
+                  "@id": "https://chan.dev",
+                },
+              })}
+          />
+        </>
+      )
+    }
   </head>
   <body style="padding: 1rem" id="body">
     <slot />
+    <!-- {
+      content?.headings &&
+        Boolean(
+          content.headings?.filter(
+            (heading) => heading.slug === "contents"
+          ).length
+        ) && (
+          <aside
+            class="prose"
+            style="position: fixed; display:flex; inset-inline-end: 0; top: 0; right: 0;"
+          >
+            <ul>
+              {content.headings.map(({ depth, slug, text }) => (
+                <li data-id={slug} data-depth={depth}>
+                  <a href={`#${slug}`}>{text}</a>
+                </li>
+              ))}
+            </ul>
+          </aside>
+        )
+    } -->
     <BodyHidden />
   </body>
 </html>
