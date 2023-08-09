@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>React playground</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module">
+      import ReactDOM from "https://esm.sh/react-dom@18.2.0";
+      import React from "https://esm.sh/react@18.2.0";
+
+      let reactElement = React.createElement(MyComponent, {
+        children: [
+          false,
+          true,
+          "1",
+          2,
+          [3],
+          4.0,
+          (() => "5")(),
+          null,
+          undefined,
+        ],
+      });
+
+      function MyComponent({ children, ...props }) {
+        const result = [];
+        React.Children.forEach(children, (child, index) => {
+          result.push(child);
+          result.push(React.createElement("hr", { key: index }));
+        });
+
+        return React.createElement("span", props, result);
+      }
+
+      let domNode = document.getElementById("root");
+      ReactDOM.createRoot(domNode).render(reactElement);
+    </script>
+  </body>
+</html>
