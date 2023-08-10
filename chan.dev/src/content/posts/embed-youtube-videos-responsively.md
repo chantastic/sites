@@ -2,6 +2,7 @@
 title: Embed YouTube videos responsively
 description: Embed YouTube videos into personal sites with a responsive container that plays nice in flex and grid layouts.
 date: 2023-07-12
+tags: [youtube]
 ---
 
 YouTube makes it easy to copy-paste a video embed.

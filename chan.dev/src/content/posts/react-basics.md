@@ -1,17 +1,21 @@
 ---
 title: React Basics
-# resources
-references:
-  - https://react.dev/
+publishDate: 2023-08-09
+# TODOS:
+# - [ ] Add interactive sandboxes for folks that want to jump in
+# - [ ] Add hints to each step
+# - [ ] A video on props
+# - [ ] Build a few simple components (come up with examples)
 ---
 
 ## Contents
 
-## Add React anywhere!
+## Put React anywhere!
 
-<!-- React can be added to any page on the internet.
+React is "just JavaScript".
+Add it to any page on the internet.
 
-Start with an HTML template like this: -->
+Start with a simple HTML page like this:
 
 ```html
 <!-- my-page.html -->
@@ -25,14 +29,10 @@ Start with an HTML template like this: -->
 </html>
 ```
 
-## Add a script and connect it to an DOM node
+## Connect a `script` with a single DOM node
 
-<!-- JavaScript needs a way of updating our HTML document.
-We can make that link by creating a DOM node that can be controlled by JavaScript.
-
-1. Add an element with an id (conventionally `root`)
-2. Add a [script tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script)
-3. In your script, capture a reference to the `root` we want to control with JavaScript -->
+React needs a bridge between JavaScript and the DOM.
+Create a DOM node and query for it in a JavaScript script.
 
 ```diff lang="html" {10, 12, 14}
 <!DOCTYPE html>
@@ -51,15 +51,18 @@ We can make that link by creating a DOM node that can be controlled by JavaScrip
 +    </script>
   </body>
 </html>
-
 ```
 
-## Use script type module
+_Reference: [HTML-only template from React Docs](https://react.dev/learn/installation#try-react-locally), react.dev. Updated for ES Modules._
 
-<!-- `script` elements can have multiple different types.
-We need to specify `type="module"` so that we can import other libraries from the internet. -->
+## Use modern ES Modules
 
-```diff title="my-page.html > body" lang="html" ins=/ type="module"/ {3}
+The browser has progressed a lot in a decade.
+Specifying `type="module"` on script tags to use modern JavaScript imports.
+
+_Reference: [Applying the module to your HTML](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules#applying_the_module_to_your_html), MDN._
+
+```diff lang="html" ins=/ type="module"/ {3}
 <body>
   <div id="root"></div>
   <!-- Specify type module -->
@@ -70,45 +73,53 @@ We need to specify `type="module"` so that we can import other libraries from th
 </body>
 ```
 
-<!-- **(The following examples will only show `body>script` context.)** -->
-
 ## Import the `react-dom` module
 
-<!-- With a `script[type=module]`, we can import JavaScript modules from the internet.
-Use the service [esm.sh] to import the `react-dom` package (version `18+`). -->
+Services like [esm.sh][] allow us to import JavaScript modules from a CDN — no bundling 🥳.
+Import the `react-dom` module from the esm.sh.
 
-```diff title="my-page.html > body > script" lang="js" {1}
+```diff lang="js" {1}
 // Import `react-dom@18` from esm.sh
 +import ReactDOM from "https://esm.sh/react-dom@18.2.0";
 let domNode = document.getElementById('root');
 ```
 
-<!-- React is a multi-platform framework.
-`ReactDOM` is the library that adapts the React library for the web.
+_Reference: [import API reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import), MDN._
 
-_([esm.sh](https://esm.sh/) is an online server that re-packages [npm](https://www.npmjs.com/) packages for use in `script` modules.)_ -->
+## Prepare the root DOM node with `ReactDOM`
 
-## Register root element with ReactDOM
+React needs to set up event handlers the root DOM node.
+Prepare the root DOM node with `ReactDOM.createRoot()`.
 
-```diff title="my-page.html > body > script" lang="js" {3}
+```diff lang="js" {3}
 import ReactDOM from "https://esm.sh/react-dom@18.2.0";
 let domNode = document.getElementById('root');
 // Register root element with ReactDOM
 +ReactDOM.createRoot(domNode);
 ```
 
+_Reference: [React.createRoot API reference](https://react.dev/reference/react-dom/client/createRoot), react.dev._
+
 ## Render plain text to React root
 
-```diff title="my-page.html > body > script" lang="js" ins=/.render("Hello ReactDOM")/
+At this point we can render plain text to the React root.
+Render "Hello ReactDOM" to the React root.
+
+```diff lang="js" ins=/.render("Hello ReactDOM")/
 import ReactDOM from "https://esm.sh/react-dom@18.2.0";
 let domNode = document.getElementById('root');
 // Render plain text to React root
 +ReactDOM.createRoot(domNode).render("Hello ReactDOM");
 ```
 
+_Reference: [render API reference](https://react.dev/reference/react-dom/client/createRoot#root-render), react.dev._
+
 ## Import `react` and create a React element
 
-```diff title="my-page.html > body > script" lang="js"
+Next we need React to create React elements and components.
+Import `react` and create a React element with `React.createElement()`.
+
+```diff lang="js"
 import ReactDOM from "https://esm.sh/react-dom@18.2.0";
 +import React from "https://esm.sh/react@18.2.0";
 +let reactElement = React.createElement("h1", {}, "Hello React");
@@ -116,56 +127,82 @@ let domNode = document.getElementById('root');
 ReactDOM.createRoot(domNode).render("Hello ReactDOM");
 ```
 
-## Render React element to React root
+_Reference: [createElement API reference](https://react.dev/reference/react/createElement), react.dev._
 
-```diff title="my-page.html > body > script" lang="js" del=/"Hello ReactDOM"/ /reactElement/
-// ...import react and react-dom...
+## Render a React element to React root
+
+With a React element, we can render it to the React root.
+Replace the rendered `"Hello ReactDOM"` text with our new React element.
+
+```diff lang="js" {4} del=/"Hello ReactDOM"/ / (reactElement)/ ins=/"(reactElement)/
+/* …react and react-dom imports… */
 let reactElement = React.createElement("h1", {}, "Hello React");
 let domNode = document.getElementById('root');
+// render the React element to the React root
 ReactDOM.createRoot(domNode).render("Hello ReactDOM"reactElement);
 ```
 
+_Reference: [What is a React element, exactly?](https://react.dev/reference/react/createElement#what-is-a-react-element-exactly), react.dev._
+
 ## Extract a React component
 
-<!-- Components are just function that Return `React.createElement` calls. -->
+React components are just functions that return React elements.
+Declare a new component and use it to create our React element.
 
-```diff title="my-page.html > body > script" lang="js" /"h1", {}, "Hello React Component"/ /MyComponent/
-// ...import react and react-dom...
+```diff lang="js" {2,5} del=/"h1", {}, "Hello React"/ ins=/"h1", {}, "Hello React Component"/ ins=/MyComponent/
 let domNode = document.getElementById("root");
--let reactElement = React.createElement("h1", {}, "Hello React Component");
+// 2. Create a React element from a the new component
+-let reactElement = React.createElement("h1", {}, "Hello React");
 +let reactElement = React.createElement(MyComponent);
+// 1. Declare a new component
 +function MyComponent() {
 +  return React.createElement("h1", {}, "Hello React Component");
 +}
 ReactDOM.createRoot(domNode).render(reactElement);
 ```
 
+_Reference: [Your first component](https://react.dev/learn/your-first-component), react.dev._
+
 ## Pass custom props to components
 
-```diff title="my-page.html > body > script" lang="js" ins=/props.name/ ins=/props/ ins=/, { name: "React Rally" }/
-// ...import react and react-dom...
+Static components, like static functions, are not useful.
+Pass a `name` prop to the React component and interpolate its value into the React element.
+
+```diff lang="js" {1,3} ins=/[$]{props.name}/ ins=/[(](props)/ ins=/,\s+{ name: "React Rally" }/ del=/React Component/
+// 1. provide a prop object to the React component
 let reactElement = React.createElement(MyComponent, { name: "React Rally" });
+// 2. accept props
 function MyComponent(props) {
-  return React.createElement("h1", {}, `Hello ${props.name}`);
+  return React.createElement(
+    "h1",
+    {},
+    `Hello React Component${props.name}`
+  );
 }
 let domNode = document.getElementById("root");
 ReactDOM.createRoot(domNode).render(reactElement);
 ```
 
+_Reference: [Passing props to a component](https://react.dev/learn/passing-props-to-a-component), react.dev._
+
 ## Pass common props to components
 
-```diff title="my-page.html > body > script" lang="js" ins=/ id: "my_app",/ ins=/ id: props.id /
-// ...import react and react-dom...
+In addition to custom props, React components accept common props.
+Pass an `id` prop to the React component and apply it to the React element.
+
+```diff lang="js" {4,12} ins=/ id: "my_app",/ ins=/ id: props.id /
 let reactElement = React.createElement(
   MyComponent,
   {
-    id: "my_app",
+    // 1. define id prop
++    id: "my_app",
     name: "React Rally"
   }
 );
 function MyComponent(props) {
   return React.createElement(
     "h1",
+    // 2. apply the id prop to the React element
     { id: props.id },
     `Hello ${props.name}`
   );
@@ -174,23 +211,26 @@ let domNode = document.getElementById("root");
 ReactDOM.createRoot(domNode).render(reactElement);
 ```
 
-## Many common props use "DOM standard" names
+_Reference: [Common component props](https://react.dev/reference/react-dom/components/common#common-props), react.dev._
 
-<!-- - `class` => `className`
-- `for` => `htmlFor` -->
+## Some common props use "standard DOM" names
 
-```diff title="my-page.html > body > script" lang="js" ins=/className: "my-css-class-selector",/ ins=/ className: props.className /
-// ...import react and react-dom...
+Not all common props use common HTML attributes.
+Apply the `class` HTML attribute to React elements using the DOM property name `className`.
+
+```diff lang="js" {4,12} ins=/"my-css-class-selector",/ ins=/ className: props.className /
 let reactElement = React.createElement(
   MyComponent,
   {
-    className: "my-css-class-selector",
+    // 1. define class selectors using the className prop
++    className: "my-css-class-selector",
     name: "React Rally"
   }
 );
 function MyComponent(props) {
   return React.createElement(
     "h1",
+    // 2. apply the className prop to the React element
     { className: props.className },
     `Hello ${props.name}`
   );
@@ -199,28 +239,23 @@ let domNode = document.getElementById("root");
 ReactDOM.createRoot(domNode).render(reactElement);
 ```
 
+_Reference: [Element: className property](https://developer.mozilla.org/en-US/docs/Web/API/Element/className), MDN._
+
 ## Use objects instead of strings for the `style` prop
 
-<!-- ```html
-"color: red; background-color: black;"
-```
+Unlike HTML, the `style` prop requires an object instead of a string.
+Apply the `style` prop to React elements using an object with camelCased CSS properties.
 
-```js
-{
-  color: "red",
-  backgroundColor: "black"
-}
-``` -->
-
-```diff lang="js" title="my-page.html > body > script" ins=/style: { color: "red", backgroundColor: "black" },/ ins=/ style: props.style /
-// ...import react and react-dom...
+```diff lang="js" {2,9} ins=/{ color: "red", backgroundColor: "black" }/ ins=/ style: props.style /
 let reactElement = React.createElement(MyComponent, {
-  style: { color: "red", backgroundColor: "black" },
+  // 1. define styles using object and camelCased CSS properties
++  style: { color: "red", backgroundColor: "black" },
   name: "React Rally",
 });
 function MyComponent(props) {
   return React.createElement(
     "h1",
+    // 2. apply the style prop to the React element
     { style: props.style },
     `Hello ${props.name}`
   );
@@ -229,17 +264,23 @@ let domNode = document.getElementById("root");
 ReactDOM.createRoot(domNode).render(reactElement);
 ```
 
+_Reference: [Special component props](https://react.dev/reference/react-dom/components/common#common-props), react.dev._
+
 ## Use camelCase for all multi-word common props and properties
 
-```diff title="my-page.html > body > script" lang="js" ins=/onClick: / ins=/ onClick: props.onClick /
-// ...import react and react-dom...
+React does not use attribute style event names.
+Add a click handler using the camelCased `onClick` prop and a function.
+
+```diff lang="js" {2,9} ins=/onClick: / ins=/ onClick: props.onClick /
 let reactElement = React.createElement(MyComponent, {
-  onClick: () => alert("heading clicked"),
+  // 1. define the onClick prop and pass a function
++  onClick: () => alert("heading clicked"),
   name: "React Rally",
 });
 function MyComponent(props) {
   return React.createElement(
     "h1",
+    // 2. apply the onClick prop to the React element
     { onClick: props.onClick },
     `Hello ${props.name}`
   );
@@ -248,17 +289,26 @@ let domNode = document.getElementById("root");
 ReactDOM.createRoot(domNode).render(reactElement);
 ```
 
-## Use object rest to separate custom props from common props
+_Reference: [Common component props](https://react.dev/reference/react-dom/components/common#common-props), react.dev._
 
-```diff title="my-page.html > body > script" lang="js" del=/props/ ins=/{ name, ...restProps }/ del=/{ onClick: props.onClick }/ ins=/restProps/ del=/props./
+## Use object rest syntax to separate custom props from common props
+
+Writing `props` before using every value is tedious.
+Use object rest syntax to create variables for custom props and collect the rest into a new object.
+
+```diff lang="js" {5-6, 10, 12} del=/props/ ins=/{ name, ...restProps }/ del=/{ onClick: props.onClick }/ ins=/restProps/ del=/props./
 let reactElement = React.createElement(MyComponent, {
   onClick: () => alert("heading clicked"),
   name: "React Rally",
 });
+// 1. create variables for prop names we want to access
+// 2. assign the remainer key-values (rest) to an object
 function MyComponent(props{ name, ...restProps }) {
   return React.createElement(
     "h1",
+    // 3. send the entire rest object to createElement
     { onClick: props.onClick }restProps,
+    // 4. use the `name` variable instead of object property access
     `Hello ${props.name}`
   );
 }
@@ -266,34 +316,35 @@ let domNode = document.getElementById("root");
 ReactDOM.createRoot(domNode).render(reactElement);
 ```
 
-<!-- Resources:
+_Reference: [Object rest spread](https://v8.dev/features/object-rest-spread), v8.dev._
 
-- [Object rest](https://v8.dev/features/object-rest-spread)
-- [React props and Stand DOM props](https://react.dev/reference/react-dom/components/common#common-props) -->
+## **Quick reference videos**
 
-<!-- ## Props on common components
+Check out these videos for a quick reference on what we've covered here
 
-[https://react.dev/reference/react-dom/components/common#common-props](https://react.dev/reference/react-dom/components/common#common-props)
+<div class="flex flex-wrap">
+  <div class="w-1/2">
+    <iframe
+      width="315"
+      height="560"
+      src="https://www.youtube.com/embed/1lAlZN3OImY"
+      title="YouTube video player"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen
+    ></iframe>
+  </div>
+  <div class="w-1/2">
+    <iframe
+      width="315"
+      height="560"
+      src="https://www.youtube.com/embed/iAvix-05ew0"
+      title="YouTube video player"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen
+    ></iframe>
+  </div>
+</div>
 
-## Special react props on common components
-
-https://react.dev/reference/react-dom/components/common#common-props
-
-- `children`
-- `dangerouslySetInnerHTML`
-- `ref`
-- `style`
-
-DOM standard:
-
-- `className`
-- `htmlFor`
-
-Rule, everything is camelcased
-
-- `onClick`
-- `onFocus`
-- `onMouseEnter`
-- `onChange`
-- `onBlur`
-- etc -->
+[esm.sh]: https://esm.sh

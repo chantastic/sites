@@ -1,5 +1,6 @@
 ---
 title: How to Embed YouTube Shorts
+tags: [youtube]
 ---
 
 Embedding YouTube Shorts is the same as embedding any other YouTube video.  
@@ -55,10 +56,10 @@ I guess we have to flip the hard-coded aspect ratio too:
 
 ```diff lang="html" "315" "560"
 <iframe
--  width="315"
-+  width="560"
--  height="560"
-+  height="315"
+-  width="560"
++  width="315"
+-  height="315"
++  height="560"
   src="https://www.youtube.com/embed/RvYvyzsnFm8"
   title="YouTube video player"
   frameborder="0"
