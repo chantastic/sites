@@ -8,7 +8,6 @@ import { url } from "@modules/site";
 import { micromark } from "micromark";
 import { gfm, gfmHtml } from "micromark-extension-gfm";
 
-
 export async function getStaticPaths() {
   const posts = await POSTS.getCollection(() => true);
 
@@ -42,7 +41,9 @@ const simpleHTMLBody = micromark(entry.body, {
       ⇠ <a href={`/${entry.slug}`}>Back to main post</a>
     </small>
     <main class="mt-4 prose-xl p-12 py-40">
-      <h1 class="tracking-tight" style="font-size: 1.25em">{entry.data.title}</h1>
+      <h1 class="tracking-tight" style="font-size: 1.25em">
+        {entry.data.title}
+      </h1>
       <div set:html={simpleHTMLBody} />
     </main>
     <footer>
@@ -81,3 +82,45 @@ const simpleHTMLBody = micromark(entry.body, {
     <link rel="canonical" href={url(entry.slug)} />
   </PostMeta>
 </Layout>
+
+<script>
+  function swapImageSourceToRawGitHub() {
+    let nodes = document.querySelectorAll("img");
+
+    nodes.forEach((node) => {
+      function getUsableSource(src: string) {
+        // KLUDGE: no idea why the directory is doubling up but i need to remove it
+        let [head, ...segments] = new URL(src).pathname
+          .split("/")
+          .filter(Boolean);
+        console.log(segments);
+        if (head === segments[0]) {
+          return segments.join("/");
+        } else {
+          return [head, ...segments].join("/");
+        }
+      }
+
+      const github_content_url = new URL(
+        `chantastic/sites/main/chan.dev/src/content/posts/${getUsableSource(
+          node.src
+        )}`,
+        "https://raw.githubusercontent.com/"
+      );
+
+      node.src = github_content_url.toString();
+    });
+  }
+
+  function main() {
+    document.addEventListener(
+      "astro:load",
+      () => {
+        swapImageSourceToRawGitHub();
+      },
+      { once: true }
+    );
+  }
+
+  main();
+</script>
