@@ -286,6 +286,25 @@ function useWindowResize(handleResize) {
   });
 }
 
+const ExpandedContext = React.createContext();
+const ContentHeightContext = React.createContext();
+
+function ShowMoreButton() {
+  let [expanded, setExpanded] = React.useContext(ExpandedContext);
+  let [contentHeight, setContentHeight] =
+    React.useContext(ContentHeightContext);
+
+  return (
+    <>
+      {contentHeight > 100 && (
+        <button onClick={() => setExpanded(!expanded)}>
+          Show {expanded ? "less" : "more"}
+        </button>
+      )}
+    </>
+  );
+}
+
 function ShowMore({ children }) {
   let [expanded, setExpanded] = React.useState(true);
   let [contentHeight, setContentHeight] = React.useState();
@@ -312,23 +331,24 @@ function ShowMore({ children }) {
   useWindowResize(handleResize);
 
   return (
-    <div>
-      <div
-        ref={contentRef}
-        style={{
-          maxHeight: expanded ? contentHeight : "100px",
-          overflow: "hidden",
-          transition: "all .5s ease",
-        }}
-      >
-        {children}
-      </div>
-      {contentHeight > 100 && (
-        <button onClick={() => setExpanded(!expanded)}>
-          Show {expanded ? "less" : "more"}
-        </button>
-      )}
-    </div>
+    <ExpandedContext.Provider value={[expanded, setExpanded]}>
+      <ContentHeightContext.Provider value={[contentHeight, setContentHeight]}>
+        <div>
+          <div
+            ref={contentRef}
+            style={{
+              maxHeight: expanded ? contentHeight : "100px",
+              overflow: "hidden",
+              transition: "all .5s ease",
+            }}
+          >
+            {children}
+          </div>
+          {/* {contentHeight > 100 && <ShowMoreButton />} */}
+          <ShowMoreButton />
+        </div>
+      </ContentHeightContext.Provider>
+    </ExpandedContext.Provider>
   );
 }
 

@@ -418,109 +418,7 @@ function ShowMore({ children }) {
 
 _References: [useEffect hook reference](https://react.dev/reference/react/useEffect), react.dev._
 
-<!-- - _[A Complete Guide to useEffect](https://overreacted.io/a-complete-guide-to-useeffect/), Dan Abramov._ -->
-
 ---
-
-<!-- ## Query the DOM and write to the style object using `React.useEffect`
-
-```jsx del={16} del=/maxHeight.+,/ ins={6-10} ins=/maxHeight.+;/
-function ShowMore({ children }) {
-  let [expanded, setExpanded] = React.useState(true);
-
-  let contentRef = React.useRef(null);
-
-  React.useEffect(() => {
-    if (contentRef.current) {
-      contentRef.current.style.maxHeight = expanded ? `none` : `100px`;
-    }
-  });
-
-  return (
-    <div>
-      <div
-        style={{
-          maxHeight: expanded ? "none" : "100px",
-          transition: "all .3s ease",
-          overflow: "hidden",
-        }}
-        ref={contentRef}
-      >
-        {children}
-      </div>
-      <button
-        onClick={() => {
-          setExpanded(!expanded);
-          console.log(contentRef.current.scrollHeight);
-        }}
-      >
-        Show {expanded ? "less" : "more"}
-      </button>
-    </div>
-  );
-}
-``` -->
-
-<!-- ## Memoize useEffect by providing a dependencies array
-
-```jsx ins={10} ins=/ (.expanded.)[)]/
-function ShowMore({ children }) {
-  let [expanded, setExpanded] = React.useState(true);
-
-  let contentRef = React.useRef(null);
-
-  React.useEffect(() => {
-    if (contentRef.current) {
-      contentRef.current.style.maxHeight = expanded ? `none` : `100px`;
-    }
-  }, [expanded]);
-
-  return (
-    <div>
-      <div
-        style={{
-          maxHeight: expanded ? "none" : "100px",
-          transition: "all .3s ease",
-          overflow: "hidden",
-        }}
-        ref={contentRef}
-      >
-        {children}
-      </div>
-      {(contentRef.current && contentRef.current.scrollHeight) > 100 && (
-        <button
-          onClick={() => {
-            setExpanded(!expanded);
-          }}
-        >
-          Show {expanded ? "less" : "more"}
-        </button>
-      )}
-    </div>
-  );
-}
-```
-
-Reference: [Why you shouldn't put refs in a dependency array](https://epicreact.dev/why-you-shouldnt-put-refs-in-a-dependency-array/) -->
-
-<!-- ## Switching from useEffect to useLayoutEffect for UI Updates
-
-Differentiate between `useEffect` and `useLayoutEffect` and determine the right scenarios for each.
-
-```diff lang="js" {2,14}
-- import React, { useState, useRef, useEffect } from 'react';
-+ import React, { useState, useRef, useLayoutEffect } from 'react';
-
-...
-- useEffect(() => {
-+ useLayoutEffect(() => {
-    ...
-  }, [isExpanded, collapsedHeight]);
-```
-
-_Reference: [useLayoutEffect Hook](https://reactjs.org/docs/hooks-reference.html#uselayouteffect), React Docs._
-
---- -->
 
 ## Hide button if below height threshhold
 
@@ -812,7 +710,10 @@ _Reference: [Context.Provider component reference](https://react.dev/reference/r
 
 ---
 
-## Consume Context
+## Consume Context with `useContext`
+
+Contexts are consumed in components with the `useContext` hook.
+Create a new component that consumes the `ExpandedContext` and renders the `expanded` state.
 
 ```jsx ins={1-5}
 function ShowMoreButton() {
@@ -822,128 +723,155 @@ function ShowMoreButton() {
 }
 ```
 
+_Reference: [useContext hook reference](https://react.dev/reference/react/useContext), react.dev._
+
 ---
 
-## Provide value and updater on Context
+## Provide value and set function on Context
 
-```diff lang="jsx" del={19, 38} ins={20, 39, 43-45} del=// ins=//
-let ExpandedContext = React.createContext();
+For actions — like buttons — the components need access to state values **and** set functions.
+Modify the Context `Provider` and `useContext` consumer to use an array: `[expanded, setExpanded]`.
+
+```diff lang="jsx" ins=/ShowMoreButton/ ins=/setExpanded/
+const ExpandedContext = React.createContext();
+
+function ShowMoreButton() {
+-  let expanded = React.useContext(ExpandedContext);
++  let [expanded, setExpanded] = React.useContext(ExpandedContext);
+
+  return (
+-    <button>
++    <button onClick={() => setExpanded(!expanded)}>
+      Show {expanded ? "less" : "more"}
+    </button>
+  );
+}
 
 function ShowMore({ children }) {
   let [expanded, setExpanded] = React.useState(true);
-  let [overflowing, setOverflowing] = React.useState(false);
+  let [contentHeight, setContentHeight] = React.useState();
 
-  let contentRef = React.useRef(null);
+  const contentRef = React.useRef(null);
 
   React.useEffect(() => {
-    if (contentRef.current) {
-      contentRef.current.style.maxHeight = expanded
-        ? `${contentRef.current.scrollHeight}px`
-        : `100px`;
-      setOverflowing(contentRef.current.scrollHeight > 100);
-    }
-  }, [expanded, overflowing]);
+    setContentHeight(contentRef.current.scrollHeight);
+  });
+
+  let handleResize = debounce(function () {
+    setContentHeight(contentRef.current.scrollHeight);
+    console.log("resizing…");
+  });
+
+  React.useEffect(() => {
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  });
+
+  useWindowResize(handleResize);
 
   return (
 -    <ExpandedContext.Provider value={expanded}>
 +    <ExpandedContext.Provider value={[expanded, setExpanded]}>
       <div>
         <div
-          style={{
-            transition: "all .3s ease",
-            overflow: "hidden",
-          }}
           ref={contentRef}
+          style={{
+            maxHeight: expanded ? contentHeight : "100px",
+            overflow: "hidden",
+            transition: "all .5s ease",
+          }}
         >
           {children}
         </div>
-        {overflowing && <ShowMoreButton />}
++        {contentHeight > 100 && <ShowMoreButton />}
       </div>
     </ExpandedContext.Provider>
   );
 }
-
-function ShowMoreButton() {
-  let expanded = React.useContext(ExpandedContext);
-  let [expanded, setExpanded] = React.useContext(ExpandedContext);
-
-  return (
-    <button
-      onClick={() => {
-        setExpanded(!expanded);
-      }}
-    >
-      Show {expanded ? "less" : "more"}
-    </button>
-  );
-}
 ```
 
 ---
 
-## (repeat the process for overflowing)
+## Repeat for any required Contexts
 
-```diff lang="jsx" ins=/OverflowingContext/
-let ExpandedContext = React.createContext();
-+let OverflowingContext = React.createContext();
+```diff lang="jsx" ins=/ContentHeightContext/
+const ExpandedContext = React.createContext();
++const ContentHeightContext = React.createContext();
+
+function ShowMoreButton() {
+  let [expanded, setExpanded] = React.useContext(ExpandedContext);
++  let [contentHeight, setContentHeight] =
++    React.useContext(ContentHeightContext);
+
+  return (
++    <>
++      {contentHeight > 100 && (
+        <button onClick={() => setExpanded(!expanded)}>
+          Show {expanded ? "less" : "more"}
+        </button>
++      )}
++    </>
+  );
+}
 
 function ShowMore({ children }) {
   let [expanded, setExpanded] = React.useState(true);
-  let [overflowing, setOverflowing] = React.useState(false);
+  let [contentHeight, setContentHeight] = React.useState();
 
-  let contentRef = React.useRef(null);
+  const contentRef = React.useRef(null);
 
   React.useEffect(() => {
-    if (contentRef.current) {
-      contentRef.current.style.maxHeight = expanded
-        ? `${contentRef.current.scrollHeight}px`
-        : `100px`;
-      setOverflowing(contentRef.current.scrollHeight > 100);
-    }
-  }, [expanded, overflowing]);
+    setContentHeight(contentRef.current.scrollHeight);
+  });
+
+  let handleResize = debounce(function () {
+    setContentHeight(contentRef.current.scrollHeight);
+    console.log("resizing…");
+  });
+
+  React.useEffect(() => {
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  });
+
+  useWindowResize(handleResize);
 
   return (
     <ExpandedContext.Provider value={[expanded, setExpanded]}>
-+      <OverflowingContext.Provider value={[overflowing]}>
++      <ContentHeightContext.Provider value={[contentHeight, setContentHeight]}>
         <div>
           <div
-            style={{
-              transition: "all .3s ease",
-              overflow: "hidden",
-            }}
             ref={contentRef}
+            style={{
+              maxHeight: expanded ? contentHeight : "100px",
+              overflow: "hidden",
+              transition: "all .5s ease",
+            }}
           >
             {children}
           </div>
--          {overflowing && <ShowMoreButton />}
-+          {<ShowMoreButton />}
+-          {/* {contentHeight > 100 && <ShowMoreButton />} */}
++          <ShowMoreButton />
         </div>
-+      </OverflowingContext.Provider>
++      </ContentHeightContext.Provider>
     </ExpandedContext.Provider>
-  );
-}
-
-function ShowMoreButton() {
-  let [expanded, setExpanded] = React.useContext(ExpandedContext);
-+  let [overflowing] = React.useContext(OverflowingContext);
-
-+  if (!overflowing) {
-+    return null;
-+  }
-
-  return (
-    <button
-      onClick={() => {
-        setExpanded(!expanded);
-      }}
-    >
-      Show {expanded ? "less" : "more"}
-    </button>
   );
 }
 ```
 
 ---
+
+Bonus:
+
+- Put this entire package into a re-usable module and rename accordingly
+- Improve accessibility of component
+<!--
 
 ## Add ARIA Attributes for Expandable Content
 
@@ -1066,4 +994,4 @@ Redirect focus when content is expanded to make navigation more intuitive for sc
 
 _Reference: [Managing Focus in Web Content](https://webaim.org/techniques/keyboard/focus), WebAIM._
 
----
+--- -->
