@@ -7,8 +7,8 @@ https://chan.dev/reactrally-react-intro/
 
 ## WIFI
 
-SSID: `Marriott Conference`
-Password: `CityCreek`
+SSID: `Marriott_CONFERENCE`
+Access Code: `CityCreek`
 
 <div className="fixed top-8 right-8 hidden lg:block">
 
