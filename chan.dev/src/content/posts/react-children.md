@@ -1,5 +1,6 @@
 ---
 title: React Children
+publishDate: 2023-08-16
 ---
 
 This tutorial experiments with the numerous ways we can provide (and misuse) the `children` prop in React.
