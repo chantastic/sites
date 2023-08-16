@@ -1,4 +1,15 @@
+- What are we fucking doing about posts?
+  - I really need to figure out sanitization and images across cross-post and RSS
 ## 2023-08-09
+
+PUBLISH NOTES:
+
+- links can't include code blocks
+- hackernoon doesn't like greater than 2:1 image crop (it's adding extra frame, cover image)
+- description isn't showing up in metadata
+- add copy/paste to each section
+- medium, drag to top to make it cover image
+- hackernoon doesn't support diffs
 
 Share page
 
@@ -18,9 +29,7 @@ Share page
   - /uses as `#Thing`
   - implement images for posts
 - `card.json` idea. but how does CORS work on static sites. try it?
--
-
----
+- ***
 
 TODO:
 

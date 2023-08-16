@@ -166,7 +166,6 @@ import { IconGallery, IconItem } from "@storybook/blocks"
 Place an icon inside `IconItem`.
 Then display that icon's name with the `name` prop.
 
-<!-- prettier-ignore -->
 ```diff lang="mdx" ins=/ name=".+"/
 + import * as Icons from "@storybook/icons";
 

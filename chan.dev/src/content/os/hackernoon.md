@@ -23,6 +23,7 @@ date: 2023-08-01
 
 **Notes:**
 
+- Code blocks are light gray ("and that's ok" — Nellie)
 - Requires post be reviewed before publish
 - Import feature doesn't support `.webp` images
 - Doesn't seem to auto save
