@@ -3,6 +3,13 @@ title: "React Rally 2023"
 publishDate: 2023-08-01
 ---
 
+https://chan.dev/reactrally-react-intro/
+
+## WIFI
+
+SSID: `Marriott Conference`
+Password: `CityCreek`
+
 <div className="fixed top-8 right-8 hidden lg:block">
 
   <div className="w-72">
