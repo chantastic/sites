@@ -40,7 +40,7 @@ module.exports = {
             },
             img: {
               borderRadius: "6px",
-              outline: "1px solid hsla(0, 0%, 0%, .25)",
+              // outline: "1px solid hsla(0, 0%, 0%, .25)",
             },
             ".expressive-code": {
               marginBlock: "24px",
