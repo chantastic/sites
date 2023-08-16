@@ -5,6 +5,10 @@ publishDate: 2023-08-01
 
 https://chan.dev/reactrally-react-intro/
 
+## Current (updated 2:30pm)
+- [Sandbox](https://codesandbox.io/s/show-more-component-3zy7pc)
+- [StackBlitz](https://stackblitz.com/edit/show-more-react?file=src%2FApp.js)
+
 ## WIFI
 
 SSID: `Marriott_CONFERENCE`
