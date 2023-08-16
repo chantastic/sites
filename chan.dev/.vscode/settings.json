@@ -1,5 +1,6 @@
 {
   "explorer.sortOrder": "mixed",
+  "editor.folding": true,
   // "editor.lineNumbers": "off",
   // "terminal.integrated.fontSize": 15,
   // "editor.fontSize": 16,
