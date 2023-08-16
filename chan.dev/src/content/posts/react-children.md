@@ -2,7 +2,14 @@
 title: React Children
 ---
 
+This tutorial experiments with the numerous ways we can provide (and misuse) the `children` prop in React.
+
 ## Contents
+
+## Sandboxes
+
+- [CodeSandbox](https://codesandbox.io/s/react-children-ncg78x?file=/src/index.html)
+- [Stackblitz](https://stackblitz.com/edit/js-sbbksd?file=index.js)
 
 ## Template
 
@@ -28,39 +35,53 @@ title: React Children
 
 ## Pass `children` as a single string (third argument)
 
-The only part we'll be changing here is the line where `React.createElement` is called.
-
-```html /"A single string"/
+```diff lang="js" ins=/"A single string"/
 let reactElement = React.createElement("span", {}, "A single string");
 ```
 
 ## Pass `children` as several strings (function overloading)
 
-```html /"Multiple", " strings", "."/
-let reactElement = React.createElement( "span", {}, "Multiple", " strings", "."
-);
-```
-
-## Pass `children` multiple children of mixed type
-
-```js
+```diff lang="js" /"Multiple", " strings", "."/
 let reactElement = React.createElement(
   "span",
   {},
-  false,
-  true,
-  "1",
-  2,
-  [3],
-  4.0,
-  (() => "5")(),
-  null,
-  undefined
+-  "A single string"
++  "Multiple",
++  " strings",
++  "."
 );
 ```
 
-_Objects (and related complex types like `Date` will result in an error._
-_Note how the array flattens_
+## Pass `children` pass in a single array
+
+```diff lang="js" /"Multiple", " strings", "."/
+let reactElement = React.createElement(
+  "span",
+  {},
++  [
+    "Multiple",
+    " strings",
+    "."
++  ]
+);
+```
+
+## Pass `children` pass in nested arrays
+
+```diff lang="js" /"Multiple", " strings", "."/
+let reactElement = React.createElement(
+  "span",
+  {},
+  [
+-    "Multiple",
+-    " strings",
+-    "."
++    ["All "],
++    ["arrays ", ["will "]],
++    [[["be "], "flattened"], "."],
+  ]
+);
+```
 
 ## Pass `children` pass in a single array
 
@@ -78,81 +99,43 @@ let reactElement = React.createElement("span", {}, [
 ]);
 ```
 
-_Objects (and related complex types like `Date` will result in an error._
+_Objects (and related complex types like `Date`) will result in an error._
 
-## Pass `children` as deeply nested array
+## Pass `children` as a named prop
 
-```js
-let reactElement = React.createElement("span", {}, [
-  ["All "],
-  ["arrays ", ["will "]],
-  [[["be "], "flattened"], "."],
-]);
-```
-
-_Objects (and related complex types like `Date` will result in an error._
-
-## Pass `children` as a prop
-
-```js
+```diff lang="js" ins=/children/
 let reactElement = React.createElement("span", {
-  children: "Same rules apply.",
++  children: "Same rules apply.",
 });
 ```
 
-<!-- makes no differences on the component side -->
+## Intercept `children` in React Components
 
-## Intercept `children` in components
-
-```js
+```diff lang="js" ins=/children/
 let reactElement = React.createElement("span", {
   children: "Same rules apply.",
 });
+
++function MyComponent({ children, ...props }) {
++  return React.createElement("span", props, children);
++}
+```
+
+## Count children with `React.Children.count`
+
+```diff lang="js" /React.Children.count/
 function MyComponent({ children, ...props }) {
-  return React.createElement("span", props, children);
+  return React.createElement(
+    "span",
+    props,
+    React.Children.count(children)
+  );
 }
 ```
 
-## Intercept `children` in components
+## Iterate over children with `Children.map`
 
-```js
-let reactElement = React.createElement("span", {
-  children: "Same rules apply.",
-});
-function MyComponent({ children, ...props }) {
-  return React.createElement("span", props, children);
-}
-```
-
----
-
-## Children.count(children)
-
-```js
-function MyComponent({ children, ...props }) {
-  return React.createElement("span", props, React.Children.count(children));
-}
-```
-
-<!-- try the privous examples f -->
-
-## Children.forEach(children, fn, thisArg?)
-
-```js
-function MyComponent({ children, ...props }) {
-  const result = [];
-  React.Children.forEach(children, (child, index) => {
-    result.push(child);
-    result.push(React.createElement("hr", { key: index }));
-  });
-
-  return React.createElement("span", props, result);
-}
-```
-
-## Children.map(children, fn, thisArg?)
-
-```js
+```diff lang="js" /React.Children.map/
 function RowList({ children }) {
   return (
     <div className="RowList">
@@ -164,15 +147,41 @@ function RowList({ children }) {
 }
 ```
 
-<!-- assumes opaque (could be array could not be) -->
+## Iterate and insert children with `Children.forEach`
 
-## Children.only(children)
+```diff lang="js" /React.Children.forEach/
+function MyComponent({ children, ...props }) {
+  const result = [];
+  React.Children.forEach(children, (child, index) => {
+    result.push(child);
+    result.push(React.createElement("hr", { key: index }));
+  });
 
+  return React.createElement("span", props, result);
+}
 ```
+
+## Ensure there is only one child with `Children.only`
+
+```js
 let isSingleReactElement = Children.only(children);
 ```
 
-## Children.toArray(children)
+## Convert children to array with `Children.toArray`
+
+```js /Children.toArray/
+function RowList({ children }) {
+  return (
+    <ul>
+      {Children.toArray(children, (child) => child)
+        .filter((child) => typeof child === "string")
+        .map((child) => (
+          <li>{child.toUpperCase()}</li>
+        ))}
+    </ul>
+  );
+}
+```
 
 Use this to manipulate the array.
-(filter, sort, reverse, etc.)
+(`filter`, `sort`, `reverse`, etc.)

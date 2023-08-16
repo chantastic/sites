@@ -99,7 +99,7 @@ I believe in you and am excited about what we'll learn together.
 |  **9:00** | Introduction                                                                                 |
 |           | [React Basics](https://chan.dev/react-basics/)                                               |
 |     10:30 | Break                                                                                        |
-| **11:00** | React Children and JSX                                                                       |
+| **11:00** | React Children and JSX, (with GPT)                                                           |
 |     12:00 | Lunch                                                                                        |
 |  **1:30** | [Show more component build — complete intro to React](https://chan.dev/show-more-component/) |
 |      3:00 | Break                                                                                        |
@@ -129,6 +129,7 @@ I believe in you and am excited about what we'll learn together.
 - Greeting
 - Shareable button
 - Timer
+- QR code gernerator
 - [Tic Tac Toe](https://react.dev/learn/tutorial-tic-tac-toe)
 
 ## Keep in touch!

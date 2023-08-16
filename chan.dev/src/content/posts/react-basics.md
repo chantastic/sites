@@ -15,8 +15,8 @@ It demonstratens simple implementations of `ReactDom`, `React Element`, `React C
 
 ## Online sandboxes
 
-- [CodeSandbox](https://codesandbox.io/s/react-basics-mdjsjf) <small>Used by me (Vim support)</small>
-- StackBlitz (HTML-only not supported)
+- [CodeSandbox](https://codesandbox.io/s/react-basics-fyf6mh?file=/src/index.mjs) <small>Used by me (Vim support)</small>
+- [StackBlitz](https://stackblitz.com/edit/js-3c8xnq?file=index.js)
 
 ## Put React anywhere!
 
