@@ -1,31 +1,70 @@
 ---
-title: Read More component
+title: Show More component
 tags:
   - react
   - react-hooks
   - tutorial
 ---
 
+This totorial is a complete guide to basic react hooks.
+It demonstratens simple implementations of `useState`, `useEffect`, `useRef`, `useContext`, and `useId` in a familiar, real-world component.
+
 ## Contents
 
-This totorial is a complete guidet to basic react hooks. It simple implementations `useState`, `useEffect`, `useRef` in a real-world component.
+## Online sandboxes
 
-## Create a Component that renders children and a "Read less" button
+- [CodeSandbox](https://codesandbox.io/s/show-more-react-8tnjy4?file=/src/App.js) <small>Used by me (Vim support)</small>
+- [StackBlitz](https://stackblitz.com/edit/show-more-react?file=src%2FApp.js)
 
-Let's get started.
-Create a Component that renders children and a "Read less" button
+<details>
+  <summary>Make your own</summary>
 
-_(If you're sure what this code does, visit my [React Basics](/react-basics) tutorial for a primer.)_
+Copy-paste this into your prefered React environment.
+Does not include bootstrapping with `React.creatRoot`.
+
+```jsx
+/* START HERE */
+function ShowMore(/* props */) {
+  return <div>🫵 YOUR IMPLEMENTATION 🫵</div>;
+}
+
+export default function App() {
+  return (
+    <ShowMore>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu purus
+      turpis. Nulla efficitur pulvinar dui id imperdiet. Nulla cursus nulla id
+      elit imperdiet commodo. Praesent ullamcorper eros quis maximus varius.
+      Integer pellentesque urna nulla, nec vestibulum leo malesuada quis.
+      Maecenas sit amet mauris eu diam blandit molestie bibendum sit amet
+      mauris. Nullam sed posuere lacus. Sed cursus bibendum turpis tincidunt
+      volutpat. Duis molestie volutpat urna, in rutrum ante rhoncus volutpat.
+      Maecenas a imperdiet dolor. Duis ut ex tincidunt, tincidunt velit in,
+      vehicula dolor. Suspendisse dictum porttitor massa. Cras pulvinar
+      ultricies lacus ut maximus. In gravida turpis purus, eu mattis odio
+      tincidunt eget.
+    </ShowMore>
+  );
+}
+```
+
+</details>
+
+## Create a component that renders children and a "Show less" button
+
+Let's start.
+Create a Component that renders `children` and a "Show less" button
+
+<small>_(If you're sure what this code does, visit my [React Basics](/react-basics) tutorial for a primer.)_</small>
 
 ```jsx {1, 5, 7}
-// 1. Create a component that destructures children from props
-function ReadMore({ children }) {
+// 1. Create a component that destructures `children` from props
+function ShowMore({ children }) {
   return (
     <div>
-      {/* 2. Render the children */}
+      {/* 2. Render the `children` */}
       <div>{children}</div>
-      {/* 3. Render a "Read less" button */}
-      <button>Read less</button>
+      {/* 3. Render a "Show less" button */}
+      <button>Show less</button>
     </div>
   );
 }
@@ -35,99 +74,159 @@ _Reference: [React Basics](https://chan.dev/react-basics), chan.dev._
 
 ---
 
-## Hold `expanded` state with `React.useState`
+## Conditionally render toggle text using a ternary operator
+
+The "Show more" button should read "Show less" when expanded.
+Add a condition around the button text so that it can be toggled.
+
+<small>_(Don't worry about state. Just activate it, manually, with `true` and `false`.)_</small>
+
+```diff lang="jsx" {7-8} del=/(less){/ ins=/{true .+}/
+function ShowMore({ children }) {
+  return (
+    <div>
+      <div>{children}</div>
+      {/* Conditionally render toggle text using a ternary operator. */}
+      <button>Show less{true ? "less" : "more"}</button>
+    </div>
+  );
+}
+```
+
+_Reference: [Conditional (ternary) Operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_operator), MDN._
+
+---
+
+## Manage `expanded` state with state with the `React.useState` hook
+
+The `React.useState` hook is how we manage UI state in React.
+Create a state, using a initial value. Then assign that state to a local variable by destructuring the returned array.
 
 <!-- Learn how to use the `useState` hook to manage the expansion state of the content. -->
 
-```diff lang="jsx" {2}
-function ReadMore({ children }) {
-  // Hold the expanded state with `useState`
-+  let [expanded] = React.useState(false);
+```diff lang="jsx" {2-3} ins=/expanded/
+function ShowMore({ children }) {
+  // 1. Track initial state using and provide an initial value
+  // 2. Assign it to a local variable by destructuring the returned array
++  let [expanded] = React.useState(true);
 
   return (
     <div>
       <div>{children}</div>
-      <button>Read less</button>
+      <button>Show {expanded ? "less" : "more"}</button>
     </div>
   );
 }
 ```
 
-<!-- _Reference: [useState Hook](https://reactjs.org/docs/hooks-state.html), React Docs._ -->
+_Reference:_
+
+- _[Destructuring Assignment](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment), MDN._
+- _[useState hook reference](https://react.dev/reference/react/useState), react.dev._
 
 ---
 
-## Conditionally Render content based on state using a ternary operator
+## Add an `onClick` event handler to the button
 
-```jsx lang="jsx" {7} del=/(less){/ ins=/{expanded .+}/
-function ReadMore({ children }) {
-  let [expanded] = React.useState(true);
-
-  return (
-    <div>
-      <div>{children}</div>
-      {/* Conditionally Render content based on state using a ternary operator. */}
-      <button>Read less{expanded ? "less" : "more"}</button>
-    </div>
-  );
-}
-```
-
----
-
-## Toggle State with a Button Click
+UI changes are activated by user input.
+Add an `onClick` event handler to the button and log the `expanded` state.
 
 <!-- Integrate the component's state with the button to allow toggling the content's visibility. -->
 
 ```diff lang="jsx" ins=/ onClick={.+}/
-function ReadMore({ children }) {
+function ShowMore({ children }) {
   let [expanded] = React.useState(true);
 
   return (
     <div>
       <div>{children}</div>
-      <button onClick={() => setExpanded(!expanded)}>
-        Read less{expanded ? "less" : "more"}
+      <button onClick={() => console.log(expanded)}>
+        Show {expanded ? "less" : "more"}
       </button>
     </div>
   );
 }
 ```
 
-<!-- _Reference: [Handling Events](https://reactjs.org/docs/handling-events.html), React Docs._ -->
+_Reference: [Responding to Events](https://react.dev/learn/responding-to-events), React Docs._
 
-## Take update function from useState (second argument)
+---
 
-```diff lang="jsx" ins=/, setExpanded/
-function ReadMore({ children }) {
+## Call `React.useState`'s update function with new state
+
+The second value that we get from `React.useState` is a state set function.
+Assign that function to a local variable by destructuring it from the returned array. Then call the set function in the button's `onClick` event handler.
+
+<small>_(To toggle the next state, invert the current state with `!` operator.)_</small>
+
+```diff lang="jsx" ins=/, setExpanded/ ins=/setExpanded/ ins=/!/
+function ShowMore({ children }) {
   let [expanded, setExpanded] = React.useState(true);
 
   return (
     <div>
       <div>{children}</div>
-      <button onClick={() => setExpanded(!expanded)}>
-        Read less{expanded ? "less" : "more"}
+-      <button onClick={() => console.log(expanded)}>
++      <button onClick={() => setExpanded(!expanded)}>
+        Show {expanded ? "less" : "more"}
       </button>
     </div>
   );
 }
 ```
 
+_Reference: [useState set functions referenc](https://react.dev/reference/react/useState#setstate), react.dev_
+
+---
+
+## Style the content container with a `style` prop
+
+Styles rules can be applied directly to elements using the `style` prop.  
+Style the collapsed state of the ShowMore component to be `100px` tall and hide overflowing content.
+
+<small>_(We want to animate this. So use `maxHeight` and set a `transition`.)_</small>
+
+```diff lang="jsx"
+function ShowMore({ children }) {
+  let [expanded, setExpanded] = React.useState(true);
+
+  return (
+    <div>
+      <div
++        style={{
++          maxHeight: "100px",
++          overflow: "hidden",
++          transition: "all .5s ease",
++        }}
+      >
+        {children}
+      </div>
+      <button onClick={() => setExpanded(!expanded)}>
+        Show {expanded ? "less" : "more"}
+      </button>
+    </div>
+  );
+}
+```
+
+_Reference: [Applying CSS style](https://react.dev/reference/react-dom/components/common#applying-css-styles), react.dev._
+
 ---
 
 ## Conditionally style content container based on state
 
-<!-- Dynamically apply CSS styles to the content based on the `isExpanded` state. -->
+Style rules can be set conditionally using the ternary operator.  
+Use a ternary to switch the `maxHeight` value from `100px` to `"none"` when `expanded`.
 
-```jsx ins={7-11}
-function ReadMore({ children }) {
+```diff lang="jsx"
+function ShowMore({ children }) {
   let [expanded, setExpanded] = React.useState(true);
 
   return (
     <div>
       <div
         style={{
-          maxHeight: expanded ? "none" : "100px",
++          maxHeight: expanded ? "none" : "100px",
           overflow: "hidden",
           transition: "all .5s ease",
         }}
@@ -135,12 +234,14 @@ function ReadMore({ children }) {
         {children}
       </div>
       <button onClick={() => setExpanded(!expanded)}>
-        Read less{expanded ? "less" : "more"}
+        Show {expanded ? "less" : "more"}
       </button>
     </div>
   );
 }
 ```
+
+<!-- TODO -->
 
 <!-- I'm a big fan of inlining state-derived styles -->
 <!-- We could be done here. state and style, real easy. but what if we want to add a nice transition with css? -->
@@ -150,17 +251,24 @@ function ReadMore({ children }) {
 
 <!-- _Reference: [React Styling](https://reactjs.org/docs/dom-elements.html#style), React Docs._ -->
 
-### Access content container's `scrollHeight` with `React.useRef`
+---
 
-```jsx ins={4, 20} ins=/(contentRef.+)[)]/
-function ReadMore({ children }) {
+## Access content container's `scrollHeight` with `React.useRef`
+
+`React.useRef` is used to access the DOM node rendered from a component.
+Create a `ref` object. Then pass it to an React element via the `ref` (special) prop.
+Finally, log out the value in the `onClick` button handler to verify.
+
+```diff lang="jsx" ins=/contentRef/ ins=/[(](contentRef.+)[)]/
+function ShowMore({ children }) {
   let [expanded, setExpanded] = React.useState(true);
 
-  const contentRef = useRef(null);
++  const contentRef = React.useRef(null);
 
   return (
     <div>
       <div
++        ref={contentRef}
         style={{
           maxHeight: expanded ? "none" : "100px",
           overflow: "hidden",
@@ -172,26 +280,152 @@ function ReadMore({ children }) {
       <button
         onClick={() => {
           setExpanded(!expanded);
-          console.log(contentRef.current.scrollHeight);
++          console.log(contentRef.current.scrollHeight);
         }}
       >
-        Read less{expanded ? "less" : "more"}
+        Show {expanded ? "less" : "more"}
       </button>
     </div>
   );
 }
 ```
 
-<!-- we're alerting just so we can see how it works. -->
-
-<!-- _Reference: [useRef Hook](https://reactjs.org/docs/hooks-reference.html#useref), React Docs._ -->
+_Reference: [useRef hook reference](https://reactjs.org/docs/hooks-reference.html#useref), react.dev._
 
 ---
 
-## Query the DOM and write to the style object using `React.useEffect`
+## Set `scrollHeight` of DOM node on button click
+
+Any state that we need to make rendering decisious should be tracked in state.  
+Set the `scrollHeight` of our DOM node, on state, when our button is clicked.
+
+```diff lang="jsx" ins=/setContentHeight/
+function ShowMore({ children }) {
+  let [expanded, setExpanded] = React.useState(true);
++  let [, setContentHeight] = React.useState();
+
+  const contentRef = React.useRef(null);
+
+  return (
+    <div>
+      <div
+        ref={contentRef}
+        style={{
+          maxHeight: expanded ? "none" : "100px",
+          overflow: "hidden",
+          transition: "all .5s ease",
+        }}
+      >
+        {children}
+      </div>
+      <button
+        onClick={() => {
+          setExpanded(!expanded);
++          setContentHeight(contentRef.current.scrollHeight);
+        }}
+      >
+        Show {expanded ? "less" : "more"}
+      </button>
+    </div>
+  );
+}
+```
+
+---
+
+## Set `maxHeight` of content container with `contentHeight` state value
+
+If we want to see our transition, we need to explicitly set the `maxHeight` of the content container (CSS stuff 😭).
+Use the `contentHeight` value (instead of `"none"`) to set the `expanded` container `maxHeight`.
+
+```diff lang="jsx" ins=/contentHeight/
+function ShowMore({ children }) {
+  let [expanded, setExpanded] = React.useState(true);
+  let [contentHeight, setContentHeight] = React.useState();
+
+  const contentRef = React.useRef(null);
+
+  return (
+    <div>
+      <div
+        ref={contentRef}
+        style={{
++          maxHeight: expanded ? contentHeight : "100px",
+          overflow: "hidden",
+          transition: "all .5s ease",
+        }}
+      >
+        {children}
+      </div>
+      <button
+        onClick={() => {
+          setExpanded(!expanded);
+          setContentHeight(contentRef.current.scrollHeight);
+        }}
+      >
+        Show {expanded ? "less" : "more"}
+      </button>
+    </div>
+  );
+}
+```
+
+_Reference: [Using CSS Transitions on Auto Dimensions](https://css-tricks.com/using-css-transitions-auto-dimensions/), CSS Tricks._
+
+---
+
+## Use `React.useEffect` to set `contentHeight`
+
+Setting `contentHeight` on click is has a major flaw.
+The first click will not saw the transition animation.
+Move the `setContentHeight` function into a `React.useEffect` to set the `contentHeight` on every render.
+
+```diff lang="jsx"
+function ShowMore({ children }) {
+  let [expanded, setExpanded] = React.useState(true);
+  let [contentHeight, setContentHeight] = React.useState();
+
+  const contentRef = React.useRef(null);
+
++  React.useEffect(() => {
++    if (contentRef.current) {
++      setContentHeight(contentRef.current.scrollHeight);
++    }
++  });
+
+  return (
+    <div>
+      <div
+        ref={contentRef}
+        style={{
+          maxHeight: expanded ? contentHeight : "100px",
+          overflow: "hidden",
+          transition: "all .5s ease",
+        }}
+      >
+        {children}
+      </div>
+      <button onClick={() => {
+        setExpanded(!expanded);
+-        setContentHeight(contentRef.current.scrollHeight);
+      }>
+        Show {expanded ? "less" : "more"}
+      </button>
+    </div>
+  );
+}
+```
+
+_References: [useEffect hook reference](https://react.dev/reference/react/useEffect), react.dev._
+
+<!-- - _[A Complete Guide to useEffect](https://overreacted.io/a-complete-guide-to-useeffect/), Dan Abramov._ -->
+
+---
+
+<!-- ## Query the DOM and write to the style object using `React.useEffect`
 
 ```jsx del={16} del=/maxHeight.+,/ ins={6-10} ins=/maxHeight.+;/
-function ReadMore({ children }) {
+function ShowMore({ children }) {
   let [expanded, setExpanded] = React.useState(true);
 
   let contentRef = React.useRef(null);
@@ -220,17 +454,17 @@ function ReadMore({ children }) {
           console.log(contentRef.current.scrollHeight);
         }}
       >
-        Read {expanded ? "less" : "more"}
+        Show {expanded ? "less" : "more"}
       </button>
     </div>
   );
 }
-```
+``` -->
 
-## Memoize useEffect by providing a dependencies array
+<!-- ## Memoize useEffect by providing a dependencies array
 
 ```jsx ins={10} ins=/ (.expanded.)[)]/
-function ReadMore({ children }) {
+function ShowMore({ children }) {
   let [expanded, setExpanded] = React.useState(true);
 
   let contentRef = React.useRef(null);
@@ -259,7 +493,7 @@ function ReadMore({ children }) {
             setExpanded(!expanded);
           }}
         >
-          Read {expanded ? "less" : "more"}
+          Show {expanded ? "less" : "more"}
         </button>
       )}
     </div>
@@ -267,9 +501,7 @@ function ReadMore({ children }) {
 }
 ```
 
-Reference: [Why you shouldn't put refs in a dependency array](https://epicreact.dev/why-you-shouldnt-put-refs-in-a-dependency-array/)
-
----
+Reference: [Why you shouldn't put refs in a dependency array](https://epicreact.dev/why-you-shouldnt-put-refs-in-a-dependency-array/) -->
 
 <!-- ## Switching from useEffect to useLayoutEffect for UI Updates
 
@@ -290,50 +522,48 @@ _Reference: [useLayoutEffect Hook](https://reactjs.org/docs/hooks-reference.html
 
 --- -->
 
-## Hide button if below minimum width
+## Hide button if below height threshhold
 
-<!-- needs to have state change -->
+This component has no purpose if content height is under our `100px` threshold.
+Hide the the "Show more" button if height is less than `100px`.
+Use the Logical AND operator (`&&`).
 
-```jsx ins={3, 12, 14, 27, 35} ins=/overflowing/ ins=/setOverflowing/
-function ReadMore({ children }) {
+```diff lang="jsx"
+function ShowMore({ children }) {
   let [expanded, setExpanded] = React.useState(true);
-  let [overflowing, setOverflowing] = React.useState(false);
+  let [contentHeight, setContentHeight] = React.useState();
 
-  let contentRef = React.useRef(null);
+  const contentRef = React.useRef(null);
 
   React.useEffect(() => {
     if (contentRef.current) {
-      contentRef.current.style.maxHeight = expanded
-        ? `${contentRef.current.scrollHeight}px`
-        : `100px`;
-      setOverflowing(contentRef.current.scrollHeight > 100);
+      setContentHeight(contentRef.current.scrollHeight);
     }
-  }, [expanded, overflowing]);
+  });
 
   return (
     <div>
       <div
-        style={{
-          transition: "all .3s ease",
-          overflow: "hidden",
-        }}
         ref={contentRef}
+        style={{
+          maxHeight: expanded ? contentHeight : "100px",
+          overflow: "hidden",
+          transition: "all .5s ease",
+        }}
       >
         {children}
       </div>
-      {overflowing && (
-        <button
-          onClick={() => {
-            setExpanded(!expanded);
-          }}
-        >
-          Read {expanded ? "less" : "more"}
++      {contentHeight > 100 && (
+        <button onClick={() => setExpanded(!expanded)}>
+          Show {expanded ? "less" : "more"}
         </button>
-      )}
++      )}
     </div>
   );
 }
 ```
+
+_Reference: [Logical AND operator (`&&`)](https://react.dev/learn/conditional-rendering#logical-and-operator-), react.dev._
 
 ---
 
@@ -349,7 +579,7 @@ let ExpandedContext = React.createContext(true);
 ## Provide Context
 
 ```jsx
-function ReadMore({ children }) {
+function ShowMore({ children }) {
   /* ...code hidden for brevity... */
 
   return (
@@ -365,10 +595,10 @@ function ReadMore({ children }) {
 ## Consume Context
 
 ```jsx ins={1-5}
-function ReadMoreButton() {
+function ShowMoreButton() {
   let expanded = React.useContext(ExpandedContext);
 
-  return <button>Read {expanded ? "less" : "more"}</button>;
+  return <button>Show {expanded ? "less" : "more"}</button>;
 }
 ```
 
@@ -379,7 +609,7 @@ function ReadMoreButton() {
 ```diff lang="jsx" del={19, 38} ins={20, 39, 43-45} del=// ins=//
 let ExpandedContext = React.createContext();
 
-function ReadMore({ children }) {
+function ShowMore({ children }) {
   let [expanded, setExpanded] = React.useState(true);
   let [overflowing, setOverflowing] = React.useState(false);
 
@@ -407,13 +637,13 @@ function ReadMore({ children }) {
         >
           {children}
         </div>
-        {overflowing && <ReadMoreButton />}
+        {overflowing && <ShowMoreButton />}
       </div>
     </ExpandedContext.Provider>
   );
 }
 
-function ReadMoreButton() {
+function ShowMoreButton() {
   let expanded = React.useContext(ExpandedContext);
   let [expanded, setExpanded] = React.useContext(ExpandedContext);
 
@@ -423,7 +653,7 @@ function ReadMoreButton() {
         setExpanded(!expanded);
       }}
     >
-      Read {expanded ? "less" : "more"}
+      Show {expanded ? "less" : "more"}
     </button>
   );
 }
@@ -437,7 +667,7 @@ function ReadMoreButton() {
 let ExpandedContext = React.createContext();
 +let OverflowingContext = React.createContext();
 
-function ReadMore({ children }) {
+function ShowMore({ children }) {
   let [expanded, setExpanded] = React.useState(true);
   let [overflowing, setOverflowing] = React.useState(false);
 
@@ -465,15 +695,15 @@ function ReadMore({ children }) {
           >
             {children}
           </div>
--          {overflowing && <ReadMoreButton />}
-+          {<ReadMoreButton />}
+-          {overflowing && <ShowMoreButton />}
++          {<ShowMoreButton />}
         </div>
 +      </OverflowingContext.Provider>
     </ExpandedContext.Provider>
   );
 }
 
-function ReadMoreButton() {
+function ShowMoreButton() {
   let [expanded, setExpanded] = React.useContext(ExpandedContext);
 +  let [overflowing] = React.useContext(OverflowingContext);
 
@@ -487,7 +717,7 @@ function ReadMoreButton() {
         setExpanded(!expanded);
       }}
     >
-      Read {expanded ? "less" : "more"}
+      Show {expanded ? "less" : "more"}
     </button>
   );
 }
@@ -514,7 +744,7 @@ Enhance accessibility by using ARIA attributes to indicate expandable and collap
 +       aria-controls={contentRef.current && contentRef.current.id}
         onClick={handleButtonClick}
       >
-        {isExpanded ? 'Read Less' : 'Read More'}
+        {isExpanded ? 'Show Less' : 'Show More'}
       </button>
     </div>
   );
@@ -529,7 +759,7 @@ _Reference: [Using ARIA](https://developer.mozilla.org/en-US/docs/Web/Accessibil
 Ensure each expandable region can be uniquely identified, especially when multiple instances are on the page.
 
 ```diff lang="js" {5,7}
-const ReadMore = ({ children }) => {
+const ShowMore = ({ children }) => {
 + const uniqueId = `readmore-${Math.random().toString(36).substr(2, 9)}`;
   ...
   return (
