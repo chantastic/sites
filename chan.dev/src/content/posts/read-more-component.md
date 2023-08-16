@@ -567,28 +567,248 @@ _Reference: [Logical AND operator (`&&`)](https://react.dev/learn/conditional-re
 
 ---
 
-## Create Context
+## Update when window resizes, with `useEffect`
 
-```jsx
-// 1. Create context
-let ExpandedContext = React.createContext(true);
+Use effect is design to sync events that external to React.
+Add a new useEffect that listens for window resize events and updates `contentHeight`.
+
+```diff lang="jsx"
+function ShowMore({ children }) {
+  let [expanded, setExpanded] = React.useState(true);
+  let [contentHeight, setContentHeight] = React.useState();
+
+  const contentRef = React.useRef(null);
+
+  React.useEffect(() => {
+    if (contentRef.current) {
+      setContentHeight(contentRef.current.scrollHeight);
+    }
+  });
+
++  React.useEffect(() => {
++    window.addEventListener("resize", () => {
++      setContentHeight(contentRef.current.scrollHeight);
++    });
++  });
+
+  return (
+    <div>
+      <div
+        ref={contentRef}
+        style={{
+          maxHeight: expanded ? contentHeight : "100px",
+          overflow: "hidden",
+          transition: "all .5s ease",
+        }}
+      >
+        {children}
+      </div>
+      {contentHeight > 100 && (
+        <button onClick={() => setExpanded(!expanded)}>
+          Show {expanded ? "less" : "more"}
+        </button>
+      )}
+    </div>
+  );
+}
 ```
 
 ---
 
-## Provide Context
+## Spot the memory leak with `console.log`
 
-```jsx
+Not everything can be observed with `console.log`.
+But `useEffect` often can.
+Add a `console.log` statement to our resize `useEffect` to see how often it's called.
+
+```diff lang="js"
+  React.useEffect(() => {
+    window.addEventListener("resize", () => {
+      setContentHeight(contentRef.current.scrollHeight);
++      console.log("resizing…");
+    });
+  });
+```
+
+_<small>(It's also easy to see this in the [profiler tab of standard Chrome DevTools](https://developer.chrome.com/docs/devtools/performance/).)</small>_
+
+---
+
+## Refactor the resize `useEffect` to call a function by reference
+
+Writing functions inline is extremely convenient.
+But it means that we're creating a new function every render.
+Separate the event handler declaration function and the `addEventLister` call.
+
+```diff lang="js" ins=/handleResize/
++ function handleResize() {
++   setContentHeight(contentRef.current.scrollHeight);
++   console.log("resizing…");
++ }
+
+React.useEffect(() => {
+-  window.addEventListener("resize", () => {
+-    setContentHeight(contentRef.current.scrollHeight);
+-    console.log("resizing…");
+-  });
++  window.addEventListener("resize", handleResize);
+});
+```
+
+---
+
+## Add `useEffect` cleanup function
+
+`useEffect` callback functions can return a cleanup function to unmount event listers and prevent memory leaks.
+Return a function from the resize `useEffect` to remove the event listener.
+
+<!-- linear not logorithmic -->
+
+```diff lang="js"
+React.useEffect(() => {
+  window.addEventListener("resize", handleResize);
+
++  return () => {
++    window.removeEventListener("resize", handleResize);
++  };
+});
+```
+
+_Reference: [Thinking from the Effect's perspective](https://react.dev/learn/lifecycle-of-reactive-effects#thinking-from-the-effects-perspective), react.dev._
+
+---
+
+## Debounce resize event handler
+
+Debouncing is a technique to prevent a function from being called too frequently.
+Wrap the `handleResize` function in the `debounce` utility.
+
+```diff lang="js" ins=/debounce/ /handleResize/
+-function handleResize() {
++let handleResize = debounce(function () {
+  setContentHeight(contentRef.current.scrollHeight);
+  console.log("resizing…");
+-}
++});
+```
+
+This requires a debounce function.
+
+I'd recommend using [this one from lodash](https://lodash.com/docs/4.17.15#debounce). In our case, you can use this one:
+
+```js
+function debounce(func, timeout = 300) {
+  let timer;
+  return (...args) => {
+    clearTimeout(timer);
+    timer = setTimeout(() => {
+      func.apply(this, args);
+    }, timeout);
+  };
+}
+```
+
+---
+
+## Extract custom `useEffect` hook
+
+We're not limited to the hooks included in React.
+Extract the resize `useEffect` into a custom hook function. Take `handleResize` as an argument.
+
+```diff lang="js" /handleResize/
++function useWindowResize(handleResize) {
++  React.useEffect(() => {
++    window.addEventListener("resize", handleResize);
++
++    return () => {
++      window.removeEventListener("resize", handleResize);
++    };
++  });
++}
+
+function ShowMore({ children }) {
+  let [expanded, setExpanded] = React.useState(true);
+  let [contentHeight, setContentHeight] = React.useState();
+
+  const contentRef = React.useRef(null);
+
+  React.useEffect(() => {
+      setContentHeight(contentRef.current.scrollHeight);
+  });
+
+  let handleResize = debounce(function () {
+    setContentHeight(contentRef.current.scrollHeight);
+    console.log("resizing…");
+  });
+
+-  React.useEffect(() => {
+-    window.addEventListener("resize", handleResize);
+-
+-    return () => {
+-      window.removeEventListener("resize", handleResize);
+-    };
+-  });
++  useWindowResize(handleResize);
+
+  return (
+    <div>
+      <div
+        ref={contentRef}
+        style={{
+          maxHeight: expanded ? contentHeight : "100px",
+          overflow: "hidden",
+          transition: "all .5s ease",
+        }}
+      >
+        {children}
+      </div>
+      {contentHeight > 100 && (
+        <button onClick={() => setExpanded(!expanded)}>
+          Show {expanded ? "less" : "more"}
+        </button>
+      )}
+    </div>
+  );
+}
+```
+
+_Reference: [Custom Hooks](https://react.dev/learn/reusing-logic-with-custom-hooks), react.dev._
+
+<!-- NOTE: we could debounce on the custom hook side -->
+
+---
+
+## Create Context with `React.createContext`
+
+Context is a way to share state between components without passing props.
+Create a new context, to share `expanded` state with `React.createContext`.
+
+```diff lang="jsx"
++let ExpandedContext = React.createContext();
+```
+
+_Reference: [createContext hook reference](https://react.dev/reference/react/createContext), react.dev._
+
+---
+
+## Provide Context with the `Context.Provider` component
+
+Context is provided to children with the `Context.Provider` component.
+Wrap the `ShowMore` render function in the `ExpandedContext.Provider` component and pass the `expanded` state to it's `value` prop.
+
+```diff lang="jsx"
 function ShowMore({ children }) {
   /* ...code hidden for brevity... */
 
   return (
-    <ExpandedContext.Provider value={expanded}>
++    <ExpandedContext.Provider value={expanded}>
       <div>{/* ...code hidden for brevity... */}</div>
-    </ExpandedContext.Provider>
++    </ExpandedContext.Provider>
   );
 }
 ```
+
+_Reference: [Context.Provider component reference](https://react.dev/reference/react/createContext#provider), react.dev_
 
 ---
 
