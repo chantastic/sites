@@ -2,13 +2,21 @@
 title: React Basics
 publishDate: 2023-08-09
 # TODOS:
-# - [ ] Add interactive sandboxes for folks that want to jump in
 # - [ ] Add hints to each step
 # - [ ] A video on props
 # - [ ] Build a few simple components (come up with examples)
+# - [ ] Components can also be passed in as props.
 ---
 
+This totorial is a complete guide core react constructs.
+It demonstratens simple implementations of `ReactDom`, `React Element`, `React Component`, `props`, in a familiar, real-world component.
+
 ## Contents
+
+## Online sandboxes
+
+- [CodeSandbox](https://codesandbox.io/s/react-basics-mdjsjf) <small>Used by me (Vim support)</small>
+- StackBlitz (HTML-only not supported)
 
 ## Put React anywhere!
 
@@ -60,8 +68,6 @@ _Reference: [HTML-only template from React Docs](https://react.dev/learn/install
 The browser has progressed a lot in a decade.
 Specifying `type="module"` on script tags to use modern JavaScript imports.
 
-_Reference: [Applying the module to your HTML](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules#applying_the_module_to_your_html), MDN._
-
 ```diff lang="html" ins=/ type="module"/ {3}
 <body>
   <div id="root"></div>
@@ -72,6 +78,8 @@ _Reference: [Applying the module to your HTML](https://developer.mozilla.org/en-
   </script>
 </body>
 ```
+
+_Reference: [Applying the module to your HTML](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules#applying_the_module_to_your_html), MDN._
 
 ## Import the `react-dom` module
 
@@ -320,6 +328,15 @@ _Reference: [Object rest spread](https://v8.dev/features/object-rest-spread), v8
 
 ## **Quick reference videos**
 
+<iframe
+  width="315"
+  height="560"
+  src="https://www.youtube.com/embed/iAvix-05ew0"
+  title="YouTube video player"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  allowfullscreen
+></iframe>
 Check out these videos for a quick reference on what we've covered here
 
 <div class="flex flex-wrap">
@@ -348,3 +365,13 @@ Check out these videos for a quick reference on what we've covered here
 </div>
 
 [esm.sh]: https://esm.sh
+
+<iframe
+  width="315"
+  height="560"
+  src="https://www.youtube.com/embed/1lAlZN3OImY"
+  title="YouTube video player"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  allowfullscreen
+></iframe>
