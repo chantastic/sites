@@ -15,6 +15,7 @@
     "@astrojs/rss": "^2.4.3",
     "@astrojs/sitemap": "^2.0.1",
     "@astrojs/tailwind": "^4.0.0",
+    "@componentdriven/csf": "0.0.2-alpha.0",
     "@remark-embedder/core": "^3.0.2",
     "@remark-embedder/transformer-oembed": "^3.0.0",
     "@tailwindcss/aspect-ratio": "^0.4.2",

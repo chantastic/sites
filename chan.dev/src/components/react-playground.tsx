@@ -305,7 +305,7 @@ function ShowMoreButton() {
   );
 }
 
-function ShowMore({ children }) {
+export function ShowMore({ children }) {
   let [expanded, setExpanded] = React.useState(true);
   let [contentHeight, setContentHeight] = React.useState();
 

@@ -1,0 +1,20 @@
+---
+import * as Stories from "@components/react-playground.stories";
+import * as CSF from "@componentdriven/csf";
+import Layout from "@layouts/Layout.astro";
+---
+
+<Layout>
+  <div>
+    {
+      Object.entries(Stories)
+        .filter(([key]) => key !== "default")
+        .map(([Name, Story]) => (
+          <section id={CSF.toId("kind", Name)}>
+            <h1>{CSF.storyNameFromExport(Name)}</h1>
+            <Stories.default.component {...Story.args} client:idle />
+          </section>
+        ))
+    }
+  </div>
+</Layout>
