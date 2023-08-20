@@ -1,3 +1,21 @@
+## 2023-08-17
+- Add monthly wellness to ramp
+- Call about Cox bill increase
+- Why did panoramic wifi gateway price increase? 001 3410 083023806
+- Register Flex Angle Grinder
+- Write Script for work
+- Fix ahrefs errors for chan.dev
+- do stuff to fix my personal computer setup
+- Pull Podia email list
+- Close capital one account?
+- write [ikigai](https://en.wikipedia.org/wiki/Ikigai)
+- write [blueshelled]
+- write [push, pull, poll, promise] (useEffect)
+- write a doc on my criteria for taking on workshops
+- pay credit card
+- fix calendar
+- extract a Prose component
+
 - What are we fucking doing about posts?
   - I really need to figure out sanitization and images across cross-post and RSS
 ## 2023-08-09

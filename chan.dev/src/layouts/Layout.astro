@@ -91,7 +91,7 @@ let content = await entry?.render();
       )
     }
   </head>
-  <body style="padding: 1rem" id="body">
+  <body class="bg-white dark:bg-gray-900" style="padding: 1rem" id="body">
     <slot />
     <!-- {
       content?.headings &&
@@ -101,7 +101,7 @@ let content = await entry?.render();
           ).length
         ) && (
           <aside
-            class="prose"
+            class="prose prose-slate dark:prose-invert"
             style="position: fixed; display:flex; inset-inline-end: 0; top: 0; right: 0;"
           >
             <ul>
