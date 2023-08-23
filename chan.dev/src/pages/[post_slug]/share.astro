@@ -7,6 +7,7 @@ import { url } from "@modules/site";
 import { micromark } from "micromark";
 import { gfm, gfmHtml } from "micromark-extension-gfm";
 import sanitizeHtml from "sanitize-html";
+import sanitize from "sanitize-html";
 
 export async function getStaticPaths() {
   const posts = await POSTS.getCollection(() => true);
@@ -50,26 +51,17 @@ mutatedBody = mutatedBody.replace(/```[\S\s]*?```/gm, (match) => {
   return match.replace(/\n\n/g, "\n");
 });
 
+console.log(sanitizeHtml.defaults);
 const simpleHTMLBody = sanitizeHtml(
   micromark(mutatedBody, {
     extensions: [gfm()],
     htmlExtensions: [gfmHtml()],
   }),
   {
-    allowedTags: sanitizeHtml.defaults.allowedTags.concat(["img", "iframe"]),
-    allowedIframeHostnames: ["www.youtube.com"],
+    allowedTags: [...sanitizeHtml.defaults.allowedTags, "img"],
     allowedAttributes: {
-      img: ["src", "srcset", "alt", "title", "width", "height", "loading"],
+      ...sanitizeHtml.defaults.allowedAttributes,
       code: ["class"],
-      iframe: [
-        "src",
-        "width",
-        "height",
-        "title",
-        "frameborder",
-        "allow",
-        "allowfullscreen",
-      ],
     },
   }
 );
