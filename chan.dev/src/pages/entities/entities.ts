@@ -7,14 +7,18 @@ export type CollectionEntry = ASTRO_CONTENT.CollectionEntry<
   typeof COLLECTION_NAME
 >;
 
+type Platforms = keyof Omit<CollectionEntry["data"], "name" | "type">;
+
 function formatEntityPlatformForPost(entity: CollectionEntry) {
-  return function (platform: CollectionEntry["data"]) {
+  return function (platform: Platforms) {
     switch (platform) {
       case "twitter": {
-        return `@${new URL(entity.data[platform]).pathname.split("/")[1]}`;
+        return `@${
+          new URL(String(entity.data[platform])).pathname.split("/")[1]
+        }`;
       }
       case "mastodon": {
-        const url = new URL(entity.data[platform]);
+        const url = new URL(String(entity.data[platform]));
 
         return `${url.pathname.split("/")[1]}@${url.hostname
           .split(".")
@@ -22,13 +26,13 @@ function formatEntityPlatformForPost(entity: CollectionEntry) {
           .join(".")}`;
       }
       default: {
-        return entity.data[platform];
+        return String(entity.data[platform]);
       }
     }
   };
 }
 
-export function getPlatformShortoutsForRelatedEntities(platform: string) {
+export function getPlatformShortoutsForRelatedEntities(platform: Platforms) {
   return function (relatedEntities: CollectionEntry[]) {
     return relatedEntities
       .filter((entity: CollectionEntry) => entity.data[platform])
