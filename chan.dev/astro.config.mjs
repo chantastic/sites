@@ -79,9 +79,7 @@ function exchange_relative_links_with_absolute() {
   };
 }
 
-const site = import.meta.env.DEV
-  ? "http://localhost:3000"
-  : "https://chan.dev";
+const site = import.meta.env.DEV ? "http://localhost:3000" : "https://chan.dev";
 
 // https://astro.build/config
 export default defineConfig({
@@ -117,8 +115,7 @@ export default defineConfig({
         remark_toc,
         {
           maxDepth: 2,
-          heading:
-            "toc|outline|contents|table[ -]of[ -]contents?",
+          heading: "toc|outline|contents|table[ -]of[ -]contents?",
         },
       ],
       remark_deflist,
@@ -183,7 +180,7 @@ export default defineConfig({
                 "is:raw": true,
                 className: "sr-only",
               },
-              `Section titled ${element.children[0].value}`
+              `Section titled ${(element?.children[0]?.value || "").trim()}`
             ),
           ],
         },
