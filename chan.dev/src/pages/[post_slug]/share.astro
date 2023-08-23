@@ -35,7 +35,9 @@ function githubusercontent_url_from_src(src: string) {
 }
 
 /* KLUDGE: this should absolutely be a proper micromark extension but I don't understand them*/
-const imageReplacedBody = entry.body.replace(
+let mutatedBody = entry.body;
+
+mutatedBody = mutatedBody.replace(
   /!\[(?<altText>.*)\]\((?<imageSrc>.*)\)/g,
   (match, altText, imageSrc) => {
     const githubusercontent_url = githubusercontent_url_from_src(imageSrc);
@@ -44,8 +46,12 @@ const imageReplacedBody = entry.body.replace(
   }
 );
 
+mutatedBody = mutatedBody.replace(/```[\S\s]*?```/gm, (match) => {
+  return match.replace(/\n\n/g, "\n");
+});
+
 const simpleHTMLBody = sanitizeHtml(
-  micromark(imageReplacedBody, {
+  micromark(mutatedBody, {
     extensions: [gfm()],
     htmlExtensions: [gfmHtml()],
   }),
@@ -72,9 +78,6 @@ const simpleHTMLBody = sanitizeHtml(
 <Layout entry={entry}>
   <div class="prose prose-slate dark:prose-invert">
     <main class="mt-4">
-      <h1 class="tracking-tight" style="font-size: 1.25em">
-        {entry.data.title}
-      </h1>
       <div set:html={simpleHTMLBody} />
       <div id="tooltip" role="tooltip">My tooltip</div>
     </main>
@@ -175,6 +178,7 @@ const simpleHTMLBody = sanitizeHtml(
     path={entry.slug}
   >
     <link rel="canonical" href={url(entry.slug)} />
+    <title slot="title">{entry.data.title}</title>
   </PostMeta>
 </Layout>
 
