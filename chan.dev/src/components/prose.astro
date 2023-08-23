@@ -1,0 +1,13 @@
+---
+interface Props {
+  as?: "body" | "main" | "article";
+  class?: string;
+}
+
+const { as: Element = "div", class: className, ...props } = Astro.props;
+const componentClasses = "prose prose-slate dark:prose-invert";
+---
+
+<Element {...props} class:list={[componentClasses, className]}>
+  <slot />
+</Element>
