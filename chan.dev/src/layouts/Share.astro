@@ -1,0 +1,75 @@
+---
+import { ViewTransitions } from "astro:transitions";
+import GoogleFonts from "@components/header-google-fonts.astro";
+import GlobalStyles from "@components/header-global-styles.astro";
+import HeadAnalytics from "@components/head-analytics.astro";
+import site from "@src/metadata.json";
+import type * as POSTS from "@pages/posts/posts";
+import { url } from "@modules/site";
+
+interface Props {
+  entry: POSTS.CollectionEntry;
+}
+
+const { entry } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title=`RSS Feed for ${site.title}`
+      href={`${site.feed.path}/${site.feed.rssFilename}`}
+    />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <GoogleFonts />
+    <GlobalStyles />
+    <HeadAnalytics />
+    <slot name="page-meta">
+      <title>
+        {site.title}
+      </title>
+    </slot>
+    <ViewTransitions />
+    {
+      entry?.collection === "posts" && (
+        <>
+          <script
+            type="application/ld+json"
+            set:html={JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "BlogPosting",
+              headline: entry.data.title,
+              publisher: {
+                "@type": "Organization",
+                name: "chantastic, llc",
+                url: "https://chan.dev",
+              },
+              url: url(entry.slug),
+              datePublished: entry.data.publishDate,
+              description: entry.data.description,
+              author: {
+                "@type": "Person",
+                name: "chantastic",
+                url: "https://chan.dev",
+              },
+              mainEntityOfPage: {
+                "@type": "WebPage",
+                "@id": "https://chan.dev",
+              },
+            })}
+          />
+        </>
+      )
+    }
+  </head>
+  <body class="bg-white dark:bg-gray-900" style="padding: 1rem" id="body">
+    <slot />
+  </body>
+</html>

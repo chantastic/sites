@@ -1,12 +1,12 @@
 ---
-import Layout from "@layouts/Layout.astro";
+import Layout from "@layouts/Share.astro";
 import PostMeta from "@components/header-post-meta.astro";
-import ShareBar from "@components/post-share-bar.astro";
-import BodyHiddenShare from "@components/body-hidden-share.astro";
 import * as POSTS from "@pages/posts/posts";
+import * as COLLECTION from "@modules/collection";
 import { url } from "@modules/site";
 import { micromark } from "micromark";
 import { gfm, gfmHtml } from "micromark-extension-gfm";
+import sanitizeHtml from "sanitize-html";
 
 export async function getStaticPaths() {
   const posts = await POSTS.getCollection(() => true);
@@ -23,53 +23,149 @@ interface Props {
 
 const { entry } = Astro.props;
 
-const simpleHTMLBody = micromark(entry.body, {
-  extensions: [gfm()],
-  htmlExtensions: [gfmHtml()],
-});
+function githubusercontent_url_from_src(src: string) {
+  let [, ...segments] = src.split("/");
+
+  const result = new URL(
+    `chantastic/sites/main/chan.dev/src/content/posts/${segments.join("/")}`,
+    "https://raw.githubusercontent.com/"
+  ).toString();
+
+  return result;
+}
+
+/* KLUDGE: this should absolutely be a proper micromark extension but I don't understand them*/
+const imageReplacedBody = entry.body.replace(
+  /!\[(?<altText>.*)\]\((?<imageSrc>.*)\)/g,
+  (match, altText, imageSrc) => {
+    const githubusercontent_url = githubusercontent_url_from_src(imageSrc);
+
+    return `![${altText}](${githubusercontent_url})`;
+  }
+);
+
+const simpleHTMLBody = sanitizeHtml(
+  micromark(imageReplacedBody, {
+    extensions: [gfm()],
+    htmlExtensions: [gfmHtml()],
+  }),
+  {
+    allowedTags: sanitizeHtml.defaults.allowedTags.concat(["img", "iframe"]),
+    allowedIframeHostnames: ["www.youtube.com"],
+    allowedAttributes: {
+      img: ["src", "srcset", "alt", "title", "width", "height", "loading"],
+      code: ["class"],
+      iframe: [
+        "src",
+        "width",
+        "height",
+        "title",
+        "frameborder",
+        "allow",
+        "allowfullscreen",
+      ],
+    },
+  }
+);
 ---
 
 <Layout entry={entry}>
-  <div class="prose">
-    <p
-      class="bg-yellow-100 p-6 text-yellow-800 border-yellow-800 border-0 border-l-4"
-    >
-      ⚠️ This is a share page.
-    </p>
-
-    <small>
-      ⇠ <a href={`/${entry.slug}`}>Back to main post</a>
-    </small>
-    <main class="mt-4 prose-xl p-12 py-40">
+  <div class="prose prose-slate dark:prose-invert">
+    <main class="mt-4">
       <h1 class="tracking-tight" style="font-size: 1.25em">
         {entry.data.title}
       </h1>
       <div set:html={simpleHTMLBody} />
+      <div id="tooltip" role="tooltip">My tooltip</div>
     </main>
     <footer>
-      <small>
-        <ShareBar entry={entry} />
-      </small>
-      {
-        entry.data.references && (
-          <small>
-            <h2>References</h2>
-            <ol>
-              {entry.data.references.map(
-                (reference: POSTS.CollectionEntry["data"]["references"][0]) => (
-                  <li>
-                    <a href={reference} target="_blank">
-                      {reference}
-                    </a>
-                  </li>
-                )
+      <hr />
+      <h2>METADATA: DON'T POST</h2>
+      <dl>
+        <dt>Title:</dt>
+        <dd>{entry.data.title}</dd>
+        <dt>Description:</dt>
+        <dd>
+          {
+            entry.data.description ? (
+              entry.data.description
+            ) : (
+              <strong class="text-red-500">NONE</strong>
+            )
+          }
+        </dd>
+        <dt>Slug:</dt>
+        <dd>{entry.slug}</dd>
+        <dt>Canonical url:</dt>
+        <dd>{url(entry.slug)}</dd>
+        <dt>publishDate:</dt>
+        <dd>
+          {
+            entry.data.publishDate ? (
+              COLLECTION.formatDate(entry.data.publishDate)
+            ) : (
+              <strong class="text-red-500">NONE</strong>
+            )
+          }
+        </dd>
+        <dt>tags:</dt>
+        {
+          (
+            <dd>
+              {entry.data.tags ? (
+                <>
+                  {entry.data.tags.map((tag: string, i: number) => (
+                    <>
+                      {i !== 0 && ", "}
+                      <code>{tag}</code>
+                    </>
+                  ))}{" "}
+                  <em>(specific)</em>
+                </>
+              ) : (
+                <strong class="text-red-500">NONE SPECIFIED</strong>
               )}
-            </ol>
-          </small>
-        )
-      }
+              <dd>
+                {[
+                  "web-development",
+                  "coding",
+                  "productivity",
+                  "career",
+                  "react",
+                  "tutorial",
+                ].map((tag: string, i: number) => (
+                  <>
+                    {i !== 0 && ", "}
+                    <code>{tag}</code>
+                  </>
+                ))}{" "}
+                <em>(generic)</em>
+              </dd>
+              <dt>tl;dr:</dt>
+              {entry.data.tldr ? (
+                <dd>
+                  <pre>{entry.data.tldr}</pre>
+                </dd>
+              ) : (
+                <dd>
+                  <strong class="text-red-500">NONE</strong>
+                </dd>
+              )}
+            </dd>
+          )
+        }
+        <dt>References:</dt>
+        {
+          entry.data.references ? (
+            entry.data.references.map((reference) => <dd>{reference}</dd>)
+          ) : (
+            <dd>
+              <strong class="text-red-500">NONE</strong>
+            </dd>
+          )
+        }
+      </dl>
     </footer>
-    <BodyHiddenShare entry={entry} />
   </div>
   <PostMeta
     slot="page-meta"
@@ -78,48 +174,91 @@ const simpleHTMLBody = micromark(entry.body, {
     og={entry.data.og}
     path={entry.slug}
   >
-    <!-- canonical url -->
     <link rel="canonical" href={url(entry.slug)} />
   </PostMeta>
 </Layout>
 
 <script>
-  function swapImageSourceToRawGitHub() {
-    let nodes = document.querySelectorAll("img");
+  import {
+    computePosition,
+    offset,
+    autoPlacement,
+    // @ts-ignore
+  } from "https://esm.sh/@floating-ui/dom@1.5.0/";
 
-    nodes.forEach((node) => {
-      function getUsableSource(src: string) {
-        // KLUDGE: no idea why the directory is doubling up but i need to remove it
-        let [head, ...segments] = new URL(src).pathname
-          .split("/")
-          .filter((segment) => !["", "share"].includes(segment));
-        if (head === segments[0]) {
-          return segments.join("/");
-        } else {
-          return [head, ...segments].join("/");
-        }
+  let tooltipTarget: HTMLPreElement | null = null;
+  const tooltip: HTMLDivElement | null = document.querySelector("#tooltip");
+
+  function update() {
+    computePosition(tooltipTarget, tooltip, {
+      placement: "right",
+      middleware: [offset(8), autoPlacement()],
+      // ... options ...
+    }).then(({ x, y }: { x: unknown; y: unknown }) => {
+      if (tooltip === null || tooltipTarget === null) {
+        return;
       }
 
-      const github_content_url = new URL(
-        `chantastic/sites/main/chan.dev/src/content/posts/${getUsableSource(
-          node.src
-        )}`,
-        "https://raw.githubusercontent.com/"
+      tooltip.textContent = String(
+        tooltipTarget
+          .querySelector("code")
+          ?.classList[0].replace("language-", "")
       );
 
-      node.src = github_content_url.toString();
+      Object.assign(tooltip?.style, {
+        left: `${String(x)}px`,
+        top: `${String(y)}px`,
+      });
     });
   }
 
-  function main() {
-    document.addEventListener(
-      "astro:load",
-      () => {
-        swapImageSourceToRawGitHub();
-      },
-      { once: true }
-    );
+  function showTooltip(event: MouseEvent | FocusEvent) {
+    if (!(tooltip && event.target instanceof HTMLPreElement)) {
+      return;
+    }
+
+    if (event.target.tagName !== "PRE") {
+      return;
+    }
+
+    tooltipTarget = event.target;
+    tooltip.style.display = "block";
+    update();
   }
 
-  main();
+  function hideTooltip() {
+    if (tooltip === null) {
+      return;
+    }
+
+    tooltip.style.display = "";
+  }
+
+  [
+    ["mouseenter", showTooltip],
+    ["mouseleave", hideTooltip],
+    ["focus", showTooltip],
+    ["blur", hideTooltip],
+  ].forEach(([event, listener]) => {
+    document.querySelectorAll("pre").forEach((element) => {
+      // @ts-ignore
+      element.addEventListener(event, listener);
+    });
+  });
 </script>
+
+<style>
+  #tooltip {
+    display: none;
+    width: max-content;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #222;
+    color: white;
+    font-weight: bold;
+    padding: 5px;
+    border-radius: 4px;
+    font-size: 90%;
+  }
+</style>
