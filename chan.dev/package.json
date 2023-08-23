@@ -20,6 +20,7 @@
     "@remark-embedder/transformer-oembed": "^3.0.0",
     "@tailwindcss/aspect-ratio": "^0.4.2",
     "@tailwindcss/typography": "^0.5.9",
+    "@types/sanitize-html": "^2.9.0",
     "astro": "^2.10.1",
     "astro-expressive-code": "^0.19.1",
     "hastscript": "^7.2.0",
