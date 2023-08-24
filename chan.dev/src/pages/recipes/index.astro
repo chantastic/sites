@@ -1,0 +1,29 @@
+---
+import PostMeta from "@components/header-post-meta.astro";
+import Layout from "@layouts/Layout.astro";
+import PostList from "@components/post-list.astro";
+import * as RECIPES from "@pages/recipes/recipes";
+
+const recipes = await RECIPES.getCollection();
+---
+
+<Layout>
+  <div class="prose prose-slate dark:prose-invert">
+    <small>
+      ⇠ <a href="/">chan.dev</a>
+    </small>
+    <main class="mt-4">
+      <h1 class="tracking-tight">Recipes</h1>
+      <ul>
+        {
+          recipes.map((recipe) => (
+            <li>
+              <a href={RECIPES.path(recipe.slug)}>{recipe.data.title}</a>
+            </li>
+          ))
+        }
+      </ul>
+    </main>
+  </div>
+  <PostMeta title="chantastic recipes" path={RECIPES.path()} slot="page-meta" />
+</Layout>

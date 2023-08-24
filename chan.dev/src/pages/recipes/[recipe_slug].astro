@@ -1,0 +1,41 @@
+---
+import Layout from "@layouts/Layout.astro";
+import PostMeta from "@components/header-post-meta.astro";
+import * as RECIPES from "@pages/recipes/recipes";
+
+export async function getStaticPaths() {
+  const entries = await RECIPES.getCollection();
+
+  return entries.map((entry) => ({
+    params: { recipe_slug: entry.slug },
+    props: {
+      entry,
+    },
+  }));
+}
+
+interface Props {
+  entry: RECIPES.CollectionEntry;
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+---
+
+<Layout>
+  <div class="prose prose-slate dark:prose-invert">
+    <small>
+      ⇠ <a href="/">chan.dev</a>
+      / <a href={`/${RECIPES.path()}`}>{RECIPES.COLLECTION_NAME}</a>
+    </small>
+    <main class="mt-4">
+      <h1 class="tracking-tight">{entry.data.title}</h1>
+      <Content />
+    </main>
+  </div>
+  <PostMeta
+    slot="page-meta"
+    title={RECIPES.title(entry.data.title)}
+    path={RECIPES.path(entry.slug)}
+  />
+</Layout>
