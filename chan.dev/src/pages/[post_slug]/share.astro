@@ -27,7 +27,9 @@ interface Props {
 const { entry } = Astro.props;
 
 // @ts-ignore
-const relatedShoutouts = await getEntries(entry.data.shoutouts);
+let relatedShoutouts;
+if (entry.collection === "posts" && entry.data.shoutouts)
+  relatedShoutouts = await getEntries(entry.data.shoutouts);
 
 function githubusercontent_url_from_src(src: string) {
   let [, ...segments] = src.split("/");
@@ -165,7 +167,7 @@ const simpleHTMLBody = sanitizeHtml(
         }
         <dt>References:</dt>
         {
-          entry.data.references ? (
+          entry.data.references?.length ? (
             entry.data.references.map((reference) => <dd>{reference}</dd>)
           ) : (
             <dd>
@@ -175,7 +177,7 @@ const simpleHTMLBody = sanitizeHtml(
         }
         <dt>Shoutouts:</dt>
         {
-          relatedShoutouts.length ? (
+          relatedShoutouts?.length ? (
             ["twitter", "mastodon", "bluesky", "threads", "instagram"].map(
               (platform) => {
                 <dd>
