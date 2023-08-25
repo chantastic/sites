@@ -92,7 +92,7 @@ const meta = {
 
 Now click your button in Storybook and watch the Actions log!
 
-![Alt text](./storybook-actions/storybook-actions_button-actions.gif)
+![Animated gif of React Events being logged as the Button story is clicked.](./storybook-actions/storybook-actions_button-actions.gif)
 
 :::hidden-script
 
@@ -134,7 +134,7 @@ export const Primary: Story = {
 
 Now the story will run the interaction when it loads. Logging both the interaction and the action — in their respective tabs.
 
-![Alt text](./storybook-actions/storybook-actions_button-interaction.png)
+![Image of an interaction story that automatically plays a user event over a story. An interaction is logged and an 1 action is showing as logged in the Actions tab.](./storybook-actions/storybook-actions_button-interaction.png)
 
 :::hidden-script
 
