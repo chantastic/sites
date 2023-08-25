@@ -17,6 +17,13 @@ function formatEntityPlatformForPost(entity: CollectionEntry) {
           new URL(String(entity.data[platform])).pathname.split("/")[1]
         }`;
       }
+
+      case "instagram": {
+        return `@${
+          new URL(String(entity.data[platform])).pathname.split("/")[1]
+        }`;
+      }
+
       case "mastodon": {
         const url = new URL(String(entity.data[platform]));
 
@@ -38,7 +45,9 @@ export function getPlatformShortoutsForRelatedEntities(platform: Platforms) {
       .filter((entity: CollectionEntry) => entity.data[platform])
       .map((entity: CollectionEntry) =>
         formatEntityPlatformForPost(entity)(platform)
-      );
+      )
+      .join(" ")
+      .trim();
   };
 }
 

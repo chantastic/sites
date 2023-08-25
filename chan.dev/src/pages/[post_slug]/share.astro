@@ -1,8 +1,10 @@
 ---
+import { getEntries } from "astro:content";
 import Layout from "@layouts/Share.astro";
 import PostMeta from "@components/header-post-meta.astro";
 import * as POSTS from "@pages/posts/posts";
 import * as COLLECTION from "@modules/collection";
+import { getPlatformShortoutsForRelatedEntities } from "@pages/entities/entities";
 import { url } from "@modules/site";
 import { micromark } from "micromark";
 import { gfm, gfmHtml } from "micromark-extension-gfm";
@@ -23,6 +25,9 @@ interface Props {
 }
 
 const { entry } = Astro.props;
+
+// @ts-ignore
+const relatedShoutouts = await getEntries(entry.data.shoutouts);
 
 function githubusercontent_url_from_src(src: string) {
   let [, ...segments] = src.split("/");
@@ -162,6 +167,28 @@ const simpleHTMLBody = sanitizeHtml(
         {
           entry.data.references ? (
             entry.data.references.map((reference) => <dd>{reference}</dd>)
+          ) : (
+            <dd>
+              <strong class="text-red-500">NONE</strong>
+            </dd>
+          )
+        }
+        <dt>Shoutouts:</dt>
+        {
+          relatedShoutouts.length ? (
+            ["twitter", "mastodon", "bluesky", "threads", "instagram"].map(
+              (platform) => {
+                <dd>
+                  {platform}:{" "}
+                  {
+                    // @ts-ignore
+                    getPlatformShortoutsForRelatedEntities(platform)(
+                      relatedShoutouts
+                    )
+                  }
+                </dd>;
+              }
+            )
           ) : (
             <dd>
               <strong class="text-red-500">NONE</strong>

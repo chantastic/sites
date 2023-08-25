@@ -9,7 +9,7 @@ import type * as POSTS from "@pages/posts/posts";
 import { url } from "@modules/site";
 
 interface Props {
-  entry: POSTS.CollectionEntry;
+  entry?: POSTS.CollectionEntry;
 }
 
 const { entry } = Astro.props;
