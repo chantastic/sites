@@ -48,10 +48,17 @@ mutatedBody = mutatedBody.replace(
 );
 
 mutatedBody = mutatedBody.replace(/```[\S\s]*?```/gm, (match) => {
-  return match.replace(/\n\n/g, "\n");
+  return match.replace(/\n+/g, "\n");
 });
 
-console.log(sanitizeHtml.defaults);
+mutatedBody = mutatedBody.replace(/:::[\S\s]*?:::/gm, (match) => {
+  return "";
+});
+
+mutatedBody = mutatedBody.replace(/<!--[\S\s]*?-->/gm, (match) => {
+  return "";
+});
+
 const simpleHTMLBody = sanitizeHtml(
   micromark(mutatedBody, {
     extensions: [gfm()],
@@ -64,7 +71,9 @@ const simpleHTMLBody = sanitizeHtml(
       code: ["class"],
     },
   }
-);
+).replace(/(\n)<\/code>/g, (match) => {
+  return "</code>";
+});
 ---
 
 <Layout entry={entry}>
