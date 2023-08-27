@@ -3,21 +3,7 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@components/*": [
-        "src/components/*"
-      ],
-      "@layouts/*": [
-        "src/layouts/*"
-      ],
-      "@modules/*": [
-        "src/modules/*"
-      ],
-      "@pages/*": [
-        "src/pages/*"
-      ],
-      "@src/*": [
-        "src/*"
-      ]
+      "#*": ["./src/*"]
     },
     "jsx": "react-jsx",
     "jsxImportSource": "react"

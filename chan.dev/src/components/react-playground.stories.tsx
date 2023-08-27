@@ -1,4 +1,4 @@
-import { ShowMore } from "@components/react-playground";
+import { ShowMore } from "#components/react-playground";
 
 const meta = {
   component: ShowMore,

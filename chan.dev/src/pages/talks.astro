@@ -1,7 +1,7 @@
 ---
-import Layout from "@layouts/Layout.astro";
-import PostMeta from "@components/header-post-meta.astro";
-import Prose from "@components/prose.astro";
+import Layout from "#layouts/Layout.astro";
+import PostMeta from "#components/header-post-meta.astro";
+import Prose from "#components/prose.astro";
 
 const url = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet%2CcontentDetails&maxResults=50&playlistId=PLnc_NxpmOxaPBbn1PysP30GB0_8aQGnAa&key=${
   import.meta.env.YOUTUBE_API_KEY

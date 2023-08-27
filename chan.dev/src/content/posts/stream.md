@@ -1,6 +1,6 @@
 ---
 title: Stream
-layout: "@layouts/MarkdownLayout.astro"
+layout: "#layouts/MarkdownLayout.astro"
 tags: [mode]
 dateCreated: 2023-01-03
 ---

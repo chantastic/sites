@@ -1,8 +1,8 @@
 ---
-import Layout from "@layouts/Layout.astro";
-import PostMeta from "@components/header-post-meta.astro";
-import * as POSTS from "@pages/posts/posts";
-import Prose from "@components/prose.astro";
+import Layout from "#layouts/Layout.astro";
+import PostMeta from "#components/header-post-meta.astro";
+import * as POSTS from "#pages/posts/posts";
+import Prose from "#components/prose.astro";
 
 const posts = await POSTS.getCollection(POSTS.entryHasTags);
 

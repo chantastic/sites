@@ -1,8 +1,8 @@
 ---
-import Layout from "@layouts/Layout.astro";
-import PostMeta from "@components/header-post-meta.astro";
-import * as DECISIONS from "@pages/decisions/decisions";
-import Prose from "@components/prose.astro";
+import Layout from "#layouts/Layout.astro";
+import PostMeta from "#components/header-post-meta.astro";
+import * as DECISIONS from "#pages/decisions/decisions";
+import Prose from "#components/prose.astro";
 
 const decisions = await DECISIONS.getCollection();
 ---

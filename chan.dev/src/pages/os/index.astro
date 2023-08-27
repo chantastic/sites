@@ -1,8 +1,8 @@
 ---
-import PostMeta from "@components/header-post-meta.astro";
-import Prose from "@components/prose.astro";
-import Layout from "@layouts/Layout.astro";
-import * as OS from "@pages/os/os";
+import PostMeta from "#components/header-post-meta.astro";
+import Prose from "#components/prose.astro";
+import Layout from "#layouts/Layout.astro";
+import * as OS from "#pages/os/os";
 
 const entries = await OS.getCollection();
 ---

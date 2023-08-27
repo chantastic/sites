@@ -1,9 +1,9 @@
 ---
-import PostMeta from "@components/header-post-meta.astro";
-import Layout from "@layouts/Layout.astro";
-import PostList from "@components/post-list.astro";
-import * as POSTS from "@pages/posts/posts";
-import Prose from "@components/prose.astro";
+import PostMeta from "#components/header-post-meta.astro";
+import Layout from "#layouts/Layout.astro";
+import PostList from "#components/post-list.astro";
+import * as POSTS from "#pages/posts/posts";
+import Prose from "#components/prose.astro";
 
 const posts = await POSTS.getCollection(({ data }) => {
   return !data.publishDate;

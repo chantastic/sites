@@ -1,5 +1,5 @@
 import * as ASTRO_CONTENT from "astro:content";
-import * as COLLECTION from "@modules/collection";
+import * as COLLECTION from "#modules/collection";
 import { z, defineCollection } from "astro:content";
 
 export const COLLECTION_NAME = "os";

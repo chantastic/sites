@@ -1,11 +1,11 @@
 ---
-import type * as POSTS from "@pages/posts/posts";
+import type * as POSTS from "#pages/posts/posts";
 import * as ASTRO from "astro/components"
-import * as COLLECTION from "@modules/collection";
-import Prose from "@components/prose.astro";
-import CrossPostDetails from "@components/body-hidden-share-cross-post-details.astro";
-import SocialPostDetails from "@components/body-hidden-share-social-post-details.astro";
-import { url } from "@modules/site";
+import * as COLLECTION from "#modules/collection";
+import Prose from "#components/prose.astro";
+import CrossPostDetails from "#components/body-hidden-share-cross-post-details.astro";
+import SocialPostDetails from "#components/body-hidden-share-social-post-details.astro";
+import { url } from "#modules/site";
 
 interface Props {
   entry?: POSTS.CollectionEntry

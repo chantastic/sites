@@ -1,9 +1,9 @@
 import rss from "@astrojs/rss";
-import * as POSTS from "@pages/posts/posts";
+import * as POSTS from "#pages/posts/posts";
 import sanitizeHtml from "sanitize-html";
 import MarkdownIt from "markdown-it";
-import site from "@src/metadata.json";
-import { url } from "@modules/site";
+import site from "#/metadata.json";
+import { url } from "#modules/site";
 
 const parser = new MarkdownIt();
 

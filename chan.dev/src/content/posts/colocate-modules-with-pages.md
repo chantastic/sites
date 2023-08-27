@@ -25,7 +25,7 @@ Here's what mine look like, at the moment.
 
 ```ts
 import * as ASTRO_CONTENT from "astro:content";
-import * as COLLECTION from "@modules/collection";
+import * as COLLECTION from "#modules/collection";
 import { z, defineCollection } from "astro:content";
 
 // Used as both type and value

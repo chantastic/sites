@@ -1,7 +1,7 @@
 import * as ASTRO_CONTENT from "astro:content";
-import * as COLLECTION from "@modules/collection";
+import * as COLLECTION from "#modules/collection";
 import { z, defineCollection } from "astro:content";
-import { getPathSegment } from "@modules/utilities";
+import { getPathSegment } from "#modules/utilities";
 
 export const COLLECTION_NAME = "lessons";
 

@@ -1,4 +1,4 @@
-import site from "@src/metadata.json";
+import site from "#/metadata.json";
 
 export function url(path: string = "") {
   return new URL(path, import.meta.env.SITE).toString();

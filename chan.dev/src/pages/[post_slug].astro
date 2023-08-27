@@ -1,11 +1,11 @@
 ---
-import Layout from "@layouts/Layout.astro";
-import PostMeta from "@components/header-post-meta.astro";
-import ShareBar from "@components/post-share-bar.astro";
-import * as POSTS from "@pages/posts/posts";
-import Post from "@components/post.astro";
-import Prose from "@components/prose.astro";
-// import * as ENTITIES from "@pages/entities/entities";
+import Layout from "#layouts/Layout.astro";
+import PostMeta from "#components/header-post-meta.astro";
+import ShareBar from "#components/post-share-bar.astro";
+import * as POSTS from "#pages/posts/posts";
+import Post from "#components/post.astro";
+import Prose from "#components/prose.astro";
+// import * as ENTITIES from "#pages/entities/entities";
 
 export async function getStaticPaths() {
   const posts = await POSTS.getCollection(() => true);

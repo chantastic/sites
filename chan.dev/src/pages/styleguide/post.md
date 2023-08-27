@@ -1,7 +1,7 @@
 ---
 title: Post
 description: What all of the markdown features will look like on this site.
-layout: "@layouts/MarkdownLayout.astro"
+layout: "#layouts/MarkdownLayout.astro"
 dateCreated: 2020-12-24
 dateModified: 2023-06-03
 ---

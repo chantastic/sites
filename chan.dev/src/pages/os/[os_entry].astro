@@ -1,8 +1,8 @@
 ---
-import Layout from "@layouts/Layout.astro";
-import PostMeta from "@components/header-post-meta.astro";
-import * as OS from "@pages/os/os";
-import Prose from "@components/prose.astro";
+import Layout from "#layouts/Layout.astro";
+import PostMeta from "#components/header-post-meta.astro";
+import * as OS from "#pages/os/os";
+import Prose from "#components/prose.astro";
 
 export async function getStaticPaths() {
   const posts = await OS.getCollection();

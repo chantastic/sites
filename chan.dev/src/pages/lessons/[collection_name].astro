@@ -1,9 +1,9 @@
 ---
-import PostMeta from "@components/header-post-meta.astro";
-import Layout from "@layouts/Layout.astro";
-import * as LESSONS from "@pages/lessons/lessons";
-import { getPathSegment } from "@modules/utilities";
-import Prose from "@components/prose.astro";
+import PostMeta from "#components/header-post-meta.astro";
+import Layout from "#layouts/Layout.astro";
+import * as LESSONS from "#pages/lessons/lessons";
+import { getPathSegment } from "#modules/utilities";
+import Prose from "#components/prose.astro";
 
 export async function getStaticPaths() {
   const lessons = await LESSONS.getCollection();

@@ -183,7 +183,7 @@ Provide the icon JSON to `LucideIcon` using the `icon` prop.
 
 ```astro title="any .astro file"
 ---
-import LucideIcon from "@components/lucide-icon.astro";
+import LucideIcon from "#components/lucide-icon.astro";
 import { Accessibility } from "lucide";
 ---
 
@@ -198,7 +198,7 @@ Or apply common attributes like `class` and `id`.
 
 ```astro title="any .astro file"
 ---
-import LucideIcon from "@components/lucide-icon.astro";
+import LucideIcon from "#components/lucide-icon.astro";
 import { Accessibility } from "lucide";
 ---
 
