@@ -1,10 +1,11 @@
 ---
 import Layout from "@layouts/Layout.astro";
 import * as ReactComponents from "@components/react-playground";
+import Prose from "@components/prose.astro";
 ---
 
 <Layout>
-  <main class="prose prose-slate dark:prose-invert">
+  <Prose as="main">
     <h2>ReadMore</h2>
     <ReactComponents.App client:visible />
 
@@ -22,5 +23,5 @@ import * as ReactComponents from "@components/react-playground";
 
     <!-- <h2>Timer</h2>
     <ReactComponents.Stopwatch client:load /> -->
-  </main>
+  </Prose>
 </Layout>

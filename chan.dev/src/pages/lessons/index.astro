@@ -1,5 +1,6 @@
 ---
 import PostMeta from "@components/header-post-meta.astro";
+import Prose from "@components/prose.astro";
 import Layout from "@layouts/Layout.astro";
 import * as LESSONS from "@pages/lessons/lessons";
 
@@ -7,7 +8,7 @@ const lessons = await LESSONS.getCollection();
 ---
 
 <Layout>
-  <div class="prose prose-slate dark:prose-invert">
+  <Prose>
     <small>
       ⇠ <a href="/">chan.dev</a>
     </small>
@@ -17,15 +18,13 @@ const lessons = await LESSONS.getCollection();
         {
           lessons.map((entry) => (
             <li>
-              <a href={`/${LESSONS.path(entry.slug)}`}>
-                {entry.slug}
-              </a>
+              <a href={`/${LESSONS.path(entry.slug)}`}>{entry.slug}</a>
             </li>
           ))
         }
       </ul>
     </main>
-  </div>
+  </Prose>
   <PostMeta
     title={LESSONS.title()}
     description="A collection of small, focused, action-oriented lessons by chantastic."

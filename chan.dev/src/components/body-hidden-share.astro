@@ -2,6 +2,7 @@
 import type * as POSTS from "@pages/posts/posts";
 import * as ASTRO from "astro/components"
 import * as COLLECTION from "@modules/collection";
+import Prose from "@components/prose.astro";
 import CrossPostDetails from "@components/body-hidden-share-cross-post-details.astro";
 import SocialPostDetails from "@components/body-hidden-share-social-post-details.astro";
 import { url } from "@modules/site";
@@ -14,7 +15,7 @@ const { entry } = Astro.props;
 const maybeContent = await entry?.render();
 ---
 
-<div id="share" class="prose">
+<Prose>
   {
     entry && (
         <>
@@ -59,7 +60,7 @@ const maybeContent = await entry?.render();
         </>
     )
   }
-</div>
+</Prose>
 
 <style is:global>
   #share {

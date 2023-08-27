@@ -1,13 +1,12 @@
 ---
 import PostMeta from "@components/header-post-meta.astro";
+import Prose from "@components/prose.astro";
 import Layout from "@layouts/Layout.astro";
 import * as USES from "@pages/uses/uses";
 
 const entries = await USES.getCollection();
 
-function getStatusColor(
-  status: USES.CollectionEntry["data"]["status"]
-) {
+function getStatusColor(status: USES.CollectionEntry["data"]["status"]) {
   switch (status) {
     case "active":
       return "fill-green-500";
@@ -22,7 +21,7 @@ function getStatusColor(
 ---
 
 <Layout>
-  <div class="prose prose-slate dark:prose-invert">
+  <Prose>
     <small>
       ⇠ <a href="/">chan.dev</a>
     </small>
@@ -34,11 +33,7 @@ function getStatusColor(
             const { slug, data } = entry;
             const title =
               data.manufacturer && data.model
-                ? [
-                    data.manufacturer,
-                    data.model,
-                    data.size && `[${data.size}]`,
-                  ]
+                ? [data.manufacturer, data.model, data.size && `[${data.size}]`]
                     .filter(Boolean)
                     .join(" ")
                 : slug;
@@ -49,9 +44,7 @@ function getStatusColor(
                 {entry.data.status && (
                   <span class="inline-flex items-center gap-x-1.5 rounded-md px-2 py-1 text-xs font-medium text-gray-900 ring-1 ring-inset ring-gray-200">
                     <svg
-                      class={`h-1.5 w-1.5 ${getStatusColor(
-                        entry.data.status
-                      )}`}
+                      class={`h-1.5 w-1.5 ${getStatusColor(entry.data.status)}`}
                       viewBox="0 0 6 6"
                       aria-hidden="true"
                     >
@@ -62,11 +55,7 @@ function getStatusColor(
                       entry.data.replaced_by ? (
                         <>
                           Replaced by:
-                          <a
-                            href={`/${USES.path(
-                              entry.data.replaced_by
-                            )}`}
-                          >
+                          <a href={`/${USES.path(entry.data.replaced_by)}`}>
                             {entry.data.replaced_by}
                           </a>
                         </>
@@ -84,7 +73,7 @@ function getStatusColor(
         }
       </ul>
     </main>
-  </div>
+  </Prose>
   <PostMeta
     title="/uses"
     description="chantastic products"

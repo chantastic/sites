@@ -3,12 +3,13 @@ import PostMeta from "@components/header-post-meta.astro";
 import Layout from "@layouts/Layout.astro";
 import PostList from "@components/post-list.astro";
 import * as RECIPES from "@pages/recipes/recipes";
+import Prose from "@components/prose.astro";
 
 const recipes = await RECIPES.getCollection();
 ---
 
 <Layout>
-  <div class="prose prose-slate dark:prose-invert">
+  <Prose>
     <small>
       ⇠ <a href="/">chan.dev</a>
     </small>
@@ -24,6 +25,6 @@ const recipes = await RECIPES.getCollection();
         }
       </ul>
     </main>
-  </div>
+  </Prose>
   <PostMeta title="chantastic recipes" path={RECIPES.path()} slot="page-meta" />
 </Layout>

@@ -5,10 +5,11 @@ import License from "@components/license.astro";
 import * as SITE from "@modules/site";
 import LucideIcon from "@components/lucide-icon.astro";
 import * as Icons from "lucide";
+import Prose from "@components/prose.astro";
 ---
 
 <Layout>
-  <div class="prose prose-slate dark:prose-invert">
+  <Prose>
     <main>
       <h1 class="tracking-tight">chan.dev</h1>
       <p>Hey! I'm chan.</p>
@@ -104,7 +105,7 @@ import * as Icons from "lucide";
         <License year="2023" />
       </p>
     </main>
-  </div>
+  </Prose>
   <PostMeta
     slot="page-meta"
     title={"The incoherant ramblings of chantastic."}

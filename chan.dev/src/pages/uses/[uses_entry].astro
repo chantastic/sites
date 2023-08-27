@@ -3,6 +3,7 @@ import Layout from "@layouts/Layout.astro";
 import PostMeta from "@components/header-post-meta.astro";
 import PostNotWritten from "@components/body-page-not-written.astro";
 import * as USES from "@pages/uses/uses";
+import Prose from "@components/prose.astro";
 
 export async function getStaticPaths() {
   const posts = await USES.getCollection();
@@ -26,7 +27,7 @@ const title =
 ---
 
 <Layout>
-  <div class="prose prose-slate dark:prose-invert">
+  <Prose>
     <small>
       ⇠ <a href="/">chan.dev</a>
       / <a href={`/${USES.path()}`}>uses</a>
@@ -38,8 +39,7 @@ const title =
           entry.data.links.map((link) => (
             <div>
               <a href={link}>
-                Buy{" "}
-                {link.includes("amzn.to") ? "on Amazon" : "now"}
+                Buy {link.includes("amzn.to") ? "on Amazon" : "now"}
               </a>
             </div>
           ))
@@ -54,13 +54,13 @@ const title =
       {
         entry.data.links && (
           <small>
-            Links are affiliate links. As an affiliate, I
-            recieve a small commission on the purchase.
+            Links are affiliate links. As an affiliate, I recieve a small
+            commission on the purchase.
           </small>
         )
       }
     </main>
-  </div>
+  </Prose>
   <PostMeta
     slot="page-meta"
     title={title}

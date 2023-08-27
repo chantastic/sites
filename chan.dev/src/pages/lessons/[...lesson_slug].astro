@@ -2,6 +2,7 @@
 import Layout from "@layouts/Layout.astro";
 import PostMeta from "@components/header-post-meta.astro";
 import * as LESSONS from "@pages/lessons/lessons";
+import Prose from "@components/prose.astro";
 
 export async function getStaticPaths() {
   const lessons = await LESSONS.getCollection();
@@ -25,27 +26,20 @@ interface Props {
 const { entry } = Astro.props;
 const { Content } = await entry.render();
 
-const [collection_name, maybe_collection_year] =
-  entry.slug.split("/");
+const [collection_name, maybe_collection_year] = entry.slug.split("/");
 ---
 
 <Layout>
-  <div class="prose prose-slate dark:prose-invert">
+  <Prose>
     {
       Number(maybe_collection_year) ? (
         <>
           <small>
             ⇠ <a href="/">chan.dev</a>/{" "}
             <a href={`/${LESSONS.path()}`}>lessons</a>/{" "}
-            <a href={`/${LESSONS.path(collection_name)}`}>
-              {collection_name}
-            </a>
-            /{" "}
+            <a href={`/${LESSONS.path(collection_name)}`}>{collection_name}</a>/{" "}
             <a
-              href={`/${LESSONS.path(
-                collection_name,
-                maybe_collection_year
-              )}`}
+              href={`/${LESSONS.path(collection_name, maybe_collection_year)}`}
             >
               {maybe_collection_year}
             </a>
@@ -62,9 +56,7 @@ const [collection_name, maybe_collection_year] =
           <small>
             ⇠ <a href="/">chan.dev</a>/{" "}
             <a href={`/${LESSONS.path()}`}>lessons</a>/{" "}
-            <a href={`/${LESSONS.path(collection_name)}`}>
-              {collection_name}
-            </a>
+            <a href={`/${LESSONS.path(collection_name)}`}>{collection_name}</a>
           </small>
           <main class="mt-4">
             <h1 class="tracking-tight">{entry.data.title}</h1>
@@ -73,7 +65,7 @@ const [collection_name, maybe_collection_year] =
         </>
       )
     }
-  </div>
+  </Prose>
   <PostMeta
     title={String(entry.data.title)}
     path={LESSONS.path(entry.slug)}

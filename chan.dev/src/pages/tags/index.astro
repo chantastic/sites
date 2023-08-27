@@ -2,6 +2,7 @@
 import Layout from "@layouts/Layout.astro";
 import PostMeta from "@components/header-post-meta.astro";
 import * as POSTS from "@pages/posts/posts";
+import Prose from "@components/prose.astro";
 
 const posts = await POSTS.getCollection(POSTS.entryHasTags);
 
@@ -9,7 +10,7 @@ const tags = POSTS.extractTags(posts);
 ---
 
 <Layout>
-  <div class="prose prose-slate dark:prose-invert">
+  <Prose>
     <small>
       ⇠ <a href="/">chan.dev</a>
     </small>
@@ -25,7 +26,7 @@ const tags = POSTS.extractTags(posts);
         }
       </ul>
     </main>
-  </div>
+  </Prose>
   <PostMeta
     slot="page-meta"
     path="tags"

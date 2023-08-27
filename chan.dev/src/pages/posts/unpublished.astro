@@ -3,6 +3,7 @@ import PostMeta from "@components/header-post-meta.astro";
 import Layout from "@layouts/Layout.astro";
 import PostList from "@components/post-list.astro";
 import * as POSTS from "@pages/posts/posts";
+import Prose from "@components/prose.astro";
 
 const posts = await POSTS.getCollection(({ data }) => {
   return !data.publishDate;
@@ -10,7 +11,7 @@ const posts = await POSTS.getCollection(({ data }) => {
 ---
 
 <Layout>
-  <div class="prose prose-slate dark:prose-invert">
+  <Prose>
     <small>
       ⇠ <a href="/">chan.dev</a>
       / <a href={`/${POSTS.path()}`}>posts</a>
@@ -18,12 +19,12 @@ const posts = await POSTS.getCollection(({ data }) => {
     <main class="mt-4">
       <h1 class="tracking-tight">Unpublished posts</h1>
       <p>
-        These posts are public but don't have a `publishDate`.
-        Consiquently, they won't show up in a feed.
+        These posts are public but don't have a `publishDate`. Consiquently,
+        they won't show up in a feed.
       </p>
       <PostList posts={posts} />
     </main>
-  </div>
+  </Prose>
   <PostMeta
     title="unpublished chantastic posts"
     path={POSTS.path("unpublished")}

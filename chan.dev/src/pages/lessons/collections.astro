@@ -2,32 +2,30 @@
 import Layout from "@layouts/Layout.astro";
 import PostMeta from "@components/header-post-meta.astro";
 import * as LESSONS from "@pages/lessons/lessons";
+import Prose from "@components/prose.astro";
 
 const lessons = await LESSONS.getCollection();
 
-const collections =
-  LESSONS.getUniqueSegmentValuesFromCollection(lessons);
+const collections = LESSONS.getUniqueSegmentValuesFromCollection(lessons);
 ---
 
 <Layout>
-  <div class="prose prose-slate dark:prose-invert">
+  <Prose>
     <small>
       ⇠ <a href="/">chan.dev</a>
       / <a href={`/${LESSONS.path()}`}>lessons</a>
     </small>
-    <main class="prose prose-slate dark:prose-invert">
+    <main>
       <h1 class="tracking-tight">Lesson collections</h1>
       {
         collections.map((collection) => (
           <li>
-            <a href={`/${LESSONS.path(collection)}`}>
-              {collection}
-            </a>
+            <a href={`/${LESSONS.path(collection)}`}>{collection}</a>
           </li>
         ))
       }
     </main>
-  </div>
+  </Prose>
   <PostMeta
     title="chantastic lesson on programming, sorted by topic"
     description="Ongoing collections of lessons I've learned while programming."

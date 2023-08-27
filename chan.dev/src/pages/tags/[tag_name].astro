@@ -2,6 +2,7 @@
 import Layout from "@layouts/Layout.astro";
 import * as POSTS from "@pages/posts/posts";
 import PostMeta from "@components/header-post-meta.astro";
+import Prose from "@components/prose.astro";
 
 export async function getStaticPaths() {
   const posts = await POSTS.getCollection(({ data }) => {
@@ -39,7 +40,7 @@ const { entries } = Astro.props;
 ---
 
 <Layout>
-  <div class="prose prose-slate dark:prose-invert">
+  <Prose>
     <small>
       ⇠ <a href="/">chan.dev</a>
       / <a href={`/tags`}>tags</a>
@@ -56,7 +57,7 @@ const { entries } = Astro.props;
         }
       </ul>
     </main>
-  </div>
+  </Prose>
   <PostMeta
     slot="page-meta"
     title={`chantastic posts tagged: ${tag_name}`}

@@ -3,6 +3,7 @@ import Layout from "@layouts/Layout.astro";
 import PostMeta from "@components/header-post-meta.astro";
 import * as DECISIONS from "@pages/decisions/decisions";
 import * as COLLECTION from "@modules/collection";
+import Prose from "@components/prose.astro";
 
 export async function getStaticPaths() {
   const entries = await DECISIONS.getCollection();
@@ -28,7 +29,7 @@ const formattedEntryDate = COLLECTION.formatDate(
 ---
 
 <Layout>
-  <div class="prose prose-slate dark:prose-invert">
+  <Prose>
     <small>
       ⇠ <a href="/">chan.dev</a>
       / <a href={`/${DECISIONS.path()}`}
@@ -49,7 +50,7 @@ const formattedEntryDate = COLLECTION.formatDate(
       </p>
       <Content />
     </main>
-  </div>
+  </Prose>
   <PostMeta
     slot="page-meta"
     title={DECISIONS.title(entry.data.title)}

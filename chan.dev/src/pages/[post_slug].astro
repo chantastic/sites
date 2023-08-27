@@ -4,6 +4,7 @@ import PostMeta from "@components/header-post-meta.astro";
 import ShareBar from "@components/post-share-bar.astro";
 import * as POSTS from "@pages/posts/posts";
 import Post from "@components/post.astro";
+import Prose from "@components/prose.astro";
 // import * as ENTITIES from "@pages/entities/entities";
 
 export async function getStaticPaths() {
@@ -31,7 +32,7 @@ const { entry } = Astro.props;
 ---
 
 <Layout entry={entry}>
-  <div class="prose prose-slate dark:prose-invert">
+  <Prose>
     <small>
       ⇠ <a href="/">chan.dev</a>
       / <a href={`/${POSTS.COLLECTION_NAME}`}>posts</a>
@@ -62,7 +63,7 @@ const { entry } = Astro.props;
         )
       }
     </footer>
-  </div>
+  </Prose>
   <PostMeta
     slot="page-meta"
     title={entry.data.title}

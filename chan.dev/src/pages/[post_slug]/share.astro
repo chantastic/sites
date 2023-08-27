@@ -10,6 +10,7 @@ import { micromark } from "micromark";
 import { gfm, gfmHtml } from "micromark-extension-gfm";
 import sanitizeHtml from "sanitize-html";
 import sanitize from "sanitize-html";
+import Prose from "@components/prose.astro";
 
 export async function getStaticPaths() {
   const posts = await POSTS.getCollection(() => true);
@@ -84,7 +85,7 @@ const simpleHTMLBody = sanitizeHtml(
 ---
 
 <Layout entry={entry}>
-  <div class="prose prose-slate dark:prose-invert">
+  <Prose>
     <main class="mt-4">
       <div set:html={simpleHTMLBody} />
       <div id="tooltip" role="tooltip">My tooltip</div>
@@ -199,7 +200,7 @@ const simpleHTMLBody = sanitizeHtml(
         }
       </dl>
     </footer>
-  </div>
+  </Prose>
   <PostMeta
     slot="page-meta"
     title={entry.data.title}

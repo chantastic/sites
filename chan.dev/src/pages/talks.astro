@@ -1,6 +1,7 @@
 ---
 import Layout from "@layouts/Layout.astro";
 import PostMeta from "@components/header-post-meta.astro";
+import Prose from "@components/prose.astro";
 
 const url = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet%2CcontentDetails&maxResults=50&playlistId=PLnc_NxpmOxaPBbn1PysP30GB0_8aQGnAa&key=${
   import.meta.env.YOUTUBE_API_KEY
@@ -38,9 +39,9 @@ const videos = await fetchData(url);
 <!-- https://tailwindui.com/components/application-ui/lists/grid-lists --><!-- TODO: this page should not have `prose` on it -->
 <Layout>
   <main>
-    <div class="prose mb-8">
+    <Prose class="mb-8">
       <h1 class="tracking-tight">Talks</h1>
-    </div>
+    </Prose>
 
     <ul
       role="list"
@@ -74,12 +75,13 @@ const videos = await fetchData(url);
                   {truncateTitle(video.snippet.title)}
                 </p>
                 <p class="pointer-events-none block text-sm font-medium text-gray-500">
-                  {new Date(
-                    video.snippet.publishedAt
-                  ).toLocaleDateString("en-US", {
-                    year: "numeric",
-                    month: "short",
-                  })}
+                  {new Date(video.snippet.publishedAt).toLocaleDateString(
+                    "en-US",
+                    {
+                      year: "numeric",
+                      month: "short",
+                    }
+                  )}
                 </p>
               </a>
             </li>
@@ -88,9 +90,5 @@ const videos = await fetchData(url);
       }
     </ul>
   </main>
-  <PostMeta
-    slot="page-meta"
-    title="chantastic talks"
-    path={"/talks"}
-  />
+  <PostMeta slot="page-meta" title="chantastic talks" path={"/talks"} />
 </Layout>

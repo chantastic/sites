@@ -3,12 +3,13 @@ import PostMeta from "@components/header-post-meta.astro";
 import Layout from "@layouts/Layout.astro";
 import PostList from "@components/post-list.astro";
 import * as POSTS from "@pages/posts/posts";
+import Prose from "@components/prose.astro";
 
 const posts = await POSTS.getCollection();
 ---
 
 <Layout>
-  <div class="prose prose-slate dark:prose-invert">
+  <Prose>
     <small>
       ⇠ <a href="/">chan.dev</a>
     </small>
@@ -16,10 +17,6 @@ const posts = await POSTS.getCollection();
       <h1 class="tracking-tight">Posts</h1>
       <PostList posts={posts} />
     </main>
-  </div>
-  <PostMeta
-    title="chantastic posts"
-    path={POSTS.path()}
-    slot="page-meta"
-  />
+  </Prose>
+  <PostMeta title="chantastic posts" path={POSTS.path()} slot="page-meta" />
 </Layout>

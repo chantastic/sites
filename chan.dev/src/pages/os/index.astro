@@ -1,5 +1,6 @@
 ---
 import PostMeta from "@components/header-post-meta.astro";
+import Prose from "@components/prose.astro";
 import Layout from "@layouts/Layout.astro";
 import * as OS from "@pages/os/os";
 
@@ -7,7 +8,7 @@ const entries = await OS.getCollection();
 ---
 
 <Layout>
-  <div class="prose prose-slate dark:prose-invert">
+  <Prose>
     <small>
       <a href="/">⇠ chan.dev</a>
     </small>
@@ -17,18 +18,12 @@ const entries = await OS.getCollection();
         {
           entries.map((entry) => (
             <li>
-              <a href={`/${OS.path(entry.slug)}`}>
-                {entry.data.title}
-              </a>
+              <a href={`/${OS.path(entry.slug)}`}>{entry.data.title}</a>
             </li>
           ))
         }
       </ul>
     </main>
-  </div>
-  <PostMeta
-    title="a chantastic OS"
-    path={OS.path()}
-    slot="page-meta"
-  />
+  </Prose>
+  <PostMeta title="a chantastic OS" path={OS.path()} slot="page-meta" />
 </Layout>

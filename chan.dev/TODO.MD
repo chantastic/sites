@@ -1,5 +1,7 @@
 ## 2023-08-24
+
 Publishing workflow:
+
 - Add cross-post on Reddit (to user)
   - post tl;dr as first comment
 - Use arc for screenshots (when possible) because it has an outside edge
@@ -8,6 +10,7 @@ Publishing workflow:
 - Make accessibility text more easily accessible and show visual indicator that it's been added
 
 ## 2023-08-23
+
 - Videos don't work in streams and cross-posting yet
 
 ## 2023-08-22
@@ -15,6 +18,7 @@ Publishing workflow:
 - Create a general purpose newsletter that allows folks to sign up for emails (while segmenting themselves).
 
 ## 2023-08-17
+
 - Add monthly wellness to ramp
 - Call about Cox bill increase
 - Why did panoramic wifi gateway price increase? 001 3410 083023806
@@ -30,10 +34,10 @@ Publishing workflow:
 - write a doc on my criteria for taking on workshops
 - pay credit card
 - fix calendar
-- extract a Prose component
 
 - What are we fucking doing about posts?
   - I really need to figure out sanitization and images across cross-post and RSS
+
 ## 2023-08-09
 
 PUBLISH NOTES:

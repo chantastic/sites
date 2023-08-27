@@ -100,10 +100,7 @@ let content = await entry?.render();
             (heading) => heading.slug === "contents"
           ).length
         ) && (
-          <aside
-            class="prose prose-slate dark:prose-invert"
-            style="position: fixed; display:flex; inset-inline-end: 0; top: 0; right: 0;"
-          >
+          <Prose>
             <ul>
               {content.headings.map(({ depth, slug, text }) => (
                 <li data-id={slug} data-depth={depth}>
@@ -111,7 +108,7 @@ let content = await entry?.render();
                 </li>
               ))}
             </ul>
-          </aside>
+          </Prose>
         )
     } -->
     <BodyHidden />

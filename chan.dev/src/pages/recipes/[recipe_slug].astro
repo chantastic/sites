@@ -2,6 +2,7 @@
 import Layout from "@layouts/Layout.astro";
 import PostMeta from "@components/header-post-meta.astro";
 import * as RECIPES from "@pages/recipes/recipes";
+import Prose from "@components/prose.astro";
 
 export async function getStaticPaths() {
   const entries = await RECIPES.getCollection();
@@ -23,7 +24,7 @@ const { Content } = await entry.render();
 ---
 
 <Layout>
-  <div class="prose prose-slate dark:prose-invert">
+  <Prose>
     <small>
       ⇠ <a href="/">chan.dev</a>
       / <a href={`/${RECIPES.path()}`}>{RECIPES.COLLECTION_NAME}</a>
@@ -32,7 +33,7 @@ const { Content } = await entry.render();
       <h1 class="tracking-tight">{entry.data.title}</h1>
       <Content />
     </main>
-  </div>
+  </Prose>
   <PostMeta
     slot="page-meta"
     title={RECIPES.title(entry.data.title)}

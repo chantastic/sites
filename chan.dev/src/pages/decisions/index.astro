@@ -2,12 +2,13 @@
 import Layout from "@layouts/Layout.astro";
 import PostMeta from "@components/header-post-meta.astro";
 import * as DECISIONS from "@pages/decisions/decisions";
+import Prose from "@components/prose.astro";
 
 const decisions = await DECISIONS.getCollection();
 ---
 
 <Layout>
-  <div class="prose prose-slate dark:prose-invert">
+  <Prose>
     <small>
       ⇠ <a href="/">chan.dev</a>
     </small>
@@ -25,7 +26,7 @@ const decisions = await DECISIONS.getCollection();
         }
       </ul>
     </main>
-  </div>
+  </Prose>
   <PostMeta
     title={DECISIONS.title()}
     description="chantastic's professional decisions and how they age"
