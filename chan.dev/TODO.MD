@@ -1,3 +1,19 @@
+## 2023-08-24
+Publishing workflow:
+- Add cross-post on Reddit (to user)
+  - post tl;dr as first comment
+- Use arc for screenshots (when possible) because it has an outside edge
+  - A lot of platforms show images on white/black so unbounded content will bleed
+- Split cover image from content body so that it's not automatically selected and must be uploaded as a cover image
+- Make accessibility text more easily accessible and show visual indicator that it's been added
+
+## 2023-08-23
+- Videos don't work in streams and cross-posting yet
+
+## 2023-08-22
+
+- Create a general purpose newsletter that allows folks to sign up for emails (while segmenting themselves).
+
 ## 2023-08-17
 - Add monthly wellness to ramp
 - Call about Cox bill increase
