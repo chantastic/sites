@@ -13,9 +13,9 @@ tldr: |
   - 🤝 Actions can be triggered by interactions (using testing-library/dom)
 shoutouts:
   - storybook
+cover: ./storybook-actions/storybook-actions_cover.png
+coverAlt: Storybook Actions in Action
 ---
-
-![](./storybook-actions/storybook-actions_cover.png)
 
 Let's talk about `console.log`-driven development.
 We all do it.

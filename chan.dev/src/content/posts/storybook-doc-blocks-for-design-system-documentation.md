@@ -8,6 +8,8 @@ tags:
   - storybook
   - systems
 shoutouts: [storybook]
+cover: ./storybook-doc-blocks-for-design-system-documentation/storybook-doc-blocks-for-design-system-documentation_cover.png
+coverAlt: Illustration of a big machine made of shapes and letters illustrating a design system coming together.
 tldr: |
   **TL;DR Summary: Doc blocks for design system documentation**
 
@@ -19,8 +21,6 @@ tldr: |
     - [Storybook docs page](https://storybook.js.org/docs/)
     - [Chromatic YouTube channel](https://www.youtube.com/@chromaticui).
 ---
-
-![Illustration of a big machine made of shapes and letters illustrating a design system coming together.](./storybook-doc-blocks-for-design-system-documentation/storybook-doc-blocks-for-design-system-documentation_cover.png)
 
 If you document design systems, I'm about to save you a _ton_ of time.
 Because Storybook comes with lesser-known components for organizing colors, typography, and icons.
