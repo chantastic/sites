@@ -71,18 +71,20 @@ const videos = await fetchData(url);
                     alt={video.snippet.title}
                   />
                 </div>
-                <p class="pointer-events-none mt-2 block text-sm font-medium text-gray-900">
-                  {truncateTitle(video.snippet.title)}
-                </p>
-                <p class="pointer-events-none block text-sm font-medium text-gray-500">
-                  {new Date(video.snippet.publishedAt).toLocaleDateString(
-                    "en-US",
-                    {
-                      year: "numeric",
-                      month: "short",
-                    }
-                  )}
-                </p>
+                <Prose class="text-sm font-medium mt-2">
+                  <p class="pointer-events-none">
+                    {truncateTitle(video.snippet.title)}
+                  </p>
+                  <p class="pointer-events-none">
+                    {new Date(video.snippet.publishedAt).toLocaleDateString(
+                      "en-US",
+                      {
+                        year: "numeric",
+                        month: "short",
+                      }
+                    )}
+                  </p>
+                </Prose>
               </a>
             </li>
           )
