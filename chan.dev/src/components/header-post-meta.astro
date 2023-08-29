@@ -6,6 +6,9 @@ export interface Props {
   title: string;
   description?: string;
   path: string;
+  cover?: {
+    src: string;
+  };
   og?: {
     title?: string;
     image?: string;
@@ -13,53 +16,47 @@ export interface Props {
   }; // lock in type from CollectionEntry<"post">
 }
 
-const { title, description, path, og } = Astro.props;
+const { title, description, path, cover, og } = Astro.props;
 const domainAugmentedTitle = `${title} | ${site.title}`;
 const uriEncodedTitle = encodeURIComponent(title);
 const defaultOGImage = `https://res.cloudinary.com/chantastic/image/upload/c_fit,g_center,h_220,l_text:rubik_40_bold_line_spacing_0_center:${uriEncodedTitle},w_460,x_-112,y_-44/v1630109662/chan.dev/chan.dev-cloud.jpg`;
+
+function getMetaImage() {
+  if (cover?.src) {
+    return url(cover.src);
+  }
+
+  if (og?.image) {
+    return og.image;
+  }
+
+  return defaultOGImage;
+}
 ---
 
 <slot name="title">
-<title>{domainAugmentedTitle}</title>
+  <title>{domainAugmentedTitle}</title>
 </slot>
 
 <!-- Generic Open Graph -->
-<meta
-  property="og:title"
-  content={og?.title || domainAugmentedTitle}
-/>
-<meta
-  property="og:description"
-  content={description || title}
-/>
+<meta property="og:title" content={og?.title || domainAugmentedTitle} />
+<meta property="og:description" content={description || title} />
 <meta property="og:site_name" content=`${site.title}` />
 <meta property="og:type" content="article" />
 <meta property="og:url" content={url(path)} />
-<meta
-  property="og:image"
-  content={og?.image || defaultOGImage}
-/>
+<meta property="og:image" content={getMetaImage()} />
 {og?.audio && <meta property="og:audio" content={og?.audio} />}
 
 <!-- article -->
-<meta
-  property="article:publisher"
-  content={import.meta.env.SITE}
-/>
+<meta property="article:publisher" content={import.meta.env.SITE} />
 
 <!-- Twitter Meta Tags -->
-<meta
-  name="twitter:title"
-  content={og?.title || domainAugmentedTitle}
-/>
+<meta name="twitter:title" content={og?.title || domainAugmentedTitle} />
 <meta name="twitter:description" content={description} />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@chantastic" />
 <meta name="twitter:creator" content="@chantastic" />
 <meta name="twitter:domain" content={site.title} />
 <meta name="twitter:url" content={url(path)} />
-<meta
-  name="twitter:image"
-  content={og?.image || defaultOGImage}
-/>
+<meta name="twitter:image" content={getMetaImage()} />
 <slot />

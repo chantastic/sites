@@ -1,5 +1,6 @@
 ---
 import type * as POSTS from "#pages/posts/posts";
+import { Image } from "astro:assets";
 
 interface Props {
   entry: POSTS.CollectionEntry;
@@ -11,6 +12,15 @@ const { Content } = await entry.render();
 
 <>
   <h1 class="tracking-tight">{entry.data.title}</h1>
+  {
+    entry.data.cover?.src && (
+      <Image
+        src={entry.data.cover}
+        alt={entry.data.coverAlt ?? entry.data.title}
+        class="w-full"
+      />
+    )
+  }
   {
     !entry.data.publishDate ? (
       <>
