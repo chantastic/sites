@@ -100,10 +100,6 @@ export default defineConfig({
     }),
     react(),
   ],
-  experimental: {
-    assets: true,
-    viewTransitions: true,
-  },
   image: {
     service: sharpImageService(),
   },
