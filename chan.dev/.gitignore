@@ -23,5 +23,4 @@ pnpm-debug.log*
 .astro
 
 # obsidian
-src/content/.obsidian/workspace.json
-!src/content/.obsidian
+src/content/.obsidian
