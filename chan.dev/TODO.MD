@@ -1,3 +1,7 @@
+## 2023-08-30
+
+- fix over-replaced `publishDate` in content
+
 ## 2023-08-24
 
 Publishing workflow:

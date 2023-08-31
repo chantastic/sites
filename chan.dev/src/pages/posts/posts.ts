@@ -12,6 +12,21 @@ export type CollectionEntry = ASTRO_CONTENT.CollectionEntry<
   typeof COLLECTION_NAME
 >;
 
+type ViteGlobItem = Record<string, Frontmatter>;
+type Frontmatter = { frontmatter: { publishDate: COLLECTION.maybeDate } };
+
+export function processFeedEntries(viteGlob: ViteGlobItem, formatter) {
+  return Object.entries(viteGlob)
+    .filter(([, post]) => post.frontmatter.publishDate)
+    .sort(([, a], [, b]) =>
+      COLLECTION.compareByDate(
+        a.frontmatter.publishDate,
+        b.frontmatter.publishDate
+      )
+    )
+    .map(formatter);
+}
+
 export async function getCollection(
   filter = (entry: CollectionEntry) => {
     if (entry.data.publishDate) {

@@ -170,14 +170,14 @@ export default defineConfig({
                 ]
               )
             ),
-            h(
-              "span",
-              {
-                "is:raw": true,
-                className: "sr-only",
-              },
-              `Section titled ${(element?.children[0]?.value || "").trim()}`
-            ),
+            // h(
+            //   "span",
+            //   {
+            //     "is:raw": true,
+            //     className: "sr-only",
+            //   },
+            //   `Section titled ${(element?.children[0]?.value || "").trim()}`
+            // ),
           ],
         },
       ],
