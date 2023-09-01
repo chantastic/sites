@@ -1,5 +1,5 @@
 ---
-title: "React Fundamentals Welcome"
+title: React Fundamentals Welcome
 date: 2022-06-29
 ---
 
