@@ -24,3 +24,6 @@ pnpm-debug.log*
 
 # obsidian
 src/content/.obsidian
+/test-results/
+/playwright-report/
+/playwright/.cache/

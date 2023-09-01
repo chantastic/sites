@@ -19,6 +19,7 @@
     "@astrojs/sitemap": "^3.0.0",
     "@astrojs/tailwind": "^5.0.0",
     "@componentdriven/csf": "0.0.2-alpha.0",
+    "@playwright/test": "^1.37.1",
     "@remark-embedder/core": "^3.0.2",
     "@remark-embedder/transformer-oembed": "^3.0.0",
     "@tailwindcss/aspect-ratio": "^0.4.2",
