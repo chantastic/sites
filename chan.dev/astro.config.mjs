@@ -83,6 +83,9 @@ const site = import.meta.env.DEV ? "http://localhost:4321" : "https://chan.dev";
 
 // https://astro.build/config
 export default defineConfig({
+  vite: {
+    optimizeDeps: { exclude: ["fsevents"] },
+  },
   site,
   integrations: [
     tailwind(),
