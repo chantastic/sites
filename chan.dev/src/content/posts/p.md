@@ -14,7 +14,7 @@ This is the zsh script I made to detect and run the correct package manager ever
 p() {
   if [[ -f bun.lockb ]]; then
     command bun "$@"
-  if [[ -f pnpm-lock.yaml ]]; then
+  elif [[ -f pnpm-lock.yaml ]]; then
     command pnpm "$@"
   elif [[ -f yarn.lock ]]; then
     command yarn "$@"
