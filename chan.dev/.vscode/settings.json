@@ -4,6 +4,9 @@
   "markdown.copyFiles.destination": {
     "src/content/**/*.*": "${documentDirName}/${documentBaseName}/${documentBaseName}.png"
   },
+  "editor.lightbulb.enabled": false,
+  "workbench.statusBar.visible": false,
+  "explorer.excludeGitIgnore": false,
   // "editor.lineNumbers": "off",
   // "terminal.integrated.fontSize": 15,
   // "editor.fontSize": 16,
