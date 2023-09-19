@@ -3,7 +3,7 @@ title: markdown
 tags: ["code"]
 ---
 
-This document describes markdown in terms of [Prettier](https://prettier.io/) defaults. If you don't use prettier, find syntax alternatives on [Daring Fireball](http://localhost:3000/markdown).
+This document describes markdown in terms of [Prettier](https://prettier.io/) defaults. If you don't use prettier, find syntax alternatives on [Daring Fireball](https://daringfireball.net/projects/markdown/).
 
 Many examples have been used from the Daring Firebal documentation.
 
