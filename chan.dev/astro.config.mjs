@@ -83,6 +83,7 @@ const site = import.meta.env.DEV ? "http://localhost:4321" : "https://chan.dev";
 
 // https://astro.build/config
 export default defineConfig({
+  server: { port: 2426 },
   vite: {
     optimizeDeps: { exclude: ["fsevents"] },
   },
