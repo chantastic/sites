@@ -1,5 +1,7 @@
 ---
 title: "A Universal Terminal alias for bun, pnpm, npm, and yarn"
+description: "Use zsh functions to create command line alias that determines local package manager and runs the corrrect comamnd: bun, pnpm, npm, or yarn."
+publishDate: 2023-09-09
 references:
   - https://zsh.sourceforge.io/Intro/intro_4.html
   - https://unix.stackexchange.com/questions/33255/how-to-define-and-load-your-own-shell-function-in-zsh
@@ -10,11 +12,11 @@ I've accidentally typed `npm` for the last time.
 This is the zsh script I made to detect and run the correct package manager every time: `bun`, `pnpm`, `npm`, and even ::shudders:: `yarn`.
 
 ```zsh
-# determine local package manager and run command with it
+# determine package manager and run command with it
 p() {
   if [[ -f bun.lockb ]]; then
     command bun "$@"
-  if [[ -f pnpm-lock.yaml ]]; then
+  elif [[ -f pnpm-lock.yaml ]]; then
     command pnpm "$@"
   elif [[ -f yarn.lock ]]; then
     command yarn "$@"
