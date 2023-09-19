@@ -1,6 +1,9 @@
 {
   "explorer.sortOrder": "mixed",
   "editor.folding": true,
+  "markdown.copyFiles.destination": {
+    "src/content/**/*.*": "${documentDirName}/${documentBaseName}/${documentBaseName}.png"
+  },
   // "editor.lineNumbers": "off",
   // "terminal.integrated.fontSize": 15,
   // "editor.fontSize": 16,
