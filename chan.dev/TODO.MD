@@ -1,3 +1,7 @@
+## 2023-09-20
+
+Setup `private` frontmatter field to allow some posts to not show up in search.
+
 ## 2023-08-30
 
 - fix over-replaced `publishDate` in content
