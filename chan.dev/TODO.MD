@@ -2,6 +2,8 @@
 
 Setup `private` frontmatter field to allow some posts to not show up in search.
 
+Implement a url-based search feature that lets me visit /whate-ever-i-want and it either visits the closest single match *or* provides a list of matches on the 404 page.
+
 ## 2023-08-30
 
 - fix over-replaced `publishDate` in content
