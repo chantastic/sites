@@ -9,14 +9,13 @@ cover: ./p/p_thumbnail.png
 coverAlt: Screenshot of a text editor revealing a zsh function that determines the local package manager and runs the correct command. Works with bun, pnpm, npm, and yarn.
 ---
 
-I've typed `npm` for the last time.
+I've typed npm for the last time.
 
 As JavaScript developers, we have four package managers to choose from. And between personal, work, and open source projects, I use every last one of them. This is a problem because typing the wrong command costs time and irritation.
 
-Below is zsh function that I've used to eliminate package manager context switching heartache — typing `npm start` when we meant `bun start` or `npm i` when we mean ::shudders:: `yarn`.
+Below is zsh function that I've used to eliminate package manager context switching heartache — typing `npm start` when we meant `bun start` or `npm` when I we mean ::shudders:: `yarn`.
 
 ```zsh
-# determine package manager and run command with it
 p() {
   if [[ -f bun.lockb ]]; then
     command bun "$@"
@@ -32,11 +31,15 @@ p() {
 }
 ```
 
+## What this command does
+
+zsh functions can be used like fancy aliases with the addition of a runtime check. This function checks for the existence of a lock file and runs the stated command with the correct package manager.
+
 ## What this command does not do
 
 This function does not create a universal interface around the varied package managers. I don't find universal interfaces helpful.
 
-And I enjoy utilizing the subtlies in each package manager. My problem is the muscle memory around comman cammonds (`start`, `install`, and `test`) and those actions inadvertantly spawing confusion.
+And I enjoy utilizing the subtleties in each package manager. My problem is the muscle memory around common commands (`start`, `install`, and `test`) and those actions inadvertently spawn confusion.
 
 ## Learn more
 
