@@ -1,6 +1,6 @@
 ---
 title: Test Component Interactions in Storybook
-publishDate: 2023-09-24
+date: 2023-09-24
 ---
 
 Testing is important import but testing the right thing, at the right level can be the difference between preventing future bugs and creating them.
@@ -14,11 +14,11 @@ Let's look at why interaction testing — in the browser — provides the most 
 
 Let's dive in.
 
-![Alt text](./testing-component-interactions-in-storybook/testing-component-interactions-in-storybook.png)
+![Alt text](./test-component-interactions-in-storybook/testing-component-interactions-in-storybook.png)
 
 ## Prerequisite
 
-![Alt text](./testing-component-interactions-in-storybook/testing-component-interactions-in-storybook-1.png)
+![Alt text](./test-component-interactions-in-storybook/testing-component-interactions-in-storybook-1.png)
 
 Before we start, take a look at the [tic-tac-toe tutorial](https://react.dev/learn/tutorial-tic-tac-toe) over on the React docs.
 
@@ -31,7 +31,7 @@ We won't be going thru that tutorial. But we will that final component as a star
 
 ## The wrong way: unit tests
 
-![Alt text](./testing-component-interactions-in-storybook/testing-component-interactions-in-storybook-2.png)
+![Alt text](./test-component-interactions-in-storybook/testing-component-interactions-in-storybook-2.png)
 
 Let's start by testing this component the wrong way with unit tests.
 
@@ -88,7 +88,7 @@ export const Tie = {
 };
 ```
 
-![Alt text](./testing-component-interactions-in-storybook/testing-component-interactions-in-storybook-4.png)
+![Alt text](./test-component-interactions-in-storybook/testing-component-interactions-in-storybook-4.png)
 
 It looks reasonable for a tie game. But it results in an impossible UI state where `O` is the next player — even tho there are more `O`s on the board than `X`s.
 
@@ -98,7 +98,7 @@ Let's stop here and start testing the right way.
 
 ## Test UI with interaction tests
 
-![Alt text](./testing-component-interactions-in-storybook/testing-component-interactions-in-storybook.png)
+![Alt text](./test-component-interactions-in-storybook/testing-component-interactions-in-storybook.png)
 
 "Virtuous friction." Test from the outermost interface and only change the code if it makes a practical improvement to the user experience.
 
@@ -119,8 +119,8 @@ When we setup a testing-library test and realize that there's no easy way to que
 
 - Abstract and replay interaction tests between tests (spread play functions)
 
-![Alt text](./testing-component-interactions-in-storybook/testing-component-interactions-in-storybook-5.png)
+![Alt text](./test-component-interactions-in-storybook/testing-component-interactions-in-storybook-5.png)
 
-![Alt text](./testing-component-interactions-in-storybook/testing-component-interactions-in-storybook-7.png)
+![Alt text](./test-component-interactions-in-storybook/testing-component-interactions-in-storybook-7.png)
 
-![Alt text](./testing-component-interactions-in-storybook/testing-component-interactions-in-storybook-6.png)
+![Alt text](./test-component-interactions-in-storybook/testing-component-interactions-in-storybook-6.png)
