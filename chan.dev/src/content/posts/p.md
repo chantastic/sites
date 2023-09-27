@@ -13,7 +13,7 @@ I've typed npm for the last time.
 
 As JavaScript developers, we have four package managers to choose from. And between personal, work, and open source projects, I use every last one of them. This is a problem because typing the wrong command costs time and irritation.
 
-Below is zsh function that I've used to eliminate package manager context switching heartache — typing `npm start` when we meant `bun start` or `npm` when I we mean ::shudders:: `yarn`.
+Below is zsh function that I've used to eliminate package manager context switching heartache — typing `npm start` when I meant `bun start` or `npm` when I mean ::shudders:: `yarn`.
 
 ```zsh
 p() {
