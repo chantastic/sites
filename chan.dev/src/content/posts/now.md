@@ -1,39 +1,42 @@
 ---
-title: "Now"
+title: "What I'm doing now"
 dateCreated: 2022-06-22
+dateUpdated: 2022-09-29
+references:
+  - https://nownownow.com/about
 ---
 
-## Where
+## Epic React 2
 
-I'm most active on [twitter]() and [YouTube](), and in the [lunchdev Discord Server]().
+I am developing a new [Epic React][] with friends [Kent C. Dodds](https://kentcdodds.com/), [Joel Hooks](https://joelhooks.com/), [Taylor Bell](https://www.linkedin.com/in/taylor-bell-0644b131), and the [Skill Recordings](https://www.skillrecordings.com/) crew.
 
-## Community
+[Epic React] is the best way for professional React developers to level up their skills. We're taking it to the next level with TypeScript, a new workshop experience, Next.js + Server Components, and a fresh lineup of expert interviews.
 
-### lunchdev
+[epic react]: https://epicreact.dev/
 
-I'm building [lunchdev](https://discord.gg/lunchdev) a coder-creator community for the most creative, curious, and kind developers on earth.
+## DX Engineer at Chromatic
 
-### JH78
+I work as a DX engineer at [Chromatic][]. I produce [video education on Storybook](https://www.youtube.com/@chromaticui).
 
-I volunteer with the 7th and 8th graders at [North Coast Church](https://northcoastchurch.com).
+[chromatic]: https://www.chromatic.com/
 
-## Projects
+## Learning video production
 
-- [chantastic YouTube channel](https://youtube.com/c/chantastic)
-- [~~REDACTED~~ documentary with with honeypot.io]()
-- [~~REDACTED~~ tech podcast with ~~REDACTED~~]()
+My current path is video production.
 
-## Work
+After a few years of [podcasting][react podcast] and microphones, I wanted to learn more about video production.
 
-I work as a DX Community Engineer at [chromatic](https://chromatic.com), where we're improving the UX of the web with visual testing and collaboration tools.
+I'm making videos (when I can) on [YouTube](https://www.youtube.com/@chantastic).
 
-I'm building up material around Storybook.
+[react podcast]: https://reactpodcast.com/
 
-[YouTube channel]()
-[Conference talks]()
-[Writing (my author page)]()
-[Egghead author page]()
+## Where you can find me
 
-## todos
+I'm most active on [X], and [YouTube][], and in the [lunchdev Discord Server][].
 
-- [ ] add UTM tags
+[lunchdev][] is a Discord community for creative, curious, and kind coder-creators.
+
+[X]: https://x.com/chantastic
+[youtube]: https://www.youtube.com/@chantastic
+[lunchdev]: https://discord.gg/lunchdev
+[lunchdev discord server]: https://discord.gg/lunchdev

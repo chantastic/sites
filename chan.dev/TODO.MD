@@ -1,8 +1,24 @@
+## 2023-09-29
+
+I'm thinking about some additional collection types:
+
+- `pages` excluded from feed completely (e.g. `/now`, `/cv`, `/about`)
+- `essays` separating personal writing from generic posts
+
+I kind a wish that I could overloed types. Because I worry about splitting these up and getting weird routing issues (since I want all to render to root). But maybe that's a solvable issue.
+
+- Move `now` to `/pages` if i end up doing this
+
+### Change registrar
+- liking porkbun
+  - cheap
+  - recomended by sivers
+
 ## 2023-09-20
 
 Setup `private` frontmatter field to allow some posts to not show up in search.
 
-Implement a url-based search feature that lets me visit /whate-ever-i-want and it either visits the closest single match *or* provides a list of matches on the 404 page.
+Implement a url-based search feature that lets me visit /whate-ever-i-want and it either visits the closest single match _or_ provides a list of matches on the 404 page.
 
 ## 2023-08-30
 
