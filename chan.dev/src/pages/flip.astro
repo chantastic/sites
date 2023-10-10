@@ -1,0 +1,22 @@
+---
+import Layout from "#layouts/Layout.astro";
+import Prose from "#components/prose.astro";
+import Button from "#components/button.astro";
+---
+
+<Layout>
+  <Prose as="main">
+    <main>
+      <Button onclick="window.location.reload()">Flip</Button>
+      <div class="text-9xl font-black font-mono" id="d"></div>
+    </main>
+  </Prose>
+</Layout>
+
+<script>
+  document.getElementById("d").innerHTML = Boolean(
+    Math.round(Math.random()),
+  )
+    ? "heads"
+    : "tails";
+</script>
