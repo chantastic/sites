@@ -148,3 +148,40 @@ Storybook actions and interactions are a match made in heaven.
 But log statements has one **huge drawback**: they live in component code. And I'm guilty of pushing a log (or a few dozen) into production.
 
 Storybook actions let you validate implementation in story files, leaving component code alone.
+
+## Want the condensed version?
+
+Check out this X thread.
+
+https://twitter.com/chantastic/status/1694932499984703754
+
+## Prefer video?
+
+Check out the video for this post on YouTube!
+
+<div data-responsive-youtube-container>
+
+https://youtu.be/BTIuTuoHsQc
+
+</div>
+
+Or just get to the goods with shorts!
+
+<div class="flex gap-3">
+<div>
+<iframe width="315" height="560"
+src="https://www.youtube.com/embed/hbd7zXnAE9c"
+title="YouTube video player"
+frameborder="0"
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+allowfullscreen></iframe>
+</div>
+<div>
+<iframe width="315" height="560"
+src="https://www.youtube.com/embed/TdUyhwYu13A"
+title="YouTube video player"
+frameborder="0"
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+allowfullscreen></iframe>
+</div>
+</div>
