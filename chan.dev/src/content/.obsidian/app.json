@@ -4,5 +4,6 @@
   "promptDelete": false,
   "alwaysUpdateLinks": true,
   "trashOption": "none",
-  "attachmentFolderPath": "./"
+  "attachmentFolderPath": "./",
+  "vimMode": true
 }
