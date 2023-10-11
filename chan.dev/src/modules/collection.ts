@@ -1,4 +1,4 @@
-type maybeDate = Date | undefined;
+export type maybeDate = Date | undefined;
 
 export function compareByDate(
   aDate: maybeDate,
