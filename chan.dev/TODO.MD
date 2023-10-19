@@ -1,3 +1,7 @@
+## 2023-10-10
+
+- Add YouTube link as metadata.
+  - Consider different UI options. Play button (like other readers do for voice) or detail section like we use on storybook.js.org
 ## 2023-09-29
 
 I'm thinking about some additional collection types:
