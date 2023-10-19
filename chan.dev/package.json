@@ -29,7 +29,7 @@
     "astro": "^3.3.0",
     "astro-expressive-code": "^0.22.2",
     "hastscript": "^8.0.0",
-    "lucide": "^0.274.0",
+    "lucide": "^0.288.0",
     "markdown-it": "^13.0.2",
     "micromark": "^4.0.0",
     "micromark-extension-gfm": "^3.0.0",

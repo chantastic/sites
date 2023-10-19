@@ -68,8 +68,8 @@ devDependencies:
     specifier: ^8.0.0
     version: 8.0.0
   lucide:
-    specifier: ^0.274.0
-    version: 0.274.0
+    specifier: ^0.288.0
+    version: 0.288.0
   markdown-it:
     specifier: ^13.0.2
     version: 13.0.2
@@ -2719,8 +2719,8 @@ packages:
     engines: {node: '>=12'}
     dev: true
 
-  /lucide@0.274.0:
-    resolution: {integrity: sha512-Ou8jP5n9HJ707d3Z5rfFvVLOf47WvUe00DGEEg5PDH4UvHMQFQ6M3d/LevoQ2OumboN4Gm0bTERLGIyfqzQoYQ==}
+  /lucide@0.288.0:
+    resolution: {integrity: sha512-9jlnsdJjOIVsSY7AO1oh/5NEHVAOHS5mZObrIDuwQnNuUS1mNoxQRyJDB5i7PItEQw34XMcQ9fAdbIIoBFZL4A==}
     dev: true
 
   /magic-string@0.30.5:
