@@ -7,8 +7,6 @@ references:
   - https://new-storybook.netlify.app/
 # tldr:
 # shoutouts: []
-# cover:
-# coverAlt:
 concept: |-
   # 3 ways to GET STARTED with Storybook FAST
   It's never been easier to get started with component-driven development!
@@ -63,6 +61,8 @@ I like spiking out component concepts in an online sandbox first. Thanks to Stac
 - Select your library, builder, and language.
   - I like React, Vite, and TypeScript.
 - And start the component driven development process.
+
+![Alt text](./get-started-with-storybook/get-started-with-storybook.png)
 
 :::hidden-script
 

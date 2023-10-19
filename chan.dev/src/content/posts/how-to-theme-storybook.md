@@ -168,3 +168,12 @@ That's it for today.
 Check out one of these videos to learn more about Storybook.
 I'm [@chantastic](https://x.com/chantastic). I'll see you in the next one. Bye.
 :::
+
+## Prefer video?
+
+Watch on YouTube!
+
+<div data-responsive-youtube-container>
+
+https://youtu.be/x2nGXHAKOrE?feature=shared
+</div>
