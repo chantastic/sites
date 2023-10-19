@@ -5,7 +5,7 @@ publishDate: 2023-07-19
 
 Kent is my real-life Ted Lasso.
 
-<div class="tenor-gif-embed" data-postid="22969950" data-share-method="host" data-aspect-ratio="1.50235" data-width="100%"><a href="https://tenor.com/view/ted-lasso-afc-richmond-believe-gif-22969950">Ted Lasso Afc Richmond GIF</a>from <a href="https://tenor.com/search/ted+lasso-gifs">Ted Lasso GIFs</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+![Ted Lasso Afc Richmond GIF, pointing to the believe sign](./kent-c-dodds-is-great-btw/ted-lasso-believe.gif)
 
 Kent believes in me.
 And he believes in you.
