@@ -1,0 +1,4 @@
+[build]
+  base = "chan.dev"
+  command = "bun run build"
+  publish = "dist/"
