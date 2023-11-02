@@ -115,16 +115,17 @@ This description makes visible content accessible via assistive technologies.
 
 oeunth :i[lovely] oeunth
 
-:::main{#readme}
+<!-- not currently supported after 3.0 update -->
+<!-- :::main{#readme} -->
 
 Lorem:br
 ipsum.
 
-::hr{.red}
+<!-- not currently supported after 3.0 update -->
+<!-- ::hr{.red}
 
 A :i[lovely] language know as :abbr[HTML]{title="HyperText Markup Language"}.
-
-:::
+-->
 
 ```css
 .visually-hidden:not(:focus):not(:active) {

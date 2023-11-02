@@ -16,4 +16,11 @@ date: 2023-08-08
     - Speak Selection
 
 - Turn File Vault on
-- 
+
+## Install script
+- brew
+	- adr-tools
+	- awscli
+	- exiftool
+	- ffmpeg
+	- neovim
