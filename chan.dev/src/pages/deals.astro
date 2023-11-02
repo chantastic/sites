@@ -1,0 +1,37 @@
+---
+import Layout from "#layouts/Layout.astro";
+import Prose from "#components/prose.astro";
+---
+
+<Layout>
+  <Prose as="main">
+    <div id="w">
+      <h2>Wirecutter</h2>
+      <iframe
+        src="https://www.nytimes.com/wirecutter/deals/"
+        frameborder="0"
+        width="100%"
+        height="400"></iframe>
+    </div>
+    <div id="h">
+      <h2>Home Depot</h2>
+      <iframe
+        src="https://www.homedepot.com/SpecialBuy/SpecialBuyOfTheDay"
+        frameborder="0"
+        width="100%"
+        height="400"></iframe>
+    </div>
+    <div id="b">
+      <h2>B&H</h2>
+      <a href="https://www.bhphotovideo.com/find/dealZone.jsp">refuses iframes</a>
+    </div>
+    <div id="f">
+      <h2>Frazier Farms</h2>
+      <iframe
+        src="https://frazierfarmsmarket.com/specials/page/1/?ad_id=18629"
+        frameborder="0"
+        width="100%"
+        height="400"></iframe>
+    </div>
+  </Prose>
+</Layout>
