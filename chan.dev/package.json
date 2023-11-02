@@ -13,7 +13,7 @@
 		"preview": "astro preview",
 		"test:e2e": "playwright test",
 		"astro": "astro",
-		"postinstall": "cd node_modules/sharp && bun install"
+		"postinstall": "cd node_modules/sharp && bun install && cd ../.."
 	},
 	"devDependencies": {
 		"@astrojs/markdown-remark": "^3.3.0",
