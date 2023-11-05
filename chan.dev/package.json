@@ -1,6 +1,6 @@
 {
-  "name": "@example/basics",
-  "type": "module",
+"name": "@example/basics",
+"type": "module",
   "version": "0.0.1",
   "private": true,
   "imports": {
@@ -12,8 +12,7 @@
     "build": "astro build",
     "preview": "astro preview",
     "test:e2e": "playwright test",
-    "astro": "astro",
-    "postinstall": "cd node_modules/sharp && bun install && cd ../.."
+    "astro": "astro"
   },
   "devDependencies": {
     "@astrojs/markdown-remark": "^3.3.0",
