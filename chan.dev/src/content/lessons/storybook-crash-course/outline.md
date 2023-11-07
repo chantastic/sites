@@ -53,15 +53,11 @@ _This framework should provide the fastest, most approachable experience for mos
 
 ## Outline
 
-### Get Started with Storybook 7 — Course Introduction
+- [Get Started with Storybook 7 — Course Introduction](./00-get-started-with-storybook-7-course-introduction)
 
-Discover Storybook 7's revolutionary approach to UI design and development in collaborative environments. Discover why it's the top choice for teams crafting high-quality user interfaces.
+- [Start Storybook in an Interactive Online Playground](./01-start-storybook-in-an-interactive-online-playground)
 
-### Start Storybook in an Interactive Online Playground
-
-Launch into Storybook with a one-click setup on StackBlitz's interactive online playground. Visit storybook.new to instantly create a Storybook environment tailored to your preferred framework and language, perfect for immersive learning and exploration.
-
-### Navigate Storybook Sidebar
+- [Navigate Storybook Sidebar](./02-navigate-storybook-sidebar)
 
 Navigate your component library with ease using Storybook's intuitive sidebar. Understand its hierarchical organization of categories, folders, and components. And filter components quickly with global search.
 
