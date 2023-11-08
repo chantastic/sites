@@ -1,4 +1,4 @@
 [build]
   base = "chan.dev"
-  command = "bun run build"
+  command = "pnpm run build"
   publish = "chan.dev/dist/"

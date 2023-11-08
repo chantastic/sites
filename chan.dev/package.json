@@ -1,6 +1,6 @@
 {
-"name": "@example/basics",
-"type": "module",
+  "name": "@example/basics",
+  "type": "module",
   "version": "0.0.1",
   "private": true,
   "imports": {
@@ -48,6 +48,7 @@
     "node": "20.5.0"
   },
   "dependencies": {
+    "@astrojs/netlify": "^3.0.4",
     "@astrojs/react": "^3.0.3",
     "@netlify/functions": "^2.3.0",
     "@types/react": "^18.2.28",

@@ -21,6 +21,7 @@ pnpm-debug.log*
 
 # astro
 .astro
+.netlify
 
 # obsidian
 src/content/.obsidian
