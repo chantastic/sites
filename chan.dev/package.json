@@ -17,7 +17,7 @@
   "devDependencies": {
     "@astrojs/markdown-remark": "^3.3.0",
     "@astrojs/rss": "^3.0.0",
-    "@astrojs/sitemap": "^3.0.1",
+    "@astrojs/sitemap": "^3.0.3",
     "@astrojs/tailwind": "^5.0.2",
     "@componentdriven/csf": "0.0.2-alpha.0",
     "@playwright/test": "^1.39.0",
@@ -25,8 +25,8 @@
     "@remark-embedder/transformer-oembed": "^3.0.0",
     "@tailwindcss/aspect-ratio": "^0.4.2",
     "@tailwindcss/typography": "^0.5.10",
-    "@types/sanitize-html": "^2.9.2",
-    "astro": "^3.3.0",
+    "@types/sanitize-html": "^2.9.4",
+    "astro": "^3.4.4",
     "astro-expressive-code": "^0.22.2",
     "hastscript": "^8.0.0",
     "lucide": "^0.288.0",
@@ -41,7 +41,7 @@
     "remark-toc": "^8.0.1",
     "sanitize-html": "^2.11.0",
     "shiki": "^0.14.5",
-    "tailwindcss": "^3.3.3",
+    "tailwindcss": "^3.3.5",
     "unist-util-visit": "^5.0.0"
   },
   "volta": {
@@ -49,10 +49,10 @@
   },
   "dependencies": {
     "@astrojs/netlify": "^3.0.4",
-    "@astrojs/react": "^3.0.3",
+    "@astrojs/react": "^3.0.4",
     "@netlify/functions": "^2.3.0",
-    "@types/react": "^18.2.28",
-    "@types/react-dom": "^18.2.13",
+    "@types/react": "^18.2.37",
+    "@types/react-dom": "^18.2.15",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "sharp": "0.32.6"
