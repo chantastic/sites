@@ -15,7 +15,7 @@
     "astro": "astro"
   },
   "devDependencies": {
-    "@astrojs/markdown-remark": "^3.3.0",
+    "@astrojs/markdown-remark": "^3.4.0",
     "@astrojs/rss": "^3.0.0",
     "@astrojs/sitemap": "^3.0.3",
     "@astrojs/tailwind": "^5.0.2",
@@ -26,7 +26,7 @@
     "@tailwindcss/aspect-ratio": "^0.4.2",
     "@tailwindcss/typography": "^0.5.10",
     "@types/sanitize-html": "^2.9.4",
-    "astro": "^3.4.4",
+    "astro": "^3.5.0",
     "astro-expressive-code": "^0.22.2",
     "hastscript": "^8.0.0",
     "lucide": "^0.288.0",
@@ -50,7 +50,7 @@
   "dependencies": {
     "@astrojs/netlify": "^3.0.4",
     "@astrojs/react": "^3.0.4",
-    "@netlify/functions": "^2.3.0",
+    "@netlify/functions": "^2.4.0",
     "@types/react": "^18.2.37",
     "@types/react-dom": "^18.2.15",
     "react": "^18.2.0",
