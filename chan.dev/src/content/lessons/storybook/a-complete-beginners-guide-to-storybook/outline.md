@@ -53,77 +53,25 @@ _This framework should provide the fastest, most approachable experience for mos
 
 ## Outline
 
-- [Get Started with Storybook 7 — Course Introduction](./00-get-started-with-storybook-7-course-introduction)
-
-- [Start Storybook in an Interactive Online Playground](./01-start-storybook-in-an-interactive-online-playground)
-
-- [Navigate Storybook Sidebar](./02-navigate-storybook-sidebar)
-
-Navigate your component library with ease using Storybook's intuitive sidebar. Understand its hierarchical organization of categories, folders, and components. And filter components quickly with global search.
-
-### Manipulate the Storybook Canvas with the Addon Toolbar
-
-The Storybook Addons Toolbar provides one-click access to essential visual debugging tools. Discover how zoom, background color, measure, outline, and viewport help you debug and refine components.
-
-### Explore Component Interfaces with Storybook Controls
-
-Uncover the power of Storybook Controls for interactively stress-testing component interfaces. Deepen your understanding of component behavior with real-time, interactive updates, enabling a thorough exploration of component capabilities.
-
-### Observe Component Behavior with Actions Addon
-
-Gain unparalleled insight into component behavior with the Storybook Actions Addon. Learn to log every click, hover, and focus event, providing a clear window into real-time component responses.
-
-### Analyze How Components Respond to Fixed Events with Interactions Addon
-
-Replay fixed behavior with precision using the Storybook Interactions Addon. Discover how it provides a detailed playback of testing library events, allowing you to thoroughly understand and analyze how your components react to predetermined scenarios.
-
-### Understand Component Story Format (CSF)
-
-Easily capture discrete UI states using Component Story Format (CSF). Discover this straightforward approach to writing stories that are portable, composable, and easily testable. Revolutionizing your UI development workflow.
-
-### Create Engaging Component Playgrounds with Args and Controls
-
-Create dynamic and engaging component playgrounds in Storybook with Args and Controls. Learn how these powerful tools create an engaging and interactive documentation experience.
-
-### Manipulate Story State with Play Functions and Testing Library Events
-
-Bring your UI narrative to life with Storybook Play functions. Use Testing Library to create stories from user events — perfectly simulating real-world usage.
-
-### Specify Layout and Viewport with Storybook Parameters
-
-Take control of story presentation with Storybook Parameters. Expertly adjust the layout and viewport settings to ensure perfect rendering across devices and dimensions.
-
-### Capture Interactions with Actions Addon
-
-Seamlessly capture and analyze user interactions with the Actions Addon. Learn to log events — like click, hover, focus, and more — to elevate manual testing and debugging.
-
-### Extend Storybook's Capabilities with Addons
-
-Storybook boasts a vibrant ecosystem of ready-made addons. Learn how to install and register the Accessibility Addon and promote UI inclusivity.
-
-### Generate Documentation Effortlessly with Autodocs
-
-Effortlessly generate interactive and detailed documentation for your components with the `autodocs` tag. Learn how to turn comments and prop definitions into rich, readable docs.
-
-### Integrate Storybook into Your Development Environment
-
-Storybook seamlessly integrates with popular frameworks like Next.js, Nuxt, Angular, SvelteKit, and more. Discover how to incorporate Storybook into your existing project, enhancing your UI development process.
-
-### Configure Storybook with Global Stylesheets and Fonts
-
-Ensure your Storybook environment mirrors your production setup. Learn to add global stylesheets and fonts, creating a consistent look and feel across your project and component library.
-
-### Brand Your Storybook with a Custom Logo
-
-Personalize your Storybook workspace by adding a custom logo. Learn how to make your component library an integral part of your project's identity.
-
-### Automate Visual Regressions Testing with Chromatic
-
-Ship UIs faster with Chromatic by automating visual and interaction tests for Storybook. Learn to connect CI/CD, streamlining stakeholder sign-off and generating versioned component documentation.
-
-### Leverage Storybook Documentation and Community Support
-
-Storybook has thorough documentation and an incredible Discord community to help you. Learn how to efficiently find solutions and tips, ensuring you always have the support you need.
+1. [Get Started with Storybook 7 — Course Introduction](./01-get-started-with-storybook-7-course-introduction)
+1. [Start Storybook in an Interactive Online Playground](./02-start-storybook-in-an-interactive-online-playground)
+1. [Navigate Storybook Sidebar](./03-navigate-storybook-sidebar)
+1. [Manipulate the Storybook Canvas with the Addon Toolbar](./04-manipulate-the-storybook-canvas-with-the-addon-toolbar)
+1. [Explore Component Interfaces with Storybook Controls](./05-explore-component-interfaces-with-storybook-controls)
+1. [Observe Component Behavior with Actions Addon](./06-observe-component-behavior-with-the-actions-addon)
+1. [Analyze How Components Respond to Fixed Events with Interactions Addon](./07-analyze-how-components-respond-to-fixed-events-with-interactions-addon)
+1. [Understand Component Story Format (CSF)](./08-understand-component-story-format-csf)
+1. [Create Engaging Component Playgrounds with Args and Controls](./09-create-engaging-component-playgrounds-with-args-and-controls)
+1. [Manipulate Story State with Play Functions and Testing Library Events](./10-manipulate-story-state-with-play-functions-and-testing-library)
+1. [Specify Layout and Viewport with Storybook Parameters](./11-specify-layout-and-viewport-with-storybook-parameters)
+1. [Capture Interactions with the Actions Addon](./12-capture-interactions-with-the-actions-addon)
+1. [Extend Storybook's Capabilities with Addons](./13-extend-storybooks-capabilities-with-addons)
+1. [Generate Documentation Effortlessly with Autodocs](./14-generate-documentation-effortlessly-with-autodocs)
+1. [Integrate Storybook into Your Development Environment](./15-integrate-storybook-into-your-development-environment)
+1. [Configure Storybook with Global Stylesheets and Fonts](./16-configure-storybook-with-global-stylesheets-and-fonts)
+1. [Brand Your Storybook with a Custom Logo](./17-brand-your-storybook-with-a-custom-logo)
+1. [Automate Visual Regression Testing with Chromatic](./18-automate-visual-regressions-testing-with-chromatic)
+1. [Leverage Storybook Documentation and Community Support](./19-leverage-storybook-documentation-and-community-support)
 
 ## Next courses…
 
