@@ -76,6 +76,9 @@ const site = import.meta.env.DEV
 
 // https://astro.build/config
 export default defineConfig({
+	experimental: {
+		contentCollectionCache: true,
+	},
 	server: {
 		port: 2426,
 	},
