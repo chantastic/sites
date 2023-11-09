@@ -71,7 +71,7 @@ function exchange_relative_links_with_absolute() {
 	}
 }
 const site = import.meta.env.DEV
-	? 'http://localhost:4321'
+	? 'http://localhost:2426'
 	: 'https://chan.dev'
 
 // https://astro.build/config
