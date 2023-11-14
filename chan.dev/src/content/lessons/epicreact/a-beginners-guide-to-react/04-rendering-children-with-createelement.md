@@ -16,7 +16,7 @@ Let's make sure we know how they work.
 
 Now we can add children in many different ways.
 
-- Remove the `chidren` property,
+- Remove the `children` property,
   - And add the "Hello React" string asa third argument
   - This is functionally identical
 

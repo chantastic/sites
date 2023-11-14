@@ -2,7 +2,69 @@
 title: Manipulate Story State with Play Functions and Testing Library Events
 description: Bring your UI narrative to life with Storybook Play functions. Use Testing Library to create stories from user events — perfectly simulating real-world usage.
 date: 2023-11-09
-status: gpt
+status: draft
+---
+
+CSF has a second way to define stories: play functions.
+
+Play functions are a way to create stories from user events and simulation interactions.
+
+[Show `Page` during intro]
+
+Let's learn how they work by creating new stories for the `Page` component.
+
+```js
+import {Page} from './Page'
+
+export default {
+	component: Page,
+}
+
+export const LoggedOut = {}
+```
+
+When a user is logged in, this page component looks completely different.
+
+The way that the component is designed, this isn't something that we control via props.
+
+We actually have to click this button.
+
+Storybook provides a way to do that automatically, via play functions.
+
+- start with a new story - `Loggedin`
+- add an async play function definition to the story object
+
+```js
+export const LoggedIn = {
+	play: async (context) => {
+		const canvas = within(context.canvasElement)
+		const loginButton = canvas.getByRole('button', {
+			name: /Log in/i,
+		})
+
+		await expect(loginButton).toBeInTheDocument()
+	},
+}
+```
+
+```js
+export const LoggedIn = {
+	play: async (context) => {
+		const canvas = within(context.canvasElement)
+		const loginButton = canvas.getByRole('button', {
+			name: /Log in/i,
+		})
+
+		await userEvent.click(loginButton)
+
+		const logoutButton = canvas.getByRole('button', {
+			name: /Log out/i,
+		})
+		await expect(logoutButton).toBeInTheDocument()
+	},
+}
+```
+
 ---
 
 [Screen: Storybook's UI with a focus on an interactive component within a story]
@@ -36,3 +98,7 @@ Refine your play function to perfect the interaction sequence. This iterative pr
 [Screen: Storybook UI showing the component after the play function has run]
 
 By incorporating Play Functions and Testing Library events, you've brought your UI narrative to life, providing a dynamic way to demonstrate and test your components.
+
+```
+
+```

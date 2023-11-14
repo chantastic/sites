@@ -62,3 +62,19 @@ This will lay out all of the recommended options and trade-offs for starting a n
 	</script>
 </body>
 ```
+
+---
+
+GPT take
+
+In this lesson, we're switching gears to JSX, the syntactic sugar that makes writing React elements a breeze.
+
+Add the Babel script tag to your HTML to enable JSX processing in the browser.
+Change the existing script tag's type attribute from "module" to "text/babel" to cue Babel's processing.
+Inside the script tag, replace the React.createElement call with JSX syntax.
+Update the content within the JSX to "Hello <em>React with JSX</em>" to see JSX in action.
+Once saved, upon refresh, you'll witness the magic:
+
+Your browser displays the updated text, "Hello React with JSX".
+Inspect the page to see the new script tag with the transpiled code.
+Remember, this setup is for educational purposes. For production, you'll want to precompile your JSX. The React documentation offers guidance for setting up production-grade applications.

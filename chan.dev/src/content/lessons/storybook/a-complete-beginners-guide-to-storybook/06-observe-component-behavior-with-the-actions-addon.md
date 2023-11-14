@@ -2,41 +2,32 @@
 title: Observe Component Behavior with Actions Addon
 descrisption: Gain unparalleled insight into component behavior with the Storybook Actions Addon. Learn to log every click, hover, and focus event, providing a clear window into real-time component responses.
 date: 2023-11-09
-status: gpt
+status: draft
 ---
 
-[Screen: Open a component story in Storybook with the Actions Addon panel visible]
+To see the Actions panel:
 
-The Actions Addon in Storybook is a powerful feature that allows you to observe and log user interactions with your components. It provides a transparent view into how components react to user events in real-time.
+- visit any store.
+  - I'll start with Button
+- Make sure the Addons panel is visible and Actions table selected.
+  You can find the Actions panel on any story, where the addons panel is enabled.
 
-[Screen: Highlighting the Actions tab in the Addon panel]
+Every time I click this button, I see that the `onClick` event is being logged.
 
-Locate the 'Actions' tab in the Storybook Addon panel. This is your dashboard for monitoring user events such as clicks, hovers, and focus.
+This doesn't just work with common event names.
+It also works with custom event names.
 
-[Screen: Interacting with a component to trigger events]
+Open the `Header` story `Logged Out`.
 
-Interact with your component in the Storybook preview pane. Try clicking a button or hovering over an element.
+- As we click the `Log in` button, we see the custom `onLogin` event called
+- And as we click the `Sign up` button, we see the custom event the `onCreateAccount` event called
 
-[Screen: Viewing the logged events in the Actions panel]
+So, what's making this work?
 
-As you interact, watch as each event is captured and logged within the Actions panel. This instantaneous log is crucial for understanding the event flow and debugging.
+To work across Storybook, this handler is implemented at a global level in the `.storybook/preview` module.
+It simply observes any `on*` arguments provided to components and logs them to the actions panel.
 
-[Screen: Explaining the setup for capturing actions]
+We can disable this high-level observer and see that these no longer fire.
+These can be defined closer to the component, which we'll cover in lesson #X.
 
-Let’s ensure your component is set up to capture these events. In your story code, bind the actions to specific events using the action function provided by Storybook.
-
-[Screen: Adjusting event handlers in the story code to log in Actions]
-
-Adjust the event handlers in your component or story file. For example, add onClick={action('button-click')} to your button component to log every click event.
-
-[Screen: Demonstrating a variety of events and their logs]
-
-Explore by triggering various events, such as onMouseEnter, onFocus, and others, and observe how the Actions Addon logs them.
-
-[Screen: Highlighting the practical use cases for the Actions Addon]
-
-This direct feedback from the Actions Addon is invaluable not just for developers but also for designers and QA testers to verify interaction designs and catch potential issues.
-
-[Screen: Completed interaction session with a list of logged events]
-
-By leveraging the Actions Addon, you've enriched your understanding of how components behave and respond, ensuring that they meet the intended interaction design.
+Something like this prevents a lot of extranious `console.log` that may accidentally get committed to code.

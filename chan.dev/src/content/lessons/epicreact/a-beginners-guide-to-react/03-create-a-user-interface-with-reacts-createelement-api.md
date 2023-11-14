@@ -12,7 +12,7 @@ This lets us import the React, right from the internet, without having to pre-in
 
 - `import React from 'https://esm.sh/react@18.2.0'`
 - Change `document.createElement` to `React.createElement`
-- React allows us to define these attributes when we create an element, using an option object.
+- React allows us to define these attributes when we create an element, using the props option object.
   - Move the attributes into the object
   - Then reformat them into object syntax,
     - Changing `textContent` to `children`

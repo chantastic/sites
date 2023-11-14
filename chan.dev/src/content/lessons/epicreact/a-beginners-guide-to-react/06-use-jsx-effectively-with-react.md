@@ -94,3 +94,68 @@ const props = {
 }
 const element = <div {...props} id="foo" />
 ```
+
+---
+
+GPT4 take
+
+# Create a User Interface with React’s JSX syntax
+
+_In this lesson, we'll see how JSX transforms our development experience with React by allowing us to write our components in a syntax similar to HTML._
+
+## Steps:
+
+1. Add the Babel script to your HTML to enable in-browser JSX processing.
+
+   ```html
+   <!-- Include Babel to process JSX -->
+   <script
+   	type="module"
+   	src="https://esm.sh/@babel/standalone"
+   ></script>
+   ```
+
+2. Modify the script type for your React component to be processed by Babel.
+
+   ```html
+   <!-- This script will now be processed by Babel -->
+   <script type="text/babel">
+   ```
+
+3. Replace the `React.createElement` call with JSX syntax.
+
+   ```jsx
+   <!-- JSX makes your component declaration much cleaner -->
+   const element = <div className="greeting">Hello <em>React with JSX</em></div>;
+   ```
+
+4. Refresh your browser to see the updated UI.
+
+_By following these steps, you've just leveled up your React game by integrating JSX into your project!_
+
+> **Note:** This setup is ideal for learning and development. For production, ensure to precompile your JSX for performance and reliability.
+
+## Final Code:
+
+```html
+<body>
+	<div id="root"></div>
+	<script
+		type="module"
+		src="https://esm.sh/@babel/standalone"
+	></script>
+	<script type="text/babel">
+		import React from 'https://esm.sh/react@18.2.0'
+		import ReactDOM from 'https://esm.sh/react-dom@18.2.0/client'
+
+		const rootElement = document.getElementById('root')
+		const element = (
+			<div className="greeting">
+				Hello <em>React with JSX</em>
+			</div>
+		)
+
+		ReactDOM.createRoot(rootElement).render(element)
+	</script>
+</body>
+```

@@ -4,3 +4,9 @@ description: Discover Storybook 7's revolutionary approach to UI design and deve
 date: 2023-11-06
 status: not started
 ---
+
+## Notes:
+- mention that I will be showing the feature in the UI and tying it loosely to sample code (so you know where to find it)
+  - But I won't go into detail.
+  - We'll circle back and build up all of the stories on our own.
+- 
