@@ -3,8 +3,7 @@ manufacturer: Gamewright
 model: Sushi Go Party!
 tags: [game]
 status: active
-frequency: monthly
-acquisition: purchased
+frequency: regular
 links: [https://amzn.to/44Utc0o]
 ---
 

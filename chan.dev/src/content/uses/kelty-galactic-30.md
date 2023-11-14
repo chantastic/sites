@@ -4,9 +4,11 @@ model: Galactic 30 Sleeping Bag
 size: Regular
 tags: [camping, outdoor]
 status: active
-frequency: severaly times a year
-acquisition: purchased
-links: [https://www.rei.com/product/202211/kelty-galactic-30-sleeping-bag]
+frequency: occasional
+links:
+  [
+    https://www.rei.com/product/202211/kelty-galactic-30-sleeping-bag,
+  ]
 ---
 
 ## Review

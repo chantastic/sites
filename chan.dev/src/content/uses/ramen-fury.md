@@ -3,8 +3,7 @@ manufacturer: Mixlore
 model: Ramen Fury
 tags: [game]
 status: active
-frequency: monthly
-acquisition: purchased
+frequency: regular
 links: [https://amzn.to/3K9aXwa]
 ---
 

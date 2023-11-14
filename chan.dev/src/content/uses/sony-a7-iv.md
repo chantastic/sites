@@ -3,7 +3,7 @@ manufacturer: Sony
 model: ⍺7 IV
 tags: [camera, photo]
 status: active
-frequency: daily
+frequency: regular
 ---
 
 The Sony a7 IV is what I use to produce all of my YouTube [@chantastic](https://www.youtube.com/@chantastic) and [@chromaticui](https://www.youtube.com/@chromaticui).

@@ -3,8 +3,7 @@ manufacturer: RICOH
 model: GR III
 tags: [camera, photo]
 status: active
-frequency: daily
-acquisition: purchased
+frequency: regular
 links: [https://amzn.to/43fafEl]
 ---
 

@@ -4,9 +4,11 @@ model: Helio Sack 50 Sleeping Bag
 size: Regular
 tags: [camping, outdoor]
 status: active
-frequency: severaly times a year
-acquisition: purchased
-links: [https://www.rei.com/product/185260/rei-co-op-helio-sack-50-sleeping-bag]
+frequency: occasional
+links:
+  [
+    https://www.rei.com/product/185260/rei-co-op-helio-sack-50-sleeping-bag,
+  ]
 ---
 
 ## Review

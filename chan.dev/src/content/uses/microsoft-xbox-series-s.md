@@ -1,7 +1,7 @@
 ---
 manufacturer: Microsoft
 model: Xbox Series S
-size: ""
 status: active
+frequency: regular
 links: [https://amzn.to/3XMy7y4]
 ---
