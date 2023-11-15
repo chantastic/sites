@@ -5,6 +5,24 @@ date: 2023-11-09
 status: gpt
 ---
 
+```js
+export default {
+	component: Button,
+	argTypes: {onClick: {action: 'onClick fired'}},
+}
+```
+
+```js
+export default {
+	component: Header,
+	argTypes: {
+		onLogout: {action: 'onLogout fired'},
+		onLogin: {action: 'onLogin fired'},
+		onCreateAccount: {action: 'onCreateAccount fired'},
+	},
+}
+```
+
 [Screen: Storybook UI with a component that has clickable elements]
 
 The Actions Addon is a powerful ally in your UI testing arsenal, capturing user interactions and providing a detailed log of events. Let’s see how to utilize it for manual testing and debugging.

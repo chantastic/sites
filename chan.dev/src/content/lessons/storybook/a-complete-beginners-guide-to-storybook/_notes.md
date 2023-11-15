@@ -19,8 +19,19 @@
   - Create shortlinks for comment reference
   - These _could_ be codified short links, to include ui library info: `https://sb.link/actions/react`
 - I'd like to see page demo include a Decorator with a `AuthProvider`
-- We *have* to show something when we have a component defined with no stories. we have to. not having it makes progressive instruction so difficult.
+- We _have_ to show something when we have a component defined with no stories. we have to. not having it makes progressive instruction so difficult.
 - The concept of a "component" is so confusing.
   - I've decided to embrace it and just teach stories from components.
     - There's a progressive map (the one i used on YouTube) but if this is a beginner's guide, i'm just going to leave out the helpful ambiguity.
 - I've used the term component meta being a `default export` object. But that isn't correct. These are all fields just exported on the module.
+
+- I don't like how viewports work. Never have. But I find them particularly difficult to explain to beginners because there's literally no onramp. Everything is hidden.
+- I think we should remove the viewport lesson
+
+## Advanced topics
+
+- Parameter inheritance
+
+## editing process
+
+- hard to teach, hard to learn

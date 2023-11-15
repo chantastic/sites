@@ -5,6 +5,16 @@ date: 2023-11-09
 status: gpt
 ---
 
+add this to our stories.
+
+```js
+{
+  tags: ['autodocs']
+}
+```
+
+---
+
 [Screen: Display a component file in the Storybook code editor]
 
 Documentation is a crucial part of development, and Storybook's autodocs feature simplifies the process by turning code comments into rich, interactive docs.

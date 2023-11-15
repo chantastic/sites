@@ -1,8 +1,22 @@
 ---
-title: Specify Layout and Viewport with Storybook Parameters
-description: Take control of story presentation with Storybook Parameters. Expertly adjust the layout and viewport settings to ensure perfect rendering across devices and dimensions.
+title: Specify Layout with Storybook Parameters
+description: Take control of story presentation with Storybook Parameters. Expertly adjust the layout to ensure ideal rendering for viewers.
 date: 2023-11-09
-status: gpt
+status: draft
+---
+
+[possibl move up. keeping all button stories together]
+[goal: learn how to apply parameters to components]
+
+```js
+parameters: {
+	layout: 'centered' // 'fullscreen', 'padded' (default)
+}
+```
+
+1. complete at story level
+1. move up to component level
+
 ---
 
 [Screen: Storybook UI showcasing a default component view]

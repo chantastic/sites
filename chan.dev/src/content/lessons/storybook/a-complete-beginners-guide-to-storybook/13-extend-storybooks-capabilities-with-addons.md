@@ -2,7 +2,29 @@
 title: Extend Storybook's Capabilities with Addons
 description: Storybook boasts a vibrant ecosystem of ready-made addons. Learn how to install and register the Accessibility Addon and promote UI inclusivity.
 date: 2023-11-09
-status: gpt
+status: draft
+---
+
+```bash
+yarn add @storybook/addon-a11y --dev
+```
+
+```js title="main.js"
+export default {
+	addons: ['@storybook/addon-a11y'],
+}
+```
+
+Test it out.
+
+Our regular button passes everything. No problem.
+Let's check out the other story wee made.
+
+Color contrast violation.
+
+This works on our full pages too!
+And here we can see how focusing elements is valuable.
+
 ---
 
 [Screen: Storybook Addon Catalog displayed]
