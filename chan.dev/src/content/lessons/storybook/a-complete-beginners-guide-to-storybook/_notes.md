@@ -2,13 +2,30 @@
 
 ## Sample stories
 
-- `Button` as a bizarre API, `label` vs `children` is this for multi-framework support?
-- Color picker is a bizarre demo for button. That's not how people select button colors.
-- `Button:Secondary` story is confusing because it uses no props
-- We should just use `autodocs` as the default. `title` is hello-confusing
+### Button
+
+- `Button` interface is as peculiar. is `label` used over `children` for multi-framework support?
+  - Supporting children/slots/etc. seems like a critical part of an integration.
+  - Could changing the example actually aid framework support (as a test case)?
+- Color picker is an impractical demo for button. It demos a nice component but isn't connected to real world.
+  - Is there another component where color picker may make more sense?
+  - If not, I think it should be removed.
+- `Button:Secondary` story is confusing because it uses no props.
+  - I'd like to see the primary component state be the default state (no args).
+    - This makes the demos more progressive and easier to grok.
+  - There is a natural collision here with DocBlocks `Primary` story.
+    - Consiquently I think that the DocBlock should become `First`
+
+### All
+
+- `title` is hella confusing to a newcomer (likely familiar with file-system based routing).
+  - I'd like to see auto-title (with `component` meta) as the default.
+
+## Sample stories
+
 - stories directory should get a couple additional treatments
   1. there should be a README that commuinicates what the directory is there for and that it can be safely removed
-  1. A similar message should be logged via the API
+  2. A similar message should be logged via the API
 - let's call the directory `sample-component-stories`
   - `stories` suggests that stories should be isolated into a different directory (over co-located with code)
   - it's additionally confusing that components are defined inside tho stories directory
