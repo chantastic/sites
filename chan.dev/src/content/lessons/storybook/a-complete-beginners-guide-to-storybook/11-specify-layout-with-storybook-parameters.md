@@ -5,52 +5,82 @@ date: 2023-11-09
 status: draft
 ---
 
-[possibl move up. keeping all button stories together]
-[goal: learn how to apply parameters to components]
+Story objects use Parameters to set configuration in Storybook.
 
-```js
-parameters: {
-	layout: 'centered' // 'fullscreen', 'padded' (default)
+Let's use a common Storybook Parameter (`layout`) to learn how they work.
+
+In this `Page` component, our default layout produces a little padding around the component.
+But for a full page, we may prefer to see the story `fullscreen`.
+
+- Add a `parameters` object to the `LoggedIn` Story
+- Then define `layout: 'fullscreen'`
+
+Now the Story takes up the whole canvas.
+
+```diff lang="js" title="src/components/Page.stories.js"
+export const LoggedIn = {
++	parameters: {
++		layout: 'fullscreen'
++	}
+  // ...
 }
 ```
 
-1. complete at story level
-1. move up to component level
+But now `LoggedIn` and `LoggedOut` have different layouts.
+That's confusing.
 
----
+We could fix that by duplicating the parameter.
+But that's a bit cumbersome.
 
-[Screen: Storybook UI showcasing a default component view]
+```diff lang="js" title="src/components/Page.stories.js"
+export const LoggedIn = {
++	parameters: {
++		layout: 'fullscreen'
++	}
+  // ...
+}
+```
 
-Storybook Parameters give you the power to customize the presentation of your stories, ensuring they look perfect on any device.
+A better way to is to move the layout parameter to the component meta.
+This applies the parameter to all stories.
 
-[Screen: Code editor with a story file open]
+```diff lang="js" title="src/components/Page.stories.js
+export default {
+	component: Button
++	parameters: {
++		layout: 'fullscreen'
++	}
+}
+```
 
-To get started, open your story file. We'll begin by adjusting the layout parameter to control the sizing and positioning of your component within the canvas.
+There's another stardard layout that works great for atomic components like `Button`.
 
-[Screen: Adding the layout parameter to the story]
+[Open button file]
 
-Add a parameters object to your default export and set the layout property. You can specify values like 'fullscreen', 'padded', or 'centered' to suit your needs.
+At the component level, let's define our `parameters` object.
+And apply the layout `centered`.
+This puts the component right in the middle of the canvas.
 
-[Screen: Viewing the component in different layout modes]
+```diff lang="js" title="src/components/Button.stories.js
+export default {
+	component: Button,
++	parameters: {
++		layout: 'fullscreen'
++	}
+}
+```
 
-Switch to your Storybook canvas to see the impact. Your component now adheres to the specified layout, illustrating how it will be framed in different contexts.
+And just to be thorough, if we wanted to overwrite back to the dafault for a single story.
+We can use the third (default) layout `padded`.
 
-[Screen: Highlighting the Viewport addon]
+```diff lang="js" title="src/components/Button.stories.js
+export const MyFirstStory = {
++	parameters: {
++		layout: 'padded'
++	}
+	// ...
+}
+```
 
-Next, let's tackle different device dimensions with the Viewport addon. This tool allows you to mimic the screen sizes of tablets, phones, and desktops.
-
-[Screen: Adjusting viewport settings within the story parameters]
-
-In your story's parameters, configure the viewport settings. Define the default size and any custom dimensions that are relevant to your design.
-
-[Screen: Showing the component rendering in various viewport sizes]
-
-Go back to your Storybook and use the Viewport addon to switch between different screen simulations. Observe your component's responsiveness and adaptability.
-
-[Screen: Emphasizing the importance of responsive testing]
-
-Responsive testing is crucial in a multi-device world. Storybook Parameters and the Viewport addon enable you to conduct thorough testing across a spectrum of display sizes.
-
-[Screen: Completing the responsive checks]
-
-With these settings dialed in, you've taken full control of your story's presentation, ensuring your UI is consistent and adaptive no matter where it's viewed.
+This is just one way to use parameters to communicate confugiration to Storybook.
+But the pattern is the same across options and addons.

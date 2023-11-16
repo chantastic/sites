@@ -5,15 +5,53 @@ date: 2023-11-09
 status: draft
 ---
 
-CSF has a second way to define stories: play functions.
+Let's build up a story that utilizes user events.
 
-Play functions are a way to create stories from user events and simulation interactions.
+[Show `Page` component code].
 
-[Show `Page` during intro]
+Start by creating a new component file: `src/components/Page.js`.
 
-Let's learn how they work by creating new stories for the `Page` component.
+- `import` the `Page` component.
+- Assign in to `component` on story meta
+- And export a single story that rendres the page in its no-args logged-out state.
 
-```js
+```diff lang="js" title="Page.stories.js"
++import {Page} from './Page'
++
++export default {
++	component: Page,
++}
++
++export const LoggedOut = {}
+```
+
+Great!
+Now we have a story that renders this page.
+
+We can interact with it right in Storybook.
+And see that clicking the `Log in` button renderes the logged in state of the component.
+But there's a problem.
+
+We can't use args to make a new story for this.
+We have to actually click this button.
+
+If you've been testing UI as long as I have, you know that manual testing is a recipe for bugs.
+
+Fortunately, Storybook automatically simplate user events: Play functions.
+
+Let's implement one.
+
+- Add a story. I'll name mine `LoggedIn`
+  - By default, it renders in the default logged in state. That's expected.
+- Define a `play` property on the story object.
+- Assign an anonymous async function that takes `context` as an argument.
+- Use the `within` helper to create a testing `canvas`.
+- And query that `canvas` for a `Log in` button, using a `testing-library` query.
+- Finally, simulate a user click event, using `testing-library` events.
+
+```diff lang="js" title="Page.stories.js"
++ import { within, userEvent } from '@storybook/test';
+
 import {Page} from './Page'
 
 export default {
@@ -21,33 +59,26 @@ export default {
 }
 
 export const LoggedOut = {}
+
++export const LoggedIn = {
++	play: async (context) => {
++		const canvas = within(context.canvasElement)
++		const loginButton = canvas.getByRole('button', {
++			name: /Log in/i,
++		})
++		await userEvent.click(loginButton)
++	},
++}
 ```
 
-When a user is logged in, this page component looks completely different.
+Once we arrive at the desired (`LoggedIn`) state, for our story, we can also make assertions about what we expect to see.
 
-The way that the component is designed, this isn't something that we control via props.
+- Query the canvas again for the `Log out` button.
+- `expect` it `toBeInTheDocument`
 
-We actually have to click this button.
+```diff lang="js" title="Page.stories.js" ins=/, expect/
+import { within, userEvent, expect } from '@storybook/test';
 
-Storybook provides a way to do that automatically, via play functions.
-
-- start with a new story - `Loggedin`
-- add an async play function definition to the story object
-
-```js
-export const LoggedIn = {
-	play: async (context) => {
-		const canvas = within(context.canvasElement)
-		const loginButton = canvas.getByRole('button', {
-			name: /Log in/i,
-		})
-
-		await expect(loginButton).toBeInTheDocument()
-	},
-}
-```
-
-```js
 export const LoggedIn = {
 	play: async (context) => {
 		const canvas = within(context.canvasElement)
@@ -57,48 +88,13 @@ export const LoggedIn = {
 
 		await userEvent.click(loginButton)
 
-		const logoutButton = canvas.getByRole('button', {
-			name: /Log out/i,
-		})
-		await expect(logoutButton).toBeInTheDocument()
++		const logoutButton = canvas.getByRole('button', {
++			name: /Log out/i,
++		})
++		await expect(logoutButton).toBeInTheDocument()
 	},
 }
 ```
 
----
-
-[Screen: Storybook's UI with a focus on an interactive component within a story]
-
-In this session, we'll animate our UI stories using Play Functions and integrate Testing Library events for a realistic simulation of user interactions.
-
-[Screen: Code editor with a story file open]
-
-Start by opening a story file where you've defined a component that reacts to user events, like a form or a button.
-
-[Screen: Importing userEvent from '@storybook/testing-library' and writing a play function]
-
-Import userEvent from '@storybook/testing-library'. Below your component story, write a play function which Storybook will use to simulate user behaviors.
-
-[Screen: Demonstrating userEvent to simulate clicks and inputs]
-
-Inside your play function, utilize userEvent methods to simulate interactions. For instance, use userEvent.click() to simulate clicks, or userEvent.type() to simulate typing into an input field.
-
-[Screen: Running the play function in Storybook and observing the actions]
-
-With the play function defined, run your story. Watch as the actions you scripted are carried out automatically in the Storybook Canvas, just like a user would do.
-
-[Screen: Emphasizing the importance of simulating user flows]
-
-Through Play Functions, you can script complex user flows, testing how your component responds to a series of interactions, ensuring your UI can handle real-world use.
-
-[Screen: Adjusting the play function to refine the user interaction simulation]
-
-Refine your play function to perfect the interaction sequence. This iterative process allows you to simulate the exact user behavior you expect in your application.
-
-[Screen: Storybook UI showing the component after the play function has run]
-
-By incorporating Play Functions and Testing Library events, you've brought your UI narrative to life, providing a dynamic way to demonstrate and test your components.
-
-```
-
-```
+With Play function, simple exmaples like this or complex user flows.
+This is an incredible way to bring UI narratives to life and protect real-world experiences.

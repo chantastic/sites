@@ -7,19 +7,20 @@ status: draft
 
 ## Setup
 
+[Screen: StackBlitz homepage]
 
+To start, we're going to spin up a full Storybook environment on StackBlitz — a cloud coding environment.
 
-In a browser, visit [storybook.new](https://storybook.new).
+Visit [storybook.new](https://storybook.new).
 
-This page lets you quickly start up a Storybook sandbox.
+Here you'll find a collection of Storybook sandboxes.
 
 A Storybook sandbox is a ready-to-code environment composed of a UI library, language, builder, and framework.
 
-Choose a sandbox that matches your project or personal preference.
-
-I’ll use React/JavaScript/Vite.
-You don't have to use the same Storybook Sandbox as I am.
-The lessons in this course work across different sandboxes.
+I’ll use React/JavaScript/Vite for this course.  
+But you don't have to use React.
+Choose the one that best suits your fancy.
+The lessons in this course are intended to work across all Storybook sandboxes.
 
 You should see three panels:
 
@@ -27,17 +28,18 @@ You should see three panels:
 - Code editor, center
 - Browser, right
 
-Storybook Sandboxes initialize with sample stories — these sample stories showcase features we'll examine throughout this course.
+Storybook Sandboxes initialize with sample stories.
+We'll use these files to learn about Storybook UI.
 
 For now, I just want you to locate them.
 
 In the file explorer, look for a `/stories` directory.
-In my React—Vite sandbox, this directory is in `src/stories`.
-If you chose a different sandbox, the stories may be in a similar but different location.
+In my React—Vite sandbox, that directory is `src/stories`.
+If you chose a different sandbox, the stories may be in a different parent directory.
 
 Open a the primary button story in both the code editor and browser panels.
 Make a modifacation to the text to see an immediate change in Storybook.
 
 [label: "Fun times with chantastic"]
 
-Now we have everything we need to dive into Storybook!
+Now we're set up with your first Storybook sandbox!

@@ -56,14 +56,14 @@ _This framework should provide the fastest, most approachable experience for mos
 1. [Get Started with Storybook 7 — Course Introduction](./01-get-started-with-storybook-7-course-introduction)
 1. [Start Storybook in an Interactive Online Playground](./02-start-storybook-in-an-interactive-online-playground)
 1. [Navigate Storybook Sidebar](./03-navigate-storybook-sidebar)
-1. [Explore Component Interfaces with Storybook Controls](./05-explore-component-interfaces-with-storybook-controls)
 1. [Manipulate the Storybook Canvas with the Addon Toolbar](./04-manipulate-the-storybook-canvas-with-the-addon-toolbar)
+1. [Explore Component Interfaces with Storybook Controls](./05-explore-component-interfaces-with-storybook-controls)
 1. [Observe Component Behavior with Actions Addon](./06-observe-component-behavior-with-the-actions-addon)
 1. [Analyze How Components Respond to Fixed Events with Interactions Addon](./07-analyze-how-components-respond-to-fixed-events-with-interactions-addon)
 1. [Understand Component Story Format (CSF)](./08-understand-component-story-format-csf)
 1. [Create Engaging Component Playgrounds with Args and Controls](./09-create-engaging-component-playgrounds-with-args-and-controls)
 1. [Manipulate Story State with Play Functions and Testing Library Events](./10-manipulate-story-state-with-play-functions-and-testing-library)
-1. [Specify Layout and Viewport with Storybook Parameters](./11-specify-layout-and-viewport-with-storybook-parameters)
+1. [Specify Layout with Storybook Parameters](./11-specify-layout-with-storybook-parameters)
 1. [Capture Interactions with the Actions Addon](./12-capture-interactions-with-the-actions-addon)
 1. [Extend Storybook's Capabilities with Addons](./13-extend-storybooks-capabilities-with-addons)
 1. [Generate Documentation Effortlessly with Autodocs](./14-generate-documentation-effortlessly-with-autodocs)
@@ -75,6 +75,7 @@ _This framework should provide the fastest, most approachable experience for mos
 
 ## Next courses…
 
+- Storybook in TypeScript
 - Advanced Storybook for {renderer} Developers
 - Build a Living Design System with Storybook and Figma
 

@@ -69,3 +69,58 @@
 ## editing process
 
 - hard to teach, hard to learn
+
+## Reviewer notes
+
+Hi! Thanks for making time to review these lessons for our upcoming egghead course: _A Complete Beginners Guide to Storybook 7_.
+
+All feedback is welcome. And I'd like to make sure that you're well equipped to provide feedback that is actionable at this stage in the process.
+
+So, here are a few thingsy you'll want to know before reviewing.
+
+### Audience
+
+This is a course for Storybook beginners.
+We have no intention of being exhaustive.
+We will leave a lot of advanced options and insights on the table to keep it tractable for beginners.
+
+Our definition of beginner includes designers and developers.
+Anyone interested should be able to take something from this course.
+
+## Approach
+
+To appeal to the broadest possible audience, the course is presented in two acts.
+
+1. An overview of Storybook UI and terms
+2. Implementing features in CSF
+
+This should allow anyone to gain an understanding of Storybook, and jump off at the point that it doesn't server them.
+
+## Structure
+
+The goal with these lessons is to be both progressive and atomic.
+
+Each lesson should stictch together into a cohesive course experience.
+But they'll ideally be atomic enough that we can link
+
+_This is the area where the most review would be helpful. I have been thinking about the progressive side and less the atomic side. Let me know if there are lessons that don't seem to stand on their own (well enough)._
+
+## These are _just_ scripts
+
+These are just scripts used to create videos.
+Don't sweat the details of grammar. But if something is technically innacurate, I'd like to know.
+
+## Feature complete
+
+We've done quite a bit of work to limit the demonstrated features, while still showing off a lot of Storybook's capability.
+Adding features at this point could be a very big lift.
+This isn't impossible but if you think something should be added, know that it will be met with immediate resistance.
+
+## Thanks
+
+That's it!
+I applaud those who make it all the way thru.
+
+Thanks for your help.
+
+Chan

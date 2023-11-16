@@ -7,19 +7,22 @@ status: draft
 
 [start on the previous story with the addons panel closed, zoomed in]
 
-When we define stories with CSF object syntax — that applies args to the component defined — we get something really cool for free.
+When we define stories with CSF object syntax, we get Controls for free!
 
-One of those is Controls.
+Adding our subject component to our component meta, we let Storybook infer our component interface and create UI controls in the Addons Panel.
 
-When involving Storybooks args system.
+[open the addons panel].
 
-- Open the Addons panel and Contrals tab
-- Start fiddling with the controls
+And defining our props as `args` on those stories connects everything up for interactivity.
 
 We didn't write any code to get this playground.
-We get it for free with Storybook's Args system and CSF Object syntax.
+We get it for free with Storybook's `args` system and CSF Object syntax.
 
-Once we have a new setup that we like, we can create a new story from that.
+Let's make a Luke Skywalker sample of this component.
+
+[Fidle with the Contrals to create the story below]
+
+Once we have a new component expression that we like, we can create a new story for it.
 
 ```js
 export const IAmYourFather = {
@@ -31,3 +34,5 @@ export const IAmYourFather = {
 	},
 }
 ```
+
+Now we're cooking with two stories!
