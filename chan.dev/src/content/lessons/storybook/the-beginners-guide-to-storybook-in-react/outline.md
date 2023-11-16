@@ -1,5 +1,5 @@
 ---
-title: "The Complete Beginner's Guide to Storybook 7"
+title: "The Beginner's Guide to Storybook 7 in React"
 date: 2023-09-18
 ---
 
@@ -11,7 +11,8 @@ date: 2023-09-18
 - Confident in creating new components and stories
 - Competent in domain terminology and concepts
 - Capable of finding answers utilizing docs and community
-- Curious about visual regression testing using Chromatic
+- Deploy Storybook to a Chromatic
+- ~~Curious about visual regression testing using Chromatic~~
 
 ## Topics included
 
@@ -22,7 +23,7 @@ date: 2023-09-18
 - Install and register addons
 - Basic documentation with Markdown
 - Add global stylesheets and fonts
-- Apply continuous visual regression testing with Chromatic
+- ~~Apply continuous visual regression testing with Chromatic~~
 
 ## Topics excluded
 
