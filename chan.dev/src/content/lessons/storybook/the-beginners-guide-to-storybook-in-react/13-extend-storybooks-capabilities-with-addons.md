@@ -5,9 +5,23 @@ date: 2023-11-09
 status: draft
 ---
 
+Storybook is just the beginning.
+
+[Screen: Addons page](https://storybook.js.org/integrations)
+
+There are hundreds of community-made addons for Storybook that make Storybook even more powerful.
+
+Let me show you my favorite Addon: [The Accessibility Addon](https://storybook.js.org/addons/@storybook/addon-a11y/) — built and maintained by the Storybook team.
+
+Kill your Stoyrbook server.
+
+Add the package to your project, using your preferred package manager.
+
 ```bash
 yarn add @storybook/addon-a11y --dev
 ```
+
+Then register the addon in the `.storybook/main` module.
 
 ```js title="main.js"
 export default {
@@ -15,50 +29,16 @@ export default {
 }
 ```
 
-Test it out.
+Start the server again and test it out!
 
-Our regular button passes everything. No problem.
-Let's check out the other story wee made.
+We have a new Addon panel tab for Accessibility.
+Our regular `Button` passes everything. No problem.
 
-Color contrast violation.
+This works on our full `Page` too!
 
-This works on our full pages too!
-And here we can see how focusing elements is valuable.
+We see a couple violations: color contrast.
+And this is where focusing elements is valuable.
+We can see exactly which element triggered the violation.
 
----
-
-[Screen: Storybook Addon Catalog displayed]
-
-Storybook's addon ecosystem enhances your UI development with functionality extending far beyond the core experience. Let’s integrate the Accessibility Addon to promote inclusive design.
-
-[Screen: Browsing the Addon Catalog for the Accessibility Addon]
-
-Navigate to the Addon Catalog within Storybook, and search for the 'Accessibility' addon. This addon is a toolkit designed to help you check and improve the accessibility of your components.
-
-[Screen: Installing the Accessibility Addon via the terminal]
-
-Switch to your terminal and install the addon by running npm install @storybook/addon-a11y or yarn add @storybook/addon-a11y.
-
-[Screen: Editing the .storybook/main.js configuration file]
-
-After installation, you'll need to register the addon. Open your Storybook's main configuration file, .storybook/main.js, and add @storybook/addon-a11y to the addons array.
-
-[Screen: Restarting Storybook to load the new addon]
-
-Save your configuration file and restart Storybook to incorporate the Accessibility Addon into your development environment.
-
-[Screen: Demonstrating the Accessibility Addon in use]
-
-With Storybook reloaded, open a component story. The Accessibility panel should now be available, ready to audit your components.
-
-[Screen: Running an accessibility check]
-
-Use the panel to perform an accessibility check. The addon will analyze your component and provide feedback on any accessibility issues, such as insufficient color contrast or missing ARIA attributes.
-
-[Screen: Addressing identified accessibility issues in the component]
-
-Review the issues and update your component accordingly. This iterative process helps you refine your component to meet accessibility standards.
-
-[Screen: Component updated and passing the accessibility check]
-
-By leveraging the Accessibility Addon, you're making strides toward creating a more accessible and inclusive user interface, an essential aspect of modern UI development.
+Making the web accessible to all is a critical part of great UI development.
+This addon makes it easier than ever to test for inclusivity.

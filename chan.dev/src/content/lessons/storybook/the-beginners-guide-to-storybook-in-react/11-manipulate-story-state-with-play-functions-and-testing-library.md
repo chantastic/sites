@@ -96,5 +96,5 @@ export const LoggedIn = {
 }
 ```
 
-With Play function, simple exmaples like this or complex user flows.
+With Play function, simple examples like this or complex user flows.
 This is an incredible way to bring UI narratives to life and protect real-world experiences.

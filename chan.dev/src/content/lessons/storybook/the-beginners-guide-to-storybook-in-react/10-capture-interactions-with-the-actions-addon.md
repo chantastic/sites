@@ -33,19 +33,37 @@ Let's add some actions to the `Page` component too…
 [Open the source code]
 
 The `Page` uses a number of `on{Events}`.
-We could match each individually (like we did for button).
-or we could match all of them via regex.
-
-- Add an `argTypes` object to component meta.
-- Add an `actions` object and in it
-  - Define `argTypesRegex`
-  - Spyng on all events that start with(`^`) `on` and match any number of additional characters (`.*`)
 
 ```diff lang="js" title="src/components/Page.stories.js"
 export default {
-	component: Header,
-  parameters: {
-+   actions: { argTypesRegex: '^on[A-Z].*' },
-  }
+	component: Button,
++	argTypes: {
++  onLogin: {action: 'onLogin fired'}
++  onLogout: {action: 'onLogout fired'}
++ },
+}
+```
+
+Now there's one more action on this page: `onCreateAccount`.
+You'll notice that we still see logged events, even though it's not in the `argTypes` object.
+This is because the default install of Storybook comes with a catchall action for all events.
+
+You can find it in `.storybook/preview.js`.
+This is the root most configuration file and any `on` prefixed props will be caught by this.
+
+Update this regex to change the default behavior,
+or disable it entirely.
+
+```diff lang="js" title=".storybook/preview.js"
+const preview = {
+	parameters: {
++		// actions: { argTypesRegex: '^on[A-Z].*' },
+		controls: {
+			matchers: {
+				color: /(background|color)$/i,
+				date: /Date$/i,
+			},
+		},
+	},
 }
 ```
