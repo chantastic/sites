@@ -90,5 +90,8 @@ export const collectionSchema = defineCollection({
 		date: z.date(),
 		keys: z.array(z.string()).optional(),
 		order: z.number().optional(), // unique?
+		status: z
+			.enum(['draft', 'not-started', 'cursed'])
+			.optional(),
 	}),
 })

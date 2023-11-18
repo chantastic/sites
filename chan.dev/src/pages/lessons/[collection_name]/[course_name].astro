@@ -73,6 +73,7 @@ lessons.sort((a, b) => a.data.order - b.data.order)
 							<a href={`/lessons/${lesson.slug}`}>
 								{lesson.data.order}: {lesson.data.title}
 							</a>
+							{lesson.data.status && ` [${lesson.data.status}]`}
 						</li>
 					)
 				})
