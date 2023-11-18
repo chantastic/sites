@@ -1,6 +1,7 @@
 ---
-title: "The Beginner's Guide to Storybook 7 in React"
+title: 'Course details'
 date: 2023-09-18
+order: 0
 ---
 
 ## Contents
@@ -51,28 +52,6 @@ Two-pass approach. Like Genesis 1. Say what happened in the abstract. Then say i
 | Vite    | JavaScript | React    |
 
 _This framework should provide the fastest, most approachable experience for most people._
-
-## Outline
-
-1. [Get Started with Storybook 7 — Course Introduction](./01-get-started-with-storybook-7-course-introduction)
-1. [Start Storybook in an Interactive Online Playground](./02-start-storybook-in-an-interactive-online-playground)
-1. [Navigate Storybook Sidebar](./03-navigate-storybook-sidebar)
-1. [Manipulate the Storybook Canvas with the Addon Toolbar](./04-manipulate-the-storybook-canvas-with-the-addon-toolbar)
-1. [Explore Component Interfaces with Storybook Controls](./05-explore-component-interfaces-with-storybook-controls)
-1. [Observe Component Behavior with Actions Addon](./06-observe-component-behavior-with-the-actions-addon)
-1. [Analyze How Components Respond to Fixed Events with Interactions Addon](./07-analyze-how-components-respond-to-fixed-events-with-interactions-addon)
-1. [Understand Component Story Format (CSF)](./08-understand-component-story-format-csf)
-1. [Create Engaging Component Playgrounds with Args and Controls](./09-create-engaging-component-playgrounds-with-args-and-controls)
-1. [Capture Interactions with the Actions Addon](./10-capture-interactions-with-the-actions-addon)
-1. [Manipulate Story State with Play Functions and Testing Library Events](./11-manipulate-story-state-with-play-functions-and-testing-library)
-1. [Specify Layout with Storybook Parameters](./12-specify-layout-with-storybook-parameters)
-1. [Extend Storybook's Capabilities with Addons](./13-extend-storybooks-capabilities-with-addons)
-1. [Generate Documentation Effortlessly with Autodocs](./14-generate-documentation-effortlessly-with-autodocs)
-1. [Integrate Storybook into Your Development Environment](./15-integrate-storybook-into-your-development-environment)
-1. [Configure Storybook with Global Stylesheets and Fonts](./16-configure-storybook-with-global-stylesheets-and-fonts)
-1. [Brand Your Storybook with a Custom Logo](./17-brand-your-storybook-with-a-custom-logo)
-1. [Automate Visual Regression Testing with Chromatic](./18-automate-visual-regressions-testing-with-chromatic)
-1. [Leverage Storybook Documentation and Community Support](./19-leverage-storybook-documentation-and-community-support)
 
 ## Next courses…
 

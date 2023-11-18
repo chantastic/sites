@@ -1,8 +1,9 @@
 ---
-title: Automate Visual Regression Testing with Chromatic
-description: Ship UIs faster with Chromatic by automating visual and interaction tests for Storybook. Learn to connect CI/CD, streamlining stakeholder sign-off and generating versioned component documentation.
+title: Host Storybook For Free with Chromatic
+description: Chromatic offers free hosting for Storybook component libraries and design systems. Share your components with others on the premiere platform for Visual Testing and Review.
 date: 2023-11-09
-status: removed
+status: draft
+order: 18
 ---
 
 [be logged into github. requires github. do everything in Arc split browser]

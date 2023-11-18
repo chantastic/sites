@@ -3,6 +3,7 @@ title: Observe Component Behavior with Actions Addon
 descrisption: Gain unparalleled insight into component behavior with the Storybook Actions Addon. Learn to log every click, hover, and focus event, providing a clear window into real-time component responses.
 date: 2023-11-09
 status: draft
+order: 6
 ---
 
 We've all added `console.log` statements to validate a component interface.

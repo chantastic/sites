@@ -3,6 +3,7 @@ title: Start Storybook in an Interactive Online Playground
 description: Launch into Storybook with a one-click setup on StackBlitz's interactive online playground. Visit storybook.new to instantly create a Storybook environment tailored to your preferred framework and language, perfect for immersive learning and exploration.
 date: 2023-11-06
 status: draft
+order: 2
 ---
 
 ## Setup

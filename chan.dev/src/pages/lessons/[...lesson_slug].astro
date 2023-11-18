@@ -1,74 +1,106 @@
 ---
-import Layout from "#layouts/Layout.astro";
-import PostMeta from "#components/header-post-meta.astro";
-import * as LESSONS from "#pages/lessons/lessons";
-import Prose from "#components/prose.astro";
+import Layout from '#layouts/Layout.astro'
+import PostMeta from '#components/header-post-meta.astro'
+import * as LESSONS from '#pages/lessons/lessons'
+import Prose from '#components/prose.astro'
 
 export async function getStaticPaths() {
-  const lessons = await LESSONS.getCollection();
+	const lessons = await LESSONS.getCollection()
 
-  const result = lessons.map((entry) => {
-    return {
-      params: {
-        lesson_slug: entry.slug,
-      },
-      props: { entry },
-    };
-  });
+	const result = lessons.map((entry) => {
+		return {
+			params: {
+				lesson_slug: entry.slug,
+			},
+			props: {entry},
+		}
+	})
 
-  return result;
+	return result
 }
 
 interface Props {
-  entry: LESSONS.CollectionEntry;
+	entry: LESSONS.CollectionEntry
 }
 
-const { entry } = Astro.props;
-const { Content } = await entry.render();
+const {entry} = Astro.props
+const {Content} = await entry.render()
 
-const [collection_name, maybe_collection_year] = entry.slug.split("/");
+const previousEntry = await LESSONS.getEntryByRelativeOrder(
+	entry,
+	-1
+)
+const nextEntry = await LESSONS.getEntryByRelativeOrder(
+	entry,
+	1
+)
+
+const [collection_name, maybe_collection_year] =
+	entry.slug.split('/')
 ---
 
 <Layout>
-  <Prose>
-    {
-      Number(maybe_collection_year) ? (
-        <>
-          <small>
-            ⇠ <a href="/">chan.dev</a>/{" "}
-            <a href={`/${LESSONS.path()}`}>lessons</a>/{" "}
-            <a href={`/${LESSONS.path(collection_name)}`}>{collection_name}</a>/{" "}
-            <a
-              href={`/${LESSONS.path(collection_name, maybe_collection_year)}`}
-            >
-              {maybe_collection_year}
-            </a>
-          </small>
-          <main class="mt-4">
-            <h1 class="tracking-tight">
-              {entry.data.title}, {maybe_collection_year}
-            </h1>
-            <Content />
-          </main>
-        </>
-      ) : (
-        <>
-          <small>
-            ⇠ <a href="/">chan.dev</a>/{" "}
-            <a href={`/${LESSONS.path()}`}>lessons</a>/{" "}
-            <a href={`/${LESSONS.path(collection_name)}`}>{collection_name}</a>
-          </small>
-          <main class="mt-4">
-            <h1 class="tracking-tight">{entry.data.title}</h1>
-            <Content />
-          </main>
-        </>
-      )
-    }
-  </Prose>
-  <PostMeta
-    title={String(entry.data.title)}
-    path={LESSONS.path(entry.slug)}
-    slot="page-meta"
-  />
+	<Prose>
+		{
+			Number(maybe_collection_year) ? (
+				<>
+					<small>
+						⇠ <a href="/">chan.dev</a>/{' '}
+						<a href={`/${LESSONS.path()}`}>lessons</a>/{' '}
+						<a href={`/${LESSONS.path(collection_name)}`}>
+							{collection_name}
+						</a>
+						/{' '}
+						<a
+							href={`/${LESSONS.path(
+								collection_name,
+								maybe_collection_year
+							)}`}
+						>
+							{maybe_collection_year}
+						</a>
+					</small>
+					<main class="mt-4">
+						<h1 class="tracking-tight">
+							{entry.data.title}, {maybe_collection_year}
+						</h1>
+						<Content />
+					</main>
+				</>
+			) : (
+				<>
+					<small>
+						⇠ <a href="/">chan.dev</a>/{' '}
+						<a href={`/${LESSONS.path()}`}>lessons</a>/{' '}
+						<a href={`/${LESSONS.path(collection_name)}`}>
+							{collection_name}
+						</a>
+					</small>
+					<main class="mt-4">
+						<h1 class="tracking-tight">{entry.data.title}</h1>
+						<Content />
+						<nav class="flex justify-between">
+							{previousEntry && (
+								<a
+									href={`/${LESSONS.path(previousEntry.slug)}`}
+								>
+									← {previousEntry.data.title}
+								</a>
+							)}
+							{nextEntry && (
+								<a href={`/${LESSONS.path(nextEntry.slug)}`}>
+									{nextEntry.data.title} →
+								</a>
+							)}
+						</nav>
+					</main>
+				</>
+			)
+		}
+	</Prose>
+	<PostMeta
+		title={String(entry.data.title)}
+		path={LESSONS.path(entry.slug)}
+		slot="page-meta"
+	/>
 </Layout>

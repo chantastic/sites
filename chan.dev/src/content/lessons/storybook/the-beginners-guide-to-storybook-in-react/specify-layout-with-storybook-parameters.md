@@ -3,6 +3,7 @@ title: Specify Layout with Storybook Parameters
 description: Take control of story presentation with Storybook Parameters. Expertly adjust the layout to ensure ideal rendering for viewers.
 date: 2023-11-09
 status: draft
+order: 12
 ---
 
 Story objects use Parameters to set configuration in Storybook.
