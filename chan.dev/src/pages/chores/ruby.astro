@@ -2,6 +2,8 @@
 import Layout from '#layouts/Layout.astro'
 import Prose from '#components/prose.astro'
 
+export const prerender = false;
+
 const chore_data = [
 	{
 		name: 'Jesus time',
@@ -144,32 +146,30 @@ const chore_data = [
 			</thead>
 			<tbody>
 				{
-					chore_data.map((chore) => (
+												chore_data.map((chore) => (
 						<tr>
 							<td>{chore.name}</td>
-							{chore_data.map((chore) => (
-								<tr>
-									<td>{chore.name}</td>
-									{chore.weekly_occurances.map((occurance) => {
-										if (occurance) {
-											return <td class="border" />
-										} else {
-											return (
-												<td
-													class="border"
-													style={{
-														backgroundColor: 'currentColor',
-													}}
-												/>
-											)
-										}
-									})}
-								</tr>
-							))}
+							{chore.weekly_occurances.map((occurance, i) => {
+								if (occurance) {
+									return <td class="border" onclick="console.log(i)"}>{encodeURIComponent(`${chore.name}[${i}]=1`)}</td>
+								} else {
+									return (
+										<td
+											class="border"
+											style={{backgroundColor: 'currentColor'}}
+										/>
+									)
+								}
+							})}
 						</tr>
 					))
+
 				}
 			</tbody>
 		</table>
 	</Prose>
+	<script
+		src="https://unpkg.com/htmx.org@1.9.8"
+		integrity="sha384-rgjA7mptc2ETQqXoYC3/zJvkU7K/aP44Y+z7xQuJiVnB/422P/Ak+F/AqFR7E4Wr"
+		crossorigin="anonymous"></script>
 </Layout>
