@@ -1,6 +1,129 @@
 ---
 import Layout from '#layouts/Layout.astro'
 import Prose from '#components/prose.astro'
+
+const chore_data = [
+	{
+		name: 'Jesus time',
+		weekly_occurances: [
+			false,
+			true,
+			false,
+			false,
+			false,
+			true,
+			true,
+		],
+	},
+	{
+		name: 'Grooming (teeth, pits)',
+		weekly_occurances: [
+			true,
+			true,
+			true,
+			true,
+			true,
+			true,
+			true,
+		],
+	},
+	{
+		name: 'Tidy room',
+		weekly_occurances: [
+			true,
+			true,
+			false,
+			false,
+			false,
+			true,
+			true,
+		],
+	},
+	{
+		name: 'Clothes to laundry',
+		weekly_occurances: [
+			true,
+			true,
+			true,
+			true,
+			true,
+			true,
+			true,
+		],
+	},
+	{
+		name: 'Fold laundry',
+		weekly_occurances: [
+			true,
+			true,
+			true,
+			true,
+			true,
+			true,
+			true,
+		],
+	},
+	{
+		name: 'School work',
+		weekly_occurances: [
+			false,
+			true,
+			true,
+			true,
+			true,
+			true,
+			false,
+		],
+	},
+	{
+		name: 'Duolingo',
+		weekly_occurances: [
+			true,
+			true,
+			true,
+			true,
+			true,
+			true,
+			true,
+		],
+	},
+	{
+		name: 'Vaccuum runners',
+		weekly_occurances: [
+			true,
+			true,
+			false,
+			true,
+			false,
+			true,
+			true,
+		],
+	},
+	{
+		name: 'Dishes to dishwasher',
+		weekly_occurances: [
+			true,
+			true,
+			false,
+			true,
+			false,
+			true,
+			true,
+		],
+	},
+	{
+		name: 'Dust living room',
+		weekly_occurances: [
+			true,
+			true,
+			false,
+			true,
+			false,
+			true,
+			true,
+		],
+	},
+]
 ---
 
 <Layout>
@@ -10,116 +133,26 @@ import Prose from '#components/prose.astro'
 			<thead>
 				<tr>
 					<th></th>
-					<th>Saturday</th>
 					<th>Sunday</th>
-					<th>Monay</th>
+					<th>Monday</th>
 					<th>Tuesday</th>
 					<th>Wednesday</th>
 					<th>Thursday</th>
 					<th>Friday</th>
+					<th>Saturday</th>
 				</tr>
 			</thead>
 			<tbody>
-				<tr>
-					<td>Jesus time</td>
-					<td class="border"></td>
-					<td class="border">x</td>
-					<td class="border"></td>
-					<td class="border">x</td>
-					<td class="border">x</td>
-					<td class="border">x</td>
-					<td class="border"></td>
-				</tr>
-				<tr>
-					<td>Grooming (teeth, pits)</td>
-					<td class="border"></td>
-					<td class="border"></td>
-					<td class="border"></td>
-					<td class="border"></td>
-					<td class="border"></td>
-					<td class="border"></td>
-					<td class="border"></td>
-				</tr>
-				<tr>
-					<td>Tidy room</td>
-					<td class="border"></td>
-					<td class="border"></td>
-					<td class="border"></td>
-					<td class="border">x</td>
-					<td class="border">x</td>
-					<td class="border">x</td>
-					<td class="border"></td>
-				</tr>
-				<tr>
-					<td>Clothes to laundry</td>
-					<td class="border"></td>
-					<td class="border"></td>
-					<td class="border"></td>
-					<td class="border"></td>
-					<td class="border"></td>
-					<td class="border"></td>
-					<td class="border"></td>
-				</tr>
-				<tr>
-					<td>Fold laundry</td>
-					<td class="border"></td>
-					<td class="border"></td>
-					<td class="border"></td>
-					<td class="border"></td>
-					<td class="border"></td>
-					<td class="border"></td>
-					<td class="border"></td>
-				</tr>
-				<tr>
-					<td>School work</td>
-					<td class="border">x</td>
-					<td class="border">x</td>
-					<td class="border"></td>
-					<td class="border"></td>
-					<td class="border"></td>
-					<td class="border"></td>
-					<td class="border"></td>
-				</tr>
-				<tr>
-					<td>Duolingo</td>
-					<td class="border"></td>
-					<td class="border"></td>
-					<td class="border"></td>
-					<td class="border"></td>
-					<td class="border"></td>
-					<td class="border"></td>
-					<td class="border"></td>
-				</tr>
-				<tr>
-					<td>Vaccuum runners</td>
-					<td class="border"></td>
-					<td class="border"></td>
-					<td class="border"></td>
-					<td class="border">x</td>
-					<td class="border"></td>
-					<td class="border">x</td>
-					<td class="border"></td>
-				</tr>
-				<tr>
-					<td>Dishes to dishwasher</td>
-					<td class="border"></td>
-					<td class="border"></td>
-					<td class="border"></td>
-					<td class="border">x</td>
-					<td class="border"></td>
-					<td class="border">x</td>
-					<td class="border"></td>
-				</tr>
-				<tr>
-					<td>Dust living room</td>
-					<td class="border"></td>
-					<td class="border"></td>
-					<td class="border"></td>
-					<td class="border">x</td>
-					<td class="border"></td>
-					<td class="border">x</td>
-					<td class="border"></td>
-				</tr>
+				{
+					chore_data.map((chore) => (
+						<tr>
+							<td>{chore.name}</td>
+							{chore.weekly_occurances.map((occurance) => (
+								<td class="border">{occurance ? '' : 'x'}</td>
+							))}
+						</tr>
+					))
+				}
 			</tbody>
 		</table>
 	</Prose>
