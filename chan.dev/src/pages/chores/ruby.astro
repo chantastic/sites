@@ -147,8 +147,24 @@ const chore_data = [
 					chore_data.map((chore) => (
 						<tr>
 							<td>{chore.name}</td>
-							{chore.weekly_occurances.map((occurance) => (
-								<td class="border">{occurance ? '' : 'x'}</td>
+							{chore_data.map((chore) => (
+								<tr>
+									<td>{chore.name}</td>
+									{chore.weekly_occurances.map((occurance) => {
+										if (occurance) {
+											return <td class="border" />
+										} else {
+											return (
+												<td
+													class="border"
+													style={{
+														backgroundColor: 'currentColor',
+													}}
+												/>
+											)
+										}
+									})}
+								</tr>
 							))}
 						</tr>
 					))
