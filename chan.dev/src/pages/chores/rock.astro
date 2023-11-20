@@ -2,10 +2,11 @@
 import Layout from '#layouts/Layout.astro'
 import Prose from '#components/prose.astro'
 
-export const prerender = false;
+export const prerender = false
 
 const chore_data = [
 	{
+		id: '001',
 		name: 'Jesus time',
 		weekly_occurances: [
 			false,
@@ -18,7 +19,8 @@ const chore_data = [
 		],
 	},
 	{
-		name: 'Grooming (teeth, pits)',
+		id: '002',
+		name: 'Grooming (brush, brush, deoderize)',
 		weekly_occurances: [
 			true,
 			true,
@@ -30,6 +32,7 @@ const chore_data = [
 		],
 	},
 	{
+		id: '003',
 		name: 'Tidy room',
 		weekly_occurances: [
 			true,
@@ -42,6 +45,7 @@ const chore_data = [
 		],
 	},
 	{
+		id: '004',
 		name: 'Clothes to laundry',
 		weekly_occurances: [
 			true,
@@ -54,6 +58,7 @@ const chore_data = [
 		],
 	},
 	{
+		id: '005',
 		name: 'Fold laundry',
 		weekly_occurances: [
 			true,
@@ -66,6 +71,7 @@ const chore_data = [
 		],
 	},
 	{
+		id: '006',
 		name: 'School work',
 		weekly_occurances: [
 			false,
@@ -78,6 +84,7 @@ const chore_data = [
 		],
 	},
 	{
+		id: '007',
 		name: 'Duolingo',
 		weekly_occurances: [
 			true,
@@ -90,6 +97,7 @@ const chore_data = [
 		],
 	},
 	{
+		id: '008',
 		name: 'Clean toilet',
 		weekly_occurances: [
 			true,
@@ -102,6 +110,7 @@ const chore_data = [
 		],
 	},
 	{
+		id: '009',
 		name: 'Vaccuum room',
 		weekly_occurances: [
 			true,
@@ -114,6 +123,7 @@ const chore_data = [
 		],
 	},
 	{
+		id: '010',
 		name: 'Practice drums',
 		weekly_occurances: [
 			true,
@@ -126,6 +136,7 @@ const chore_data = [
 		],
 	},
 	{
+		id: '011',
 		name: 'Book tactics',
 		weekly_occurances: [
 			false,
@@ -142,7 +153,7 @@ const chore_data = [
 
 <Layout>
 	<Prose>
-		<h1>Ruby</h1>
+		<h1>Rock</h1>
 		<table class="table-fixed">
 			<thead>
 				<tr>
@@ -163,7 +174,14 @@ const chore_data = [
 							<td>{chore.name}</td>
 							{chore.weekly_occurances.map((occurance) => {
 								if (occurance) {
-									return <td class="border" />
+									return (
+										<td
+											class="border"
+											hx-post={`/chores/partials/${chore.id}`}
+											hx-trigger="click"
+											hx-swap="outerHTML"
+										/>
+									)
 								} else {
 									return (
 										<td

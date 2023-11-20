@@ -2,10 +2,11 @@
 import Layout from '#layouts/Layout.astro'
 import Prose from '#components/prose.astro'
 
-export const prerender = false;
+export const prerender = false
 
 const chore_data = [
 	{
+		id: '012',
 		name: 'Jesus time',
 		weekly_occurances: [
 			false,
@@ -18,7 +19,8 @@ const chore_data = [
 		],
 	},
 	{
-		name: 'Grooming (teeth, pits)',
+		id: '013',
+		name: 'Grooming (brush, brush, deoderize)',
 		weekly_occurances: [
 			true,
 			true,
@@ -30,6 +32,7 @@ const chore_data = [
 		],
 	},
 	{
+		id: '014',
 		name: 'Tidy room',
 		weekly_occurances: [
 			true,
@@ -42,6 +45,7 @@ const chore_data = [
 		],
 	},
 	{
+		id: '015',
 		name: 'Clothes to laundry',
 		weekly_occurances: [
 			true,
@@ -54,6 +58,7 @@ const chore_data = [
 		],
 	},
 	{
+		id: '016',
 		name: 'Fold laundry',
 		weekly_occurances: [
 			true,
@@ -66,6 +71,7 @@ const chore_data = [
 		],
 	},
 	{
+		id: '017',
 		name: 'School work',
 		weekly_occurances: [
 			false,
@@ -78,6 +84,7 @@ const chore_data = [
 		],
 	},
 	{
+		id: '018',
 		name: 'Duolingo',
 		weekly_occurances: [
 			true,
@@ -90,6 +97,7 @@ const chore_data = [
 		],
 	},
 	{
+		id: '019',
 		name: 'Vaccuum runners',
 		weekly_occurances: [
 			true,
@@ -102,6 +110,7 @@ const chore_data = [
 		],
 	},
 	{
+		id: '020',
 		name: 'Dishes to dishwasher',
 		weekly_occurances: [
 			true,
@@ -114,6 +123,7 @@ const chore_data = [
 		],
 	},
 	{
+		id: '021',
 		name: 'Dust living room',
 		weekly_occurances: [
 			true,
@@ -146,24 +156,27 @@ const chore_data = [
 			</thead>
 			<tbody>
 				{
-												chore_data.map((chore) => (
+					chore_data.map((chore) => (
 						<tr>
 							<td>{chore.name}</td>
 							{chore.weekly_occurances.map((occurance, i) => {
 								if (occurance) {
-									return <td class="border" onclick="console.log(i)"}>{encodeURIComponent(`${chore.name}[${i}]=1`)}</td>
-								} else {
 									return (
 										<td
+											hx-post={`/chores/partials/${chore.id}`}
+											hx-trigger="click"
+											hx-swap="outerHTML"
 											class="border"
-											style={{backgroundColor: 'currentColor'}}
 										/>
+									)
+								} else {
+									return (
+										<td class="border bg-gray-600 bg-current" />
 									)
 								}
 							})}
 						</tr>
 					))
-
 				}
 			</tbody>
 		</table>
