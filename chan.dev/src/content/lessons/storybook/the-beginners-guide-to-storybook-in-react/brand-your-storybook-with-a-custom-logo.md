@@ -6,55 +6,59 @@ status: draft
 order: 16
 ---
 
+Let's make Storybook a project logo.
+We'll start by putting all the pieces in place.
 
+- In the `.stoyrybook` directory, create a new `manager` module.
+  - Import `addons` from "@storybook/manager-api"
+  - And `create` from "@storybook/theming"
 
----
+```ts title="./storybook/manager.ts"
+import {addons} from '@storybook/manager-api'
+import {create} from '@storybook/theming'
+```
 
-[Screen: Storybook interface with default logo]
+Add an image to the `/public` directory. (Storybook 7 serves this directory by default.)
 
-Branding your Storybook helps to integrate the design language of your project or company. Let's add a custom logo to your Storybook workspace.
+![7:3 aspect ration image of me making a Home Alone Cologne face behind the text chan.dev](./how-to-theme-storybook/how-to-theme-storybook_chan-dev-logo.png)
 
-[Screen: Locate the .storybook/manager.js file]
+Now we're ready to set up a custom theme.
 
-First, open the .storybook/manager.js file. This is where you can customize the Storybook manager interface, which includes branding elements like the logo.
+## Set persistant light or dark color scheme
 
-[Screen: Show how to import the custom logo]
+Create a new config object using `addons.setConfig`.
 
-If you don't have a manager.js file, create one. Then, import your custom logo at the top of this file: import myLogo from './myLogo.svg';.
+Use the create function to provide the `theme` property.
 
-[Screen: Writing the theme customization code]
-
-Next, create a theme object and set the brandImage property to your imported logo:
-
-javascript
-Copy code
-import { create } from '@storybook/theming';
-
-const myTheme = create({
-base: 'light',
-brandTitle: 'My Company Storybook',
-brandUrl: 'https://mycompany.com',
-brandImage: myLogo,
-});
-[Screen: Apply the theme to Storybook]
-
-Now apply this theme to Storybook by exporting it in the manager.js file:
-
-javascript
-Copy code
-import { addons } from '@storybook/addons';
+```ts title="./storybook/manager.ts" ins={4-6}
+import {addons} from '@storybook/manager-api'
+import {themes} from '@storybook/theming'
 
 addons.setConfig({
-theme: myTheme,
+	theme: create({
+		base: 'light', // in SB7 must be only light or dark
+	}),
+})
+```
+
+Now add `brandTitle`, `brandUrl`, `brandImage`, and optional `brandTarget` to flesh out the custom logo and where it links.
+
+```ts title="./storybook/manager.ts" ins={5-7}
+addons.setConfig({
+  theme: create({
+    base: "light"
+
+    brandTitle: "My custom Storybook",
+    brandUrl: "https://chan.dev",
+    brandImage: "/chan-dev.png", // using publicly served /public directory
+    brandTarget: '_self',
+  }),
 });
-[Screen: Restart Storybook to see the new logo]
+```
 
-Restart Storybook to apply the changes. You should now see your custom logo in the top left corner, replacing the default Storybook icon.
+:::hidden-script
 
-[Screen: Encouraging to explore further customization options]
+Restart to see changes.
+:::
 
-Feel free to explore further customizations such as changing the brand title or the theme colors to match your company's branding guidelines.
-
-[Screen: Completed Storybook UI with custom branding]
-
-With your new logo in place, your Storybook now carries the identity of your project or brand, creating a more cohesive development experience.
+This is looknig more like yours already!

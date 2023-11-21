@@ -62,6 +62,11 @@
     - There's a progressive map (the one i used on YouTube) but if this is a beginner's guide, i'm just going to leave out the helpful ambiguity.
 - I've used the term component meta being a `default export` object. But that isn't correct. These are all fields just exported on the module.
 
+## COLOR theme
+
+- using `create`, you're forced to choose light or dark.
+  - This impacts folks who just want to add their image and custom domain
+
 ## Advanced topics
 
 - Parameter inheritance

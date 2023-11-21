@@ -1,6 +1,6 @@
 ---
-title: Start Storybook in an Interactive Online Playground
-description: Launch into Storybook with a one-click setup on StackBlitz's interactive online playground. Visit storybook.new to instantly create a Storybook environment tailored to your preferred framework and language, perfect for immersive learning and exploration.
+title: Start with a Storybook Sandbox (Starter project)
+description: Launch into Storybook with a one-command setup using npx storybook sandbox. Instantly create a Storybook environment tailored to your preferred framework and language, perfect for immersive learning and exploration.
 date: 2023-11-06
 status: draft
 order: 2
@@ -10,27 +10,36 @@ order: 2
 
 [Screen: StackBlitz homepage]
 
-To start, we're going to spin up a full Storybook environment on StackBlitz — a cloud coding environment.
+To start, we're going to spin up an isolated Storybook project.
 
-Visit [storybook.new](https://storybook.new).
+In a terminal, run the command `npx storybook@7.6 sandbox`.
 
-Here you'll find a collection of Storybook sandboxes.
+Most lessons should work in any version of Storybook 7.
+But the specifics may be slightly different.
 
 A Storybook sandbox is a ready-to-code environment composed of a UI library, language, builder, and framework.
 
-I’ll use React/JavaScript/Vite for this course.  
-But you don't have to use React.
-Choose the one that best suits your fancy.
-The lessons in this course are intended to work across all Storybook sandboxes.
+- There are a number of supported frameworks
+- We'll be using `React Vite | JavaScript` for thi course
 
-You should see three panels:
+I’ll use React/JavaScript/Vite for this course.
 
-- File explorer, left
-- Code editor, center
-- Browser, right
+~~But you don't have to use React.~~
+~~Choose the one that best suits your fancy.~~
+~~The lessons in this course are intended to work across all Storybook sandboxes.~~
+
+This may take a minute or two to install.
+
+Once it's done, cd into the directory and run `yarn install`.
+
+After nistall:
+
+- Open the directory in your favorite editor
+- And run `yarn storybook` to kick off the Storybook server.
 
 Storybook Sandboxes initialize with sample stories.
 We'll use these files to learn about Storybook UI.
+Then we'll re-write them from scratch.
 
 For now, I just want you to locate them.
 
