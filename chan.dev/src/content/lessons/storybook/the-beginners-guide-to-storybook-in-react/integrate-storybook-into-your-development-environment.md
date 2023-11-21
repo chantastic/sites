@@ -8,6 +8,7 @@ order: 17
 
 - Now I want to show you how to bring this into a project of your own…
 - generate a Next.js app
-- add storybook
+- add storybook with `npx storybook@latest init`
+  - (we'll change that version to `npx storybook@7.6 init, if want 7.0 — using everything you've learned here`)
 - observe the intergation (specifically notes)
-- show blog post detailing what was included
+- show [blog post detailing what was included](https://storybook.js.org/blog/integrate-nextjs-and-storybook-automatically/)
