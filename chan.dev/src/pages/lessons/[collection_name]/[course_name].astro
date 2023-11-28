@@ -4,6 +4,7 @@ import PostMeta from '#components/header-post-meta.astro'
 import * as LESSONS from '#pages/lessons/lessons'
 import Prose from '#components/prose.astro'
 import {titleCase} from 'title-case'
+import React from 'react'
 
 export async function getStaticPaths() {
 	const lessons = await LESSONS.getCollection((entry) => {
@@ -64,6 +65,29 @@ lessons.sort((a, b) => a.data.order - b.data.order)
 <Layout>
 	<Prose as="main">
 		<h1>{titleCase(entry.course_name.split('-').join(' '))}</h1>
+		<h2 id="Complete">Complete</h2>
+		<table>
+			<thead><tr><td>status</td><td>count</td></tr></thead>
+			<tbody>
+				{
+					Object.entries(
+						lessons.reduce((acc, lesson) => {
+							console.log(lesson.slug, lesson.data.status)
+							return {
+								...acc,
+								[lesson.data.status]:
+									(acc[lesson.data.status] || 0) + 1,
+							}
+						}, {})
+					).map(([status, count]) => (
+						<tr>
+							<td>{status}</td>
+							<td>{count}</td>
+						</tr>
+					))
+				}
+			</tbody>
+		</table>
 		<h2 id="outline">Outline</h2>
 		<ol class="list-none p-0">
 			{
@@ -79,10 +103,10 @@ lessons.sort((a, b) => a.data.order - b.data.order)
 				})
 			}
 		</ol>
+		<PostMeta
+			title={String(entry.slug)}
+			path={LESSONS.path(entry.slug)}
+			slot="page-meta"
+		/>
 	</Prose>
-	<PostMeta
-		title={String(entry.slug)}
-		path={LESSONS.path(entry.slug)}
-		slot="page-meta"
-	/>
 </Layout>

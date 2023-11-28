@@ -91,7 +91,14 @@ export const collectionSchema = defineCollection({
 		keys: z.array(z.string()).optional(),
 		order: z.number().optional(), // unique?
 		status: z
-			.enum(['draft', 'not-started', 'cursed'])
-			.optional(),
+			.enum([
+				'draft',
+				'not-started',
+				'cursed',
+				'unknown',
+				'post-production',
+				'complete',
+			])
+			.default('unknown'),
 	}),
 })
