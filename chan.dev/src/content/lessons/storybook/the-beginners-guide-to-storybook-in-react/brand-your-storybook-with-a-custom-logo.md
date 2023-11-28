@@ -20,8 +20,6 @@ import {create} from '@storybook/theming'
 
 Add an image to the `/public` directory. (Storybook 7 serves this directory by default.)
 
-![7:3 aspect ration image of me making a Home Alone Cologne face behind the text chan.dev](./how-to-theme-storybook/how-to-theme-storybook_chan-dev-logo.png)
-
 Now we're ready to set up a custom theme.
 
 ## Set persistant light or dark color scheme

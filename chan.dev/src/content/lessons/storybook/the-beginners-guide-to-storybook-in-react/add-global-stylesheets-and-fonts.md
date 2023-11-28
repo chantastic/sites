@@ -2,7 +2,7 @@
 title: Add Global Stylesheets and Fonts to Storybook
 description: Ensure your Storybook environment mirrors your production setup. Learn to add global stylesheets and fonts, creating a consistent look and feel across your project and component library.
 date: 2023-11-09
-status: draft
+status: post-production
 order: 15
 ---
 
