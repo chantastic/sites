@@ -1,71 +1,148 @@
 # Challenges to Learning
 
-## Proposed course changes
+In developing The Beginner's Guide to Storybook 7 in React, I came across a few challenges to learning.
 
-- Remove viewports instruction. Too many requisite concepts.
-- Remove chromatic lesson. Feels orthogonal.
-- Move integration with your application lesson to end. Better hand-off.
+An ideal learning path is one where the learning can take things a single step at a time.
+This can be subverted by requiesit concepts — things that must be explained or excused to teach a step.
 
-## Sample stories
+This is a collection of moments where I had to step back, zoom out, side-step, or dismiss concepts.
+And how I think we could resolve those issues.
 
-### Button
+My goal with all of these is to empathize with learners and ensure that we don't include things that only serve our vanity.
+Everything included should be directly applicable to their work building component libraries and design systems.
 
-- `Button` interface is as peculiar. is `label` used over `children` for multi-framework support?
-  - Supporting children/slots/etc. seems like a critical part of an integration.
-  - Could changing the example actually aid framework support (as a test case)?
-- Color picker is an impractical demo for button. It demos a nice component but isn't connected to real world.
-  - Is there another component where color picker may make more sense?
-  - If not, I think it should be removed.
-- `Button:Secondary` story is confusing because it uses no props.
-  - I'd like to see the primary component state be the default state (no args).
-    - This makes the demos more progressive and easier to grok.
-  - There is a natural collision here with DocBlocks `Primary` story.
-    - Consiquently I think that the DocBlock should become `First`
+## Course removals as a result of too many requisite concepts
 
-### All
+- Removed viewports lessons.
+- Removed theming. Losing the default `system` theme is a bad look.
+- Minimized Actions.
 
-- `title` is hella confusing to a newcomer (likely familiar with file-system based routing).
-  - I'd like to see auto-title (with `component` meta) as the default.
-- The `stories` directory poses some practical and conceptual issues
-  - People don't know realize that `./stories` isn't the golden path.
-    - Could be solved with `./sample-stories`.
-  - People don't know that it can safely be deleted.
-    - Add `README.md` with details.
-    - Initializer could say something like `Sample stories have been added to the .src/sample-stories directory. Run {command} to remove those sample stories. Use the {flag} flag to initialize projets without the sample stories.`
-- Actions depend on too many requisite concepts (pramaters, argTypes, and preview) and Regex.
-  - Everything should be demonstrated on-story or on-component.
-  - `preview` can have comments for the global options
-- Comment links are too long.
-  - Short links would be helpful here.
-  - `sb.link` is an available domain. We should get it for short links.
-    - These _could_ be codified short links, to include ui library info: `https://sb.link/actions/react`.
-- Nothing is shown when there is a component with no stories. This makes progressive instruction difficult.
-  - We could show a component in the sidebar.
-    - Simplest solution would be to have it be disabled in the sidebar.
-    - More advanced solution is to leave it enabled with an an empty-state page for creating a sample story from the `component` provided on meta.
-- The concept of a "component" in Storybook is confusing.
-- The Viewports interface is extremely confusing to me.
-  - Problem is that literally all the information is hidden and requires touching 2-3 files to use.
-  - I'd like a path where we could implement a viewport inline (at story and component)
-  - I'd also like to see a `breakpoint` variant, which we've discussed before.
+## Sample Stories
 
-## Page
+### Separate sample sandbox stories from sandbox tests
 
-- The current page demo does not accurately represent a page.
-  - Could be interesting to see a sample `AuthProvider` implemented as a decorator.
-    - Like with `Button`, this will push sample stories more into the territory of framework-specifics.
+_Problem_: Example stories include complications that serve tests more than users.
 
-## Misc
+_Proposal_: Separate user-facing sample stories and Storybook-contributor test stories. Only generate user-facing stories in `init` and `sandbox`.
 
-- The concept of a "component" is so confusing.
-  - I've decided to embrace it and just teach stories from components.
-    - There's a progressive map (the one i used on YouTube) but if this is a beginner's guide, i'm just going to leave out the helpful ambiguity.
-- I've used the term component meta being a `default export` object. But that isn't correct. These are all fields just exported on the module.
+### Rename /stories directory
 
-## COLOR theme
+_Problem_: The `/stories` directory strongly implies that stories should be separated from code. It also doesn't match the category of `Examples`.
 
-- using `create`, you're forced to choose light or dark.
-  - This impacts folks who just want to add their image and custom domain
+_Proposal_: Replace `/stories` directory name with `/examples` or `/sample-stories`. Depend exclusively on auto-titles for story names.
+
+### Replace `Button:label` prop with conventional `children` (et. al)
+
+_Problem_: The `label` interface for children is not conventional. A conventional interface should be used for such a common pattern.
+
+_Proposal_: Use framework convention for descendents. Utilize `ArgTypes` to restrict children for the sake of text-input Controls.
+
+### Remove `Button:backgroundColor`
+
+_Problem_: `Button:backgroundColor` is not realistic interface for a button.
+
+_Proposal_: Remove the `backgroundColor` interface and control. If we really want to showcase that interface, find a more realistic component to demonstrate it with.
+
+### Implement a `Button` descendents default (in the component)
+
+_Problem_: One can't render a `export const Default = {}` story for Button. The resulting story looks incomplete. As the simplist sample component, this means we have to step back to explain various concepts.
+
+_Proposal_: Ensure that `Button` can render a visually complete element without props. My suggestion is to do this at the component level, as it reduces what's required in ArgTypes.
+
+### Change `Button:primary` interface to `Button:outline`
+
+_Problem_: Boolean values like `primary` is discouraged practice in UI interafce design. It also makes the `Secondary` story (which leverages the default of `false`) to be very confusing.
+
+_Proposal_: Assuming that the intent of this design is to showcase the toggle control, I'd suggest something like `transparent: true`. This retains the boolean but, and the related examples, without encouraging a bad practice.
+
+### Rename `Primary` and `Secondary` Button Stories
+
+_Problem_: `Primary` and `Secondary` overlap directly with DocBlocks by the same name. This makes for an incidentally confusing introduction to DocBlocks.
+
+_Proposal_: Replace `Primary` and `Secondary` termonology `Button` story names with `Default` and `Full` (or similar).
+
+### Remove `title` from examples in favor of auto-titling
+
+_Problem_: `title` is an extremely confusing concept in a file-system-based-routing world.
+
+_Proposal_: Remove `title` from sample stories.
+
+### Add README.md to `/stories` directory
+
+_Problem_: Developers don't realize that `/stories` is intended for deletion.
+
+_Proposal_: Add `README.md` to indicate best practices. Yes, I think it's important that this be in code-land. Additionally, the `init/sandbox` scripts may output a message like `Sample stories have been added to the .src/sample-stories directory. Run {command} to remove those sample stories. Use the {flag} flag to initialize projets without the sample stories.`
+
+### Move Action handlers from `preview` module into components
+
+_Problem_: Actions should be more visible (e.g., defined on components)
+
+_Propsoal_: Remove global config. Use new (7.6) ArgTypes API for `Button`. Use `parameters.actions` option for `Header` (because it has multiple events). This gives a clear example of why you may choose one over the other.
+
+### Reduce comment length with short urls
+
+_Problem_: Sample stories looked cluttered by very long comments.
+
+_Proposal_: Register a short url like `sb.link` (which is curretly available) and create short links that link directly to framework-specific docs. e.g., `sb.links/actions/{detected-framework}`.
+
+### Add visual feedback for component-with-no-stories state
+
+_Problem_: Nothing appears in Storybook when there is a valid component with no stories. This makes it difficult to reinforce what `components` are in the sidebar and how to manipulate them in code.
+
+_Proposal_: Show component in the sidebar with no story-disclosure twirldown. These could be ommitted in `build-storybook` (possibly with option). Clicking it may show an empty state page with instructions on adding stories for the `component` supplied on `meta`. Or, more simply, instructions on adding `autodocs` and links to writing stories tutorials.
+
+### Embrace "component story file" as termonology for SB components on disk
+
+_Problem_: The Storybook "component" verbiage makes sense in the Storybook UI. But falls apart when talking about files — where "component" should unambiguously refer to component source code.
+
+_Proposal_: I've circumvented this by referring to the "component story files". This makes sense, given their `.stories.` suffix extenions. But I want to make sure we refer to them universally.
+
+### Rework Viewports API
+
+This is a much bigger problem but I'll share a few things that make Viewports exetremely difficult to teach.
+
+- Initial viewports have no code representation. Not even in configuration. They're completely invisible to new users.
+- Choosing a viewport requires that you know it's object property name, which requires source investigation.
+- Viewports can't be defined inline (at the component level).
+- Viewports don't have a breakpoint option — which I assume is the primary use case.
+
+From an introduction standpoint, an ideal API may look something like this:
+
+```js
+export const MyStory = {
+	parameters: {
+		// object for single
+		breakpoints: {
+			name: 'anything',
+			width: 640,
+		},
+		// Array for enum
+		breakpoints: [
+			{
+				name: 'anything',
+				width: 640,
+			},
+			{name: 'another', width: 720},
+		],
+	},
+}
+```
+
+I [proposed some posibilities in this notion doc](https://www.notion.so/chromatic-ui/Pitch-improvements-fa26352ad1a5455583bbe12483a58aa1#6fb38592b864467bb6b6fe95f3e25d85) a bit ago.
+
+### Add decorators demo by way of `MockAuthProvider` for page
+
+_Problem_: The page component in not realistic component design.
+
+_Proposal_: Utilize decorators to provide a `MockAuthProvider` component that provides `onLogin`, `onLogout`, and `onCreateAccount` callbacks.
+
+### Allow `theme.create` to use the default theme
+
+_Problem_: Adding a custom logo requires that one fully opt-out of the `system` theme.
+
+_Proposal_: This is a much bigger conversation. But this shouldn't be a trade-off someone needs to make.
+
+---
 
 ## Advanced topics
 
@@ -74,6 +151,8 @@
 ## editing process
 
 - hard to teach, hard to learn
+
+---
 
 ## Reviewer notes
 
