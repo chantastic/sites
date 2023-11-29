@@ -78,6 +78,7 @@ const site = import.meta.env.DEV
 export default defineConfig({
 	experimental: {
 		contentCollectionCache: true,
+		// devOverlay: true,
 	},
 	server: {
 		port: 2426,
