@@ -2,7 +2,7 @@
 title: Start with a Storybook Sandbox (Starter project)
 description: Launch into Storybook with a one-command setup using npx storybook sandbox. Instantly create a Storybook environment tailored to your preferred framework and language, perfect for immersive learning and exploration.
 date: 2023-11-06
-status: post-prodction
+status: post-prodcution
 order: 2
 ---
 
