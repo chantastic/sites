@@ -1,0 +1,204 @@
+---
+import Layout from '#layouts/Layout.astro'
+import Prose from '#components/prose.astro'
+import VerticalTimelineItem from '#components/vertical-timeline-item.astro'
+---
+
+<Layout>
+	<div>
+		<main style="max-width: 64ch">
+			<Prose>
+				<p>
+					Hey <strong>Syntax. &times; Sentry</strong> 👋
+				</p>
+				<p>
+					I'm stoked to learn about your
+					<a
+						href="https://sentry.io/careers/5520026/"
+						target="_blank">Syntax Creator</a
+					> roll!
+				</p>
+				<p>
+					We programmers try to live by "show; don't tell."<br
+					/>
+					 I think that's why many of us love video so much!
+					<p></p>
+					 So, in addition to my <a
+						href="https://www.linkedin.com/in/chantastic/"
+						target="_blank">LinkedIn CV</a
+					>, these are recent video projects that I'm quite
+					proud of.
+				</p>
+			</Prose>
+
+			<div data-responsive-youtube-container>
+				<iframe
+					width="560"
+					height="315"
+					src="https://www.youtube.com/embed/ElkigVweIzA?si=i0WCJEGUe9dejtwr"
+					title="YouTube video player"
+					frameborder="0"
+					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+					allowfullscreen></iframe>
+			</div>
+
+			<div class="mt-6">
+				<ol
+					class="relative border-s border-gray-200 dark:border-gray-700"
+				>
+					<VerticalTimelineItem
+						title="Storybook Video Education"
+					>
+						<p
+							class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400"
+						>
+							For two years, I've been designing and developing
+							Storybook's appoarch to video education. This
+							includes livestreams, conferences, interviews, and
+							tutorials.
+						</p>
+						<p
+							class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400"
+						>
+							We have a very small team. And I'm most proud of
+							the framework I developed for distributing
+							multi-modal content quickly. One script was
+							distributing as <a
+								href="https://chan.dev/storybook-actions/"
+								>a blog post</a
+							>, some shorts, and a video — which was
+							re-integrated into <a
+								href="https://storybook.js.org/docs/essentials/actions"
+								target="_blank">the docs</a
+							>.
+						</p>
+						<div data-responsive-youtube-container>
+							<iframe
+								width="560"
+								height="315"
+								src="https://www.youtube.com/embed/BTIuTuoHsQc?si=jFoQ-1pe2lYF3XU5"
+								title="YouTube video player"
+								frameborder="0"
+								allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+								allowfullscreen></iframe>
+						</div>
+
+						<div class="flex justify-between">
+							<div>
+								<iframe
+									width="300"
+									height="540"
+									src="https://www.youtube.com/embed/hbd7zXnAE9c"
+									title="YouTube video player"
+									frameborder="0"
+									allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+									allowfullscreen></iframe>
+							</div>
+							<div>
+								<iframe
+									width="300"
+									height="540"
+									src="https://www.youtube.com/embed/TdUyhwYu13A"
+									title="YouTube video player"
+									frameborder="0"
+									allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+									allowfullscreen></iframe>
+							</div>
+						</div>
+					</VerticalTimelineItem>
+					<VerticalTimelineItem
+						title="React.js — The Documentary by Honeypot"
+					>
+						<p
+							class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400"
+						>
+							For better or worse, React changed the world.<br
+							/>
+							 And being a small part of that story has been one
+							of my great honors.
+						</p>
+						<p
+							class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400"
+						>
+							I worked with <a
+								href="https://x.com/bechtleida?s=21"
+								target="_blank">Ida Bechtla</a
+							> to find and shape the narrative of The React
+							Documentary. And I think it came out great 😍
+						</p>
+						<div data-responsive-youtube-container>
+							<iframe
+								width="560"
+								height="315"
+								src="https://www.youtube.com/embed/8pDqJVdNa44?si=TUbyd6T3ykFpBmDE"
+								title="YouTube video player"
+								frameborder="0"
+								allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+								allowfullscreen></iframe>
+						</div>
+					</VerticalTimelineItem>
+					<VerticalTimelineItem title="Storybook Day 2023">
+						<p
+							class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400"
+						>
+							It nearly killed me but I pulled off an online
+							conference with Chromatic teammate <a
+								href="https://x.com/winkervsbecks?s=21"
+								>Varun Vachhar</a
+							>.
+						</p>
+						<p
+							class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400"
+						>
+							My role was creative direction and production. I
+							worked with speakers to capture their content to
+							the best of their ability. And I partnered with
+							designers/editors to pull off the look, feel, and
+							formatting of the pre-recorded "live" event.
+						</p>
+
+						<div data-responsive-youtube-container>
+							<iframe
+								width="560"
+								height="315"
+								src="https://www.youtube.com/embed/P0hJm5v8TJw?si=fj9QKr3069Z33Z0X&start=295"
+								title="YouTube video player"
+								frameborder="0"
+								allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+								allowfullscreen></iframe>
+						</div>
+					</VerticalTimelineItem>
+					<VerticalTimelineItem
+						title="The Beginner's Guide to Storybook 7 on egghead.io"
+						link={[
+							'https://egghead.io/q/resources-by-michael-chan?type=playlist',
+							'Visit egghead author profile',
+						]}
+					>
+						<Prose>
+							<p
+								class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400"
+							>
+								In January, I'm releasing a beginner Storybook
+								course to help designers, developers, and
+								managers get on the same page.
+							</p>
+							<p
+								class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400"
+							>
+								The material was designed to be multi-modal:
+								course, social campaign, and workshop.
+							</p>
+							<p
+								class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400"
+							>
+								It has been developed in public and you can see
+								a preview of the material today.
+							</p>
+						</Prose>
+					</VerticalTimelineItem>
+				</ol>
+			</div>
+		</main>
+	</div>
+</Layout>

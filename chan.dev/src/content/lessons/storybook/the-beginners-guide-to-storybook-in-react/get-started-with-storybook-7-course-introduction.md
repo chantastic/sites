@@ -6,6 +6,11 @@ status: post-production
 order: 1
 ---
 
+
+<div data-responsive-youtube-container>
+  <iframe src="https://drive.google.com/file/d/1l0HpRH6Bu72zYBYRyhnFCk1vQQIlVOoC/preview" width="640" height="480" allow="autoplay"></iframe>
+</div>
+
 ## Intro
 
 - Hey! Welcome to this crash course on Storybook 7!
