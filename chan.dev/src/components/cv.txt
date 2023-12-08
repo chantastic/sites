@@ -1,0 +1,64 @@
+Michael Chan @chantastic
+-------------------------------------------
+Summary
+
+Web enthusiast. Foodie. Purveyor of fine irony.
+
+-------------------------------------------
+Experience
+
+- Senior Community DX Engineer at Storybook
+09/2021 - Present
+Lead rich media education for Storybook.
+Imagine and implement a content strategy for YouTube and learning sites like egghead.io. Build YouTube and social audience. Lead external post-production partners. Discover product-market fit through community feedback.
+https://www.youtube.com/@chromaticui
+
+- Podcast Host at React Podcast
+04/2018 - 2021
+Chat with the React contributors and community leaders. 1.5 million downloads.
+https://reactpodcast.com/
+
+- Frontend Architect at Planning Center
+04/2018 - 05/2021
+Architect and lead multi-platform design systems across React, Rails, React Native, iOS, and Android.
+https://www.planningcenter.com/
+
+- Senior Frontend Designer at Planning Center
+04/2015 - 04/2018
+Develop a shared UI platform for Planning Center Online apps.
+https://www.planningcenter.com/
+
+- Web Developer at Planning Center
+04/2013 - 04/2015
+Full-stack engineer, using Ruby on Rails.
+https://www.planningcenter.com/
+
+- Web Developer
+05/2011 - 07/2013
+Contract Web Application Development.
+Build CMS and eCommerce solutions for small businesses in PHP, CSS, and jQuery.
+http://classicshowcase.com/
+
+- Frontend Developer at Sonic Boom Wellness
+08/2012 - 03/2013
+Develop a "white label" design system and implement themes for Fortune 500 enterprise customers.
+Angular.js, CoffeeScript, Less, and CakePHP.
+https://www.sonicboomwellness.com/
+
+- Associate Photographer at The Image is Found
+05/2007 - 12/2012
+Event & portrait photography.
+
+- Web Developer at Miva, Inc.
+12/2011 - 07/2012
+Develop and maintain cross-functional Photoshop to HTML/CSS templates for Miva Merchant eCommerce platform.
+http://miva.com/
+
+- Technical Director at Innovative World Market, Inc
+01/2007 - 03/2011
+Develop brand, organization, and software solutions for local-international furniture corporation.
+
+-------------------------------------------
+LinkedIn
+
+https://www.linkedin.com/in/chantastic
