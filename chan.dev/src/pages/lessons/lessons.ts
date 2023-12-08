@@ -98,6 +98,7 @@ export const collectionSchema = defineCollection({
 				'unknown',
 				'post-production',
 				'complete',
+				'cancelled',
 			])
 			.default('unknown'),
 	}),

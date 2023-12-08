@@ -1,6 +1,7 @@
 ---
 title: Integrate Storybook into Your Development Environment
 description: Storybook seamlessly integrates with popular frameworks like Next.js, Nuxt, Angular, SvelteKit, and more. Discover how to incorporate Storybook into your existing project, enhancing your UI development process.
+egghead: https://app.egghead.io/lessons/egghead-integrate-storybook-into-your-development-environment/edit
 date: 2023-11-09
 status: draft
 order: 17

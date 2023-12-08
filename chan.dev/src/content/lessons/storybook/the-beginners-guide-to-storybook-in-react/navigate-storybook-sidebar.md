@@ -2,6 +2,7 @@
 title: Navigate Storybook Sidebar
 description: Navigate your component library with ease using Storybook's intuitive sidebar. Understand its hierarchical organization of categories, folders, and components. And filter components quickly with global search.
 date: 2023-11-06
+egghead: https://app.egghead.io/lessons/egghead-navigate-storybook-sidebar/edit
 status: post-production
 order: 3
 ---

@@ -2,6 +2,7 @@
 title: Create Engaging Component Playgrounds with Args and Controls
 description: Create dynamic and engaging component playgrounds in Storybook with Args and Controls. Learn how these powerful tools create an engaging and interactive documentation experience.
 date: 2023-11-09
+egghead: https://app.egghead.io/lessons/egghead-create-engaging-component-playgrounds-with-args-and-controls/edit
 status: post-production
 order: 9
 ---

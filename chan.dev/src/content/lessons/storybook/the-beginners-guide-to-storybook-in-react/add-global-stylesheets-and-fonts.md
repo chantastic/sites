@@ -1,7 +1,8 @@
 ---
-title: Add Global Stylesheets and Fonts to Storybook
+title: Configure Storybook with Global Stylesheets and Fonts
 description: Ensure your Storybook environment mirrors your production setup. Learn to add global stylesheets and fonts, creating a consistent look and feel across your project and component library.
 date: 2023-11-09
+egghead: https://app.egghead.io/lessons/egghead-configure-storybook-with-global-stylesheets-and-fonts/edit
 status: post-production
 order: 15
 ---

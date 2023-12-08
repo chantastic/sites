@@ -3,6 +3,7 @@ title: Get Started with Storybook 7 — Course Introduction
 description: Discover Storybook 7's revolutionary approach to UI design and development in collaborative environments. Discover why it's the top choice for teams crafting high-quality user interfaces.
 date: 2023-11-06
 status: post-production
+egghead: https://app.egghead.io/lessons/egghead-get-started-with-storybook-7-course-introduction/edit
 order: 1
 ---
 
