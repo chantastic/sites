@@ -1,6 +1,6 @@
 ---
-title: "SavvyCal"
-tags: ["os"]
+title: 'SavvyCal'
+tags: ['os']
 ---
 
 _Go to [/os](/os)_

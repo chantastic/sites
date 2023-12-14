@@ -1,7 +1,7 @@
 ---
 title: Miss
-description: ""
-datePublished: 
+description: ''
+datePublished:
 ---
 
 I hate what we've done with the word "sin".

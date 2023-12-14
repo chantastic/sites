@@ -1,6 +1,6 @@
 ---
-title: "6. Only publish post collection"
-status: "Accepted"
+title: '6. Only publish post collection'
+status: 'Accepted'
 date: 2023-01-07
 ---
 

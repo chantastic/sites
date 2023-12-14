@@ -80,14 +80,14 @@ Let's define actions for the example Button component.
 // Button.stories.tsx
 // (surronding code omitted)
 const meta = {
-  title: "Example/Button",
-  component: Button,
-  tags: ["autodocs"],
-  argTypes: {
-    backgroundColor: { control: "color" },
-    onClick: { action: "onClick" },
-  },
-} satisfies Meta<typeof Button>;
+	title: 'Example/Button',
+	component: Button,
+	tags: ['autodocs'],
+	argTypes: {
+		backgroundColor: {control: 'color'},
+		onClick: {action: 'onClick'},
+	},
+} satisfies Meta<typeof Button>
 ```
 
 Now click your button in Storybook and watch the Actions log!
@@ -118,18 +118,18 @@ Let's add an interaction to the example Button component.
 // Button.stories.tsx
 // (surronding code omitted)
 export const Primary: Story = {
-  args: {
-    primary: true,
-    label: "Button",
-  },
-  play: async ({ canvasElement }) => {
-    const canvas = within(canvasElement);
-    const button = await canvas.getByRole("button", {
-      name: /Button/i,
-    });
-    await userEvent.click(button);
-  },
-};
+	args: {
+		primary: true,
+		label: 'Button',
+	},
+	play: async ({canvasElement}) => {
+		const canvas = within(canvasElement)
+		const button = await canvas.getByRole('button', {
+			name: /Button/i,
+		})
+		await userEvent.click(button)
+	},
+}
 ```
 
 Now the story will run the interaction when it loads. Logging both the interaction and the action — in their respective tabs.

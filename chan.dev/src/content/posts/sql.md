@@ -1,5 +1,5 @@
 ---
-title: "SQL Stuff (WIP)"
+title: 'SQL Stuff (WIP)'
 dateCreated: 2022-01-28
 ---
 
@@ -39,11 +39,12 @@ SQLite is on the mac by default.
 `> sqlite3`
 
 Some things:
+
 - https://developer.chrome.com/docs/devtools/storage/indexeddb/#refresh
 - https://stackoverflow.com/questions/12247380/offline-access-sqlite-or-indexed-db#12247517
 - https://softwareengineering.stackexchange.com/questions/219953/how-is-localstorage-different-from-indexeddb
 
-*SQLite stuff*
+_SQLite stuff_
 
 - https://www.tutorialspoint.com/sqlite/sqlite_commands.htm
 - https://www.sqlitetutorial.net/sqlite-tutorial/sqlite-show-tables/

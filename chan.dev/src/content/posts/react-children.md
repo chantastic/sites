@@ -15,22 +15,26 @@ This tutorial experiments with the numerous ways we can provide (and misuse) the
 ## Template
 
 ```html
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>React playground</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module">
-      import ReactDOM from "https://esm.sh/react-dom@18.2.0";
-      import React from "https://esm.sh/react@18.2.0";
-      let reactElement = React.createElement("span", {}, "start here");
-      let domNode = document.getElementById("root");
-      ReactDOM.createRoot(domNode).render(reactElement);
-    </script>
-  </body>
+	<head>
+		<meta charset="UTF-8" />
+		<title>React playground</title>
+	</head>
+	<body>
+		<div id="root"></div>
+		<script type="module">
+			import ReactDOM from 'https://esm.sh/react-dom@18.2.0'
+			import React from 'https://esm.sh/react@18.2.0'
+			let reactElement = React.createElement(
+				'span',
+				{},
+				'start here'
+			)
+			let domNode = document.getElementById('root')
+			ReactDOM.createRoot(domNode).render(reactElement)
+		</script>
+	</body>
 </html>
 ```
 
@@ -87,17 +91,17 @@ let reactElement = React.createElement(
 ## Pass `children` pass in a single array
 
 ```js
-let reactElement = React.createElement("span", {}, [
-  false,
-  true,
-  "1",
-  2,
-  [3],
-  4.0,
-  (() => "5")(),
-  null,
-  undefined,
-]);
+let reactElement = React.createElement('span', {}, [
+	false,
+	true,
+	'1',
+	2,
+	[3],
+	4.0,
+	(() => '5')(),
+	null,
+	undefined,
+])
 ```
 
 _Objects (and related complex types like `Date`) will result in an error._
@@ -165,22 +169,22 @@ function MyComponent({ children, ...props }) {
 ## Ensure there is only one child with `Children.only`
 
 ```js
-let isSingleReactElement = Children.only(children);
+let isSingleReactElement = Children.only(children)
 ```
 
 ## Convert children to array with `Children.toArray`
 
 ```js /Children.toArray/
-function RowList({ children }) {
-  return (
-    <ul>
-      {Children.toArray(children, (child) => child)
-        .filter((child) => typeof child === "string")
-        .map((child) => (
-          <li>{child.toUpperCase()}</li>
-        ))}
-    </ul>
-  );
+function RowList({children}) {
+	return (
+		<ul>
+			{Children.toArray(children, (child) => child)
+				.filter((child) => typeof child === 'string')
+				.map((child) => (
+					<li>{child.toUpperCase()}</li>
+				))}
+		</ul>
+	)
 }
 ```
 

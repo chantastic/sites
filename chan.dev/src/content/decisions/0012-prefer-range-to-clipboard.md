@@ -1,6 +1,6 @@
 ---
-title: "12. Prefer range to clipboard"
-status: "Accepted"
+title: '12. Prefer range to clipboard'
+status: 'Accepted'
 date: 2023-08-24
 ---
 
@@ -16,11 +16,11 @@ To ensure clean copy and paste, prefered `createRange` over `Clipboard`. Ranges 
 
 ```js
 function selectElementContents(el) {
-  var range = document.createRange();
-  range.selectNodeContents(el);
-  var sel = window.getSelection();
-  sel.removeAllRanges();
-  sel.addRange(range);
+	var range = document.createRange()
+	range.selectNodeContents(el)
+	var sel = window.getSelection()
+	sel.removeAllRanges()
+	sel.addRange(range)
 }
 ```
 

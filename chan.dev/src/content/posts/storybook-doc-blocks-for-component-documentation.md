@@ -93,7 +93,7 @@ Let's start our component documentation with title and description.
 First, import doc blocks from `@storybook/blocks` module.
 
 ```ts
-import {} from "@storybook/blocks";
+import {} from '@storybook/blocks'
 ```
 
 (I'll leave this import block empty — with the expectation that VS Code will import named exports as I use them.)
@@ -290,17 +290,17 @@ I'll see you in the next one.
 Bye!
 :::
 
-[storybook.js.org]: https://storybook.js.org/ "Storybook home"
-[doc blocks]: https://storybook.js.org/docs/react/writing-docs/doc-blocks "Storybook doc blocks documentation"
-[docs page templates]: https://youtu.be/q8SY4yyNE6Q "Storybook docs page templates introduction video"
-[mdx documentation]: https://youtu.be/BLUmt0j7OLY "MDX in Storybook introduction video"
-[title component]: https://storybook.js.org/docs/react/api/doc-block-title "Title component documentation"
-[description component]: https://storybook.js.org/docs/react/api/doc-block-description "Descrsiption component documentation"
-[argtypes component]: https://storybook.js.org/docs/react/api/doc-block-argtypes "ArgTypes component documentation"
-[subtitle component]: https://storybook.js.org/docs/react/api/doc-block-subtitle "Subtitle component documentation"
-[canvas component]: https://storybook.js.org/docs/react/api/doc-block-canvas "Canvas component documentation"
-[controls component]: https://storybook.js.org/docs/react/api/doc-block-controls "Controls component documentation"
-[primary component]: https://storybook.js.org/docs/react/api/doc-block-primary "Primary component documentation"
-[source component]: https://storybook.js.org/docs/react/api/doc-block-source "Source component documentation"
-[stories component]: https://storybook.js.org/docs/react/api/doc-block-stories "Stories component documentation"
-[story component]: https://storybook.js.org/docs/react/api/doc-block-story "Story component documentation"
+[storybook.js.org]: https://storybook.js.org/ 'Storybook home'
+[doc blocks]: https://storybook.js.org/docs/react/writing-docs/doc-blocks 'Storybook doc blocks documentation'
+[docs page templates]: https://youtu.be/q8SY4yyNE6Q 'Storybook docs page templates introduction video'
+[mdx documentation]: https://youtu.be/BLUmt0j7OLY 'MDX in Storybook introduction video'
+[title component]: https://storybook.js.org/docs/react/api/doc-block-title 'Title component documentation'
+[description component]: https://storybook.js.org/docs/react/api/doc-block-description 'Descrsiption component documentation'
+[argtypes component]: https://storybook.js.org/docs/react/api/doc-block-argtypes 'ArgTypes component documentation'
+[subtitle component]: https://storybook.js.org/docs/react/api/doc-block-subtitle 'Subtitle component documentation'
+[canvas component]: https://storybook.js.org/docs/react/api/doc-block-canvas 'Canvas component documentation'
+[controls component]: https://storybook.js.org/docs/react/api/doc-block-controls 'Controls component documentation'
+[primary component]: https://storybook.js.org/docs/react/api/doc-block-primary 'Primary component documentation'
+[source component]: https://storybook.js.org/docs/react/api/doc-block-source 'Source component documentation'
+[stories component]: https://storybook.js.org/docs/react/api/doc-block-stories 'Stories component documentation'
+[story component]: https://storybook.js.org/docs/react/api/doc-block-story 'Story component documentation'

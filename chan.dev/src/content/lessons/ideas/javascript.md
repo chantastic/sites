@@ -12,6 +12,6 @@ date: 2023-07-30
 ## URLSearchParams
 
 ```js
-let usps = new URLSearchParams();
-Object.entries(params).forEach(([k, v]) => usps.append(k, v));
+let usps = new URLSearchParams()
+Object.entries(params).forEach(([k, v]) => usps.append(k, v))
 ```

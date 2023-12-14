@@ -4,15 +4,17 @@ date: 2023-07-03
 ---
 
 ## Intro
+
 > [!youtube, social]
 > YouTube, Social
 
-Storybook has full support for [MDX]().  
+Storybook has full support for [MDX]().
+
 > [!b-roll]
 > screen: typing markingdown then using a React component
 
 Markdown + React components? It's the dream, right?  
-Storybook takes that dream even further with a full set of components for adding great documentation to your components.  
+Storybook takes that dream even further with a full set of components for adding great documentation to your components.
 
 > [!b-roll]
 > screen: adding blocks to new docs page template
@@ -38,7 +40,7 @@ To add an MDX file in Storybook:
 > Storybook has built-in support for MDX. So you don't have to do anything special. Just start writing.
 
 ```mdx
-import { Button } from "./Button.tsx";
+import {Button} from './Button.tsx'
 
 # Button
 
@@ -76,9 +78,9 @@ Primary UI component for user interaction
 > Yes.
 
 ```mdx
-import { Button } from "./Button.tsx";
-import * as ButtonStories from "./Button.stories.tsx";
-import { Meta, Title, Description } from "@storybook/blocks";
+import {Button} from './Button.tsx'
+import * as ButtonStories from './Button.stories.tsx'
+import {Meta, Title, Description} from '@storybook/blocks'
 
 <Meta of={ButtonStories} />
 
@@ -94,7 +96,6 @@ import { Meta, Title, Description } from "@storybook/blocks";
 > That's how to {title}
 
 > [!full]
-> 
 
 - (In an MDX file using doc blocks)
 - (import your storie file and doc blocks)

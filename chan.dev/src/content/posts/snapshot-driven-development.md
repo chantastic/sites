@@ -1,5 +1,5 @@
 ---
-title: "The missing devolpment workflow: Snapshot-driven development"
+title: 'The missing devolpment workflow: Snapshot-driven development'
 date: 2023-10-27
 ---
 
@@ -12,6 +12,7 @@ It was a simple UI that that displayed a share-url based your enabled features.
 
 The challenge was that this UI sat at the top of a mountain of tech debt and institutional unrest.
 It got data from:
+
 - Props
 - A Rest API
 - Global user data

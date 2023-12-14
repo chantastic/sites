@@ -1,6 +1,6 @@
 ---
-title: "10. Use expressive-code for enriching code blocks progressively"
-status: "Accepted"
+title: '10. Use expressive-code for enriching code blocks progressively'
+status: 'Accepted'
 date: 2023-07-21
 ---
 

@@ -1,5 +1,5 @@
 ---
-title: "115: Eli White on Principles and React Native"
+title: '115: Eli White on Principles and React Native'
 dateCreated: 2020-10-24
 ---
 

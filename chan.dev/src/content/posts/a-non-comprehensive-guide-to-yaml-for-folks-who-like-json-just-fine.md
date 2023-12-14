@@ -1,7 +1,7 @@
 ---
 title: A Non-Comprehensive Guide to YAML for Folks Who Like JSON Just Fine
 publishDate: 2021-02-10
-description: "Master YAML with this beginner-friendly guide for JSON lovers. Learn key differences, structures, and examples for GitHub Actions, and serverless configurations"
+description: 'Master YAML with this beginner-friendly guide for JSON lovers. Learn key differences, structures, and examples for GitHub Actions, and serverless configurations'
 tags:
   - yaml
 ---
@@ -69,15 +69,15 @@ JSON doesn't support comments.
 
 ```json
 [
-  {
-    "Evermore": 2020
-  },
-  {
-    "Folklore": 2020
-  },
-  {
-    "Lover": 2019
-  }
+	{
+		"Evermore": 2020
+	},
+	{
+		"Folklore": 2020
+	},
+	{
+		"Lover": 2019
+	}
 ]
 ```
 
@@ -100,16 +100,16 @@ JSON doesn't support comments.
 
 ```json
 [
-  {
-    "name": "Taylor Swift",
-    "album_count": 9,
-    "label": "Republic"
-  },
-  {
-    "name": "The National",
-    "album_count": 8,
-    "label": "4AD"
-  }
+	{
+		"name": "Taylor Swift",
+		"album_count": 9,
+		"label": "Republic"
+	},
+	{
+		"name": "The National",
+		"album_count": 8,
+		"label": "4AD"
+	}
 ]
 ```
 
@@ -148,12 +148,12 @@ The National:
 
 ```json
 {
-  "Taylor Swift": ["Evermore", "Folklore", "Lover"],
-  "The National": [
-    "I Am Easy to Find",
-    "Sleep Well Beast",
-    "Trouble Will Find Me"
-  ]
+	"Taylor Swift": ["Evermore", "Folklore", "Lover"],
+	"The National": [
+		"I Am Easy to Find",
+		"Sleep Well Beast",
+		"Trouble Will Find Me"
+	]
 }
 ```
 
@@ -176,14 +176,14 @@ The National:
 
 ```json
 {
-  "Taylor Swift": {
-    "album_count": 9,
-    "label": "Republic"
-  },
-  "The National": {
-    "album_count": 8,
-    "label": "4AD"
-  }
+	"Taylor Swift": {
+		"album_count": 9,
+		"label": "Republic"
+	},
+	"The National": {
+		"album_count": 8,
+		"label": "4AD"
+	}
 }
 ```
 
@@ -203,9 +203,9 @@ The National:
 
 ```json
 [
-  ["name", "album_count", "label"],
-  ["Taylor Swift", 9, "Republic"],
-  ["The National", 8, "4AD"]
+	["name", "album_count", "label"],
+	["Taylor Swift", 9, "Republic"],
+	["The National", 8, "4AD"]
 ]
 ```
 
@@ -232,13 +232,13 @@ _But this is the output from the above YAML._
 
 ```json
 {
-  "Folklore": [
-    "Taylor Swift",
-    "Aaron Dressner",
-    "Jack Antonoff"
-  ],
-  "Lover": ["Taylor Swift"],
-  "I Am Easy to Find": ["Aaron Dressner"]
+	"Folklore": [
+		"Taylor Swift",
+		"Aaron Dressner",
+		"Jack Antonoff"
+	],
+	"Lover": ["Taylor Swift"],
+	"I Am Easy to Find": ["Aaron Dressner"]
 }
 ```
 
@@ -250,7 +250,7 @@ _But this is the output from the above YAML._
 name: Netlify Rebuild
 on:
   schedule:
-    - cron: "0 21 * * MON-FRI"
+    - cron: '0 21 * * MON-FRI'
 jobs:
   build:
     name: Netlify Rebuild
@@ -264,26 +264,26 @@ jobs:
 
 ```json
 {
-  "name": "Netlify Rebuild",
-  "on": {
-    "schedule": [
-      {
-        "cron": "0 21 * * MON-FRI"
-      }
-    ]
-  },
-  "jobs": {
-    "build": {
-      "name": "Netlify Rebuild",
-      "runs-on": "ubuntu-latest",
-      "steps": [
-        {
-          "name": "Curl request",
-          "run": "curl -X POST -d {} https://api.netlify.com/build_hooks/601321b7879709a8b8874175"
-        }
-      ]
-    }
-  }
+	"name": "Netlify Rebuild",
+	"on": {
+		"schedule": [
+			{
+				"cron": "0 21 * * MON-FRI"
+			}
+		]
+	},
+	"jobs": {
+		"build": {
+			"name": "Netlify Rebuild",
+			"runs-on": "ubuntu-latest",
+			"steps": [
+				{
+					"name": "Curl request",
+					"run": "curl -X POST -d {} https://api.netlify.com/build_hooks/601321b7879709a8b8874175"
+				}
+			]
+		}
+	}
 }
 ```
 

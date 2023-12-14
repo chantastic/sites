@@ -1,6 +1,6 @@
 ---
 title: markdown
-tags: ["code"]
+tags: ['code']
 ---
 
 This document describes markdown in terms of [Prettier](https://prettier.io/) defaults. If you don't use prettier, find syntax alternatives on [Daring Fireball](https://daringfireball.net/projects/markdown/).
@@ -91,10 +91,10 @@ output:
 
 ```html
 <ol start="8">
-  <li>Folklore</li>
-  <li>Folklore</li>
-  <li>Evermore</li>
-  <li>Folklore</li>
+	<li>Folklore</li>
+	<li>Folklore</li>
+	<li>Evermore</li>
+	<li>Folklore</li>
 </ol>
 ```
 
@@ -131,15 +131,15 @@ output:
 ```
 
 ```md
-`` There is a literal backtick (`) here. ``
+``There is a literal backtick (`) here.``
 ```
 
 ## Code block (GFM)
 
 ````md
 ```js
-let GOAT = "Taylor Swift";
-console.log(GOAT);
+let GOAT = 'Taylor Swift'
+console.log(GOAT)
 ```
 ````
 
@@ -150,8 +150,8 @@ Add more backticks for infinite nesting.
 `````md
 ````md
 ```js
-let GOAT = "Taylor Swift";
-console.log(GOAT);
+let GOAT = 'Taylor Swift'
+console.log(GOAT)
 ```
 ````
 `````
@@ -170,7 +170,7 @@ Someone recommended thinking of it as calling a named function with the url. It'
 ### Basic
 
 ```md
-[chan.dev](https://chan.dev/ "optional title")
+[chan.dev](https://chan.dev/ 'optional title')
 ```
 
 ### Automatic
@@ -189,11 +189,11 @@ Output:
 
 ```html
 <a
-  href="&#x6D;&#x61;i&#x6C;&#x74;&#x6F;:&#x61;&#x64;&#x64;&#x72;&#x65;
+	href="&#x6D;&#x61;i&#x6C;&#x74;&#x6F;:&#x61;&#x64;&#x64;&#x72;&#x65;
 &#115;&#115;&#64;&#101;&#120;&#x61;&#109;&#x70;&#x6C;e&#x2E;&#99;&#111;
 &#109;"
-  >&#x61;&#x64;&#x64;&#x72;&#x65;&#115;&#115;&#64;&#101;&#120;&#x61;
-  &#109;&#x70;&#x6C;e&#x2E;&#99;&#111;&#109;</a
+	>&#x61;&#x64;&#x64;&#x72;&#x65;&#115;&#115;&#64;&#101;&#120;&#x61;
+	&#109;&#x70;&#x6C;e&#x2E;&#99;&#111;&#109;</a
 >
 ```
 
@@ -235,7 +235,7 @@ _this is emphasized!_
 **Definition**
 
 ```md
-[site]: https://chan.dev/ "Optional Title Here"
+[site]: https://chan.dev/ 'Optional Title Here'
 ```
 
 - NOT case sensetive.
@@ -245,9 +245,9 @@ _this is emphasized!_
 I get 10 times more traffic from [Google][] than from
 [Yahoo][] or [MSN][].
 
-[google]: http://google.com/ "Google"
-[yahoo]: http://search.yahoo.com/ "Yahoo Search"
-[msn]: http://search.msn.com/ "MSN Search"
+[google]: http://google.com/ 'Google'
+[yahoo]: http://search.yahoo.com/ 'Yahoo Search'
+[msn]: http://search.msn.com/ 'MSN Search'
 ```
 
 **Shorthand reference**
@@ -268,7 +268,7 @@ I get 10 times more traffic from [Google][] than from
 ```md
 ![Alt text](/path/to/img.jpg)
 
-![Alt text](/path/to/img.jpg "Optional title")
+![Alt text](/path/to/img.jpg 'Optional title')
 ```
 
 ### Reference style
@@ -276,7 +276,7 @@ I get 10 times more traffic from [Google][] than from
 ```md
 ![Alt text][id]
 
-[id]: url/to/image "Optional title attribute"
+[id]: url/to/image 'Optional title attribute'
 ```
 
 _See [Link](#link) for more reference style options._
@@ -297,9 +297,9 @@ _Markdown can go in here if you leave extra line breaks._
 
 ```html
 <details>
-  <summary>Some disclosure</summary>
+	<summary>Some disclosure</summary>
 
-  _Markdown can go in here if you leave extra line breaks._
+	_Markdown can go in here if you leave extra line breaks._
 </details>
 ```
 

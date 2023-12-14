@@ -1,6 +1,6 @@
 ---
-title: "1. Record architecture decisions"
-status: "Accepted"
+title: '1. Record architecture decisions'
+status: 'Accepted'
 date: 2022-12-29
 ---
 

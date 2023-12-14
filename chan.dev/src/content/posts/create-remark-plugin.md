@@ -7,15 +7,15 @@ references:
 
 ```js
 function exchange_relative_links_with_absolute() {
-  return (tree) => {
-    visit(tree, (node) => {
-      if (
-        ["link", "definition"].includes(node?.type) &&
-        node.url.startsWith("/")
-      ) {
-        node.url = new URL(node.url, site).toString();
-      }
-    });
-  };
+	return (tree) => {
+		visit(tree, (node) => {
+			if (
+				['link', 'definition'].includes(node?.type) &&
+				node.url.startsWith('/')
+			) {
+				node.url = new URL(node.url, site).toString()
+			}
+		})
+	}
 }
 ```

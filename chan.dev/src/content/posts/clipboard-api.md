@@ -14,27 +14,31 @@ references:
 ## Complete example for text
 
 ```js
-let copyTrigger = document.getElementById("copy_body_button");
-let copyContent = document.querySelector("main");
+let copyTrigger = document.getElementById('copy_body_button')
+let copyContent = document.querySelector('main')
 
-copyTrigger.addEventListener("click", () => {
-  // Create a new clipboard item
-  const item = new ClipboardItem({
-    // The clipboard item can hold multiple formats
-    // In this case we're encoding the body as HTML for use with CMD+V (paste)
-    "text/html": new Blob([copyContent.innerHTML], { type: "text/html" }),
-    // And we're encoding a plaintext version for use with CMD+ALT+V (paste without formatting)
-    "text/plain": new Blob([copyContent.innerText], { type: "text/plain" }),
-  });
+copyTrigger.addEventListener('click', () => {
+	// Create a new clipboard item
+	const item = new ClipboardItem({
+		// The clipboard item can hold multiple formats
+		// In this case we're encoding the body as HTML for use with CMD+V (paste)
+		'text/html': new Blob([copyContent.innerHTML], {
+			type: 'text/html',
+		}),
+		// And we're encoding a plaintext version for use with CMD+ALT+V (paste without formatting)
+		'text/plain': new Blob([copyContent.innerText], {
+			type: 'text/plain',
+		}),
+	})
 
-  // Push it to the clipboard and handle success/failure signals
-  navigator.clipboard.write([item]).then(
-    function () {
-      console.log("Async: Copying to clipboard was successful!");
-    },
-    function (err) {
-      console.error("Async: Could not copy text: ", err);
-    }
-  );
-});
+	// Push it to the clipboard and handle success/failure signals
+	navigator.clipboard.write([item]).then(
+		function () {
+			console.log('Async: Copying to clipboard was successful!')
+		},
+		function (err) {
+			console.error('Async: Could not copy text: ', err)
+		}
+	)
+})
 ```

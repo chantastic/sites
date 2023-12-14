@@ -1,7 +1,7 @@
 ---
 title: Best food in San Diego and North County
 note: This page is a work in progress. The list is strong but shy on details.
-tags: ["food"]
+tags: ['food']
 ---
 
 I've lived in North County San Diego my entire aware life.  

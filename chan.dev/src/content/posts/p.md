@@ -1,6 +1,6 @@
 ---
-title: "A Universal Terminal alias for bun, pnpm, npm, and yarn"
-description: "Use zsh functions to create command line alias that determines local package manager and runs the corrrect comamnd: bun, pnpm, npm, or yarn."
+title: 'A Universal Terminal alias for bun, pnpm, npm, and yarn'
+description: 'Use zsh functions to create command line alias that determines local package manager and runs the corrrect comamnd: bun, pnpm, npm, or yarn.'
 publishDate: 2023-09-09
 tldr: |
   I've typed `npm` for the last time.

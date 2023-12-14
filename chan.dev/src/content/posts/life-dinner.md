@@ -1,7 +1,7 @@
 ---
 title: Couple questions
-description: "Redding, how to get there, how to get back, and what to do while there…"
-tags: ["marriage"]
+description: 'Redding, how to get there, how to get back, and what to do while there…'
+tags: ['marriage']
 ---
 
 https://twitter.com/SystemSunday/status/1595052201881341956?s=20

@@ -25,25 +25,27 @@ Does not include bootstrapping with `React.creatRoot`.
 ```jsx
 /* START HERE */
 function ShowMore(/* props */) {
-  return <div>🫵 YOUR IMPLEMENTATION 🫵</div>;
+	return <div>🫵 YOUR IMPLEMENTATION 🫵</div>
 }
 
 export default function App() {
-  return (
-    <ShowMore>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu purus
-      turpis. Nulla efficitur pulvinar dui id imperdiet. Nulla cursus nulla id
-      elit imperdiet commodo. Praesent ullamcorper eros quis maximus varius.
-      Integer pellentesque urna nulla, nec vestibulum leo malesuada quis.
-      Maecenas sit amet mauris eu diam blandit molestie bibendum sit amet
-      mauris. Nullam sed posuere lacus. Sed cursus bibendum turpis tincidunt
-      volutpat. Duis molestie volutpat urna, in rutrum ante rhoncus volutpat.
-      Maecenas a imperdiet dolor. Duis ut ex tincidunt, tincidunt velit in,
-      vehicula dolor. Suspendisse dictum porttitor massa. Cras pulvinar
-      ultricies lacus ut maximus. In gravida turpis purus, eu mattis odio
-      tincidunt eget.
-    </ShowMore>
-  );
+	return (
+		<ShowMore>
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+			Etiam eu purus turpis. Nulla efficitur pulvinar dui id
+			imperdiet. Nulla cursus nulla id elit imperdiet commodo.
+			Praesent ullamcorper eros quis maximus varius. Integer
+			pellentesque urna nulla, nec vestibulum leo malesuada
+			quis. Maecenas sit amet mauris eu diam blandit molestie
+			bibendum sit amet mauris. Nullam sed posuere lacus. Sed
+			cursus bibendum turpis tincidunt volutpat. Duis molestie
+			volutpat urna, in rutrum ante rhoncus volutpat. Maecenas a
+			imperdiet dolor. Duis ut ex tincidunt, tincidunt velit in,
+			vehicula dolor. Suspendisse dictum porttitor massa. Cras
+			pulvinar ultricies lacus ut maximus. In gravida turpis
+			purus, eu mattis odio tincidunt eget.
+		</ShowMore>
+	)
 }
 ```
 
@@ -58,15 +60,15 @@ Create a Component that renders `children` and a "Show less" button
 
 ```jsx {1, 5, 7}
 // 1. Create a component that destructures `children` from props
-function ShowMore({ children }) {
-  return (
-    <div>
-      {/* 2. Render the `children` */}
-      <div>{children}</div>
-      {/* 3. Render a "Show less" button */}
-      <button>Show less</button>
-    </div>
-  );
+function ShowMore({children}) {
+	return (
+		<div>
+			{/* 2. Render the `children` */}
+			<div>{children}</div>
+			{/* 3. Render a "Show less" button */}
+			<button>Show less</button>
+		</div>
+	)
 }
 ```
 
@@ -596,13 +598,13 @@ I'd recommend using [this one from lodash](https://lodash.com/docs/4.17.15#debou
 
 ```js
 function debounce(func, timeout = 300) {
-  let timer;
-  return (...args) => {
-    clearTimeout(timer);
-    timer = setTimeout(() => {
-      func.apply(this, args);
-    }, timeout);
-  };
+	let timer
+	return (...args) => {
+		clearTimeout(timer)
+		timer = setTimeout(() => {
+			func.apply(this, args)
+		}, timeout)
+	}
 }
 ```
 
@@ -717,9 +719,9 @@ Create a new component that consumes the `ExpandedContext` and renders the `expa
 
 ```jsx ins={1-5}
 function ShowMoreButton() {
-  let expanded = React.useContext(ExpandedContext);
+	let expanded = React.useContext(ExpandedContext)
 
-  return <button>Show {expanded ? "less" : "more"}</button>;
+	return <button>Show {expanded ? 'less' : 'more'}</button>
 }
 ```
 

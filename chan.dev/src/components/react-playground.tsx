@@ -1,4 +1,4 @@
-import * as React from "react";
+import * as React from 'react'
 
 // - merge classes
 // -
@@ -20,33 +20,33 @@ import * as React from "react";
 //    - refactor
 // 1. context, user object
 export function Greeting({
-  as: As = "h1",
-  className,
-  name,
-  salutation = "Hello",
-  punctuation = "!",
-  ...props
+	as: As = 'h1',
+	className,
+	name,
+	salutation = 'Hello',
+	punctuation = '!',
+	...props
 }) {
-  return (
-    <As {...props}>
-      {salutation}
-      {name ? ` ${String(name).trim()}` : ""}
-      {punctuation}
-    </As>
-  );
+	return (
+		<As {...props}>
+			{salutation}
+			{name ? ` ${String(name).trim()}` : ''}
+			{punctuation}
+		</As>
+	)
 }
 
 export function Counter() {
-  let [count, setCount] = React.useState(2);
+	let [count, setCount] = React.useState(2)
 
-  return (
-    <>
-      <p>{count}</p>
-      <button type="button" onClick={() => setCount(count + 1)}>
-        increment
-      </button>
-    </>
-  );
+	return (
+		<>
+			<p>{count}</p>
+			<button type="button" onClick={() => setCount(count + 1)}>
+				increment
+			</button>
+		</>
+	)
 }
 
 // Instructions steps
@@ -63,107 +63,115 @@ export function Counter() {
 // 1. not yet, we need to extract data first
 
 function formatMilliseconds(totalMilliseconds) {
-  var hours = Math.floor(totalMilliseconds / 3600000)
-    .toString()
-    .padStart(2, "0");
-  var minutes = Math.floor((totalMilliseconds % 3600000) / 60000)
-    .toString()
-    .padStart(2, "0");
-  var seconds = Math.floor((totalMilliseconds % 60000) / 1000)
-    .toString()
-    .padStart(2, "0");
-  var milliseconds = Math.floor(totalMilliseconds % 1000)
-    .toString()
-    .padStart(3, "0");
+	var hours = Math.floor(totalMilliseconds / 3600000)
+		.toString()
+		.padStart(2, '0')
+	var minutes = Math.floor(
+		(totalMilliseconds % 3600000) / 60000
+	)
+		.toString()
+		.padStart(2, '0')
+	var seconds = Math.floor((totalMilliseconds % 60000) / 1000)
+		.toString()
+		.padStart(2, '0')
+	var milliseconds = Math.floor(totalMilliseconds % 1000)
+		.toString()
+		.padStart(3, '0')
 
-  return `${
-    hours !== "00" ? `${hours}:` : ""
-  }${minutes}:${seconds}:${milliseconds}`;
+	return `${
+		hours !== '00' ? `${hours}:` : ''
+	}${minutes}:${seconds}:${milliseconds}`
 }
 
 export function Stopwatch() {
-  const [running, setRunning] = React.useState(false);
-  const [elapsedMilliseconds, setElapsedMilliseconds] = React.useState(0);
+	const [running, setRunning] = React.useState(false)
+	const [elapsedMilliseconds, setElapsedMilliseconds] =
+		React.useState(0)
 
-  React.useEffect(() => {
-    let animationFrameId;
-    let startTime = performance.now();
+	React.useEffect(() => {
+		let animationFrameId
+		let startTime = performance.now()
 
-    const update = () => {
-      if (running) {
-        const currentElapsedMilliseconds =
-          performance.now() - startTime + elapsedMilliseconds;
-        setElapsedMilliseconds(currentElapsedMilliseconds);
-        animationFrameId = requestAnimationFrame(update);
-      }
-    };
+		const update = () => {
+			if (running) {
+				const currentElapsedMilliseconds =
+					performance.now() - startTime + elapsedMilliseconds
+				setElapsedMilliseconds(currentElapsedMilliseconds)
+				animationFrameId = requestAnimationFrame(update)
+			}
+		}
 
-    if (running) {
-      update();
-    } else {
-      startTime = performance.now() - elapsedMilliseconds;
-    }
+		if (running) {
+			update()
+		} else {
+			startTime = performance.now() - elapsedMilliseconds
+		}
 
-    return () => {
-      cancelAnimationFrame(animationFrameId);
-    };
-  }, [running, elapsedMilliseconds]);
+		return () => {
+			cancelAnimationFrame(animationFrameId)
+		}
+	}, [running, elapsedMilliseconds])
 
-  function toggleStopwatch() {
-    setRunning((running) => !running);
-  }
+	function toggleStopwatch() {
+		setRunning((running) => !running)
+	}
 
-  return (
-    <div>
-      <div>{formatMilliseconds(elapsedMilliseconds)}</div>
-      <button onClick={toggleStopwatch}>{running ? "Stop" : "Start"}</button>
-      <button
-        type="button"
-        onClick={() => {
-          console.log(elapsedMilliseconds);
-        }}
-      >
-        lap
-      </button>
-      <button type="button" onClick={() => setElapsedMilliseconds(0)}>
-        Clear
-      </button>
-    </div>
-  );
+	return (
+		<div>
+			<div>{formatMilliseconds(elapsedMilliseconds)}</div>
+			<button onClick={toggleStopwatch}>
+				{running ? 'Stop' : 'Start'}
+			</button>
+			<button
+				type="button"
+				onClick={() => {
+					console.log(elapsedMilliseconds)
+				}}
+			>
+				lap
+			</button>
+			<button
+				type="button"
+				onClick={() => setElapsedMilliseconds(0)}
+			>
+				Clear
+			</button>
+		</div>
+	)
 }
 
 // implement lap.
 
 // // --- context
 // 1. It's ok to say "shit" as a default.
-const ExpletiveContext = React.createContext("shit");
+const ExpletiveContext = React.createContext('shit')
 
 // 2. But use a word that's contextually appropriate.
 function ContextualExclamation() {
-  let word = React.useContext(ExpletiveContext);
+	let word = React.useContext(ExpletiveContext)
 
-  return <span>Oh {word}!</span>;
+	return <span>Oh {word}!</span>
 }
 
 // 3. At grandma's house, use the word "snap" instead
 function GrandmasHouse(props) {
-  return (
-    <ExpletiveContext.Provider value="snap">
-      {props.children}
-    </ExpletiveContext.Provider>
-  );
+	return (
+		<ExpletiveContext.Provider value="snap">
+			{props.children}
+		</ExpletiveContext.Provider>
+	)
 }
 
 // 4. Something exciting happened. What do you say?
 function VisitToGrandmasHouse() {
-  return (
-    <GrandmasHouse>
-      <ContextualExclamation />
-    </GrandmasHouse>
-  );
+	return (
+		<GrandmasHouse>
+			<ContextualExclamation />
+		</GrandmasHouse>
+	)
 }
 
-export { VisitToGrandmasHouse as AShitExample };
+export {VisitToGrandmasHouse as AShitExample}
 
 // =============================================
 
@@ -267,98 +275,103 @@ export { VisitToGrandmasHouse as AShitExample };
 // add prop to control maxHeight (consider that it will impact both expanded and content Height)
 
 function debounce(func, timeout = 300) {
-  let timer;
-  return (...args) => {
-    clearTimeout(timer);
-    timer = setTimeout(() => {
-      func.apply(this, args);
-    }, timeout);
-  };
+	let timer
+	return (...args) => {
+		clearTimeout(timer)
+		timer = setTimeout(() => {
+			func.apply(this, args)
+		}, timeout)
+	}
 }
 
 function useWindowResize(handleResize) {
-  React.useEffect(() => {
-    window.addEventListener("resize", handleResize);
+	React.useEffect(() => {
+		window.addEventListener('resize', handleResize)
 
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  });
+		return () => {
+			window.removeEventListener('resize', handleResize)
+		}
+	})
 }
 
-const ExpandedContext = React.createContext();
-const ContentHeightContext = React.createContext();
+const ExpandedContext = React.createContext()
+const ContentHeightContext = React.createContext()
 
 function ShowMoreButton() {
-  let [expanded, setExpanded] = React.useContext(ExpandedContext);
-  let [contentHeight, setContentHeight] =
-    React.useContext(ContentHeightContext);
+	let [expanded, setExpanded] =
+		React.useContext(ExpandedContext)
+	let [contentHeight, setContentHeight] = React.useContext(
+		ContentHeightContext
+	)
 
-  return (
-    <>
-      {contentHeight > 100 && (
-        <button onClick={() => setExpanded(!expanded)}>
-          Show {expanded ? "less" : "more"}
-        </button>
-      )}
-    </>
-  );
+	return (
+		<>
+			{contentHeight > 100 && (
+				<button onClick={() => setExpanded(!expanded)}>
+					Show {expanded ? 'less' : 'more'}
+				</button>
+			)}
+		</>
+	)
 }
 
-export function ShowMore({ children }) {
-  let [expanded, setExpanded] = React.useState(true);
-  let [contentHeight, setContentHeight] = React.useState();
+export function ShowMore({children}) {
+	let [expanded, setExpanded] = React.useState(true)
+	let [contentHeight, setContentHeight] = React.useState()
 
-  const contentRef = React.useRef(null);
+	const contentRef = React.useRef(null)
 
-  React.useEffect(() => {
-    setContentHeight(contentRef.current.scrollHeight);
-  });
+	React.useEffect(() => {
+		setContentHeight(contentRef.current.scrollHeight)
+	})
 
-  let handleResize = debounce(function () {
-    setContentHeight(contentRef.current.scrollHeight);
-    console.log("resizing…");
-  });
+	let handleResize = debounce(function () {
+		setContentHeight(contentRef.current.scrollHeight)
+		console.log('resizing…')
+	})
 
-  React.useEffect(() => {
-    window.addEventListener("resize", handleResize);
+	React.useEffect(() => {
+		window.addEventListener('resize', handleResize)
 
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  });
+		return () => {
+			window.removeEventListener('resize', handleResize)
+		}
+	})
 
-  useWindowResize(handleResize);
+	useWindowResize(handleResize)
 
-  return (
-    <ExpandedContext.Provider value={[expanded, setExpanded]}>
-      <ContentHeightContext.Provider value={[contentHeight, setContentHeight]}>
-        <div>
-          <div
-            ref={contentRef}
-            style={{
-              maxHeight: expanded ? contentHeight : "100px",
-              overflow: "hidden",
-              transition: "all .5s ease",
-            }}
-          >
-            {children}
-          </div>
-          {/* {contentHeight > 100 && <ShowMoreButton />} */}
-          <ShowMoreButton />
-        </div>
-      </ContentHeightContext.Provider>
-    </ExpandedContext.Provider>
-  );
+	return (
+		<ExpandedContext.Provider value={[expanded, setExpanded]}>
+			<ContentHeightContext.Provider
+				value={[contentHeight, setContentHeight]}
+			>
+				<div>
+					<div
+						ref={contentRef}
+						style={{
+							maxHeight: expanded ? contentHeight : '100px',
+							overflow: 'hidden',
+							transition: 'all .5s ease',
+						}}
+					>
+						{children}
+					</div>
+					{/* {contentHeight > 100 && <ShowMoreButton />} */}
+					<ShowMoreButton />
+				</div>
+			</ContentHeightContext.Provider>
+		</ExpandedContext.Provider>
+	)
 }
 
 export function App() {
-  return (
-    <ShowMore>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu purus
-      turpis. Nulla efficitur pulvinar dui id imperdiet. Nulla cursus nulla id
-      elit imperdiet commodo. Praesent ullamcorper eros quis maximus varius.
-      {/* Integer pellentesque urna nulla, nec vestibulum leo malesuada quis.
+	return (
+		<ShowMore>
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+			Etiam eu purus turpis. Nulla efficitur pulvinar dui id
+			imperdiet. Nulla cursus nulla id elit imperdiet commodo.
+			Praesent ullamcorper eros quis maximus varius.
+			{/* Integer pellentesque urna nulla, nec vestibulum leo malesuada quis.
       Maecenas sit amet mauris eu diam blandit molestie bibendum sit amet
       mauris. Nullam sed posuere lacus. Sed cursus bibendum turpis tincidunt
       volutpat. Duis molestie volutpat urna, in rutrum ante rhoncus volutpat.
@@ -366,6 +379,6 @@ export function App() {
       vehicula dolor. Suspendisse dictum porttitor massa. Cras pulvinar
       ultricies lacus ut maximus. In gravida turpis purus, eu mattis odio
       tincidunt eget. */}
-    </ShowMore>
-  );
+		</ShowMore>
+	)
 }

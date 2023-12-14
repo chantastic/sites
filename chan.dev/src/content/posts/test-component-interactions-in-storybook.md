@@ -1,7 +1,7 @@
 ---
 title: Test Component Interactions in Storybook
 date: 2023-09-24
-cover: "./test-component-interactions-in-storybook/testing-component-interactions-in-storybook.png"
+cover: './test-component-interactions-in-storybook/testing-component-interactions-in-storybook.png'
 coverAlt: Screenshot of Storybook documenting a tic-tac-toe game component. The game is played via testing-library interactions.
 shoutouts: [storybook, testing-library]
 ---
@@ -43,7 +43,7 @@ Starting the, wrong way, I'd probably export the `Board` component (previously p
 
 ```tsx title="App.tsx" ins=/export /
 export function Board() {
-  /* … */
+	/* … */
 }
 ```
 
@@ -87,10 +87,10 @@ Let's fast-farward to a bit to see where where this practice becomes even more p
 
 ```tsx title="Board.tsx"
 export const Tie = {
-  args: {
-    squares: ["X", "O", "O", "O", "X", "X", "X", "O", "O"],
-  },
-};
+	args: {
+		squares: ['X', 'O', 'O', 'O', 'X', 'X', 'X', 'O', 'O'],
+	},
+}
 ```
 
 It _looks_ reasonable.
@@ -110,21 +110,21 @@ Let's interact with the whole app using interactions (user events).
 Start with a new story file, using [testing-library](https://testing-library.com).
 
 ```tsx title="Game.stories.tsx"
-import Game from "./App";
-import type { Meta, StoryObj } from "@storybook/react";
-import { userEvent, within } from "@storybook/testing-library";
+import Game from './App'
+import type {Meta, StoryObj} from '@storybook/react'
+import {userEvent, within} from '@storybook/testing-library'
 
 const meta = {
-  component: Game,
-} satisfies Meta<typeof Game>;
+	component: Game,
+} satisfies Meta<typeof Game>
 
-export default meta;
+export default meta
 
-type Story = StoryObj<typeof meta>;
+type Story = StoryObj<typeof meta>
 
 export const XWins = {
-  // code here
-} satisfies Story;
+	// code here
+} satisfies Story
 ```
 
 We immediately have a problem: we have no way to query the DOM for the squares.
@@ -279,28 +279,28 @@ It would be a real hassle to re-create the `XWins` play function for every test.
 
 ```tsx title="Game.stories.tsx" /await XWins.*;/
 export const XWinsThenReturnsToMove3 = {
-  play: async (context) => {
-    const canvas = within(context.canvasElement);
-    const squares = canvas.getAllByLabelText(/space/i, {
-      selector: "button",
-    });
-    const move3 = canvas.getByText(/Go to move #3/i);
+	play: async (context) => {
+		const canvas = within(context.canvasElement)
+		const squares = canvas.getAllByLabelText(/space/i, {
+			selector: 'button',
+		})
+		const move3 = canvas.getByText(/Go to move #3/i)
 
-    await XWins.play(context);
+		await XWins.play(context)
 
-    await userEvent.click(move3);
+		await userEvent.click(move3)
 
-    await expect(
-      squares.filter((s) => s.textContent === "X").length
-    ).toBe(2);
-    await expect(
-      squares.filter((s) => s.textContent === "O").length
-    ).toBe(1);
-    await expect(
-      canvas.getByText(/Next player: O/i)
-    ).toBeInTheDocument();
-  },
-} satisfies Story;
+		await expect(
+			squares.filter((s) => s.textContent === 'X').length
+		).toBe(2)
+		await expect(
+			squares.filter((s) => s.textContent === 'O').length
+		).toBe(1)
+		await expect(
+			canvas.getByText(/Next player: O/i)
+		).toBeInTheDocument()
+	},
+} satisfies Story
 ```
 
 Our new `XWinsThenReturnsToMove3` runs the `XWins` play function and then plays the additional interactions and expectations.

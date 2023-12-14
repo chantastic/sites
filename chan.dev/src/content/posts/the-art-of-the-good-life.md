@@ -1,12 +1,12 @@
 ---
-title: "The Art of the Good Life: 52 Surprising Shortcuts to Happiness, Wealth, and Success"
-tags: ["book report"]
+title: 'The Art of the Good Life: 52 Surprising Shortcuts to Happiness, Wealth, and Success'
+tags: ['book report']
 dateCreated: 2020-10-22
 ---
 
 ## 1 Mental Accounting
 
-How to Turn a Loss into a Win  
+How to Turn a Loss into a Win
 
 Related post: [Chan Spot](/chan-spot)
 

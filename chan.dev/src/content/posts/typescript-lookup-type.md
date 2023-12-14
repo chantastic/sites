@@ -7,10 +7,10 @@ references:
 
 ```ts
 type Post = {
-  title: string;
-  publishDate: Date;
-  tags: string[];
-};
+	title: string
+	publishDate: Date
+	tags: string[]
+}
 ```
 
 ```ts

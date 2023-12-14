@@ -1,6 +1,6 @@
 ---
 # layout: ../../layouts/RH2021.astro
-title: "⚛️🎄 Welcome to React Holiday 2022!"
+title: '⚛️🎄 Welcome to React Holiday 2022!'
 date: 2022-11-29
 ---
 

@@ -1,5 +1,5 @@
 ---
-title: "AI prompts"
+title: 'AI prompts'
 date: 2023-09-20
 references:
   - https://docs.midjourney.com/docs/parameter-list

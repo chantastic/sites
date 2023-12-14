@@ -1,6 +1,6 @@
 ---
 title: Get the Raise
-description: "Increase your visibility and industry connections to improve your salary negatiation position."
+description: 'Increase your visibility and industry connections to improve your salary negatiation position.'
 publishDate: 2019-06-26
 ---
 

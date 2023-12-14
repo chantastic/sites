@@ -1,5 +1,5 @@
 ---
-title: "Pandoc"
+title: 'Pandoc'
 dateCreated: 2022-01-07
 ---
 

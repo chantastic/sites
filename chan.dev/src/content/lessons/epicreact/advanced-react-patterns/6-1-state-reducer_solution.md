@@ -1,5 +1,5 @@
 ---
-title: "State Reducer, solution"
+title: 'State Reducer, solution'
 date: 2023-09-10
 ---
 
@@ -16,15 +16,15 @@ So,
 - And replace all local `toggleReducer` calls with the optional `reducer`.
 
 ```tsx title="toggle.tsx" ins=/, reducer/ del=/toggleReducer/ ins=/reducer/
-export function useToggle({ initialOn = false, reducer } = {}) {
-  const { current: initialState } = React.useRef<ToggleState>({
-    on: initialOn,
-  });
-  const [state, dispatch] = React.useReducer(
-    toggleReducerreducer,
-    initialState
-  );
-  /* ...rest of implementation... */
+export function useToggle({initialOn = false, reducer} = {}) {
+	const {current: initialState} = React.useRef<ToggleState>({
+		on: initialOn,
+	})
+	const [state, dispatch] = React.useReducer(
+		toggleReducerreducer,
+		initialState
+	)
+	/* ...rest of implementation... */
 }
 ```
 
@@ -48,10 +48,10 @@ We can retain the previous experience with a [default value assignment](https://
 ```tsx ins=/ = toggleReducer/
 // toggle.tsx
 export function useToggle({
-  initialOn = false,
-  reducer = toggleReducer,
+	initialOn = false,
+	reducer = toggleReducer,
 } = {}) {
-  /* ...rest of implementation... */
+	/* ...rest of implementation... */
 }
 ```
 
@@ -65,18 +65,18 @@ Now we can override the default `toggleReducer` — by providing a `reducer` opt
 - (Don't worry, we'll come back to fix the types after we get it working)
 
 ```tsx ins={2-14} title="app.tsx"
-const { on, getTogglerProps, getResetterProps } = useToggle({
-  reducer(state: ToggleState, action: ToggleAction) {
-    switch (action.type) {
-      case "toggle": {
-        return { on: !state.on };
-      }
-      case "reset": {
-        return action.initialState;
-      }
-    }
-  },
-});
+const {on, getTogglerProps, getResetterProps} = useToggle({
+	reducer(state: ToggleState, action: ToggleAction) {
+		switch (action.type) {
+			case 'toggle': {
+				return {on: !state.on}
+			}
+			case 'reset': {
+				return action.initialState
+			}
+		}
+	},
+})
 ```
 
 With our override state reducer in place, add the additional `toggle` logic.
@@ -85,24 +85,24 @@ With our override state reducer in place, add the additional `toggle` logic.
 - If `clickedTooMuch` is truthy, return the current (unmodified) state.
 
 ```tsx ins={8-10} title="app.tsx"
-const { on, getTogglerProps, getResetterProps } = useToggle({
-  reducer: function toggleReducer(
-    state: ToggleState,
-    action: ToggleAction
-  ) {
-    switch (action.type) {
-      case "toggle": {
-        if (clickedTooMuch) {
-          return state;
-        }
-        return { on: !state.on };
-      }
-      case "reset": {
-        return action.initialState;
-      }
-    }
-  },
-});
+const {on, getTogglerProps, getResetterProps} = useToggle({
+	reducer: function toggleReducer(
+		state: ToggleState,
+		action: ToggleAction
+	) {
+		switch (action.type) {
+			case 'toggle': {
+				if (clickedTooMuch) {
+					return state
+				}
+				return {on: !state.on}
+			}
+			case 'reset': {
+				return action.initialState
+			}
+		}
+	},
+})
 ```
 
 ## What we did
@@ -128,9 +128,9 @@ All that's left is to fix the TypeScript errors.
 
 ```tsx title="toggle.tsx" ins={2-3}
 import {
-  ToggleAction,
-  ToggleState,
-  useToggle,
-} from "./toggle.tsx";
+	ToggleAction,
+	ToggleState,
+	useToggle,
+} from './toggle.tsx'
 /* ...rest of implementation... */
 ```

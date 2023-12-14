@@ -27,15 +27,15 @@ date: 2022-06-29
 
 ```html
 <body>
-  <div id="root"></div>
-  <script type="module">
-    const element = document.createElement("div");
-    element.textContent = "Hello World";
-    element.className = "container";
+	<div id="root"></div>
+	<script type="module">
+		const element = document.createElement('div')
+		element.textContent = 'Hello World'
+		element.className = 'container'
 
-    const rootElement = document.getElementById("root");
-    rootElement.append(element);
-  </script>
+		const rootElement = document.getElementById('root')
+		rootElement.append(element)
+	</script>
 </body>
 ```
 

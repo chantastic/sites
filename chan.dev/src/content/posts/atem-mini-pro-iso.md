@@ -1,5 +1,5 @@
 ---
-title: "Atem Mini Pro ISO — real-time impressions"
+title: 'Atem Mini Pro ISO — real-time impressions'
 dateCreated: 2020-10-21
 ---
 

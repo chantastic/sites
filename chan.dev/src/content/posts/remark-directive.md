@@ -53,7 +53,7 @@ What I want is a way to abstract repeated markup for embeds, intent links, wordy
 
     There are too many layers of interpretation. My preference is to use JSX _or_ MD. And selectively parse markdown content thru a markdown processor.
 
-[MDX]: https://mdxjs.com/ "MDX documentation"
+[MDX]: https://mdxjs.com/ 'MDX documentation'
 
 ## Enter Remark Directive
 
@@ -67,7 +67,7 @@ This is the full syntax sample shown in documentation:
 
 Let's break that down into the practical use cases shown above.
 
-[remark]: https://remark.js.org/ "Remark: markdown processor powered by plugins"
+[remark]: https://remark.js.org/ 'Remark: markdown processor powered by plugins'
 
 ### Details element
 
@@ -129,13 +129,13 @@ A :i[lovely] language know as :abbr[HTML]{title="HyperText Markup Language"}.
 
 ```css
 .visually-hidden:not(:focus):not(:active) {
-  clip: rect(0 0 0 0);
-  clip-path: inset(50%);
-  height: 1px;
-  overflow: hidden;
-  position: absolute;
-  white-space: nowrap;
-  width: 1px;
+	clip: rect(0 0 0 0);
+	clip-path: inset(50%);
+	height: 1px;
+	overflow: hidden;
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
 }
 
 /*
@@ -153,10 +153,10 @@ Some pages probably still are!
 
 This is a very eleventy-specific way to create dynamic elements. And it couldn't go with me.
 
-[Eleventy]: https://www.11ty.dev/ "Eleventy, a simpler static site generator"
-[chan.dev]: htps://chan.dev "the chaotic digital garden of chantastic"
-[Astro]: https://astro.build/blog/astro-2/ "Astro 2.0 announcement post"
-[Eleventy shortcodes]: https://www.11ty.dev/docs/shortcodes/ "Template Language custom tags"
+[Eleventy]: https://www.11ty.dev/ 'Eleventy, a simpler static site generator'
+[chan.dev]: htps://chan.dev 'the chaotic digital garden of chantastic'
+[Astro]: https://astro.build/blog/astro-2/ 'Astro 2.0 announcement post'
+[Eleventy shortcodes]: https://www.11ty.dev/docs/shortcodes/ 'Template Language custom tags'
 
 ## Enter Remark Directive
 
@@ -214,7 +214,7 @@ Some **other** markdown.
   </div>
 </div>
 
-It's great that I can just drop in a [tailwindcss flex recipe](https://v1.tailwindcss.com/components/flexbox-grids "tailwindcss flexbox grids documentation and recipes"). But do you see what I mean by wierd?
+It's great that I can just drop in a [tailwindcss flex recipe](https://v1.tailwindcss.com/components/flexbox-grids 'tailwindcss flexbox grids documentation and recipes'). But do you see what I mean by wierd?
 
 Anything that I want parsed as markdown requires surronding newlines.
 And that's not all!

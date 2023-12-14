@@ -1,6 +1,6 @@
 ---
 title: Newsletter
-tags: ["meta"]
+tags: ['meta']
 ---
 
 ## Events

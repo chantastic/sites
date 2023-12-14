@@ -1,5 +1,5 @@
 ---
-title: "Basic Burger"
+title: 'Basic Burger'
 ---
 
 ## Core ingredients per serving

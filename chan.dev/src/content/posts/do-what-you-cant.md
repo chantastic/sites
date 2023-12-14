@@ -1,6 +1,6 @@
 ---
 title: Do What You Can't
-description: "Fight imposter syndrome by proving it wrong. Embrace your worth, validate your experiences, and conquer challenges with the support of others."
+description: 'Fight imposter syndrome by proving it wrong. Embrace your worth, validate your experiences, and conquer challenges with the support of others.'
 publishDate: 2020-02-05
 ---
 

@@ -1,16 +1,16 @@
 ---
 title: Import Modules for Side Effects
-description: "Explore the concept of importing JavaScript modules solely for their side effects, the use of conditional side effects with dynamic imports, and best practices to follow."
+description: 'Explore the concept of importing JavaScript modules solely for their side effects, the use of conditional side effects with dynamic imports, and best practices to follow.'
 publishDate: 2021-01-26
 og:
-  image: "https://res.cloudinary.com/chantastic/image/upload/v1685927001/chan.dev/import-a-module-for-side-effects.jpg"
+  image: 'https://res.cloudinary.com/chantastic/image/upload/v1685927001/chan.dev/import-a-module-for-side-effects.jpg'
 tags: [code]
 ---
 
 Modules — in JavaScript — can be imported strictly for their side effects.
 
 ```js
-import "./string-utils.mjs";
+import './string-utils.mjs'
 ```
 
 Notice.
@@ -22,7 +22,7 @@ On the module side, simply write code with effects.
 
 ```js
 // file: ./string-utils.mjs
-console.info("string-utils loaded.");
+console.info('string-utils loaded.')
 ```
 
 ## Conditional side effects with dynamic imports
@@ -30,11 +30,11 @@ console.info("string-utils loaded.");
 We can load modules with side effects conditionally, with an immediately invoked async function.
 
 ```js
-(async () => {
-  if (true /* maybe some environment var */) {
-    await import("/modules/my-module.js");
-  }
-})();
+;(async () => {
+	if (true /* maybe some environment var */) {
+		await import('/modules/my-module.js')
+	}
+})()
 ```
 
 Here, you can imagine checking an environment variable before importing side effects.
@@ -47,10 +47,10 @@ While there may be a good reason to do this, it also make your imports unpredict
 Here's why I recommend avoiding the mix:
 
 ```js
-import hype from "./string-utils.mjs";
+import hype from './string-utils.mjs'
 // loads both exports AND side effects
 
-console.log(hype("moduuuuuules"));
+console.log(hype('moduuuuuules'))
 // => string-utils loaded.
 // => MODUUUUUULES!!!
 ```
@@ -71,5 +71,6 @@ This is part of a course I'm build on modules at [lunch.dev](https://www.lunch.d
 When live, members get access to this and other courses on React.
 
 <script src="https://cdn.podia.com/embeds.js" async="async"></script>
+
 <a
 href="https://www.lunch.dev/member" data-podia-embed="button" data-text="Join lunch.dev for this course">Join lunch.dev for this course</a>

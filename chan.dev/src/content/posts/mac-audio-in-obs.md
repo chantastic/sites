@@ -1,5 +1,5 @@
 ---
-title: "Mac Audio in OBS"
+title: 'Mac Audio in OBS'
 dateCreated: 2022-02-05
 ---
 

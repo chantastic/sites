@@ -1,6 +1,6 @@
 ---
 title: AVO 🥑 — A BEM Dialect Using Data Attributes
-description: "Discover AVO 🥑, a BEM dialect using data attributes to improve legibility and reduce template repetition. Ideal for legacy codebases or utility class libraries"
+description: 'Discover AVO 🥑, a BEM dialect using data attributes to improve legibility and reduce template repetition. Ideal for legacy codebases or utility class libraries'
 publishDate: 2021-02-08
 ---
 
@@ -16,21 +16,21 @@ As a BEM dialect, AVO observes the concepts of BEM but uses data attribute synta
 - [Video](#video)
 - [Goals](#goals)
 - [Attribute](#attribute)
-    - [CSS](#css)
-    - [HTML](#html)
+  - [CSS](#css)
+  - [HTML](#html)
 - [Value (boolean)](#value-boolean)
-    - [CSS](#css-1)
-    - [HTML](#html-1)
+  - [CSS](#css-1)
+  - [HTML](#html-1)
 - [Value-object (enumerable)](#value-object-enumerable)
-    - [CSS](#css-2)
-    - [HTML](#html-2)
+  - [CSS](#css-2)
+  - [HTML](#html-2)
 - [Value-object (unbounded)](#value-object-unbounded)
-    - [CSS](#css-3)
-    - [HTML](#html-3)
-    - [Warning](#warning)
+  - [CSS](#css-3)
+  - [HTML](#html-3)
+  - [Warning](#warning)
 - [Relative](#relative)
-    - [CSS](#css-4)
-    - [HTML](#html-4)
+  - [CSS](#css-4)
+  - [HTML](#html-4)
 
 ## Video
 
@@ -63,9 +63,9 @@ AVO 🥑 elements use empty [attribute selectors](https://developer.mozilla.org/
 
 ```html
 <img
-  data-avatar
-  src="https://placekitten.com/200/200"
-  alt="cute kitten"
+	data-avatar
+	src="https://placekitten.com/200/200"
+	alt="cute kitten"
 />
 ```
 
@@ -78,11 +78,11 @@ _Key-only values (like `mention` above) are inferred to be `true`, [like in BEM]
 #### CSS
 
 ```css
-[data-avatar~="mention"] {
-  --avatar--size: 1.25em;
-  --avatar--font-size: 1.5em;
-  margin-right: 0.125em;
-  transform: translateY(0.25em);
+[data-avatar~='mention'] {
+	--avatar--size: 1.25em;
+	--avatar--font-size: 1.5em;
+	margin-right: 0.125em;
+	transform: translateY(0.25em);
 }
 ```
 
@@ -90,9 +90,9 @@ _Key-only values (like `mention` above) are inferred to be `true`, [like in BEM]
 
 ```html
 <img
-  data-avatar="mention"
-  src="https://placekitten.com/200/200"
-  alt="cute kitten"
+	data-avatar="mention"
+	src="https://placekitten.com/200/200"
+	alt="cute kitten"
 />
 ```
 
@@ -103,16 +103,16 @@ AVO 🥑 extensions also use the `~=` [attribute selector](https://developer.moz
 #### CSS
 
 ```css
-[data-avatar~="size:sm"] {
-  --avatar--size: 3rem;
+[data-avatar~='size:sm'] {
+	--avatar--size: 3rem;
 }
 
-[data-avatar~="size:md"] {
-  --avatar--size: 4rem;
+[data-avatar~='size:md'] {
+	--avatar--size: 4rem;
 }
 
-[data-avatar~="size:lg"] {
-  --avatar--size: 5rem;
+[data-avatar~='size:lg'] {
+	--avatar--size: 5rem;
 }
 ```
 
@@ -120,19 +120,19 @@ AVO 🥑 extensions also use the `~=` [attribute selector](https://developer.moz
 
 ```html
 <img
-  data-avatar="size:sm"
-  src="https://placekitten.com/200/200"
-  alt="cute kitten"
+	data-avatar="size:sm"
+	src="https://placekitten.com/200/200"
+	alt="cute kitten"
 />
 <img
-  data-avatar="size:md"
-  src="https://placekitten.com/200/200"
-  alt="cute kitten"
+	data-avatar="size:md"
+	src="https://placekitten.com/200/200"
+	alt="cute kitten"
 />
 <img
-  data-avatar="size:lg"
-  src="https://placekitten.com/200/200"
-  alt="cute kitten"
+	data-avatar="size:lg"
+	src="https://placekitten.com/200/200"
+	alt="cute kitten"
 />
 ```
 
@@ -145,12 +145,12 @@ This allows for indeterminate values `status:<undefined>` to be extended with in
 #### CSS
 
 ```css
-[data-avatar*="status:"] {
-  --avatar--border: clamp(
-      2px,
-      calc(var(--avatar--size) * 0.1),
-      5px
-    ) solid transparent;
+[data-avatar*='status:'] {
+	--avatar--border: clamp(
+			2px,
+			calc(var(--avatar--size) * 0.1),
+			5px
+		) solid transparent;
 }
 ```
 
@@ -167,8 +167,8 @@ While available, this isn't recommended. Using a fixed set of values is preferre
 If you want to provide a default, consider instead providing an explicit `unknown` selector:
 
 ```css
-[data-avatar~="status:unkown"] {
-  border-color: transparent;
+[data-avatar~='status:unkown'] {
+	border-color: transparent;
 }
 ```
 
@@ -194,6 +194,6 @@ The example below introduces a header that includes avatar styles that are compo
 
 ```html
 <header data-person-header>
-  <img data-avatar data-person-header--avatar {...} />
+	<img data-avatar data-person-header--avatar {...} />
 </header>
 ```

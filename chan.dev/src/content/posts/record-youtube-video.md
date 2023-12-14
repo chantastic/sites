@@ -1,6 +1,6 @@
 ---
 title: Record YouTube video
-layout: "#layouts/MarkdownLayout.astro"
+layout: '#layouts/MarkdownLayout.astro'
 tags: [mode]
 dateCreated: 2023-01-03
 ---
@@ -33,6 +33,8 @@ dateCreated: 2023-01-03
 - Is there a way to add stream deck into the process? Marking clips? Marking times on my timer?
 
 ## Notes
+
 ### Thumbnail
+
 - Safe zone (where no text will appear in various presentations) is the middle 1/2 of the frame (horizontally)
-- 
+-

@@ -1,6 +1,6 @@
 ---
-title: "3. Use nunjucks for templates"
-status: "Accepted"
+title: '3. Use nunjucks for templates'
+status: 'Accepted'
 date: 2023-01-07
 ---
 

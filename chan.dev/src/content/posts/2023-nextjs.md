@@ -34,15 +34,16 @@ As someone who cares deeply about wellness and mental health. How do practice wh
 
 With shadcn/ui, you've captured the attention of the pragmatic builder — people who build to build, not build to paint sheds.
 
-I found myself saying that "the dream of bootstrap is alive in shadcn/ui". 
+I found myself saying that "the dream of bootstrap is alive in shadcn/ui".
 I am such a firm believer in your mindset of "paste over packages." And Radix—Tailwind seem to be the exact right fit for that.
 
 Jacob Thorton said that
+
 > …
 
 With v0 now building extremely capable components on your work, what do you see as the ideal crossover of person an AI in the domain of design implementation?
 
-## 
+##
 
 Vercel have been on an absolute tear with AI-tooling for web developers.
 As the VC of AI at Vercel, what do developers need to do to stay ahead when machines write write increasingly capable code? Among developers, who will claim the biggest W's and the hardest L's?

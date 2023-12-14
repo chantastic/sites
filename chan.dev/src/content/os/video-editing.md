@@ -1,5 +1,5 @@
 ---
-title: "Video Editing"
+title: 'Video Editing'
 date: 2023-06-10
 ---
 
@@ -20,6 +20,6 @@ date: 2023-06-10
 | ` - clean`  |    h.265    | A-roll only cut, no transforms |
 | ` - upload` |    h.265    | Final result to YouTube        |
 
-
 ## Screen setup
 
+## Hard cuts and motion

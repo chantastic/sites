@@ -1,5 +1,5 @@
 ---
-title: "Harvard Sentences"
+title: 'Harvard Sentences'
 dateCreated: 2020-11-01
 ---
 

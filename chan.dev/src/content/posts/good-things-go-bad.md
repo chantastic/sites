@@ -1,6 +1,6 @@
 ---
 title: Good things go bad
-description: "Job satisfactino is fleeting. Recognizing when to move on, using avocados as a relatable metaphor."
+description: 'Job satisfactino is fleeting. Recognizing when to move on, using avocados as a relatable metaphor.'
 publishDate: 2020-02-24
 ---
 

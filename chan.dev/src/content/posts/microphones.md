@@ -1,6 +1,6 @@
 ---
 title: Microphones
-description: "How to buy a microphone"
+description: 'How to buy a microphone'
 dateCreated: 2020-12-24
 dateModified: 2022-06-04
 ---

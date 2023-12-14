@@ -1,6 +1,6 @@
 ---
 title: CSS-ing with Attribute Selectors
-description: "Discover the power of CSS attribute selectors, their syntax, and practical applications, including styling by value, state, and custom data attributes."
+description: 'Discover the power of CSS attribute selectors, their syntax, and practical applications, including styling by value, state, and custom data attributes.'
 publishDate: 2021-04-22
 ---
 
@@ -22,7 +22,7 @@ As syntax goes, attribute selectors wrap the name of the target attribute in bra
 
 ```css
 [href] {
-  color: red;
+	color: red;
 }
 ```
 
@@ -32,7 +32,7 @@ We have to be careful because other elements like `<link>` also have an `href` a
 
 ```css
 a[href] {
-  color: red;
+	color: red;
 }
 ```
 
@@ -45,9 +45,9 @@ So how do we make attribute selectors useful?
 We can use them to identify placeholder links by scoping our `href` selector to anchors with empty or "#" href attributes.
 
 ```css
-a[href=""],
-a[href="#"] {
-  color: red;
+a[href=''],
+a[href='#'] {
+	color: red;
 }
 ```
 
@@ -58,10 +58,10 @@ But there are other matching techniques.
 We can match the beginning of a value as well. Let's add another case for insecure `http` links:
 
 ```css
-a[href=""],
-a[href="#"],
-a[href^="http:"] {
-  color: red;
+a[href=''],
+a[href='#'],
+a[href^='http:'] {
+	color: red;
 }
 ```
 
@@ -99,9 +99,9 @@ Styling by attribute means we can style by state as well. Consider the `disabled
 We can take this approach even further, using `aria` attributes. One aria label used for navs is `aria-current`. Let's use it to style mark and style the current page:
 
 ```css
-[aria-current="true"],
-[aria-current="page"] {
-  color: fuchsia;
+[aria-current='true'],
+[aria-current='page'] {
+	color: fuchsia;
 }
 ```
 

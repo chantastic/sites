@@ -7,7 +7,7 @@ When generating pages with `getStaticProps()` you have access to `Astro.params`.
 
 ```jsx
 // posts/[post_slug]
-const { post_slug } = Astro.params;
+const {post_slug} = Astro.params
 ```
 
 You can render these values into pages just fine but they can be `undefined`.
@@ -17,7 +17,7 @@ In TypeScript—Astro apps, this leaves you writing a lot of checks for `post_sl
 
 ```ts
 // could be undefined
-post_slug?.toUpperCase();
+post_slug?.toUpperCase()
 ```
 
 Better to pass values along as props and validate their types.

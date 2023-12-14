@@ -10,13 +10,13 @@ The values change by project but the options are consistent.
 
 ```json
 {
-  "editor.lightbulb.enabled": false,
-  "workbench.statusBar.visible": false,
-  "explorer.excludeGitIgnore": false,
-  "editor.lineNumbers": "off",
-  "terminal.integrated.fontSize": 15,
-  "editor.fontSize": 16,
-  "window.zoomLevel": 1
+	"editor.lightbulb.enabled": false,
+	"workbench.statusBar.visible": false,
+	"explorer.excludeGitIgnore": false,
+	"editor.lineNumbers": "off",
+	"terminal.integrated.fontSize": 15,
+	"editor.fontSize": 16,
+	"window.zoomLevel": 1
 }
 ```
 

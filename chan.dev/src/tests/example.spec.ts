@@ -16,12 +16,12 @@
 //   // Expects page to have a heading with the name of Installation.
 //   await expect(page.getByRole('heading', { name: 'Installation' })).toBeVisible();
 // });
-import { test, expect } from "@playwright/test";
+import {test, expect} from '@playwright/test'
 
-test("meta is correct", async ({ page }) => {
-  await page.goto("/");
+test('meta is correct', async ({page}) => {
+	await page.goto('/')
 
-  await expect(page).toHaveTitle(
-    "The incoherant ramblings of chantastic. | chan.dev"
-  );
-});
+	await expect(page).toHaveTitle(
+		'The incoherant ramblings of chantastic. | chan.dev'
+	)
+})

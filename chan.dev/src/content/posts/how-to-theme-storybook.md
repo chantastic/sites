@@ -32,8 +32,8 @@ So, let's get that out of the way.
   - And `themes` from "@storybook/theming"
 
 ```ts title="./storybook/manager.ts"
-import { addons } from "@storybook/manager-api";
-import { themes } from "@storybook/theming";
+import {addons} from '@storybook/manager-api'
+import {themes} from '@storybook/theming'
 ```
 
 Add a 350x150 image to the `/public` directory. (Storybook 7 serves this directory by default.) I have a `350x150` .png with a transparent backgroup.
@@ -49,25 +49,25 @@ Create a new config object using `addons.setConfig`.
 Provide an object with a `theme` property and use one of the preconfigured themes. `themes.normal` is the default and respond's to the user's preferred color scheme.
 
 ```ts title="./storybook/manager.ts" ins={4-6}
-import { addons } from "@storybook/manager-api";
-import { themes } from "@storybook/theming";
+import {addons} from '@storybook/manager-api'
+import {themes} from '@storybook/theming'
 
 addons.setConfig({
-  theme: themes.normal,
-});
+	theme: themes.normal,
+})
 ```
 
 However, you can set an explicit theme with options `light` or `dark`.
 Ensuring that Storybook looks the same indifferent to user's system theme.
 
 ```ts title="./storybook/manager.ts" del={5} ins={6}
-import { addons } from "@storybook/manager-api";
-import { themes } from "@storybook/theming";
+import {addons} from '@storybook/manager-api'
+import {themes} from '@storybook/theming'
 
 addons.setConfig({
-  theme: themes.normal,
-  theme: themes.light, // or themes.dark
-});
+	theme: themes.normal,
+	theme: themes.light, // or themes.dark
+})
 ```
 
 :::hidden-script
@@ -84,14 +84,14 @@ Refactor this config object to allow for a custom image and colors.
 - Replace `theme.light` with `create({ base: "light"})`
 
 ```ts title="./storybook/manager.ts" del={2,6} ins={3,7}
-import { addons } from "@storybook/manager-api";
-import { theme } from "@storybook/theming";
-import { create } from "@storybook/theming";
+import {addons} from '@storybook/manager-api'
+import {theme} from '@storybook/theming'
+import {create} from '@storybook/theming'
 
 addons.setConfig({
-  theme: theme.light,
-  theme: create({ base: "light" }),
-});
+	theme: theme.light,
+	theme: create({base: 'light'}),
+})
 ```
 
 These are functionally identical. But creating a theme opens more options. And the `base` option to override and extend theme values without having to specify _every_ value.
@@ -176,4 +176,5 @@ Watch on YouTube!
 <div data-responsive-youtube-container>
 
 https://youtu.be/x2nGXHAKOrE?feature=shared
+
 </div>

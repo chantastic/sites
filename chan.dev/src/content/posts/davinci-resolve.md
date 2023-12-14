@@ -1,6 +1,6 @@
 ---
 title: DaVinci Resolve (notes)
-description: "Notes an DaVinci Resolve"
+description: 'Notes an DaVinci Resolve'
 dateCreated: 2021-06-16
 ---
 

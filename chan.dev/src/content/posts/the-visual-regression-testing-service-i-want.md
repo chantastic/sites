@@ -20,6 +20,7 @@ So for the past 2 years, I've been low-key fixated on what Storybook looks likeâ
 And what the criteria are for a general purpose visual regression testing service would be.
 
 ## Component Story format
+
 Component Story Format is the crown jewel of Storybook innovation.
 I see it as the "stories" part of Storybook and what I want everything to work on.
 

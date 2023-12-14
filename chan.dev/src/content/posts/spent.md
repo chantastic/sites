@@ -15,9 +15,8 @@ So there wasn't even a question
 
 ---
 
-Thirteen years later, I'm not sure what 
+Thirteen years later, I'm not sure what
 
 We just stopped in like the shift in our adult life hadn't happened.
 
-
-This really cemented the 
+This really cemented the

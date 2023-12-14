@@ -2,6 +2,7 @@
 
 - Add YouTube link as metadata.
   - Consider different UI options. Play button (like other readers do for voice) or detail section like we use on storybook.js.org
+
 ## 2023-09-29
 
 I'm thinking about some additional collection types:
@@ -14,6 +15,7 @@ I kind a wish that I could overloed types. Because I worry about splitting these
 - Move `now` to `/pages` if i end up doing this
 
 ### Change registrar
+
 - liking porkbun
   - cheap
   - recomended by sivers

@@ -1,12 +1,12 @@
 {
-  "Add Custom YouTube Remark Directive": {
-    "prefix": "markup-youtube",
-    "body": [
-      "<div data-responsive-youtube-container>",
-      "",
-      "$0$TM_SELECTED_TEXT",
-      "</div>"
-    ],
-    "description": "Add remark `youtube` directive"
-  }
+	"Add Custom YouTube Remark Directive": {
+		"prefix": "markup-youtube",
+		"body": [
+			"<div data-responsive-youtube-container>",
+			"",
+			"$0$TM_SELECTED_TEXT",
+			"</div>"
+		],
+		"description": "Add remark `youtube` directive"
+	}
 }

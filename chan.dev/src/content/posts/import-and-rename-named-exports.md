@@ -1,22 +1,22 @@
 ---
 title: Import and Rename Named Exports
-description: "Learn how to import and rename named exports in JavaScript. Avoid naming collisions and maintain control in your modules, using the as keyword."
+description: 'Learn how to import and rename named exports in JavaScript. Avoid naming collisions and maintain control in your modules, using the as keyword.'
 publishDate: 2021-01-27
 og:
-  image: "https://res.cloudinary.com/chantastic/image/upload/v1685927001/chan.dev/import-and-rename-named-exports.jpg"
+  image: 'https://res.cloudinary.com/chantastic/image/upload/v1685927001/chan.dev/import-and-rename-named-exports.jpg'
 tags: [code]
 ---
 
 JavaScript Modules have a syntax for remaning named exports, at import.
 
 ```js
-import { exportedName as localName } from "…";
+import {exportedName as localName} from '…'
 ```
 
 I think about this as "given name" and "nickname". _Michael Chan_ is the name my creators gave me but — on this site — I go by _chantastic_.
 
 ```js
-import { michaelChan as chantastic } from "./michael-chan.mjs";
+import {michaelChan as chantastic} from './michael-chan.mjs'
 ```
 
 This is one of two tools we have for avoiding naming collisions between modules.
@@ -26,7 +26,7 @@ This is one of two tools we have for avoiding naming collisions between modules.
 In my last post — [Import Named Exports](../import-named-exports/) — we imported two functions from the `string-utils` module: `hype` and `chant`.
 
 ```js
-import { hype, chant } from "./string-utils.mjs";
+import {hype, chant} from './string-utils.mjs'
 ```
 
 What if the modules we're working in already has a `hype` function? Are we stuck stuck? Do we have to refactor our code to consider the new module?
@@ -60,5 +60,6 @@ This is part of a course I'm build on modules at [lunch.dev](https://www.lunch.d
 When live, members get access to this and other courses on React.
 
 <script src="https://cdn.podia.com/embeds.js" async="async"></script>
+
 <a
 href="https://www.lunch.dev/member" data-podia-embed="button" data-text="Join lunch.dev for this course">Join lunch.dev for this course</a>

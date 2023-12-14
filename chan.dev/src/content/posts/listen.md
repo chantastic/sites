@@ -1,6 +1,6 @@
 ---
 title: Listen
-description: "Amplify Black voices and take action; now is the time to listen, learn, and contribute to the fight against systemic racism and injustice. #blacklivesmatter"
+description: 'Amplify Black voices and take action; now is the time to listen, learn, and contribute to the fight against systemic racism and injustice. #blacklivesmatter'
 publishDate: 2020-06-03
 ---
 

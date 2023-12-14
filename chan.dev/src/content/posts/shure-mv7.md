@@ -1,12 +1,12 @@
 ---
-title: "Shure MV7 Review (WIP)"
+title: 'Shure MV7 Review (WIP)'
 dateCreated: 2020-10-31
 ---
 
-[mv7]: https://amzn.to/3264TOL "Shure MV7 microphone on Amazon"
-[sm7b]: https://amzn.to/3jRg0RP "Shure SM7B microphone on Amazon"
-[q2u]: https://amzn.to/34Q1mGi "Samson Q2U microphone on Amazon"
-[m40x]: https://amzn.to/2HUyCmJ "Audio-Technica ATH-M40x headphones on Amazon"
+[mv7]: https://amzn.to/3264TOL 'Shure MV7 microphone on Amazon'
+[sm7b]: https://amzn.to/3jRg0RP 'Shure SM7B microphone on Amazon'
+[q2u]: https://amzn.to/34Q1mGi 'Samson Q2U microphone on Amazon'
+[m40x]: https://amzn.to/2HUyCmJ 'Audio-Technica ATH-M40x headphones on Amazon'
 
 ## First Comparison
 

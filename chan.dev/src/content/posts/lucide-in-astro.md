@@ -2,7 +2,7 @@
 title: Add Lucide Icons to Astro
 publishDate: 2023-07-31
 tags: [astro, svg]
-description: "How to add Lucide icons to an Astro site."
+description: 'How to add Lucide icons to an Astro site.'
 shoutouts: [astro, lucide]
 cover: ./lucide-in-astro.png
 coverAlt: spaceship launching from fictional planet with Astro and Lucide logos
@@ -18,8 +18,8 @@ tldr: |
 There's no first-class [Lucide][] integration for [Astro][].
 But making a custom one isn't too hard.
 
-[Lucide]: https://lucide.dev/ "Lucide SVG icon set"
-[astro]: https://astro.build/ "Astro: all-in-one web framework designed for speed"
+[Lucide]: https://lucide.dev/ 'Lucide SVG icon set'
+[astro]: https://astro.build/ 'Astro: all-in-one web framework designed for speed'
 
 This is the component I made to do the job:
 
@@ -74,27 +74,27 @@ In the standard `lucide` package, icons are exported as JSON arrays with the fol
 
 ```js
 // lucide/dist/esm/icons/accessibility.js
-[
-  "svg",
-  {
-    xmlns: "http://www.w3.org/2000/svg",
-    width: 24,
-    height: 24,
-    viewBox: "0 0 24 24",
-    fill: "none",
-    stroke: "currentColor",
-    "stroke-width": 2,
-    "stroke-linecap": "round",
-    "stroke-linejoin": "round",
-  },
-  [
-    ["circle", [Object]],
-    ["path", [Object]],
-    ["path", [Object]],
-    ["path", [Object]],
-    ["path", [Object]],
-  ],
-];
+;[
+	'svg',
+	{
+		'xmlns': 'http://www.w3.org/2000/svg',
+		'width': 24,
+		'height': 24,
+		'viewBox': '0 0 24 24',
+		'fill': 'none',
+		'stroke': 'currentColor',
+		'stroke-width': 2,
+		'stroke-linecap': 'round',
+		'stroke-linejoin': 'round',
+	},
+	[
+		['circle', [Object]],
+		['path', [Object]],
+		['path', [Object]],
+		['path', [Object]],
+		['path', [Object]],
+	],
+]
 ```
 
 We need to import these JSON files and render their data as `HTML`.

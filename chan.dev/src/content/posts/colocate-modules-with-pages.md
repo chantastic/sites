@@ -1,5 +1,5 @@
 ---
-title: "Colocate modules with pages"
+title: 'Colocate modules with pages'
 date: 2023-06-29
 ---
 
@@ -24,46 +24,46 @@ This means you can colocate collection-type specific code there.
 Here's what mine look like, at the moment.
 
 ```ts
-import * as ASTRO_CONTENT from "astro:content";
-import * as COLLECTION from "#modules/collection";
-import { z, defineCollection } from "astro:content";
+import * as ASTRO_CONTENT from 'astro:content'
+import * as COLLECTION from '#modules/collection'
+import {z, defineCollection} from 'astro:content'
 
 // Used as both type and value
-export const COLLECTION_NAME = "decisions";
+export const COLLECTION_NAME = 'decisions'
 
 export type CollectionEntry = ASTRO_CONTENT.CollectionEntry<
-  typeof COLLECTION_NAME
->;
+	typeof COLLECTION_NAME
+>
 
 // Collection-aware getCollection facade.
 // Proxies `filter` and adds `sort` argument.
 export async function getCollection(
-  filter = () => true,
-  sort = compareCollectionByDate
+	filter = () => true,
+	sort = compareCollectionByDate
 ): Promise<CollectionEntry[]> {
-  const result = await ASTRO_CONTENT.getCollection(
-    COLLECTION_NAME,
-    filter
-  );
+	const result = await ASTRO_CONTENT.getCollection(
+		COLLECTION_NAME,
+		filter
+	)
 
-  return result.sort(sort);
+	return result.sort(sort)
 }
 
 // ContentEntry aware sort facade
 export function compareCollectionByDate(
-  a: CollectionEntry,
-  b: CollectionEntry
+	a: CollectionEntry,
+	b: CollectionEntry
 ) {
-  return COLLECTION.compareByDate(a.data.date, b.data.date);
+	return COLLECTION.compareByDate(a.data.date, b.data.date)
 }
 
 // Content collection schema
 // Utilized by config.ts
 export const collectionSchema = defineCollection({
-  schema: z.object({
-    /* ... */
-  }),
-});
+	schema: z.object({
+		/* ... */
+	}),
+})
 ```
 
 You may see immediate value you this. You may not. I'll do my best to make the benefits clear in other patterns.

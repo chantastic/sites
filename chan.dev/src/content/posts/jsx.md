@@ -67,10 +67,13 @@ React.createElement(
 ```js {3,6}
 // jsx-to-js.js
 let reactElement = (
-  <MyComponent className="my-css-class-selector" name="React Rally" />
-);
-function MyComponent({ name, ...restProps }) {
-  return <h1 {...restProps}>Hello {name}</h1>;
+	<MyComponent
+		className="my-css-class-selector"
+		name="React Rally"
+	/>
+)
+function MyComponent({name, ...restProps}) {
+	return <h1 {...restProps}>Hello {name}</h1>
 }
 ```
 

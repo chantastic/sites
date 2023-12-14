@@ -16,17 +16,17 @@ React `v16.6` [introduced `React.lazy`](https://reactjs.org/blog/2018/10/23/reac
 A way to code-split in client-rendered applications by components.
 
 ```js
-import React from "react";
-const LazyLoadedComponent = React.lazy(() =>
-  import("./SomeComponent")
-);
+import React from 'react'
+const LazyLoadedComponent = React.lazy(
+	() => import('./SomeComponent')
+)
 
 function MyApp() {
-  return (
-    <React.Suspense fallback={<div>Waiting...</div>}>
-      <LazyLoadedComponent />
-    </React.Suspense>
-  );
+	return (
+		<React.Suspense fallback={<div>Waiting...</div>}>
+			<LazyLoadedComponent />
+		</React.Suspense>
+	)
 }
 ```
 

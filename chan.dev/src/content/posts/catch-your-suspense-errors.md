@@ -1,6 +1,6 @@
 ---
 title: Catch Your Suspense Errors
-description: "Learn how to handle promise rejections in React.Suspense by using Error Boundaries, ensuring proper handling of pending, resolved, and rejected states."
+description: 'Learn how to handle promise rejections in React.Suspense by using Error Boundaries, ensuring proper handling of pending, resolved, and rejected states.'
 publishDate: 2019-10-30
 ---
 
@@ -26,30 +26,30 @@ So copy and paste it into your code and customize to your needs.
 
 ```jsx
 class ErrorBoundary extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { hasError: false };
-  }
+	constructor(props) {
+		super(props)
+		this.state = {hasError: false}
+	}
 
-  static defaultProps = {
-    fallback: <h1>Something went wrong.</h1>,
-  };
+	static defaultProps = {
+		fallback: <h1>Something went wrong.</h1>,
+	}
 
-  static getDerivedStateFromError(error) {
-    return { hasError: true };
-  }
+	static getDerivedStateFromError(error) {
+		return {hasError: true}
+	}
 
-  componentDidCatch(error, errorInfo) {
-    console.log(error, errorInfo);
-  }
+	componentDidCatch(error, errorInfo) {
+		console.log(error, errorInfo)
+	}
 
-  render() {
-    if (this.state.hasError) {
-      return this.props.fallback;
-    }
+	render() {
+		if (this.state.hasError) {
+			return this.props.fallback
+		}
 
-    return this.props.children;
-  }
+		return this.props.children
+	}
 }
 ```
 
@@ -70,28 +70,28 @@ handle these three possible states:
 - _rejected_ — `ErrorBoundary fallback`
 
 ```js
-import React from "react";
-import ErrorBoundary from "./error-boundary";
+import React from 'react'
+import ErrorBoundary from './error-boundary'
 
-const LazyLoadedComponent = React.lazy(() =>
-  import("./SomeComponent")
-);
+const LazyLoadedComponent = React.lazy(
+	() => import('./SomeComponent')
+)
 
 function MyApp() {
-  return (
-    <ErrorBoundary
-      fallback={
-        <div>
-          Stop trying to make fetch happen. It's not gonna
-          happen.
-        </div>
-      }
-    >
-      <React.Suspense fallback={<div>Waiting...</div>}>
-        <LazyLoadedComponent />
-      </React.Suspense>
-    </ErrorBoundary>
-  );
+	return (
+		<ErrorBoundary
+			fallback={
+				<div>
+					Stop trying to make fetch happen. It's not gonna
+					happen.
+				</div>
+			}
+		>
+			<React.Suspense fallback={<div>Waiting...</div>}>
+				<LazyLoadedComponent />
+			</React.Suspense>
+		</ErrorBoundary>
+	)
 }
 ```
 

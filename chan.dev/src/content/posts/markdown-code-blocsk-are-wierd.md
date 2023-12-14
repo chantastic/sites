@@ -47,12 +47,13 @@ And work our way up.
 </div>
 
 Here, the word `_little_` is treated as raw text and not markdown.
-But it *can* be processed as markdown by adding a newline between the opining `div` and text content.
+But it _can_ be processed as markdown by adding a newline between the opining `div` and text content.
 
 ```md
 <div>
 
-  A _little_ markdown.
+A _little_ markdown.
+
 </div>
 ```
 
@@ -60,7 +61,8 @@ But it *can* be processed as markdown by adding a newline between the opining `d
   <strong>Output:</strong>
   <div>
 
-  A _little_ markdown.
+A _little_ markdown.
+
   </div>
 </div>
 
@@ -74,6 +76,7 @@ But what if you have more than one level of nesting?
   <div><!-- second level -->
 
     A _little_ markdown.
+
   </div>
 </div>
 ```
@@ -85,6 +88,7 @@ But what if you have more than one level of nesting?
 
       A _little_ markdown.
     </div>
+
   </div>
 </div>
 </div>
@@ -94,14 +98,14 @@ What happened?
 
 ## Original markdown code block syntax
 
-Markdown — [as specified by the author](https://daringfireball.net/projects/markdown/syntax#precode "Markdown Code Blocks specification, by author John Gruber") — interprets 4 spaces (or 1 tab) as a code block.
+Markdown — [as specified by the author](https://daringfireball.net/projects/markdown/syntax#precode 'Markdown Code Blocks specification, by author John Gruber') — interprets 4 spaces (or 1 tab) as a code block.
 
 > To produce a code block in Markdown, simply indent every line of the block by at least 4 spaces or 1 tab.
 > This is a normal paragraph:
 >
 >     This is a code block.
 
-As developers, we commonly use [GitHub Flavored Markdown](https://github.github.com/gfm/ "GitHub Flavored Markdown Spec").
+As developers, we commonly use [GitHub Flavored Markdown](https://github.github.com/gfm/ 'GitHub Flavored Markdown Spec').
 This specialization of markdown adds [fenced code blocks](https://github.github.com/gfm/#code-fence) as an optional syntax.
 
 But it doesn't replace the "4 space or 1 tab" specification.
@@ -165,18 +169,15 @@ Some **other** markdown.
   </div>
 </div>
 
-It's great that I can just drop in a [tailwindcss flex recipe](https://v1.tailwindcss.com/components/flexbox-grids "tailwindcss flexbox grids documentation and recipes"). But do you see what I mean by wierd?
+It's great that I can just drop in a [tailwindcss flex recipe](https://v1.tailwindcss.com/components/flexbox-grids 'tailwindcss flexbox grids documentation and recipes'). But do you see what I mean by wierd?
 
 Anything that I want parsed as markdown requires surronding newlines.
 And that's not all!
 
 ```html
 <div class="flex gap-x-3">
-  <div class="w-1/2">
-
-A _liiiiittle_ markdown.
-
-  </div>
+	<div class="w-1/2">A _liiiiittle_ markdown.</div>
+</div>
 ```
 
 <div class="flex gap-x-3">

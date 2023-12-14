@@ -1,6 +1,6 @@
 ---
-title: "13. Use Node subpath imports over TypeScript aliases"
-status: "Accepted"
+title: '13. Use Node subpath imports over TypeScript aliases'
+status: 'Accepted'
 date: 2023-08-27
 ---
 

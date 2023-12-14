@@ -1,6 +1,6 @@
 ---
-title: "2. Create collection urls outside of directories"
-status: "Accepted"
+title: '2. Create collection urls outside of directories'
+status: 'Accepted'
 date: 2023-01-03
 ---
 

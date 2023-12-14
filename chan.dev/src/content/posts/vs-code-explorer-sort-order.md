@@ -42,11 +42,11 @@ And only _this_ project is impacted by the setting.
 ```json
 // chan.dev/.vscode/settings.json
 {
-  "explorer.sortOrder": "mixed"
+	"explorer.sortOrder": "mixed"
 }
 ```
 
-[chan.dev]: https://chan.dev/ "The irrational home web home of chantastic"
+[chan.dev]: https://chan.dev/ 'The irrational home web home of chantastic'
 [workspace]: https://code.visualstudio.com/docs/editor/workspaces 'What is a VS Code "workspace"?'
 [VS Code explorer]: https://code.visualstudio.com/docs/getstarted/userinterface#_explorer
 

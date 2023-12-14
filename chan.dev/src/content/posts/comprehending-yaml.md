@@ -1,6 +1,6 @@
 ---
 title: Comprehending YAML
-description: "Explore the intricacies of YAML, its relation to JSON, and how to understand complex data structures and types in YAML, with clear examples and comparisons."
+description: 'Explore the intricacies of YAML, its relation to JSON, and how to understand complex data structures and types in YAML, with clear examples and comparisons.'
 publishDate: 2021-02-11
 tags:
   - yaml
@@ -56,9 +56,9 @@ Again, here's what that looks like in JSON.
 
 ```json
 {
-  "Evermore": 2020,
-  "Folklore": 2020,
-  "Lover": 2019
+	"Evermore": 2020,
+	"Folklore": 2020,
+	"Lover": 2019
 }
 ```
 
@@ -96,15 +96,15 @@ So the JSON output for the YAML above is this:
 
 ```json
 [
-  {
-    "Evermore": 2020
-  },
-  {
-    "Folklore": 2020
-  },
-  {
-    "Lover": 2019
-  }
+	{
+		"Evermore": 2020
+	},
+	{
+		"Folklore": 2020
+	},
+	{
+		"Lover": 2019
+	}
 ]
 ```
 
@@ -145,12 +145,12 @@ JSON looks like this.
 
 ```json
 [
-  {
-    "name": "Taylor Swift"
-  },
-  {
-    "name": "The National"
-  }
+	{
+		"name": "Taylor Swift"
+	},
+	{
+		"name": "The National"
+	}
 ]
 ```
 
@@ -159,8 +159,8 @@ What does it look like to add more properties to the these objects?
 YAML allows us to use JSON object syntax.
 
 ```yaml
-- { name: Taylor Swift, album_count: 9 }
-- { name: The National, album_count: 8 }
+- {name: Taylor Swift, album_count: 9}
+- {name: The National, album_count: 8}
 ```
 
 But it's not super YAML-y. So there's an alternative that uses newlines.
@@ -189,13 +189,13 @@ This is that same file in JSON.
 
 ```json
 [
-  "Taylor Swift",
-  1989,
-  {
-    "album_count": 9,
-    "nationality": "American"
-  },
-  ["Big Machine", "Republic"]
+	"Taylor Swift",
+	1989,
+	{
+		"album_count": 9,
+		"nationality": "American"
+	},
+	["Big Machine", "Republic"]
 ]
 ```
 
@@ -280,7 +280,7 @@ Look at this GitHub Actions workflow.
 name: Netlify Rebuild
 on:
   schedule:
-    - cron: "0 21 * * MON-FRI"
+    - cron: '0 21 * * MON-FRI'
 jobs:
   build:
     name: Netlify Rebuild

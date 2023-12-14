@@ -1,6 +1,6 @@
 ---
 title: Snap to Focus
-description: "How quickly do you jump to certain emotions or thoughts? Choose where to focus, in order to create a positive and healthy mindset."
+description: 'How quickly do you jump to certain emotions or thoughts? Choose where to focus, in order to create a positive and healthy mindset.'
 publishDate: 2020-02-19
 ---
 

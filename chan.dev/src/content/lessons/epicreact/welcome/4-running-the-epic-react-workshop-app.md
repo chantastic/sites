@@ -47,8 +47,3 @@ There are a couple links at the end of each exercise that will point to a produc
 While this is most important for the perfombarenc workshop, these will point to hosted versions of these examples using the PRODUCIOTN build flag. Which we talk more about in the performance workshop.
 
 As you're done, just click on the name of the next lesson. Or go back whenever you need.
-
-
-
-
-

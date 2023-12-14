@@ -1,6 +1,6 @@
 ---
 title: Would You Mind?
-description: "Negative confirmation questions can be confusing. Use clear language, even if overly polite, for better understanding in communication."
+description: 'Negative confirmation questions can be confusing. Use clear language, even if overly polite, for better understanding in communication.'
 publishDate: 2020-09-09
 ---
 

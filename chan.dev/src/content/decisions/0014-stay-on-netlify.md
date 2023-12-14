@@ -1,6 +1,6 @@
 ---
-title: "14. Stay on Netlify"
-status: "Accepted"
+title: '14. Stay on Netlify'
+status: 'Accepted'
 date: 2023-11-01
 ---
 

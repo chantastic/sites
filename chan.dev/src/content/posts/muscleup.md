@@ -1,5 +1,5 @@
 ---
-title: "Muscleup"
+title: 'Muscleup'
 date: 2023-10-06
 ---
 

@@ -1,5 +1,5 @@
 ---
-title: "Teachable: Sales Page Challenge Notes"
+title: 'Teachable: Sales Page Challenge Notes'
 dateCreated: 2020-10-18
 ---
 

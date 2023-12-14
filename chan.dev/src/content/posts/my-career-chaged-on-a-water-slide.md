@@ -1,6 +1,6 @@
 ---
 title: My Career Changed on a Water Slide
-description: "Life-changing moments can be unexpected. Find out how an hour by a water slide led to a total career shift."
+description: 'Life-changing moments can be unexpected. Find out how an hour by a water slide led to a total career shift.'
 publishDate: 2019-08-14
 ---
 

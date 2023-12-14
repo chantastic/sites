@@ -1,6 +1,6 @@
 ---
 title: Compare AVO 🥑 and standard BEM Conventions
-description: "Discover the differences between AVO 🥑 and standard BEM conventions for naming CSS blocks, elements, and modifiers, with side-by-side examples."
+description: 'Discover the differences between AVO 🥑 and standard BEM conventions for naming CSS blocks, elements, and modifiers, with side-by-side examples.'
 publishDate: 2021-02-08
 ---
 
@@ -59,12 +59,12 @@ This reference describes AVO 🥑 naming conventions in BEM terms — as define
 ```html
 <!-- BEM -->
 <span class="avatar">
-  <img class="avatar__img" src="…" alt="…" />
+	<img class="avatar__img" src="…" alt="…" />
 </span>
 
 <!-- AVO 🥑 -->
 <span data-avatar>
-  <img data-avatar--img src="…" alt="…" />
+	<img data-avatar--img src="…" alt="…" />
 </span>
 ```
 
@@ -78,7 +78,7 @@ This reference describes AVO 🥑 naming conventions in BEM terms — as define
 }
 
 /* AVO 🥑 */
-[data-avatar~="status:ok"] {
+[data-avatar~='status:ok'] {
 }
 ```
 

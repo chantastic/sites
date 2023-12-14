@@ -27,13 +27,13 @@ Start with a simple HTML page like this:
 
 ```html
 <!-- my-page.html -->
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>React playground</title>
-  </head>
-  <body></body>
+	<head>
+		<meta charset="UTF-8" />
+		<title>React playground</title>
+	</head>
+	<body></body>
 </html>
 ```
 

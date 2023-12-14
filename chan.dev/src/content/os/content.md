@@ -1,5 +1,5 @@
 ---
-title: "Content"
+title: 'Content'
 date: 2022-06-23
 ---
 
@@ -38,13 +38,13 @@ All of my instructables live here: [chan.dev/lessons](/lessons/)
 ```tsx
 // mycomponent.tsx
 
-import * as React from "react";
+import * as React from 'react'
 
 function MyComponent() {
-  return <div>This is JSX</div>;
+	return <div>This is JSX</div>
 }
 
-export default MyComponent;
+export default MyComponent
 ```
 
 ### Guiding principles
@@ -67,16 +67,19 @@ export default MyComponent;
 Every platform has a [meta](#meta). And it's often — ironically — not what the original intent of the medium was.
 
 [Shorts](#youtube-shorts)
+
 - Looping suffix
 - Instructable
 
 [YouTube](#youtube)
+
 - Hook
 - Intro
 - Instructable[]
 - Close/Pitch
 
 Blogs
+
 - Transcribed from YouTube video
 - Add summary
 

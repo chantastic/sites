@@ -1,9 +1,9 @@
 ---
 title: Import Named Exports
-description: "Explore the power of named exports in JavaScript modules while understanding the potential downside of naming collisions and their solutions."
+description: 'Explore the power of named exports in JavaScript modules while understanding the potential downside of naming collisions and their solutions.'
 publishDate: 2021-01-26
 og:
-  image: "https://res.cloudinary.com/chantastic/image/upload/v1685927001/chan.dev/import-named-exports.jpg"
+  image: 'https://res.cloudinary.com/chantastic/image/upload/v1685927001/chan.dev/import-named-exports.jpg'
 ---
 
 By default, expressions and assignments declared inside a module aren't available outside of that module.
@@ -12,7 +12,7 @@ By default, expressions and assignments declared inside a module aren't availabl
 // file: string-utils.mjs
 
 function hype(message) {
-  return `${message.toUpperCase()}!!!`;
+	return `${message.toUpperCase()}!!!`
 }
 ```
 
@@ -38,17 +38,17 @@ Keep in mind that `export`-ing something doesn't mean it is automatically availa
 Anything one module exports can be imported and used by another module.
 
 ```js
-import { hype } from "./string-utils.mjs";
+import {hype} from './string-utils.mjs'
 
-console.log(hype("moduuuules"));
+console.log(hype('moduuuules'))
 // => MODUUUULES!!!
 ```
 
 The syntax we use to access named exports is similar to object destructuring assignment.
 
 ```js
-let person = { name: "chantastic" };
-let { name } = person;
+let person = {name: 'chantastic'}
+let {name} = person
 ```
 
 We can only import what we can access by name.
@@ -57,9 +57,9 @@ So, the import statement below would fail (with our current module):
 
 ```js
 import {
-  hype,
-  chant /* oops. no chant */,
-} from "./string-utils.mjs";
+	hype,
+	chant /* oops. no chant */,
+} from './string-utils.mjs'
 
 // SyntaxError:
 // The requested module './string-utils.mjs' does not provide an export named 'chant'
@@ -84,9 +84,9 @@ export function hype(message) {
 ```
 
 ```js
-import { hype, chant } from "./string-utils.mjs";
+import {hype, chant} from './string-utils.mjs'
 
-console.log(chant("M"));
+console.log(chant('M'))
 // => Modules! Modules! Modules!
 ```
 

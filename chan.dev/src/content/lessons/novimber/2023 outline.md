@@ -1,6 +1,6 @@
 ---
 date: 2022-11-01
-title: "Novimber outline"
+title: 'Novimber outline'
 # description: "Append text by entering insert mode from normal mode."
 # keys:
 #   - a
@@ -203,6 +203,7 @@ Things I prefer VS Code for
 ---
 
 React Retreat/Repose San Diego
+
 - What do we do for food?
   - Dija Mara
   - The Friendly

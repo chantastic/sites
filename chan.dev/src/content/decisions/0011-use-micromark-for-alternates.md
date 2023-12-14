@@ -1,6 +1,6 @@
 ---
-title: "11. Use micromark for alternates"
-status: "Accepted"
+title: '11. Use micromark for alternates'
+status: 'Accepted'
 date: 2023-08-10
 ---
 

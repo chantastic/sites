@@ -26,9 +26,9 @@ Alternatively, establish a keyboard shortcut for `editor.action.showSnippets` _w
 
 ```json
 {
-  "key": "ctrl+alt+s",
-  "command": "editor.action.showSnippets",
-  "when": "editorTextFocus"
+	"key": "ctrl+alt+s",
+	"command": "editor.action.showSnippets",
+	"when": "editorTextFocus"
 }
 ```
 

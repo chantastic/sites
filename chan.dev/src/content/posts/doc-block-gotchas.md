@@ -17,24 +17,24 @@ https://chromaticqa.slack.com/archives/C02K88CKTFW/p1689803642305029
 Works:
 
 ```jsx
-import { Meta } from "@storybook/blocks"
-<Meta />
+import {Meta} from '@storybook/blocks'
+;<Meta />
 ```
 
 Doesn't:
 
 ```jsx
-import * as Blocks from "@storybook/blocks"
+import * as Blocks from '@storybook/blocks'
 
-<Blocks.Meta />
+;<Blocks.Meta />
 ```
 
 Doesn't:
 
 ```jsx
-import { Meta as BlockMeta } from "@storybook/blocks"
+import {Meta as BlockMeta} from '@storybook/blocks'
 
-<BlocksMeta />
+;<BlocksMeta />
 ```
 
 Alt (double import):

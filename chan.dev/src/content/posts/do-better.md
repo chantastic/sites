@@ -1,6 +1,6 @@
 ---
 title: Do  Better
-description: "Do better for yourself by discovering and pursuing the work that only you can bring to the world, and support friends in their journey for self-improvement."
+description: 'Do better for yourself by discovering and pursuing the work that only you can bring to the world, and support friends in their journey for self-improvement.'
 publishDate: 2019-10-17
 ---
 

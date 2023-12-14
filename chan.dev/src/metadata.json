@@ -1,34 +1,34 @@
 {
-  "title": "chan.dev",
-  "url": "https://chan.dev/",
-  "description": "Incoherant ramblings, by chantastic",
-  "feed": {
-    "path": "/feeds",
-    "rssFilename": "rss.xml",
-    "jsonFilename": "feed.json",
-    "id": "https://chan.dev/"
-  },
-  "author": {
-    "name": "Michael Chan",
-    "email": "mijoch@gmail.com",
-    "url": "https://chan.dev/about/",
-    "youtube": "https://www.youtube.com/@chantastic",
-    "twitter": "https://twitter.com/chantastic",
-    "mastodon": "https://hachyderm.io/@chantastic",
-    "github": "https://github.com/chantastic",
-    "instagram": "https://wwww.instagram.com/chantastic/",
-    "polywork": "https://www.polywork.com/chantastic",
-    "linkedin": "https://www.linkedin.com/in/chantastic/",
-    "twitch": "https://www.twitch.tv/lunchdev",
-    "bluesky": "https://bsky.app/profile/chantastic.bsky.social",
-    "dimensional": "https://www.dimensional.me/chantastic",
-    "peerlist": "https://peerlist.io/chantastic",
-    "superpeer": "https://superpeer.com/chantastic",
-    "read.cv": "https://read.cv/chantastic",
-    "post.news": "https://post.news/@/chantastic"
-  },
-  "git": {
-    "repo": "chantastic/sites",
-    "path": "chan.dev"
-  }
+	"title": "chan.dev",
+	"url": "https://chan.dev/",
+	"description": "Incoherant ramblings, by chantastic",
+	"feed": {
+		"path": "/feeds",
+		"rssFilename": "rss.xml",
+		"jsonFilename": "feed.json",
+		"id": "https://chan.dev/"
+	},
+	"author": {
+		"name": "Michael Chan",
+		"email": "mijoch@gmail.com",
+		"url": "https://chan.dev/about/",
+		"youtube": "https://www.youtube.com/@chantastic",
+		"twitter": "https://twitter.com/chantastic",
+		"mastodon": "https://hachyderm.io/@chantastic",
+		"github": "https://github.com/chantastic",
+		"instagram": "https://wwww.instagram.com/chantastic/",
+		"polywork": "https://www.polywork.com/chantastic",
+		"linkedin": "https://www.linkedin.com/in/chantastic/",
+		"twitch": "https://www.twitch.tv/lunchdev",
+		"bluesky": "https://bsky.app/profile/chantastic.bsky.social",
+		"dimensional": "https://www.dimensional.me/chantastic",
+		"peerlist": "https://peerlist.io/chantastic",
+		"superpeer": "https://superpeer.com/chantastic",
+		"read.cv": "https://read.cv/chantastic",
+		"post.news": "https://post.news/@/chantastic"
+	},
+	"git": {
+		"repo": "chantastic/sites",
+		"path": "chan.dev"
+	}
 }

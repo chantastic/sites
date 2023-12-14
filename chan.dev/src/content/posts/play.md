@@ -1,9 +1,9 @@
 ---
-title: "Play"
+title: 'Play'
 description: "Embrace play. Be inspired by others and choose happiness over pressure. Let's play!"
 publishDate: 2022-01-28
 og:
-  title: "2022: Year of Play"
+  title: '2022: Year of Play'
 ---
 
 My theme for 2022 is **play**.

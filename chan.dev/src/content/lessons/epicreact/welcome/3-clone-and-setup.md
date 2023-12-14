@@ -43,8 +43,9 @@ Let's get this first workshop set up together.
 - You'll also see a `vscode` settings file. These are the settings used for all of these videos. So, if you want things to look on your screen like they look on mine, you can copy these into your own VS Code settings.
 
 ## Debugging
+
 - Go thru the setup
 - If you get an error, hopefully it's instructive enough to help you
 - If not, restarting and running thru the process again often helps clear things up
 - If none of that works, open an issue on the repo and someone will help you
-- 
+-

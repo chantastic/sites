@@ -1,6 +1,6 @@
 ---
-title: "9. Use collections for courses"
-status: "Accepted"
+title: '9. Use collections for courses'
+status: 'Accepted'
 date: 2023-07-20
 ---
 

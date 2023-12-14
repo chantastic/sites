@@ -3,7 +3,7 @@ title: Rest parameter dynamic routes
 date: 2023-07-12
 ---
 
-I find [`getStaticPaths()`](https://docs.astro.build/en/reference/api-reference/#getstaticpaths "Astro getStaticPaths() documentation") confusing.
+I find [`getStaticPaths()`](https://docs.astro.build/en/reference/api-reference/#getstaticpaths 'Astro getStaticPaths() documentation') confusing.
 These examples help me make sense of it.
 
 ## Rest paramaters match infinitely segments
@@ -54,17 +54,17 @@ In the example above, the first segments are `/nested` and `/you`.
 To match all the paths above, the resulting `getStaticPaths()` needs to look like this:
 
 ```js
-[
-  { params: { nested: "nested", thing: "thing" } },
-  { params: { nested: "nested", thing: "anything" } },
-  { params: { nested: "nested", thing: "deepy/thing" } },
-  {
-    params: {
-      nested: "you",
-      thing: "get/the/idea/nested/deeply/thing",
-    },
-  },
-];
+;[
+	{params: {nested: 'nested', thing: 'thing'}},
+	{params: {nested: 'nested', thing: 'anything'}},
+	{params: {nested: 'nested', thing: 'deepy/thing'}},
+	{
+		params: {
+			nested: 'you',
+			thing: 'get/the/idea/nested/deeply/thing',
+		},
+	},
+]
 ```
 
 Note how the entire unmatched path is passed as `thing`.
@@ -72,24 +72,24 @@ Note how the entire unmatched path is passed as `thing`.
 ## Mix static and dynamic
 
 Dynamic and static routes can be mixed and matched.
-I love this example from the [Astro docs](https://docs.astro.build/en/core-concepts/routing/#rest-parameters "Routing with rest parameters — Astro docs").
+I love this example from the [Astro docs](https://docs.astro.build/en/core-concepts/routing/#rest-parameters 'Routing with rest parameters — Astro docs').
 
 ```js
 // `/[org]/[repo]/tree/[branch]/[...file]`
-[
-  {
-    org: "withastro",
-    repo: "astro",
-    branch: "main",
-    file: "docs/public/favicon.svg",
-  },
-  {
-    org: "chantastic",
-    repo: "sites",
-    branch: "main",
-    file: "chan.dev",
-  },
-];
+;[
+	{
+		org: 'withastro',
+		repo: 'astro',
+		branch: 'main',
+		file: 'docs/public/favicon.svg',
+	},
+	{
+		org: 'chantastic',
+		repo: 'sites',
+		branch: 'main',
+		file: 'chan.dev',
+	},
+]
 ```
 
 ## Keep rest parameters at the end of a path

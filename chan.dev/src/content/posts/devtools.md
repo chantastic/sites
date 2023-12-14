@@ -1,6 +1,6 @@
 ---
 title: DevTools (WIP)
-description: "Notes on Chrome DevTools"
+description: 'Notes on Chrome DevTools'
 dateCreated: 2020-12-24
 ---
 
@@ -61,9 +61,9 @@ Mine looks like this:
 
 ```json
 {
-  "name": "Clever Extension Name",
-  "manifest_version": 2,
-  "version": "0.0.1"
+	"name": "Clever Extension Name",
+	"manifest_version": 2,
+	"version": "0.0.1"
 }
 ```
 
@@ -147,21 +147,21 @@ _manifest.json_
 _devtools.html_
 
 ```html
-<!DOCTYPE html>
+<!doctype html>
 <html>
-  <head>
-    <meta charset="UTF-8" />
-  </head>
-  <body>
-    <script src="devtools.js"></script>
-  </body>
+	<head>
+		<meta charset="UTF-8" />
+	</head>
+	<body>
+		<script src="devtools.js"></script>
+	</body>
 </html>
 ```
 
 _devtools.js_
 
 ```js
-throw "Hey! Looks like things are hooked up right.";
+throw 'Hey! Looks like things are hooked up right.'
 ```
 
 ---
@@ -186,7 +186,7 @@ A tab nested inside the Elements panel like `Style`, `Event Listeners`, `Propert
 Update `devtools.js` to create a new Elements sidebar:
 
 ```js
-chrome.devtools.panels.elements.createSidebarPane("My pane");
+chrome.devtools.panels.elements.createSidebarPane('My pane')
 ```
 
 This creates a sidebar pane with the title you provide  
@@ -236,11 +236,11 @@ Send the message `setObject` with a random object
 
 ```js
 chrome.devtools.panels.elements.createSidebarPane(
-  "My pane",
-  (pane) => {
-    pane.setObject({ hey: "there!" });
-  }
-);
+	'My pane',
+	(pane) => {
+		pane.setObject({hey: 'there!'})
+	}
+)
 ```
 
 Restart DevTools  
@@ -268,16 +268,16 @@ Now make that html file
 Mine looks like this:
 
 ```html
-<!DOCTYPE html>
+<!doctype html>
 <html>
-  <head>
-    <meta charset="UTF-8" />
-  </head>
-  <body>
-    <script id="root">
-      Hey mom 👋
-    </script>
-  </body>
+	<head>
+		<meta charset="UTF-8" />
+	</head>
+	<body>
+		<script id="root">
+			Hey mom 👋
+		</script>
+	</body>
 </html>
 ```
 

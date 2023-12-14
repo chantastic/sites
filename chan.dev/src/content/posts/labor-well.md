@@ -1,6 +1,6 @@
 ---
 title: Labor Well
-description: "Discover the power of a 4-hour workday and learn how embracing unpredictability can make you more productive, dependable, and satisfied with your job."
+description: 'Discover the power of a 4-hour workday and learn how embracing unpredictability can make you more productive, dependable, and satisfied with your job.'
 publishDate: 2018-09-03
 ---
 

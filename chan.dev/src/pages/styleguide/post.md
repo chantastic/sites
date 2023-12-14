@@ -1,7 +1,7 @@
 ---
 title: Post
 description: What all of the markdown features will look like on this site.
-layout: "#layouts/MarkdownLayout.astro"
+layout: '#layouts/MarkdownLayout.astro'
 dateCreated: 2020-12-24
 dateModified: 2023-06-03
 ---
@@ -130,13 +130,13 @@ Multiple definitions
 
 ```js
 // JS code block
-const yo = "blah";
+const yo = 'blah'
 ```
 
 ```jsx
 // jsx code block
-function MyComponent({ name, ...props }) {
-  return <div {...props}>Hello {name}!</div>;
+function MyComponent({name, ...props}) {
+	return <div {...props}>Hello {name}!</div>
 }
 ```
 
@@ -156,12 +156,12 @@ function MyComponent({ name, ...props }) {
 
 ```js title="some.js"
 // the block has attribute `title="some.js"`
-let some = "javascirpt";
+let some = 'javascirpt'
 ```
 
 ```js
 // can-also-use-first-comment-with-suffix.js
-let some = "javascirpt";
+let some = 'javascirpt'
 ```
 
 ```sh frame="terminal" title="install chantastic"
@@ -192,12 +192,12 @@ let some = "javascirpt";
   }
 ```
 
-```js del={1-3} ins={5-7} ins='// "this was inserted too' ins=/\/\/\sye[sp]/
+```js del={1-3} ins={5-7} ins='// "this was inserted too' ins=///\sye[sp]/
 function thisFunctionWasDeleted() {
-  return ":sadface:";
+	return ':sadface:'
 }
 function thisFunctionWasInserted() {
-  return ":happyface:";
+	return ':happyface:'
 }
 
 // "this was inserted too"

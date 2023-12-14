@@ -6,6 +6,7 @@ date: 2023-08-08
 ![Alt text](./mac-settings/mac-settings-keyboard-text-replacements.png)
 
 - Accessibility
+
   - Vizsion
     - Zoom
     - Pointer Size: 2/4
@@ -18,9 +19,10 @@ date: 2023-08-08
 - Turn File Vault on
 
 ## Install script
+
 - brew
-	- adr-tools
-	- awscli
-	- exiftool
-	- ffmpeg
-	- neovim
+  - adr-tools
+  - awscli
+  - exiftool
+  - ffmpeg
+  - neovim

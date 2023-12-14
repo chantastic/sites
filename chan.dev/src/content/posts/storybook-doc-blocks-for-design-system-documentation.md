@@ -39,7 +39,7 @@ Then render a `ColorPalette` with a single `ColorItem` inside.
 import { ColorPalette, ColorItem } from "@storybook/blocks"
 
 <ColorPalette>
-  <ColorItem />
+	<ColorItem />
 </ColorPalette>
 ```
 
@@ -159,7 +159,7 @@ Then render a `IconGallery` with a single `IconItem` inside it.
 import { IconGallery, IconItem } from "@storybook/blocks"
 
 <IconGallery>
-  <IconItem></IconItem>
+	<IconItem></IconItem>
 </IconGallery>
 ```
 
@@ -182,13 +182,13 @@ Take this further — in React — by dynamically generating all available icons
 ## Storybook icons
 
 <IconGallery>
-  {Object.entries(Icons)
-    .filter(([name]) => name !== "iconList")
-    .map(([name, Icon]) => (
-      <IconItem name={name}>
-        <Icon />
-      </IconItem>
-    ))}
+	{Object.entries(Icons)
+		.filter(([name]) => name !== 'iconList')
+		.map(([name, Icon]) => (
+			<IconItem name={name}>
+				<Icon />
+			</IconItem>
+		))}
 </IconGallery>
 ```
 

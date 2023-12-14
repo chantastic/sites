@@ -1,5 +1,5 @@
 ---
-title: "React Suspense notes"
+title: 'React Suspense notes'
 dateCreated: 2020-12-24
 ---
 

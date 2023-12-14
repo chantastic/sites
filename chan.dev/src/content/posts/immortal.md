@@ -6,6 +6,7 @@ title: Immortal
     <blockquote></blockquote>
 
 We're on the cusp of something exilerating and terryfing. No, [the internet] is an alien lifeform.
+
 <figcaption>
 &mdash; David Bowie, <cite>BBC interview</cite>
 </figcaption>

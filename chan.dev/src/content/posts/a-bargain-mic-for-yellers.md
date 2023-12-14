@@ -1,7 +1,7 @@
 ---
 title: A bargain mic for yellers
 publishDate: 2021-02-21
-description: "Discover the budget-friendly Elgato Wave:3 mic, perfect for streamers & podcasters. Tame loud audio peaks with Clipguard technology & enjoy clear audio."
+description: 'Discover the budget-friendly Elgato Wave:3 mic, perfect for streamers & podcasters. Tame loud audio peaks with Clipguard technology & enjoy clear audio.'
 ---
 
 Kevin and Bobby started a new podcast: [Essentially Useless](https://www.youtube.com/channel/UCYSOVLrjLDr7m5LIJs876mw).

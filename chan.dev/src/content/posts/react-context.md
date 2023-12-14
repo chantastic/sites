@@ -37,31 +37,31 @@ Let's implement this scenario using React Context.
 
 ```jsx {1, 4, 11, 20, 29}
 // 1. It's ok to say "shit" as a default.
-const ExpletiveContext = React.createContext("shit");
+const ExpletiveContext = React.createContext('shit')
 
 // 2. But use a word that's contextually appropriate.
 function ContextualExclamation() {
-  let word = React.useContext(ExpletiveContext);
+	let word = React.useContext(ExpletiveContext)
 
-  return <>Oh {word}!</>;
+	return <>Oh {word}!</>
 }
 
 // 3. At grandma's house, use the word "snap" instead
 function GrandmasHouse(props) {
-  return (
-    <ExpletiveContext.Provider value="snap">
-      {props.children}
-    </ExpletiveContext.Provider>
-  );
+	return (
+		<ExpletiveContext.Provider value="snap">
+			{props.children}
+		</ExpletiveContext.Provider>
+	)
 }
 
 // 4. Something exciting happened. What do you say?
 function VisitToGrandmasHouse() {
-  return (
-    <GrandmasHouse>
-      <ContextualExclamation />
-    </GrandmasHouse>
-  );
+	return (
+		<GrandmasHouse>
+			<ContextualExclamation />
+		</GrandmasHouse>
+	)
 }
 
 // => Oh snap!
@@ -88,7 +88,7 @@ Context must first be defined.
 Create context using `React.createContext`.
 
 ```jsx
-let NameContext = React.createContext();
+let NameContext = React.createContext()
 ```
 
 ### Create (with default value)
@@ -97,7 +97,7 @@ React.createContext takes take an optional.
 Define it using a sensible fallback
 
 ```jsx ins=/"Guest"/
-let NameContext = React.createContext("Guest");
+let NameContext = React.createContext('Guest')
 ```
 
 <details>
@@ -142,13 +142,15 @@ Prefer video? [Watch along at learnreact.com.](https://learnreact.com/lessons/20
 `Provider` is a component that takes a `value` prop and makes it available to every component in the component tree below it.
 
 ```jsx
-let NameContext = React.createContext("Guest");
+let NameContext = React.createContext('Guest')
 
 let ContextGreeting = () => (
-  <NameContext.Provider value="Michael">
-    <NameContext.Consumer>{(name) => <h1>👋 {name}!</h1>}</NameContext.Consumer>
-  </NameContext.Provider>
-);
+	<NameContext.Provider value="Michael">
+		<NameContext.Consumer>
+			{(name) => <h1>👋 {name}!</h1>}
+		</NameContext.Consumer>
+	</NameContext.Provider>
+)
 
 // => <h1>👋 Michael!</h1>
 ```
@@ -156,21 +158,25 @@ let ContextGreeting = () => (
 `Providers` work where components are deeply nested.
 
 ```jsx
-let NameContext = React.createContext("Guest");
+let NameContext = React.createContext('Guest')
 
 let ContextAwareName = () => (
-  <NameContext.Consumer>{(name) => <h1>👋 {name}!</h1>}</NameContext.Consumer>
-);
+	<NameContext.Consumer>
+		{(name) => <h1>👋 {name}!</h1>}
+	</NameContext.Consumer>
+)
 
-let NestedContextAwareName = () => <ContextAwareName />;
+let NestedContextAwareName = () => <ContextAwareName />
 
-let DeeplyNestedContextAwareName = () => <NestedContextAwareName />;
+let DeeplyNestedContextAwareName = () => (
+	<NestedContextAwareName />
+)
 
 let ContextGreeting = () => (
-  <NameContext.Provider value="No Prop Drills">
-    <DeeplyNestedContextAwareName />
-  </NameContext.Provider>
-);
+	<NameContext.Provider value="No Prop Drills">
+		<DeeplyNestedContextAwareName />
+	</NameContext.Provider>
+)
 
 // => <h1> Welcome No Prop Drills!</h1>
 ```
@@ -185,38 +191,46 @@ A Context's `value` can take any shape.
 Here are examples of valid Contexts values, using a default `value`:
 
 ```jsx
-let StringContext = React.createContext("string");
+let StringContext = React.createContext('string')
 
-let NumberContext = React.createContext(42);
+let NumberContext = React.createContext(42)
 
-let FunctionContext = React.createContext(() => alert("Context function"));
+let FunctionContext = React.createContext(() =>
+	alert('Context function')
+)
 
-let ArrayContext = React.createContext(["some", "array", "elements"]);
+let ArrayContext = React.createContext([
+	'some',
+	'array',
+	'elements',
+])
 
 let ObjectContext = React.createContext({
-  aString: "string",
-  aNumber: 42,
-  aFunction: () => alert("Context function"),
-  anArray: ["some", "array", "elements"],
-});
+	aString: 'string',
+	aNumber: 42,
+	aFunction: () => alert('Context function'),
+	anArray: ['some', 'array', 'elements'],
+})
 ```
 
 `value` can be complex structures like React Elements, class components, and function components.
 
 ```jsx
-let ReactElementContext = React.createContext(<span>React Element</span>);
+let ReactElementContext = React.createContext(
+	<span>React Element</span>
+)
 
-let FunctionalComponentContext = React.createContext((props) => (
-  <span>Function Component</span>
-));
+let FunctionalComponentContext = React.createContext(
+	(props) => <span>Function Component</span>
+)
 
 let ClassComponentContext = React.createContext(
-  class extends React.Component {
-    render() {
-      return <span>Class Component</span>;
-    }
-  }
-);
+	class extends React.Component {
+		render() {
+			return <span>Class Component</span>
+		}
+	}
+)
 ```
 
 ### `value` is required on Context Providers
@@ -241,25 +255,25 @@ Where `Provider`s wrap their `Consumer`s, all bets are off.
 You must explicitly provide a `value`.
 
 ```jsx
-let UserContext = React.createContext("Guest");
+let UserContext = React.createContext('Guest')
 
 let ContextGreeting = () => (
-  <UserContext.Consumer>
-    {(word) => <span>Hi {word}!</span>}
-  </UserContext.Consumer>
-);
+	<UserContext.Consumer>
+		{(word) => <span>Hi {word}!</span>}
+	</UserContext.Consumer>
+)
 
 let App = (props) => (
-  <div>
-    <ContextGreeting /> {/* => Hi Guest! */}
-    <UserContext.Provider>
-      <ContextGreeting /> {/* => Hi ! */}
-    </UserContext.Provider>
-    <UserContext.Provider value="Bulbasaur">
-      <ContextGreeting /> {/* => Hi Bulbasaur! */}
-    </UserContext.Provider>
-  </div>
-);
+	<div>
+		<ContextGreeting /> {/* => Hi Guest! */}
+		<UserContext.Provider>
+			<ContextGreeting /> {/* => Hi ! */}
+		</UserContext.Provider>
+		<UserContext.Provider value="Bulbasaur">
+			<ContextGreeting /> {/* => Hi Bulbasaur! */}
+		</UserContext.Provider>
+	</div>
+)
 ```
 
 Prefer video? [Watch along at learnreact.com.](https://learnreact.com/lessons/2018-the-context-api-provide-context)
@@ -273,7 +287,9 @@ This is the style used in official documentation.
 
 ```jsx
 <SomeContext.Provider value="some value">
-  <Context.Consumer>{(value) => <span>{value}</span>}</Context.Consumer>
+	<Context.Consumer>
+		{(value) => <span>{value}</span>}
+	</Context.Consumer>
 </SomeContext.Provider>
 ```
 
@@ -283,39 +299,41 @@ You may prefer to use [object destructuring](https://developer.mozilla.org/en-US
 
 ```jsx
 // Destructure your Context's Consumer and Provider
-let { Consumer, Provider } = SomeContext;
+let {Consumer, Provider} = SomeContext
 
-<Provider value="some value">
-  <Consumer>{(value) => <span>{value}</span>}</Consumer>
-</Provider>;
+;<Provider value="some value">
+	<Consumer>{(value) => <span>{value}</span>}</Consumer>
+</Provider>
 ```
 
 Take care where multiple contexts are used.
 
 ```jsx
-let { Consumer: OrganizationConsumer, Provider: OrganizationProvider } =
-  React.createContext();
+let {
+	Consumer: OrganizationConsumer,
+	Provider: OrganizationProvider,
+} = React.createContext()
 
-let { Consumer: PersonConsumer, Provider: PersonProvider } =
-  React.createContext();
+let {Consumer: PersonConsumer, Provider: PersonProvider} =
+	React.createContext()
 
 let App = () => (
-  <OrganizationProvider value="ACME Co.">
-    <PersonProvider value="Yakko">
-      <OrganizationConsumer>
-        {(organization) => (
-          <PersonConsumer>
-            {(person) => (
-              <span>
-                {person}, {organization}
-              </span>
-            )}
-          </PersonConsumer>
-        )}
-      </OrganizationConsumer>
-    </PersonProvider>
-  </OrganizationProvider>
-);
+	<OrganizationProvider value="ACME Co.">
+		<PersonProvider value="Yakko">
+			<OrganizationConsumer>
+				{(organization) => (
+					<PersonConsumer>
+						{(person) => (
+							<span>
+								{person}, {organization}
+							</span>
+						)}
+					</PersonConsumer>
+				)}
+			</OrganizationConsumer>
+		</PersonProvider>
+	</OrganizationProvider>
+)
 
 // => Yakko, ACME Co.
 ```
@@ -328,24 +346,28 @@ Consumers use the value from the nearest `Context.Provider`.
 Where none is present, the `createContext` default value is used.
 
 ```jsx
-let { Provider, Consumer } = React.createContext("global default");
+let {Provider, Consumer} = React.createContext('global default')
 
 function App() {
-  return (
-    <>
-      <Provider value="outer">
-        <Consumer>{(value) => <div>{value}</div> /* "outer" */}</Consumer>
+	return (
+		<>
+			<Provider value="outer">
+				<Consumer>
+					{(value) => <div>{value}</div> /* "outer" */}
+				</Consumer>
 
-        <Provider value="inner">
-          <Consumer>{(value) => <div>{value}</div> /* "inner" */}</Consumer>
-        </Provider>
-      </Provider>
+				<Provider value="inner">
+					<Consumer>
+						{(value) => <div>{value}</div> /* "inner" */}
+					</Consumer>
+				</Provider>
+			</Provider>
 
-      <Consumer>
-        {(value) => <div>{value}</div> /* "global default" */}
-      </Consumer>
-    </>
-  );
+			<Consumer>
+				{(value) => <div>{value}</div> /* "global default" */}
+			</Consumer>
+		</>
+	)
 }
 ```
 
@@ -359,55 +381,59 @@ That said, it provides the mechanism needed to state and updater functions manag
 Here's an example of a stateful container that uses Context to distribute local `state` and an `update` function.
 
 ```jsx
-let StateContext = React.createContext();
+let StateContext = React.createContext()
 
 class StateProvider extends React.Component {
-  static defaultProps = {
-    initialState: {},
-  };
+	static defaultProps = {
+		initialState: {},
+	}
 
-  update = (updater, done) => {
-    this.setState(
-      (prevState) => ({
-        state:
-          typeof updater === "function" ? updater(prevState.state) : updater,
-      }),
-      done
-    );
-  };
+	update = (updater, done) => {
+		this.setState(
+			(prevState) => ({
+				state:
+					typeof updater === 'function'
+						? updater(prevState.state)
+						: updater,
+			}),
+			done
+		)
+	}
 
-  state = {
-    state: this.props.initialState,
-    update: this.update,
-  };
+	state = {
+		state: this.props.initialState,
+		update: this.update,
+	}
 
-  render() {
-    return (
-      <StateContext.Provider value={this.state}>
-        {this.props.children}
-      </StateContext.Provider>
-    );
-  }
+	render() {
+		return (
+			<StateContext.Provider value={this.state}>
+				{this.props.children}
+			</StateContext.Provider>
+		)
+	}
 }
 
 let App = () => (
-  <StateProvider initialState={{ count: 0 }}>
-    <StateContext.Consumer>
-      {({ state, update }) => (
-        <div>
-          <div>{state.count}</div>
+	<StateProvider initialState={{count: 0}}>
+		<StateContext.Consumer>
+			{({state, update}) => (
+				<div>
+					<div>{state.count}</div>
 
-          <button
-            type="button"
-            onClick={() => update(({ count }) => ({ count: count + 1 }))}
-          >
-            increment
-          </button>
-        </div>
-      )}
-    </StateContext.Consumer>
-  </StateProvider>
-);
+					<button
+						type="button"
+						onClick={() =>
+							update(({count}) => ({count: count + 1}))
+						}
+					>
+						increment
+					</button>
+				</div>
+			)}
+		</StateContext.Consumer>
+	</StateProvider>
+)
 ```
 
 ### Modularazing Context
@@ -416,44 +442,44 @@ In the "real world", you'll likely expose Contexts via ES Modules.
 
 ```js
 // person_context.js
-import React from "react";
+import React from 'react'
 
-let { Provider, Consumer } = React.createContext();
+let {Provider, Consumer} = React.createContext()
 
-export { Provider, Consumer };
+export {Provider, Consumer}
 ```
 
 ```js
 // organization_context.js
-import React from "react";
+import React from 'react'
 
-let { Provider, Consumer } = React.createContext();
+let {Provider, Consumer} = React.createContext()
 
-export { Provider, Consumer };
+export {Provider, Consumer}
 ```
 
 `Consumer`s can be imported to compose context-aware components.
 
 ```jsx
-import React from "react";
-import { Consumer as PersonConsumer } from "./person_context";
-import { Consumer as OrganizationConsumer } from "./organization_context";
+import React from 'react'
+import {Consumer as PersonConsumer} from './person_context'
+import {Consumer as OrganizationConsumer} from './organization_context'
 
 export function ContextBizCard() {
-  return (
-    <OrganizationConsumer>
-      {(organization) => (
-        <PersonConsumer>
-          {(person) => (
-            <div className="business-card">
-              <h1>{person}</h1>
-              <h3>{organization}</h3>
-            </div>
-          )}
-        </PersonConsumer>
-      )}
-    </OrganizationConsumer>
-  );
+	return (
+		<OrganizationConsumer>
+			{(organization) => (
+				<PersonConsumer>
+					{(person) => (
+						<div className="business-card">
+							<h1>{person}</h1>
+							<h3>{organization}</h3>
+						</div>
+					)}
+				</PersonConsumer>
+			)}
+		</OrganizationConsumer>
+	)
 }
 ```
 
@@ -461,17 +487,17 @@ export function ContextBizCard() {
 
 ```jsx
 // app.js
-import { Provider as OrganizationProvider } from "./organization_context";
-import { Provider as PersonProvider } from "./person_context";
-import { ContextBizCard } from "./context_biz_card";
+import {Provider as OrganizationProvider} from './organization_context'
+import {Provider as PersonProvider} from './person_context'
+import {ContextBizCard} from './context_biz_card'
 
 let App = () => (
-  <OrganizationProvider value="ACME Co.">
-    <PersonProvider value="Yakko">
-      <ContextBizCard />
-    </PersonProvider>
-  </OrganizationProvider>
-);
+	<OrganizationProvider value="ACME Co.">
+		<PersonProvider value="Yakko">
+			<ContextBizCard />
+		</PersonProvider>
+	</OrganizationProvider>
+)
 
 // => Yakko, ACME Co.
 ```
@@ -501,22 +527,26 @@ The `useContext` Hook requires a component boundary;
 Here's a re-implementation of [A "Shit" Example](#a-shit-example) using hooks:
 
 ```jsx
-import React from "react";
+import React from 'react'
 
-const ExpletiveContext = React.createContext("shit");
+const ExpletiveContext = React.createContext('shit')
 
 function ContextualExclamation() {
-  let word = React.useContext(ExpletiveContext);
+	let word = React.useContext(ExpletiveContext)
 
-  return <ExpletiveContext.Consumer>{word}</ExpletiveContext.Consumer>;
+	return (
+		<ExpletiveContext.Consumer>
+			{word}
+		</ExpletiveContext.Consumer>
+	)
 }
 
 function VisitGrandmasHouse() {
-  return (
-    <ExpletiveContext.Provider value="poop">
-      <ContextualExclamation />
-    </ExpletiveContext.Provider>
-  );
+	return (
+		<ExpletiveContext.Provider value="poop">
+			<ContextualExclamation />
+		</ExpletiveContext.Provider>
+	)
 }
 ```
 
@@ -532,26 +562,28 @@ Access to context is done thru the component instance.
 Here's a re-implementation of [A "Shit" Example](#a-shit-example) using `static contextType`:
 
 ```jsx
-import React from "react";
+import React from 'react'
 
-const ExpletiveContext = React.createContext("shit");
+const ExpletiveContext = React.createContext('shit')
 
 class ContextualExclamation extends React.Component {
-  static contextType = ExpletiveContext;
+	static contextType = ExpletiveContext
 
-  render() {
-    return (
-      <ExpletiveContext.Consumer>{this.context.word}</ExpletiveContext.Consumer>
-    );
-  }
+	render() {
+		return (
+			<ExpletiveContext.Consumer>
+				{this.context.word}
+			</ExpletiveContext.Consumer>
+		)
+	}
 }
 
 function VisitGrandmasHouse() {
-  return (
-    <ExpletiveContext.Provider value="poop">
-      <ContextualExclamation />
-    </ExpletiveContext.Provider>
-  );
+	return (
+		<ExpletiveContext.Provider value="poop">
+			<ContextualExclamation />
+		</ExpletiveContext.Provider>
+	)
 }
 ```
 

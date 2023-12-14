@@ -1,6 +1,6 @@
 ---
 title: ADR — Architecture Decision Record
-description: "Overcome decision fatigue with Architecture Decision Records (ADRs), a structured format for documenting decisions and consequences."
+description: 'Overcome decision fatigue with Architecture Decision Records (ADRs), a structured format for documenting decisions and consequences.'
 publishDate: 2022-12-28
 ---
 

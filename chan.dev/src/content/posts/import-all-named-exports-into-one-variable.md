@@ -1,16 +1,16 @@
 ---
 title: Import All Named Exports into One Variable
-description: "Discover how to import all named exports into one variable using *. Learn its benefits in application code, and how it can prevent export name collisions."
+description: 'Discover how to import all named exports into one variable using *. Learn its benefits in application code, and how it can prevent export name collisions.'
 publishDate: 2021-02-01
 og:
-  image: "https://res.cloudinary.com/chantastic/image/upload/v1685927001/chan.dev/import-all-named-exports-into-one-variable.jpg"
+  image: 'https://res.cloudinary.com/chantastic/image/upload/v1685927001/chan.dev/import-all-named-exports-into-one-variable.jpg'
 tags: [code]
 ---
 
 We can import all of a JavaScript module's contents into a single variable with `* as`.
 
 ```js
-import * as stringUtils from "./string-utils.mjs";
+import * as stringUtils from './string-utils.mjs'
 ```
 
 Now `stringUtils` can reference any exports in `string-utils.mjs` using property access syntax.
@@ -50,22 +50,22 @@ export Controller …;
 
 ```js
 import {
-  List as EmailList,
-  ListItem as EmailListItem,
-  Controller as EmailController,
-} from "./email.js";
+	List as EmailList,
+	ListItem as EmailListItem,
+	Controller as EmailController,
+} from './email.js'
 import {
-  List as ContactList,
-  ListItem as ContactListItem,
-  Controller as ContactController,
-} from "./contact.js";
+	List as ContactList,
+	ListItem as ContactListItem,
+	Controller as ContactController,
+} from './contact.js'
 ```
 
 By reducing moduling imports to a single reference, we eliminate the need to rename the colliding exports.
 
 ```js
-import * as Email from "./email.js";
-import * as Contact from "./contact.js";
+import * as Email from './email.js'
+import * as Contact from './contact.js'
 
 // Email.List, Contact.List, Email.Item, Contact.Item, etc.
 ```
@@ -82,5 +82,6 @@ This is part of a course I'm build on modules at [lunch.dev](https://www.lunch.d
 When live, members get access to this and other courses on React.
 
 <script src="https://cdn.podia.com/embeds.js" async="async"></script>
+
 <a
 href="https://www.lunch.dev/member" data-podia-embed="button" data-text="Join lunch.dev for this course">Join lunch.dev for this course</a>

@@ -1,6 +1,6 @@
 ---
-title: "8. Use astro content collections"
-status: "Accepted"
+title: '8. Use astro content collections'
+status: 'Accepted'
 date: 2023-01-16
 ---
 
