@@ -30,3 +30,25 @@ pnpm build && pnpm exec pagefind --site dist
 }
 ```
 
+## Add /search route
+
+_Note: I can't currently run this locally because I'm using hybrid rendering. `preview` is not supported, meaning I can't locally serve a `postbuild` preview._
+
+```astro
+<html>
+	<link href="/pagefind/pagefind-ui.css" rel="stylesheet" />
+	<script src="/pagefind/pagefind-ui.js"></script>
+
+	<main>
+		<h1>Search</h1>
+		<div id="search"></div>
+	</main>
+
+	<script is:inline>
+		window.addEventListener('DOMContentLoaded', (event) => {
+			new PagefindUI({element: '#search', showSubResults: true})
+		})
+	</script>
+
+</html>
+```
