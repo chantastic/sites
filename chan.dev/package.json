@@ -10,6 +10,7 @@
 		"dev": "astro dev",
 		"start": "astro dev",
 		"build": "astro build",
+		"postbuild": "pagefind --site dist",
 		"preview": "astro preview",
 		"test:e2e": "playwright test",
 		"astro": "astro"
@@ -33,6 +34,7 @@
 		"markdown-it": "^13.0.2",
 		"micromark": "^4.0.0",
 		"micromark-extension-gfm": "^3.0.0",
+		"pagefind": "^1.0.4",
 		"rehype-autolink-headings": "^6.1.1",
 		"remark-deflist": "^1.0.0",
 		"remark-directive": "^2.0.1",
