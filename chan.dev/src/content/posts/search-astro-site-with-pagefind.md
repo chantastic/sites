@@ -37,7 +37,7 @@ _Note: I can't currently run this locally because I'm using hybrid rendering. `p
 ```astro
 <html>
 	<link href="/pagefind/pagefind-ui.css" rel="stylesheet" />
-	<script src="/pagefind/pagefind-ui.js"></script>
+	<script src="/pagefind/pagefind-ui.js" is:inline></script>
 
 	<main>
 		<h1>Search</h1>
