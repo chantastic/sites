@@ -33,6 +33,7 @@ let content = await entry?.render();
     <GoogleFonts />
     <GlobalStyles />
     <HeadAnalytics />
+    <slot name="page-head" />
     <slot name="page-meta">
       <title>
         {site.title}
