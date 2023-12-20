@@ -1,0 +1,17 @@
+{
+	"Add Custom YouTube Remark Directive": {
+		"prefix": "youtube-short-iframe",
+		"body": [
+            "<iframe",
+            "\twidth=\"310\"",
+            "\theight=\"580\",
+            "\tsrc=\"https://www.youtube.com/embed/$0$TM_SELECTED_TEXT\"",
+            "\ttitle=\"YouTube video player\"",
+            "\tframeborder=\"0\"",
+            "\tallow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\"",
+            "\tallowfullscreen>",
+            "</iframe>",
+		],
+		"description": "Wrap video in vertical #shorts iframe"
+	}
+}
