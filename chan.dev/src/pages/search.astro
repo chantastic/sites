@@ -1,21 +1,22 @@
 ---
-
+import Layout from '#layouts/Layout.astro'
+import Prose from '#components/prose.astro'
 ---
 
-<html>
-	<link href="/pagefind/pagefind-ui.css" rel="stylesheet" />
-	<script src="/pagefind/pagefind-ui.js" is:inline></script>
+<Layout>
+	<Fragment slot="page-head">
+		<link href="/pagefind/pagefind-ui.css" rel="stylesheet" />
+		<script src="/pagefind/pagefind-ui.js" is:inline></script>
+	</Fragment>
 
-	<main>
+	<Prose as="main" class="max-w-[64ch] mx-auto pt-4">
 		<h1>Search</h1>
 		<div id="search"></div>
-	</main>
+	</Prose>
 
 	<script is:inline>
 		window.addEventListener('DOMContentLoaded', (event) => {
 			new PagefindUI({element: '#search', showSubResults: true})
 		})
 	</script>
-
-
-</html>
+</Layout>
