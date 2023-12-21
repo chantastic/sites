@@ -8,3 +8,5 @@ out/
 
 # Local Netlify folder
 .netlify
+
+ebooks/

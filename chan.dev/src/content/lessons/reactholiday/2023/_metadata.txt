@@ -1,0 +1,14 @@
+---
+title:
+  - type: main
+    text: React Holiday 2023
+  - type: subtitle
+    text: An Annual Celebration of React
+creator:
+  - role: author
+    text: chantastic
+publisher: chantastic, llc
+rights: © 2007 Michael Chan, CC BY-NC
+ibooks:
+  version: 0.0.1
+---
