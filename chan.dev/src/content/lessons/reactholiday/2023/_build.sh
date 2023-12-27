@@ -1,2 +1,7 @@
 #!/bin/bash
-pandoc -o ../../../../../ebooks/reactholiday-2023.epub ./_metadata.txt
+pandoc \
+    is-react-still-a-library.md \
+    react-has-trust-issues.md \
+    ./_metadata.txt -s -o \
+    ../../../../../ebooks/reactholiday-2023.md
+    # ../../../../../ebooks/reactholiday-2023.epub

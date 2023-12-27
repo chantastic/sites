@@ -209,6 +209,14 @@ pandoc my-markdown-file.md -o my-book.epub
 
 [Full list of ePub attributes](https://pandoc.org/MANUAL.html#epubs)
 
+
+## Compile multiple markdown files
+
+- Can't have individual frontmatter
+- Title page title must be in markdown
+- Doesn't seem to worry to much about structure, as long as
+---
+
 ## Other docs I'd like to dive into but haven't yet.
 
 like to learn more:
@@ -218,3 +226,12 @@ like to learn more:
 - [Divs and Spans](https://pandoc.org/MANUAL.html#divs-and-spans)
 
 [Bug me on twitter if you'd like me to keep working on this doc.
+
+
+## Metadata
+
+Easiest thing to do is apply metadata file last.
+This will override any metadata from previous files.
+
+https://www.uv.es/wikibase/doc/cas/pandoc_manual_2.7.3.wiki?96
+
