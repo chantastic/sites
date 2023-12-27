@@ -3,7 +3,7 @@ title: Canasta
 date: 2023-12-26
 ---
 
-## POINT VALUES
+## Point values
 
 | Points | Card             |
 | -----: | :--------------- |
@@ -17,3 +17,14 @@ date: 2023-12-26
 |  `100` | Going out first  |
 |  `300` | Dirty book       |
 |  `500` | Clean book       |
+
+## Setup
+
+- Bring `1` deck per player and shuffled togetter
+  - Remove blank cards
+  - Leave Jokers
+- Draw `22` cards
+  - `11` for "hand"
+  - `11` for "foot"
+  - `100` point bonus for exact draw
+- Remaining cards in Draw pile; flip one over to start discard pile
