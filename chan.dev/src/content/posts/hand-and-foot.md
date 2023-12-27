@@ -1,7 +1,8 @@
 ---
-title: Canasta
+title: Hand and Foot
 date: 2023-12-26
 references:
+  - https://bicyclecards.com/how-to-play/hand-and-foot
   - https://en.wikipedia.org/wiki/Canasta
 ---
 
