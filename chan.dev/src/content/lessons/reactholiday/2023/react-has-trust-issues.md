@@ -4,8 +4,13 @@ date: 2023-12-01
 status: complete
 ---
 
+# React Has Trust Issues
+
 React's core innovation is distrust of ​the DOM​.
 Other UI libraries have a fairly trusting relationship with the DOM. They coordinate via reads and writes. React does not have this same trusting relationship and defaults to write-only.
+
+![React, dominating the DOM. Who's the DOM now?](./react-has-trust-issues.jpeg)
+
 But we have to read information from the DOM eventually. The DOM is where ​user input​, ​rendered element size​, and ​document events​ originate. We need that information. Specifically, we need the rendered element height to properly animate our ShowMore component.
 React exposes explicit hooks for coordination.
 One of these is ​DOM refs​.

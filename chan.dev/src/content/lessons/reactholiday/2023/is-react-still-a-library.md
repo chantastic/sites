@@ -4,8 +4,12 @@ date: 2023-11-29
 status: complete
 ---
 
+# Is React Still a UI Library?
+
 Welcome to React Holiday '23 🥳
 React has changed. Never content playing second fiddle to PHP, React has wormed it's way into the server-side.
+
+![Sam Selikoff shows how to control electronics in a Next.js server action.](./is-react-still-a-library.png)
 
 I'm stoked for these changes but don't believe in a one-framework future. And so far, Next.js is the team playing.
 I want to focus this year on things that impact all React devs – building exceptional and extensible UI components. And I've found a single component build to do precisely that…
