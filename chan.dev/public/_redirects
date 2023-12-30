@@ -34,6 +34,7 @@
 /colorway https://github.com/chantastic/colorway
 /discord https://discord.gg/q9ZdBgP
 /schedule/* https://savvycal.com/chantastic/:splat
+/github/* https://github.com/chantastic/:splat
 /twitter https://twitter.com/chantastic
 /youtube https://www.youtube.com/channel/UCXpmUxvG37qpckRHdkstf5w
 /1m https://github.com/chantastic/one-million-ui-states
