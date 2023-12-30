@@ -1,5 +1,5 @@
 ---
-title: Hand and Foot (alterered)
+title: Hand and Foot (Roth family rules)
 publishDate: 2023-12-29
 references:
   - https://bicyclecards.com/how-to-play/hand-and-foot
@@ -15,8 +15,8 @@ This document:
 
 - Is based on the Roth family house rules for [Hand and Foot][].
 - Includes references and maps to traditional gameplay.
-- Is written as a glossery of termonology and practices.
-- Hoists figures (with scoring values) the top, for easy access.
+- Is written as a glossary of terminology and practices.
+- Hoists figures (with scoring values) for easy access.
 
 ## Contents
 
@@ -55,7 +55,7 @@ This document:
 
 ## 🎟️ Point Minimums
 
-At the start of each round, teams determine the mimimum points required to [go in](#👉-go-in).
+At the start of each round, teams determine the minimum points required to [go in](#👉-go-in).
 
 <div class="max-w-[24ch]">
 
@@ -82,7 +82,7 @@ Each player brings one deck of cards to construct a card stock (game deck).
 ## 🎰 The Deal (draw)
 
 To start each round, players draw `22` cards.
-Drawing `22` cards in a single cut, is worth a `100` points bonus.[^*]
+Drawing `22` cards in a single cut is worth a `100` points bonus.[^*]
 
 Cards are divided into two `11` card decks: ["hand" and "foot"](#✋🦶hand-and-foot).
 
@@ -111,21 +111,21 @@ Draw two cards from the [stock pile](#🏗️-build-the-stock-game-deck).
 
 **OR**
 
-[Talk the discards](#🗑️-take-discards).
+[Take the discards](#🗑️-take-discards).
 
 ## 🗑️ Take Discards
 
-If the top card of the discard pile is a natural card (4-A) _and_ matches at least one card in your hand, you may draw from the discard pile.
+If the top card of the discard pile is natural (4-A) _and_ matches at least one card in your hand, you may draw from the discard pile.
 
-- Reveal your card that matchs the top discard.
+- Reveal your card that matches the top discard.
 - Take the top seven cards.
-- You must be able to make a new, clean book with that top card.
-- If you are not able to make a clean book, you will be penalized.
+- You must be able to make a new, clean meld with that top card.
+- If unable to make a clean book, you receive a penalty.
 
 _Current house penalty:_
 
 - Your turn is skipped (including discard).
-- Return all drawn cards to the discard pile (in their same order).
+- Return all drawn cards to the discard pile (in the same order).
 - Take a `100` point penalty.
 
 ## 💿 Meld
@@ -136,14 +136,14 @@ Melds may include [wilds cards](#🃏-card-values), to form [Black books](#📓-
 
 ## 📚 Books
 
-Books are melds with `7` (or more) cards.
+Books are melds of `7` (or more) cards.
 
 - [Red books](#📕-red-book) include `7` or more natural cards.
 - [Black books](#📓-black-book) include _exactly_ `7` natural _and_ wild cards, with no more than `3` wilds.
 
 ## 📕 Red Book
 
-_AKA: "Clean book", "Open book"._
+_AKA: "Clean book" or "Open book"._
 
 - `7` or more natural cards.
 - "Open" to melding.
@@ -151,7 +151,7 @@ _AKA: "Clean book", "Open book"._
 
 ## 📓 Black Book
 
-_AKA: "Dirty book", "Closed book"._
+_AKA: "Dirty book" or "Closed book"._
 
 - Exactly `7` natural _and_ wild cards.
 - At most `3` wild cards.
@@ -160,18 +160,18 @@ _AKA: "Dirty book", "Closed book"._
 
 ## 👉 Go In
 
-A player "goes in" when they can create, or contribute, to melds. with their total number of contributed cards being above the points minimum.
+A player "goes in" when they can create new melds or contribute to existing ones. The total point value of contributed cards must be above the team's points minimum.
 
 ## 👈 Go Out
 
-A player "goes out" they discard the final card of their foot — ending the round.
+A player "goes out" when they discard the final card of their foot — ending the round.
 
 A player may not go out until:
 
 - All teammates are in their foot.
 - The team has developed [4 Black Books](#📓-black-book) and [5 Red Books](#📕-red-book).
 
-Before going out, a player may ask their team "can I go out?" Teammates are allowed to respond only with "yes" or "no" — avoiding [table talk](#🗣️-table-talk).
+Before going out, a player may ask: "Can I go out?" Teammates are allowed to respond only with "yes" or "no" — avoiding [table talk](#🗣️-table-talk).
 
 ## 🗣️ Table talk
 
@@ -181,30 +181,30 @@ Every house has a different understanding of what constitutes table talk.
 
 I find that strategic players enjoy playing strategic (educational) games. In these cases, [general strategy](#🗺️-general-strategy) is not considered table talk. Because strategic games aren't won on general strategy.
 
-Here are a few things that are invariable considered table talk:
+Here are a few invariable things considered table talk:
 
 - Correcting (or "helping") a teammate place their move.
   - This includes asking suggestive questions like "Did you want me to place this on the dirty meld or create a new clean meld?"
 - Asking teammates to decide between two options.
-- Communicating about a move with the intent to suggest the composition of your hand "I really want to pick that discard up…"
+- Talking about a move in a way that reveals the composition of your hand: "I really want to pick that discard up…"
 - Inquiries about the makeup of the discard pile.
 
 ## 🗺️ General Strategy
 
 Here are some baseline strategies for being a good teammate:
 
-- It's generally advantagous to open options for teammates.
+- It's generally advantageous to open options for teammates.
 - Creating [Red Books](#📕-red-book) doesn't cost your team because they can continue to play melds on them.
 - Creating [Black Books](#📓-black-book) should be reserved for:
   - [Going in](#👉-go-in).
   - [Going out](#👈-go-out).
   - Increasing your score before your opponent [goes out](#👈-go-out).
-- Avoid discarding cards that you know your opponent can play — especially when you know there are duplicates in the top 7. See [Take Discards](#🗑️-take-discards).
-- When deciding whether to contribute to dirty meld or create a new, clean meld, consider the following:
+- Avoid discarding cards that your opponent can play — especially when you know there are duplicates in the top 7. See [Take Discards](#🗑️-take-discards).
+- When deciding whether to contribute to a dirty meld or create a new, clean meld, consider the following:
   - Is it early or late in the game?
   - How near to completion is the dirty meld?
   - What is the composition of the dirty meld? Can it be completed with wilds?
-  - Does the opponent also have melds for this card — making it unclikely to be closed?
-- [Taking the discards](#🗑️-take-discards) is best employed when you can create a meld for a card value you don't have available.
+  - Does the opponent also have melds for this card — making it unlikely to be closed?
+- [Taking the discards](#🗑️-take-discards) is best employed when creating new melds for card values you don't already have.
 
 ---
