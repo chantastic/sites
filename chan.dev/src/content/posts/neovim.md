@@ -4,6 +4,7 @@ date: 2023-09-27
 dateUpdated: 2023-12-30
 references:
   - https://github.com/nvim-lua/kickstart.nvim
+  - https://galenwong.github.io/blog/2021-03-22-vscode-neovim-vs-vscodevim/
 ---
 
 I've avoided a heavily customized experience for most of my life. This is doubly true with Vim.
