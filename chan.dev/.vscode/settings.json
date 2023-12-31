@@ -6,7 +6,8 @@
 	},
 	"editor.lightbulb.enabled": false,
 	"workbench.statusBar.visible": false,
-	"explorer.excludeGitIgnore": false
+	"explorer.excludeGitIgnore": false,
+	"editor.formatOnSave": true
 	// "editor.lineNumbers": "off",
 	// "terminal.integrated.fontSize": 15,
 	// "editor.fontSize": 16,
