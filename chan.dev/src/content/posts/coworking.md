@@ -3,7 +3,11 @@ title: Coworking
 tags: [mode]
 dateCreated: 2023-01-03
 dateUpdated: 2024-01-02
+og:
+  image: https://chan.dev/coworking/coworking-setup.png
 ---
+
+![2024 coworking setup](./coworking/coworking-setup.png)
 
 ## Available tools
 
