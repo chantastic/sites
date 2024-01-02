@@ -4,7 +4,7 @@ tags: [mode]
 dateCreated: 2023-01-03
 dateUpdated: 2024-01-02
 og:
-  image: https://chan.dev/coworking/coworking-setup.png
+  image: https://res.cloudinary.com/chantastic/image/upload/v1704229479/coworking-setup.png
 ---
 
 ![2024 coworking setup](./coworking/coworking-setup.png)
