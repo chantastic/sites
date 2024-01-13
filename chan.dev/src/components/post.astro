@@ -1,37 +1,46 @@
 ---
-import type * as POSTS from "#pages/posts/posts";
-import { Image } from "astro:assets";
+import type * as POSTS from '#pages/posts/posts'
+import {Image} from 'astro:assets'
 
 interface Props {
-  entry: POSTS.CollectionEntry;
+	entry: POSTS.CollectionEntry
 }
 
-const { entry } = Astro.props;
-const { Content } = await entry.render();
+const {entry} = Astro.props
+const {Content} = await entry.render()
 ---
 
 <>
-  <h1 class="tracking-tight">{entry.data.title}</h1>
-  {
-    entry.data.cover?.src && (
-      <Image
-        src={entry.data.cover}
-        alt={entry.data.coverAlt ?? entry.data.title}
-        class="w-full"
-      />
-    )
-  }
-  {
-    !entry.data.publishDate ? (
-      <>
-        <p class="bg-green-100 p-6 text-green-800 border-green-800 border-0 border-l-4">
-          🌱 This post is in the growth phase. It may still be useful as it
-          grows up.
-        </p>
-        <Content />
-      </>
-    ) : (
-      <Content />
-    )
-  }
+	<h1 class="tracking-tight">{entry.data.title}</h1>
+	{
+		import.meta.env.DEV && (
+			<a
+				href={`vscode://file/Users/chan/sites/chan.dev/src/content/posts/${entry.id}`}
+			>
+				Edit (local)
+			</a>
+		)
+	}
+	{
+		entry.data.cover?.src && (
+			<Image
+				src={entry.data.cover}
+				alt={entry.data.coverAlt ?? entry.data.title}
+				class="w-full"
+			/>
+		)
+	}
+	{
+		!entry.data.publishDate ? (
+			<>
+				<p class="bg-green-100 p-6 text-green-800 border-green-800 border-0 border-l-4">
+					🌱 This post is in the growth phase. It may still be
+					useful as it grows up.
+				</p>
+				<Content />
+			</>
+		) : (
+			<Content />
+		)
+	}
 </>
