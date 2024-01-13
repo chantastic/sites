@@ -27,6 +27,17 @@ export async function getCollection(
 	return result.sort(sort)
 }
 
+const frequency = z.enum([
+	'regular',
+	'occasional',
+	'rare',
+	'never',
+])
+
+const status = z.enum(['active', 'inactive', 'replaced'])
+
+const links = z.string().url().array().optional()
+
 export const collectionSchema = defineCollection({
 	schema: z.discriminatedUnion('kind', [
 		// default `kind` because of historical context
@@ -35,28 +46,31 @@ export const collectionSchema = defineCollection({
 			manufacturer: z.string(),
 			model: z.string(),
 			size: z.string().optional(),
-			status: z.enum([
-				'active',
-				'inactive',
-				'replaced',
-				'lost',
-				'returned',
-				'for-sale',
-				'sold',
-				'gifted',
+			status: z.union([
+				status,
+				z.enum([
+					'lost',
+					'returned',
+					'for-sale',
+					'sold',
+					'gifted',
+				]),
 			]),
-			frequency: z.enum([
-				'regular',
-				'occasional',
-				'rare',
-				'never',
-			]),
+			frequency,
 			acquisition: z
 				.enum(['purchase', 'review', 'gift'])
 				.default('purchase'),
 			replaced_by: z.string().optional(), // overload: string to slug, object with optional name, deets, etc.
-			links: z.string().url().array().optional(),
+			links,
 			// replaced_by <> replaces
+		}),
+		z.object({
+			kind: z.literal('service'),
+			organization: z.string(),
+			product: z.string().optional(),
+			frequency,
+			status,
+			links,
 		}),
 	]),
 })
