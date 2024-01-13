@@ -28,31 +28,35 @@ export async function getCollection(
 }
 
 export const collectionSchema = defineCollection({
-	schema: z.object({
-		manufacturer: z.string(),
-		model: z.string(),
-		size: z.string().optional(),
-		status: z.enum([
-			'active',
-			'inactive',
-			'replaced',
-			'lost',
-			'returned',
-			'for-sale',
-			'sold',
-			'gifted',
-		]),
-		frequency: z.enum([
-			'regular',
-			'occasional',
-			'rare',
-			'never',
-		]),
-		acquisition: z
-			.enum(['purchase', 'review', 'gift'])
-			.default('purchase'),
-		replaced_by: z.string().optional(), // overload: string to slug, object with optional name, deets, etc.
-		links: z.string().url().array().optional(),
-		// replaced_by <> replaces
-	}),
+	schema: z.discriminatedUnion('kind', [
+		// default `kind` because of historical context
+		z.object({
+			kind: z.undefined(),
+			manufacturer: z.string(),
+			model: z.string(),
+			size: z.string().optional(),
+			status: z.enum([
+				'active',
+				'inactive',
+				'replaced',
+				'lost',
+				'returned',
+				'for-sale',
+				'sold',
+				'gifted',
+			]),
+			frequency: z.enum([
+				'regular',
+				'occasional',
+				'rare',
+				'never',
+			]),
+			acquisition: z
+				.enum(['purchase', 'review', 'gift'])
+				.default('purchase'),
+			replaced_by: z.string().optional(), // overload: string to slug, object with optional name, deets, etc.
+			links: z.string().url().array().optional(),
+			// replaced_by <> replaces
+		}),
+	]),
 })
