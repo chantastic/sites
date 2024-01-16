@@ -57,19 +57,19 @@ const chore_data = [
 			true,
 		],
 	},
-	{
-		id: '005',
-		name: 'Fold laundry',
-		weekly_occurances: [
-			true,
-			true,
-			true,
-			true,
-			true,
-			true,
-			true,
-		],
-	},
+	//	{
+	//		id: '005',
+	//		name: 'Fold laundry',
+	//		weekly_occurances: [
+	//			true,
+	//			true,
+	//			true,
+	//			true,
+	//			true,
+	//			true,
+	//			true,
+	//		],
+	//	},
 	{
 		id: '006',
 		name: 'School work',
@@ -83,19 +83,19 @@ const chore_data = [
 			false,
 		],
 	},
-	{
-		id: '007',
-		name: 'Duolingo',
-		weekly_occurances: [
-			true,
-			true,
-			true,
-			true,
-			true,
-			true,
-			true,
-		],
-	},
+	//	{
+	//		id: '007',
+	//		name: 'Duolingo',
+	//		weekly_occurances: [
+	//			true,
+	//			true,
+	//			true,
+	//			true,
+	//			true,
+	//			true,
+	//			true,
+	//		],
+	//	},
 	{
 		id: '008',
 		name: 'Clean toilet',
@@ -135,19 +135,19 @@ const chore_data = [
 			true,
 		],
 	},
-	{
-		id: '011',
-		name: 'Book tactics',
-		weekly_occurances: [
-			false,
-			true,
-			true,
-			true,
-			true,
-			true,
-			false,
-		],
-	},
+	//	{
+	// 		id: '011',
+	//		name: 'Book tactics',
+	//		weekly_occurances: [
+	//			false,
+	//			true,
+	//			true,
+	//			true,
+	//			true,
+	//			true,
+	//			false,
+	//		],
+	//	},
 ]
 ---
 
@@ -158,41 +158,45 @@ const chore_data = [
 			<thead>
 				<tr>
 					<th></th>
+					<th>Saturday</th>
 					<th>Sunday</th>
 					<th>Monday</th>
 					<th>Tuesday</th>
 					<th>Wednesday</th>
 					<th>Thursday</th>
 					<th>Friday</th>
-					<th>Saturday</th>
 				</tr>
 			</thead>
 			<tbody>
 				{
-					chore_data.map((chore) => (
-						<tr>
-							<td>{chore.name}</td>
-							{chore.weekly_occurances.map((occurance) => {
-								if (occurance) {
-									return (
-										<td
-											class="border"
-											hx-post={`/chores/partials/${chore.id}`}
-											hx-trigger="click"
-											hx-swap="outerHTML"
-										/>
-									)
-								} else {
-									return (
-										<td
-											class="border"
-											style={{backgroundColor: 'currentColor'}}
-										/>
-									)
-								}
-							})}
-						</tr>
-					))
+					chore_data.map((chore) => {
+						const saturday_first_weekly_occurances = [chore.weekly_occurances.at(-1), ...chore.weekly_occurances.slice(0, -1)]
+
+						return (
+							<tr>
+								<td>{chore.name}</td>
+								{saturday_first_weekly_occurances.map((occurance) => {
+									if (occurance) {
+										return (
+											<td
+												class="border"
+												hx-post={`/chores/partials/${chore.id}`}
+												hx-trigger="click"
+												hx-swap="outerHTML"
+											/>
+										)
+									} else {
+										return (
+											<td
+												class="border"
+												style={{backgroundColor: 'currentColor'}}
+											/>
+										)
+									}
+								})}
+							</tr>
+						)
+					})
 				}
 			</tbody>
 		</table>

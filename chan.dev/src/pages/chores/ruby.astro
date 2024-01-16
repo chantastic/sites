@@ -57,19 +57,19 @@ const chore_data = [
 			true,
 		],
 	},
-	{
-		id: '016',
-		name: 'Fold laundry',
-		weekly_occurances: [
-			true,
-			true,
-			true,
-			true,
-			true,
-			true,
-			true,
-		],
-	},
+	//	{
+	//		id: '016',
+	//		name: 'Fold laundry',
+	//		weekly_occurances: [
+	//			true,
+	//			true,
+	//			true,
+	//			true,
+	//			true,
+	//			true,
+	//			true,
+	//		],
+	//	},
 	{
 		id: '017',
 		name: 'School work',
@@ -83,19 +83,19 @@ const chore_data = [
 			false,
 		],
 	},
-	{
-		id: '018',
-		name: 'Duolingo',
-		weekly_occurances: [
-			true,
-			true,
-			true,
-			true,
-			true,
-			true,
-			true,
-		],
-	},
+	//	{
+	//		id: '018',
+	//		name: 'Duolingo',
+	//		weekly_occurances: [
+	//			true,
+	//			true,
+	//			true,
+	//			true,
+	//			true,
+	//			true,
+	//			true,
+	//		],
+	//	},
 	{
 		id: '019',
 		name: 'Vaccuum runners',
@@ -145,38 +145,45 @@ const chore_data = [
 			<thead>
 				<tr>
 					<th></th>
+					<th>Saturday</th>
 					<th>Sunday</th>
 					<th>Monday</th>
 					<th>Tuesday</th>
 					<th>Wednesday</th>
 					<th>Thursday</th>
 					<th>Friday</th>
-					<th>Saturday</th>
 				</tr>
 			</thead>
 			<tbody>
 				{
-					chore_data.map((chore) => (
-						<tr>
-							<td>{chore.name}</td>
-							{chore.weekly_occurances.map((occurance, i) => {
-								if (occurance) {
-									return (
-										<td
-											hx-post={`/chores/partials/${chore.id}`}
-											hx-trigger="click"
-											hx-swap="outerHTML"
-											class="border"
-										/>
-									)
-								} else {
-									return (
-										<td class="border bg-gray-600 bg-current" />
-									)
-								}
-							})}
-						</tr>
-					))
+					chore_data.map((chore) => {
+						const saturday_first_weekly_occurances = [chore.weekly_occurances.at(-1), ...chore.weekly_occurances.slice(0, -1)]
+
+						return (
+							<tr>
+								<td>{chore.name}</td>
+								{saturday_first_weekly_occurances.map((occurance) => {
+									if (occurance) {
+										return (
+											<td
+												class="border"
+												hx-post={`/chores/partials/${chore.id}`}
+												hx-trigger="click"
+												hx-swap="outerHTML"
+											/>
+										)
+									} else {
+										return (
+											<td
+												class="border"
+												style={{backgroundColor: 'currentColor'}}
+											/>
+										)
+									}
+								})}
+							</tr>
+						)
+					})
 				}
 			</tbody>
 		</table>
