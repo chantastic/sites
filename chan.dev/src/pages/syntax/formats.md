@@ -1,9 +1,11 @@
 ---
 title: Syntax Video Formats
 date: 2023-12-19
+layout: ./_layout.astro
 ---
 
-Breakdown of the emerging Syntax YouTube formats.
+Breakdown of the emerging Syntax YouTube formats.  
+A quick capture of existing short format video to assist in any possible reproduction challenges.
 
 ## Contents
 
@@ -11,7 +13,7 @@ Breakdown of the emerging Syntax YouTube formats.
 
 <div class="w-24 h-24">
 
-![Syntax.](./syntax-video-formats/syntax-video-formats_logo.jpg)
+![Syntax.](./formats/formats_logo.jpg)
 
 </div>
 
@@ -28,23 +30,23 @@ _(Older variant used in video content)_
 
 ## Channel
 
-|       |                                                           |
-| ----- | --------------------------------------------------------- |
-| CTA   | Subscribe.<br />Stay up to date with syntax.fm.           |
-| Focus | Exposure and entry-tutororials related to developer news. |
+|       |                                                          |
+| ----- | -------------------------------------------------------- |
+| CTA   | Subscribe.<br />Stay up to date with syntax.fm. podcast. |
+| Focus | Exposure and entry tutorials related to developer news.  |
 
-## Short Format: Exposure Quick Start
+## Format: Exposure and Quick Start
 
-Introduce audionce to something helpful that they may not know.
+Introduce the audience to something helpful that they may not know.
 
 <iframe
-	width="310"
-	height="580"
-	src="https://www.youtube.com/embed/fs2VsMvmdOQ"
-	title="YouTube video player"
-	frameborder="0"
-	allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-	allowfullscreen></iframe>
+    width="310"
+    height="580"
+    src="https://www.youtube.com/embed/fs2VsMvmdOQ"
+    title="YouTube video player"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen></iframe>
 
 ### Summary
 
@@ -56,7 +58,7 @@ Introduce audionce to something helpful that they may not know.
 
 ### Visual format
 
-![Start, Transition, End diagram with annotations](./syntax-video-formats/syntax-video-formats_ste-kody.png)
+![Start, Transition, End diagram with annotations](./formats/formats_ste-kody.png)
 
 #### Layout
 
@@ -70,7 +72,7 @@ Introduce audionce to something helpful that they may not know.
 #### Transition
 
 - Slide Syntax logo from center left to bottom left
-- Swipe title from left to right
+- Swipe the title from left to right
 
 ### Possible improvements
 
@@ -79,16 +81,16 @@ Introduce audionce to something helpful that they may not know.
 
 ---
 
-## Short format: Listicle
+## Format: Listicle
 
 <iframe
-		width="310"
-		height="580"
-		src="https://www.youtube.com/embed/pQLBAlHzIGc"
-		title="YouTube video player"
-		frameborder="0"
-		allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-		allowfullscreen></iframe>
+        width="310"
+        height="580"
+        src="https://www.youtube.com/embed/pQLBAlHzIGc"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen></iframe>
 
 |                 |                                                           |
 | --------------- | --------------------------------------------------------- |
@@ -98,7 +100,7 @@ Introduce audionce to something helpful that they may not know.
 
 ### Visual format
 
-![Frame, Overlay, Format diagram](./syntax-video-formats/syntax-video-formats_five-registrars.png)
+![Frame, Overlay, Format diagram](./formats/formats_five-registrars.png)
 
 #### Layout
 
@@ -112,7 +114,7 @@ Introduce audionce to something helpful that they may not know.
 ### Possible improvement
 
 - Amazon Route 53 timestamp missed `@0:15`
-- Overlay urls in video
+- Overlay URLs in video
 
 <!-- ### Video
 
@@ -124,6 +126,6 @@ https://www.youtube.com/watch?v=9yiFXnefjks
 
 glitch disappear
 
-black out
+blackout
 
-To stay up to date with developer news like this, Subscribe to the channel and checkout the Syntax Podcast with new episodes every Monday, Wednesday, and Friday. -->
+To stay up to date with developer news like this, Subscribe to the channel and check out the Syntax Podcast with new episodes every Monday, Wednesday, and Friday. -->
