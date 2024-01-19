@@ -37,8 +37,7 @@ references:
 
 - Better adjust `rootMargin` then `threshold` in most cases.
   - https://arc.net/l/quote/hwajltvf
-- Visualization tool
-  - https://codepen.io/michellebarker/full/xxwLpRG
+- [Visualization tool](https://codepen.io/michellebarker/full/xxwLpRG)
 
 ## Usage
 
