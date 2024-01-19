@@ -148,7 +148,7 @@ Strong: https://caniuse.com/intersectionobserver
 
 ### etc.
 
-[CodePen collection by Ahmad Shadee](https://codepen.io/collection/AGkZRq?cursor=eyJwYWdlIjoyfQ=
+[CodePen collection by Ahmad Shadee](https://codepen.io/collection/AGkZRq?cursor=eyJwYWdlIjoyfQ=)
 
 ## Competitive analysis
 
