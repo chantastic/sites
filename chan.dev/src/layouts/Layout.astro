@@ -91,6 +91,46 @@ let content = await entry?.render()
 				</>
 			)
 		}
+		{
+			entry?.collection === 'recipes' && (
+				<>
+					<script
+						type="application/ld+json"
+						set:html={JSON.stringify({
+							'@context': 'https://schema.org',
+							'@type': 'Recipe',
+							'name': entry.data.title,
+							// image: "https://benborgers.com/assets/json-ld.png",
+							'publisher': {
+								'@type': 'Organization',
+								'name': 'chantastic, llc',
+								'url': 'https://chan.dev',
+								// logo: {
+								//   "@type": "ImageObject",
+								//   url: "https://benborgers.com/assets/index.png",
+								//   width: "1200",
+								//   height: "630",
+								// },
+							},
+							'url': url(entry.slug),
+							// 'datePublished': entry.data.publishDate,
+							// dateCreated: "2020-01-06T00:00:00.000Z",
+							// dateModified: "2020-01-06T00:00:00.000Z",
+							'description': entry.data.description,
+							'author': {
+								'@type': 'Person',
+								'name': 'chantastic',
+								'url': 'https://chan.dev',
+							},
+							'mainEntityOfPage': {
+								'@type': 'WebPage',
+								'@id': 'https://chan.dev',
+							},
+						})}
+					/>
+				</>
+			)
+		}
 	</head>
 	<body
 		class="flex bg-white dark:bg-gray-900"
