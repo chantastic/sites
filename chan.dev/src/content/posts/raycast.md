@@ -1,6 +1,8 @@
 ---
 title: Raycast
 date: 2023-12-16
+references:
+  - https://www.raycast.com/blog/getting-started-with-script-commands
 ---
 
 **I'd like this to be a guide**
@@ -42,3 +44,12 @@ Theme: reducing friction for every day things. #lube
   - [Unregistering the emoji keyboard on mac](https://www.reddit.com/r/MacOS/comments/15j3pza/comment/juxx8ib/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button)
 - Expense formatting with snippets
 - multi-clipboard history
+
+## 2024-01-20
+
+- Create a new extension for getting a VS Code url for a file path. Can this be a service? That would be dope. Maybe it's a Shortcut or script.
+
+## 2024-01-16
+
+- [Create Quick Event](https://www.raycast.com/mblode/quick-event/commands). I Really like the native Quick Event environment. This simply brings it into Raycast
+- [Navigator/Menu Item Search](https://www.raycast.com/changelog/1-20-0). I use help search all of the time. This makes it one less thing I need a mouse for.
