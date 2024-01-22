@@ -4,8 +4,8 @@ date: 2024-01-10
 layout: ./_layout.astro
 ---
 
-This was fun.
-Thanks nerd-sniping me into an API I've never used 🤓.
+This was fun!
+I'd never used Intersection Observer and now I have 10 different places I want to use it.
 
 ## Contents
 
@@ -13,18 +13,17 @@ Thanks nerd-sniping me into an API I've never used 🤓.
 
 ## Exercise 1: Intersection Observer video
 
-To kick of any research project, I like to get some `#lazyweb` help [on X](https://x.com/chantastic/status/1743339523164291092?s=2) and [Bluesky](https://bsky.app/profile/chantastic.bsky.social/post/3kiawcdqs5b2c), [collect what I learn into a draft post](https://chan.dev/intersection-observer/), and stream my first impressions.
+Kicking off a research project, I ask for `#lazyweb` help [on X](https://x.com/chantastic/status/1743339523164291092?s=2) and [Bluesky](https://bsky.app/profile/chantastic.bsky.social/post/3kiawcdqs5b2c). I then [collect what I learn into a draft post](https://chan.dev/intersection-observer/), and stream my first impressions.
 
 <div data-responsive-youtube-container>
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Yqs2kLM59m8?si=QIcbyCDxfHi_5QAV" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </div>
 
-So I ran with two ideas, using formats I knew I fully execute in an hour.
+So I ran with two ideas, using formats I knew I could execute in an hour.
 
-- No thumbnail to create.
-- Short-form, to constrain message.
-- Short-form, because less polished is still standard.
+- No thumbnail.
+- Short-form, to keep a focused script.
 
 My first (and better one) crashed. _More talk about that later._
 
@@ -40,12 +39,12 @@ My first (and better one) crashed. _More talk about that later._
   allowfullscreen></iframe>
 </div>
 
-(Cross-posted to [X](https://x.com/chantastic/status/1749427512554500241?s=20), [YouTube](https://youtube.com/shorts/plpIIZP8olg?feature=share), [TikTok](https://www.tiktok.com/t/ZT8sAXhPD/) (baby's first), [Instagram](https://www.instagram.com/reel/C2Z_haeLFNS/?igsh=ZDE1MWVjZGVmZQ==), [Facebook](https://www.facebook.com/reel/1297258147581746), [threads](https://www.threads.net/@chantastic/post/C2aAK0Kh24C) [mastodon](https://hachyderm.io/@chantastic/111800135977533111), and [LinkedIn](https://www.linkedin.com/posts/chantastic_coding-javascript-visualize-activity-7155212155850510336-PMjW?utm_source=share&utm_medium=member_desktop).
+<!-- Cross-posted to [X](https://x.com/chantastic/status/1749427512554500241?s=20), [YouTube](https://youtube.com/shorts/plpIIZP8olg?feature=share), [TikTok](https://www.tiktok.com/t/ZT8sAXhPD/) (baby's first), [Instagram](https://www.instagram.com/reel/C2Z_haeLFNS/?igsh=ZDE1MWVjZGVmZQ==), [Facebook](https://www.facebook.com/reel/1297258147581746), [threads](https://www.threads.net/@chantastic/post/C2aAK0Kh24C), [mastodon](https://hachyderm.io/@chantastic/111800135977533111), and [LinkedIn](https://www.linkedin.com/posts/chantastic_coding-javascript-visualize-activity-7155212155850510336-PMjW?utm_source=share&utm_medium=member_desktop). -->
 
-## Tools used:
+### Tools used:
 
 - [Ecamm Live](https://chan.dev/ecamm) for streaming.
-- [VideoTap](https://chan.dev/videotap) for post processing stream.
+- [VideoTap](https://chan.dev/videotap) for post-processing stream.
   - Chapter markers.
   - Transcript (`.srt`).
   - Clip identification.
@@ -94,7 +93,7 @@ But I'm gonna give it another try because I think the hook was good.
 ![Snoop holding a smoking… drizzle logo. Issue #168 of UI Bytes.](./images/fo-drizzle.png)
 
 Drizzle is the TS-minimimalist's ORM.  
-If want type saftey and want that with SQL dirt, Drizzle it is.
+If you want type saftey and like getting your hands dirty in SQL, Drizzle it is.
 
 #### Title options
 
@@ -116,7 +115,7 @@ If want type saftey and want that with SQL dirt, Drizzle it is.
 
 #### Why I like it
 
-Drizzle has legs in the type-safe ORM discussion. I love the strong opinion for a transparent API. "Learn Drizzle, get better at SQL." It's just a fun conversation to jump into while the ecosystem around TypeScript is seeing more viable alternatives.
+Drizzle has legs in the type-safe ORM discussion. I love the strong opinion for a transparent API. "Learn Drizzle, get better at SQL." It's a fun conversation to take part in while the TypeScript ecosystem is seeing more viable alternatives.
 
 Inspiration:
 
@@ -163,11 +162,11 @@ This is a little riff on the [5 Sick Domain Registrars short, by Scott](https://
 - Learn that registration fees are going up.
 - Discover Cloudflare's "at-cost" registration and renewal.
 - Protect their avo toast lifestyle.
-- Judge me for my warchest of parked domains.
+- Judge me for my war-chest of parked domains.
 
 #### Why I like it
 
-Being a "domain name collector" is something I love about the web developer persona. You can poke at it and nobody feels harmed — just known. I see this as a playful celebration of our unique brand of nerd.
+Being a "domain name collector" is something I love about the web developer persona. It's a playful celebration of our unique brand of nerd.
 
 #### Take it further
 
@@ -177,3 +176,7 @@ If this did well in short form, I'd pitch a segment asking famous developers wha
 2. _You paid HOW MUCH for that domain?_
 
 In researching this, I came across the _domain name generator_ category of products. Making a humorous video from this listicle could be fun :)
+
+## Notes
+
+As I conducted research, [I kept all of my notes here](http://localhost:2426/intersection-observer). It's a good asset for future shorts, medium length explainer video, or even a short course!
