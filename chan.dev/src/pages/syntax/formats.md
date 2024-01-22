@@ -4,8 +4,9 @@ date: 2023-12-19
 layout: ./_layout.astro
 ---
 
-Breakdown of the emerging Syntax YouTube formats.  
-A quick capture of existing short format video to assist in any possible reproduction challenges.
+A quick capture of existing short video formats, to assist in (possible) reproduction exercises.
+
+![Frame, Overlay, Format diagram](./formats/formats_five-registrars.png)
 
 ## Contents
 

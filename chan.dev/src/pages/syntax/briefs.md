@@ -1,3 +1,8 @@
+---
+title: 'Exercise 2: Content briefs'
+layout: ./_layout.astro
+---
+
 ## Exercise 2: Hypothetical topics
 
 ### Brief
