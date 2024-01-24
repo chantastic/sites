@@ -14,7 +14,7 @@ import remark_directive from 'remark-directive'
 import {visit} from 'unist-util-visit'
 import astro_expressive_code from 'astro-expressive-code'
 import react from '@astrojs/react'
-import netlify from '@astrojs/netlify/functions'
+import netlify from '@astrojs/netlify'
 function process_remark_directives() {
 	// note: this function acts mutably
 	return (tree) => {
@@ -77,8 +77,7 @@ const site = import.meta.env.DEV
 // https://astro.build/config
 export default defineConfig({
 	experimental: {
-		contentCollectionCache: true,
-		// devOverlay: true,
+		// contentCollectionCache: true,
 	},
 	server: {
 		port: 2426,
@@ -97,11 +96,10 @@ export default defineConfig({
 			filter: (page) => !page.endsWith('/share/'),
 		}),
 		astro_expressive_code({
-			frames: {
-				styleOverrides: {
-					frameBoxShadowCssValue: 'none',
-				},
+			styleOverrides: {
+				frameBoxShadowCssValue: 'none',
 			},
+			frames: {},
 		}),
 		react(),
 	],
@@ -121,12 +119,6 @@ export default defineConfig({
 				},
 			],
 			remark_deflist,
-			[
-				remark_embedder,
-				{
-					transformers: [oembed_transformer],
-				},
-			],
 			// https://www.reliablesoft.net/noreferrer-noopener/#noreferrer-vs-nofollow
 			[
 				remark_external_links,
@@ -134,12 +126,16 @@ export default defineConfig({
 					rel: 'noopener',
 				},
 			],
-			remark_obsidian_callout,
+			remark_obsidian_callout, // I'd like to replace this
 			remark_directive,
 			process_remark_directives,
+			[
+				remark_embedder,
+				{name: 'oembed', transformer: oembed_transformer},
+			],
 		],
 		rehypePlugins: [
-			// https://docs.astro.build/en/guides/markdown-content/#heading-ids-and-plugins
+			// // https://docs.astro.build/en/guides/markdown-content/#heading-ids-and-plugins
 			rehypeHeadingIds,
 			[
 				rehype_autolink_headings,
@@ -176,14 +172,16 @@ export default defineConfig({
 								]
 							)
 						),
-						// h(
-						//   "span",
-						//   {
-						//     "is:raw": true,
-						//     className: "sr-only",
-						//   },
-						//   `Section titled ${(element?.children[0]?.value || "").trim()}`
-						// ),
+						h(
+							'span',
+							{
+								'is:raw': true,
+								'className': 'sr-only',
+							},
+							`Section titled ${(
+								element?.children[0]?.value || ''
+							).trim()}`
+						),
 					],
 				},
 			],
