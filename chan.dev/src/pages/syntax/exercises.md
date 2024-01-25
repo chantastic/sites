@@ -179,4 +179,4 @@ In researching this, I came across the _domain name generator_ category of produ
 
 ## Notes
 
-As I conducted research, [I kept all of my notes here](http://localhost:2426/intersection-observer). It's a good asset for future shorts, medium length explainer video, or even a short course!
+As I conducted research, [I kept all of my notes here](/intersection-observer). It's a good asset for future shorts, medium length explainer video, or even a short course!
