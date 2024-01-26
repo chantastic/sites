@@ -66,7 +66,13 @@ After I chat with Ben, I would recommend higher effort, more exhaustive, more du
 There are two formats that might do well here. This is the shape they could take for the latest episode (if the response justified additional content):
 
 - `The Syntax Guide to SQL: The 20 commands, operators, and features you HAVE to know.`
-- `A brief History of ORMs: How they came to be and why they are still relevant.`
+  - Style: freecodecamp YouTube (guide)
+  - Question: how?
+- `A Brief History of ORMs: How they came to be and why they are still relevant.`
+  - Documentary style.
+  - Question: why?
+
+"What", "when", and "where" are well covered by the podcast.
 
 ## Notes
 
