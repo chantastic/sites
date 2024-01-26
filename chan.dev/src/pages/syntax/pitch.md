@@ -61,7 +61,9 @@ We could create some topical landing pages on the Syntax. website. `/orm`, `/rea
 
 ## Create
 
-After I chat with Ben, I would recommend higher effort, more exhaustive, more durable, non-podcast formats for channel uploads. I think this would provide a broader counter-point to news-driven formats.
+Create new formats that establish the channel a broader education resource. Start with topics that were disproportionately popular on the podcast.
+
+After my chat with Ben, I started thinking about higher effort, more exhaustive, more durable, non-podcast formats for channel uploads. I think this would provide a broader counter-point to news-driven formats.
 
 There are two formats that might do well here. This is the shape they could take for the latest episode (if the response justified additional content):
 
@@ -73,6 +75,8 @@ There are two formats that might do well here. This is the shape they could take
   - Question: why?
 
 "What", "when", and "where" are well covered by the podcast.
+
+This could tie in really well to the topic pages mentioned in [the connect section](#connect).
 
 ## Notes
 
