@@ -63,8 +63,6 @@ These are a few candidates I pulled from the latest episode, that could use visu
 | 43:00     | Stop writing the same SQL query! Use views (aggregations) to codify common patterns                                                                                                                                                                                                                                                                                                    | 💖     |
 | 46:00     | Data getting out of sink? Use SQL transactions to ensure everything goes into the database at once.                                                                                                                                                                                                                                                                                    | 💖     |
 
-(Sorry, ran out of formatting time. See the [raw notes here](#raw-notes).)
-
 [drizzle]: https://orm.drizzle.team
 [drizzle-kit]: https://orm.drizzle.team/kit-docs/overview
 [drizzle-studio]: https://orm.drizzle.team/drizzle-studio/overview
@@ -107,36 +105,3 @@ This could tie in really well to the topic pages mentioned in [the connect secti
 Transcripting seems to prefer "Century" not "Sentry" 😅
 
 ![Oops. "Century"](./century.png)
-
-# Raw notes
-
-```
-15:50 DBEngine (start and stop database servers)
-17:20 — The messages and photos database are just SQLite. there was a video referenced here. find it
-18:17 Why pick SQLite, Cloudflare D1, fly.io, bun
-19:00 bun SQLite adapter built right in. Import with import assertions!
-19:51 Get started with bun
-20:00 bun import assertions
-20:40 Database "schema"
-21:20 Defining schemas with drizzle
-22:00 What is a DSL?
-23:00 Writing schemas in JavaScript
-24:00 "You only need to use drizzle kit if you're using it to handle migrations and creations"
-25:42 Let's open it up: spelunking open source: habitpath.io
-27: how to JSON.Stringify wand the opposite one
-27:20 Create a SQLite database
-28:30 What is a relational database?
-29:30 prisma linter (eslint plugin)?
-30:00 Defining relations in drizzle
-31:00 with: checks: true
-32:00 answer overflow: https://www.answeroverflow.com (searching
-33:00 chatgpt shootout: drizzle vs Prisma
-33:43 "Ask AI button"
-34:00 inkeep: https://inkeep.com
-35:00 !! introspection / pull https://orm.drizzle.team/kit-docs/commands#introspect--pull
-36:40 typescript completions
-38:00 Run a drizzle migration (drizzle-kit generate) (show the value of version control, maybe use two machines)
-41:00 query vs select (orm vs 'raw')
-43:00 views (aggregations)
-46:00 transactions
-```
