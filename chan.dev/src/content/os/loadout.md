@@ -6,7 +6,6 @@ date: 2022-06-23
 ## Standard travel
 
 - iPad Pro + Pencil
-- [MacBook](/uses/m1-macbook-pro)
 - [Trip power pack](#trip-power-pack)
 
 ## Mobile power pack
@@ -20,10 +19,10 @@ date: 2022-06-23
 
 ## Trip power pack
 
-- [Anker 735 Charger (GaNPrime 65W)](/uses/anker-735-ganprime-65w-charger)
+- [Anker Prime 6-in-1 Charging Station (140W)](/uses/anker-prime-6-in-1-charging-station)
 - [Cable Matters USB C to USB C Cable](/uses/cable-matters-usb-c-cable)
 - [Anker Powerline II 3-in-1 Cable](/uses/anker-powerline-ii-3-in-1-cable)
-- [evatronic PD Pioneer 20000mAh 60W 2-Ports Power Bank](/uses/evatronic-pd-pioneer-60w-power-bank)
+- [SmallRig VB50 Mini V-Mount Battery](/uses/smallrig-vb50-mini-v-mount-battery)
 
 ## Multi-day residence
 
