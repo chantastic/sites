@@ -53,3 +53,44 @@ Theme: reducing friction for every day things. #lube
 
 - [Create Quick Event](https://www.raycast.com/mblode/quick-event/commands). I Really like the native Quick Event environment. This simply brings it into Raycast
 - [Navigator/Menu Item Search](https://www.raycast.com/changelog/1-20-0). I use help search all of the time. This makes it one less thing I need a mouse for.
+
+## 2024-01-28
+
+Unregister these commands to utilize <kbd>hyper + c</kbd>
+
+- System Settings > Keyboard > Shortcuts > Services > Text > - Convert Text to Simplified Chinese - Convert Text to Traditional Chinese
+  ![Disable Convert Text to Simplified Chinese options](./raycast/raycast.png)
+
+Deciding to use Raycast to track application opening/switching shortcuts.
+
+(intereset that this also works as cmd if i'm alread in the app i intend to switch to)
+
+- a
+- b - browser, Arc
+- c - calendar, Calendar
+- d
+- e - editor, VS Code
+- f - finder, Finder
+- g
+- h
+- i
+- j
+- k
+- l
+- m - messenger, Messages
+- n - notes, Obsidian
+- o
+- p
+- q
+- r
+- s
+- t - terminal, Warp
+- u
+- v
+- w
+- x
+- y
+- z
+
+- ← - move window to left half of screen (rotates between 1/2, 2/3, 1/3 when repeated)
+- → - move window to right half of screen (rotates between 1/2, 2/3, 1/3 when repeated)
