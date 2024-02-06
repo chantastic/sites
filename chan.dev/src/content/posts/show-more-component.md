@@ -183,7 +183,7 @@ _Reference: [useState set functions referenc](https://react.dev/reference/react/
 
 ## Style the content container with a `style` prop
 
-Styles rules can be applied directly to elements using the `style` prop.  
+Styles rules can be applied directly to elements using the `style` prop.
 Style the collapsed state of the ShowMore component to be `100px` tall and hide overflowing content.
 
 <small>_(We want to animate this. So use `maxHeight` and set a `transition`.)_</small>
@@ -217,7 +217,7 @@ _Reference: [Applying CSS style](https://react.dev/reference/react-dom/component
 
 ## Conditionally style content container based on state
 
-Style rules can be set conditionally using the ternary operator.  
+Style rules can be set conditionally using the ternary operator.
 Use a ternary to switch the `maxHeight` value from `100px` to `"none"` when `expanded`.
 
 ```diff lang="jsx"
@@ -298,7 +298,7 @@ _Reference: [useRef hook reference](https://reactjs.org/docs/hooks-reference.htm
 
 ## Set `scrollHeight` of DOM node on button click
 
-Any state that we need to make rendering decisious should be tracked in state.  
+Any state that we need to make rendering decisious should be tracked in state.
 Set the `scrollHeight` of our DOM node, on state, when our button is clicked.
 
 ```diff lang="jsx" ins=/setContentHeight/
