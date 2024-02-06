@@ -11,7 +11,6 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 
-
 # environment variables
 .env
 .env.production
@@ -25,6 +24,8 @@ pnpm-debug.log*
 
 # obsidian
 src/content/.obsidian
+
+# playwright
 /test-results/
 /playwright-report/
 /playwright/.cache/
