@@ -4,7 +4,7 @@
 	"markdown.copyFiles.destination": {
 		"src/content/**/*.*": "${documentDirName}/${documentBaseName}/${documentBaseName}.png"
 	},
-	"editor.lightbulb.enabled": false,
+	"editor.lightbulb.enabled": "off",
 	"workbench.statusBar.visible": false,
 	"explorer.excludeGitIgnore": false,
 	"editor.formatOnSave": true,
