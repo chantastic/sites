@@ -1,0 +1,17 @@
+---
+import BaseLayout from '#layouts/Layout.astro'
+import Prose from '#components/prose.astro'
+
+const {frontmatter} = Astro.props
+---
+
+<BaseLayout>
+	<div class="flex">
+		<main class="max-w-[64ch] mx-auto pt-4">
+			<Prose class="text-lg">
+				<h1>{frontmatter.title}</h1>
+				<slot />
+			</Prose>
+		</main>
+	</div>
+</BaseLayout>
