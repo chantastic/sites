@@ -1,0 +1,5 @@
+---
+status: active
+effects:
+  - cash
+---
