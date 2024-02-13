@@ -5,7 +5,7 @@
 		"src/content/**/*.*": "${documentDirName}/${documentBaseName}/${documentBaseName}.png"
 	},
 	"editor.lightbulb.enabled": "off",
-	"workbench.statusBar.visible": false,
+	"workbench.statusBar.visible": true,
 	"explorer.excludeGitIgnore": false,
 	"editor.formatOnSave": true,
 	"editor.wordWrap": "off"
