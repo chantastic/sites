@@ -5,6 +5,7 @@ import {collectionSchema as posts} from '#pages/posts/posts'
 import {collectionSchema as projects} from '#pages/projects/projects'
 import {collectionSchema as uses} from '#pages/uses/uses'
 import {collectionSchema as entities} from '#pages/entities/entities'
+import {collectionSchema as guide_steps} from '#pages/guides/git/foundation/guide_steps'
 
 export const collections = {
 	posts,
@@ -14,4 +15,5 @@ export const collections = {
 	projects,
 	uses,
 	entities,
+	guide_steps,
 }

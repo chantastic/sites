@@ -1,0 +1,35 @@
+---
+import PostMeta from '#components/header-post-meta.astro'
+import Layout from '#layouts/Layout.astro'
+import * as GUIDE_STEPS from '#pages/guides/git/foundation/guide_steps'
+import Prose from '#components/prose.astro'
+
+const guide_steps = await GUIDE_STEPS.getCollection((entry) =>
+	entry.slug.includes('git/foundation')
+)
+---
+
+<Layout>
+	<Prose>
+		<small>
+			⇠ <a href="/">chan.dev</a>
+		</small>
+		<main class="mt-4">
+			<h1 class="tracking-tight">Guides / Git / Foundation</h1>
+			<ul>
+				{
+					guide_steps.map((guide) => (
+						<li>
+							<a href={guide.slug}>{guide.data.title}</a>
+						</li>
+					))
+				}
+			</ul>
+		</main>
+	</Prose>
+	<PostMeta
+		title="A chantastic guide to git foundations"
+		path={'/guides/git/foundation'}
+		slot="page-meta"
+	/>
+</Layout>
