@@ -1,8 +1,16 @@
 ---
 import PostMeta from '#components/header-post-meta.astro'
 import Layout from '#layouts/Layout.astro'
-import * as GUIDE_STEPS from '#pages/guides/git/foundation/guide_steps'
+import * as GUIDE_STEPS from '#pages/guides/[topic]/[scope]/guide_steps'
 import Prose from '#components/prose.astro'
+
+export async function getStaticPaths() {
+	return [
+		{
+			params: {topic: 'git', scope: 'foundation'},
+		},
+	]
+}
 
 const guide_steps = await GUIDE_STEPS.getCollection((entry) =>
 	entry.slug.includes('git/foundation')
