@@ -9,7 +9,6 @@ export async function getStaticPaths() {
 	const entries = await GUIDE_STEPS.getCollection()
 
 	const guides = GUIDES.getCollection(entries)
-	console.log(entries)
 
 	return guides.map(({topic, scope}) => ({
 		params: {topic: topic, scope: scope},
@@ -43,7 +42,9 @@ const {params} = Astro
 				{
 					entries.map((entry) => (
 						<li>
-							<a href={entry.slug}>{entry.data.title}</a>
+							<a href={`/guides/${entry.slug}`}>
+								{entry.data.title}
+							</a>
 						</li>
 					))
 				}
