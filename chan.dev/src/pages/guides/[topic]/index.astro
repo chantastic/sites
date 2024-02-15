@@ -1,27 +1,29 @@
 ---
-import PostMeta from '#components/header-post-meta.astro'
 import Layout from '#layouts/Layout.astro'
+import * as GUIDE_STEPS from '#pages/guides/[topic]/[scope]/guide_steps'
 import * as GUIDES from '#pages/guides/guides'
 import Prose from '#components/prose.astro'
 
 export async function getStaticPaths() {
-	const entries = await GUIDES.getCollection((entry) =>
-		entry.slug.includes('git/foundation')
-	)
+	let entries = await GUIDE_STEPS.getCollection()
+	let guides = GUIDES.getCollection(entries)
 
-	return [
-		{
-			params: {topic: 'git', scope: 'foundation'},
-			props: {entries},
-		},
-	]
+	let topics = [...new Set(guides.map(({topic}) => topic))]
+
+	return topics.map((topic: string) => {
+		return {
+			params: {
+				topic,
+			},
+			props: {
+				guides: guides.filter((guide) => guide.topic === topic),
+			},
+		}
+	})
 }
 
-interface Props {
-	entries: GUIDES.CollectionEntry[]
-}
-
-const {entries} = Astro.props
+const {guides} = Astro.props
+const {params} = Astro
 ---
 
 <Layout>
@@ -30,12 +32,18 @@ const {entries} = Astro.props
 			⇠ <a href="/">chan.dev</a>
 		</small>
 		<main class="mt-4">
-			<h1 class="tracking-tight">Guides / Git / Foundation</h1>
+			<h1 class="tracking-tight">
+				A chantastic guide to {params.topic}
+			</h1>
 			<ul>
 				{
-					entries.map((entry) => (
+					guides.map((guide) => (
 						<li>
-							<a href={entry.slug}>{entry.data.title}</a>
+							<a
+								href={`/guides/${params.topic}/${guide.scope}`}
+							>
+								{guide.scope}
+							</a>
 						</li>
 					))
 				}

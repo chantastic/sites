@@ -7,8 +7,9 @@ export function getCollection(collection: CollectionEntry[]) {
 		let [topic, scope] = entry.slug.split('/').slice(0, 2)
 
 		if (
-			result.filter((guide) => guide.topic === topic).length ===
-			0
+			result.filter(
+				(set) => set.topic === topic && set.scope === scope
+			).length === 0
 		) {
 			result.push({
 				topic,
@@ -16,6 +17,7 @@ export function getCollection(collection: CollectionEntry[]) {
 			})
 		}
 	}
+	console.log(result)
 
 	return result
 }
