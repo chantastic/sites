@@ -1,4 +1,5 @@
 ---
+title: SQLite foundations
 ---
 
 ## Open sqlite repl

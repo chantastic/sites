@@ -1,33 +1,27 @@
 ---
 import PostMeta from '#components/header-post-meta.astro'
 import Layout from '#layouts/Layout.astro'
-import * as GUIDE_STEPS from '#pages/guides/[topic]/[scope]/guide_steps'
 import * as GUIDES from '#pages/guides/guides'
 import Prose from '#components/prose.astro'
 
 export async function getStaticPaths() {
-	const entries = await GUIDE_STEPS.getCollection()
+	const entries = await GUIDES.getCollection((entry) =>
+		entry.slug.includes('git/foundation')
+	)
 
-	const guides = GUIDES.getCollection(entries)
-	console.log(entries)
-
-	return guides.map(({topic, scope}) => ({
-		params: {topic: topic, scope: scope},
-		props: {
-			entries: entries.filter(
-				(entry: GUIDE_STEPS.CollectionEntry) =>
-					entry.slug.includes(`${topic}/${scope}/`)
-			),
+	return [
+		{
+			params: {topic: 'git', scope: 'foundation'},
+			props: {entries},
 		},
-	}))
+	]
 }
 
 interface Props {
-	entries: GUIDE_STEPS.CollectionEntry[]
+	entries: GUIDES.CollectionEntry[]
 }
 
 const {entries} = Astro.props
-const {params} = Astro
 ---
 
 <Layout>
@@ -36,9 +30,7 @@ const {params} = Astro
 			⇠ <a href="/">chan.dev</a>
 		</small>
 		<main class="mt-4">
-			<h1 class="tracking-tight">
-				Guides / {params.topic} / {params.scope}
-			</h1>
+			<h1 class="tracking-tight">Guides / Git / Foundation</h1>
 			<ul>
 				{
 					entries.map((entry) => (
