@@ -1,4 +1,4 @@
-import type {CollectionEntry} from '#pages/guides/[topic]/[scope]/guide_setps'
+import type {CollectionEntry} from '#pages/guides/[topic]/[scope]/guide_steps'
 
 export function getCollection(collection: CollectionEntry[]) {
 	let result = []
