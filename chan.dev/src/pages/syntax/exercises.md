@@ -90,7 +90,7 @@ But I'm gonna give it another try because I think the hook was good.
 
 ### 1. Drizzle ORM
 
-![Snoop holding a smoking… drizzle logo. Issue #168 of UI Bytes.](./images/fo-drizzle.png)
+![Snoop holding a smoking… drizzle logo. Issue #168 of UI Bytes.](./images/_fo-drizzle.png)
 
 Drizzle is the TS-minimimalist's ORM.  
 If you want type saftey and like getting your hands dirty in SQL, Drizzle it is.
@@ -141,7 +141,7 @@ If this did well in short form, I'd pitch a longer-form video on the topic:
 
 ### Topic 2: Don't overpay for domains
 
-![Screenshot of Gandi.net's renewal price vs Cloudflare's transfer price. Gandi is 35% more expensive.](./images/dont-overpay-for-domains.png)
+![Screenshot of Gandi.net's renewal price vs Cloudflare's transfer price. Gandi is 35% more expensive.](./images/_dont-overpay-for-domains.png)
 
 This is a little riff on the [5 Sick Domain Registrars short, by Scott](https://www.youtube.com/shorts/pQLBAlHzIGc). It adds a splash of urgency, #new-year-new-you, and personal failing.
 
