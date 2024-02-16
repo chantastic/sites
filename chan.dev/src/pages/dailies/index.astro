@@ -1,0 +1,22 @@
+---
+import Prose from '#components/prose.astro'
+import Layout from '#layouts/Layout.astro'
+import * as DAILIES from '#content/dailies/_dailies'
+
+let entries = await DAILIES.getCollection()
+---
+
+<Layout>
+	<Prose as="main">
+		<h1>Dailies</h1>
+		<ul>
+			{
+				entries.map((entry) => (
+					<li>
+						<a href={`/dailies/${entry.slug}`}>{entry.slug}</a>
+					</li>
+				))
+			}
+		</ul>
+	</Prose>
+</Layout>

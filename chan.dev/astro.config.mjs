@@ -92,9 +92,18 @@ export default defineConfig({
 	integrations: [
 		tailwind(),
 		sitemap({
-			// I'm building dedicated share pages that I don't want indexed.
-			// Ultimately, this may be better as a dynamic route.
-			filter: (page) => !page.endsWith('/share/'),
+			filter: (page) => {
+				// I'm building dedicated share pages that I don't want indexed.
+				// Ultimately, this may be better as a dynamic route.
+				if (page.endsWith('/share/')) {
+					return false
+				}
+				if (page.incnludes('/dailies/')) {
+					return false
+				}
+
+				return true
+			},
 		}),
 		astro_expressive_code({
 			frames: {
