@@ -11,6 +11,18 @@ let guide_steps = await GUIDE_STEPS.getCollection((entry) =>
 		`${params.guide_topic}/${params.guide_scope}`
 	)
 )
+
+function hoistIndex(collection: GUIDE_STEPS.CollectionEntry[]) {
+	let isIndexFile = (filename: string) =>
+		filename.endsWith('index.md')
+
+	let head = collection.find(({id}) => isIndexFile(id))
+	let tail = collection.filter(({id}) => !isIndexFile(id))
+
+	return [head, ...tail]
+}
+
+let entries = hoistIndex(guide_steps)
 ---
 
 <ParentLayout>
@@ -21,9 +33,9 @@ let guide_steps = await GUIDE_STEPS.getCollection((entry) =>
 		<nav>
 			<ul>
 				{
-					guide_steps.map((step) => (
+					entries.map((entry) => (
 						<li>
-							<a href={`/${step.slug}`}>{step.data.title}</a>
+							<a href={`/${entry.slug}`}>{entry.data.title}</a>
 						</li>
 					))
 				}

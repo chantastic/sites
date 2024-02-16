@@ -13,16 +13,15 @@ export type CollectionEntry = ASTRO_CONTENT.CollectionEntry<
 >
 
 export async function getCollection(
-	filter?: (entry: CollectionEntry) => unknown,
-	sort = (a: CollectionEntry, b: CollectionEntry) =>
-		Number(b.id.slice(0, 4)) - Number(a.id.slice(0, 4))
+	filter = (entry: CollectionEntry) => true,
+	sort = (a: CollectionEntry, b: CollectionEntry) => 0
 ) {
-	const result = await ASTRO_CONTENT.getCollection(
+	const collection = await ASTRO_CONTENT.getCollection(
 		COLLECTION_NAME,
 		filter
 	)
 
-	return result.sort(sort)
+	return collection.toSorted(sort)
 }
 
 export const collectionSchema = defineCollection({
