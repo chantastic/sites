@@ -13,7 +13,8 @@
 		"postbuild": "pagefind --site dist",
 		"preview": "astro preview",
 		"test:e2e": "playwright test",
-		"astro": "astro"
+		"astro": "astro",
+		"tsc": "tsc"
 	},
 	"devDependencies": {
 		"@astrojs/markdown-remark": "^3.4.0",
@@ -44,6 +45,7 @@
 		"shiki": "^0.14.5",
 		"tailwindcss": "^3.3.5",
 		"title-case": "^4.1.2",
+		"typescript": "^5.3.3",
 		"unist-util-visit": "^5.0.0"
 	},
 	"dependencies": {
