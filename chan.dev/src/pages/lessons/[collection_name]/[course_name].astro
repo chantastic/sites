@@ -72,7 +72,6 @@ lessons.sort((a, b) => a.data.order - b.data.order)
 				{
 					Object.entries(
 						lessons.reduce((acc, lesson) => {
-							console.log(lesson.slug, lesson.data.status)
 							return {
 								...acc,
 								[lesson.data.status]:

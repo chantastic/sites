@@ -17,7 +17,6 @@ export function getCollection(collection: CollectionEntry[]) {
 			})
 		}
 	}
-	console.log(result)
 
 	return result
 }

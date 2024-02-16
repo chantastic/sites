@@ -1,10 +1,33 @@
 ---
-import Layout from '#layouts/Layout.astro'
+// TIL: weird that because of default exports, you haveto rename things that may conflict with your implicit module name
+import ParentLayout from '#layouts/Layout.astro'
 import Prose from '#components/prose.astro'
+import * as GUIDE_STEPS from '#pages/guide_steps.ts'
+
+let {params} = Astro
+
+let guide_steps = await GUIDE_STEPS.getCollection((entry) =>
+	entry.slug.includes(
+		`${params.guide_topic}/${params.guide_scope}`
+	)
+)
 ---
 
-<Layout>
-	<Prose>
-		<slot />
+<ParentLayout>
+	<Prose as="div" class="grid grid-cols-3 gap-8">
+		<main class="col-span-2">
+			<slot />
+		</main>
+		<nav>
+			<ul>
+				{
+					guide_steps.map((step) => (
+						<li>
+							<a href={`/${step.slug}`}>{step.data.title}</a>
+						</li>
+					))
+				}
+			</ul>
+		</nav>
 	</Prose>
-</Layout>
+</ParentLayout>
