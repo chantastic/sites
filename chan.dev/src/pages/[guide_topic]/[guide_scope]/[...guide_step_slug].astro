@@ -1,0 +1,41 @@
+---
+import Layout from './_layout.astro'
+import * as GUIDE_STEPS from '#pages/guide_steps'
+
+export async function getStaticPaths() {
+	const entries = await GUIDE_STEPS.getCollection()
+
+	let result = entries.map((entry) => {
+		let [guide_topic, guide_scope, guide_step_slug] =
+			entry.slug.split('/')
+		return {
+			params: {
+				guide_topic,
+				guide_scope,
+				guide_step_slug,
+			},
+			props: {
+				entry,
+				/* TODO: Pass along all lessons for inline index */
+			},
+		}
+	})
+
+	return result
+}
+
+interface Props {
+	entry: GUIDE_STEPS.CollectionEntry
+}
+
+const {entry} = Astro.props
+const {params} = Astro
+
+const {Content} = await entry.render()
+---
+
+<Layout>
+	<h1>{entry.data.title}</h1>
+	<pre><code>{JSON.stringify(params, null, '\t')}</code></pre>
+	<Content />
+</Layout>
