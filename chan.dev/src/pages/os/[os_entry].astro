@@ -1,42 +1,44 @@
 ---
-import Layout from "#layouts/Layout.astro";
-import PostMeta from "#components/header-post-meta.astro";
-import * as OS from "#pages/os/os";
-import Prose from "#components/prose.astro";
+import Layout from '#layouts/Layout.astro'
+import PostMeta from '#components/header-post-meta.astro'
+import * as OS from '#content/os/_os'
+import Prose from '#components/prose.astro'
 
 export async function getStaticPaths() {
-  const posts = await OS.getCollection();
+	const posts = await OS.getCollection()
 
-  return posts.map((entry) => ({
-    params: { os_entry: entry.slug },
-    props: { entry },
-  }));
+	return posts.map((entry) => ({
+		params: {os_entry: entry.slug},
+		props: {entry},
+	}))
 }
 
 interface Props {
-  entry: OS.CollectionEntry;
+	entry: OS.CollectionEntry
 }
 
-const { entry } = Astro.props;
-const { Content } = await entry.render();
+const {entry} = Astro.props
+const {Content} = await entry.render()
 ---
 
 <Layout>
-  <Prose>
-    <small>
-      ⇠ <a href="/">chan.dev</a>
-      / <a href={`/${OS.path()}`}>{entry.collection.toUpperCase()}</a>
-    </small>
-    <main class="mt-4">
-      <h1 class="tracking-tight">
-        {entry.data.title}
-      </h1>
-      <Content />
-    </main>
-  </Prose>
-  <PostMeta
-    slot="page-meta"
-    title={entry.data.title}
-    path={OS.path(entry.slug)}
-  />
+	<Prose>
+		<small>
+			⇠ <a href="/">chan.dev</a>
+			/ <a href={`/${OS.path()}`}
+				>{entry.collection.toUpperCase()}</a
+			>
+		</small>
+		<main class="mt-4">
+			<h1 class="tracking-tight">
+				{entry.data.title}
+			</h1>
+			<Content />
+		</main>
+	</Prose>
+	<PostMeta
+		slot="page-meta"
+		title={entry.data.title}
+		path={OS.path(entry.slug)}
+	/>
 </Layout>

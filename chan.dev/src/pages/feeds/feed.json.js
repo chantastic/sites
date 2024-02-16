@@ -1,5 +1,5 @@
 import sanitizeHtml from 'sanitize-html'
-import * as POSTS from '#pages/posts/posts'
+import * as POSTS from '#content/posts/_posts'
 import MarkdownIt from 'markdown-it'
 import site from '#/metadata.json'
 import {url} from '#modules/site'

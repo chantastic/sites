@@ -1,61 +1,64 @@
 ---
-import PostMeta from "#components/header-post-meta.astro";
-import Layout from "#layouts/Layout.astro";
-import * as LESSONS from "#pages/lessons/lessons";
-import { getPathSegment } from "#modules/utilities";
-import Prose from "#components/prose.astro";
+import PostMeta from '#components/header-post-meta.astro'
+import Layout from '#layouts/Layout.astro'
+import * as LESSONS from '#content/lessons/_lessons'
+import {getPathSegment} from '#modules/utilities'
+import Prose from '#components/prose.astro'
 
 export async function getStaticPaths() {
-  const lessons = await LESSONS.getCollection();
+	const lessons = await LESSONS.getCollection()
 
-  const collections = LESSONS.getUniqueSegmentValuesFromCollection(lessons);
+	const collections =
+		LESSONS.getUniqueSegmentValuesFromCollection(lessons)
 
-  function filterLessonsByCollection(
-    collection_name: string,
-    lesson: LESSONS.CollectionEntry
-  ) {
-    return getPathSegment(lesson.slug) === collection_name;
-  }
+	function filterLessonsByCollection(
+		collection_name: string,
+		lesson: LESSONS.CollectionEntry
+	) {
+		return getPathSegment(lesson.slug) === collection_name
+	}
 
-  return collections.map((collection_name) => {
-    return {
-      params: { collection_name },
-      props: {
-        lessons: lessons.filter((lesson) =>
-          filterLessonsByCollection(collection_name, lesson)
-        ),
-      },
-    };
-  });
+	return collections.map((collection_name) => {
+		return {
+			params: {collection_name},
+			props: {
+				lessons: lessons.filter((lesson) =>
+					filterLessonsByCollection(collection_name, lesson)
+				),
+			},
+		}
+	})
 }
 
-const { collection_name } = Astro.params;
-const { lessons } = Astro.props;
+const {collection_name} = Astro.params
+const {lessons} = Astro.props
 ---
 
 <Layout>
-  <Prose>
-    <small>
-      ⇠ <a href="/">chan.dev</a>
-      / <a href={`/${LESSONS.path()}`}>lessons</a>
-    </small>
-    <main class="mt-4">
-      <h1 class="tracking-tight">{collection_name}</h1>
-      <ul>
-        {
-          lessons.map((entry: LESSONS.CollectionEntry) => (
-            <li>
-              <a href={`/${LESSONS.path(entry.slug)}`}>{entry.slug}</a>
-            </li>
-          ))
-        }
-      </ul>
-    </main>
-  </Prose>
-  <PostMeta
-    title={`chantastic lessons about ${collection_name}`}
-    description={`Everything I've written down about ${collection_name}`}
-    path={LESSONS.path(String(collection_name))}
-    slot="page-meta"
-  />
+	<Prose>
+		<small>
+			⇠ <a href="/">chan.dev</a>
+			/ <a href={`/${LESSONS.path()}`}>lessons</a>
+		</small>
+		<main class="mt-4">
+			<h1 class="tracking-tight">{collection_name}</h1>
+			<ul>
+				{
+					lessons.map((entry: LESSONS.CollectionEntry) => (
+						<li>
+							<a href={`/${LESSONS.path(entry.slug)}`}>
+								{entry.slug}
+							</a>
+						</li>
+					))
+				}
+			</ul>
+		</main>
+	</Prose>
+	<PostMeta
+		title={`chantastic lessons about ${collection_name}`}
+		description={`Everything I've written down about ${collection_name}`}
+		path={LESSONS.path(String(collection_name))}
+		slot="page-meta"
+	/>
 </Layout>

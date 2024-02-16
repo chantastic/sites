@@ -1,83 +1,91 @@
 ---
-import PostMeta from "#components/header-post-meta.astro";
-import Prose from "#components/prose.astro";
-import Layout from "#layouts/Layout.astro";
-import * as USES from "#pages/uses/uses";
+import PostMeta from '#components/header-post-meta.astro'
+import Prose from '#components/prose.astro'
+import Layout from '#layouts/Layout.astro'
+import * as USES from '#content/uses/_uses'
 
-const entries = await USES.getCollection();
+const entries = await USES.getCollection()
 
-function getStatusColor(status: USES.CollectionEntry["data"]["status"]) {
-  switch (status) {
-    case "active":
-      return "fill-green-500";
-    case "inactive":
-      return "fill-yellow-500";
-    case "replaced":
-      return "fill-red-500";
-    default:
-      return "fill-gray-400";
-  }
+function getStatusColor(
+	status: USES.CollectionEntry['data']['status']
+) {
+	switch (status) {
+		case 'active':
+			return 'fill-green-500'
+		case 'inactive':
+			return 'fill-yellow-500'
+		case 'replaced':
+			return 'fill-red-500'
+		default:
+			return 'fill-gray-400'
+	}
 }
 ---
 
 <Layout>
-  <Prose>
-    <small>
-      ⇠ <a href="/">chan.dev</a>
-    </small>
-    <main class="mt-4">
-      <h1 class="tracking-tight">/uses</h1>
-      <ul>
-        {
-          entries.map((entry) => {
-            const { slug, data } = entry;
-            const title =
-              data.manufacturer && data.model
-                ? [data.manufacturer, data.model, data.size && `[${data.size}]`]
-                    .filter(Boolean)
-                    .join(" ")
-                : slug;
+	<Prose>
+		<small>
+			⇠ <a href="/">chan.dev</a>
+		</small>
+		<main class="mt-4">
+			<h1 class="tracking-tight">/uses</h1>
+			<ul>
+				{
+					entries.map((entry) => {
+						const {slug, data} = entry
+						const title =
+							data.manufacturer && data.model
+								? [
+										data.manufacturer,
+										data.model,
+										data.size && `[${data.size}]`,
+									]
+										.filter(Boolean)
+										.join(' ')
+								: slug
 
-            return (
-              <li>
-                <a href={`/${USES.path(slug)}`}>{title}</a>
-                {entry.data.status && (
-                  <span class="inline-flex items-center gap-x-1.5 rounded-md px-2 py-1 text-xs font-medium text-gray-900 ring-1 ring-inset ring-gray-200">
-                    <svg
-                      class={`h-1.5 w-1.5 ${getStatusColor(entry.data.status)}`}
-                      viewBox="0 0 6 6"
-                      aria-hidden="true"
-                    >
-                      <circle cx="3" cy="3" r="3" />
-                    </svg>
+						return (
+							<li>
+								<a href={`/${USES.path(slug)}`}>{title}</a>
+								{entry.data.status && (
+									<span class="inline-flex items-center gap-x-1.5 rounded-md px-2 py-1 text-xs font-medium text-gray-900 ring-1 ring-inset ring-gray-200">
+										<svg
+											class={`h-1.5 w-1.5 ${getStatusColor(entry.data.status)}`}
+											viewBox="0 0 6 6"
+											aria-hidden="true"
+										>
+											<circle cx="3" cy="3" r="3" />
+										</svg>
 
-                    {entry.data.status === "replaced" ? (
-                      entry.data.replaced_by ? (
-                        <>
-                          Replaced by:
-                          <a href={`/${USES.path(entry.data.replaced_by)}`}>
-                            {entry.data.replaced_by}
-                          </a>
-                        </>
-                      ) : (
-                        "Replaced"
-                      )
-                    ) : (
-                      entry.data.status
-                    )}
-                  </span>
-                )}
-              </li>
-            );
-          })
-        }
-      </ul>
-    </main>
-  </Prose>
-  <PostMeta
-    title="/uses"
-    description="chantastic products"
-    path={USES.path()}
-    slot="page-meta"
-  />
+										{entry.data.status === 'replaced' ? (
+											entry.data.replaced_by ? (
+												<>
+													Replaced by:
+													<a
+														href={`/${USES.path(entry.data.replaced_by)}`}
+													>
+														{entry.data.replaced_by}
+													</a>
+												</>
+											) : (
+												'Replaced'
+											)
+										) : (
+											entry.data.status
+										)}
+									</span>
+								)}
+							</li>
+						)
+					})
+				}
+			</ul>
+		</main>
+	</Prose>
+	<PostMeta
+		title="/uses"
+		description="chantastic products"
+		path={USES.path()}
+		slot="page-meta"
+	/>
 </Layout>

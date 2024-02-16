@@ -1,35 +1,38 @@
 ---
-import Layout from "#layouts/Layout.astro";
-import PostMeta from "#components/header-post-meta.astro";
-import * as LESSONS from "#pages/lessons/lessons";
-import Prose from "#components/prose.astro";
+import Layout from '#layouts/Layout.astro'
+import PostMeta from '#components/header-post-meta.astro'
+import * as LESSONS from '#content/lessons/_lessons'
+import Prose from '#components/prose.astro'
 
-const lessons = await LESSONS.getCollection();
+const lessons = await LESSONS.getCollection()
 
-const collections = LESSONS.getUniqueSegmentValuesFromCollection(lessons);
+const collections =
+	LESSONS.getUniqueSegmentValuesFromCollection(lessons)
 ---
 
 <Layout>
-  <Prose>
-    <small>
-      ⇠ <a href="/">chan.dev</a>
-      / <a href={`/${LESSONS.path()}`}>lessons</a>
-    </small>
-    <main>
-      <h1 class="tracking-tight">Lesson collections</h1>
-      {
-        collections.map((collection) => (
-          <li>
-            <a href={`/${LESSONS.path(collection)}`}>{collection}</a>
-          </li>
-        ))
-      }
-    </main>
-  </Prose>
-  <PostMeta
-    title="chantastic lesson on programming, sorted by topic"
-    description="Ongoing collections of lessons I've learned while programming."
-    path={`${LESSONS.path()}/collections`}
-    slot="page-meta"
-  />
+	<Prose>
+		<small>
+			⇠ <a href="/">chan.dev</a>
+			/ <a href={`/${LESSONS.path()}`}>lessons</a>
+		</small>
+		<main>
+			<h1 class="tracking-tight">Lesson collections</h1>
+			{
+				collections.map((collection) => (
+					<li>
+						<a href={`/${LESSONS.path(collection)}`}>
+							{collection}
+						</a>
+					</li>
+				))
+			}
+		</main>
+	</Prose>
+	<PostMeta
+		title="chantastic lesson on programming, sorted by topic"
+		description="Ongoing collections of lessons I've learned while programming."
+		path={`${LESSONS.path()}/collections`}
+		slot="page-meta"
+	/>
 </Layout>

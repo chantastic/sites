@@ -1,6 +1,6 @@
 ---
 import Layout from './_layout.astro'
-import * as GUIDE_STEPS from '#pages/guide_steps'
+import * as GUIDE_STEPS from '#content/guide_steps/_guide_steps'
 
 export async function getStaticPaths() {
 	const entries = await GUIDE_STEPS.getCollection()

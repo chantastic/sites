@@ -1,11 +1,11 @@
 ---
-import type * as POSTS from "#pages/posts/posts";
+import type * as POSTS from '#content/posts/_posts'
 
 interface Props {
-  entry: POSTS.CollectionEntry;
+	entry: POSTS.CollectionEntry
 }
 
-const { entry } = Astro.props;
+const {entry} = Astro.props
 ---
 
 {JSON.stringify(entry.data.shoutouts)}

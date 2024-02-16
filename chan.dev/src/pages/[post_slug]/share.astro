@@ -1,299 +1,320 @@
 ---
-import { getEntries } from "astro:content";
-import Layout from "#layouts/Share.astro";
-import PostMeta from "#components/header-post-meta.astro";
-import * as POSTS from "#pages/posts/posts";
-import * as COLLECTION from "#modules/collection";
-import { getPlatformShortoutsForRelatedEntities } from "#pages/entities/entities";
-import { url } from "#modules/site";
-import { micromark } from "micromark";
-import { gfm, gfmHtml } from "micromark-extension-gfm";
-import sanitizeHtml from "sanitize-html";
-import sanitize from "sanitize-html";
-import Prose from "#components/prose.astro";
+import {getEntries} from 'astro:content'
+import Layout from '#layouts/Share.astro'
+import PostMeta from '#components/header-post-meta.astro'
+import * as POSTS from '#content/posts/_posts'
+import * as COLLECTION from '#modules/collection'
+import {getPlatformShortoutsForRelatedEntities} from '#content/entities/_entities'
+import {url} from '#modules/site'
+import {micromark} from 'micromark'
+import {gfm, gfmHtml} from 'micromark-extension-gfm'
+import sanitizeHtml from 'sanitize-html'
+import sanitize from 'sanitize-html'
+import Prose from '#components/prose.astro'
 
 export async function getStaticPaths() {
-  const posts = await POSTS.getCollection(() => true);
+	const posts = await POSTS.getCollection(() => true)
 
-  return posts.map((entry) => ({
-    params: { post_slug: entry.slug },
-    props: { entry },
-  }));
+	return posts.map((entry) => ({
+		params: {post_slug: entry.slug},
+		props: {entry},
+	}))
 }
 
 interface Props {
-  entry: POSTS.CollectionEntry;
+	entry: POSTS.CollectionEntry
 }
 
-const { entry } = Astro.props;
+const {entry} = Astro.props
 
 // @ts-ignore
-let relatedShoutouts;
-if (entry.collection === "posts" && entry.data.shoutouts)
-  relatedShoutouts = await getEntries(entry.data.shoutouts);
+let relatedShoutouts
+if (entry.collection === 'posts' && entry.data.shoutouts)
+	relatedShoutouts = await getEntries(entry.data.shoutouts)
 
 function githubusercontent_url_from_src(src: string) {
-  let [, ...segments] = src.split("/");
+	let [, ...segments] = src.split('/')
 
-  const result = new URL(
-    `chantastic/sites/main/chan.dev/src/content/posts/${segments.join("/")}`,
-    "https://raw.githubusercontent.com/"
-  ).toString();
+	const result = new URL(
+		`chantastic/sites/main/chan.dev/src/content/posts/${segments.join('/')}`,
+		'https://raw.githubusercontent.com/'
+	).toString()
 
-  return result;
+	return result
 }
 
 /* KLUDGE: this should absolutely be a proper micromark extension but I don't understand them*/
-let mutatedBody = entry.body;
+let mutatedBody = entry.body
 
 mutatedBody = mutatedBody.replace(
-  /!\[(?<altText>.*)\]\((?<imageSrc>.*)\)/g,
-  (match, altText, imageSrc) => {
-    const githubusercontent_url = githubusercontent_url_from_src(imageSrc);
+	/!\[(?<altText>.*)\]\((?<imageSrc>.*)\)/g,
+	(match, altText, imageSrc) => {
+		const githubusercontent_url =
+			githubusercontent_url_from_src(imageSrc)
 
-    return `![${altText}](${githubusercontent_url})`;
-  }
-);
+		return `![${altText}](${githubusercontent_url})`
+	}
+)
 
-mutatedBody = mutatedBody.replace(/```[\S\s]*?```/gm, (match) => {
-  return match.replace(/\n+/g, "\n");
-});
+mutatedBody = mutatedBody.replace(
+	/```[\S\s]*?```/gm,
+	(match) => {
+		return match.replace(/\n+/g, '\n')
+	}
+)
 
-mutatedBody = mutatedBody.replace(/:::[\S\s]*?:::/gm, (match) => {
-  return "";
-});
+mutatedBody = mutatedBody.replace(
+	/:::[\S\s]*?:::/gm,
+	(match) => {
+		return ''
+	}
+)
 
-mutatedBody = mutatedBody.replace(/<!--[\S\s]*?-->/gm, (match) => {
-  return "";
-});
+mutatedBody = mutatedBody.replace(
+	/<!--[\S\s]*?-->/gm,
+	(match) => {
+		return ''
+	}
+)
 
 const simpleHTMLBody = sanitizeHtml(
-  micromark(mutatedBody, {
-    extensions: [gfm()],
-    htmlExtensions: [gfmHtml()],
-  }),
-  {
-    allowedTags: [...sanitizeHtml.defaults.allowedTags, "img"],
-    allowedAttributes: {
-      ...sanitizeHtml.defaults.allowedAttributes,
-      code: ["class"],
-    },
-  }
+	micromark(mutatedBody, {
+		extensions: [gfm()],
+		htmlExtensions: [gfmHtml()],
+	}),
+	{
+		allowedTags: [...sanitizeHtml.defaults.allowedTags, 'img'],
+		allowedAttributes: {
+			...sanitizeHtml.defaults.allowedAttributes,
+			code: ['class'],
+		},
+	}
 ).replace(/(\n)<\/code>/g, (match) => {
-  return "</code>";
-});
+	return '</code>'
+})
 ---
 
 <Layout entry={entry}>
-  <Prose>
-    <main class="mt-4">
-      <div set:html={simpleHTMLBody} />
-      <div id="tooltip" role="tooltip">My tooltip</div>
-    </main>
-    <footer>
-      <hr />
-      <h2>METADATA: DON'T POST</h2>
-      <dl>
-        <dt>Title:</dt>
-        <dd>{entry.data.title}</dd>
-        <dt>Description:</dt>
-        <dd>
-          {
-            entry.data.description ? (
-              entry.data.description
-            ) : (
-              <strong class="text-red-500">NONE</strong>
-            )
-          }
-        </dd>
-        <dt>Slug:</dt>
-        <dd>{entry.slug}</dd>
-        <dt>Canonical url:</dt>
-        <dd>{url(entry.slug)}</dd>
-        <dt>publishDate:</dt>
-        <dd>
-          {
-            entry.data.publishDate ? (
-              COLLECTION.formatDate(entry.data.publishDate)
-            ) : (
-              <strong class="text-red-500">NONE</strong>
-            )
-          }
-        </dd>
-        <dt>tags:</dt>
-        {
-          (
-            <dd>
-              {entry.data.tags ? (
-                <>
-                  {entry.data.tags.map((tag: string, i: number) => (
-                    <>
-                      {i !== 0 && ", "}
-                      <code>{tag}</code>
-                    </>
-                  ))}{" "}
-                  <em>(specific)</em>
-                </>
-              ) : (
-                <strong class="text-red-500">NONE SPECIFIED</strong>
-              )}
-              <dd>
-                {[
-                  "web-development",
-                  "coding",
-                  "productivity",
-                  "career",
-                  "react",
-                  "tutorial",
-                ].map((tag: string, i: number) => (
-                  <>
-                    {i !== 0 && ", "}
-                    <code>{tag}</code>
-                  </>
-                ))}{" "}
-                <em>(generic)</em>
-              </dd>
-              <dt>tl;dr:</dt>
-              {entry.data.tldr ? (
-                <dd>
-                  <pre>{entry.data.tldr}</pre>
-                </dd>
-              ) : (
-                <dd>
-                  <strong class="text-red-500">NONE</strong>
-                </dd>
-              )}
-            </dd>
-          )
-        }
-        <dt>References:</dt>
-        {
-          entry.data.references?.length ? (
-            entry.data.references.map((reference) => <dd>{reference}</dd>)
-          ) : (
-            <dd>
-              <strong class="text-red-500">NONE</strong>
-            </dd>
-          )
-        }
-        <dt>Shoutouts:</dt>
-        {
-          relatedShoutouts?.length ? (
-            ["twitter", "mastodon", "bluesky", "threads", "instagram"].map(
-              (platform) => {
-                <dd>
-                  {platform}:{" "}
-                  {
-                    // @ts-ignore
-                    getPlatformShortoutsForRelatedEntities(platform)(
-                      relatedShoutouts
-                    )
-                  }
-                </dd>;
-              }
-            )
-          ) : (
-            <dd>
-              <strong class="text-red-500">NONE</strong>
-            </dd>
-          )
-        }
-      </dl>
-    </footer>
-  </Prose>
-  <PostMeta
-    slot="page-meta"
-    title={entry.data.title}
-    description={entry.data.description}
-    og={entry.data.og}
-    path={entry.slug}
-  >
-    <link rel="canonical" href={url(entry.slug)} />
-    <title slot="title">{entry.data.title}</title>
-  </PostMeta>
+	<Prose>
+		<main class="mt-4">
+			<div set:html={simpleHTMLBody} />
+			<div id="tooltip" role="tooltip">My tooltip</div>
+		</main>
+		<footer>
+			<hr />
+			<h2>METADATA: DON'T POST</h2>
+			<dl>
+				<dt>Title:</dt>
+				<dd>{entry.data.title}</dd>
+				<dt>Description:</dt>
+				<dd>
+					{
+						entry.data.description ? (
+							entry.data.description
+						) : (
+							<strong class="text-red-500">NONE</strong>
+						)
+					}
+				</dd>
+				<dt>Slug:</dt>
+				<dd>{entry.slug}</dd>
+				<dt>Canonical url:</dt>
+				<dd>{url(entry.slug)}</dd>
+				<dt>publishDate:</dt>
+				<dd>
+					{
+						entry.data.publishDate ? (
+							COLLECTION.formatDate(entry.data.publishDate)
+						) : (
+							<strong class="text-red-500">NONE</strong>
+						)
+					}
+				</dd>
+				<dt>tags:</dt>
+				{
+					(
+						<dd>
+							{entry.data.tags ? (
+								<>
+									{entry.data.tags.map(
+										(tag: string, i: number) => (
+											<>
+												{i !== 0 && ', '}
+												<code>{tag}</code>
+											</>
+										)
+									)}{' '}
+									<em>(specific)</em>
+								</>
+							) : (
+								<strong class="text-red-500">
+									NONE SPECIFIED
+								</strong>
+							)}
+							<dd>
+								{[
+									'web-development',
+									'coding',
+									'productivity',
+									'career',
+									'react',
+									'tutorial',
+								].map((tag: string, i: number) => (
+									<>
+										{i !== 0 && ', '}
+										<code>{tag}</code>
+									</>
+								))}{' '}
+								<em>(generic)</em>
+							</dd>
+							<dt>tl;dr:</dt>
+							{entry.data.tldr ? (
+								<dd>
+									<pre>{entry.data.tldr}</pre>
+								</dd>
+							) : (
+								<dd>
+									<strong class="text-red-500">NONE</strong>
+								</dd>
+							)}
+						</dd>
+					)
+				}
+				<dt>References:</dt>
+				{
+					entry.data.references?.length ? (
+						entry.data.references.map((reference) => (
+							<dd>{reference}</dd>
+						))
+					) : (
+						<dd>
+							<strong class="text-red-500">NONE</strong>
+						</dd>
+					)
+				}
+				<dt>Shoutouts:</dt>
+				{
+					relatedShoutouts?.length ? (
+						[
+							'twitter',
+							'mastodon',
+							'bluesky',
+							'threads',
+							'instagram',
+						].map((platform) => {
+							;<dd>
+								{platform}:{' '}
+								{
+									// @ts-ignore
+									getPlatformShortoutsForRelatedEntities(
+										platform
+									)(relatedShoutouts)
+								}
+							</dd>
+						})
+					) : (
+						<dd>
+							<strong class="text-red-500">NONE</strong>
+						</dd>
+					)
+				}
+			</dl>
+		</footer>
+	</Prose>
+	<PostMeta
+		slot="page-meta"
+		title={entry.data.title}
+		description={entry.data.description}
+		og={entry.data.og}
+		path={entry.slug}
+	>
+		<link rel="canonical" href={url(entry.slug)} />
+		<title slot="title">{entry.data.title}</title>
+	</PostMeta>
 </Layout>
 
 <script>
-  import {
-    computePosition,
-    offset,
-    autoPlacement,
-    // @ts-ignore
-  } from "https://esm.sh/@floating-ui/dom@1.5.0/";
+	import {
+		computePosition,
+		offset,
+		autoPlacement,
+		// @ts-ignore
+	} from 'https://esm.sh/@floating-ui/dom@1.5.0/'
 
-  let tooltipTarget: HTMLPreElement | null = null;
-  const tooltip: HTMLDivElement | null = document.querySelector("#tooltip");
+	let tooltipTarget: HTMLPreElement | null = null
+	const tooltip: HTMLDivElement | null =
+		document.querySelector('#tooltip')
 
-  function update() {
-    computePosition(tooltipTarget, tooltip, {
-      placement: "right",
-      middleware: [offset(8), autoPlacement()],
-      // ... options ...
-    }).then(({ x, y }: { x: unknown; y: unknown }) => {
-      if (tooltip === null || tooltipTarget === null) {
-        return;
-      }
+	function update() {
+		computePosition(tooltipTarget, tooltip, {
+			placement: 'right',
+			middleware: [offset(8), autoPlacement()],
+			// ... options ...
+		}).then(({x, y}: {x: unknown; y: unknown}) => {
+			if (tooltip === null || tooltipTarget === null) {
+				return
+			}
 
-      tooltip.textContent = String(
-        tooltipTarget
-          .querySelector("code")
-          ?.classList[0].replace("language-", "")
-      );
+			tooltip.textContent = String(
+				tooltipTarget
+					.querySelector('code')
+					?.classList[0].replace('language-', '')
+			)
 
-      Object.assign(tooltip?.style, {
-        left: `${String(x)}px`,
-        top: `${String(y)}px`,
-      });
-    });
-  }
+			Object.assign(tooltip?.style, {
+				left: `${String(x)}px`,
+				top: `${String(y)}px`,
+			})
+		})
+	}
 
-  function showTooltip(event: MouseEvent | FocusEvent) {
-    if (!(tooltip && event.target instanceof HTMLPreElement)) {
-      return;
-    }
+	function showTooltip(event: MouseEvent | FocusEvent) {
+		if (!(tooltip && event.target instanceof HTMLPreElement)) {
+			return
+		}
 
-    if (event.target.tagName !== "PRE") {
-      return;
-    }
+		if (event.target.tagName !== 'PRE') {
+			return
+		}
 
-    tooltipTarget = event.target;
-    tooltip.style.display = "block";
-    update();
-  }
+		tooltipTarget = event.target
+		tooltip.style.display = 'block'
+		update()
+	}
 
-  function hideTooltip() {
-    if (tooltip === null) {
-      return;
-    }
+	function hideTooltip() {
+		if (tooltip === null) {
+			return
+		}
 
-    tooltip.style.display = "";
-  }
+		tooltip.style.display = ''
+	}
 
-  [
-    ["mouseenter", showTooltip],
-    ["mouseleave", hideTooltip],
-    ["focus", showTooltip],
-    ["blur", hideTooltip],
-  ].forEach(([event, listener]) => {
-    document.querySelectorAll("pre").forEach((element) => {
-      // @ts-ignore
-      element.addEventListener(event, listener);
-    });
-  });
+	;[
+		['mouseenter', showTooltip],
+		['mouseleave', hideTooltip],
+		['focus', showTooltip],
+		['blur', hideTooltip],
+	].forEach(([event, listener]) => {
+		document.querySelectorAll('pre').forEach((element) => {
+			// @ts-ignore
+			element.addEventListener(event, listener)
+		})
+	})
 </script>
 
 <style>
-  #tooltip {
-    display: none;
-    width: max-content;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background: #222;
-    color: white;
-    font-weight: bold;
-    padding: 5px;
-    border-radius: 4px;
-    font-size: 90%;
-  }
+	#tooltip {
+		display: none;
+		width: max-content;
+		position: absolute;
+		top: 0;
+		left: 0;
+		background: #222;
+		color: white;
+		font-weight: bold;
+		padding: 5px;
+		border-radius: 4px;
+		font-size: 90%;
+	}
 </style>

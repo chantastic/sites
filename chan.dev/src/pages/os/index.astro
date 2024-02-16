@@ -1,29 +1,37 @@
 ---
-import PostMeta from "#components/header-post-meta.astro";
-import Prose from "#components/prose.astro";
-import Layout from "#layouts/Layout.astro";
-import * as OS from "#pages/os/os";
+import PostMeta from '#components/header-post-meta.astro'
+import Prose from '#components/prose.astro'
+import Layout from '#layouts/Layout.astro'
+import * as OS from '#content/os/_os'
 
-const entries = await OS.getCollection();
+const entries = await OS.getCollection()
 ---
 
 <Layout>
-  <Prose>
-    <small>
-      <a href="/">⇠ chan.dev</a>
-    </small>
-    <main class="mt-4">
-      <h1 class="tracking-tight">{OS.COLLECTION_NAME.toUpperCase()}</h1>
-      <ul>
-        {
-          entries.map((entry) => (
-            <li>
-              <a href={`/${OS.path(entry.slug)}`}>{entry.data.title}</a>
-            </li>
-          ))
-        }
-      </ul>
-    </main>
-  </Prose>
-  <PostMeta title="a chantastic OS" path={OS.path()} slot="page-meta" />
+	<Prose>
+		<small>
+			<a href="/">⇠ chan.dev</a>
+		</small>
+		<main class="mt-4">
+			<h1 class="tracking-tight">
+				{OS.COLLECTION_NAME.toUpperCase()}
+			</h1>
+			<ul>
+				{
+					entries.map((entry) => (
+						<li>
+							<a href={`/${OS.path(entry.slug)}`}>
+								{entry.data.title}
+							</a>
+						</li>
+					))
+				}
+			</ul>
+		</main>
+	</Prose>
+	<PostMeta
+		title="a chantastic OS"
+		path={OS.path()}
+		slot="page-meta"
+	/>
 </Layout>
