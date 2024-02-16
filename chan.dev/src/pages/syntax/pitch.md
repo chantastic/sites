@@ -104,4 +104,4 @@ This could tie in really well to the topic pages mentioned in [the connect secti
 
 Transcripting seems to prefer "Century" not "Sentry" 😅
 
-![Oops. "Century"](./century.png)
+![Oops. "Century"](./_century.png)

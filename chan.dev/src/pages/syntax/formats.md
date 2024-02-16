@@ -6,7 +6,7 @@ layout: ./_layout.astro
 
 A quick capture of existing short video formats, to assist in (possible) reproduction exercises.
 
-![Frame, Overlay, Format diagram](./formats/formats_five-registrars.png)
+![Frame, Overlay, Format diagram](./formats/_formats_five-registrars.png)
 
 ## Contents
 
@@ -14,7 +14,7 @@ A quick capture of existing short video formats, to assist in (possible) reprodu
 
 <div class="w-24 h-24">
 
-![Syntax.](./formats/formats_logo.jpg)
+![Syntax.](./formats/_formats_logo.jpg)
 
 </div>
 
@@ -59,7 +59,7 @@ Introduce the audience to something helpful that they may not know.
 
 ### Visual format
 
-![Start, Transition, End diagram with annotations](./formats/formats_ste-kody.png)
+![Start, Transition, End diagram with annotations](./formats/_formats_ste-kody.png)
 
 #### Layout
 
@@ -101,7 +101,7 @@ Introduce the audience to something helpful that they may not know.
 
 ### Visual format
 
-![Frame, Overlay, Format diagram](./formats/formats_five-registrars.png)
+![Frame, Overlay, Format diagram](./formats/_formats_five-registrars.png)
 
 #### Layout
 
