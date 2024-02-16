@@ -2,7 +2,7 @@
 // TIL: weird that because of default exports, you haveto rename things that may conflict with your implicit module name
 import ParentLayout from '#layouts/Layout.astro'
 import Prose from '#components/prose.astro'
-import * as GUIDE_STEPS from '#pages/guide_steps.ts'
+import * as GUIDE_STEPS from '#pages/guide_steps'
 
 let {params} = Astro
 
@@ -31,3 +31,4 @@ let guide_steps = await GUIDE_STEPS.getCollection((entry) =>
 		</nav>
 	</Prose>
 </ParentLayout>
+#pages/_guide_steps #pages/guide_steps
