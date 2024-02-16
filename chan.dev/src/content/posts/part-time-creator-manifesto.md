@@ -9,3 +9,5 @@ WIP
 - No fans. No followers. Peers and voyers.
 - Mentorship thru open exploration.
 - Fandom thru appreciation.
+- Partnership thru collaboration.
+- Community as constilation (passing intersections)
