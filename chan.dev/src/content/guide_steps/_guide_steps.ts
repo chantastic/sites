@@ -23,5 +23,5 @@ export async function getCollection(
 		filter
 	)
 
-	return collection.toSorted(sort)
+	return collection.sort(sort)
 }
