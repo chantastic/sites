@@ -14,7 +14,7 @@ import remark_directive from 'remark-directive'
 import {visit} from 'unist-util-visit'
 import astro_expressive_code from 'astro-expressive-code'
 import react from '@astrojs/react'
-import netlify from '@astrojs/netlify'
+import cloudflare from '@astrojs/cloudflare'
 function process_remark_directives() {
 	// note: this function acts mutably
 	return (tree) => {
@@ -193,7 +193,5 @@ export default defineConfig({
 		],
 	},
 	output: 'hybrid',
-	adapter: netlify({
-		edgeMiddleware: true,
-	}),
+	adapter: cloudflare(),
 })

@@ -12,7 +12,7 @@
 		"build": "astro build",
 		"build:local": "op run --env-file='./.env' -- pnpm run build",
 		"postbuild": "pagefind --site dist",
-		"preview": "astro preview",
+		"preview": "wrangler pages dev ./dist",
 		"test:e2e": "playwright test",
 		"astro": "astro",
 		"tsc": "tsc"
@@ -47,13 +47,13 @@
 		"tailwindcss": "^3.4.1",
 		"title-case": "^4.3.1",
 		"typescript": "^5.3.3",
-		"unist-util-visit": "^5.0.0"
+		"unist-util-visit": "^5.0.0",
+		"wrangler": "^3.28.3"
 	},
 	"dependencies": {
-		"@astrojs/netlify": "^5.1.2",
+		"@astrojs/cloudflare": "^9.0.1",
 		"@astrojs/react": "^3.0.10",
 		"@libsql/client": "0.5.0",
-		"@netlify/functions": "^2.6.0",
 		"@types/react": "^18.2.56",
 		"@types/react-dom": "^18.2.19",
 		"react": "^18.2.0",
