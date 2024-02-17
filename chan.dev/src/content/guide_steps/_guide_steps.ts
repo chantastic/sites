@@ -27,5 +27,6 @@ export async function getCollection(
 export const collectionSchema = defineCollection({
 	schema: z.object({
 		title: z.string(),
+		status: z.enum(['draft']).optional(),
 	}),
 })

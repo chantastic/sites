@@ -23,6 +23,10 @@ function hoistIndex(collection: GUIDE_STEPS.CollectionEntry[]) {
 }
 
 let entries = hoistIndex(guide_steps)
+
+function isCurrentPage(page_slug, params_id) {
+	return page_slug.includes(params_id)
+}
 ---
 
 <ParentLayout>
@@ -31,15 +35,39 @@ let entries = hoistIndex(guide_steps)
 			<slot />
 		</main>
 		<nav>
-			<ul>
+			<ol>
 				{
 					entries.map((entry) => (
-						<li>
-							<a href={`/${entry.slug}`}>{entry.data.title}</a>
+						<li
+							class:list={[
+								{
+									'bg-white rounded': isCurrentPage(
+										entry.slug,
+										params.guide_step_slug
+									),
+								},
+							]}
+						>
+							<a
+								href={`/${entry.slug}`}
+								class:list={[
+									{
+										'text-slate-600': isCurrentPage(
+											entry.slug,
+											params.guide_step_slug
+										),
+									},
+								]}
+							>
+								{entry.data.title}
+								{entry.data.status === 'draft' && (
+									<span> [draft]</span>
+								)}
+							</a>
 						</li>
 					))
 				}
-			</ul>
+			</ol>
 		</nav>
 	</Prose>
 </ParentLayout>
