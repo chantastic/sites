@@ -44,3 +44,16 @@ const params = Astro.params
 
 {Math.round(Math.random()) ? 'heads' : 'tails'}
 ```
+
+## Astro results for server pages
+
+```astro
+---
+export const partial = true
+export const prerender = false
+
+let sides = Number(Astro.url.searchParams.get('sides')) || 6
+---
+
+{Math.floor(Math.random() * sides) + 1}
+```
