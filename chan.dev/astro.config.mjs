@@ -98,7 +98,7 @@ export default defineConfig({
 				if (page.endsWith('/share/')) {
 					return false
 				}
-				if (page.incnludes('/dailies/')) {
+				if (page.includes('/dailies/')) {
 					return false
 				}
 
