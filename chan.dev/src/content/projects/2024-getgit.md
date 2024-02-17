@@ -6,7 +6,15 @@ effects:
 
 ## tldr
 
-https://youtube.com/shorts/BxgEf0hbcb0?si=KOat11Avd9uzYOU2
+<iframe
+  width="315"
+  height="560"
+  src="https://www.youtube.com/embed/BxgEf0hbcb0"
+  title="YouTube video player"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  allowfullscreen
+></iframe>
 
 ## Man pages
 

@@ -46,8 +46,7 @@ concept: |-
 
 <div data-responsive-youtube-container>
 
-https://youtu.be/CtfU1UnizHU?si=J_FYCMaCXRkP52Se
-
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/CtfU1UnizHU?si=ZajRqid3WjG-SMmn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </div>
 
 It's never been easier to get started with component-driven development in Storybook.

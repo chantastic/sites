@@ -11,7 +11,9 @@ date: 2023-11-14
 
 ## Brain
 
-https://youtu.be/ycTZ_t-aiuU?si=rxzdf3dK7no7Qc1o
+<div data-responsive-youtube-container>
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/ycTZ_t-aiuU?si=bRdqqoj6b3-RVsMV" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
 
 ## Sleep
 

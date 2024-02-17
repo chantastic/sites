@@ -68,7 +68,5 @@ title: 'Basic Burger'
 ## Reference
 
 <div data-responsive-youtube-container>
-
-https://youtu.be/vy9XvHqJYgI?si=pzh5P2GOoL6o8JgH
-
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/vy9XvHqJYgI?si=Gg7noukxh7jygEbx" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </div>

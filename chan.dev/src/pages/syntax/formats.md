@@ -120,9 +120,7 @@ Introduce the audience to something helpful that they may not know.
 <!-- ### Video
 
 <div data-responsive-youtube-container>
-
-https://www.youtube.com/watch?v=9yiFXnefjks
-
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/9yiFXnefjks?si=e_Wq3sBbtXTScEnk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </div>
 
 glitch disappear
