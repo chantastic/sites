@@ -8,7 +8,7 @@ let {params} = Astro
 
 let guide_steps = await GUIDE_STEPS.getCollection((entry) =>
 	entry.slug.includes(
-		`${params.guide_topic}/${params.guide_scope}`
+		`${String(params.guide_topic)}/${String(params.guide_scope)}`
 	)
 )
 
