@@ -14,7 +14,7 @@ import remark_directive from 'remark-directive'
 import {visit} from 'unist-util-visit'
 import astro_expressive_code from 'astro-expressive-code'
 import react from '@astrojs/react'
-import netlify from '@astrojs/netlify/functions'
+import netlify from '@astrojs/netlify'
 function process_remark_directives() {
 	// note: this function acts mutably
 	return (tree) => {
@@ -106,8 +106,8 @@ export default defineConfig({
 			},
 		}),
 		astro_expressive_code({
-			frames: {
-				styleOverrides: {
+			styleOverrides: {
+				frames: {
 					frameBoxShadowCssValue: 'none',
 				},
 			},
@@ -130,12 +130,6 @@ export default defineConfig({
 				},
 			],
 			remark_deflist,
-			[
-				remark_embedder,
-				{
-					transformers: [oembed_transformer],
-				},
-			],
 			// https://www.reliablesoft.net/noreferrer-noopener/#noreferrer-vs-nofollow
 			[
 				remark_external_links,
