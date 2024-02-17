@@ -1,6 +1,8 @@
 import * as ASTRO_CONTENT from 'astro:content'
 import {z, defineCollection} from 'astro:content'
 
+export {collectionSchema} from '#content/posts/_posts'
+
 export const COLLECTION_NAME = 'guide_steps'
 
 // A Chantastic Guide to Git Foundations
@@ -23,10 +25,3 @@ export async function getCollection(
 
 	return collection.toSorted(sort)
 }
-
-export const collectionSchema = defineCollection({
-	schema: z.object({
-		title: z.string(),
-		status: z.enum(['draft']).optional(),
-	}),
-})

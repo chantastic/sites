@@ -7,9 +7,7 @@ import * as GUIDE_STEPS from '#content/guide_steps/_guide_steps'
 let {params} = Astro
 
 let guide_steps = await GUIDE_STEPS.getCollection((entry) =>
-	entry.slug.includes(
-		`${String(params.guide_topic)}/${String(params.guide_scope)}`
-	)
+	entry.slug.includes(`${String(params.guide_title)}`)
 )
 
 function hoistIndex(collection: GUIDE_STEPS.CollectionEntry[]) {

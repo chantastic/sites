@@ -6,12 +6,10 @@ export async function getStaticPaths() {
 	const entries = await GUIDE_STEPS.getCollection()
 
 	let result = entries.map((entry) => {
-		let [guide_topic, guide_scope, guide_step_slug] =
-			entry.slug.split('/')
+		let [guide_title, guide_step_slug] = entry.slug.split('/')
 		return {
 			params: {
-				guide_topic,
-				guide_scope,
+				guide_title,
 				guide_step_slug,
 			},
 			props: {
