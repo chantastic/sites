@@ -1,13 +1,3 @@
-# It's a *digital garden* baby
-/blog/* /:splat
-/posts/* /:splat
-/notes/* /:splat
-/mode/* /:splat
-/play/* /:splat
-/lessons/astro/* /:splat
-/lessons/css/* /:splat
-/lessons/storybook/* /:splat
-
 # moved
 /feed/feed.json /feeds/feed.json
 
@@ -33,7 +23,6 @@
 /chromatic https://www.chromatic.com/company/jobs?utm_source=site&utm_medium=conference-talk&utm_campaign=2021-confs&utm_id=2021-michael-chan-reference
 /colorway https://github.com/chantastic/colorway
 /discord https://discord.gg/q9ZdBgP
-/schedule/* https://savvycal.com/chantastic/:splat
 /fathom https://usefathom.com/ref/TVXRRF
 /github/* https://github.com/chantastic/:splat
 /twitter https://twitter.com/chantastic
@@ -44,7 +33,6 @@
 /coding/markdown /markdown
 /food/sandiego /best-food-in-san-diego-and-north-county
 /meta/newsletter /newsletter
-/event/2022/novimber/* /lessons/novimber/2022/:splat
 
 # moved tags
 /food /tags/food
@@ -66,3 +54,17 @@
 /recut https://getrecut.com/?ref=chantastic
 /riverside https://riverside.fm/?utm_campaign=campaign_1&utm_medium=affiliate&utm_source=rewardful&via=chantastic
 /videotap https://videotap.com/?via=chantastic
+
+# It's a *digital garden* baby
+/blog/* /:splat
+# /posts/* /:splat
+/notes/* /:splat
+/mode/* /:splat
+/play/* /:splat
+/lessons/astro/* /:splat
+/lessons/css/* /:splat
+/lessons/storybook/* /:splat
+
+# other slow splats
+/schedule/* https://savvycal.com/chantastic/:splat
+/event/2022/novimber/* /lessons/novimber/2022/:splat
