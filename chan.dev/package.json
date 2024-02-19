@@ -12,9 +12,7 @@
 		"build": "astro build",
 		"build:local": "op run --env-file='./.env' -- pnpm run build",
 		"postbuild": "pagefind --site dist",
-		"preview": "pnpm run build:local && wrangler pages dev ./dist",
-		"test:e2e": "playwright test",
-		"astro": "astro",
+		"preview": "pnpm run build:local && wrangler pages dev ./dist --port 2426",
 		"tsc": "tsc"
 	},
 	"devDependencies": {
