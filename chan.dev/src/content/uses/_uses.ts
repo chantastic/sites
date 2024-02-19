@@ -24,7 +24,7 @@ export async function getCollection(
 		filter
 	)
 
-	return result.sort(sort)
+	return result.toSorted(sort)
 }
 
 const frequency = z.enum([

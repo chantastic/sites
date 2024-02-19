@@ -8,7 +8,7 @@ const projects = await PROJECTS.getCollection(
 	(p) => p.data.status === 'active'
 )
 
-projects.sort()
+projects.toSorted()
 
 // https://stackoverflow.com/a/8980917
 function makeTitle(slug) {

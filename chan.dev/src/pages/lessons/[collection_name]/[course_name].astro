@@ -59,7 +59,7 @@ const lessons = await LESSONS.getCollection(
 	}
 )
 
-lessons.sort((a, b) => a.data.order - b.data.order)
+lessons.toSorted((a, b) => a.data.order - b.data.order)
 ---
 
 <Layout>

@@ -26,7 +26,7 @@ export function processFeedEntries(
 ) {
 	return Object.entries(viteGlob)
 		.filter(([, post]) => post.frontmatter.publishDate)
-		.sort(([, a], [, b]) =>
+		.toSorted(([, a], [, b]) =>
 			COLLECTION.compareByDate(
 				a.frontmatter.publishDate,
 				b.frontmatter.publishDate
@@ -53,7 +53,7 @@ export async function getCollection(
 		filter
 	)
 
-	return result.sort(sort)
+	return result.toSorted(sort)
 }
 
 export const collectionSchema = defineCollection({
