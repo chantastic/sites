@@ -1,5 +1,7 @@
 ---
-title: Treehouse
+status: inactive
+effects:
+  - better life
 ---
 
 Inspiration:
