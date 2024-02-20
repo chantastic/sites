@@ -27,3 +27,9 @@ title: A chantastic guide to advanced command line
     - Grant access to your isolated vault
     - Capture your token
     - `export=OP_SERVICE_ACCOUNT_TOKEN=` and use your Service Account Token
+
+## Misc
+- tldr.sh
+- rcm (thoughtbot dotfile management)
+  - [alternatives](https://www.jakewiesler.com/blog/managing-dotfiles)
+
