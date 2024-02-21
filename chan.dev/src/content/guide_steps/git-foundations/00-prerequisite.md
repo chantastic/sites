@@ -4,19 +4,22 @@ description: Install (or update) git. And learn where to get help.
 status: draft
 ---
 
-I want you to get a lot of out of this.  
-So let's make sure that we're on the same page.
+Before we start, let's find out what we're working with.
 
-Run these command to verify your git installation:
+Run this command to verify your git installation:
 
 ```sh title="Find system git version"
 git -v # or git --version
 ```
 
-My local version is `2.43.2`.  
-And I used the [Homebrew](https://brew.sh/) installation instructions on [the official Git Download for macOS page](https://git-scm.com/download/mac).
+My local `git` version is `2.43.2`.  
 
-With git installed, you're ready to continue!
+If you're using a significantly older version, or get an error, consider upgrading.
+Visit [the official Git downloads page for OS-specific instrucitons](https://git-scm.com/downloads).
+
+I used the [Homebrew](https://brew.sh/) [installation instructions for macOS](https://git-scm.com/download/mac).
+
+With git installed, you're ready to go!
 
 ## Assignment
 

@@ -1,24 +1,39 @@
 ---
-title: Create a Git Project
+title: Create a Git Repository
 ---
+
+A repository is any directory with a `.git` folder in it.  
+Ok, it's more complicated than that, but only a little.
 
 Let's create a new, empty git repository.
 
 ```sh title="Initialize and open new git repository"
-# create new directory and initialize git into it
 git init my-project
-
-# cd into the the now project root
-cd my-dir
 ```
 
-Run `git status` to see the the status of the project.
+`cd` into the new project directory and run run `ls`.
 
-```sh title="Check the project status"
+```sh title="Open our repository and see what's in it"
+cd my-project
+ls
+```
+
+It's empty, right?
+Just what we'd expect from a new project.
+
+Look again, but this time use `ls --all`.
+This all options shows hidden folders as well, revealing a `.git` directory.
+This directory is what makes this project a **Git repository**.
+
+This means we can run git commands to learn about the project and it's status.
+
+Run `git status` to see the repository status.
+
+```sh title="Check the repository status"
 git status
 ```
 
-You should see a message like this:
+You'll see this message:
 
 ```
 On branch main
@@ -28,52 +43,21 @@ No commits yet
 nothing to commit (create/copy files and use "git add" to track)
 ```
 
+This will all make sense in time.
+
+For now, congrats on your new repo!
+
 ## Assignment
+
+I want you to see how powerful this directory is.
+Delete the `.git` directory and run `git status` again.
+
+You'll get an error.
+Because the `.git` makes this project a repository.
+
+Now, you can get it back again by running `git init` (with no project name).
+This will initialize git in the current directory and get us back to where we were before.
 
 Add a few files and run `git status` again.
 
-<details>
-  <summary>See my solution</summary>
-
-```sh title="Add files and run git status"
-# add three empty markdown files
-touch git-init.txt
-touch git-status.txt
-touch git-add.txt
-
-# get the repository status
-git status
-```
-
-```sh
-On branch main
-
-No commits yet
-
-Untracked files:
-  (use "git add <file>..." to include in what will be committed)
-        git-add.txt
-        git-init.txt
-        git-status.txt
-
-nothing added to commit but untracked files present (use "git add" to track)
-```
-
-</details>
-
----
-
-## Adding git to an existing project
-
-Note that you can also use `git init` with an existing project.
-
-```sh frame="terminal"
-# navigate to your project root
-cd path/to/project
-
-# initializes the current directory
-git init
-
-# to begin staging and commiting
-git status
-```
+Give it a try!
