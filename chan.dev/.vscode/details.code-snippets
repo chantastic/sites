@@ -1,0 +1,15 @@
+{
+	"blockquote-attributed": {
+		"scope": "html, markdown",
+		"prefix": "details",
+		"body": [
+			"<details>",
+			"<summary>${1:summary}</summary>",
+			"",
+			"$0",
+			"",
+			"</details>"
+		],
+		"description": "Blockquote with attribution"
+	}
+}

@@ -19,7 +19,7 @@ This is a $1500-ish setup that I would happily buy today. You don't need all of 
 - [Nanlite PavoTube II 6C] ($90) for RGB and/or hair light
 
 [fifine k688]: https://amzn.to/3OLdWNp
-[fifine lp boom arm]: https://amzn.to/3OLdWNp
+[fifine lp boom arm]: https://amzn.to/3wn4Lg7
 [canon r50 kit]: https://amzn.to/3wyCmn2
 [raubay monitor top camera mount]: https://amzn.to/3T51vib
 [amaran 60d s]: https://amzn.to/3wmS5px
