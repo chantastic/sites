@@ -1,3 +1,0 @@
----
-title: Your First Commit
----
