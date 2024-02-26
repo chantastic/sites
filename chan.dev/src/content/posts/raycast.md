@@ -94,3 +94,40 @@ Deciding to use Raycast to track application opening/switching shortcuts.
 
 - ← - move window to left half of screen (rotates between 1/2, 2/3, 1/3 when repeated)
 - → - move window to right half of screen (rotates between 1/2, 2/3, 1/3 when repeated)
+
+## Found notes for snippet creation
+
+### Basics
+
+To use snippets, you gotta create them first.
+
+- Call up the `Create snippet` command
+- Hit `enter` to open the command
+- Give it a unique name
+  - Spaces are ok
+- Paste your snippet in
+- And that's all that's required.
+
+### Placeholders
+
+- In this box you can change rich text formatting, add links, whatever
+  - I don't personally care about that
+- But to the right you can add `placeholders`
+  - Click this `+` button to make your snippets dynamic
+- Add a date, with one of the pre-selected options
+  - Or use a custom date
+- We can then place the cursor too!
+  - Hit `+` again, and place this where you'd like to place the cursore
+- You can also automatically include whatever's in your pasteboard
+
+### Keyboard triggers
+
+Keyboard triggers are great if you don't want to touch Raycast at all…
+
+## Use Snippet
+
+## Import Snippet
+
+- https://manual.raycast.com/snippets/how-to-import-snippets
+- It will avoid including duplicates, which means you can set up a snippets file, and re-import that every time you make changes
+  - Just note that any time you change a name, that's going to
