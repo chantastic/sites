@@ -12,11 +12,6 @@ type Platforms = keyof Omit<
 	'name' | 'type'
 >
 
-type Testemonial = keyof Pick<
-	CollectionEntry['data'],
-	'name' | 'twitter' | 'linkedin' | 'testemonial'
->
-
 function formatEntityPlatformForPost(entity: CollectionEntry) {
 	return function (platform: Platforms) {
 		switch (platform) {
@@ -67,7 +62,7 @@ export function getPlatformShortoutsForRelatedEntities(
 	}
 }
 
-export function getTestemonials() {}
+export function getTestimonials() {}
 
 export const collectionSchema = defineCollection({
 	type: 'data',
@@ -75,6 +70,8 @@ export const collectionSchema = defineCollection({
 		name: z.string(),
 		// probably change to discriminated union
 		type: z.enum(['Person', 'Organization']), // https://schema.org/Person // https://schema.org/Organization
+
+		position: z.string().optional(),
 
 		avatar: z.string().url().optional(),
 		bluesky: z.string().url().optional(),
@@ -88,6 +85,6 @@ export const collectionSchema = defineCollection({
 		youtube: z.string().url().optional(),
 		threads: z.string().url().optional(),
 		hashtag: z.string().optional(),
-		testemonial: z.string().optional(),
+		testimonial: z.string().optional(),
 	}),
 })
