@@ -1,81 +1,82 @@
 {
-  "name": "@example/basics",
-  "type": "module",
-  "version": "0.0.1",
-  "private": true,
-  "imports": {
-    "#*": "./src/*"
-  },
-  "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
-    "build": "astro build",
-    "build:local": "op run --env-file='./.env' -- pnpm run build",
-    "postbuild": "pagefind --site dist",
-    "preview": "pnpm run build:local && wrangler pages dev ./dist --port 2426",
-    "tsc": "tsc"
-  },
-  "devDependencies": {
-    "@astrojs/markdown-remark": "^4.2.1",
-    "@astrojs/rss": "^4.0.5",
-    "@astrojs/sitemap": "^3.0.5",
-    "@astrojs/tailwind": "^5.1.0",
-    "@componentdriven/csf": "0.0.2-alpha.0",
-    "@remark-embedder/core": "^3.0.2",
-    "@remark-embedder/transformer-oembed": "^3.0.0",
-    "@tailwindcss/aspect-ratio": "^0.4.2",
-    "@tailwindcss/typography": "^0.5.10",
-    "@types/bun": "^1.0.7",
-    "@types/sanitize-html": "^2.11.0",
-    "astro": "^4.4.0",
-    "astro-expressive-code": "^0.32.4",
-    "hastscript": "^9.0.0",
-    "lucide": "^0.331.0",
-    "markdown-it": "^14.0.0",
-    "micromark": "^4.0.0",
-    "micromark-extension-gfm": "^3.0.0",
-    "pagefind": "^1.0.4",
-    "rehype-autolink-headings": "^7.1.0",
-    "remark-deflist": "^1.0.0",
-    "remark-directive": "^3.0.0",
-    "remark-external-links": "^9.0.1",
-    "remark-obsidian-callout": "^1.1.3",
-    "remark-toc": "^9.0.0",
-    "sanitize-html": "^2.11.0",
-    "shiki": "^1.1.3",
-    "tailwindcss": "^3.4.1",
-    "title-case": "^4.3.1",
-    "typescript": "^5.3.3",
-    "unist-util-visit": "^5.0.0",
-    "wrangler": "^3.28.3"
-  },
-  "dependencies": {
-    "@astrojs/cloudflare": "^9.0.1",
-    "@astrojs/react": "^3.0.10",
-    "@libsql/client": "0.5.0",
-    "@types/react": "^18.2.56",
-    "@types/react-dom": "^18.2.19",
-    "better-sqlite3": "^9.4.3",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "sharp": "0.33.2"
-  },
-  "engine": {
-    "node": ">=20.0.0"
-  },
-  "trustedDependencies": [
-    "sharp"
-  ],
-  "prettier": {
-    "printWidth": 64,
-    "tabWidth": 2,
-    "useTabs": true,
-    "semi": false,
-    "quoteProps": "consistent",
-    "trailingComma": "es5",
-    "bracketSpacing": false,
-    "bracketSameLine": false,
-    "arrowParens": "always",
-    "singleQuote": true
-  }
+	"name": "@example/basics",
+	"type": "module",
+	"version": "0.0.1",
+	"private": true,
+	"imports": {
+		"#*": "./src/*"
+	},
+	"scripts": {
+		"dev": "astro dev",
+		"start": "astro dev",
+		"build": "astro build",
+		"build:local": "op run --env-file='./.env' -- pnpm run build",
+		"postbuild": "pagefind --site dist",
+		"preview": "pnpm run build:local && wrangler pages dev ./dist --port 2426",
+		"tsc": "tsc"
+	},
+	"devDependencies": {
+		"@astrojs/markdown-remark": "^4.2.1",
+		"@astrojs/rss": "^4.0.5",
+		"@astrojs/sitemap": "^3.0.5",
+		"@astrojs/tailwind": "^5.1.0",
+		"@componentdriven/csf": "0.0.2-alpha.0",
+		"@remark-embedder/core": "^3.0.2",
+		"@remark-embedder/transformer-oembed": "^3.0.0",
+		"@tailwindcss/aspect-ratio": "^0.4.2",
+		"@tailwindcss/typography": "^0.5.10",
+		"@types/bun": "^1.0.7",
+		"@types/sanitize-html": "^2.11.0",
+		"astro": "^4.4.0",
+		"astro-expressive-code": "^0.32.4",
+		"hastscript": "^9.0.0",
+		"lucide": "^0.331.0",
+		"markdown-it": "^14.0.0",
+		"micromark": "^4.0.0",
+		"micromark-extension-gfm": "^3.0.0",
+		"pagefind": "^1.0.4",
+		"rehype-autolink-headings": "^7.1.0",
+		"remark-deflist": "^1.0.0",
+		"remark-directive": "^3.0.0",
+		"remark-external-links": "^9.0.1",
+		"remark-obsidian-callout": "^1.1.3",
+		"remark-toc": "^9.0.0",
+		"sanitize-html": "^2.11.0",
+		"shiki": "^1.1.3",
+		"tailwindcss": "^3.4.1",
+		"title-case": "^4.3.1",
+		"typescript": "^5.3.3",
+		"unist-util-visit": "^5.0.0",
+		"wrangler": "^3.28.3"
+	},
+	"dependencies": {
+		"@astrojs/cloudflare": "^9.0.1",
+		"@astrojs/react": "^3.0.10",
+		"@libsql/client": "0.5.0",
+		"@types/react": "^18.2.56",
+		"@types/react-dom": "^18.2.19",
+		"better-sqlite3": "^9.4.3",
+		"react": "^18.2.0",
+		"react-dom": "^18.2.0",
+		"sharp": "0.33.2"
+	},
+	"engine": {
+		"node": ">=20.0.0"
+	},
+	"trustedDependencies": [
+		"sharp",
+		"better-sqlite3"
+	],
+	"prettier": {
+		"printWidth": 64,
+		"tabWidth": 2,
+		"useTabs": true,
+		"semi": false,
+		"quoteProps": "consistent",
+		"trailingComma": "es5",
+		"bracketSpacing": false,
+		"bracketSameLine": false,
+		"arrowParens": "always",
+		"singleQuote": true
+	}
 }
