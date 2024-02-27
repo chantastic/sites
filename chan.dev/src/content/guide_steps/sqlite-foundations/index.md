@@ -35,7 +35,7 @@ _All commands after this assume that you an in the sqlite repl._
 ## Open sqlite database in repl (one command)
 
 ```sh
-sqlite mydatabas.db
+sqlite3 mydatabas.db
 ```
 
 ## List connection
