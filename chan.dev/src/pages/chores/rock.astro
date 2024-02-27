@@ -2,13 +2,14 @@
 import Layout from '#layouts/Layout.astro'
 import Prose from '#components/prose.astro'
 // I'd like to use `bun:sqlite` but it's having trouble reading from my database (despite connecting)
-import Database from 'better-sqlite3'
+import {Database} from 'bun:sqlite'
 
 export const prerender = false
 
 // Must be relative to applaction root?
 const db = new Database('./src/pages/chores/_oomph.db', {
 	readonly: true,
+	create: false,
 })
 // db.pragma('journal_mode = WAL')
 const habits = db
@@ -66,7 +67,7 @@ const chore_data = habits.map(
 											return (
 												<td
 													class="border"
-													hx-post={`/chores/partials/${chore.id}`}
+													hx-post={`/chores/partials/${String(chore.id)}`}
 													hx-trigger="click"
 													hx-swap="outerHTML"
 												/>
