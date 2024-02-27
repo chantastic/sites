@@ -1,0 +1,168 @@
+---
+import Layout from '#layouts/Layout.astro'
+import {Image} from 'astro:assets'
+
+function shuffle(array) {
+	let currentIndex = array.length,
+		randomIndex
+
+	while (currentIndex > 0) {
+		randomIndex = Math.floor(Math.random() * currentIndex)
+		currentIndex--
+		;[array[currentIndex], array[randomIndex]] = [
+			array[randomIndex],
+			array[currentIndex],
+		]
+	}
+
+	return array
+}
+---
+
+<Layout>
+	<main class="min-w-[1440px]">
+		<ul
+			role="list"
+			class={[
+				'grid',
+				'grid-cols-2 gap-x-4 gap-y-8',
+				'sm:grid-cols-3 sm:gap-x-6',
+				'lg:grid-cols-5',
+				'xl:gap-x-8',
+			].join(' ')}
+		>
+			{
+				shuffle([
+					{
+						path: '/images/community_002.jpeg',
+						alt: 'Selfie of chantastic and Michael Jackson at React Conf 2019',
+					},
+					{
+						path: '/images/community_003.jpeg',
+						alt: 'Selfie of chantastic and friends at React Conf 2019',
+					},
+					{
+						path: '/images/community_004.jpeg',
+						alt: 'Selfie of chantastic and Dan Abramov at React Conf 2019, by Rachel Nabors',
+					},
+					{
+						path: '/images/community_005.jpeg',
+						alt: 'Selfie of chantastic and friends at React Conf 2019, by Sunil Pai',
+					},
+					{
+						path: '/images/community_006.jpeg',
+						alt: 'Selfie of chantastic and Ben Holmes at React Rally 2023',
+						class: 'aspect-h-9 aspect-w-7',
+					},
+					{
+						path: '/images/community_007.jpeg',
+						alt: 'Selfie of chantastic and Shirley Wu at React Rally 2023',
+						class: 'aspect-h-8 aspect-w-7',
+					},
+					{
+						path: '/images/community_008.jpeg',
+						alt: 'Selfie of chantastic and Kent C. Dodds at React Conf 2019',
+						class: 'aspect-h-7 aspect-w-9',
+					},
+					{
+						path: '/images/community_009.jpeg',
+						alt: 'Selfie of chantastic and Jason Lengstorf at Remix Conf 2022',
+						class: 'aspect-h-8 aspect-w-7',
+					},
+					{
+						path: '/images/community_010.jpeg',
+						alt: 'Selfie of chantastic and Ben Meyers at their wedding in 2022',
+						class: 'aspect-h-5 aspect-w-4',
+					},
+					{
+						path: '/images/community_012.jpeg',
+						alt: 'Selfie of chantastic and ',
+					},
+					{
+						path: '/images/community_015.jpeg',
+						alt: 'Selfie of chantastic and ',
+					},
+					{
+						path: '/images/community_017.jpeg',
+						alt: 'Selfie of chantastic and ',
+					},
+					{
+						path: '/images/community_021.jpeg',
+						alt: 'Selfie of chantastic and ',
+					},
+					{
+						path: '/images/community_022.jpeg',
+						alt: 'Selfie of chantastic and ',
+					},
+					{
+						path: '/images/community_023.jpeg',
+						alt: 'Selfie of chantastic and ',
+					},
+					{
+						path: '/images/community_026.jpeg',
+						alt: 'Selfie of chantastic and ',
+					},
+					{
+						path: '/images/community_028.jpeg',
+						alt: 'Selfie of chantastic and ',
+					},
+					{
+						path: '/images/community_029.jpeg',
+						alt: 'Selfie of chantastic and ',
+					},
+					{
+						path: '/images/community_030.jpeg',
+						alt: 'Selfie of chantastic and ',
+					},
+					{
+						path: '/images/community_032.jpeg',
+						alt: 'Selfie of chantastic and ',
+					},
+					{
+						path: '/images/community_034.jpeg',
+						alt: 'Selfie of chantastic and ',
+					},
+					{
+						path: '/images/community_035.jpeg',
+						alt: 'Selfie of chantastic and ',
+					},
+					{
+						path: '/images/community_036.jpeg',
+						alt: 'Selfie of chantastic and ',
+					},
+					{
+						path: '/images/community_037.jpeg',
+						alt: 'Selfie of chantastic and ',
+					},
+					{
+						path: '/images/community_038.jpeg',
+						alt: 'Selfie of chantastic and ',
+					},
+					{
+						path: '/images/community_040.jpeg',
+						alt: 'Selfie of chantastic and ',
+					},
+				]).map(({path, alt, class: classes}) => (
+					<li class="relative">
+						<div
+							class:list={[
+								`group block w-full overflow-hidden rounded-lg bg-gray-100 focus-within:ring-2 focus-within:ring-indigo-500 focus-within:ring-offset-2 focus-within:ring-offset-gray-100`,
+								classes ? classes : 'aspect-h-7 aspect-w-10',
+							]}
+						>
+							<Image
+								src={path}
+								alt={alt}
+								height={300}
+								width={300}
+								class="pointer-events-none object-cover group-hover:opacity-75"
+								decoding="async"
+								loading="lazy"
+							/>
+						</div>
+					</li>
+				))
+			}
+		</ul>
+	</main>
+</Layout>
