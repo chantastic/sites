@@ -8,10 +8,12 @@ effects:
 ## Tasks
 
 - [ ] Await budget
-	- [ ] Book flights (budget is $450. include travel insurance)
-		- [x] Book outgoing flight $138.98, 4/9 ✅ 2024-02-27
+  - [x] Book flights (budget is $450. include travel insurance)
+    - [x] Book outgoing flight $138.98, 4/9 ✅ 2024-02-27
 - [ ] Write outline
 - [ ] Determine sub-projects
 - [ ] Determine travel plans
 
 ## Outline
+
+Snapshot-driven UI devolpment in Storybook.
