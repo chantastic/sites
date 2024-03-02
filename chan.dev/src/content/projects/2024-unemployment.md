@@ -34,3 +34,14 @@ effects:
   - And I'm good with that. I left nothing on the field.
 - It's gonna be one helluvah march
 - See ya in there
+
+## Follow-ups
+- [Benoît Grélard @ WorkOS](https://x.com/benoitgrelard/status/1763326142633713716?s%253D20)
+- [Copy Jeff Escalante's success here](https://x.com/jescalan/status/1763311661564486139?s%253D20)
+- [Peter Pistorius]((https://x.com/appfactory/status/1763562858003001431?s%253D20))
+- [The Browser Company, in general](https://jobs.ashbyhq.com/The%2520Browser%2520Company)
+
+
+## #layofflog topics
+- [what went wrong at chromatic](https://x.com/ahmed_mohaisen/status/1763658365933174928?s%253D20)
+- 

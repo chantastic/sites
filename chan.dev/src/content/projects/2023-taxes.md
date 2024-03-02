@@ -21,9 +21,9 @@ effects:
 
 ### Delegated
 
-- [>] Complete tax organizer
-- [>] Collect Nellie's business details
-- [>] Collect medical expenses
+- [x] Complete tax organizer  ✅ 2024-02-28
+- [x] Collect Nellie's business details  ✅ 2024-02-12
+- [x] Collect medical expenses  ✅ 2024-02-12
 
 <!-- ```dataview
 TASK
