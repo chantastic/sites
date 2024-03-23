@@ -3,8 +3,6 @@ import Layout from '#layouts/Layout.astro'
 import Prose from '#components/prose.astro'
 import {db, Habit, eq} from 'astro:db'
 
-export const prerender = false
-
 const habits = await db
 	.select()
 	.from(Habit)

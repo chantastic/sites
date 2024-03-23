@@ -8,8 +8,6 @@ const habits = await db
 	.from(Habit)
 	.where(eq(Habit.owner, 'Rock'))
 
-export const prerender = false
-
 const chore_data = habits.map(
 	(habit: {
 		id: number
