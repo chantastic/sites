@@ -1,141 +1,29 @@
 ---
 import Layout from '#layouts/Layout.astro'
 import Prose from '#components/prose.astro'
+import {db, Habit, eq} from 'astro:db'
 
 export const prerender = false
 
-const chore_data = [
-	{
-		id: '012',
-		name: 'Jesus time',
-		weekly_occurances: [
-			false,
-			true,
-			false,
-			false,
-			false,
-			true,
-			true,
-		],
-	},
-	{
-		id: '013',
-		name: 'Grooming (brush, brush, deoderize)',
-		weekly_occurances: [
-			true,
-			true,
-			true,
-			true,
-			true,
-			true,
-			true,
-		],
-	},
-	{
-		id: '014',
-		name: 'Tidy room',
-		weekly_occurances: [
-			true,
-			true,
-			false,
-			false,
-			false,
-			true,
-			true,
-		],
-	},
-	{
-		id: '015',
-		name: 'Clothes to laundry',
-		weekly_occurances: [
-			true,
-			true,
-			true,
-			true,
-			true,
-			true,
-			true,
-		],
-	},
-	//	{
-	//		id: '016',
-	//		name: 'Fold laundry',
-	//		weekly_occurances: [
-	//			true,
-	//			true,
-	//			true,
-	//			true,
-	//			true,
-	//			true,
-	//			true,
-	//		],
-	//	},
-	{
-		id: '017',
-		name: 'School work',
-		weekly_occurances: [
-			false,
-			true,
-			true,
-			true,
-			true,
-			true,
-			false,
-		],
-	},
-	//	{
-	//		id: '018',
-	//		name: 'Duolingo',
-	//		weekly_occurances: [
-	//			true,
-	//			true,
-	//			true,
-	//			true,
-	//			true,
-	//			true,
-	//			true,
-	//		],
-	//	},
-	{
-		id: '019',
-		name: 'Vaccuum runners',
-		weekly_occurances: [
-			true,
-			true,
-			false,
-			true,
-			false,
-			true,
-			true,
-		],
-	},
-	{
-		id: '020',
-		name: 'Dishes to dishwasher',
-		weekly_occurances: [
-			true,
-			true,
-			false,
-			true,
-			false,
-			true,
-			true,
-		],
-	},
-	{
-		id: '021',
-		name: 'Dust living room',
-		weekly_occurances: [
-			true,
-			true,
-			false,
-			true,
-			false,
-			true,
-			true,
-		],
-	},
-]
+const habits = await db
+	.select()
+	.from(Habit)
+	.where(eq(Habit.owner, 'Ruby'))
+
+const chore_data = habits.map(
+	(habit: {
+		id: number
+		title: string
+		recurrence_pattern: string
+	}) => ({
+		id: habit.id,
+		name: habit.title,
+		weekly_occurances: habit.recurrence_pattern
+			.split('')
+			.map(Number)
+			.map(Boolean),
+	})
+)
 ---
 
 <Layout>
@@ -157,30 +45,37 @@ const chore_data = [
 			<tbody>
 				{
 					chore_data.map((chore) => {
-						const saturday_first_weekly_occurances = [chore.weekly_occurances.at(-1), ...chore.weekly_occurances.slice(0, -1)]
+						const saturday_first_weekly_occurances = [
+							chore.weekly_occurances.at(-1),
+							...chore.weekly_occurances.slice(0, -1),
+						]
 
 						return (
 							<tr>
 								<td>{chore.name}</td>
-								{saturday_first_weekly_occurances.map((occurance) => {
-									if (occurance) {
-										return (
-											<td
-												class="border"
-												hx-post={`/chores/partials/${chore.id}`}
-												hx-trigger="click"
-												hx-swap="outerHTML"
-											/>
-										)
-									} else {
-										return (
-											<td
-												class="border"
-												style={{backgroundColor: 'currentColor'}}
-											/>
-										)
+								{saturday_first_weekly_occurances.map(
+									(occurance) => {
+										if (occurance) {
+											return (
+												<td
+													class="border"
+													hx-post={`/chores/partials/${chore.id}`}
+													hx-trigger="click"
+													hx-swap="outerHTML"
+												/>
+											)
+										} else {
+											return (
+												<td
+													class="border"
+													style={{
+														backgroundColor: 'currentColor',
+													}}
+												/>
+											)
+										}
 									}
-								})}
+								)}
 							</tr>
 						)
 					})

@@ -1,21 +1,14 @@
 ---
 import Layout from '#layouts/Layout.astro'
 import Prose from '#components/prose.astro'
-// I'd like to use `bun:sqlite` but it's having trouble reading from my database (despite connecting)
-import Database from 'better-sqlite3'
+import {db, Habit, eq} from 'astro:db'
+
+const habits = await db
+	.select()
+	.from(Habit)
+	.where(eq(Habit.owner, 'Rock'))
 
 export const prerender = false
-
-// Must be relative to applaction root?
-const db = new Database('./src/pages/chores/_oomph.db', {
-	readonly: true,
-})
-// db.pragma('journal_mode = WAL')
-const habits = db
-	.prepare('SELECT * FROM habits WHERE owner = ?')
-	.all('Rock')
-
-db.close()
 
 const chore_data = habits.map(
 	(habit: {
