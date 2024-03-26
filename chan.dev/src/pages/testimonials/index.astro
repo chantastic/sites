@@ -5,6 +5,43 @@ import Layout from '#layouts/Layout.astro'
 // import * as POSTS from '#content/posts/_posts'
 import Prose from '#components/prose.astro'
 import * as ASTRO_CONTENT from 'astro:content'
+import Testimonial from './_testimonial.astro'
+
+const other_testimonials = [
+	{
+		data: {
+			testimonial: `Chan is one of those people who makes everyone around him feel better simply by existing. He's got the best energy of anyone I know. The fact that he's *also* a talented engineer, communicator, and educator is — quite frankly — kind of annoying because he's raising the bar for the rest of us. He's bringing a unique, cross-functional skill set to any team he works with. Chan is, in every way, a "builder": he builds software, he builds communities, and he builds people. Any company that hires him gains a significant advantage.`,
+			name: 'Jason Lengstorf',
+			position:
+				'Developer-Focused Media Creator, Strategist, and Consultant',
+			avatar: 'https://github.com/jlengstorf.png',
+		},
+	},
+	{
+		data: {
+			testimonial: `everyone else can speak to the technical prowess, which is top tier. i just wanna say this dude is just the best, period. there’s very few people i shit myself with excitement when i have the opportunity to see them. i shit myself the most with him. i’ll be all fucked up and get word that he’s nearby and just spring up like “where the fuck is he”. and then i find him and im like WHATS UP BITCH and touch him too much and he’s mad cool about it and just what a guy lmfao`,
+			name: 'Ken Wheeler',
+			position: 'Software Engineer at REDACTED',
+			avatar: 'https://github.com/kenwheeler.png',
+		},
+	},
+	{
+		data: {
+			testimonial: `My brain much prefers Chan's style to basically everything out there.`,
+			name: 'Ryan Hayes',
+			position: 'Staff Eng/Tech Lead',
+			avatar: 'https://github.com/ryannosaurusrex.png',
+		},
+	},
+	{
+		data: {
+			testimonial: `I can't think of anyone in the industry I could recommend more highly than Chantastic as a developer, an educator, a leader, and a good person. 10/10`,
+			name: 'Anthony Campolo',
+			position: 'Content at Everfund',
+			avatar: 'https://github.com/ajcwebdev.png',
+		},
+	},
+]
 
 const testimonials = await ASTRO_CONTENT.getCollection(
 	'entities',
@@ -23,11 +60,11 @@ const testimonials = await ASTRO_CONTENT.getCollection(
 				>
 					Testimonials
 				</h2>
-				<p
+				<!-- <p
 					class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl"
 				>
 					Storybook and Chromatic
-				</p>
+				</p> -->
 			</div>
 			<div
 				class="mx-auto mt-16 flow-root max-w-2xl sm:mt-20 lg:mx-0 lg:max-w-none"
@@ -36,36 +73,30 @@ const testimonials = await ASTRO_CONTENT.getCollection(
 					class="-mt-8 sm:-mx-4 sm:columns-2 sm:text-[0] lg:columns-3"
 				>
 					{
-						testimonials.map(({data: entry}) => (
-							<div class="pt-8 sm:inline-block sm:w-full sm:px-4">
-								<figure class="rounded-2xl bg-gray-50 p-8 text-sm leading-6">
-									<blockquote class="text-gray-900">
-										<p>{entry.testimonial}</p>
-									</blockquote>
-									<figcaption class="mt-6 flex items-center gap-x-4">
-										<img
-											class="h-10 w-10 rounded-full bg-gray-50"
-											src={entry.avatar}
-											alt="Tom Coleman"
-										/>
-										<div>
-											<div class="font-semibold text-gray-900">
-												{entry.name}
-											</div>
-											<div class="text-gray-600">
-												{entry.position}
-											</div>
-										</div>
-									</figcaption>
-								</figure>
-							</div>
+						[...testimonials].map(({data: entry}) => (
+							<Testimonial
+								testimonial={entry.testimonial}
+								avatar={entry.avatar}
+								name={entry.name}
+								position={entry.position}
+							/>
+						))
+					}
+					{
+						other_testimonials.map(({data: entry}) => (
+							<Testimonial
+								testimonial={entry.testimonial}
+								avatar={entry.avatar}
+								name={entry.name}
+								position={entry.position}
+							/>
 						))
 					}
 				</div>
 			</div>
 		</div>
 	</div>
-	<h2>More</h2>
+	<!-- <h2>More</h2>
 	<div>
 		<blockquote class="twitter-tweet">
 			<p lang="en" dir="ltr">
@@ -328,14 +359,10 @@ const testimonials = await ASTRO_CONTENT.getCollection(
 		your Tech Job Search Video)
 	</blockquote>
 	<blockquote>
-		I am not sure, if that helps. But after watching your videos
-		for storybook, my thoughts were "if people like this dude
-		are working for that project, i trust in it". If you are
-		questioning if internal education is the right thing, be
-		sure, that your work is seen and inspires people. I hope you
-		find your spot, and for my personal pleasure, i hope we see
-		you hosting educational videos about modern tech and best
-		practices in the future! http://www.youtube.com/@Dorgrident
-		(comment on it stopped being fun video)
-	</blockquote>
+		After watching your videos for storybook, my thoughts were
+		"if people like this dude are working for that project, i
+		trust in it". Your work is seen and inspires people.
+		http://www.youtube.com/@Dorgrident (comment on it stopped
+		being fun video)
+	</blockquote> -->
 </Layout>

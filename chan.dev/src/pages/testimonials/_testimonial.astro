@@ -1,0 +1,22 @@
+<div class="pt-8 sm:inline-block sm:w-full sm:px-4">
+	<figure class="rounded-2xl bg-gray-50 p-8 text-sm leading-6">
+		<blockquote class="text-gray-900">
+			<p>{Astro.props.testimonial}</p>
+		</blockquote>
+		<figcaption class="mt-6 flex items-center gap-x-4">
+			<img
+				class="h-10 w-10 rounded-full bg-gray-50"
+				src={Astro.props.avatar}
+				alt="Tom Coleman"
+			/>
+			<div>
+				<div class="font-semibold text-gray-900">
+					{Astro.props.name}
+				</div>
+				<div class="text-gray-600">
+					{Astro.props.position}
+				</div>
+			</div>
+		</figcaption>
+	</figure>
+</div>
