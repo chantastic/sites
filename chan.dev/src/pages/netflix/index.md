@@ -1,5 +1,7 @@
 ---
 layout: '../../layouts/MarkdownLayout.astro'
+title: Michael Chan for Netflix Web UI Engineer (L5) - Games UI
+description: Video cover for Michael Chan's application to Netflix.
 ---
 
 <h1>Hi Netflix Games UI Team 🎮</h1>
