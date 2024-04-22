@@ -54,7 +54,6 @@
 		"@astrojs/react": "^3.1.0",
 		"@types/react": "^18.2.79",
 		"@types/react-dom": "^18.2.25",
-		"better-sqlite3": "^9.4.3",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0",
 		"sharp": "0.33.3"
