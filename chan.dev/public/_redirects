@@ -17,6 +17,7 @@
 /lessons/marchdown/container-plugin /remark-directive
 /syntax /applications/syntax
 /clerk /applications/clerk
+/netflix /applications/netflix
 
 # short links to outside platforms
 /avatars/latest https://res.cloudinary.com/chantastic/image/upload/v1626976663/chan.dev/2021-avatar.png
