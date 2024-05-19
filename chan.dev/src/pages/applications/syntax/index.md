@@ -196,7 +196,7 @@ In January, I'm releasing a beginner Storybook course to help designers, develop
 
 <a href="https://egghead.io/courses/a-beginner-s-guide-to-storybook-7-with-react-56f61ecf?af=1x80ad" target="_blank">
 
-![alt](../../content/posts/a-beginners-guide-to-storybook-7-with-react/a-beginners-guide-to-storybook-7-with-react.png)
+![alt](../../../content/posts/a-beginners-guide-to-storybook-7-with-react/a-beginners-guide-to-storybook-7-with-react.png)
 
 </a>
 
