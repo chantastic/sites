@@ -52,6 +52,7 @@
 		"@astrojs/cloudflare": "^9.2.1",
 		"@astrojs/db": "^0.9.4",
 		"@astrojs/react": "^3.3.0",
+		"@sentry/astro": "^8.3.0",
 		"@types/react": "^18.2.79",
 		"@types/react-dom": "^18.2.25",
 		"react": "^18.2.0",
@@ -76,5 +77,6 @@
 		"bracketSameLine": false,
 		"arrowParens": "always",
 		"singleQuote": true
-	}
+	},
+	"packageManager": "pnpm@9.1.0+sha512.67f5879916a9293e5cf059c23853d571beaf4f753c707f40cb22bed5fb1578c6aad3b6c4107ccb3ba0b35be003eb621a16471ac836c87beb53f9d54bb4612724"
 }

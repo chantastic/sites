@@ -16,6 +16,7 @@ import astro_expressive_code from 'astro-expressive-code'
 import react from '@astrojs/react'
 import cloudflare from '@astrojs/cloudflare'
 import db from '@astrojs/db'
+import sentry from '@sentry/astro'
 function process_remark_directives() {
 	// note: this function acts mutably
 	return (tree) => {
@@ -114,6 +115,15 @@ export default defineConfig({
 		}),
 		react(),
 		db(),
+		sentry(
+			sentry({
+				dsn: 'https://8ea4cd91a667332de8442768dc77940f@o4507302390923264.ingest.us.sentry.io/4507302392496128',
+				sourceMapsUploadOptions: {
+					project: 'javascript-astro',
+					authToken: process.env.SENTRY_AUTH_TOKEN,
+				},
+			})
+		),
 	],
 	image: {
 		service: sharpImageService(),

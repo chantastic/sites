@@ -5,6 +5,9 @@ import Prose from "#components/prose.astro";
 
 <Layout>
   <Prose as="main">
+    <button onclick="throw new Error('This is a test error')">
+      Throw test error
+      </button>
     <div id="w">
       <h2>Wirecutter</h2>
       <iframe
