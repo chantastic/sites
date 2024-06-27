@@ -73,3 +73,7 @@ cask "arc" unless [[ $MACHINE == "work" ]]
 
 It's my preference to set variables for these types of checks in `.zshenv`.  
 I do not track this file in my my shared dotfiles. So it remains unique to each machine.
+
+## References
+
+-https://gist.github.com/ChristopherA/a579274536aab36ea9966f301ff14f3f#install-a-specific-brewfile -https://github.com/Homebrew/homebrew-bundle?tab=readme-ov-file#usage
