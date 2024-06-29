@@ -49,7 +49,7 @@
 		"wrangler": "^3.62.0"
 	},
 	"dependencies": {
-		"@astrojs/cloudflare": "^9.2.1",
+		"@astrojs/cloudflare": "^11.0.1",
 		"@astrojs/db": "^0.11.7",
 		"@astrojs/react": "^3.6.0",
 		"@sentry/astro": "^8.13.0",
