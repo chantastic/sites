@@ -27,9 +27,9 @@
 		"@tailwindcss/typography": "^0.5.13",
 		"@types/sanitize-html": "^2.11.0",
 		"astro": "^4.11.3",
-		"astro-expressive-code": "^0.33.5",
+		"astro-expressive-code": "^0.35.3",
 		"hastscript": "^9.0.0",
-		"lucide": "^0.363.0",
+		"lucide": "^0.399.0",
 		"markdown-it": "^14.1.0",
 		"micromark": "^4.0.0",
 		"micromark-extension-gfm": "^3.0.0",
@@ -50,14 +50,14 @@
 	},
 	"dependencies": {
 		"@astrojs/cloudflare": "^9.2.1",
-		"@astrojs/db": "^0.9.11",
+		"@astrojs/db": "^0.11.7",
 		"@astrojs/react": "^3.6.0",
 		"@sentry/astro": "^8.13.0",
 		"@types/react": "^18.3.3",
 		"@types/react-dom": "^18.3.0",
 		"react": "^18.3.1",
 		"react-dom": "^18.3.1",
-		"sharp": "0.33.3"
+		"sharp": "0.33.4"
 	},
 	"engine": {
 		"node": ">=20.0.0"
