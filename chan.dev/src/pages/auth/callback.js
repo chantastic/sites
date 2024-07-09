@@ -11,15 +11,23 @@ export async function GET({request, redirect, cookies}) {
 		.get('code')
 		?.toString()
 
-	return new Response(`At least it's the code: ${code}`, {
-		status: 200,
-	})
+	const {user, accessToken, refreshToken, impersonator} =
+		await workos.userManagement.authenticateWithCode({
+			code,
+			clientId,
+		})
 
-	// const {user, accessToken, refreshToken, impersonator} =
-	// 	await workos.userManagement.authenticateWithCode({
-	// 		code,
-	// 		clientId,
-	// 	})
+	return new Response(
+		JSON.stringify({
+			user,
+			accessToken,
+			refreshToken,
+			impersonator,
+		}),
+		{
+			status: 200,
+		}
+	)
 
 	// const encryptedSession = await sealData(
 	// 	{accessToken, refreshToken, user, impersonator},
