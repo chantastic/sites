@@ -1,0 +1,41 @@
+---
+import {WorkOS} from '@workos-inc/node'
+import {createRemoteJWKSet, jwtVerify} from 'jose'
+
+import {unsealData} from 'iron-session'
+
+export const prerender = false
+
+const cookie = Astro.cookies.get('wos-session')
+
+if (!cookie) {
+	return Astro.redirect('/auth')
+}
+
+const session = await unsealData(cookie.value, {
+	password: import.meta.env.WORKOS_COOKIE_PASSWORD,
+})
+
+const workos = new WorkOS(import.meta.env.WORKOS_API_KEY)
+
+const JWKS = createRemoteJWKSet(
+	new URL(
+		workos.userManagement.getJwksUrl(
+			import.meta.env.WORKOS_CLIENT_ID
+		)
+	)
+)
+
+try {
+	const verifiedSession = await jwtVerify(
+		session.accessToken,
+		JWKS
+	)
+	console.log(verifiedSession)
+} catch (e) {
+	console.warn('Failed to verify session:', e)
+	return Astro.redirect('/auth')
+}
+---
+
+<pre><code>{JSON.stringify(session, null, '\t')}</code></pre>
