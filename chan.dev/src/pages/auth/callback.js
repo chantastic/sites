@@ -7,12 +7,13 @@ const workos = new WorkOS(import.meta.env.WORKOS_API_KEY)
 const clientId = import.meta.env.WORKOS_CLIENT_ID
 
 export async function GET({request, redirect, cookies}) {
-	return new Response(`At least it's aaaaa response`, {
+	const code = new URL(request.url).searchParams
+		.get('code')
+		?.toString()
+
+	return new Response(`At least it's the code: ${code}`, {
 		status: 200,
 	})
-	// const code = new URL(request.url).searchParams
-	// 	.get('code')
-	// 	?.toString()
 
 	// const {user, accessToken, refreshToken, impersonator} =
 	// 	await workos.userManagement.authenticateWithCode({
