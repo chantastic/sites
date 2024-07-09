@@ -4,12 +4,10 @@ import {createRemoteJWKSet, jwtVerify} from 'jose'
 
 import {unsealData} from 'iron-session'
 
-export const prerender = false
-
 const cookie = Astro.cookies.get('wos-session')
 
 if (!cookie) {
-	return Astro.redirect('/auth')
+	return Astro.redirect('/sign-in')
 }
 
 const session = await unsealData(cookie.value, {
@@ -26,16 +24,15 @@ const JWKS = createRemoteJWKSet(
 	)
 )
 
+let verifiedSession
+
 try {
-	const verifiedSession = await jwtVerify(
-		session.accessToken,
-		JWKS
-	)
-	console.log(verifiedSession)
+	verifiedSession = await jwtVerify(session.accessToken, JWKS)
 } catch (e) {
-	console.warn('Failed to verify session:', e)
-	return Astro.redirect('/auth')
+	return Astro.redirect('/sign-in')
 }
+
+export const prerender = false
 ---
 
-<pre><code>{JSON.stringify(session, null, '\t')}</code></pre>
+<h1>Hello {session.user.firstName} {session.user.lastName}!</h1>
