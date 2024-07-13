@@ -24,8 +24,8 @@ importers:
         specifier: ^18.3.0
         version: 18.3.0
       '@workos-inc/node':
-        specifier: ^7.12.0
-        version: 7.12.0
+        specifier: ^6.8.0
+        version: 6.8.0
       iron-session:
         specifier: ^8.0.2
         version: 8.0.2
@@ -1285,9 +1285,8 @@ packages:
     peerDependencies:
       vite: ^4.2.0 || ^5.0.0
 
-  '@workos-inc/node@7.12.0':
-    resolution: {integrity: sha512-9ycVeLjMW73WFQBdizn6dxkEdgblJTB4gz4oHdkDerYbHkdnzkOvzvfJXo6bwu+rjbTQUZoHQnG6nfOOVeBj+g==}
-    engines: {node: '>=16'}
+  '@workos-inc/node@6.8.0':
+    resolution: {integrity: sha512-uhlmK3DozCTBOBuy2IY2GvHbpYmDmolc2N5j8MpOUKMYyTWZpdkmETqg1Ky7mUSSPA203E3v6VIra9G4J7me1g==}
 
   acorn-walk@8.3.3:
     resolution: {integrity: sha512-MxXdReSRhGO7VlFe1bRG/oI7/mdLV9B9JJT0N8vZOhF7gFRR5l3M8W9G8JxmKV+JC5mGqJ0QvqfSOLsCPa4nUw==}
@@ -4565,7 +4564,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@workos-inc/node@7.12.0':
+  '@workos-inc/node@6.8.0':
     dependencies:
       pluralize: 8.0.0
 
