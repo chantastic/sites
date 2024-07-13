@@ -3,7 +3,6 @@ import {WorkOS} from '@workos-inc/node'
 import {sealData} from 'iron-session'
 
 const workos = new WorkOS(import.meta.env.WORKOS_API_KEY)
-const clientId = import.meta.env.WORKOS_CLIENT_ID
 
 export const GET: APIRoute = async ({
 	request,
@@ -16,7 +15,7 @@ export const GET: APIRoute = async ({
 	const session =
 		await workos.userManagement.authenticateWithCode({
 			code,
-			clientId,
+			clientId: import.meta.env.WORKOS_CLIENT_ID,
 		})
 
 	const encryptedSession = await sealData(session, {
@@ -33,5 +32,4 @@ export const GET: APIRoute = async ({
 	return redirect('/dashboard')
 }
 
-// disable prerendering in 'hyrbrid' mode
 export const prerender = false
