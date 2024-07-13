@@ -449,7 +449,80 @@ try {
 export const prerender = false
 ---
 
-<h1>Hello {session.user.firstName} {session.user.lastName}!</h1>
+<h1>Hello {session.user.first_name} {session.user.last_name}!</h1>
 ```
 
 ---
+
+## Authomatically refresh session with session refreshToken
+
+```diff lang="astro" title="src/pages/dashboard.astro ins=/sealData, /
+---
+import {WorkOS} from '@workos-inc/node'
+import {createRemoteJWKSet, jwtVerify} from 'jose'
+
+import {sealData, unsealData} from 'iron-session'
+
+const cookie = Astro.cookies.get('wos-session')
+
+if (!cookie) {
+	return Astro.redirect('/sign-in')
+}
+
+const session = await unsealData(cookie.value, {
+	password: import.meta.env.WORKOS_COOKIE_PASSWORD,
+})
+
+const workos = new WorkOS(import.meta.env.WORKOS_API_KEY)
+
+const JWKS = createRemoteJWKSet(
+	new URL(
+		workos.userManagement.getJwksUrl(
+			import.meta.env.WORKOS_CLIENT_ID
+		)
+	)
+)
+
+let verifiedSession
+
+try {
+	verifiedSession = await jwtVerify(session.accessToken, JWKS)
+} catch (e) {
++	try {
++		const refreshedSession =
++			await workos.userManagement.authenticateWithRefreshToken({
++				clientId: import.meta.env.WORKOS_CLIENT_ID,
++				refreshToken: session.refreshToken,
++			})
++
++		const encryptedRefreshedSession = await sealData(
++			refreshedSession,
++			{
++				password: import.meta.env.WORKOS_COOKIE_PASSWORD,
++			}
++		)
++
++		Astro.cookies.set(
++			'wos-session',
++			encryptedRefreshedSession,
++			{
++				path: '/',
++				httpOnly: true,
++				secure: true,
++				sameSite: 'lax',
++			}
++		)
++	} catch (e) {
+		return Astro.redirect('/sign-in')
++	}
+}
+
+export const prerender = false
+---
+
+<h1>
+	Hello {session.user.last_name}!
+</h1>
+```
+
+## Extract auth check into framework middleware
