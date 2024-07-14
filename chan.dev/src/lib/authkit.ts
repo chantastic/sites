@@ -1,4 +1,4 @@
-import {unsealData} from 'iron-session'
+import {sealData, unsealData} from 'iron-session'
 import type {User} from '@workos-inc/node'
 
 export interface Session {
@@ -22,4 +22,12 @@ export async function decryptSession(
 	)
 
 	return session
+}
+
+export async function encryptSession(session: Session) {
+	let encryptedSession = await sealData(session, {
+		password: import.meta.env.WORKOS_COOKIE_PASSWORD,
+	})
+
+	return encryptedSession
 }

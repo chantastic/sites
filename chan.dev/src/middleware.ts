@@ -2,8 +2,7 @@ import {defineMiddleware} from 'astro/middleware'
 import {minimatch} from 'minimatch'
 import {WorkOS} from '@workos-inc/node'
 import {createRemoteJWKSet, jwtVerify} from 'jose'
-import {sealData} from 'iron-session'
-import {decryptSession} from '#lib/authkit'
+import {decryptSession, encryptSession} from '#lib/authkit'
 
 export const onRequest = defineMiddleware(
 	async (context, next) => {
@@ -50,12 +49,11 @@ export const onRequest = defineMiddleware(
 							refreshToken: session.refreshToken,
 						}
 					)
-				const encryptedRefreshedSession = await sealData(
-					{...session.user, ...refreshedSession},
-					{
-						password: import.meta.env.WORKOS_COOKIE_PASSWORD,
-					}
-				)
+				const encryptedRefreshedSession = await encryptSession({
+					user: session.user,
+					...refreshedSession,
+				})
+
 				context.cookies.set(
 					'wos-session',
 					encryptedRefreshedSession,

@@ -1,6 +1,6 @@
 import type {APIRoute} from 'astro'
 import {WorkOS} from '@workos-inc/node'
-import {sealData} from 'iron-session'
+import {encryptSession} from '#lib/authkit'
 
 const workos = new WorkOS(import.meta.env.WORKOS_API_KEY)
 
@@ -18,9 +18,7 @@ export const GET: APIRoute = async ({
 			clientId: import.meta.env.WORKOS_CLIENT_ID,
 		})
 
-	const encryptedSession = await sealData(session, {
-		password: import.meta.env.WORKOS_COOKIE_PASSWORD,
-	})
+	const encryptedSession = await encryptSession(session)
 
 	cookies.set('wos-session', encryptedSession, {
 		path: '/',
