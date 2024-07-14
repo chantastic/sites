@@ -2,7 +2,7 @@ import {defineMiddleware} from 'astro/middleware'
 import {minimatch} from 'minimatch'
 import {WorkOS} from '@workos-inc/node'
 import {createRemoteJWKSet, jwtVerify} from 'jose'
-import {decryptSession, encryptSession} from '#lib/authkit'
+import * as AUTHKIT from '#lib/authkit'
 
 export const onRequest = defineMiddleware(
 	async (context, next) => {
@@ -15,13 +15,13 @@ export const onRequest = defineMiddleware(
 			return next()
 		}
 
-		const cookie = context.cookies.get('wos-session')
+		const cookie = context.cookies.get(AUTHKIT.COOKIE_NAME)
 
 		if (!cookie) {
 			return context.redirect('/sign-in')
 		}
 
-		const session = await decryptSession(cookie)
+		const session = await AUTHKIT.decryptSession(cookie)
 
 		const workos = new WorkOS(import.meta.env.WORKOS_API_KEY)
 
@@ -55,7 +55,7 @@ export const onRequest = defineMiddleware(
 				})
 
 				context.cookies.set(
-					'wos-session',
+					AUTHKIT.COOKIE_NAME,
 					encryptedRefreshedSession,
 					{
 						path: '/',

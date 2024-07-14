@@ -1,8 +1,8 @@
 ---
-import {decryptSession} from '#lib/authkit'
+import * as AUTHKIT from '#lib/authkit'
 
-const session = await decryptSession(
-	Astro.cookies.get('wos-session')!
+const session = await AUTHKIT.decryptSession(
+	Astro.cookies.get(AUTHKIT.COOKIE_NAME)!
 )
 
 export const prerender = false

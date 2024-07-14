@@ -1,6 +1,8 @@
 import {sealData, unsealData} from 'iron-session'
 import type {User} from '@workos-inc/node'
 
+export const COOKIE_NAME = 'wos-session'
+
 export interface Session {
 	accessToken: string
 	refreshToken: string
