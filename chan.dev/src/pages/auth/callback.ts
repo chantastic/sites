@@ -1,4 +1,4 @@
-import type {APIRoute} from 'astro'
+import type {APIRoute, AstroCookieSetOptions} from 'astro'
 import {WorkOS} from '@workos-inc/node'
 import * as AUTHKIT from '#lib/authkit'
 
@@ -20,12 +20,11 @@ export const GET: APIRoute = async ({
 
 	const encryptedSession = await AUTHKIT.encryptSession(session)
 
-	cookies.set(AUTHKIT.COOKIE_NAME, encryptedSession, {
-		path: '/',
-		httpOnly: true,
-		secure: true,
-		sameSite: 'lax',
-	})
+	cookies.set(
+		AUTHKIT.COOKIE_NAME,
+		encryptedSession,
+		AUTHKIT.COOKIE_OPTIONS as AstroCookieSetOptions
+	)
 
 	return redirect('/dashboard')
 }

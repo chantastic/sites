@@ -3,6 +3,13 @@ import type {User} from '@workos-inc/node'
 
 export const COOKIE_NAME = 'wos-session'
 
+export const COOKIE_OPTIONS = {
+	path: '/',
+	httpOnly: true,
+	secure: true,
+	sameSite: 'lax',
+}
+
 export interface Session {
 	accessToken: string
 	refreshToken: string
@@ -27,9 +34,7 @@ export async function decryptSession(
 }
 
 export async function encryptSession(session: Session) {
-	let encryptedSession = await sealData(session, {
+	return await sealData(session, {
 		password: import.meta.env.WORKOS_COOKIE_PASSWORD,
 	})
-
-	return encryptedSession
 }

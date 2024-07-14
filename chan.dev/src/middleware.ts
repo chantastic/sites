@@ -3,6 +3,7 @@ import {minimatch} from 'minimatch'
 import {WorkOS} from '@workos-inc/node'
 import {createRemoteJWKSet, jwtVerify} from 'jose'
 import * as AUTHKIT from '#lib/authkit'
+import type {AstroCookieSetOptions} from 'astro'
 
 export const onRequest = defineMiddleware(
 	async (context, next) => {
@@ -49,20 +50,16 @@ export const onRequest = defineMiddleware(
 							refreshToken: session.refreshToken,
 						}
 					)
-				const encryptedRefreshedSession = await encryptSession({
-					user: session.user,
-					...refreshedSession,
-				})
+				const encryptedRefreshedSession =
+					await AUTHKIT.encryptSession({
+						user: session.user,
+						...refreshedSession,
+					})
 
 				context.cookies.set(
 					AUTHKIT.COOKIE_NAME,
 					encryptedRefreshedSession,
-					{
-						path: '/',
-						httpOnly: true,
-						secure: true,
-						sameSite: 'lax',
-					}
+					AUTHKIT.COOKIE_OPTIONS as AstroCookieSetOptions
 				)
 			} catch (e) {
 				return context.redirect('/sign-in')
