@@ -526,3 +526,221 @@ export const prerender = false
 ```
 
 ## Extract auth check into framework middleware
+
+### Create Auth Middleware
+
+```ts title="src/middleware.ts"
+import {defineMiddleware} from 'astro:middleware'
+
+export const onRequest = defineMiddleware(
+	async (context, next) => {
+		return next()
+	}
+)
+```
+
+### Skip middleware for un-protected routes
+
+```diff lang="ts" title="src/middleware.ts"
+import {defineMiddleware} from 'astro:middleware'
++import match from 'picomatch'
+
+export const onRequest = defineMiddleware(
+	async (context, next) => {
++		if (
++			!match('/dashboard*')(
++				String(new URL(context.request.url).pathname)
++			)
++		) {
++			return next()
++		}
+
+		return next()
+	}
+)
+```
+
+### Move page-specific auth into middleware.ts (changing `Astro` global to `context`)
+
+```diff lang="astro" title="src/pages/dashboard.ts" del=/sealData, /
+---
+-import {WorkOS} from '@workos-inc/node'
+-import {createRemoteJWKSet, jwtVerify} from 'jose'
+import {sealData, unsealData} from 'iron-session'
+
+const cookie = Astro.cookies.get('wos-session')
+
+-if (!cookie) {
+-	return Astro.redirect('/sign-in')
+-}
+-
+-const session = await unsealData(cookie.value, {
+-	password: import.meta.env.WORKOS_COOKIE_PASSWORD,
+-})
+-
+-const workos = new WorkOS(import.meta.env.WORKOS_API_KEY)
+-
+-const JWKS = createRemoteJWKSet(
+-	new URL(
+-		workos.userManagement.getJwksUrl(
+-			import.meta.env.WORKOS_CLIENT_ID
+-		)
+-	)
+-)
+-
+-let verifiedSession
+-
+-try {
+-	verifiedSession = await jwtVerify(session.accessToken, JWKS)
+-} catch (e) {
+-	try {
+-		const refreshedSession =
+-			await workos.userManagement.authenticateWithRefreshToken({
+-				clientId: import.meta.env.WORKOS_CLIENT_ID,
+-				refreshToken: session.refreshToken,
+-			})
+-
+-		const encryptedRefreshedSession = await sealData(
+-			refreshedSession,
+-			{
+-				password: import.meta.env.WORKOS_COOKIE_PASSWORD,
+-			}
+-		)
+-
+-		Astro.cookies.set(
+-			'wos-session',
+-			encryptedRefreshedSession,
+-			{
+-				path: '/',
+-				httpOnly: true,
+-				secure: true,
+-				sameSite: 'lax',
+-			}
+-		)
+-	} catch (e) {
+-		return Astro.redirect('/sign-in')
+-	}
+-}
+
+export const prerender = false
+---
+
+<h1>
+	Hello {session.user.last_name}!
+</h1>
+```
+
+```diff lang="ts" title="src/middleware.ts" ins=/\s(context)/
+import {defineMiddleware} from 'astro:middleware'
+import match from 'picomatch'
++import {WorkOS} from '@workos-inc/node'
++import {createRemoteJWKSet, jwtVerify} from 'jose'
++import {sealData, unsealData} from 'iron-session'
+
+export const onRequest = defineMiddleware(
+	async (context, next) => {
+		if (
+			!match('/dashboard*')(
+				String(new URL(context.request.url).pathname)
+			)
+		) {
+			return next()
+		}
+
++		const cookie = context.cookies.get('wos-session')
++
++		if (!cookie) {
++			return context.redirect('/sign-in')
++		}
++
++		const session = await unsealData(cookie.value, {
++			password: import.meta.env.WORKOS_COOKIE_PASSWORD,
++		})
++
++		const workos = new WorkOS(import.meta.env.WORKOS_API_KEY)
++
++		const JWKS = createRemoteJWKSet(
++			new URL(
++				workos.userManagement.getJwksUrl(
++					import.meta.env.WORKOS_CLIENT_ID
++				)
++			)
++		)
++
++		let verifiedSession
++
++		try {
++			verifiedSession = await jwtVerify(
++				session.accessToken,
++				JWKS
++			)
++		} catch (e) {
++			try {
++				const refreshedSession =
++					await workos.userManagement.authenticateWithRefreshToken(
++						{
++							clientId: import.meta.env.WORKOS_CLIENT_ID,
++							refreshToken: session.refreshToken,
++						}
++					)
++				const encryptedRefreshedSession = await sealData(
++					refreshedSession,
++					{
++						password: import.meta.env.WORKOS_COOKIE_PASSWORD,
++					}
++				)
++				context.cookies.set(
++					'wos-session',
++					encryptedRefreshedSession,
++					{
++						path: '/',
++						httpOnly: true,
++						secure: true,
++						sameSite: 'lax',
++					}
++				)
++			} catch (e) {
++				return context.redirect('/sign-in')
++			}
++		}
+
+		return next()
+	}
+)
+
+```
+
+### NOTE: we should probably eliminate the other session grab in the pgaes first
+
+### Add type data
+
+(Best place for this is in `workos-next`)[https://github.com/workos/authkit-nextjs/blob/main/src/interfaces.ts]
+
+```diff lang="ts" title="src/middleware.ts" ins=/: Session/
+import {defineMiddleware} from 'astro:middleware'
+import match from 'picomatch'
+import {WorkOS} from '@workos-inc/node'
++import type {User} from '@workos-inc/node'
+import {createRemoteJWKSet, jwtVerify} from 'jose'
+import {sealData, unsealData} from 'iron-session'
+
++interface Session {
++	accessToken: string
++	refreshToken: string
++	user: User
++}
+
+
+export const onRequest = defineMiddleware(
+	async (context, next) => {
+		// ...folded
+
+		const session: Session = await unsealData(cookie.value, {
+			password: import.meta.env.WORKOS_COOKIE_PASSWORD,
+		})
+
+		// ...folded
+		return next()
+	}
+)
+```

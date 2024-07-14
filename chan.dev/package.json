@@ -57,6 +57,7 @@
 		"@workos-inc/node": "^6.8.0",
 		"iron-session": "^8.0.2",
 		"jose": "^5.6.3",
+		"minimatch": "^10.0.1",
 		"react": "^18.3.1",
 		"react-dom": "^18.3.1",
 		"sharp": "0.33.4"
