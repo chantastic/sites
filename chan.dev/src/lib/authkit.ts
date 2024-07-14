@@ -12,14 +12,8 @@ export interface EncryptedSession {
 }
 
 export async function decryptSession(
-	getEncryptedSession: () => EncryptedSession | undefined
+	encryptedSession: EncryptedSession
 ) {
-	const encryptedSession = getEncryptedSession()
-
-	if (!encryptedSession?.value) {
-		throw Error('No session found.')
-	}
-
 	let session: Session = await unsealData(
 		encryptedSession.value,
 		{
