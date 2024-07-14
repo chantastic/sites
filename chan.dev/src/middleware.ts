@@ -1,15 +1,9 @@
 import {defineMiddleware} from 'astro/middleware'
 import {minimatch} from 'minimatch'
 import {WorkOS} from '@workos-inc/node'
-import type {User} from '@workos-inc/node'
 import {createRemoteJWKSet, jwtVerify} from 'jose'
-import {sealData, unsealData} from 'iron-session'
-
-interface Session {
-	accessToken: string
-	refreshToken: string
-	user: User
-}
+import {sealData} from 'iron-session'
+import {decryptSession} from '#lib/authkit'
 
 export const onRequest = defineMiddleware(
 	async (context, next) => {
@@ -28,9 +22,7 @@ export const onRequest = defineMiddleware(
 			return context.redirect('/sign-in')
 		}
 
-		const session: Session = await unsealData(cookie.value, {
-			password: import.meta.env.WORKOS_COOKIE_PASSWORD,
-		})
+		const session = await decryptSession(cookie)
 
 		const workos = new WorkOS(import.meta.env.WORKOS_API_KEY)
 
