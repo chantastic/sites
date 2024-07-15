@@ -22,4 +22,21 @@ export const GET: APIRoute = async ({
 	return redirect('/dashboard')
 }
 
+export const POST: APIRoute = async ({cookies, redirect}) => {
+	const sessionId = String(
+		AUTHKIT.getSessionId(
+			await AUTHKIT.decryptSession(
+				cookies.get(AUTHKIT.COOKIE_NAME)!
+			)
+		)
+	)
+
+	cookies.delete(
+		AUTHKIT.COOKIE_NAME,
+		AUTHKIT.COOKIE_OPTIONS as AstroCookieSetOptions // critical that options be passed
+	)
+
+	return redirect(AUTHKIT.getSignOutURL(sessionId))
+}
+
 export const prerender = false

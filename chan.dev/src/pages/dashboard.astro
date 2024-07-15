@@ -10,4 +10,8 @@ export const prerender = false
 
 <h1>
 	Hello {session.user.lastName}!
+
+	<form method="POST" action="/auth/callback">
+		<button type="submit">Sign out</button>
+	</form>
 </h1>

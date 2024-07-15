@@ -1,7 +1,7 @@
 import {sealData, unsealData} from 'iron-session'
 import {WorkOS} from '@workos-inc/node'
 import type {User} from '@workos-inc/node'
-import {createRemoteJWKSet, jwtVerify} from 'jose'
+import {createRemoteJWKSet, jwtVerify, decodeJwt} from 'jose'
 
 export const COOKIE_NAME = 'wos-session'
 
@@ -49,6 +49,14 @@ export function getSignInURL() {
 		redirectUri: import.meta.env.WORKOS_REDIRECT_URI,
 		clientId: import.meta.env.WORKOS_CLIENT_ID,
 	})
+}
+
+export function getSignOutURL(sessionId: string) {
+	return workos.userManagement.getLogoutUrl({sessionId})
+}
+
+export function getSessionId(session: Session) {
+	return decodeJwt(session.accessToken).sid
 }
 
 export async function authenticateWithCode(code: string) {
