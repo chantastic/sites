@@ -1,5 +1,7 @@
 import {defineMiddleware} from 'astro/middleware'
 import {minimatch} from 'minimatch'
+import {WorkOS} from '@workos-inc/node'
+import {createRemoteJWKSet, jwtVerify} from 'jose'
 import * as AUTHKIT from '#lib/authkit'
 import type {AstroCookieSetOptions} from 'astro'
 
@@ -22,17 +24,47 @@ export const onRequest = defineMiddleware(
 
 		const session = await AUTHKIT.decryptSession(cookie)
 
-		const verifiedSession = await AUTHKIT.verifySession(session)
+		const workos = new WorkOS(import.meta.env.WORKOS_API_KEY)
 
-		if (!verifiedSession) {
-			return context.redirect('/sign-in')
-		}
-
-		context.cookies.set(
-			AUTHKIT.COOKIE_NAME,
-			await AUTHKIT.encryptSession(verifiedSession),
-			AUTHKIT.COOKIE_OPTIONS as AstroCookieSetOptions
+		const JWKS = createRemoteJWKSet(
+			new URL(
+				workos.userManagement.getJwksUrl(
+					import.meta.env.WORKOS_CLIENT_ID
+				)
+			)
 		)
+
+		let verifiedSession
+
+		try {
+			verifiedSession = await jwtVerify(
+				session.accessToken,
+				JWKS
+			)
+		} catch (e) {
+			try {
+				const refreshedSession =
+					await workos.userManagement.authenticateWithRefreshToken(
+						{
+							clientId: import.meta.env.WORKOS_CLIENT_ID,
+							refreshToken: session.refreshToken,
+						}
+					)
+				const encryptedRefreshedSession =
+					await AUTHKIT.encryptSession({
+						user: session.user,
+						...refreshedSession,
+					})
+
+				context.cookies.set(
+					AUTHKIT.COOKIE_NAME,
+					encryptedRefreshedSession,
+					AUTHKIT.COOKIE_OPTIONS as AstroCookieSetOptions
+				)
+			} catch (e) {
+				return context.redirect('/sign-in')
+			}
+		}
 
 		return next()
 	}
