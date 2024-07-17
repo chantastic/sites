@@ -7,11 +7,13 @@ frequency: regular
 links: [https://amzn.to/3QXKtkU]
 ---
 
+## Why I like this camera
+
 ## Output lag and compensation
 
 The S5II\* suffers very bad output lag.
 
-Lag improves HDMI audio is disabled.
+Lag improves when HDMI audio is disabled.
 But at it's worst, video trails audio by 5-7 frames (on an average audio interface).
 
 And it get's wierd…
