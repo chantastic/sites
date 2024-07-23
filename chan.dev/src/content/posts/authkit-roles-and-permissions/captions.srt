@@ -1,0 +1,616 @@
+1
+00:00:00,166 --> 00:00:01,366
+Authkit just added permissions,
+
+2
+00:00:01,633 --> 00:00:02,500
+which means that you
+
+3
+00:00:02,500 --> 00:00:04,166
+can now implement RBAC
+
+4
+00:00:04,266 --> 00:00:05,866
+for all of your million
+
+5
+00:00:05,866 --> 00:00:07,466
+free monthly active users.
+
+6
+00:00:07,766 --> 00:00:09,466
+This video is everything you need to know
+
+7
+00:00:09,466 --> 00:00:10,266
+to get started with
+
+8
+00:00:10,266 --> 00:00:11,833
+role-based authorization
+
+9
+00:00:12,066 --> 00:00:13,233
+in your applications.
+
+10
+00:00:13,833 --> 00:00:14,633
+Let's get into it.
+
+11
+00:00:14,633 --> 00:00:16,766
+For this tutorial, we're using the next-
+
+12
+00:00:16,766 --> 00:00:18,133
+authkit-example app.
+
+13
+00:00:18,399 --> 00:00:20,066
+Here you'll find instructions for cloning
+
+14
+00:00:20,300 --> 00:00:22,066
+and setting up the application.
+
+15
+00:00:22,566 --> 00:00:23,899
+And once set up, it looks
+
+16
+00:00:23,899 --> 00:00:25,166
+like this running locally.
+
+17
+00:00:25,366 --> 00:00:26,266
+The first thing you need to know
+
+18
+00:00:26,399 --> 00:00:27,666
+is that permissions are now
+
+19
+00:00:27,666 --> 00:00:29,033
+available on user sessions.
+
+20
+00:00:29,399 --> 00:00:30,566
+We can see this in the src/
+
+21
+00:00:30,566 --> 00:00:32,833
+/app/account/ page source file.
+
+22
+00:00:32,833 --> 00:00:33,933
+Using authkit-next to
+
+23
+00:00:33,933 --> 00:00:35,133
+get the user session,
+
+24
+00:00:35,133 --> 00:00:37,766
+we now have user role and permissions,
+
+25
+00:00:38,133 --> 00:00:39,899
+which we can hover to see its type,
+
+26
+00:00:40,066 --> 00:00:41,899
+undefined or an array of strings.
+
+27
+00:00:42,299 --> 00:00:44,066
+After signing into our application,
+
+28
+00:00:44,433 --> 00:00:45,666
+we can visit the account page
+
+29
+00:00:46,000 --> 00:00:47,366
+where we see our user data,
+
+30
+00:00:47,666 --> 00:00:49,166
+our role, but no permissions.
+
+31
+00:00:49,766 --> 00:00:51,333
+So let's go into our WorkOS
+
+32
+00:00:51,333 --> 00:00:53,233
+dashboard under roles
+
+33
+00:00:53,766 --> 00:00:55,233
+to create new permissions.
+
+34
+00:00:55,566 --> 00:00:57,100
+Now, when I see new forms like this,
+
+35
+00:00:57,100 --> 00:00:58,033
+I'm always a little bit worried
+
+36
+00:00:58,033 --> 00:00:59,100
+that I'm gonna screw something up.
+
+37
+00:00:59,133 --> 00:01:00,133
+So I'll give you a little guidance
+
+38
+00:01:00,133 --> 00:01:01,466
+on how to use these fields,
+
+39
+00:01:01,466 --> 00:01:02,966
+but we have a wonderful article
+
+40
+00:01:02,966 --> 00:01:04,700
+that goes into much more detail.
+
+41
+00:01:04,700 --> 00:01:05,266
+Let's say that we wanna
+
+42
+00:01:05,266 --> 00:01:07,033
+add a post viewer role.
+
+43
+00:01:07,433 --> 00:01:08,799
+The name field is required,
+
+44
+00:01:09,099 --> 00:01:11,033
+but can be changed later on
+
+45
+00:01:11,033 --> 00:01:12,133
+if you come up with a better name.
+
+46
+00:01:12,633 --> 00:01:13,533
+Slug on the other hand
+
+47
+00:01:13,533 --> 00:01:15,400
+is the technical string
+
+48
+00:01:15,400 --> 00:01:16,233
+that we're going to use
+
+49
+00:01:16,233 --> 00:01:17,266
+inside of our application
+
+50
+00:01:17,633 --> 00:01:19,466
+to permit or restrict
+
+51
+00:01:19,466 --> 00:01:20,566
+different behaviors.
+
+52
+00:01:20,900 --> 00:01:23,833
+So I use database and crud style language
+
+53
+00:01:24,166 --> 00:01:25,700
+saying that for posts, we
+
+54
+00:01:25,700 --> 00:01:27,533
+want to permit read access.
+
+55
+00:01:27,866 --> 00:01:29,966
+Finally, the description is optional,
+
+56
+00:01:30,233 --> 00:01:31,466
+but helpful for
+
+57
+00:01:31,466 --> 00:01:32,799
+providing additional information.
+
+58
+00:01:33,233 --> 00:01:34,633
+I'm gonna leave it blank for now though.
+
+59
+00:01:34,633 --> 00:01:36,133
+So we have our viewer permission.
+
+60
+00:01:36,366 --> 00:01:39,266
+Let's add a full access permission.
+
+61
+00:01:39,533 --> 00:01:41,266
+For now, I'll call this a post admin.
+
+62
+00:01:41,500 --> 00:01:43,333
+And for the resource type of
+
+63
+00:01:43,333 --> 00:01:45,133
+posts, they have full access.
+
+64
+00:01:45,533 --> 00:01:47,033
+Great, now I have two permissions.
+
+65
+00:01:47,466 --> 00:01:48,766
+Now, one thing to note is that these
+
+66
+00:01:48,766 --> 00:01:50,266
+slugs are immutable.
+
+67
+00:01:50,700 --> 00:01:51,566
+So even though we can
+
+68
+00:01:51,566 --> 00:01:53,433
+change the name and description,
+
+69
+00:01:53,866 --> 00:01:56,566
+the slug can be edited after creation.
+
+70
+00:01:56,866 --> 00:01:58,666
+Now that we have our permissions set up,
+
+71
+00:01:58,666 --> 00:02:00,333
+let's go about adding them to roles.
+
+72
+00:02:00,733 --> 00:02:02,000
+In role-based access control,
+
+73
+00:02:02,000 --> 00:02:04,299
+the best practice is to run your
+
+74
+00:02:04,299 --> 00:02:05,333
+authorization checks
+
+75
+00:02:05,566 --> 00:02:07,433
+against permissions, not roles.
+
+76
+00:02:07,700 --> 00:02:08,800
+However, you can't apply
+
+77
+00:02:08,800 --> 00:02:10,500
+permissions directly to users.
+
+78
+00:02:10,966 --> 00:02:12,766
+You apply them through roles.
+
+79
+00:02:13,066 --> 00:02:14,966
+By default, every user in
+
+80
+00:02:14,966 --> 00:02:17,433
+Authkit has a member role.
+
+81
+00:02:17,733 --> 00:02:19,933
+So to apply permissions to that role,
+
+82
+00:02:20,166 --> 00:02:22,733
+we navigate to the role we want to edit
+
+83
+00:02:22,733 --> 00:02:24,000
+and add permissions.
+
+84
+00:02:24,433 --> 00:02:26,199
+Here, I'll select posts read.
+
+85
+00:02:27,233 --> 00:02:28,366
+Now, every user with that
+
+86
+00:02:28,366 --> 00:02:29,866
+role has that new permission.
+
+87
+00:02:30,133 --> 00:02:31,000
+Back in our application,
+
+88
+00:02:31,000 --> 00:02:32,300
+we can validate that by
+
+89
+00:02:32,300 --> 00:02:34,666
+signing out and signing back in.
+
+90
+00:02:34,666 --> 00:02:36,766
+Visit the account page, and here we go.
+
+91
+00:02:36,766 --> 00:02:38,599
+We have both our role, member, and
+
+92
+00:02:38,599 --> 00:02:40,233
+permission, posts read.
+
+93
+00:02:40,533 --> 00:02:41,500
+Okay, but why did I log
+
+94
+00:02:41,500 --> 00:02:43,033
+out to log back in again?
+
+95
+00:02:43,033 --> 00:02:45,033
+I did this to force refresh the session.
+
+96
+00:02:45,333 --> 00:02:46,566
+By default, Authkit sessions
+
+97
+00:02:46,566 --> 00:02:48,333
+refresh every five minutes,
+
+98
+00:02:48,566 --> 00:02:49,866
+but that value can be
+
+99
+00:02:49,866 --> 00:02:51,633
+configured based on your needs.
+
+100
+00:02:51,933 --> 00:02:53,000
+For the sake of this tutorial,
+
+101
+00:02:53,000 --> 00:02:54,033
+it's just easier to log
+
+102
+00:02:54,033 --> 00:02:55,233
+out and log back in again.
+
+103
+00:02:55,333 --> 00:02:56,666
+While we're in the WorkOS dashboard,
+
+104
+00:02:56,666 --> 00:02:58,233
+let's jump back to roles
+
+105
+00:02:58,233 --> 00:03:01,666
+and create a new admin role.
+
+106
+00:03:01,933 --> 00:03:04,133
+Using lowercase admin as a slug
+
+107
+00:03:04,466 --> 00:03:06,466
+and the description full system access,
+
+108
+00:03:06,933 --> 00:03:10,400
+we'll add the permission, posts all,
+
+109
+00:03:10,400 --> 00:03:11,833
+create our new role,
+
+110
+00:03:12,233 --> 00:03:14,666
+find a user to assign it to,
+
+111
+00:03:14,666 --> 00:03:17,033
+under organizations, edit role,
+
+112
+00:03:17,466 --> 00:03:19,066
+change from member to admin.
+
+113
+00:03:19,333 --> 00:03:21,366
+Now this user has an admin role,
+
+114
+00:03:21,366 --> 00:03:22,766
+which changes the
+
+115
+00:03:22,766 --> 00:03:24,666
+permissions that they have in the app.
+
+116
+00:03:24,766 --> 00:03:25,633
+Jump back over to the
+
+117
+00:03:25,633 --> 00:03:27,699
+app, sign out, sign in again,
+
+118
+00:03:27,933 --> 00:03:29,000
+and see that our
+
+119
+00:03:29,000 --> 00:03:30,800
+account now has an admin role
+
+120
+00:03:31,199 --> 00:03:32,433
+with the updated permissions.
+
+121
+00:03:32,933 --> 00:03:34,533
+And that's all there is to it.
+
+122
+00:03:34,733 --> 00:03:35,966
+Now that you have permissions,
+
+123
+00:03:35,966 --> 00:03:36,766
+you can do permissions
+
+124
+00:03:36,766 --> 00:03:38,533
+checks against those string slugs
+
+125
+00:03:38,766 --> 00:03:40,233
+and restrict or enable
+
+126
+00:03:40,233 --> 00:03:42,866
+features based on those permissions.
+
+127
+00:03:42,866 --> 00:03:43,833
+Of course, there are two things
+
+128
+00:03:43,833 --> 00:03:45,266
+that I wanna call out before leaving you.
+
+129
+00:03:45,466 --> 00:03:46,466
+First and foremost,
+
+130
+00:03:46,466 --> 00:03:47,166
+you'll wanna use the
+
+131
+00:03:47,166 --> 00:03:49,866
+latest version of our SDKs,
+
+132
+00:03:49,866 --> 00:03:51,633
+whichever framework you are using.
+
+133
+00:03:51,866 --> 00:03:52,333
+Second, you wanna
+
+134
+00:03:52,333 --> 00:03:53,566
+check out the documentation
+
+135
+00:03:54,333 --> 00:03:56,133
+for roles and permissions.
+
+136
+00:03:56,599 --> 00:03:57,966
+Here you'll find great suggestions
+
+137
+00:03:58,166 --> 00:04:00,033
+on how to model your application,
+
+138
+00:04:00,266 --> 00:04:01,633
+what to name the slugs,
+
+139
+00:04:01,766 --> 00:04:03,533
+depending on your application needs,
+
+140
+00:04:03,800 --> 00:04:05,400
+and even suggestions on
+
+141
+00:04:05,400 --> 00:04:06,733
+which delimiters to use.
+
+142
+00:04:06,733 --> 00:04:08,800
+This is an extremely well considered doc
+
+143
+00:04:08,933 --> 00:04:09,966
+and you should give it a look.
+
+144
+00:04:09,966 --> 00:04:11,133
+Okay, so we talked about roles,
+
+145
+00:04:11,133 --> 00:04:11,933
+we talked about permissions.
+
+146
+00:04:12,533 --> 00:04:14,066
+I think that's pretty much it for today,
+
+147
+00:04:14,300 --> 00:04:15,566
+but we're currently in
+
+148
+00:04:15,566 --> 00:04:16,433
+the middle of a series
+
+149
+00:04:16,766 --> 00:04:18,866
+where we're integrating AuthKit into any
+
+150
+00:04:18,866 --> 00:04:19,966
+JavaScript framework.
+
+151
+00:04:20,366 --> 00:04:21,633
+That sounds like your jam.
+
+152
+00:04:21,633 --> 00:04:24,000
+Check out one of these videos over here.
+
+153
+00:04:24,266 --> 00:04:25,699
+I'm chantastic, I'll see
+
+154
+00:04:25,699 --> 00:04:26,666
+you in the next one, bye.
+

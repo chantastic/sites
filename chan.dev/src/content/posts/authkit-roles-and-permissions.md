@@ -3,13 +3,47 @@ title: AuthKit Roles and Permissions
 publishDate: 2024-07-12
 references:
   - https://workos.com/docs/user-management/roles-and-permissions
+  - https://workos.com/changelog/role-based-access-control-for-authkit
+  - https://www.youtube.com/watch?v=FErRN9EsKTo
+description: Unlock the power of Role-Based Access Control (RBAC) with AuthKit's new permissions feature. Learn how to implement and manage user roles, create custom permissions, and secure your application with ease. Perfect for developers looking to streamline authentication in their next.js projects.
+og:
+  title: 'Mastering RBAC with AuthKit: A Complete Guide to Roles and Permissions | chan.dev'
+  image: 'https://i.ytimg.com/vi/FErRN9EsKTo/maxresdefault.jpg'
+tags:
+  - AuthKit
+  - RBAC
+  - Permissions
+  - Web Security
+  - Next.js
+  - WorkOS
+  - User Management
+  - Access Control
+  - Web Development
+  - JavaScript
 ---
 
 AuthKit now has permissions — completing the RBAC feature set.
 
-![WorkOS Roles > Permissions > Create permission form](./authkit-roles-and-permissions/authkit-roles-and-permissions.png)
-
 This is everything you need to know to start implementing authorization in your applications.
+
+## Video tutorial
+
+<div data-responsive-youtube-container>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/FErRN9EsKTo?si=7SE3Hf3KG-bx6F7b" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+
+Chapters:
+
+- [Set up the example app (Next.js)](https://www.youtube.com/watch?v=FErRN9EsKTo&feature=shared&t=14s)
+- [Permissions exist on sessions](https://www.youtube.com/watch?v=FErRN9EsKTo&feature=shared&t=25s)
+- [Create new permissions in WorkOS](https://www.youtube.com/watch?v=FErRN9EsKTo&feature=shared&t=49s)
+- [Add permissions to roles](https://www.youtube.com/watch?v=FErRN9EsKTo&feature=shared&t=120s)
+- [Understand session duration](https://www.youtube.com/watch?v=FErRN9EsKTo&feature=shared&t=154s)
+- [Create and assign permissions to roles](https://www.youtube.com/watch?v=FErRN9EsKTo&feature=shared&t=175s)
+- [Implement permission checks in your app](https://www.youtube.com/watch?v=FErRN9EsKTo&feature=shared&t=212s)
+- [Where to learn more…](https://www.youtube.com/watch?v=FErRN9EsKTo&feature=shared&t=225s)
+
+---
 
 ## Setup
 
