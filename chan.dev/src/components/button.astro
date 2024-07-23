@@ -1,13 +1,13 @@
 ---
-const { class: className, ...restProps } = Astro.props;
+const {class: className, ...restProps} = Astro.props
 ---
 
 <button
-  class:list={[
-    className,
-    "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-full",
-  ]}
-  {...Astro.props}
+	class:list={[
+		className,
+		'bg-blue-500 hover:bg-blue-700 active:bg-blue-900 text-white font-bold py-2 px-4 rounded w-full',
+	]}
+	{...Astro.props}
 >
-  <slot />
+	<slot />
 </button>

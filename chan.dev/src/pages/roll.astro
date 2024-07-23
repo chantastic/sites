@@ -1,0 +1,42 @@
+---
+import Layout from '#layouts/Layout.astro'
+import Prose from '#components/prose.astro'
+import Button from '#components/button.astro'
+---
+
+<Layout>
+	<Prose as="main">
+		<main class="min-w-[26rem] text-center">
+			<Button data-refresh-button>Flip</Button>
+			<div class="text-9xl font-black font-mono" data-result>
+			</div>
+		</main>
+	</Prose>
+</Layout>
+<script>
+	let refreshButton: HTMLButtonElement = document.querySelector(
+			'[data-refresh-button]'
+		)!,
+		result: HTMLElement =
+			document.querySelector('[data-result]')!
+
+	function renderResult(el: HTMLElement) {
+		const sides =
+			Number(
+				new URL(location.href).searchParams.get('sides')
+			) || 6
+		return (el.innerText = String(
+			Math.floor(Math.random() * sides) + 1
+		))
+	}
+
+	renderResult(result)
+
+	refreshButton.addEventListener('click', () => {
+		result.innerText = '🎲'
+
+		setTimeout(() => {
+			renderResult(result)
+		}, 300)
+	})
+</script>
