@@ -3,8 +3,6 @@ import Layout from '#layouts/Layout.astro'
 import Prose from '#components/prose.astro'
 import {db, Habit, eq} from 'astro:db'
 
-export const prerender = false
-
 const habits = await db
 	.select()
 	.from(Habit)
@@ -56,14 +54,7 @@ const chore_data = habits.map(
 								{saturday_first_weekly_occurances.map(
 									(occurance) => {
 										if (occurance) {
-											return (
-												<td
-													class="border"
-													hx-post={`/chores/partials/${chore.id}`}
-													hx-trigger="click"
-													hx-swap="outerHTML"
-												/>
-											)
+											return <td class="border" />
 										} else {
 											return (
 												<td
@@ -83,8 +74,4 @@ const chore_data = habits.map(
 			</tbody>
 		</table>
 	</Prose>
-	<script
-		src="https://unpkg.com/htmx.org@1.9.8"
-		integrity="sha384-rgjA7mptc2ETQqXoYC3/zJvkU7K/aP44Y+z7xQuJiVnB/422P/Ak+F/AqFR7E4Wr"
-		crossorigin="anonymous"></script>
 </Layout>
