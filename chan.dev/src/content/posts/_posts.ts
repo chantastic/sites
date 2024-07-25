@@ -75,6 +75,7 @@ export const collectionSchema = defineCollection({
 					image: z.string().url().optional(),
 				})
 				.optional(),
+			mermaid: z.boolean().optional(),
 		}),
 })
 

@@ -1,6 +1,7 @@
 ---
 title: Securely Implement OAuth 2.0 for Public Clients with PKCE
 date: 2024-07-24
+mermaid: true
 ---
 
 <p class="bg-yellow-100 p-6 text-yellow-800 border-yellow-800 border-0 border-l-4" data-astro-source-file="/Users/chan/sites/chan.dev/src/components/post.astro" data-astro-source-loc="36:85">
@@ -35,7 +36,7 @@ The Client Secret method remains highly secure but is only suitable for confiden
 
 Before we dive into the implementation, let's visualize how PKCE augments the standard OAuth flow with an additional layer of verification, ensuring that only the original client can exchange the authorization code for tokens.
 
-```mermaid
+<pre class="mermaid not-prose">
 sequenceDiagram
     participant Client
     participant AuthServer
@@ -50,7 +51,7 @@ sequenceDiagram
     AuthServer->>Client: Access token
     Client->>ResourceServer: Request with access token
     ResourceServer->>Client: Protected resource
-```
+</pre>
 
 This diagram illustrates the step-by-step process of the PKCE flow, highlighting how the code verifier and code challenge work together to enhance security.
 
