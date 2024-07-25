@@ -11,6 +11,8 @@ The guide tracks each steup of the WorkOS SSO authentiaction flow:
 
 ![Authentication Flow Diagram https://workos.com/docs/sso/how-single-sign-on-works](./authkit-astro/authkit-astro.png)
 
+## Contents
+
 ## Warning
 
 As of this writing, `@workos-inc/node` [v7 has an issue that causes it to fail in Cloudflare Workers](https://github.com/workos/workos-node/issues/1070).
@@ -454,7 +456,7 @@ export const prerender = false
 
 ---
 
-## Authomatically refresh session with session refreshToken
+## Automatically refresh session with session refreshToken
 
 ```diff lang="astro" title="src/pages/dashboard.astro ins=/sealData, /
 ---
@@ -523,6 +525,125 @@ export const prerender = false
 <h1>
 	Hello {session.user.last_name}!
 </h1>
+```
+
+Let's break that down.
+
+### Set access token duration in the WorkOS dashboard
+
+By default, WorkOS sessions require refreshing every 5 minutes.  
+That duration can be configured in the WorkOS dashboard.
+
+To build our integration, we'll set the duration to the minimum value of 1 minute.
+
+![WorkOS Dashbaord > Athentication > Sessions > Configure Access Token Duration](./authkit-astro/authkit-astro-1.png)
+
+### Attempt to refresh session if jwtVerify fails
+
+Once authenticated, our access token is now valid for 1 minute.
+Add a an early reaturn to observe the error.
+
+```diff lang="astro" title="src/pages/dashboard.astro
+try {
+	verifiedSession = await jwtVerify(session.accessToken, JWKS)
+} catch (e) {
++     return new Response(e);
+	return Astro.redirect('/sign-in')
+}
+```
+
+When verification fails, we'll see this error:
+
+```
+JWTExpired: "exp" claim timestamp check failed
+```
+
+### Attempt to refresh session
+
+Add a try-catch block to refresh the session.  
+For starters, let's render the `session.refreshToken` to ensure we have the value in scope.
+
+```diff lang="astro" title="src/pages/dashboard.astro"
+try {
+	verifiedSession = await jwtVerify(session.accessToken, JWKS)
+} catch (e) {
++  try {
++    return new Response(session.refreshToken);
++  } catch (e) {
+    return new Response(e);
+	return Astro.redirect('/sign-in')
++  }
+}
+```
+
+### Authenticate with refresh token
+
+In the try block, call the `authenticateWithRefreshToken` method with the refresh token.
+
+```diff lang="astro" title="src/pages/dashboard.astro" del=/(session.refreshToken)r/ ins=/n(refreshedSession)/
+try {
++	const refreshedSession = await workos.userManagement.authenticateWithRefreshToken({
++		clientId: import.meta.env.WORKOS_CLIENT_ID,
++		refreshToken: session.refreshToken,
++	});
+
+    return new Response(session.refreshTokenrefreshedSession);
+}
+```
+
+### Encrypt the refreshed session
+
+```diff lang="astro" title="src/pages/dashboard.astro" del=/(refreshedSession)e/ ins=/n(encryptedRefreshedSession)/
+try {
+	const refreshedSession = await workos.userManagement.authenticateWithRefreshToken({
+		clientId: import.meta.env.WORKOS_CLIENT_ID,
+		refreshToken: session.refreshToken,
+	});
+
++	const encryptedRefreshedSession = await sealData(
++		refreshedSession,
++		{
++			password: import.meta.env.WORKOS_COOKIE_PASSWORD,
++		}
++	)
+
+    return new Response(refreshedSessionencryptedRefreshedSession);
+}
+```
+
+### Set cookie with new encrypeted session
+
+```diff lang="astro" title="src/pages/dashboard.astro"
+try {
+	const refreshedSession = await workos.userManagement.authenticateWithRefreshToken({
+		clientId: import.meta.env.WORKOS_CLIENT_ID,
+		refreshToken: session.refreshToken,
+	});
+
+	const encryptedRefreshedSession = await sealData(
+		refreshedSession,
+		{
+			password: import.meta.env.WORKOS_COOKIE_PASSWORD,
+		}
+	)
+
++	Astro.cookies.set(
++		'wos-session',
++		encryptedRefreshedSession,
++		{
++			path: '/',
++			httpOnly: true,
++			secure: true,
++			sameSite: 'lax',
++		}
++	);
+
+-    return new Response(refreshedSessionencryptedRefreshedSession);
++    console.log('session refreshed successfully')
+} catch (e) {
+-	return new Response(e);
+	return Astro.redirect('/sign-in')
+
 ```
 
 ## Extract auth check into framework middleware
