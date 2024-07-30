@@ -112,8 +112,8 @@ importers:
         specifier: ^9.0.1
         version: 9.0.1
       remark-obsidian-callout:
-        specifier: ^1.3.2
-        version: 1.3.2
+        specifier: ^1.1.3
+        version: 1.1.3
       remark-toc:
         specifier: ^9.0.0
         version: 9.0.0
@@ -2961,8 +2961,8 @@ packages:
   remark-gfm@4.0.0:
     resolution: {integrity: sha512-U92vJgBPkbw4Zfu/IiW2oTZLSL3Zpv+uI7My2eq8JxKgqraFdU8YUGicEJCEgSbeaG+QDFqIcwwfMTOEelPxuA==}
 
-  remark-obsidian-callout@1.3.2:
-    resolution: {integrity: sha512-IqSR8AE6PJmWU+uuuoN/DCMXgyS7Dia3d9U4wNk0Ga0WPgrW1WitvkOUo+p3sfMbrVa1Zfhht+S3CnSpgdX7Vg==}
+  remark-obsidian-callout@1.1.3:
+    resolution: {integrity: sha512-q2jZgPMHP5Wyq0WgeGdwboPoepqN7Ib77iWagEKThZjtl1wUd7/f2tdErdPr/LeZu9K7I6r52XylwhLs5GJi9g==}
 
   remark-parse@11.0.0:
     resolution: {integrity: sha512-FCxlKLNGknS5ba/1lmpYijMUzX2esxW5xQqjWxw2eHFfS2MSdaHVINFmhjo+qN1WhZhNimq0dZATN9pH0IDrpA==}
@@ -6621,7 +6621,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  remark-obsidian-callout@1.3.2:
+  remark-obsidian-callout@1.1.3:
     dependencies:
       unist-util-visit: 4.1.2
 

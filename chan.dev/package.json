@@ -38,7 +38,7 @@
 		"remark-deflist": "^1.0.0",
 		"remark-directive": "^3.0.0",
 		"remark-external-links": "^9.0.1",
-		"remark-obsidian-callout": "^1.3.2",
+		"remark-obsidian-callout": "^1.1.3",
 		"remark-toc": "^9.0.0",
 		"sanitize-html": "^2.13.0",
 		"shiki": "^1.12.0",
