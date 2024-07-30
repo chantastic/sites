@@ -1,9 +1,10 @@
 import {defineMiddleware} from 'astro/middleware'
 import {minimatch} from 'minimatch'
-import {WorkOS} from '@workos-inc/node'
-import {createRemoteJWKSet, jwtVerify} from 'jose'
+import {
+	WorkOS,
+	AuthenticateWithSessionCookieFailureReason,
+} from '@workos-inc/node'
 import * as AUTHKIT from '#lib/authkit'
-import type {AstroCookieSetOptions} from 'astro'
 
 export const onRequest = defineMiddleware(
 	async (context, next) => {
@@ -16,56 +17,58 @@ export const onRequest = defineMiddleware(
 			return next()
 		}
 
+		const workos = new WorkOS(AUTHKIT.API_KEY, {
+			clientId: AUTHKIT.CLIENT_ID,
+		})
+
 		const cookie = context.cookies.get(AUTHKIT.COOKIE_NAME)
 
 		if (!cookie) {
 			return context.redirect('/sign-in')
 		}
 
-		const session = await AUTHKIT.decryptSession(cookie)
-
-		const workos = new WorkOS(import.meta.env.WORKOS_API_KEY)
-
-		const JWKS = createRemoteJWKSet(
-			new URL(
-				workos.userManagement.getJwksUrl(
-					import.meta.env.WORKOS_CLIENT_ID
-				)
+		const authenticationResponse =
+			await workos.userManagement.authenticateWithSessionCookie(
+				{
+					sessionData: cookie.value,
+					cookiePassword: AUTHKIT.COOKIE_PASSWORD,
+				}
 			)
-		)
 
-		let verifiedSession
-
-		try {
-			verifiedSession = await jwtVerify(
-				session.accessToken,
-				JWKS
-			)
-		} catch (e) {
-			try {
-				const refreshedSession =
-					await workos.userManagement.authenticateWithRefreshToken(
-						{
-							clientId: import.meta.env.WORKOS_CLIENT_ID,
-							refreshToken: session.refreshToken,
-						}
-					)
-				const encryptedRefreshedSession =
-					await AUTHKIT.encryptSession({
-						user: session.user,
-						...refreshedSession,
-					})
-
-				context.cookies.set(
-					AUTHKIT.COOKIE_NAME,
-					encryptedRefreshedSession,
-					AUTHKIT.COOKIE_OPTIONS as AstroCookieSetOptions
-				)
-			} catch (e) {
-				return context.redirect('/sign-in')
-			}
+		if (authenticationResponse.authenticated) {
+			return next()
 		}
 
-		return next()
+		if (
+			!authenticationResponse.authenticated &&
+			authenticationResponse.reason ===
+				AuthenticateWithSessionCookieFailureReason.NO_SESSION_COOKIE_PROVIDED
+		) {
+			return context.redirect('/sign-in')
+		}
+
+		try {
+			const refreshResponse =
+				await workos.userManagement.refreshAndSealSessionData({
+					sessionData: cookie.value,
+					cookiePassword: AUTHKIT.COOKIE_PASSWORD,
+				})
+
+			if (!refreshResponse.authenticated) {
+				return context.redirect('/sign-in')
+			}
+
+			context.cookies.set(
+				AUTHKIT.COOKIE_NAME,
+				refreshResponse.sealedSession,
+				AUTHKIT.COOKIE_OPTIONS
+			)
+			console.log('refreshed session')
+
+			return next()
+		} catch (e) {
+			context.cookies.delete(AUTHKIT.COOKIE_NAME)
+			return context.redirect('/sign-in')
+		}
 	}
 )

@@ -1,4 +1,3 @@
-import {sealData, unsealData} from 'iron-session'
 import {WorkOS, type User} from '@workos-inc/node'
 import type {AstroCookieSetOptions} from 'astro'
 
@@ -22,36 +21,17 @@ export interface Session {
 	user: User
 }
 
-export interface EncryptedSession {
+export interface Cookie {
 	value: string
 }
 
-export async function decryptSession(
-	encryptedSession: EncryptedSession
+export async function getSessionFromCookie(
+	encryptedCookie: Cookie
 ) {
-	let session: Session = await unsealData(
-		encryptedSession.value,
-		{
-			password: import.meta.env.WORKOS_COOKIE_PASSWORD,
-		}
-	)
-
-	return session
-}
-
-export async function getSessionFromCookie(encryptedCookie: {
-	value: string
-}) {
 	const workos = new WorkOS(API_KEY, {clientId: CLIENT_ID})
 
 	return await workos.userManagement.getSessionFromCookie({
 		sessionData: encryptedCookie.value,
 		cookiePassword: COOKIE_PASSWORD,
-	})
-}
-
-export async function encryptSession(session: Session) {
-	return await sealData(session, {
-		password: import.meta.env.WORKOS_COOKIE_PASSWORD,
 	})
 }
