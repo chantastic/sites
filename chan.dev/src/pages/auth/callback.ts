@@ -1,8 +1,8 @@
-import type {APIRoute, AstroCookieSetOptions} from 'astro'
+import type {APIRoute} from 'astro'
 import {WorkOS} from '@workos-inc/node'
 import * as AUTHKIT from '#lib/authkit'
 
-const workos = new WorkOS(import.meta.env.WORKOS_API_KEY)
+const workos = new WorkOS(AUTHKIT.API_KEY)
 
 export const GET: APIRoute = async ({
 	request,
@@ -12,21 +12,37 @@ export const GET: APIRoute = async ({
 	const code = String(
 		new URL(request.url).searchParams.get('code')
 	)
-	const session =
-		await workos.userManagement.authenticateWithCode({
-			code,
-			clientId: import.meta.env.WORKOS_CLIENT_ID,
+
+	if (!code) {
+		return new Response('No code provided.', {
+			status: 400,
+			headers: {
+				'Content-Type': 'text/plain',
+			},
 		})
+	}
 
-	const encryptedSession = await AUTHKIT.encryptSession(session)
+	try {
+		const authenticateResponse =
+			await workos.userManagement.authenticateWithCode({
+				code,
+				clientId: AUTHKIT.CLIENT_ID,
+				session: {
+					sealSession: true,
+					cookiePassword: AUTHKIT.COOKIE_PASSWORD,
+				},
+			})
 
-	cookies.set(
-		AUTHKIT.COOKIE_NAME,
-		encryptedSession,
-		AUTHKIT.COOKIE_OPTIONS as AstroCookieSetOptions
-	)
+		cookies.set(
+			AUTHKIT.COOKIE_NAME,
+			authenticateResponse.sealedSession!,
+			AUTHKIT.COOKIE_OPTIONS
+		)
 
-	return redirect('/dashboard')
+		return redirect('/dashboard')
+	} catch (e) {
+		return redirect('/sign-in')
+	}
 }
 
 export const prerender = false
