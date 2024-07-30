@@ -1,9 +1,15 @@
 import {sealData, unsealData} from 'iron-session'
 import type {User} from '@workos-inc/node'
+import type {AstroCookieSetOptions} from 'astro'
+
+export const API_KEY = import.meta.env.WORKOS_API_KEY
+export const CLIENT_ID = import.meta.env.WORKOS_CLIENT_ID
+export const COOKIE_PASSWORD = import.meta.env
+	.WORKOS_COOKIE_PASSWORD
 
 export const COOKIE_NAME = 'wos-session'
 
-export const COOKIE_OPTIONS = {
+export const COOKIE_OPTIONS: AstroCookieSetOptions = {
 	path: '/',
 	httpOnly: true,
 	secure: true,
