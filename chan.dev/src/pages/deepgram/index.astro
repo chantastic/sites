@@ -1,0 +1,183 @@
+---
+import sample_data from './_sample-data.json'
+import Layout from '#layouts/Layout.astro'
+import Prose from '#components/prose.astro'
+
+const speakers = [
+	{name: 'Michael Grinich'},
+	{name: 'Cece Stalsmith'},
+]
+
+interface Utterance {
+	speaker: string
+	transcript: string
+	timestamp: string
+}
+
+function secondsToHms(incomingSeconds: number) {
+	incomingSeconds = Number(incomingSeconds)
+
+	var h = Math.floor(incomingSeconds / 3600)
+	var m = Math.floor((incomingSeconds % 3600) / 60)
+	var s = Math.floor((incomingSeconds % 3600) % 60)
+
+	function fmt(s: number) {
+		return String(s).padStart(2, '0')
+	}
+
+	return `${h ? `${fmt(h)}:` : ''}${fmt(m)}:${fmt(s)}`
+}
+
+const reduced_utterances: Utterance[] = []
+
+for (const utterance of sample_data.results.utterances) {
+	let previous_utterance = reduced_utterances.at(-1) ?? null
+
+	if (
+		previous_utterance &&
+		previous_utterance.speaker ===
+			speakers[utterance.speaker].name &&
+		previous_utterance.transcript.length > 0
+	) {
+		previous_utterance.transcript += utterance.transcript
+	} else {
+		reduced_utterances.push({
+			speaker: speakers[utterance.speaker].name,
+			transcript: utterance.transcript,
+			timestamp: secondsToHms(utterance.start),
+		})
+	}
+}
+
+// force first utterance to be at first second (important for YouTube)
+reduced_utterances[0].timestamp = '00:00:00'
+
+let reduced_topics: string[] = []
+
+for (const segment of sample_data.results.topics.segments) {
+	for (const topic of segment.topics) {
+		if (topic.confidence_score > 0.6) {
+			reduced_topics.push(topic.topic)
+		}
+	}
+}
+
+reduced_topics = [...new Set(reduced_topics)]
+
+let reduced_intents: string[] = []
+
+for (const segment of sample_data.results.intents.segments) {
+	for (const intent of segment.intents) {
+		if (intent.confidence_score > 0.01) {
+			reduced_intents.push(intent.intent)
+		}
+	}
+}
+
+reduced_intents = [...new Set(reduced_intents)]
+// WCAG transcript format: https://www.w3.org/WAI/media/av/transcripts/#transcript-file-format
+---
+
+<Layout>
+	<Prose>
+		<main>
+			<h1>Deepgram</h1>
+
+			<details>
+				<summary>Summary</summary>
+				<p>{sample_data.results.summary.short}</p>
+			</details>
+
+			<details>
+				<summary>Topics</summary>
+				{
+					sample_data.results.topics.segments.map((segment) => (
+						<>
+							<dl>
+								<dt>
+									<code>.topic</code>
+								</dt>
+								<dd>
+									{segment.topics
+										.map(
+											({topic, confidence_score}) =>
+												`${topic} (${confidence_score})`
+										)
+										.join(', ')}
+								</dd>
+
+								<dt>
+									<code>.text</code>
+								</dt>
+								<dd>{segment.text}</dd>
+
+								<dt>
+									<code>.start_word</code>
+								</dt>
+								<dd>{segment.start_word}</dd>
+
+								<dt>
+									<code>.end_word</code>
+								</dt>
+								<dd>{segment.end_word}</dd>
+							</dl>
+							<hr />
+						</>
+					))
+				}
+			</details>
+
+			<details open>
+				<summary>High confidence topics</summary>
+				<p>
+					{reduced_topics.join(', ')}
+				</p>
+			</details>
+
+			<details>
+				<summary>High confidence intents</summary>
+				<p>
+					{reduced_intents.join(', ')}
+				</p>
+			</details>
+
+			<details>
+				<summary>Utterances</summary>
+				<div>
+					{
+						reduced_utterances.map((utterance) => (
+							<p>
+								<span>
+									<strong>{utterance.speaker}</strong>
+									<span>{utterance.timestamp}</span>
+								</span>{' '}
+								{': '}
+								<span>{utterance.transcript}</span>
+							</p>
+						))
+					}
+				</div>
+			</details>
+
+			<details>
+				<summary>Transcript</summary>
+				<div>
+					{
+						sample_data.results.channels[0].alternatives[0]
+							.transcript
+					}
+				</div>
+			</details>
+
+			<details>
+				<summary>Intents</summary>
+				<p>
+					{
+						sample_data.results.channels[0].alternatives[0]
+							.transcript
+					}
+				</p>
+			</details>
+		</main>
+	</Prose>
+</Layout>
