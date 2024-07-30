@@ -16,7 +16,7 @@
 		"tsc": "tsc"
 	},
 	"devDependencies": {
-		"@astrojs/markdown-remark": "^5.1.1",
+		"@astrojs/markdown-remark": "^5.2.0",
 		"@astrojs/rss": "^4.0.7",
 		"@astrojs/sitemap": "^3.1.6",
 		"@astrojs/tailwind": "^5.1.0",
@@ -26,7 +26,7 @@
 		"@tailwindcss/aspect-ratio": "^0.4.2",
 		"@tailwindcss/typography": "^0.5.13",
 		"@types/sanitize-html": "^2.11.0",
-		"astro": "^4.11.3",
+		"astro": "^4.12.3",
 		"astro-expressive-code": "^0.35.3",
 		"hastscript": "^9.0.0",
 		"lucide": "^0.399.0",
@@ -49,9 +49,9 @@
 		"wrangler": "^3.62.0"
 	},
 	"dependencies": {
-		"@astrojs/cloudflare": "^9.0.0",
-		"@astrojs/db": "^0.11.7",
-		"@astrojs/react": "^3.6.0",
+		"@astrojs/cloudflare": "^9.2.1",
+		"@astrojs/db": "^0.12.0",
+		"@astrojs/react": "^3.6.1",
 		"@types/react": "^18.3.3",
 		"@types/react-dom": "^18.3.0",
 		"@workos-inc/node": "^6.8.0",
