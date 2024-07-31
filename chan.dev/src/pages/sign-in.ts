@@ -1,17 +1,8 @@
-import {WorkOS} from '@workos-inc/node'
+import * as AUTHKIT from '#lib/authkit'
 import type {APIRoute} from 'astro'
 
-const workos = new WorkOS(import.meta.env.WORKOS_API_KEY)
-
 export const GET: APIRoute = async ({redirect}) => {
-	const authorizationUrl =
-		workos.userManagement.getAuthorizationUrl({
-			provider: 'authkit',
-			redirectUri: import.meta.env.WORKOS_REDIRECT_URI,
-			clientId: import.meta.env.WORKOS_CLIENT_ID,
-		})
-
-	return redirect(authorizationUrl)
+	return redirect(AUTHKIT.getAuthorizationUrl())
 }
 
 export const prerender = false
