@@ -12,7 +12,9 @@ import Prose from '#components/prose.astro'
 	<Prose>
 		<main>
 			RESOLVED REDIRECT_URI: {
-				import.meta.env.WORKOS_REDIRECT_URI
+				`https://${import.meta.env.CF_PAGES_BRANCH}.${
+					import.meta.env.CF_PAGES_PROJECT_NAME
+				}.pages.dev/auth/callback`
 			}
 			<h1 class="tracking-tight">chan.dev</h1>
 			<div data-responsive-youtube-container>
