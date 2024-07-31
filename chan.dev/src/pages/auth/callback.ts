@@ -1,8 +1,5 @@
 import type {APIRoute} from 'astro'
-import {WorkOS} from '@workos-inc/node'
 import * as AUTHKIT from '#lib/authkit'
-
-const workos = new WorkOS(AUTHKIT.API_KEY)
 
 export const GET: APIRoute = async ({
 	request,
@@ -24,14 +21,7 @@ export const GET: APIRoute = async ({
 
 	try {
 		const authenticateResponse =
-			await workos.userManagement.authenticateWithCode({
-				code,
-				clientId: AUTHKIT.CLIENT_ID,
-				session: {
-					sealSession: true,
-					cookiePassword: AUTHKIT.COOKIE_PASSWORD,
-				},
-			})
+			await AUTHKIT.authenticateWithCode(code)
 
 		cookies.set(
 			AUTHKIT.COOKIE_NAME,
