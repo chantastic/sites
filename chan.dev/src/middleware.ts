@@ -63,6 +63,7 @@ export const onRequest = defineMiddleware(
 				refreshResponse.sealedSession,
 				AUTHKIT.COOKIE_OPTIONS
 			)
+			console.log('refreshed session')
 
 			return next()
 		} catch (e) {
