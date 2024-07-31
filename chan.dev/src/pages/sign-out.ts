@@ -17,7 +17,7 @@ export const GET: APIRoute = async ({
 
 	try {
 		logoutUrl = await AUTHKIT.getLogoutUrlFromSessionCookie(
-			cookie
+			cookie!
 		)
 	} catch (e) {
 		logoutUrl = '/'
