@@ -1,4 +1,3 @@
-import {WorkOS} from '@workos-inc/node'
 import * as AUTHKIT from '#lib/authkit'
 import type {APIRoute} from 'astro'
 
