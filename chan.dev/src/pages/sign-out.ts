@@ -1,9 +1,6 @@
 import {WorkOS} from '@workos-inc/node'
 import * as AUTHKIT from '#lib/authkit'
 import type {APIRoute} from 'astro'
-import {createRemoteJWKSet, jwtVerify} from 'jose'
-
-const workos = new WorkOS(import.meta.env.WORKOS_API_KEY)
 
 export const GET: APIRoute = async ({
 	redirect,
@@ -14,34 +11,20 @@ export const GET: APIRoute = async ({
 		return new Response('ok')
 	}
 
+	const cookie = cookies.get(AUTHKIT.COOKIE_NAME)
+
+	let logoutUrl
+
 	try {
-		let session = await AUTHKIT.getSessionFromCookie(
-			cookies.get(AUTHKIT.COOKIE_NAME)!
+		logoutUrl = await AUTHKIT.getLogoutUrlFromSessionCookie(
+			cookie
 		)
-
-		const JWKS = createRemoteJWKSet(
-			new URL(
-				workos.userManagement.getJwksUrl(
-					import.meta.env.WORKOS_CLIENT_ID
-				)
-			)
-		)
-
-		const verifiedSession = await jwtVerify(
-			session!.accessToken,
-			JWKS
-		)
-
-		const logoutRedirect = workos.userManagement.getLogoutUrl({
-			sessionId: verifiedSession.payload.sid,
-		})
-
-		cookies.delete(AUTHKIT.COOKIE_NAME, AUTHKIT.COOKIE_OPTIONS)
-		return redirect(logoutRedirect)
 	} catch (e) {
-		cookies.delete(AUTHKIT.COOKIE_NAME, AUTHKIT.COOKIE_OPTIONS)
-		return redirect('/')
+		logoutUrl = '/'
 	}
+
+	cookies.delete(AUTHKIT.COOKIE_NAME, AUTHKIT.COOKIE_OPTIONS)
+	return redirect(logoutUrl)
 }
 
 function isPrefetchRequest(request: Request) {

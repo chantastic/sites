@@ -59,3 +59,23 @@ export async function authenticateWithCode(code: string) {
 		},
 	})
 }
+
+export async function getLogoutUrlFromSessionCookie(
+	encryptedCookie: Cookie
+) {
+	const workos = new WorkOS(import.meta.env.WORKOS_API_KEY, {
+		clientId: CLIENT_ID,
+	})
+
+	const authenticationResponse =
+		await workos.userManagement.authenticateWithSessionCookie({
+			sessionData: encryptedCookie.value,
+			cookiePassword: COOKIE_PASSWORD,
+		})
+
+	const logoutUrl = workos.userManagement.getLogoutUrl({
+		sessionId: authenticationResponse.sessionId,
+	})
+
+	return logoutUrl
+}
