@@ -5,9 +5,7 @@ export const API_KEY = import.meta.env.WORKOS_API_KEY
 export const CLIENT_ID = import.meta.env.WORKOS_CLIENT_ID
 export const REDIRECT_URI =
 	import.meta.env.WORKOS_REDIRECT_URI ??
-	`https://${import.meta.env.CF_PAGES_BRANCH}.${
-		import.meta.env.CF_PAGES_PROJECT_NAME
-	}.pages.dev/auth/callback`
+	`${import.meta.env.CF_PAGES_URL}/auth/callback`
 export const COOKIE_PASSWORD = import.meta.env
 	.WORKOS_COOKIE_PASSWORD
 
