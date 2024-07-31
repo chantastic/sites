@@ -24,6 +24,15 @@ export interface Session {
 export interface Cookie {
 	value: string
 }
+export function getAuthorizationUrl() {
+	const workos = new WorkOS(import.meta.env.WORKOS_API_KEY)
+
+	return workos.userManagement.getAuthorizationUrl({
+		provider: 'authkit',
+		redirectUri: import.meta.env.WORKOS_REDIRECT_URI,
+		clientId: import.meta.env.WORKOS_CLIENT_ID,
+	})
+}
 
 export async function getSessionFromCookie(
 	encryptedCookie: Cookie
