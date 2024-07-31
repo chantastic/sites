@@ -9,12 +9,10 @@ export const GET: APIRoute = async ({
 	redirect,
 	cookies,
 }) => {
-	const code = String(
-		new URL(request.url).searchParams.get('code')
-	)
+	const code = new URL(request.url).searchParams.get('code')
 
 	if (!code) {
-		return new Response('No code provided.', {
+		return new Response('No authorizationcode provided.', {
 			status: 400,
 			headers: {
 				'Content-Type': 'text/plain',
