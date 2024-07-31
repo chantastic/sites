@@ -6,8 +6,6 @@ export const CLIENT_ID = import.meta.env.WORKOS_CLIENT_ID
 export const COOKIE_PASSWORD = import.meta.env
 	.WORKOS_COOKIE_PASSWORD
 
-const workos = new WorkOS(import.meta.env.WORKOS_API_KEY)
-
 export const COOKIE_NAME = 'wos-session'
 
 export const COOKIE_OPTIONS: AstroCookieSetOptions = {
@@ -41,6 +39,8 @@ export async function getSessionFromCookie(
 }
 
 export async function authenticateWithCode(code: string) {
+	const workos = new WorkOS(import.meta.env.WORKOS_API_KEY)
+
 	return await workos.userManagement.authenticateWithCode({
 		code,
 		clientId: import.meta.env.WORKOS_CLIENT_ID,
