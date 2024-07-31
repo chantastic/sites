@@ -3,7 +3,7 @@ import * as AUTHKIT from '#lib/authkit'
 import type {APIRoute} from 'astro'
 import {createRemoteJWKSet, jwtVerify} from 'jose'
 
-const workos = new WorkOS(import.meta.env.WORKOS_API_KEY)
+const workos = new WorkOS(AUTHKIT.API_KEY)
 
 export const GET: APIRoute = async ({
 	redirect,
