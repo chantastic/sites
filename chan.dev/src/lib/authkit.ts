@@ -28,37 +28,37 @@ export interface Cookie {
 	value: string
 }
 export function getAuthorizationUrl() {
-	const workos = new WorkOS(import.meta.env.WORKOS_API_KEY)
+	const workos = new WorkOS(API_KEY)
 
 	return workos.userManagement.getAuthorizationUrl({
 		provider: 'authkit',
-		redirectUri: import.meta.env.WORKOS_REDIRECT_URI,
-		clientId: import.meta.env.WORKOS_CLIENT_ID,
+		redirectUri: REDIRECT_URI,
+		clientId: CLIENT_ID,
 	})
 }
 
 export async function getSessionFromCookie(
 	encryptedCookie: Cookie
 ) {
-	const workos = new WorkOS(import.meta.env.WORKOS_API_KEY, {
-		clientId: import.meta.env.WORKOS_CLIENT_ID,
+	const workos = new WorkOS(API_KEY, {
+		clientId: CLIENT_ID,
 	})
 
 	return await workos.userManagement.getSessionFromCookie({
 		sessionData: encryptedCookie.value,
-		cookiePassword: import.meta.env.WORKOS_COOKIE_PASSWORD,
+		cookiePassword: COOKIE_PASSWORD,
 	})
 }
 
 export async function authenticateWithCode(code: string) {
-	const workos = new WorkOS(import.meta.env.WORKOS_API_KEY)
+	const workos = new WorkOS(API_KEY)
 
 	return await workos.userManagement.authenticateWithCode({
 		code,
-		clientId: import.meta.env.WORKOS_CLIENT_ID,
+		clientId: CLIENT_ID,
 		session: {
 			sealSession: true,
-			cookiePassword: import.meta.env.WORKOS_COOKIE_PASSWORD,
+			cookiePassword: COOKIE_PASSWORD,
 		},
 	})
 }
@@ -66,7 +66,7 @@ export async function authenticateWithCode(code: string) {
 export async function getLogoutUrlFromSessionCookie(
 	encryptedCookie: Cookie
 ) {
-	const workos = new WorkOS(import.meta.env.WORKOS_API_KEY, {
+	const workos = new WorkOS(API_KEY, {
 		clientId: CLIENT_ID,
 	})
 
