@@ -1,13 +1,16 @@
-import {WorkOS, type User} from '@workos-inc/node'
+import {
+	WorkOS,
+	AuthenticateWithSessionCookieFailureReason,
+	type User,
+} from '@workos-inc/node'
 import type {AstroCookieSetOptions} from 'astro'
 
-export const API_KEY = import.meta.env.WORKOS_API_KEY
-export const CLIENT_ID = import.meta.env.WORKOS_CLIENT_ID
-export const REDIRECT_URI =
+const API_KEY = import.meta.env.WORKOS_API_KEY
+const CLIENT_ID = import.meta.env.WORKOS_CLIENT_ID
+const REDIRECT_URI =
 	import.meta.env.WORKOS_REDIRECT_URI ??
 	`${import.meta.env.CF_PAGES_URL}/auth/callback`
-export const COOKIE_PASSWORD = import.meta.env
-	.WORKOS_COOKIE_PASSWORD
+const COOKIE_PASSWORD = import.meta.env.WORKOS_COOKIE_PASSWORD
 
 export const COOKIE_NAME = 'wos-session'
 
@@ -82,3 +85,33 @@ export async function getLogoutUrlFromSessionCookie(
 
 	return logoutUrl
 }
+
+export async function authenticateWithSessionCookie(
+	encryptedCookie: Cookie
+) {
+	const workos = new WorkOS(API_KEY, {
+		clientId: CLIENT_ID,
+	})
+
+	return await workos.userManagement.authenticateWithSessionCookie(
+		{
+			sessionData: encryptedCookie.value,
+			cookiePassword: COOKIE_PASSWORD,
+		}
+	)
+}
+
+export async function refreshAndSealSessionData(
+	encryptedCookie: Cookie
+) {
+	const workos = new WorkOS(API_KEY, {
+		clientId: CLIENT_ID,
+	})
+
+	return await workos.userManagement.refreshAndSealSessionData({
+		sessionData: encryptedCookie.value,
+		cookiePassword: COOKIE_PASSWORD,
+	})
+}
+
+export {AuthenticateWithSessionCookieFailureReason}

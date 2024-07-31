@@ -1,9 +1,5 @@
 import {defineMiddleware} from 'astro/middleware'
 import {minimatch} from 'minimatch'
-import {
-	WorkOS,
-	AuthenticateWithSessionCookieFailureReason,
-} from '@workos-inc/node'
 import * as AUTHKIT from '#lib/authkit'
 
 export const onRequest = defineMiddleware(
@@ -17,10 +13,6 @@ export const onRequest = defineMiddleware(
 			return next()
 		}
 
-		const workos = new WorkOS(AUTHKIT.API_KEY, {
-			clientId: AUTHKIT.CLIENT_ID,
-		})
-
 		const cookie = context.cookies.get(AUTHKIT.COOKIE_NAME)
 
 		if (!cookie) {
@@ -28,31 +20,24 @@ export const onRequest = defineMiddleware(
 		}
 
 		const authenticationResponse =
-			await workos.userManagement.authenticateWithSessionCookie(
-				{
-					sessionData: cookie.value,
-					cookiePassword: AUTHKIT.COOKIE_PASSWORD,
-				}
-			)
+			await AUTHKIT.authenticateWithSessionCookie(cookie)
+
+		if (
+			!authenticationResponse.authenticated &&
+			authenticationResponse.reason ===
+				AUTHKIT.AuthenticateWithSessionCookieFailureReason
+					.NO_SESSION_COOKIE_PROVIDED
+		) {
+			return context.redirect('/sign-in')
+		}
 
 		if (authenticationResponse.authenticated) {
 			return next()
 		}
 
-		if (
-			!authenticationResponse.authenticated &&
-			authenticationResponse.reason ===
-				AuthenticateWithSessionCookieFailureReason.NO_SESSION_COOKIE_PROVIDED
-		) {
-			return context.redirect('/sign-in')
-		}
-
 		try {
 			const refreshResponse =
-				await workos.userManagement.refreshAndSealSessionData({
-					sessionData: cookie.value,
-					cookiePassword: AUTHKIT.COOKIE_PASSWORD,
-				})
+				await AUTHKIT.refreshAndSealSessionData(cookie)
 
 			if (!refreshResponse.authenticated) {
 				return context.redirect('/sign-in')
@@ -63,11 +48,13 @@ export const onRequest = defineMiddleware(
 				refreshResponse.sealedSession,
 				AUTHKIT.COOKIE_OPTIONS
 			)
-			console.log('refreshed session')
 
 			return next()
 		} catch (e) {
-			context.cookies.delete(AUTHKIT.COOKIE_NAME)
+			context.cookies.delete(
+				AUTHKIT.COOKIE_NAME,
+				AUTHKIT.COOKIE_OPTIONS
+			)
 			return context.redirect('/sign-in')
 		}
 	}
