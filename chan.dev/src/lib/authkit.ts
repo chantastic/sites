@@ -30,8 +30,18 @@ export interface Session {
 export interface Cookie {
 	value: string
 }
+
+let workosInstance: WorkOS | null = null
+
+function getWorkOSInstance(): WorkOS {
+	if (!workosInstance) {
+		workosInstance = new WorkOS(API_KEY, {clientId: CLIENT_ID})
+	}
+	return workosInstance
+}
+
 export function getAuthorizationUrl() {
-	const workos = new WorkOS(API_KEY)
+	const workos = getWorkOSInstance()
 
 	return workos.userManagement.getAuthorizationUrl({
 		provider: 'authkit',
@@ -43,9 +53,7 @@ export function getAuthorizationUrl() {
 export async function getSessionFromCookie(
 	encryptedCookie: Cookie
 ) {
-	const workos = new WorkOS(API_KEY, {
-		clientId: CLIENT_ID,
-	})
+	const workos = getWorkOSInstance()
 
 	return await workos.userManagement.getSessionFromCookie({
 		sessionData: encryptedCookie.value,
@@ -54,7 +62,7 @@ export async function getSessionFromCookie(
 }
 
 export async function authenticateWithCode(code: string) {
-	const workos = new WorkOS(API_KEY)
+	const workos = getWorkOSInstance()
 
 	return await workos.userManagement.authenticateWithCode({
 		code,
@@ -69,9 +77,7 @@ export async function authenticateWithCode(code: string) {
 export async function getLogoutUrlFromSessionCookie(
 	encryptedCookie: Cookie
 ) {
-	const workos = new WorkOS(API_KEY, {
-		clientId: CLIENT_ID,
-	})
+	const workos = getWorkOSInstance()
 
 	const authenticationResponse =
 		await workos.userManagement.authenticateWithSessionCookie({
@@ -89,9 +95,7 @@ export async function getLogoutUrlFromSessionCookie(
 export async function authenticateWithSessionCookie(
 	encryptedCookie: Cookie
 ) {
-	const workos = new WorkOS(API_KEY, {
-		clientId: CLIENT_ID,
-	})
+	const workos = getWorkOSInstance()
 
 	return await workos.userManagement.authenticateWithSessionCookie(
 		{
@@ -104,9 +108,7 @@ export async function authenticateWithSessionCookie(
 export async function refreshAndSealSessionData(
 	encryptedCookie: Cookie
 ) {
-	const workos = new WorkOS(API_KEY, {
-		clientId: CLIENT_ID,
-	})
+	const workos = getWorkOSInstance()
 
 	return await workos.userManagement.refreshAndSealSessionData({
 		sessionData: encryptedCookie.value,
