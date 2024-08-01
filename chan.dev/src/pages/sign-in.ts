@@ -2,7 +2,10 @@ import * as AUTHKIT from '#lib/authkit'
 import type {APIRoute} from 'astro'
 
 export const GET: APIRoute = async ({redirect}) => {
-	return redirect(AUTHKIT.getAuthorizationUrl())
+	const authorizationUrl = AUTHKIT.getAuthorizationUrl()
+
+	console.log(authorizationUrl)
+	return redirect(authorizationUrl)
 }
 
 export const prerender = false
