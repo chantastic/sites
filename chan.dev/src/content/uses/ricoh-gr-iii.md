@@ -7,6 +7,8 @@ frequency: regular
 links: [https://amzn.to/43fafEl]
 ---
 
+![Ruby Chan in New York](./ricoh-gr-iii/ricoh-gr-iii.jpg)
+
 The RICOH GR III is my favorite.  
 High praise for a camera that's always broken.
 
