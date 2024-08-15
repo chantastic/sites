@@ -2,77 +2,29 @@
 title: Homebrew
 ---
 
-## Installation
+Never setup another Mac.
 
-Follow the up-to-date instructions on the site.
+In just three years, I've had to provision seven Macs.
 
-## Install terminal applications
+I upgraded my personal mac, was laid off from one company, setup up an intermediate machine, then promptly joined aother company, to experience a corrupt drive two months in…
 
-```sh
-brew install neovim
-```
+It's been an adventure.
 
-## Install GUI apps with Cask
+Somewhere along the path, I got wise and learned how use Homebrew to provision a Mac with one line of code.
 
-```sh
-brew install --cask visual-studio-code
-```
+This guide will help you do the same.  
+But it's not for everyone.
 
-## Install fonts with cask
+This isn't a Homebrew tutorial.  
+I assume you have it setup and have already installed a package.
 
-```sh
-brew install --cask font-jetbrains-mono-nerd-font
-```
+I assume that you're already using Homebrew to install packages. But you haven't explored advanced features for system provisioning.
 
-## Create a Brewfile from installed apps
+Let's get into it.
 
-```sh
-brew bundle dump
-```
+chan
 
-This will create a `Brewfile` in your current directory.  
-You can control the output file with the `--file` flag.
-
-```sh
-brew bundle dump --file=~/.dotfiles/Brewfile
-```
-
-## Install Visual Studio Code extensions in Brewfiles
-
-```txt file="Brewfile"
-vscode "asvetliakov.vscode-neovim"
-```
-
-## Bundle apps from Brewfile
-
-If you've used the default name of `Brewfile`, you can run the `brew bundle` command in that directory.
-
-```sh
-brew bundle
-```
-
-And if you want to bundle from a specific file, use the `--file` flag.
-
-```sh
-brew bundle --file=~/.dotfiles/Brewfile
-```
-
-## Conditionally bundle apps with environment variables
-
-```txt file="Brewfile"
-cask "arc" if [[ $MACHINE != "work" ]]
-```
-
-You can also use `unless`, if you think natural language reads better than code.
-
-```txt file="Brewfile"
-cask "arc" unless [[ $MACHINE == "work" ]]
-```
-
-## Set machine variables in `.zshenv`
-
-It's my preference to set variables for these types of checks in `.zshenv`.  
-I do not track this file in my my shared dotfiles. So it remains unique to each machine.
+---
 
 ## References
 
