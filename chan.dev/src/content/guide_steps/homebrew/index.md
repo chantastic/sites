@@ -29,3 +29,24 @@ chan
 ## References
 
 -https://gist.github.com/ChristopherA/a579274536aab36ea9966f301ff14f3f#install-a-specific-brewfile -https://github.com/Homebrew/homebrew-bundle?tab=readme-ov-file#usage
+
+<!--
+ALT
+
+i am done manually provisioning mac’s and it’s all thanks to homebrew.
+
+if went thru a lot of macs last year.
+- i broke a display
+- bought a mac mini because i was sick of macbook keyboards
+- returned my work macbook after being laid off
+- bought a temporary laptop to get thru conference season
+- and finally got a new laptop after joining work is
+
+so i’ve provisioned a lot of machines for web work
+
+and it got pretty old.
+
+fortunately, i wasn’t stupid thru all of it and figured out a way to automate the whole thing with one line. apps, fonts, everything
+
+today i’ll share that with you in A chantastic guide to provision mac’s with brew bundle
+-->
