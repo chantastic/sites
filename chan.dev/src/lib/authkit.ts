@@ -7,12 +7,22 @@ import type {AstroCookieSetOptions} from 'astro'
 
 const API_KEY = import.meta.env.WORKOS_API_KEY
 const CLIENT_ID = import.meta.env.WORKOS_CLIENT_ID
-const REDIRECT_URI =
-	import.meta.env.WORKOS_REDIRECT_URI ??
-	`${import.meta.env.CF_PAGES_URL}/auth/callback`
+const REDIRECT_URI = import.meta.env.WORKOS_REDIRECT_URI
 const COOKIE_PASSWORD = import.meta.env.WORKOS_COOKIE_PASSWORD
 
 export const COOKIE_NAME = 'wos-session'
+
+export function getRedirectUri() {
+	if (import.meta.env.WORKOS_REDIRECT_URI) {
+		return import.meta.env.WORKOS_REDIRECT_URI
+	}
+
+	if (import.meta.env.CF_PAGES_URL) {
+		return `${import.meta.env.CF_PAGES_URL}/auth/callback`
+	}
+
+	throw new Error('WORKOS_REDIRECT_URI or CF_PAGES_URL not set')
+}
 
 export const COOKIE_OPTIONS: AstroCookieSetOptions = {
 	path: '/',
@@ -45,7 +55,7 @@ export function getAuthorizationUrl() {
 
 	return workos.userManagement.getAuthorizationUrl({
 		provider: 'authkit',
-		redirectUri: REDIRECT_URI,
+		redirectUri: getRedirectUri(),
 		clientId: CLIENT_ID,
 	})
 }
