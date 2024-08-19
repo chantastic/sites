@@ -5,14 +5,9 @@ import {
 } from '@workos-inc/node'
 import type {AstroCookieSetOptions} from 'astro'
 
-const API_KEY = import.meta.env.WORKOS_API_KEY
-const CLIENT_ID = import.meta.env.WORKOS_CLIENT_ID
-const REDIRECT_URI = import.meta.env.WORKOS_REDIRECT_URI
-const COOKIE_PASSWORD = import.meta.env.WORKOS_COOKIE_PASSWORD
-
 export const COOKIE_NAME = 'wos-session'
 
-export function getRedirectUri() {
+function getRedirectUri() {
 	if (import.meta.env.WORKOS_REDIRECT_URI) {
 		return import.meta.env.WORKOS_REDIRECT_URI
 	}
@@ -45,7 +40,12 @@ let workosInstance: WorkOS | null = null
 
 function getWorkOSInstance(): WorkOS {
 	if (!workosInstance) {
-		workosInstance = new WorkOS(API_KEY, {clientId: CLIENT_ID})
+		workosInstance = new WorkOS(
+			import.meta.env.WORKOS_API_KEY,
+			{
+				clientId: import.meta.env.WORKOS_CLIENT_ID,
+			}
+		)
 	}
 	return workosInstance
 }
@@ -56,7 +56,7 @@ export function getAuthorizationUrl() {
 	return workos.userManagement.getAuthorizationUrl({
 		provider: 'authkit',
 		redirectUri: getRedirectUri(),
-		clientId: CLIENT_ID,
+		clientId: import.meta.env.WORKOS_CLIENT_ID,
 	})
 }
 
@@ -67,7 +67,7 @@ export async function getSessionFromCookie(
 
 	return await workos.userManagement.getSessionFromCookie({
 		sessionData: encryptedCookie.value,
-		cookiePassword: COOKIE_PASSWORD,
+		cookiePassword: import.meta.env.WORKOS_COOKIE_PASSWORD,
 	})
 }
 
@@ -76,10 +76,10 @@ export async function authenticateWithCode(code: string) {
 
 	return await workos.userManagement.authenticateWithCode({
 		code,
-		clientId: CLIENT_ID,
+		clientId: import.meta.env.WORKOS_CLIENT_ID,
 		session: {
 			sealSession: true,
-			cookiePassword: COOKIE_PASSWORD,
+			cookiePassword: import.meta.env.WORKOS_COOKIE_PASSWORD,
 		},
 	})
 }
@@ -92,7 +92,7 @@ export async function getLogoutUrlFromSessionCookie(
 	const authenticationResponse =
 		await workos.userManagement.authenticateWithSessionCookie({
 			sessionData: encryptedCookie.value,
-			cookiePassword: COOKIE_PASSWORD,
+			cookiePassword: import.meta.env.COOKIE_PASSWORD,
 		})
 
 	const logoutUrl = workos.userManagement.getLogoutUrl({
@@ -110,7 +110,7 @@ export async function authenticateWithSessionCookie(
 	return await workos.userManagement.authenticateWithSessionCookie(
 		{
 			sessionData: encryptedCookie.value,
-			cookiePassword: COOKIE_PASSWORD,
+			cookiePassword: import.meta.env.COOKIE_PASSWORD,
 		}
 	)
 }
@@ -122,7 +122,7 @@ export async function refreshAndSealSessionData(
 
 	return await workos.userManagement.refreshAndSealSessionData({
 		sessionData: encryptedCookie.value,
-		cookiePassword: COOKIE_PASSWORD,
+		cookiePassword: import.meta.env.COOKIE_PASSWORD,
 	})
 }
 
