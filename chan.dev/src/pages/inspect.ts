@@ -8,6 +8,7 @@ export const GET: APIRoute = async () => {
 		JSON.stringify({
 			authorizationUrl,
 			CF_PAGES_URL: import.meta.env.CF_PAGES_URL,
+			env: import.meta.env,
 		}),
 		{
 			headers: {
