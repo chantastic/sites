@@ -1,13 +1,18 @@
 ---
-import * as AUTHKIT from '#lib/authkit'
-
-const session = await AUTHKIT.decryptSession(
-	Astro.cookies.get(AUTHKIT.COOKIE_NAME)!
-)
+import Layout from '#layouts/Layout.astro'
+import Prose from '#components/prose.astro'
+import SignOut from '#components/sign-out.astro'
 
 export const prerender = false
+
+const {user} = Astro.locals
 ---
 
-<h1>
-	Hello {session.user.lastName}!
-</h1>
+<Layout>
+	<Prose as="main">
+		<h1>
+			Hello {user.firstName}!
+		</h1>
+		<SignOut />
+	</Prose>
+</Layout>

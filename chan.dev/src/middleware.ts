@@ -1,71 +1,61 @@
+import type {APIContext, MiddlewareNext} from 'astro'
 import {defineMiddleware} from 'astro/middleware'
-import {minimatch} from 'minimatch'
-import {WorkOS} from '@workos-inc/node'
-import {createRemoteJWKSet, jwtVerify} from 'jose'
 import * as AUTHKIT from '#lib/authkit'
-import type {AstroCookieSetOptions} from 'astro'
+import {minimatch} from 'minimatch'
 
-export const onRequest = defineMiddleware(
-	async (context, next) => {
-		if (
-			!minimatch(
-				String(new URL(context.request.url).pathname),
-				'/dashboard*'
-			)
-		) {
-			return next()
-		}
+export const onRequest = defineMiddleware((context, next) => {
+	const {pathname} = new URL(context.request.url)
 
-		const cookie = context.cookies.get(AUTHKIT.COOKIE_NAME)
-
-		if (!cookie) {
-			return context.redirect('/sign-in')
-		}
-
-		const session = await AUTHKIT.decryptSession(cookie)
-
-		const workos = new WorkOS(import.meta.env.WORKOS_API_KEY)
-
-		const JWKS = createRemoteJWKSet(
-			new URL(
-				workos.userManagement.getJwksUrl(
-					import.meta.env.WORKOS_CLIENT_ID
-				)
-			)
-		)
-
-		let verifiedSession
-
-		try {
-			verifiedSession = await jwtVerify(
-				session.accessToken,
-				JWKS
-			)
-		} catch (e) {
-			try {
-				const refreshedSession =
-					await workos.userManagement.authenticateWithRefreshToken(
-						{
-							clientId: import.meta.env.WORKOS_CLIENT_ID,
-							refreshToken: session.refreshToken,
-						}
-					)
-				const encryptedRefreshedSession =
-					await AUTHKIT.encryptSession({
-						user: session.user,
-						...refreshedSession,
-					})
-
-				context.cookies.set(
-					AUTHKIT.COOKIE_NAME,
-					encryptedRefreshedSession,
-					AUTHKIT.COOKIE_OPTIONS as AstroCookieSetOptions
-				)
-			} catch (e) {
-				return context.redirect('/sign-in')
-			}
-		}
-
-		return next()
+	if (minimatch(pathname, '/dashboard*')) {
+		return withAuth(context, next)
 	}
-)
+
+	return next()
+})
+
+async function withAuth(
+	context: APIContext,
+	next: MiddlewareNext
+) {
+	const cookie = context.cookies.get(AUTHKIT.COOKIE_NAME)
+
+	if (!cookie?.value) {
+		return context.redirect('/sign-in')
+	}
+
+	const authenticationResponse =
+		await AUTHKIT.authenticateWithSessionCookie(cookie)
+
+	if (
+		!authenticationResponse.authenticated &&
+		authenticationResponse.reason !== 'invalid_jwt'
+	) {
+		return context.redirect('/sign-in')
+	}
+
+	const refreshResponse =
+		await AUTHKIT.refreshAndSealSessionData(cookie)
+
+	if (!refreshResponse.authenticated) {
+		context.cookies.delete(
+			AUTHKIT.COOKIE_NAME,
+			AUTHKIT.COOKIE_OPTIONS
+		)
+		return context.redirect('/sign-in')
+	}
+
+	context.cookies.set(
+		AUTHKIT.COOKIE_NAME,
+		String(refreshResponse.sealedSession),
+		AUTHKIT.COOKIE_OPTIONS
+	)
+
+	const {user} = await AUTHKIT.getSessionFromCookie(
+		context.cookies.get(AUTHKIT.COOKIE_NAME)!
+	)
+
+	context.locals.user = user
+
+	const response = await next()
+	return response
+}
