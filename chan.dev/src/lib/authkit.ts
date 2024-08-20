@@ -1,7 +1,7 @@
 import {
 	WorkOS,
-	AuthenticateWithSessionCookieFailureReason,
 	type User,
+	type SessionCookieData,
 } from '@workos-inc/node'
 import type {AstroCookieSetOptions} from 'astro'
 
@@ -65,10 +65,10 @@ export async function getSessionFromCookie(
 ) {
 	const workos = getWorkOSInstance()
 
-	return await workos.userManagement.getSessionFromCookie({
+	return (await workos.userManagement.getSessionFromCookie({
 		sessionData: encryptedCookie.value,
 		cookiePassword: import.meta.env.WORKOS_COOKIE_PASSWORD,
-	})
+	})) as SessionCookieData
 }
 
 export async function authenticateWithCode(code: string) {
@@ -92,14 +92,18 @@ export async function getLogoutUrlFromSessionCookie(
 	const authenticationResponse =
 		await workos.userManagement.authenticateWithSessionCookie({
 			sessionData: encryptedCookie.value,
-			cookiePassword: import.meta.env.COOKIE_PASSWORD,
+			cookiePassword: import.meta.env.WORKOS_COOKIE_PASSWORD,
 		})
 
-	const logoutUrl = workos.userManagement.getLogoutUrl({
-		sessionId: authenticationResponse.sessionId,
-	})
+	if ('sessionId' in authenticationResponse) {
+		const logoutUrl = workos.userManagement.getLogoutUrl({
+			sessionId: authenticationResponse.sessionId,
+		})
 
-	return logoutUrl
+		return logoutUrl
+	}
+
+	throw new Error('Authentication failed')
 }
 
 export async function authenticateWithSessionCookie(
@@ -110,7 +114,7 @@ export async function authenticateWithSessionCookie(
 	return await workos.userManagement.authenticateWithSessionCookie(
 		{
 			sessionData: encryptedCookie.value,
-			cookiePassword: import.meta.env.COOKIE_PASSWORD,
+			cookiePassword: import.meta.env.WORKOS_COOKIE_PASSWORD,
 		}
 	)
 }
@@ -122,8 +126,6 @@ export async function refreshAndSealSessionData(
 
 	return await workos.userManagement.refreshAndSealSessionData({
 		sessionData: encryptedCookie.value,
-		cookiePassword: import.meta.env.COOKIE_PASSWORD,
+		cookiePassword: import.meta.env.WORKOS_COOKIE_PASSWORD,
 	})
 }
-
-export {AuthenticateWithSessionCookieFailureReason}

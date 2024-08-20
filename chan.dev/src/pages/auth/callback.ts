@@ -29,6 +29,7 @@ export const GET: APIRoute = async ({
 
 		return redirect('/dashboard')
 	} catch (e) {
+		console.error(e)
 		return redirect('/sign-in')
 	}
 }
