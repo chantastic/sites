@@ -7,18 +7,6 @@ import type {AstroCookieSetOptions} from 'astro'
 
 export const COOKIE_NAME = 'wos-session'
 
-function getRedirectUri() {
-	if (import.meta.env.WORKOS_REDIRECT_URI) {
-		return import.meta.env.WORKOS_REDIRECT_URI
-	}
-
-	if (import.meta.env.CF_PAGES_URL) {
-		return `${import.meta.env.CF_PAGES_URL}/auth/callback`
-	}
-
-	throw new Error('WORKOS_REDIRECT_URI or CF_PAGES_URL not set')
-}
-
 export const COOKIE_OPTIONS: AstroCookieSetOptions = {
 	path: '/',
 	httpOnly: true,
@@ -55,7 +43,7 @@ export function getAuthorizationUrl() {
 
 	return workos.userManagement.getAuthorizationUrl({
 		provider: 'authkit',
-		redirectUri: getRedirectUri(),
+		redirectUri: import.meta.env.WORKOS_REDIRECT_URI,
 		clientId: import.meta.env.WORKOS_CLIENT_ID,
 	})
 }
