@@ -41,9 +41,21 @@ function getWorkOSInstance(): WorkOS {
 export function getAuthorizationUrl() {
 	const workos = getWorkOSInstance()
 
+	function getRedirectUri() {
+		if (import.meta.env.WORKOS_REDIRECT_URI) {
+			return import.meta.env.WORKOS_REDIRECT_URI
+		}
+
+		if (import.meta.env.CF_PAGES_URL) {
+			return `${import.meta.env.CF_PAGES_URL}/auth/callback`
+		}
+
+		throw new Error('WORKOS_REDIRECT_URI is not defined.')
+	}
+
 	return workos.userManagement.getAuthorizationUrl({
 		provider: 'authkit',
-		redirectUri: import.meta.env.WORKOS_REDIRECT_URI,
+		redirectUri: getRedirectUri(),
 		clientId: import.meta.env.WORKOS_CLIENT_ID,
 	})
 }
