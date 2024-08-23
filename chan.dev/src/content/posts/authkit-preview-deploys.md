@@ -63,3 +63,7 @@ Check out the series here:
 <iframe width="560" height="315" src="https://www.youtube.com/embed/237vaK_nYRg?si=gcQb-4uGXUx5occn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 </div>
+
+Prefer step-by-step X threads?
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Secure AuthKit for every preview deploy.<br><br>Whether previewing a `staging` branch, or every commit, integration is easy with AuthKit Redirect Wildcards<br><br>Here&#39;s how… <a href="https://t.co/xAIjS4KC2c">pic.twitter.com/xAIjS4KC2c</a></p>&mdash; AuthKit (@authkit) <a href="https://twitter.com/authkit/status/1827000806249226478?ref_src=twsrc%5Etfw">August 23, 2024</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
