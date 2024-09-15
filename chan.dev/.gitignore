@@ -30,3 +30,9 @@ src/content/.obsidian
 /test-results/
 /playwright-report/
 /playwright/.cache/
+
+# convex
+convex/_generated/
+
+.env.local
+

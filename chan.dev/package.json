@@ -55,6 +55,7 @@
 		"@types/react": "^18.3.3",
 		"@types/react-dom": "^18.3.0",
 		"@workos-inc/node": "^7.19.0",
+		"convex": "^1.16.0",
 		"iron-session": "^8.0.2",
 		"jose": "^5.6.3",
 		"minimatch": "^10.0.1",
