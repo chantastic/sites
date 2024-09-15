@@ -18,7 +18,7 @@ _Watch how I used Cursor to learn about python environments:_
 ## TLDR
 
 ```bash
-# Install Python3 with Homebrow
+# Install Python3 with Homebrew
 brew install python3
 
 # Create a virtual environment
