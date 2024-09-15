@@ -9,7 +9,7 @@
 	"scripts": {
 		"dev": "astro dev",
 		"start": "astro dev",
-		"build": "astro build --remote",
+		"build": "npx convex deploy && astro build --remote",
 		"build:local": "op run --env-file='./.env' -- pnpm run build",
 		"postbuild": "pagefind --site dist",
 		"preview": "pnpm run build:local && wrangler pages dev ./dist --port 2426",
