@@ -29,6 +29,9 @@ importers:
       convex:
         specifier: ^1.16.0
         version: 1.16.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      convex-helpers:
+        specifier: ^0.1.58
+        version: 0.1.58(convex@1.16.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)(zod@3.23.8)
       iron-session:
         specifier: ^8.0.2
         version: 8.0.2
@@ -1749,6 +1752,22 @@ packages:
 
   convert-source-map@2.0.0:
     resolution: {integrity: sha512-Kvp459HrV2FEJ1CAsi1Ku+MY3kasH19TFykTz2xWmMeq6bk2NU3XXvfJ+Q61m0xktWwt+1HSYf3JZsTms3aRJg==}
+
+  convex-helpers@0.1.58:
+    resolution: {integrity: sha512-elehwQBiF9L7W+lgNOEqft2733DgEBAlrqnGUV1Lqgx9uDe3bQt4OiUctE0NspSZ2LcLK0f21duMfMrKcEMz1A==}
+    hasBin: true
+    peerDependencies:
+      convex: ^1.13.0
+      hono: ^4.0.5
+      react: ^17.0.2 || ^18.0.0
+      zod: ^3.22.4
+    peerDependenciesMeta:
+      hono:
+        optional: true
+      react:
+        optional: true
+      zod:
+        optional: true
 
   convex@1.16.0:
     resolution: {integrity: sha512-duu6ged8mL2WgN9Jxm/XykbRe8MW+Wotkj57KTX44l7TUlnwvNCKB3mmlAVCxbsd4epyU05TkQz8WGwb/4SssQ==}
@@ -5318,6 +5337,13 @@ snapshots:
   consola@3.2.3: {}
 
   convert-source-map@2.0.0: {}
+
+  convex-helpers@0.1.58(convex@1.16.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)(zod@3.23.8):
+    dependencies:
+      convex: 1.16.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+    optionalDependencies:
+      react: 18.3.1
+      zod: 3.23.8
 
   convex@1.16.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
     dependencies:

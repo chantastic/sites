@@ -8,5 +8,5 @@ const Habit = {
 }
 
 export default defineSchema({
-	habit: defineTable(Habit),
+	habits: defineTable(Habit),
 })

@@ -13,6 +13,9 @@ const {user} = Astro.locals
 		<h1>
 			Hello {user.firstName}!
 		</h1>
-		<SignOut />
+		<a href="/dashboard/habits/new">Create a habit</a>
+		<footer>
+			<SignOut />
+		</footer>
 	</Prose>
 </Layout>
