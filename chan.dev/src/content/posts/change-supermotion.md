@@ -22,24 +22,21 @@ docs:
   }
 </style>
 
-People suck at teaching Vim.
+Vim is hard to learn.  
+Additionally so because people suck at teaching Vim.
 
-Why?  
-Because it's good software.  
-Good software is composable.  
-And composability isn't naturally apparent virtue.
+So if you've wanted to learn, but haven't yet, it's not really *your* fault 😁.
 
-So we'll learn a little differently.  
-Instead of working our way up from basics,  
-we'll treat each operation atomically and exhaustively.
+I propose we learn a little differently.  
+Instead of starting at the beginning (with the basics),  
+Let's start at the end — with Vim's most powerful macros.
 
-This guide throws you right into the deep end, with the exact commands you'll run for any given *change*.
+I figure…  
+🥉 *Worst case*: you learn nothing.  
+🥈 *Second-worst case*: you learn one of Vim's best capabilities (and nothing else).
+🥇 *Best case*: you master a few commands and get hyped for more more.
 
-Worst case, you learn nothing.  
-Second-worst case, you learn one of Vim's best capabilities (and nothing else).
-Best case, you master these individual commands and experience the strong undercurrent of composability in each lesson.
-
-Obviously I think you and I can get to that bast case scenario or I wouldn't have written this.
+Obviously I think you and I can get to that bast case scenario or I wouldn't have written this guide.
 
 Wanna learn some Vim?
 
@@ -47,35 +44,39 @@ Wanna learn some Vim?
 
 ## Intent: the power of Vim
 
-We often need to change text inside quotes, delete extranious words, or manipulate sentences and paragraphs.  
-But in traditional editors we spend a lot of time making text selections with mouse.
+Vim is the most powerful editing tool I've ever used.
 
-Intent is what mave Vim so powerful.  
+And it's powerful because of a simple idea: *editing intent*.
 
-If we want to change the text inside a quote, we don't need to visually select it first.  
-We communicate our full intent through operations (keyboard commands).  
+Think about how much time you spend making text selections with a mouse or arrow keys.  
+Changing text inside quotes, delete extranious adjectives, moving paragraphs…  
+You make a text selection, then do something with it.
+
+This is different in Vim.
+
+If we want to change the text in-between quotes, we don't need have to make a visual selection first.  
+We communicate our full intent through commands and macros.  
 <kbd>c</kbd><kbd>i</kbd><kbd>"</kbd> does exactly what we want with just four characters.
 
-We'll cover 100 such operations in this guide with practical examples of where they're most useful in code.
+This guide covers 100 such operations in this guide with practical, real-world editing examples.
 
 ## How to read this guide
 
 Lessons in this guide include 3 parts:
 
 1. A description of the editing intent
-1. An exhaustive table of Vim operations to achieve that intent
-1. Notes on exceptions, shortcomings, and considerations
+1. An table of Vim operations that fulfull that intent
+1. A few considerations, shortcomings, and exceptions to consider
 
 We start with the base operation `ci` (change inner).  
-This is my favorite intent and Vim's most capable.  
+This is my favorite editing intent, and Vim's most capable.  
 
-"Change inner" is the termonoligy you'll find in the docs.  
-But I make an additional distinction of "inside".  
-"Inside" is used to distinguish "inner" selections that are inside quotes.
+Change "inner" is the termonoligy you'll find in the docs.  
+But I use "inside" and "in-between" where it sounds better to say.
 
-Finally, every one of these commands is run in `Normal mode`.  
+Finally, every one of these commands is run from `Normal mode`.  
 In normal mode, you'll type each character in the operation.  
-Entry speed should not matter in stock Vim/neoVim.
+Entry speed should not matter in stock Vim/neovim.
 
 ---
 
@@ -88,6 +89,7 @@ Change text inside the current (or next) pair of quotes.
 |  <kbd>c</kbd><kbd>i</kbd><kbd>'</kbd> | change inside single quotes |
 |  <kbd>c</kbd><kbd>i</kbd><kbd>"</kbd> | change inside double quotes |
 |  <kbd>c</kbd><kbd>i</kbd><kbd>`</kbd> | change inside backticks |
+
 
 *Note: The cursor does not need to be inside the target quotation to be changed. But it does need to be before the quotation.*
 
