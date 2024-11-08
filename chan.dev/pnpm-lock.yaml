@@ -50,6 +50,9 @@ importers:
       sharp:
         specifier: 0.33.4
         version: 0.33.4
+      shiki-magic-move:
+        specifier: ^0.5.0
+        version: 0.5.0(react@18.3.1)(shiki@1.12.0)
     devDependencies:
       '@astrojs/markdown-remark':
         specifier: ^5.2.0
@@ -1884,6 +1887,9 @@ packages:
   didyoumean@1.2.2:
     resolution: {integrity: sha512-gxtyfqMg7GKyhQmb056K7M3xszy/myH8w+B4RT+QXBQsvAOdc3XymqDDPHx1BgPgsdAA5SIifona89YtRATDzw==}
 
+  diff-match-patch-es@0.1.1:
+    resolution: {integrity: sha512-+wE0HYKRuRdfsnpEFh41kTd0GlYFSDQacz2bQ4dwMDvYGtofqtYdJ6Gl4ZOgUPqPi7v8LSqMY0+/OedmIPHBZw==}
+
   diff@5.2.0:
     resolution: {integrity: sha512-uIFDxqpRZGZ6ThOk84hEfqWoHx2devRFvpTZcTHur85vImfaxUbTW9Ryh4CpCuDnToOP1CEtXKIgytHBPVff5A==}
     engines: {node: '>=0.3.1'}
@@ -2960,6 +2966,9 @@ packages:
   obuf@1.1.2:
     resolution: {integrity: sha512-PX1wu0AmAdPqOL1mWhqmlOd8kOIZQwGZw6rh7uby9fTc5lhaOWFLX3I6R1hrF9k3zUY40e6igsLGkDXK92LJNg==}
 
+  ohash@1.1.4:
+    resolution: {integrity: sha512-FlDryZAahJmEF3VR3w1KogSEdWX3WhA5GPakFx4J81kEAiHyLMpdLLElS8n8dfNadMgAne/MywcvmogzscVt4g==}
+
   onetime@5.1.2:
     resolution: {integrity: sha512-kbpaSSGJTWdAY5KPVeMOKXSrPtr8C8C7wodJbcsd51jRnmD+GZu8Y0VoU6Dm5Z4vWr0Ig/1NKuWRKf7j5aaYSg==}
     engines: {node: '>=6'}
@@ -3384,6 +3393,26 @@ packages:
   shebang-regex@3.0.0:
     resolution: {integrity: sha512-7++dFhtcx3353uBaq8DDR4NuxBetBzC7ZQOhmTQInHEd6bSrXdiEyzCvG07Z44UYdLShWUyXt5M/yhz8ekcb1A==}
     engines: {node: '>=8'}
+
+  shiki-magic-move@0.5.0:
+    resolution: {integrity: sha512-tJXGfozg9wus0E4sa2zX+xp8TY9SrrHBF0tjVGBDJDXh7Fbj/4IBe1173qu3wRHs2Y8TkfQnnqStVJGG3ZMIXA==}
+    peerDependencies:
+      react: ^18.2.0
+      shiki: ^1.1.6
+      solid-js: ^1.9.1
+      svelte: 5.0.0-next.107
+      vue: ^3.4.0
+    peerDependenciesMeta:
+      react:
+        optional: true
+      shiki:
+        optional: true
+      solid-js:
+        optional: true
+      svelte:
+        optional: true
+      vue:
+        optional: true
 
   shiki@1.12.0:
     resolution: {integrity: sha512-BuAxWOm5JhRcbSOl7XCei8wGjgJJonnV0oipUupPY58iULxUGyHhW5CF+9FRMuM1pcJ5cGEJGll1LusX6FwpPA==}
@@ -5420,6 +5449,8 @@ snapshots:
 
   didyoumean@1.2.2: {}
 
+  diff-match-patch-es@0.1.1: {}
+
   diff@5.2.0: {}
 
   direction@2.0.1: {}
@@ -6839,6 +6870,8 @@ snapshots:
   obuf@1.1.2:
     optional: true
 
+  ohash@1.1.4: {}
+
   onetime@5.1.2:
     dependencies:
       mimic-fn: 2.1.0
@@ -7377,6 +7410,14 @@ snapshots:
       shebang-regex: 3.0.0
 
   shebang-regex@3.0.0: {}
+
+  shiki-magic-move@0.5.0(react@18.3.1)(shiki@1.12.0):
+    dependencies:
+      diff-match-patch-es: 0.1.1
+      ohash: 1.1.4
+    optionalDependencies:
+      react: 18.3.1
+      shiki: 1.12.0
 
   shiki@1.12.0:
     dependencies:

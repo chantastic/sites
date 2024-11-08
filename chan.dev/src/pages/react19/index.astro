@@ -1,0 +1,11 @@
+---
+import MagicMove from './shiki_magic_move'
+import Layout from '#layouts/Layout.astro'
+import * as example from './prop-types-typescript.js'
+---
+
+<Layout>
+  <div style={{ minWidth: '800px' }}>
+    <MagicMove steps={Object.entries(example)} lang="tsx" client:load />
+  </div>
+</Layout>

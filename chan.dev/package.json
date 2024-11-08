@@ -62,7 +62,8 @@
 		"minimatch": "^10.0.1",
 		"react": "^18.3.1",
 		"react-dom": "^18.3.1",
-		"sharp": "0.33.4"
+		"sharp": "0.33.4",
+		"shiki-magic-move": "^0.5.0"
 	},
 	"engine": {
 		"node": ">=20.0.0"
