@@ -10,13 +10,15 @@ interface Props {
   steps: [string, string][]
   lang?: typeof languages[number]
   options?: { duration: number, stagger: number, lineNumbers: boolean }
+  title?: string
 }
 
 
 export default function MagicMove({
+  title,
   steps,
   lang = languages[0],
-  options = { duration: 600, stagger: 0.3, lineNumbers: false } }: Props) {
+  options = { duration: 700, stagger: 1, lineNumbers: false } }: Props) {
   const [stepCounter, setStepCounter] = useState(0)
   const [highlighter, setHighlighter] = useState<HighlighterCore>()
 
@@ -57,35 +59,53 @@ export default function MagicMove({
   let [, stepCode] = steps[stepCounter]
 
   return (
-    <div className="prose">
+    <div>
       {highlighter && (
-        <>
-          <button onClick={regressStep}>&lt;</button>
-          <button onClick={progressStep}>&gt;</button>
-          <ol>
-            {
-              /* show stepName as a complete list. */
-              steps.map(([name], i) => {
-                const stepIsPassed = i <= stepCounter
+        <div className="relative w-[800px]">
+          <h2 className="text-center">{title}</h2>
+          <div className="flex gap-12 text-lg">
+            <div className="w-1/3">
+              <ol>
+                {
+                  /* show stepName as a complete list. */
+                  steps.map(([name], i) => {
+                    const stepIsPassed = i <= stepCounter
 
-                if (stepIsPassed) {
-                  return <li className="text-gray-100" key={name}><button onClick={() => setStepCounter(i)}>✅ {name.split('_').join(' ')}</button></li>
+                    return <li className={`text-gray-600 transition-all duration-200 ease-in-out ${stepIsPassed ? "opacity-1" : "opacity-0"}`} key={name}>{name.split('_').join(' ')}</li>
+                  })
                 }
-
-                return <li key={name}><button onClick={() => setStepCounter(i)}>{name.split('_').join(' ')}</button></li>
-              })
-            }
-          </ol>
-          <ShikiMagicMove
-            theme="tokyo-night"
-            lang={lang}
-            highlighter={highlighter}
-            code={stepCode}
-            options={options}
-            className="p-4 w-full"
-          />
-        </>
+              </ol>
+              <div className={`transition-all duration-200 ease-in-out text-[2em] text-center mt-4 ${stepCounter === steps.length - 1 ? "opacity-1" : "opacity-0"}`}>✅</div>
+            </div>
+            <div className="flex-1">
+              <ShikiMagicMove
+                onStart={() => { console.log("started"); }}
+                onEnd={() => { console.log("ended"); }}
+                theme="tokyo-night"
+                lang={lang}
+                highlighter={highlighter}
+                code={stepCode}
+                options={{ ...options }}
+                className="m-0"
+              />
+            </div>
+          </div>
+          <div className="flex mt-24 p-4 bg-gray-50 rounded-full shadow-lg">
+            <Button onClick={regressStep}>← Previous</Button>
+            <Button onClick={progressStep}> Next →</Button>
+          </div>
+        </div>
       )}
     </div>
+  )
+}
+
+function Button(props: React.HTMLAttributes<HTMLButtonElement>) {
+  return (
+    <button
+      type="button"
+      className={[/*"ring-1 ring-inset ring-gray-300 ",*/ "rounded px-2 py-1 text-lg font-semibold text-gray-900 hover:bg-gray-50"].join(' ')}
+      {...props}
+    />
   )
 }

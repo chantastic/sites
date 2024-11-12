@@ -1,11 +1,43 @@
 ---
 import MagicMove from './shiki_magic_move'
 import Layout from '#layouts/Layout.astro'
-import * as example from './prop-types-typescript.js'
+import * as prop_types_typescript from './prop_types_typescript'
+import * as replace_contexttypes_and_getchildcontext_with_contexttype from './replace_contexttypes_and_getchildcontext_with_contexttype'
+import * as replace_string_ref from './replace_string_ref'
+import * as remove_module_pattern_factories from './remove_module_pattern_factories'
+import * as remove_create_factory from './remove_create_factory'
+import * as replace_reacttestrenderershallow_with_reactshallowrenderer from './replace_reacttestrenderershallow_with_reactshallowrenderer'
+import * as replace_act_import from './replace_act_import'
+import * as replace_reactdom_render from './replace_reactdom_render'
+import * as replace_reactdom_hydrate from './replace_reactdom_hydrate'
+import * as actions from './actions'
+import * as useactionstate from './useactionstate'
+
+function prepExamples(examples) {
+  return Object.entries(examples).filter(([key]) => key !== "title")
+}
 ---
 
 <Layout>
-  <div style={{ minWidth: '800px' }}>
-    <MagicMove steps={Object.entries(example)} lang="tsx" client:load />
+  <div class="prose">
+    {[
+       prop_types_typescript,
+       //replace_contexttypes_and_getchildcontext_with_contexttype,
+       //replace_string_ref,
+       //remove_module_pattern_factories,
+       //remove_create_factory,
+       //replace_reacttestrenderershallow_with_reactshallowrenderer,
+       //replace_act_import,
+       //replace_reactdom_render,
+       //replace_reactdom_hydrate,
+       //actions,
+       //useactionstate,
+     ].map((example) => {
+      return (
+        <>
+          <MagicMove title={example.title ?? "Example"} steps={prepExamples(example)} lang="tsx" client:load />
+        </>
+      )
+    })}
   </div>
 </Layout>

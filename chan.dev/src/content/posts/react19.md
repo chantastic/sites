@@ -37,6 +37,9 @@ v18.3 is identical to v18.2 (save for the warnings).
 
 We'll cover the breaking changes and the wider-represented tread for React.
 
+(this guide is more accurate than the blog post, which has some errors)
+(i also found AI to be very inconsistent in knowing how best to migrate the suggestions)
+:
 
 [React Codemods](https://github.com/reactjs/react-codemod?tab=readme-ov-file#react-codemods-):
 ### replace-reactdom-render
