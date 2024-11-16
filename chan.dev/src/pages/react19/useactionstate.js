@@ -1,4 +1,8 @@
-export const before = `function increment(previous) {
+export const title = "useActionState";
+export const doc = 'https://react.dev/reference/react/useActionState'
+export const playground = 'https://stackblitz.com/edit/vitejs-vite-bdzfpt?file=src%2FApp.jsx'
+
+export const steps = [["Refactor click counter to <code>useActionState</code>…", `function increment(previous) {
   return previous + 1;
 }
 
@@ -15,9 +19,9 @@ function StatefulForm() {
       </button>
     </>
   );
-}`
+}`],
 
-export const next1 = `function increment(previous) {
+["Replace <code>useState</code> with <code>useActionState</code>", `function increment(previous) {
   return previous + 1;
 }
 
@@ -35,8 +39,9 @@ function StatefulForm() {
     </>
   );
 }`
+], ["Move state update function into <code>useActionState</code>",
 
-export const next2 = `function increment(previous) {
+  `function increment(previous) {
   return previous + 1;
 }
 
@@ -53,9 +58,9 @@ function StatefulForm() {
       </button>
     </>
   );
-}`
+}`],
 
-export const next3 = `function increment(previous) {
+["Replace <code>onClick</code> with <code>formAction</code>", `function increment(previous) {
   return previous + 1;
 }
 
@@ -72,9 +77,9 @@ function StatefulForm() {
       </button>
     </>
   );
-}`
+}`],
 
-export const next4 = `function increment(previous) {
+["Wrap it up in a <code>form</code> element", `function increment(previous) {
   return previous + 1;
 }
 
@@ -91,7 +96,7 @@ function StatefulForm() {
       </button>
     </form>
   );
-}`
+}`],
 
 
 // next steps:
@@ -100,7 +105,7 @@ function StatefulForm() {
 // 3. utilize isPending hook
 // 4. permalink (probably different example)
 
-export const final = `function increment(previous) {
+["By convention, we call handler a <code>formAction</code>", `function increment(previous) {
   return previous + 1;
 }
 
@@ -117,104 +122,124 @@ function StatefulForm() {
       </button>
     </form>
   );
-}`
+}`],
+
+["✅", `function increment(previous) {
+  return previous + 1;
+}
+
+function StatefulForm() {
+  const [count, formAction] = React.useActionState(increment, 0);
+
+  return (
+    <form>
+      {count}
+      <button
+        formAction={formAction}
+      >
+        Increment
+      </button>
+    </form>
+  );
+}`],
+]
 
 // by convention, we call these formAction
-export const final2 = `function increment(previous) {
-  return previous + 1;
-}
+//["final2", `function increment(previous) {
+//  return previous + 1;
+//}
+//
+//function StatefulForm() {
+//  const [count, formAction] = React.useActionState(increment, 0);
+//
+//  return (
+//    <form>
+//      {count}
+//      <button
+//        formAction={formAction}
+//      >
+//        Increment
+//      </button>
+//    </form>
+//  );
+//}`],
+//
+//["final3", `function StatefulForm() {
+//  return (
+//    <form
+//      {count}
+//      <button formAction={ }>Increment</button>
+//    </form>
+//  );
+//}`],
+//
+//["after1", `function StatefulForm() {
+//  return (
+//    <form
+//      {count}
+//      <button formAction={incrementCount}>Increment</button>
+//    </form>
+//  );
+//}`],
+//
+//["after10", `function StatefulForm() {
+//  const count = 0;
+//
+//  return (
+//    <form
+//      {count}
+//      <button formAction={incrementCount}>Increment</button>
+//    </form>
+//  );
+//}`],
+//
+//["after11", `function StatefulForm() {
+//  const [count] = React.useActionState(, 0);
+//
+//  return (
+//    <form
+//      {count}
+//      <button formAction={incrementCount}>Increment</button>
+//    </form>
+//  );
+//}`]
 
-function StatefulForm() {
-  const [count, formAction] = React.useActionState(increment, 0);
-
-  return (
-    <form>
-      {count}
-      <button
-        formAction={formAction}
-      >
-        Increment
-      </button>
-    </form>
-  );
-}`
-
-export const after2 = `function StatefulForm() {
-  return (
-    <form
-      {count}
-      <button formAction={ }>Increment</button>
-    </form>
-  );
-}`
-
-export const after1 = `function StatefulForm() {
-  return (
-    <form
-      {count}
-      <button formAction={incrementCount}>Increment</button>
-    </form>
-  );
-}`
-
-export const after10 = `function StatefulForm() {
-  const count = 0;
-
-  return (
-    <form
-      {count}
-      <button formAction={incrementCount}>Increment</button>
-    </form>
-  );
-}`
-
-export const after11 = `function StatefulForm() {
-  const [count] = React.useActionState(, 0);
-
-  return (
-    <form
-      {count}
-      <button formAction={incrementCount}>Increment</button>
-    </form>
-  );
-}`
-
-export const after12 = `function StatefulForm() {
-  const [count, incrementCount] = React.useActionState(, 0);
-
-  return (
-    <form
-      {count}
-      <button formAction={incrementCount}>Increment</button>
-    </form>
-  );
-}`
-
-export const after13 = `function StatefulForm() {
-  const [count, incrementCount] = React.useActionState(0);
-
-  return (
-    <form
-      {count}
-      <button formAction={incrementCount}>Increment</button>
-    </form>
-  );
-}`
-
-// click counter with form action
-export const after = `function StatefulForm() {
-  const [count, incrementCount] = React.useActionState(
-    (previousCount) => previousCount + 1,
-    0
-  );
-
-  return (
-    <form
-      {count}
-      <button formAction={incrementCount}>Increment</button>
-    </form>
-  );
-}`
+//export const after12 = `function StatefulForm() {
+//  const [count, incrementCount] = React.useActionState(, 0);
+//
+//  return (
+//    <form
+//      {count}
+//      <button formAction={incrementCount}>Increment</button>
+//    </form>
+//  );
+//}`
+//
+//export const after13 = `function StatefulForm() {
+//  const [count, incrementCount] = React.useActionState(0);
+//
+//  return (
+//    <form
+//      {count}
+//      <button formAction={incrementCount}>Increment</button>
+//    </form>
+//  );
+//}`
+//
+//// click counter with form action
+//export const after = `function StatefulForm() {
+//  const [count, incrementCount] = React.useActionState(
+//    (previousCount) => previousCount + 1,
+//    0
+//  );
+//
+//  return (
+//    <form
+//      {count}
+//      <button formAction={incrementCount}>Increment</button>
+//    </form>
+//  );
+//}`
 
 
 //export const before =

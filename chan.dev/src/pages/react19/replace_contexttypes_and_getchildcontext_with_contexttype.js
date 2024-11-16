@@ -1,7 +1,9 @@
 // https://react.dev/blog/2024/04/25/react-19-upgrade-guide#removed-removing-legacy-context
+// asymettric examples
 
-export const before =
-  `import PropTypes from 'prop-types';
+export const title = "Remove Legacy Context (React 19)"
+
+export const before = `import PropTypes from 'prop-types';
 
 class Parent extends React.Component {
   static childContextTypes = {
@@ -15,70 +17,88 @@ class Parent extends React.Component {
   render() {
     return <Child />;
   }
-}
+}`
 
-class Child extends React.Component {
-  static contextTypes = {
+export const before10 = `import PropTypes from 'prop-types';
+
+const FooContext = React.createContext()
+
+class Parent extends React.Component {
+  static childContextTypes = {
     foo: PropTypes.string.isRequired,
   };
 
-  render() {
-    return <div>{this.context.foo}</div>;
+  getChildContext() {
+    return { foo: 'bar' };
   }
-}`
 
-export const remove_childContextTypes_and_getChildContext =
-  `import PropTypes from 'prop-types';
-
-class Parent extends React.Component {
   render() {
     return <Child />;
   }
-}
+}`
 
-class Child extends React.Component {
-  static contextTypes = {
+export const before20 = `import PropTypes from 'prop-types';
+
+const FooContext = React.createContext()
+
+class Parent extends React.Component {
+  static childContextTypes = {
     foo: PropTypes.string.isRequired,
   };
 
-  render() {
-    return <div>{this.context.foo}</div>;
+  getChildContext() {
+    return { foo: 'bar' };
   }
-}`
 
-export const replace_childContextTypes_and_getChildContext_with_createContext =
-  `import PropTypes from 'prop-types';
-
-const FooContext = React.createContext();
-
-class Parent extends React.Component {
-  render() {
-    return <Child />;
-  }
-}
-
-class Child extends React.Component {
-  static contextTypes = {
-    foo: PropTypes.string.isRequired,
-  };
-
-  render() {
-    return <div>{this.context.foo}</div>;
-  }
-}`
-
-export const wrap_Context_children_in_Context =
-  `import PropTypes from 'prop-types';
-
-const FooContext = React.createContext();
-
-class Parent extends React.Component {
   render() {
     return (
-      <FooContext value='bar'>
+      <FooContext value={}>
         <Child />
       </FooContext>
-    )
+    );
+  }
+}`
+export const before30 = `import PropTypes from 'prop-types';
+
+const FooContext = React.createContext()
+
+class Parent extends React.Component {
+  static childContextTypes = {
+    foo: PropTypes.string.isRequired,
+  };
+
+  render() {
+    return (
+      <FooContext value={{ foo: 'bar' }}>
+        <Child />
+      </FooContext>
+    );
+  }
+}`
+export const before40 = `import PropTypes from 'prop-types';
+
+const FooContext = React.createContext()
+
+class Parent extends React.Component {
+  render() {
+    return (
+      <FooContext value={{ foo: 'bar' }}>
+        <Child />
+      </FooContext>
+    );
+  }
+}`
+export const next10 = `import PropTypes from 'prop-types';
+
+const FooContext = React.createContext()
+
+class Parent extends React.Component {
+  render() {
+    return (
+      <FooContext value={{ foo: 'bar' }}>
+        <Child />
+      </FooContext>
+    );
   }
 }
 
@@ -92,36 +112,38 @@ class Child extends React.Component {
   }
 }`
 
-export const replace_static_contextTypes_with_static_contextType =
-  `import PropTypes from 'prop-types';
+export const next21 = `import PropTypes from 'prop-types';
 
-const FooContext = React.createContext();
+const FooContext = React.createContext()
 
 class Parent extends React.Component {
   render() {
     return (
-      <FooContext value='bar'>
+      <FooContext value={{ foo: 'bar' }}>
         <Child />
       </FooContext>
-    )
+    );
   }
 }
 
 class Child extends React.Component {
-  static contextType = FooContext;
+  static contextType = {
+    foo: PropTypes.string.isRequired,
+  };
 
   render() {
     return <div>{this.context.foo}</div>;
   }
 }`
 
-export const remove_PropTypes =
-  `const FooContext = React.createContext();
+export const next30 = `import PropTypes from 'prop-types';
+
+const FooContext = React.createContext()
 
 class Parent extends React.Component {
   render() {
     return (
-      <FooContext value='bar'>
+      <FooContext value={{ foo: 'bar' }}>
         <Child />
       </FooContext>
     );
@@ -132,6 +154,78 @@ class Child extends React.Component {
   static contextType = FooContext;
 
   render() {
-    return <div>{this.context}</div>;
+    return <div>{this.context.foo}</div>;
   }
+}`
+
+export const end = `const FooContext = React.createContext();
+
+class Parent extends React.Component {
+  render() {
+    return (
+      <FooContext value={{ foo: 'bar' }}>
+        <Child />
+      </FooContext>
+    );
+  }
+}
+
+class Child extends React.Component {
+  static contextType = FooContext;
+
+  render() {
+    return <div>{this.context.foo}</div>;
+  }
+}`
+
+export const after = `const FooContext = React.createContext();
+
+function Parent() {
+  return (
+    <FooContext value={{ foo: 'bar' }}>
+      <Child />
+    </FooContext>
+  );
+}
+
+class Child extends React.Component {
+  static contextType = FooContext;
+
+  render() {
+    return <div>{this.context.foo}</div>;
+  }
+}`
+
+export const after20 = `const FooContext = React.createContext();
+
+function Parent() {
+  return (
+    <FooContext value={{ foo: 'bar' }}>
+      <Child />
+    </FooContext>
+  );
+}
+
+class Child extends React.Component {
+  const context = React.use(FooContext);
+
+  render() {
+    return <div>{context.foo}</div>;
+  }
+}`
+
+export const after30 = `const FooContext = React.createContext();
+
+function Parent() {
+  return (
+    <FooContext value={{ foo: 'bar' }}>
+      <Child />
+    </FooContext>
+  );
+}
+
+function Child() {
+  const context = React.use(FooContext);
+
+  return <div>{context.foo}</div>;
 }`
