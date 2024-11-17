@@ -4,118 +4,150 @@ export const playground = 'https://stackblitz.com/edit/vitejs-vite-mwn5sn?file=s
 
 export const steps =
   [
-    ["Add <code>useOptimistic</code> to <code>useActionState</code> to show next state immediately",
-      `function StatefulForm() {
-  const [count, incrementCount, isPending] = React.useActionState(
-    async (previousCount) => {
-      await new Promise((resolve) => setTimeout(resolve, 1000));
-      return previousCount + 1;
-    },
-    0
-  );
-
-  return(
-    <form>
-      {count}
-      <button formAction={incrementCount}>Increment</button>
-      {isPending && '🌀'}
-    </form>
-  );
-}`],
-    ["",
-      `function StatefulForm() {
-  const [count, incrementCount, isPending] = React.useActionState(
-    async (previousCount) => {
-      addOptimisticCount(previousCount);
-      await new Promise((resolve) => setTimeout(resolve, 1000));
-      return previousCount + 1;
-    },
-    0
-  );
-
-  const [optimisticCount, addOptimisticCount] = React.useOptimistic(
-    count,
-    (state) => state + 1
-  );
-
-  return (
-    <form>
-      {count}
-      <button formAction={incrementCount}>Increment</button>
-      {isPending && '🌀'}
-    </form>
-  );
-}`],
-
-    ["Use <code>optimisticCount</code> in render",
-      `function StatefulForm() {
-  const [count, incrementCount, isPending] = React.useActionState(
-    async (previousCount) => {
-      addOptimisticCount(previousCount);
-      await new Promise((resolve) => setTimeout(resolve, 1000));
-      return previousCount + 1;
-    },
-    0
-  );
-
-  const [optimisticCount, addOptimisticCount] = React.useOptimistic(
-    count,
-    (state) => state + 1
-  );
-
-  return (
-    <form>
-      {optimisticCount}
-      <button formAction={incrementCount}>Increment</button>
-      {isPending && '🌀'}
-    </form>
-  );
-}`],
-    ["Extract shared state updater into a function",
+    ["Implement optimistic count.",
       `function addOne(number) {
   return number + 1;
 }
 
 function StatefulForm() {
   const [count, incrementCount, isPending] = React.useActionState(
-    async (previousCount) => {
-      addOptimisticCount(addOne(previousCount));
-      await new Promise((resolve) => sestTimeout(resolve, 1000));
-      return addOne(previousCount);
+    async (currentCount) => {
+      const nextCount = addOne(currentCount);
+
+      await new Promise((resolve) => setTimeout(resolve, 1000));
+      return nextCount;
     },
     0
   );
 
-  const [optimisticCount, addOptimisticCount] = React.useOptimistic(
+  return (
+    <form>
+      {count}
+      <button formAction={incrementCount}>Increment</button>
+      {isPending && '🌀'}
+    </form>
+  );
+}`], ["Create a new optimistic count with <code>useOptimistic</code.",
+      `function addOne(number) {
+  return number + 1;
+}
+
+function StatefulForm() {
+  const [count, incrementCount, isPending] = React.useActionState(
+    async (currentCount) => {
+      const nextCount = addOne(currentCount);
+
+      await new Promise((resolve) => setTimeout(resolve, 1000));
+      return nextCount;
+    },
+    0
+  );
+
+  const [
+    optimisticCount
+  ] = React.useOptimistic(
+    count
+  );
+
+  return (
+    <form>
+      {count}
+      <button formAction={incrementCount}>Increment</button>
+      {isPending && '🌀'}
+    </form>
+  );
+}`],
+
+    ["Implement an optimisticCount update function",
+      `function addOne(number) {
+  return number + 1;
+}
+
+function StatefulForm() {
+  const [count, incrementCount, isPending] = React.useActionState(
+    async (currentCount) => {
+      const nextCount = addOne(currentCount);
+
+      await new Promise((resolve) => setTimeout(resolve, 1000));
+      return nextCount;
+    },
+    0
+  );
+
+  const [
+    optimisticCount,
+    updateOptimisticCount,
+  ] = React.useOptimistic(
     count,
     (state, optimisticCount) => optimisticCount
   );
 
   return (
     <form>
-      {optimisticCount}
+      {count}
       <button formAction={incrementCount}>Increment</button>
       {isPending && '🌀'}
     </form>
   );
 }`],
 
-    ["✅",
+    ["Call <code>updateOptimisticCount</code> with <code>nextCount</code>",
       `function addOne(number) {
   return number + 1;
 }
 
 function StatefulForm() {
   const [count, incrementCount, isPending] = React.useActionState(
-    async (previousCount) => {
-      addOptimisticCount(addOne(previousCount));
+    async (currentCount) => {
+      const nextCount = addOne(currentCount);
+
+      updateOptimisticCount(nextCount);
+
       await new Promise((resolve) => setTimeout(resolve, 1000));
-      return addOne(previousCount);
+      return nextCount;
     },
     0
-  );s
+  );
 
-  const [optimisticCount, addOptimisticCount] = React.useOptimistic(
+  const [
+    optimisticCount,
+    updateOptimisticCount,
+  ] = React.useOptimistic(
+    count,
+    (state, optimisticCount) => optimisticCount
+  );
+
+  return (
+    <form>
+      {count}
+      <button formAction={incrementCount}>Increment</button>
+      {isPending && '🌀'}
+    </form>
+  );
+}`],
+
+    ["Render <code>optimisticCount</code>",
+      `function addOne(number) {
+  return number + 1;
+}
+
+function StatefulForm() {
+  const [count, incrementCount, isPending] = React.useActionState(
+    async (currentCount) => {
+      const nextCount = addOne(currentCount);
+
+      updateOptimisticCount(nextCount);
+
+      await new Promise((resolve) => setTimeout(resolve, 1000));
+      return nextCount;
+    },
+    0
+  );
+
+  const [
+    optimisticCount,
+    updateOptimisticCount,
+  ] = React.useOptimistic(
     count,
     (state, optimisticCount) => optimisticCount
   );

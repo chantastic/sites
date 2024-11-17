@@ -77,8 +77,14 @@ export default function MagicMove({
               <div className={`transition-all duration-200 ease-in-out text-[2em] text-center mt-4 ${stepCounter === steps.length - 1 ? "opacity-1" : "opacity-0"}`}>✅</div>
             </div>
               */}
-            <div className="flex-1">
-              <h2 className="text-center">{title}</h2>
+            <div>
+              <div>
+                <h2 className="text-center">{title}</h2>
+                <div className="">
+                  <Button onClick={regressStep}>← Previous</Button>
+                  <Button onClick={progressStep}> Next →</Button>
+                </div>
+              </div>
               <p className="transition-all duration-200 ease-in-out text-gray-600" style={{ viewTransition: "replace-effect" }}>
                 {stepCounter ? stepCounter < steps.length - 1 && <span className="font-mono pl-2">{stepCounter}. </span> : null}<span dangerouslySetInnerHTML={{ __html: stepName }} />
               </p>
@@ -93,10 +99,6 @@ export default function MagicMove({
                 className="m-0"
               />
             </div>
-          </div>
-          <div className="fixed flex mt-24 p-4 bg-gray-50 rounded-full shadow-lg">
-            <Button onClick={regressStep}>← Previous</Button>
-            <Button onClick={progressStep}> Next →</Button>
           </div>
         </div >
       )
