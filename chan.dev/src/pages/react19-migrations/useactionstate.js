@@ -1,6 +1,7 @@
 export const title = "useActionState";
 export const doc = 'https://react.dev/reference/react/useActionState'
 export const playground = 'https://stackblitz.com/edit/vitejs-vite-bdzfpt?file=src%2FApp.jsx'
+export const stackblitz = "vitejs-vite-kvpaud"
 
 export const steps = [["Refactor click counter to <code>useActionState</code>…", `function increment(previous) {
   return previous + 1;

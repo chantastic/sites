@@ -1,6 +1,192 @@
 ---
-title: React 19
+title: "React 19: The Big Picture"
 date: 2024-11-04
+mermaid: true
+---
+
+<style>
+[data-slide] {
+  min-height: 100vh;
+  padding-top: 1em;
+}
+
+[data-slide] h2 {
+  margin-top: 0;
+}
+</style>
+
+<section data-slide>
+
+## Trends in React 19
+
+1. Encourages **TypeScript** 🧙
+1. Endorses **Testing-Library** 🐙
+1. Embraces **compilers** 🤖
+1. Engages **the platform** 🌐
+</section>
+
+
+<section data-slide>
+
+## React 19 feature quadrants
+
+<div class="mermaid not-prose">
+quadrantChart
+    x-axis Internal --> External
+    y-axis Removed APIs --> New APIs
+    quadrant-1 Depends
+    quadrant-2 At release
+    quadrant-3 Today
+    quadrant-4 Tomorrow
+    React Compiler: [0.5, 0.9]
+    RSC and Server Actions: [0.75, 0.75]
+    Actions: [0.25, 0.8]
+    "Metadata, scripts, and stylesheets": [0.25, 0.7]
+    PropTypes and defaultProps: [0.5, 0.35]
+    PropTypes and defaultProps: [0.5, 0.35]
+    Legacy Render: [0.5, 0.25]
+    Legacy Context: [0.25, 0.3]
+    Testing Utilities: [0.25, 0.2]
+    SECRET_INTERNALS: [0.75, 0.2]
+</div>
+</section>
+
+<section data-slide>
+
+## API Removals
+
+<div class="flex flex-col gap-0 sm:flex-row sm:gap-12">
+    <div>
+
+### React
+
+- [`propTypes`](https://react.dev/blog/2024/04/25/react-19-upgrade-guide#removed-proptypes-and-defaultprops)
+- [`defaultProps`](https://react.dev/blog/2024/04/25/react-19-upgrade-guide#removed-proptypes-and-defaultprops)
+- [`contextTypes`](https://react.dev/blog/2024/04/25/react-19-upgrade-guide#removed-removing-legacy-context)
+- [`getChildContext`](https://react.dev/blog/2024/04/25/react-19-upgrade-guide#removed-removing-legacy-context)
+- [string `refs`](https://react.dev/blog/2024/04/25/react-19-upgrade-guide#removed-string-refs)
+- [`createFactory`](https://react.dev/blog/2024/04/25/react-19-upgrade-guide#removed-createfactory)
+- [Module pattern factories](https://react.dev/blog/2024/04/25/react-19-upgrade-guide#removed-module-pattern-factories)
+  </div>
+  <div>
+
+### React DOM
+- [`test-utils`](https://react.dev/blog/2024/04/25/react-19-upgrade-guide#removed-react-dom-test-utils)
+- [`ReactDOM.render`](https://react.dev/blog/2024/04/25/react-19-upgrade-guide#removed-reactdom-render)
+- [`ReactDOM.hydrate`](https://react.dev/blog/2024/04/25/react-19-upgrade-guide#removed-reactdom-hydrate)
+- [`unmountComponentAtNode`](https://react.dev/blog/2024/04/25/react-19-upgrade-guide#removed-unmountcomponentatnode)
+- [`findDOMNode`](https://react.dev/blog/2024/04/25/react-19-upgrade-guide#removed-reactdom-finddomnode)
+
+### Other
+- [`PropTypes`](https://react.dev/blog/2024/04/25/react-19-upgrade-guide#removed-proptypes-and-defaultprops)
+- [`react-test-renderer/shallow`](https://react.dev/blog/2024/04/25/react-19-upgrade-guide#removed-react-test-renderer-shallow)
+  </div>
+  </div>
+
+**[React 18.3 warns for all removed APIs.](https://github.com/facebook/react/blob/main/CHANGELOG.md#1831-april-26-2024)**  
+**[`react-codemod` is available for project-wide migrations.](https://github.com/reactjs/react-codemod)**
+
+</section>
+
+<section data-slide>
+
+## You can't get fired with React 19
+❌ [SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED](https://react.dev/blog/2024/04/25/react-19-upgrade-guide#libraries-depending-on-react-internals-may-block-upgrades)  
+✅ [_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE](https://react.dev/blog/2024/04/25/react-19-upgrade-guide#libraries-depending-on-react-internals-may-block-upgrades)
+
+*([Over 12k files with this reference in GitHub](https://github.com/search?q=SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED&type=code))*
+</section>
+
+<section data-slide>
+
+## Type Safety and React 19
+
+### Runtime prop-checking removed
+
+```diff lang="tsx" ins=/\= 'Hello, world!'/ ins=/: Props/
+- import PropTypes from 'prop-types';
+-
+- Heading.propTypes = {
+-   text: PropTypes.string,
+- };
+- Heading.defaultProps = {
+-   text: 'Hello, world!',
+- };
+
++ interface Props {
++   text?: string;
++ }
+
+export function Heading({ text = 'Hello, world!' }: Props) {
+  return <h1>{text}</h1>;
+}
+```
+
+## TypeScript improvements and changes
+- [Removed deprecated TS types](https://react.dev/blog/2024/04/25/react-19-upgrade-guide#removed-deprecated-typescript-types)
+
+### [Better useReducer typings](https://react.dev/blog/2024/04/25/react-19-upgrade-guide#better-usereducer-typings)
+```diff lang="tsx"
+- useReducer<React.Reducer<State, Action>>((state, action) => state)
++ useReducer((state: State, action: Action) => state)
+```
+
+### [`useRef` requires an argument](https://react.dev/blog/2024/04/25/react-19-upgrade-guide#ref-cleanup-required)
+
+```diff lang="tsx"
+- useRef();
++ useRef(undefined);
+// consiquently, MutableRef is now deprecated
+```
+
+### [`ref` cleanup required](https://react.dev/blog/2024/04/25/react-19-upgrade-guide#ref-cleanup-required)
+
+```diff lang="tsx"
+- <div ref={current => (instance = current)} />
++ <div ref={current => {instance = current}} />
+```
+
+### [`ReactElement` changed from `any` to `unknown`](https://react.dev/blog/2024/04/25/react-19-upgrade-guide#changes-to-the-reactelement-typescript-type)
+```
+type Example = ReactElement["props"];
+//   ^? Now 'unknown' (not 'any')
+//   (Has no effect where type arguments are passed)
+```
+
+### [The JSX namespace in TypeScript](https://react.dev/blog/2024/04/25/react-19-upgrade-guide#the-jsx-namespace-in-typescript)
+```diff title="global.d.ts"
++ declare module "react" {
+    namespace JSX {
+      interface IntrinsicElements {
+        "my-element": {
+          myElementProps: string;
+        };
+      }
+    }
++ }
+```
+
+*See the [React 19 RC Upgrade Guide](https://react.dev/blog/2024/04/25/react-19-upgrade-guide#typescript-changes) for details and codemods.*
+
+</section>
+
+## Testing and React 19
+- EoL for `react-test-renderer`
+
+## Compilation and React 19
+- React Compiler
+- React Server Components
+- Server Actions
+
+## The Web Platform and React 19
+- Better Web Components support
+- Utilizing <form>
+- Direct support for document metadata resources
+
+
+## New Deprecations
+- [`element.ref`](https://react.dev/blog/2024/04/25/react-19-upgrade-guide#deprecated-element-ref)
+- [`react-test-renderer`](https://react.dev/blog/2024/04/25/react-19-upgrade-guide#deprecated-react-test-renderer)
 ---
 
 Before I got into full-time Developer Education, I worked for half a decade as a frontend architect for a multi-application SaaS.  
@@ -28,71 +214,11 @@ Helped tell the story of React in the React Documentary.
 
 Let's get into this migration.
 
-## React 19 Takes out the trash
-
-React 19 removes a lot of long-standing APIs.
-
-We can use v18.3 to `warn` about these APIs in the console.
-v18.3 is identical to v18.2 (save for the warnings).
-
-We'll cover the breaking changes and the wider-represented tread for React.
-
-(this guide is more accurate than the blog post, which has some errors)
-(i also found AI to be very inconsistent in knowing how best to migrate the suggestions)
-:
-
-[React Codemods](https://github.com/reactjs/react-codemod?tab=readme-ov-file#react-codemods-):
-### replace-reactdom-render
-### replace-string-ref
-### replace-act-import
-React fully embraces 'react-testing-library' approach.
-### replace-use-form-state
-React fully supports form-based submission approach.
-### prop-types-typescript
-React fully embraces TypeScript reality.
-
-```diff lang="tsx"
-import PropTypes from 'prop-types';
-
-export function Heading({ text }) {
-  return <h1>{text}</h1>;
-}
-Heading.propTypes = {
-  text: PropTypes.string,
-};
-Heading.defaultProps = {
-  text: 'Hello, world!',
-};
-```
-
-```bash title="codemod"
-npx react-codemod replace-prop-types-typescript
-```
-
-```diff lang="tsx"
-interface Props {
-  text?: string;
-}
-function Heading({text = 'Hello, world!'}: Props) {
-  return <h1>{text}</h1>;
-}
-```
-
 ## React adds client-side capabilities
 ### Actions
 ### `use` (it's not a hook)
 ### Native document metadata support
 - Not an end to APIs like `react-helmet` but a better foundation
-
-## React to the The Future©
-### Compiler
-- Inspiration from compiled frameworks
-### Server Components
-- What server components are
-- What server components are not
-### Server Actions
-- What server actions are
-- What server actions are not
 
 ## Conclusion
 React 19 is an important upgrade, even if you're only building client-side apps.  
@@ -189,7 +315,47 @@ This future is still unfolding and best practices, patterns, and APIs will unfol
 
 
 
+<script>
+function goToPreviousHeading() {
+  const headings = document.querySelectorAll('[data-slide]');
+  const currentPosition = window.scrollY;
 
+  
+  const previousHeadings = Array.from(headings).filter(heading => {
+    return heading.getBoundingClientRect().top < -10;
+  });
+  
+  if (previousHeadings.length > 0) {
+    const previousHeading = previousHeadings[previousHeadings.length - 1];
+    console.log(previousHeading)
+    previousHeading.scrollIntoView({behavior: 'smooth'});
+  }
+}
 
+function goToNextHeading() {
+  const headings = document.querySelectorAll('[data-slide]');
+  
+  const currentPosition = window.scrollY;
+  
+  const nextHeading = Array.from(headings).find(heading => {
+    return heading.getBoundingClientRect().top > 10;
+  });
+  
+  if (nextHeading) {
+    nextHeading.scrollIntoView({behavior: 'smooth'});
+  }
+}
 
+document.addEventListener('keydown', function(event) {
+  // Use Ctrl+N (or Cmd+N on Mac) to trigger the function
+  if ((event.ctrlKey) && event.key === 'n') {
+    event.preventDefault();
+    goToNextHeading();
+  }
+  if ((event.ctrlKey) && event.key === 'p') {
+    event.preventDefault();
+    goToPreviousHeading();
+  }
+});
+</script>
 
