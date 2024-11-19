@@ -1,6 +1,6 @@
 export const title = "use"
 export const doc = 'https://react.dev/reference/react/use'
-export const playground = 'https://stackblitz.com/edit/vitejs-vite-7pw9l7?embed=1&file=src%2FApp.jsx'
+export const playground = 'https://stackblitz.com/edit/vitejs-vite-7pw9l7?file=src%2FApp.jsx'
 
 export const steps =
   [

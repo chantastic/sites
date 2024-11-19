@@ -1,7 +1,7 @@
 
 export const title = "form"
 export const doc = 'https://react.dev/reference/react/useActionState#reference'
-export const playground = 'https://stackblitz.com/edit/vitejs-vite-3pz8qx?embed=1&file=src%2FApp.jsx'
+export const playground = 'https://stackblitz.com/edit/vitejs-vite-6n4vrw?file=src%2FApp.jsx'
 
 export const steps =
   [

@@ -1,6 +1,6 @@
 export const title = "Async Actions"
 export const doc = 'https://react.dev/reference/react/useActionState'
-export const playground = 'https://stackblitz.com/edit/vitejs-vite-yttb7n?file=src%2FApp.jsx'
+export const playground = 'https://stackblitz.com/edit/vitejs-vite-vd26uh?file=src%2FApp.jsx'
 
 export const steps =
   [
