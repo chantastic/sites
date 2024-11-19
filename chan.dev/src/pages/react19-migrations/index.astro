@@ -5,6 +5,8 @@ import * as prop_types_typescript from './prop_types_typescript'
 import * as useactionstate from './useactionstate'
 import * as async_useactionstate from './async_useactionstate'
 import * as use_optimistic from './use_optimistic'
+import * as full_form from './full_form'
+import * as use from './use'
 import stackblitz from '@stackblitz/sdk'
 import { StackblitzEmbed } from './stackblitz-embed'
 //import * as replace_contexttypes_and_getchildcontext_with_contexttype from './replace_contexttypes_and_getchildcontext_with_contexttype'
@@ -34,18 +36,24 @@ function prepExamples(examples) {
 }
 ---
 
-<Layout style={{backgroundColor: "rgb(26, 27, 38)"}}>
+<Layout class="" style={{backgroundColor: "rgb(26, 27, 38)"}}>
   <div class="prose">
-    <h1>React 19</h1>
+    <h1>React 19 Actions (as Refactors)</h1>
     
     {[
        // required refactors
-       // prop_types_typescript,
+        //prop_types_typescript,
 
        // refactors
-        useactionstate
-       // async_useactionstate
-       //use_optimistic,
+        useactionstate,
+        async_useactionstate,
+        use_optimistic,
+
+        full_form,
+        use,
+        // use(Context)
+        // useFormStatus
+        // add the stackblitzes
      ].map((example) => {
       return (
         <>
@@ -66,6 +74,8 @@ function prepExamples(examples) {
           <div id="stackblitz_embed" style="display: none">
             <StackblitzEmbed projectId={example.stackblitz} client:load />
           </div>
+          <br />
+          <br />
         </>
       )
     })}

@@ -61,8 +61,8 @@ export default function MagicMove({
   return (
     <div>
       {highlighter && (
-        <div className="relative w-[800px]">
-          <div className="flex text-lg">
+        <div>
+          <div>
             {/*
             <div className="w-1/3">
               <ol>
@@ -78,16 +78,18 @@ export default function MagicMove({
             </div>
               */}
             <div>
-              <div>
-                <h2 className="text-center">{title}</h2>
-                <div className="">
+              <div className="flex flex-row">
+                <h2 className="size-lg m-0">{title}</h2>
+                <div className="ml-12">
                   <Button onClick={regressStep}>← Previous</Button>
                   <Button onClick={progressStep}> Next →</Button>
                 </div>
               </div>
+              {/*
               <p className="transition-all duration-200 ease-in-out text-gray-600" style={{ viewTransition: "replace-effect" }}>
                 {stepCounter ? stepCounter < steps.length - 1 && <span className="font-mono pl-2">{stepCounter}. </span> : null}<span dangerouslySetInnerHTML={{ __html: stepName }} />
               </p>
+              */}
               <ShikiMagicMove
                 onStart={() => { console.log("started"); }}
                 onEnd={() => { console.log("ended"); }}

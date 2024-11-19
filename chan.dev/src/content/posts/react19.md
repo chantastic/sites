@@ -15,6 +15,29 @@ mermaid: true
 }
 </style>
 
+<section data-slide class="grid text-center place-items-center">
+
+<h1>An App Dev's Guide to React 19:<br />What You Need to Know.<br />And Everything You Can Ignore.</h1>
+
+</section>
+
+<section data-slide class="grid text-center place-items-center">
+
+# [chan.dev/react19](/react19)
+
+</section>
+
+<section data-slide>
+
+<section data-slide>
+
+<h1>I'm @chantastic.</h1>
+
+- I used to host [React Podcast](https://reactpodcast.simplecast.com/)
+- I work at [WorkOS](https://www.youtube.com/@WorkOS/videos), where we build the best login box on the planet.
+
+</section>
+
 <section data-slide>
 
 ## Trends in React 19
@@ -86,6 +109,7 @@ quadrantChart
 **[React 18.3 warns for all removed APIs.](https://github.com/facebook/react/blob/main/CHANGELOG.md#1831-april-26-2024)**  
 **[`react-codemod` is available for project-wide migrations.](https://github.com/reactjs/react-codemod)**
 
+
 </section>
 
 <section data-slide>
@@ -93,13 +117,19 @@ quadrantChart
 ## You can't get fired with React 19
 ❌ [SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED](https://react.dev/blog/2024/04/25/react-19-upgrade-guide#libraries-depending-on-react-internals-may-block-upgrades)  
 ✅ [_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE](https://react.dev/blog/2024/04/25/react-19-upgrade-guide#libraries-depending-on-react-internals-may-block-upgrades)
+<br />
+<br />
+<br />
+<br />
+<br />
 
-*([Over 12k files with this reference in GitHub](https://github.com/search?q=SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED&type=code))*
+> You own what you (npm) install  
+> — [12k files with SECRET_INTERNALS references in GitHub](https://github.com/search?q=SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED&type=code)
 </section>
 
 <section data-slide>
 
-## Type Safety and React 19
+## [Type Safety and React 19](https://react.dev/blog/2024/04/25/react-19-upgrade-guide#removed-deprecated-typescript-types)
 
 ### Runtime prop-checking removed
 
@@ -121,10 +151,6 @@ export function Heading({ text = 'Hello, world!' }: Props) {
   return <h1>{text}</h1>;
 }
 ```
-
-## TypeScript improvements and changes
-- [Removed deprecated TS types](https://react.dev/blog/2024/04/25/react-19-upgrade-guide#removed-deprecated-typescript-types)
-
 ### [Better useReducer typings](https://react.dev/blog/2024/04/25/react-19-upgrade-guide#better-usereducer-typings)
 ```diff lang="tsx"
 - useReducer<React.Reducer<State, Action>>((state, action) => state)
@@ -170,25 +196,17 @@ type Example = ReactElement["props"];
 
 </section>
 
+<section data-slide class="">
+
 ## Testing and React 19
-- EoL for `react-test-renderer`
 
-## Compilation and React 19
-- React Compiler
-- React Server Components
-- Server Actions
+> Hey, just use Testing-Library, already.  
+> Oh. And `act` is in `react` now.
+</section>
 
-## The Web Platform and React 19
-- Better Web Components support
-- Utilizing <form>
-- Direct support for document metadata resources
-
-
-## New Deprecations
-- [`element.ref`](https://react.dev/blog/2024/04/25/react-19-upgrade-guide#deprecated-element-ref)
-- [`react-test-renderer`](https://react.dev/blog/2024/04/25/react-19-upgrade-guide#deprecated-react-test-renderer)
 ---
 
+<!--
 Before I got into full-time Developer Education, I worked for half a decade as a frontend architect for a multi-application SaaS.  
 And a big part of my role was to break down and company-wide refactors into achievable pieces.
 
@@ -313,7 +331,7 @@ This future is still unfolding and best practices, patterns, and APIs will unfol
     - better hydration errors
     - Support for Custom Elements
 
-
+-->
 
 <script>
 function goToPreviousHeading() {
@@ -359,3 +377,9 @@ document.addEventListener('keydown', function(event) {
 });
 </script>
 
+
+<section data-slide class="grid text-center place-items-center">
+
+# [chan.dev/react19-migrations](/react19-migrations)
+
+</section>
