@@ -1,0 +1,132 @@
+---
+export const prerender = false
+import Layout from '#layouts/Layout.astro'
+const {user} = Astro.locals
+---
+
+<Layout title="YouTube Content Helper">
+	<main class="container mx-auto px-4 py-8">
+		<h1 class="text-3xl font-bold mb-6">
+			YouTube Content Helper
+		</h1>
+
+		<form
+			action="/api/generate-youtube-content"
+			method="POST"
+			enctype="multipart/form-data"
+			class="max-w-2xl space-y-6"
+		>
+			<div>
+				<label
+					for="srtFile"
+					class="block text-sm font-medium mb-2"
+				>
+					Upload Subtitles (.srt file)
+				</label>
+				<input
+					type="file"
+					id="srtFile"
+					name="srtFile"
+					accept=".srt"
+					required
+					class="w-full border rounded-lg p-2"
+				/>
+			</div>
+
+			<div>
+				<label
+					for="prompt"
+					class="block text-sm font-medium mb-2"
+				>
+					Additional Context/Prompt
+				</label>
+				<textarea
+					id="prompt"
+					name="prompt"
+					rows="4"
+					placeholder="Describe your video content or any specific requirements..."
+					class="w-full border rounded-lg p-2"></textarea>
+			</div>
+
+			<button
+				type="submit"
+				class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700"
+			>
+				Generate Content
+			</button>
+		</form>
+
+		<div id="result" class="mt-8">
+			<!-- Results will be displayed here -->
+		</div>
+	</main>
+</Layout>
+
+<script>
+	const form = document.querySelector('form')
+	const resultDiv = document.querySelector('#result')
+
+	form?.addEventListener('submit', async (e) => {
+		e.preventDefault()
+
+		const formData = new FormData(form)
+
+		try {
+			const response = await fetch(
+				'/api/generate-youtube-content',
+				{
+					method: 'POST',
+					body: formData,
+				}
+			)
+
+			const data = await response.json()
+
+			if (response.ok) {
+				resultDiv.innerHTML = `
+          <div class="space-y-6">
+            <section>
+              <h2 class="text-xl font-bold mb-3">Title Ideas</h2>
+              <ul class="list-disc pl-5">
+                ${data.titles.map((title) => `<li>${title}</li>`).join('')}
+              </ul>
+            </section>
+            
+            <section>
+              <h2 class="text-xl font-bold mb-3">Description</h2>
+              <div class="whitespace-pre-wrap">${data.description}</div>
+            </section>
+            
+            <section>
+              <h2 class="text-xl font-bold mb-3">Chapters</h2>
+              <div class="whitespace-pre-wrap">${data.chapters}</div>
+            </section>
+            
+            <section>
+              <h2 class="text-xl font-bold mb-3">Tags</h2>
+              <div class="flex flex-wrap gap-2">
+                ${data.tags
+									.map(
+										(tag) => `
+                  <span class="bg-gray-100 px-2 py-1 rounded">${tag}</span>
+                `
+									)
+									.join('')}
+              </div>
+            </section>
+          </div>
+        `
+			} else {
+				throw new Error(
+					data.message || 'Failed to generate content'
+				)
+			}
+		} catch (error) {
+			resultDiv.innerHTML = `
+        <div class="text-red-600">
+          Error: ${error.message}
+        </div>
+      `
+		}
+	})
+</script>

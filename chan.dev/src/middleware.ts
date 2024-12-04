@@ -1,12 +1,11 @@
 import type {APIContext, MiddlewareNext} from 'astro'
 import {defineMiddleware} from 'astro/middleware'
 import * as AUTHKIT from '#lib/authkit'
-import {minimatch} from 'minimatch'
 
 export const onRequest = defineMiddleware((context, next) => {
 	const {pathname} = new URL(context.request.url)
 
-	if (minimatch(pathname, '/dashboard*')) {
+	if (pathname.startsWith('/dashboard')) {
 		return withAuth(context, next)
 	}
 
