@@ -8,7 +8,7 @@ export default () => (
     <section>
       <h1>Why learn Vim?</h1>
       <Link href="/">
-        <a>Go Home</a>
+        Go Home
       </Link>
       <YouTube code="jwxK5Eg_TnM" />
     </section>

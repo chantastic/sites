@@ -104,9 +104,7 @@ export default function() {
         {pages.map(page => (
           <li key={page.letter}>
             <Link href={`/alphabet/${page.letter}`}>
-              <a>
-                <code>{page.letter.toUpperCase()}</code>
-              </a>
+              <code>{page.letter.toUpperCase()}</code>
             </Link>
           </li>
         ))}

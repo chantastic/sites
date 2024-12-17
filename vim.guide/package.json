@@ -5,10 +5,9 @@
     "export": "npm run build && next export"
   },
   "dependencies": {
-    "@zeit/next-css": "^1.0.1",
-    "next": "^9.3.4",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
+    "next": "^15.1.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
     "system-ui.css": "^2.0.0"
   }
 }
