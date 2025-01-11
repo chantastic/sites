@@ -27,7 +27,7 @@ In our 90's Christian circles, churches of fewer than 100 people would violently
 Self-righteous and evasive,
 they're most rehearsed experience is the ability to globalize any fear, frustration, or fantasy, as fact.  
 
-But wisdom the *broad* applaciton of knowledge and experience?  
+But wisdom the *broad* application of knowledge and experience?  
 So how could such restricted experiences blossom into generational wisdom?
 
 Anyway…
@@ -41,7 +41,7 @@ All bets are off after that.
 
 Second, embrace reality.  
 The wisdom I gain isn't better than its worst application.
-The experince of our parents expired quickly because it wasn't exposed to broad test cases.
+The experience of our parents expired quickly because it wasn't exposed to broad test cases.
 
 They evaded and dismissed reality.  
 And, doing so, *passed* on wisdom.
