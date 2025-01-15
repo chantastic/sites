@@ -2,7 +2,6 @@
 import {ViewTransitions} from 'astro:transitions'
 import GoogleFonts from '#components/header-google-fonts.astro'
 import GlobalStyles from '#components/header-global-styles.astro'
-import HeadAnalytics from '#components/head-analytics.astro'
 import BodyHidden from '#components/body-hidden.astro'
 import site from '#/metadata.json'
 import type * as POSTS from '#content/posts/_posts'
@@ -36,7 +35,6 @@ let content = await entry?.render()
 		<link rel="sitemap" href="/sitemap-index.xml" />
 		<GoogleFonts />
 		<GlobalStyles />
-		<HeadAnalytics />
 		<slot name="page-head" />
 		<slot name="page-meta">
 			<title>

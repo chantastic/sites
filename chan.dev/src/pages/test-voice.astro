@@ -1,0 +1,78 @@
+---
+
+---
+
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
+		<title>Voice Input Test</title>
+	</head>
+	<body>
+		<main class="container">
+			<h1>Voice Input Test</h1>
+			<button id="startButton">Start Listening</button>
+			<p id="status">Click the button to start speaking</p>
+			<div id="output" class="output-box"></div>
+		</main>
+
+		<style>
+			.container {
+				max-width: 600px;
+				margin: 2rem auto;
+				padding: 1rem;
+			}
+			.output-box {
+				margin-top: 1rem;
+				padding: 1rem;
+				border: 1px solid #ccc;
+				min-height: 100px;
+			}
+		</style>
+
+		<script>
+			const startButton = document.getElementById('startButton')
+			const status = document.getElementById('status')
+			const output = document.getElementById('output')
+
+			if ('webkitSpeechRecognition' in window) {
+				const recognition = new webkitSpeechRecognition()
+				recognition.continuous = false
+				recognition.interimResults = true
+
+				recognition.onstart = () => {
+					status.textContent = 'Listening...'
+					startButton.disabled = true
+				}
+
+				recognition.onresult = (event) => {
+					const transcript = Array.from(event.results)
+						.map((result) => result[0].transcript)
+						.join('')
+					output.textContent = transcript
+				}
+
+				recognition.onend = () => {
+					status.textContent =
+						'Click the button to start speaking'
+					startButton.disabled = false
+				}
+
+				recognition.onerror = (event) => {
+					status.textContent = 'Error occurred: ' + event.error
+					startButton.disabled = false
+				}
+
+				startButton.addEventListener('click', () => {
+					recognition.start()
+				})
+			} else {
+				status.textContent = 'Speech recognition not supported'
+				startButton.disabled = true
+			}
+		</script>
+	</body>
+</html>

@@ -2,7 +2,6 @@
 import {ViewTransitions} from 'astro:transitions'
 import GoogleFonts from '#components/header-google-fonts.astro'
 import GlobalStyles from '#components/header-global-styles.astro'
-import HeadAnalytics from '#components/head-analytics.astro'
 import site from '#/metadata.json'
 import Prose from '#components/prose.astro'
 import type * as POSTS from '#content/posts/_posts'
@@ -35,7 +34,6 @@ const {entry} = Astro.props
 		<link rel="sitemap" href="/sitemap-index.xml" />
 		<GoogleFonts />
 		<GlobalStyles />
-		<HeadAnalytics />
 		<slot name="page-meta">
 			<title>
 				{site.title}
