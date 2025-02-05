@@ -1,34 +1,36 @@
 ---
-import PostMeta from "#components/header-post-meta.astro";
-import Prose from "#components/prose.astro";
-import Layout from "#layouts/Layout.astro";
-import * as LESSONS from "#pages/lessons/lessons";
+import PostMeta from '#components/header-post-meta.astro'
+import Prose from '#components/prose.astro'
+import Layout from '#layouts/Layout.astro'
+import * as LESSONS from '#content/lessons/_lessons'
 
-const lessons = await LESSONS.getCollection();
+const lessons = await LESSONS.getCollection()
 ---
 
 <Layout>
-  <Prose>
-    <small>
-      ⇠ <a href="/">chan.dev</a>
-    </small>
-    <main class="mt-4">
-      <h1 class="tracking-tight">Lessons</h1>
-      <ul>
-        {
-          lessons.map((entry) => (
-            <li>
-              <a href={`/${LESSONS.path(entry.slug)}`}>{entry.slug}</a>
-            </li>
-          ))
-        }
-      </ul>
-    </main>
-  </Prose>
-  <PostMeta
-    title={LESSONS.title()}
-    description="A collection of small, focused, action-oriented lessons by chantastic."
-    path={LESSONS.path()}
-    slot="page-meta"
-  />
+	<Prose>
+		<small>
+			⇠ <a href="/">chan.dev</a>
+		</small>
+		<main class="mt-4">
+			<h1 class="tracking-tight">Lessons</h1>
+			<ul>
+				{
+					lessons.map((entry) => (
+						<li>
+							<a href={`/${LESSONS.path(entry.slug)}`}>
+								{entry.slug}
+							</a>
+						</li>
+					))
+				}
+			</ul>
+		</main>
+	</Prose>
+	<PostMeta
+		title={LESSONS.title()}
+		description="A collection of small, focused, action-oriented lessons by chantastic."
+		path={LESSONS.path()}
+		slot="page-meta"
+	/>
 </Layout>

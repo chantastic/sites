@@ -18,9 +18,10 @@ pnpm-debug.log*
 # macOS-specific files
 .DS_Store
 
-# astro
+# astro and deployments
 .astro
 .netlify
+.wrangler
 
 # obsidian
 src/content/.obsidian
@@ -29,3 +30,9 @@ src/content/.obsidian
 /test-results/
 /playwright-report/
 /playwright/.cache/
+
+# convex
+convex/_generated/
+
+.env.local
+

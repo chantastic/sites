@@ -2,10 +2,9 @@
 import {ViewTransitions} from 'astro:transitions'
 import GoogleFonts from '#components/header-google-fonts.astro'
 import GlobalStyles from '#components/header-global-styles.astro'
-import HeadAnalytics from '#components/head-analytics.astro'
 import BodyHidden from '#components/body-hidden.astro'
 import site from '#/metadata.json'
-import type * as POSTS from '#pages/posts/posts'
+import type * as POSTS from '#content/posts/_posts'
 import {url} from '#modules/site'
 
 interface Props {
@@ -21,7 +20,11 @@ let content = await entry?.render()
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link
+			rel="icon"
+			type="image/svg+xml"
+			href="/favicon.svg?v=1"
+		/>
 		<meta name="generator" content={Astro.generator} />
 		<link
 			rel="alternate"
@@ -32,7 +35,6 @@ let content = await entry?.render()
 		<link rel="sitemap" href="/sitemap-index.xml" />
 		<GoogleFonts />
 		<GlobalStyles />
-		<HeadAnalytics />
 		<slot name="page-head" />
 		<slot name="page-meta">
 			<title>
@@ -137,7 +139,7 @@ let content = await entry?.render()
 		style="padding: 1rem"
 		id="body"
 	>
-		<div class="mx-auto">
+		<div>
 			<slot />
 			<!-- {
       content?.headings &&
@@ -159,5 +161,11 @@ let content = await entry?.render()
     } -->
 		</div>
 		<BodyHidden />
+		<!-- Cloudflare Web Analytics -->
+		<script
+			defer
+			src="https://static.cloudflareinsights.com/beacon.min.js"
+			data-cf-beacon='{"token": "8230f43ff33b4ddf88d829faf47ad411"}'
+		></script><!-- End Cloudflare Web Analytics -->
 	</body>
 </html>

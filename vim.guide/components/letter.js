@@ -10,7 +10,7 @@ export default ({ letter, code, ...props }) => (
     <section>
       <h1>Append with {letter}</h1>
       <Link href="/">
-        <a>Go Home</a>
+        Go Home
       </Link>
       <YouTube code={code} />
 

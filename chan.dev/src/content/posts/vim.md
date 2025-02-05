@@ -9,7 +9,9 @@ _This is a work in progress. Today it's just notes for our stream._
 
 Check out this playlist where we go thru every key on the keyboard and says what it does in Vim.
 
-https://www.youtube.com/playlist?list=PLnc_NxpmOxaNqdGvUg8RBi8ZTaZGPdqBD
+<div data-responsive-youtube-container>
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/videoseries?si=3yQTq3S2jM7MAtaO&amp;list=PLnc_NxpmOxaNqdGvUg8RBi8ZTaZGPdqBD" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
 
 ## Story
 

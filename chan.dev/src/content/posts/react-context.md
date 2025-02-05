@@ -71,9 +71,7 @@ function VisitToGrandmasHouse() {
   <summary>Prefer video?</summary>
 
 <div data-responsive-youtube-container>
-
-https://youtu.be/4kb-zw96pLY
-
+<iframe width="560" height="315" src="https://www.youtube.com/embed/4kb-zw96pLY?si=nJktI2oIy5TO7LMx" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </div>
 </details>
 
@@ -104,9 +102,7 @@ let NameContext = React.createContext('Guest')
   <summary>Prefer video?</summary>
 
 <div data-responsive-youtube-container>
-
-https://youtu.be/xER6Y82hJ4Q
-
+<iframe width="560" height="315" src="https://www.youtube.com/embed/4kb-zw96pLY?si=nJktI2oIy5TO7LMx" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </div>
 </details>
 

@@ -153,16 +153,14 @@ Storybook actions let you validate implementation in story files, leaving compon
 
 Check out this X thread.
 
-https://twitter.com/chantastic/status/1694932499984703754
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Let&#39;s talk about console.log…<br><br>It&#39;s not the best tool for the bugging UI but I use it anyway because it cheap and easy.<br><br>But when when driving component design in <a href="https://twitter.com/storybookjs?ref_src=twsrc%5Etfw">@storybookjs</a> we can use Actions — which are much more like callback mocks.<br><br>Here&#39;s how… <a href="https://t.co/8HNDXRslBJ">pic.twitter.com/8HNDXRslBJ</a></p>&mdash; chan 👉 chan.dev (@chantastic) <a href="https://twitter.com/chantastic/status/1694932499984703754?ref_src=twsrc%5Etfw">August 25, 2023</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 ## Prefer video?
 
 Check out the video for this post on YouTube!
 
 <div data-responsive-youtube-container>
-
-https://youtu.be/BTIuTuoHsQc
-
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/BTIuTuoHsQc?si=11BgHNG8pyzKr2md" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </div>
 
 Or just get to the goods with shorts!

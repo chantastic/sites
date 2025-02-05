@@ -1,138 +1,139 @@
 ---
-import { ViewTransitions } from "astro:transitions";
-import GoogleFonts from "#components/header-google-fonts.astro";
-import GlobalStyles from "#components/header-global-styles.astro";
-import HeadAnalytics from "#components/head-analytics.astro";
-import site from "#/metadata.json";
-import Prose from "#components/prose.astro";
-import type * as POSTS from "#pages/posts/posts";
-import { url } from "#modules/site";
+import {ViewTransitions} from 'astro:transitions'
+import GoogleFonts from '#components/header-google-fonts.astro'
+import GlobalStyles from '#components/header-global-styles.astro'
+import site from '#/metadata.json'
+import Prose from '#components/prose.astro'
+import type * as POSTS from '#content/posts/_posts'
+import {url} from '#modules/site'
 
 interface Props {
-  entry: POSTS.CollectionEntry;
+	entry: POSTS.CollectionEntry
 }
 
-const { entry } = Astro.props;
+const {entry} = Astro.props
 ---
 
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="generator" content={Astro.generator} />
-    <link
-      rel="alternate"
-      type="application/rss+xml"
-      title=`RSS Feed for ${site.title}`
-      href={`${site.feed.path}/${site.feed.rssFilename}`}
-    />
-    <link rel="sitemap" href="/sitemap-index.xml" />
-    <GoogleFonts />
-    <GlobalStyles />
-    <HeadAnalytics />
-    <slot name="page-meta">
-      <title>
-        {site.title}
-      </title>
-    </slot>
-    <ViewTransitions />
-    {
-      entry?.collection === "posts" && (
-        <>
-          <script
-            type="application/ld+json"
-            set:html={JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "BlogPosting",
-              headline: entry.data.title,
-              publisher: {
-                "@type": "Organization",
-                name: "chantastic, llc",
-                url: "https://chan.dev",
-              },
-              url: url(entry.slug),
-              datePublished: entry.data.publishDate,
-              description: entry.data.description,
-              author: {
-                "@type": "Person",
-                name: "chantastic",
-                url: "https://chan.dev",
-              },
-              mainEntityOfPage: {
-                "@type": "WebPage",
-                "@id": "https://chan.dev",
-              },
-            })}
-          />
-        </>
-      )
-    }
-  </head>
-  <body
-    class="bg-white dark:bg-gray-900"
-    style="padding: 1rem"
-    id="body"
-  >
-    <Prose>
-      <button id="copy_body_button">Select content</button>
-      <button id="copy_first_image_as_png"
-        >Copy first image as png</button
-      >
-    </Prose>
-    <slot />
-    <div id="code-images"></div>
-    <script is:inline>
-      function main() {
-        let copyToClipboardButton = document.getElementById(
-          "copy_body_button",
-        );
-        let content = document.querySelector("main");
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link
+			rel="icon"
+			type="image/svg+xml"
+			href="/favicon.svg?v=1"
+		/>
+		<meta name="generator" content={Astro.generator} />
+		<link
+			rel="alternate"
+			type="application/rss+xml"
+			title=`RSS Feed for ${site.title}`
+			href={`${site.feed.path}/${site.feed.rssFilename}`}
+		/>
+		<link rel="sitemap" href="/sitemap-index.xml" />
+		<GoogleFonts />
+		<GlobalStyles />
+		<slot name="page-meta">
+			<title>
+				{site.title}
+			</title>
+		</slot>
+		<ViewTransitions />
+		{
+			entry?.collection === 'posts' && (
+				<>
+					<script
+						type="application/ld+json"
+						set:html={JSON.stringify({
+							'@context': 'https://schema.org',
+							'@type': 'BlogPosting',
+							'headline': entry.data.title,
+							'publisher': {
+								'@type': 'Organization',
+								'name': 'chantastic, llc',
+								'url': 'https://chan.dev',
+							},
+							'url': url(entry.slug),
+							'datePublished': entry.data.publishDate,
+							'description': entry.data.description,
+							'author': {
+								'@type': 'Person',
+								'name': 'chantastic',
+								'url': 'https://chan.dev',
+							},
+							'mainEntityOfPage': {
+								'@type': 'WebPage',
+								'@id': 'https://chan.dev',
+							},
+						})}
+					/>
+				</>
+			)
+		}
+	</head>
+	<body
+		class="bg-white dark:bg-gray-900"
+		style="padding: 1rem"
+		id="body"
+	>
+		<Prose>
+			<button id="copy_body_button">Select content</button>
+			<button id="copy_first_image_as_png"
+				>Copy first image as png</button
+			>
+		</Prose>
+		<slot />
+		<div id="code-images"></div>
+		<script is:inline>
+			function main() {
+				let copyToClipboardButton = document.getElementById(
+					'copy_body_button'
+				)
+				let content = document.querySelector('main')
 
-        copyToClipboardButton.addEventListener("click", () => {
-          function selectContents(domNode) {
-            let range = document.createRange();
-            let sel = window.getSelection();
+				copyToClipboardButton.addEventListener('click', () => {
+					function selectContents(domNode) {
+						let range = document.createRange()
+						let sel = window.getSelection()
 
-            range.selectNodeContents(domNode);
+						range.selectNodeContents(domNode)
 
-            sel.removeAllRanges();
-            sel.addRange(range);
-          }
+						sel.removeAllRanges()
+						sel.addRange(range)
+					}
 
-          selectContents(content);
-        });
-      }
+					selectContents(content)
+				})
+			}
 
-      main();
-    </script>
-    <script type="module" is:inline>
-      // import * as htmlToImage from "html-to-image";
-      import * as htmlToImage from "https://esm.sh/html-to-image@1.11.11";
-      const mountNode = document.getElementById("code-images");
+			main()
+		</script>
+		<script type="module" is:inline>
+			// import * as htmlToImage from "html-to-image";
+			import * as htmlToImage from 'https://esm.sh/html-to-image@1.11.11'
+			const mountNode = document.getElementById('code-images')
 
-      const nodes = document.querySelectorAll("pre");
+			const nodes = document.querySelectorAll('pre')
 
-      // const fragment = document.createDocumentFragment();
+			// const fragment = document.createDocumentFragment();
 
-      for (const node of nodes) {
-        console.log(node);
-        let image = htmlToImage
-          .toPng(node)
-          .then(function (dataUrl) {
-            // const img = document.createElement("img");
-            const img = new Image();
-            img.src = dataUrl;
-            mountNode.appendChild(img);
-          })
-          .catch(function (error) {
-            console.error("oops, something went wrong!", error);
-          });
-      }
-      // const test = document.createElement("div");
+			for (const node of nodes) {
+				let image = htmlToImage
+					.toPng(node)
+					.then(function (dataUrl) {
+						// const img = document.createElement("img");
+						const img = new Image()
+						img.src = dataUrl
+						mountNode.appendChild(img)
+					})
+					.catch(function (error) {
+						console.error('oops, something went wrong!', error)
+					})
+			}
+			// const test = document.createElement("div");
 
-      // mountNode.appendChild(fragment);
-    </script>
-  </body>
+			// mountNode.appendChild(fragment);
+		</script>
+	</body>
 </html>

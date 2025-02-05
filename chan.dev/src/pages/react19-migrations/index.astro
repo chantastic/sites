@@ -1,0 +1,96 @@
+---
+import MagicMove from './shiki_magic_move'
+import Layout from '#layouts/Layout.astro'
+import * as prop_types_typescript from './prop_types_typescript'
+import * as useactionstate from './useactionstate'
+import * as async_useactionstate from './async_useactionstate'
+import * as use_optimistic from './use_optimistic'
+import * as full_form from './full_form'
+import * as use from './use'
+import stackblitz from '@stackblitz/sdk'
+import { StackblitzEmbed } from './stackblitz-embed'
+//import * as replace_contexttypes_and_getchildcontext_with_contexttype from './replace_contexttypes_and_getchildcontext_with_contexttype'
+//import replace_string_ref from './replace_string_ref'
+//import * as remove_module_pattern_factories from './remove_module_pattern_factories'
+//import * as remove_create_factory from './remove_create_factory'
+//import * as replace_reacttestrenderershallow_with_reactshallowrenderer from './replace_reacttestrenderershallow_with_reactshallowrenderer'
+//import * as replace_act_import from './replace_act_import'
+//import * as replace_reactdom_render from './replace_reactdom_render'
+//import * as replace_reactdom_hydrate from './replace_reactdom_hydrate'
+//import * as actions from './actions'
+
+// basic useOptmistic example https://react.dev/reference/react/useOptimistic#usage
+// useFormStatus https://react.dev/reference/react-dom/hooks/useFormStatus
+// use: https://react.dev/blog/2024/04/25/react-19#new-feature-use
+// ref as prop: https://react.dev/blog/2024/04/25/react-19#ref-as-a-prop
+// ref cleanup function: https://react.dev/blog/2024/04/25/react-19#cleanup-functions-for-refs
+// context as provider: https://react.dev/blog/2024/04/25/react-19#context-as-a-provider
+// useDeferredValue (initial value): https//react.dev/blog/2024/04/25/react-19#use-deferred-value-initial-value
+// document metadata: https://react.dev/blog/2024/04/25/react-19#support-for-metadata-tags
+// - stylesheets (deduped)
+// - scripts (async waited)
+// - preloading options
+
+function prepExamples(examples) {
+  return Object.entries(examples).filter(([key]) => key !== "title")
+}
+---
+
+<Layout class="" style={{backgroundColor: "rgb(26, 27, 38)"}}>
+  <div class="prose">
+    <h1>React 19 Actions (as Refactors)</h1>
+    
+    {[
+       // required refactors
+        //prop_types_typescript,
+
+       // refactors
+        useactionstate,
+        async_useactionstate,
+        use_optimistic,
+
+        full_form,
+        use,
+        // use(Context)
+        // useFormStatus
+        // add the stackblitzes
+     ].map((example) => {
+      return (
+        <>
+          <MagicMove
+            title={example.title ?? "Example"}
+            steps={example.steps}
+            lang="tsx"
+            client:load
+          />
+          <div>
+            <p>
+              <a href={example.doc} target="_blank">Documentation</a>
+              <a href={example.playground} target="_blank">Playground</a>
+              <button id="toggle_stackblitz">Show Stackblitz</button>
+            </p>
+            {example.codemod ? <code>{example.codemod}</code> : null}
+          </div>
+          <div id="stackblitz_embed" style="display: none">
+            <StackblitzEmbed projectId={example.stackblitz} client:load />
+          </div>
+          <br />
+          <br />
+        </>
+      )
+    })}
+<script type="module">
+  const button = document.getElementById('toggle_stackblitz');
+  const embed = document.getElementById('stackblitz_embed');
+  button.addEventListener('click', () => {
+    if (embed.style.display === 'none') {
+      embed.style.display = 'block';
+      button.innerText = "Hide Stackblitz";
+    } else {
+      embed.style.display = 'none';
+      button.innerText = "Show Stackblitz";
+    }
+  });
+</script>
+  </div>
+</Layout>

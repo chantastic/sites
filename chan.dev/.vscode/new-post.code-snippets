@@ -6,6 +6,9 @@
 			"title: ${TM_FILENAME_BASE/[\\.-]/ /g}",
 			// i think we can take this further and sentance case or title case the file nam.
 			"date: $CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE",
+			"tags:",
+			"\t- found",
+			"\t- note",
 			"---"
 		],
 		"description": "Create a new post using the filename as title."

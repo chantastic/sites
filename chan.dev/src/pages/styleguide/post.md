@@ -215,13 +215,13 @@ _Markdown can go in here if you leave extra line breaks._
 
 ## Tweet
 
-https://twitter.com/mipsytipsy/status/1601441441196040192?s=20
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Yeeesssss!! Lowkey obsessed with decision records/ADRs right now. If I were starting a new company (which I *am not,* and *will never*) I would be using these from day one.<br><br>And not just for technical decisions, either. For any decision with a blast radius of &gt;1 group. <a href="https://t.co/Zi4ndzSNA0">https://t.co/Zi4ndzSNA0</a></p>&mdash; Charity Majors (@mipsytipsy) <a href="https://twitter.com/mipsytipsy/status/1601441441196040192?ref_src=twsrc%5Etfw">December 10, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 ## YouTube
 
 <div data-responsive-youtube-container>
 
-https://youtu.be/2LMaihPQKus?t=1717
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/2LMaihPQKus?si=4w_L_x92w4NmNC7u&amp;start=1717" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 </div>
 

@@ -58,7 +58,7 @@ new IntersectionObserver(calledOnIntersection, {
 
 `margin` accepts any CSS margin value (including negative values). Its default is `0`.
 
-```diff lang="js
+```diff lang="js"
 new IntersectionObserver(calledOnIntersection, {
   root: document.querySelector('#target_scroll_area'),
   threshold: 0.5,

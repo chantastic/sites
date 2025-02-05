@@ -3,7 +3,6 @@
 		"astro-build.astro-vscode",
 		"esbenp.prettier-vscode",
 		"formulahendry.auto-rename-tag",
-		"github.copilot"
 	],
 	"unwantedRecommendations": []
 }

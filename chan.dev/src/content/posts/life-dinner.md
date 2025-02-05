@@ -4,7 +4,7 @@ description: 'Redding, how to get there, how to get back, and what to do while t
 tags: ['marriage']
 ---
 
-https://twitter.com/SystemSunday/status/1595052201881341956?s=20
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">During &quot;Life Dinner,&quot; you&#39;ll discuss 3 overarching categories:<br><br>1. Personal Reflection on Last Month<br><br>2. Relationship Reflection on Last Month<br><br>3. Personal Goals for Next Month <br><br>Let&#39;s dive into each…</p>&mdash; Ben Meer (@SystemSunday) <a href="https://twitter.com/SystemSunday/status/1595052201881341956?ref_src=twsrc%5Etfw">November 22, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 ## [Personal reflections on Last Month](https://twitter.com/SystemSunday/status/1595052203513118726?s=20)
 

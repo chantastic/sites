@@ -3,8 +3,36 @@ title: Monthly reset
 tags: [play]
 ---
 
-## Auto maintenance
+## Auto
 
-- Check mileage
+- Log mileage
 - Refill tires
-- Schedule appointment for required maintenance
+- (Rotate and rebalance tires)
+- (Schedule appointment for required maintenance)
+
+## Financial
+
+- Pay Credit Cards
+- Categorize expenses in business accounts
+
+## Tech
+
+- Update software
+- Update firmware (Mac, Phone, Synology, cameras, peripherals)
+- Reset clocks (cameras)
+
+## Personal
+
+-
+
+## Interpersonal
+
+- Schedule dates
+- Groom cal.com
+- Confirm time off
+
+## Home
+
+- Pressure wash driveway
+- Pressure wash back yard
+- Harvest ripe fruit

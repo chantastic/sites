@@ -4,9 +4,7 @@ date: 2023-07-10
 ---
 
 <div data-responsive-youtube-container>
-
-https://youtu.be/uAA1JvLcl-w
-
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/uAA1JvLcl-w?si=MbOsAF5L6XSwtTLT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </div>
 
 Storybook [doc blocks][] help you document and share UI components with generated **interface documentation**,
@@ -28,16 +26,12 @@ If you're not familiar with those Storybook features, check out these 3 minute i
 <div class="flex gap-x-3">
   <div class="w-1/2">
 <div data-responsive-youtube-container>
-
-https://youtu.be/q8SY4yyNE6Q
-
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/q8SY4yyNE6Q?si=d_H0RQsw8YHvutz0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </div>
   </div>
   <div class="w-1/2">
 <div data-responsive-youtube-container>
-
-https://youtu.be/BLUmt0j7OLY
-
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/BLUmt0j7OLY?si=7FEhYMcXreyofVVO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </div>
   </div>
 </div>

@@ -19,9 +19,7 @@ For me, it started small with a folder of markdown files called `decisions`. It 
 Earlier this year, I learned that [Shopify uses "decision logs" to unite their teams](https://youtu.be/2LMaihPQKus?t=1717) around decisions.
 
 <div data-responsive-youtube-container>
-
-https://youtu.be/2LMaihPQKus?t=1717
-
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/2LMaihPQKus?si=KrVGzulcNOe-vP9x&amp;start=1717" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </div>
 
 But how is a decision log tracked? What's the format? How are changes superseded?
@@ -33,9 +31,9 @@ And I didn't get into the nitty-gritty of Shopify's approach with Ryan.
 
 I saw this tweet by Charity Majors and the term "decision record" hooked me.
 
-https://twitter.com/mipsytipsy/status/1601441441196040192?s=20
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Yeeesssss!! Lowkey obsessed with decision records/ADRs right now. If I were starting a new company (which I *am not,* and *will never*) I would be using these from day one.<br><br>And not just for technical decisions, either. For any decision with a blast radius of &gt;1 group. <a href="https://t.co/Zi4ndzSNA0">https://t.co/Zi4ndzSNA0</a></p>&mdash; Charity Majors (@mipsytipsy) <a href="https://twitter.com/mipsytipsy/status/1601441441196040192?ref_src=twsrc%5Etfw">December 10, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-https://twitter.com/forrestbrazeal/status/1593354888821592066?s=20
+<blockquote class="twitter-tweet" data-media-max-width="560"><p lang="en" dir="ltr">My usual beef with reference architectures is that they launder the creators&#39; assumptions into &quot;best practices&quot; without helping you put your own needs in context. <br><br>Turns out there&#39;s a cheat code to get past this problem, and the team that built &quot;Emblem Giving&quot; found it: <a href="https://t.co/Y1IBIxmYYB">pic.twitter.com/Y1IBIxmYYB</a></p>&mdash; Forrest Brazeal (@forrestbrazeal) <a href="https://twitter.com/forrestbrazeal/status/1593354888821592066?ref_src=twsrc%5Etfw">November 17, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 The [Architecture Decision Record is a document format described by Michael Nygard](http://thinkrelevance.com/blog/2011/11/15/documenting-architecture-decisions). Each record requires a few pieces of information:
 

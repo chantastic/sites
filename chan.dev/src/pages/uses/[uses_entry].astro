@@ -1,70 +1,71 @@
 ---
-import Layout from "#layouts/Layout.astro";
-import PostMeta from "#components/header-post-meta.astro";
-import PostNotWritten from "#components/body-page-not-written.astro";
-import * as USES from "#pages/uses/uses";
-import Prose from "#components/prose.astro";
+import Layout from '#layouts/Layout.astro'
+import PostMeta from '#components/header-post-meta.astro'
+import PostNotWritten from '#components/body-page-not-written.astro'
+import * as USES from '#content/uses/_uses'
+import Prose from '#components/prose.astro'
 
 export async function getStaticPaths() {
-  const posts = await USES.getCollection();
-  return posts.map((entry) => ({
-    params: { uses_entry: entry.slug },
-    props: { entry },
-  }));
+	const posts = await USES.getCollection()
+	return posts.map((entry) => ({
+		params: {uses_entry: entry.slug},
+		props: {entry},
+	}))
 }
 
 interface Props {
-  entry: USES.CollectionEntry;
+	entry: USES.CollectionEntry
 }
 
-const { entry } = Astro.props;
-const { Content } = await entry.render();
+const {entry} = Astro.props
+const {Content} = await entry.render()
 
 const title =
-  entry.data.manufacturer && entry.data.model
-    ? `${entry.data.manufacturer} ${entry.data.model}`
-    : entry.slug;
+	entry.data.manufacturer && entry.data.model
+		? `${entry.data.manufacturer} ${entry.data.model}`
+		: entry.slug
 ---
 
 <Layout>
-  <Prose>
-    <small>
-      ⇠ <a href="/">chan.dev</a>
-      / <a href={`/${USES.path()}`}>uses</a>
-    </small>
-    <main class="mt-4">
-      <h1 class="tracking-tight">{title}</h1>
-      {
-        entry.data.links &&
-          entry.data.links.map((link) => (
-            <div>
-              <a href={link}>
-                Buy {link.includes("amzn.to") ? "on Amazon" : "now"}
-              </a>
-            </div>
-          ))
-      }
-      {
-        entry.body ? (
-          <Content />
-        ) : (
-          <PostNotWritten path={USES.path(entry.slug)} />
-        )
-      }
-      {
-        entry.data.links && (
-          <small>
-            Links are affiliate links. As an affiliate, I recieve a small
-            commission on the purchase.
-          </small>
-        )
-      }
-    </main>
-  </Prose>
-  <PostMeta
-    slot="page-meta"
-    title={title}
-    description={`${title} review`}
-    path={USES.path(entry.slug)}
-  />
+	<Prose>
+		<small>
+			⇠ <a href="/">chan.dev</a>
+			/ <a href={`/${USES.path()}`}>uses</a>
+		</small>
+		<main class="mt-4">
+			<h1 class="tracking-tight">{title}</h1>
+			{
+				entry.data.links &&
+					entry.data.links.map((link) => (
+						<div>
+							<a href={link}>
+								Buy{' '}
+								{link.includes('amzn.to') ? 'on Amazon' : 'now'}
+							</a>
+						</div>
+					))
+			}
+			{
+				entry.body ? (
+					<Content />
+				) : (
+					<PostNotWritten path={USES.path(entry.slug)} />
+				)
+			}
+			{
+				entry.data.links && (
+					<small>
+						Links are affiliate links. As an affiliate, I
+						recieve a small commission on the purchase.
+					</small>
+				)
+			}
+		</main>
+	</Prose>
+	<PostMeta
+		slot="page-meta"
+		title={title}
+		description={`${title} review`}
+		path={USES.path(entry.slug)}
+	/>
 </Layout>

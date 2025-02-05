@@ -1,35 +1,35 @@
 ---
-import Layout from "#layouts/Layout.astro";
-import PostMeta from "#components/header-post-meta.astro";
-import * as POSTS from "#pages/posts/posts";
-import Prose from "#components/prose.astro";
+import Layout from '#layouts/Layout.astro'
+import PostMeta from '#components/header-post-meta.astro'
+import * as POSTS from '#content/posts/_posts'
+import Prose from '#components/prose.astro'
 
-const posts = await POSTS.getCollection(POSTS.entryHasTags);
+const posts = await POSTS.getCollection(POSTS.entryHasTags)
 
-const tags = POSTS.extractTags(posts);
+const tags = POSTS.extractTags(posts)
 ---
 
 <Layout>
-  <Prose>
-    <small>
-      ⇠ <a href="/">chan.dev</a>
-    </small>
-    <main class="mt-4">
-      <h1 class="tracking-tight">Tags</h1>
-      <ul>
-        {
-          tags.map((tag) => (
-            <li>
-              <a href={`/tags/${tag}`}>{tag}</a>
-            </li>
-          ))
-        }
-      </ul>
-    </main>
-  </Prose>
-  <PostMeta
-    slot="page-meta"
-    path="tags"
-    title="find chantastic posts by tag…"
-  />
+	<Prose>
+		<small>
+			⇠ <a href="/">chan.dev</a>
+		</small>
+		<main class="mt-4">
+			<h1 class="tracking-tight">Tags</h1>
+			<ul>
+				{
+					tags.map((tag) => (
+						<li>
+							<a href={`/tags/${tag}`}>{tag}</a>
+						</li>
+					))
+				}
+			</ul>
+		</main>
+	</Prose>
+	<PostMeta
+		slot="page-meta"
+		path="tags"
+		title="find chantastic posts by tag…"
+	/>
 </Layout>

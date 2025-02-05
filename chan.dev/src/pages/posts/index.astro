@@ -1,22 +1,26 @@
 ---
-import PostMeta from "#components/header-post-meta.astro";
-import Layout from "#layouts/Layout.astro";
-import PostList from "#components/post-list.astro";
-import * as POSTS from "#pages/posts/posts";
-import Prose from "#components/prose.astro";
+import PostMeta from '#components/header-post-meta.astro'
+import Layout from '#layouts/Layout.astro'
+import PostList from '#components/post-list.astro'
+import * as POSTS from '#content/posts/_posts'
+import Prose from '#components/prose.astro'
 
-const posts = await POSTS.getCollection();
+const posts = await POSTS.getCollection()
 ---
 
 <Layout>
-  <Prose>
-    <small>
-      ⇠ <a href="/">chan.dev</a>
-    </small>
-    <main class="mt-4">
-      <h1 class="tracking-tight">Posts</h1>
-      <PostList posts={posts} />
-    </main>
-  </Prose>
-  <PostMeta title="chantastic posts" path={POSTS.path()} slot="page-meta" />
+	<Prose>
+		<small>
+			⇠ <a href="/">chan.dev</a>
+		</small>
+		<main class="mt-4">
+			<h1 class="tracking-tight">Posts</h1>
+			<PostList posts={posts} />
+		</main>
+	</Prose>
+	<PostMeta
+		title="chantastic posts"
+		path={POSTS.path()}
+		slot="page-meta"
+	/>
 </Layout>

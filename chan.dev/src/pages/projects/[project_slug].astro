@@ -1,0 +1,40 @@
+---
+import Layout from '#layouts/Layout.astro'
+import PostMeta from '#components/header-post-meta.astro'
+import * as PROJECTS from '#content/projects/_projects'
+import Prose from '#components/prose.astro'
+
+export async function getStaticPaths() {
+	const entries = await PROJECTS.getCollection()
+
+	return entries.map((entry) => ({
+		params: {project_slug: entry.slug},
+		props: {
+			entry,
+		},
+	}))
+}
+
+interface Props {
+	entry: PROJECTS.CollectionEntry
+}
+
+const {entry} = Astro.props
+const {Content} = await entry.render()
+---
+
+<Layout>
+	<Prose>
+		<small>
+			⇠ <a href="/">chan.dev</a>
+			<!-- / <a href={`/${PROJECTS.path()}`}
+				>{PROJECTS.COLLECTION_NAME}</a
+			> -->
+		</small>
+		<main class="mt-4">
+			<!-- <h1 class="tracking-tight">{entry.data.title}</h1> -->
+			<Content />
+		</main>
+	</Prose>
+	<PostMeta slot="page-meta" path={PROJECTS.path(entry.slug)} />
+</Layout>

@@ -327,7 +327,5 @@ If you'd like to learn more about the mechanics of play functions in Storybook, 
 Watch on YouTube!
 
 <div data-responsive-youtube-container>
-
-https://youtu.be/Waht9qq7AoA?si=FKG9xVluuOqVpdF9
-
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/Waht9qq7AoA?si=MK-CeaBS2rwT4pyo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </div>

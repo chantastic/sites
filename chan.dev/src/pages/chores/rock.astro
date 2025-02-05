@@ -1,154 +1,27 @@
 ---
 import Layout from '#layouts/Layout.astro'
 import Prose from '#components/prose.astro'
+import {db, Habit, eq} from 'astro:db'
 
-export const prerender = false
+const habits = await db
+	.select()
+	.from(Habit)
+	.where(eq(Habit.owner, 'Rock'))
 
-const chore_data = [
-	{
-		id: '001',
-		name: 'Jesus time',
-		weekly_occurances: [
-			false,
-			true,
-			false,
-			true,
-			true,
-			true,
-			true,
-		],
-	},
-	{
-		id: '002',
-		name: 'Grooming (brush, brush, deoderize)',
-		weekly_occurances: [
-			true,
-			true,
-			true,
-			true,
-			true,
-			true,
-			true,
-		],
-	},
-	{
-		id: '003',
-		name: 'Tidy room',
-		weekly_occurances: [
-			true,
-			true,
-			false,
-			false,
-			false,
-			true,
-			true,
-		],
-	},
-	{
-		id: '004',
-		name: 'Clothes to laundry',
-		weekly_occurances: [
-			true,
-			true,
-			true,
-			true,
-			true,
-			true,
-			true,
-		],
-	},
-	//	{
-	//		id: '005',
-	//		name: 'Fold laundry',
-	//		weekly_occurances: [
-	//			true,
-	//			true,
-	//			true,
-	//			true,
-	//			true,
-	//			true,
-	//			true,
-	//		],
-	//	},
-	{
-		id: '006',
-		name: 'School work',
-		weekly_occurances: [
-			false,
-			true,
-			true,
-			true,
-			true,
-			true,
-			false,
-		],
-	},
-	//	{
-	//		id: '007',
-	//		name: 'Duolingo',
-	//		weekly_occurances: [
-	//			true,
-	//			true,
-	//			true,
-	//			true,
-	//			true,
-	//			true,
-	//			true,
-	//		],
-	//	},
-	{
-		id: '008',
-		name: 'Clean toilet',
-		weekly_occurances: [
-			true,
-			true,
-			false,
-			false,
-			false,
-			true,
-			true,
-		],
-	},
-	{
-		id: '009',
-		name: 'Vaccuum room',
-		weekly_occurances: [
-			true,
-			true,
-			false,
-			false,
-			false,
-			true,
-			true,
-		],
-	},
-	{
-		id: '010',
-		name: 'Practice drums',
-		weekly_occurances: [
-			true,
-			false,
-			true,
-			true,
-			true,
-			true,
-			true,
-		],
-	},
-	//	{
-	// 		id: '011',
-	//		name: 'Book tactics',
-	//		weekly_occurances: [
-	//			false,
-	//			true,
-	//			true,
-	//			true,
-	//			true,
-	//			true,
-	//			false,
-	//		],
-	//	},
-]
+const chore_data = habits.map(
+	(habit: {
+		id: number
+		title: string
+		recurrence_pattern: string
+	}) => ({
+		id: habit.id,
+		name: habit.title,
+		weekly_occurances: habit.recurrence_pattern
+			.split('')
+			.map(Number)
+			.map(Boolean),
+	})
+)
 ---
 
 <Layout>
@@ -170,30 +43,30 @@ const chore_data = [
 			<tbody>
 				{
 					chore_data.map((chore) => {
-						const saturday_first_weekly_occurances = [chore.weekly_occurances.at(-1), ...chore.weekly_occurances.slice(0, -1)]
+						const saturday_first_weekly_occurances = [
+							chore.weekly_occurances.at(-1),
+							...chore.weekly_occurances.slice(0, -1),
+						]
 
 						return (
 							<tr>
 								<td>{chore.name}</td>
-								{saturday_first_weekly_occurances.map((occurance) => {
-									if (occurance) {
-										return (
-											<td
-												class="border"
-												hx-post={`/chores/partials/${chore.id}`}
-												hx-trigger="click"
-												hx-swap="outerHTML"
-											/>
-										)
-									} else {
-										return (
-											<td
-												class="border"
-												style={{backgroundColor: 'currentColor'}}
-											/>
-										)
+								{saturday_first_weekly_occurances.map(
+									(occurance) => {
+										if (occurance) {
+											return <td class="border" />
+										} else {
+											return (
+												<td
+													class="border"
+													style={{
+														backgroundColor: 'currentColor',
+													}}
+												/>
+											)
+										}
 									}
-								})}
+								)}
 							</tr>
 						)
 					})
@@ -201,8 +74,4 @@ const chore_data = [
 			</tbody>
 		</table>
 	</Prose>
-	<script
-		src="https://unpkg.com/htmx.org@1.9.8"
-		integrity="sha384-rgjA7mptc2ETQqXoYC3/zJvkU7K/aP44Y+z7xQuJiVnB/422P/Ak+F/AqFR7E4Wr"
-		crossorigin="anonymous"></script>
 </Layout>

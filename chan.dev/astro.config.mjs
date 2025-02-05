@@ -14,7 +14,8 @@ import remark_directive from 'remark-directive'
 import {visit} from 'unist-util-visit'
 import astro_expressive_code from 'astro-expressive-code'
 import react from '@astrojs/react'
-import netlify from '@astrojs/netlify/functions'
+import cloudflare from '@astrojs/cloudflare'
+import db from '@astrojs/db'
 function process_remark_directives() {
 	// note: this function acts mutably
 	return (tree) => {
@@ -92,18 +93,27 @@ export default defineConfig({
 	integrations: [
 		tailwind(),
 		sitemap({
-			// I'm building dedicated share pages that I don't want indexed.
-			// Ultimately, this may be better as a dynamic route.
-			filter: (page) => !page.endsWith('/share/'),
+			filter: (page) => {
+				// I'm building dedicated share pages that I don't want indexed.
+				// Ultimately, this may be better as a dynamic route.
+				if (page.endsWith('/share/')) {
+					return false
+				}
+				if (page.includes('/dailies/')) {
+					return false
+				}
+				return true
+			},
 		}),
 		astro_expressive_code({
-			frames: {
-				styleOverrides: {
+			styleOverrides: {
+				frames: {
 					frameBoxShadowCssValue: 'none',
 				},
 			},
 		}),
 		react(),
+		db(),
 	],
 	image: {
 		service: sharpImageService(),
@@ -121,12 +131,6 @@ export default defineConfig({
 				},
 			],
 			remark_deflist,
-			[
-				remark_embedder,
-				{
-					transformers: [oembed_transformer],
-				},
-			],
 			// https://www.reliablesoft.net/noreferrer-noopener/#noreferrer-vs-nofollow
 			[
 				remark_external_links,
@@ -190,7 +194,5 @@ export default defineConfig({
 		],
 	},
 	output: 'hybrid',
-	adapter: netlify({
-		edgeMiddleware: true,
-	}),
+	adapter: cloudflare(),
 })

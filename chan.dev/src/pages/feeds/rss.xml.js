@@ -1,5 +1,5 @@
 import rss from '@astrojs/rss'
-import * as POSTS from '#pages/posts/posts'
+import * as POSTS from '#content/posts/_posts'
 import sanitizeHtml from 'sanitize-html'
 import site from '#/metadata.json'
 import {url} from '#modules/site'

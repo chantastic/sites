@@ -174,7 +174,5 @@ I'm [@chantastic](https://x.com/chantastic). I'll see you in the next one. Bye.
 Watch on YouTube!
 
 <div data-responsive-youtube-container>
-
-https://youtu.be/x2nGXHAKOrE?feature=shared
-
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/x2nGXHAKOrE?si=5DEjO8kWB2cxyuMQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </div>

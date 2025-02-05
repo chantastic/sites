@@ -46,7 +46,7 @@ export async function getCollection(
 		filter
 	)
 
-	return result.sort(sort)
+	return result.toSorted(sort)
 }
 
 // ContentEntry aware sort facade

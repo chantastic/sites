@@ -1,0 +1,71 @@
+---
+// TIL: weird that because of default exports, you haveto rename things that may conflict with your implicit module name
+import ParentLayout from '#layouts/Layout.astro'
+import Prose from '#components/prose.astro'
+import * as GUIDE_STEPS from '#content/guide_steps/_guide_steps'
+
+let {params} = Astro
+
+let guide_steps = await GUIDE_STEPS.getCollection((entry) =>
+	entry.slug.includes(`${String(params.guide_title)}`)
+)
+
+function hoistIndex(collection: GUIDE_STEPS.CollectionEntry[]) {
+	let isIndexFile = (filename: string) =>
+		filename.endsWith('index.md')
+
+	let head = collection.find(({id}) => isIndexFile(id))
+	let tail = collection.filter(({id}) => !isIndexFile(id))
+
+	return [head, ...tail]
+}
+
+let entries = hoistIndex(guide_steps)
+
+function isCurrentPage(page_slug, params_id) {
+	return page_slug.includes(params_id)
+}
+---
+
+<ParentLayout>
+	<Prose as="div" class="grid grid-cols-3 gap-8">
+		<main class="col-span-2">
+			<slot />
+		</main>
+		<nav>
+			<ol>
+				{
+					entries.map((entry) => (
+						<li
+							class:list={[
+								{
+									'bg-white rounded': isCurrentPage(
+										entry.slug,
+										params.guide_step_slug
+									),
+								},
+							]}
+						>
+							<a
+								href={`/${entry.slug}`}
+								class:list={[
+									{
+										'text-slate-600': isCurrentPage(
+											entry.slug,
+											params.guide_step_slug
+										),
+									},
+								]}
+							>
+								{entry.data.title}
+								{entry.data.status === 'draft' && (
+									<span> [draft]</span>
+								)}
+							</a>
+						</li>
+					))
+				}
+			</ol>
+		</nav>
+	</Prose>
+</ParentLayout>

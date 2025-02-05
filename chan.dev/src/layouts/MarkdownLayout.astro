@@ -1,20 +1,20 @@
 ---
-import Layout from "#layouts/Layout.astro";
-import PostMeta from "#components/header-post-meta.astro";
-import Prose from "#components/prose.astro";
-import * as SITE from "#modules/site";
+import Layout from '#layouts/Layout.astro'
+import PostMeta from '#components/header-post-meta.astro'
+import Prose from '#components/prose.astro'
+import * as SITE from '#modules/site'
 
-const { title, description } = Astro.props;
+const {title, description} = Astro.props
 ---
 
 <Layout>
-  <Prose as="main">
-    <slot />
-  </Prose>
-  <PostMeta
-    slot="page-meta"
-    title={`chantastic styleguide: ${title}`}
-    description={description}
-    path={SITE.url()}
-  />
+	<Prose as="main">
+		<slot />
+	</Prose>
+	<PostMeta
+		slot="page-meta"
+		title={`Michael Chan for Netflix Web UI Engineer (L5) - Games UI`}
+		description={`Video cover for Michael Chan's application to Netflix.`}
+		path={SITE.url()}
+	/>
 </Layout>

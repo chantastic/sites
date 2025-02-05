@@ -1,0 +1,24 @@
+---
+import Layout from '#layouts/Layout.astro'
+import Prose from '#components/prose.astro'
+import SignOut from '#components/sign-out.astro'
+
+export const prerender = false
+
+const {user} = Astro.locals
+---
+
+<Layout>
+	<Prose as="main">
+		<h1>
+			Hello {user.firstName}!
+		</h1>
+		<a href="/dashboard/habits/new">Create a habit</a>
+		<a href="/dashboard/metadata/new"
+			>Create title and description</a
+		>
+		<footer>
+			<SignOut />
+		</footer>
+	</Prose>
+</Layout>

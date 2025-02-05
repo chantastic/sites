@@ -323,6 +323,8 @@ Sections I'd like to add:
     - `-` strip
     - `+` keep
 
+https://stackoverflow.com/a/21699210
+
 ## Resources and further reading
 
 - [Official YAML 1.2 Documentation at yaml.org](https://yaml.org/spec/1.2/spec.html#Preview)

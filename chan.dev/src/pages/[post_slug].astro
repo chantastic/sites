@@ -1,26 +1,26 @@
 ---
-import Layout from "#layouts/Layout.astro";
-import PostMeta from "#components/header-post-meta.astro";
-import ShareBar from "#components/post-share-bar.astro";
-import * as POSTS from "#pages/posts/posts";
-import Post from "#components/post.astro";
-import Prose from "#components/prose.astro";
+import Layout from '#layouts/Layout.astro'
+import PostMeta from '#components/header-post-meta.astro'
+import ShareBar from '#components/post-share-bar.astro'
+import * as POSTS from '#content/posts/_posts'
+import Post from '#components/post.astro'
+import Prose from '#components/prose.astro'
 // import * as ENTITIES from "#pages/entities/entities";
 
 export async function getStaticPaths() {
-  const posts = await POSTS.getCollection(() => true);
+	const posts = await POSTS.getCollection(() => true)
 
-  return posts.map((entry) => ({
-    params: { post_slug: entry.slug },
-    props: { entry },
-  }));
+	return posts.map((entry) => ({
+		params: {post_slug: entry.slug},
+		props: {entry},
+	}))
 }
 
 interface Props {
-  entry: POSTS.CollectionEntry;
+	entry: POSTS.CollectionEntry
 }
 
-const { entry } = Astro.props;
+const {entry} = Astro.props
 
 // const relatedEntities: ENTITIES.CollectionEntry[] =
 //   await getEntries(entry.data.shoutouts);
@@ -32,44 +32,46 @@ const { entry } = Astro.props;
 ---
 
 <Layout entry={entry}>
-  <Prose>
-    <small>
-      ⇠ <a href="/">chan.dev</a>
-      / <a href={`/${POSTS.COLLECTION_NAME}`}>posts</a>
-    </small>
-    <main class="mt-4">
-      <Post entry={entry} />
-    </main>
-    <footer>
-      <small>
-        <ShareBar entry={entry} />
-      </small>
-      {
-        entry.data.references && (
-          <small>
-            <h2>References</h2>
-            <ol>
-              {entry.data.references.map(
-                (reference: POSTS.CollectionEntry["data"]["references"][0]) => (
-                  <li>
-                    <a href={reference} target="_blank">
-                      {reference}
-                    </a>
-                  </li>
-                )
-              )}
-            </ol>
-          </small>
-        )
-      }
-    </footer>
-  </Prose>
-  <PostMeta
-    slot="page-meta"
-    title={entry.data.title}
-    description={entry.data.description}
-    cover={entry.data.cover}
-    og={entry.data.og}
-    path={entry.slug}
-  />
+	<Prose>
+		<small>
+			⇠ <a href="/">chan.dev</a>
+			/ <a href={`/${POSTS.COLLECTION_NAME}`}>posts</a>
+		</small>
+		<main class="mt-4">
+			<Post entry={entry} />
+		</main>
+		<footer>
+			<small>
+				<ShareBar entry={entry} />
+			</small>
+			{
+				entry.data.references && (
+					<small>
+						<h2>References</h2>
+						<ol>
+							{entry.data.references.map(
+								(
+									reference: POSTS.CollectionEntry['data']['references'][0]
+								) => (
+									<li>
+										<a href={reference} target="_blank">
+											{reference}
+										</a>
+									</li>
+								)
+							)}
+						</ol>
+					</small>
+				)
+			}
+		</footer>
+	</Prose>
+	<PostMeta
+		slot="page-meta"
+		title={entry.data.title}
+		description={entry.data.description}
+		cover={entry.data.cover}
+		og={entry.data.og}
+		path={entry.slug}
+	/>
 </Layout>

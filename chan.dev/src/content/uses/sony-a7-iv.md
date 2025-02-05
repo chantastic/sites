@@ -26,3 +26,21 @@ This is a work camera.
 Unlike my [GR III](/uses/ricoh-gr-iii), which produces beatuful .jpgs, right out of camera, every time… sony requires you to work for it.
 
 I don't reach for this camera if I'm not doing work. The ergonomics are uninspiring. The out-of-camera colors are terrible. And most of the available lenses have this terrible clinical look.
+
+## Add physical presets
+
+The a7 IV has 3 physical presets.
+The can be used to contain a variety of configurations.
+
+- Shooting mode
+- Focus mode
+- White balance
+- Aperture, ISO, shutter speed
+- And recording/encoding settings
+  To set them:
+- Enter `M`aunal mode
+- Make make changes
+- Navigate to `Shooting > Shooting Mode > Camera Set. Memory`
+  - From here select the physical preset (`1`, `2`, `3`)
+  - (There are additionally some `M`-prefixed settings that can be stored and manually recalled inside of `M`anual mode)
+    Because I switch resolution (and encoding modes) between Streaming and Recording, this really useful.

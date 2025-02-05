@@ -1,0 +1,5 @@
+---
+status: queued
+effects:
+  - cash
+---

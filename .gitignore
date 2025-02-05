@@ -5,6 +5,8 @@ node_modules
 pages/hooks.md
 out/
 .obsidian/
+.env
+.env.local
 
 # Local Netlify folder
 .netlify

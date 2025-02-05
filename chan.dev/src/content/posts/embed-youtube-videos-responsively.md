@@ -59,9 +59,7 @@ I hate magic numbers like `56.25%`, and I would have tried to avoid it until giv
 It'll look like this:
 
 <div data-responsive-youtube-container>
-
-https://youtu.be/u63pOK6Zyog
-
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/u63pOK6Zyog?si=BP0pfZSR1lpH5vzR" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </div>
 
 Embed responsively!

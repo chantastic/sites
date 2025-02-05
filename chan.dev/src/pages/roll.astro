@@ -1,31 +1,42 @@
 ---
-import Layout from "#layouts/Layout.astro";
-import Prose from "#components/prose.astro";
-import Button from "#components/button.astro";
+import Layout from '#layouts/Layout.astro'
+import Prose from '#components/prose.astro'
+import Button from '#components/button.astro'
 ---
 
 <Layout>
-  <Prose as="main">
-    <main>
-      <Button onclick="window.location.reload()">Roll</Button>
-      <div class="text-9xl font-black font-mono" id="d"></div>
-    </main>
-  </Prose>
+	<Prose as="main">
+		<main class="min-w-[26rem] text-center">
+			<Button data-refresh-button>Flip</Button>
+			<div class="text-9xl font-black font-mono" data-result>
+			</div>
+		</main>
+	</Prose>
 </Layout>
-
 <script>
-  function rng(n: number) {
-    return Math.floor(Math.random() * n) + 1;
-  }
+	let refreshButton: HTMLButtonElement = document.querySelector(
+			'[data-refresh-button]'
+		)!,
+		result: HTMLElement =
+			document.querySelector('[data-result]')!
 
-  document.getElementById("d").innerHTML = String(
-    rng(
-      Number(
-        window.location.hash
-          .replace("#", "")
-          .split("/")
-          .at(0) || 6,
-      ),
-    ),
-  );
+	function renderResult(el: HTMLElement) {
+		const sides =
+			Number(
+				new URL(location.href).searchParams.get('sides')
+			) || 6
+		return (el.innerText = String(
+			Math.floor(Math.random() * sides) + 1
+		))
+	}
+
+	renderResult(result)
+
+	refreshButton.addEventListener('click', () => {
+		result.innerText = '🎲'
+
+		setTimeout(() => {
+			renderResult(result)
+		}, 300)
+	})
 </script>

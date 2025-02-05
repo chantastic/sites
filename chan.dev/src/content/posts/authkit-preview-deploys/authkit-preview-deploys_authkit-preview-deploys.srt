@@ -1,0 +1,512 @@
+1
+00:00:00,033 --> 00:00:00,933
+Preview deploys from
+
+2
+00:00:00,933 --> 00:00:03,100
+companies like Vercel, Netlify,
+
+3
+00:00:03,433 --> 00:00:04,733
+CloudFlare, and more
+
+4
+00:00:04,733 --> 00:00:06,833
+make it easy for you to see
+
+5
+00:00:07,033 --> 00:00:09,233
+every commit in your Git tree
+
+6
+00:00:09,233 --> 00:00:11,266
+as a live production deploy.
+
+7
+00:00:11,266 --> 00:00:12,866
+But this can make things difficult
+
+8
+00:00:12,866 --> 00:00:14,733
+when integrating with other services
+
+9
+00:00:15,033 --> 00:00:16,866
+that require a redirect URI.
+
+10
+00:00:17,166 --> 00:00:18,833
+We have a lot of questions about this
+
+11
+00:00:18,833 --> 00:00:19,833
+from developers looking
+
+12
+00:00:19,833 --> 00:00:21,566
+to connect hosted AuthKit
+
+13
+00:00:21,766 --> 00:00:23,166
+in their preview deploys.
+
+14
+00:00:23,166 --> 00:00:24,633
+So today I'll show you a
+
+15
+00:00:24,633 --> 00:00:25,933
+quick and foolproof way
+
+16
+00:00:25,933 --> 00:00:26,833
+to connect with two.
+
+17
+00:00:27,300 --> 00:00:28,033
+Let's get into it.
+
+18
+00:00:28,199 --> 00:00:28,666
+On the screen I'm
+
+19
+00:00:28,666 --> 00:00:29,866
+running the local version
+
+20
+00:00:29,866 --> 00:00:30,966
+of my personal site.
+
+21
+00:00:31,266 --> 00:00:32,933
+And if I attempt to visit the dashboard,
+
+22
+00:00:32,933 --> 00:00:34,633
+I'll be redirected to my
+
+23
+00:00:34,633 --> 00:00:36,833
+hosted AuthKit login page.
+
+24
+00:00:36,833 --> 00:00:37,966
+If we investigate this URL,
+
+25
+00:00:37,966 --> 00:00:40,500
+we see a handful of query parameters,
+
+26
+00:00:40,833 --> 00:00:41,966
+including my client ID
+
+27
+00:00:41,966 --> 00:00:44,399
+as well as a redirect URI.
+
+28
+00:00:44,833 --> 00:00:46,666
+This URI is obviously encoded,
+
+29
+00:00:46,966 --> 00:00:48,133
+but if you look at it,
+
+30
+00:00:48,133 --> 00:00:49,133
+you can see that we're
+
+31
+00:00:49,133 --> 00:00:51,600
+sending users back to local host,
+
+32
+00:00:51,600 --> 00:00:55,533
+port 2426 slash auth slash callback
+
+33
+00:00:55,733 --> 00:00:56,966
+once they've been authenticated.
+
+34
+00:00:57,333 --> 00:00:58,566
+Of course, this is a known
+
+35
+00:00:58,566 --> 00:01:00,566
+value in my local environment,
+
+36
+00:01:00,766 --> 00:01:02,533
+but it's dynamic in a
+
+37
+00:01:02,533 --> 00:01:03,533
+preview deploy setting.
+
+38
+00:01:03,833 --> 00:01:05,733
+So let's go to Cloudflare
+
+39
+00:01:05,733 --> 00:01:07,433
+where this site is hosted,
+
+40
+00:01:07,433 --> 00:01:10,666
+find a preview URL and open it up.
+
+41
+00:01:10,666 --> 00:01:11,533
+Now, when I attempt to
+
+42
+00:01:11,533 --> 00:01:12,733
+visit the dashboard page
+
+43
+00:01:12,733 --> 00:01:15,733
+in this preview deploy, we get an error.
+
+44
+00:01:15,966 --> 00:01:17,033
+Now, what we need is a
+
+45
+00:01:17,033 --> 00:01:18,733
+way to get this dynamic URL
+
+46
+00:01:18,966 --> 00:01:21,866
+for this specific build into two places,
+
+47
+00:01:22,133 --> 00:01:23,633
+our sign in URL and
+
+48
+00:01:23,633 --> 00:01:24,933
+our WorkOS dashboard.
+
+49
+00:01:25,233 --> 00:01:26,466
+So let's copy it and
+
+50
+00:01:26,466 --> 00:01:28,866
+navigate to our work OS dashboard
+
+51
+00:01:29,099 --> 00:01:31,966
+where we will visit the redirects page.
+
+52
+00:01:32,299 --> 00:01:33,166
+Here we see our local
+
+53
+00:01:33,166 --> 00:01:34,966
+URL in our allow list.
+
+54
+00:01:35,266 --> 00:01:37,099
+So let's add our preview deploy.
+
+55
+00:01:37,133 --> 00:01:38,000
+Now, preview deploys
+
+56
+00:01:38,000 --> 00:01:39,933
+follow some type of pattern.
+
+57
+00:01:40,166 --> 00:01:42,233
+This is the site and the domain.
+
+58
+00:01:42,566 --> 00:01:45,233
+And before that is the ID of the build.
+
+59
+00:01:45,500 --> 00:01:46,533
+This is the part that's
+
+60
+00:01:46,533 --> 00:01:48,266
+going to change most frequently.
+
+61
+00:01:48,500 --> 00:01:49,333
+So it will represent the
+
+62
+00:01:49,333 --> 00:01:51,166
+dynamic part with an asterisk,
+
+63
+00:01:51,166 --> 00:01:52,033
+which we can see is
+
+64
+00:01:52,033 --> 00:01:53,733
+used as a wildcard value.
+
+65
+00:01:54,000 --> 00:01:55,366
+Add that and we should be
+
+66
+00:01:55,366 --> 00:01:56,966
+good on the work OS side.
+
+67
+00:01:56,966 --> 00:01:58,633
+Now let's take a look at the code.
+
+68
+00:01:58,633 --> 00:02:00,133
+On our sign in page,
+
+69
+00:02:00,366 --> 00:02:02,166
+we are redirecting to an
+
+70
+00:02:02,166 --> 00:02:04,000
+authkit authorization URL,
+
+71
+00:02:04,000 --> 00:02:04,833
+which we get through our
+
+72
+00:02:04,833 --> 00:02:06,866
+authkit local library package.
+
+73
+00:02:07,266 --> 00:02:08,966
+So let's inspect that function.
+
+74
+00:02:08,966 --> 00:02:10,533
+The get authorization URL
+
+75
+00:02:10,533 --> 00:02:12,366
+requires three pieces of data,
+
+76
+00:02:12,566 --> 00:02:14,333
+the provider authkit, the
+
+77
+00:02:14,333 --> 00:02:16,833
+redirect URI and the client ID.
+
+78
+00:02:17,166 --> 00:02:18,000
+Now, because we want a
+
+79
+00:02:18,000 --> 00:02:19,966
+dynamic redirect URI,
+
+80
+00:02:20,300 --> 00:02:21,933
+I'm gonna cut this and
+
+81
+00:02:21,933 --> 00:02:23,966
+call an accessor function.
+
+82
+00:02:24,000 --> 00:02:25,266
+We'll then write a function that checks
+
+83
+00:02:25,266 --> 00:02:26,966
+if we even have a WorkOS
+
+84
+00:02:26,966 --> 00:02:29,233
+redirect URI in our environment,
+
+85
+00:02:29,233 --> 00:02:30,666
+return it if we do and
+
+86
+00:02:30,666 --> 00:02:32,599
+throw an error if we don't.
+
+87
+00:02:32,599 --> 00:02:34,033
+Now this is where it gets interesting.
+
+88
+00:02:34,033 --> 00:02:35,066
+In CloudFlare, we can
+
+89
+00:02:35,066 --> 00:02:36,466
+add a second condition
+
+90
+00:02:36,466 --> 00:02:38,033
+that will check for the
+
+91
+00:02:38,033 --> 00:02:39,833
+preview deployment URL.
+
+92
+00:02:39,833 --> 00:02:42,666
+In CloudFlare, that's cf_pages_url.
+
+93
+00:02:43,099 --> 00:02:45,633
+And in this case, render the preview URL
+
+94
+00:02:45,900 --> 00:02:47,633
+with our URI segments
+
+95
+00:02:47,633 --> 00:02:48,800
+attached to the end of it.
+
+96
+00:02:48,800 --> 00:02:49,666
+With this function in place,
+
+97
+00:02:49,733 --> 00:02:51,300
+we can now leave our work
+
+98
+00:02:51,300 --> 00:02:53,866
+OS redirect URI environment
+
+99
+00:02:53,966 --> 00:02:55,866
+variable undefined only in
+
+100
+00:02:55,866 --> 00:02:57,233
+our preview deploy environment
+
+101
+00:02:57,466 --> 00:03:00,966
+and depend on this cf_pages_url instead.
+
+102
+00:03:01,199 --> 00:03:03,366
+Let's say this commit and push.
+
+103
+00:03:04,033 --> 00:03:05,666
+Now back on our hosting platform,
+
+104
+00:03:05,666 --> 00:03:07,066
+we'll see this new build.
+
+105
+00:03:07,333 --> 00:03:08,166
+And once it's deployed,
+
+106
+00:03:08,166 --> 00:03:10,033
+we'll see a unique build URL.
+
+107
+00:03:10,333 --> 00:03:11,366
+This time when we try
+
+108
+00:03:11,366 --> 00:03:12,666
+to visit our dashboard
+
+109
+00:03:12,866 --> 00:03:14,333
+and get redirected to
+
+110
+00:03:14,333 --> 00:03:16,266
+authkit, we find success.
+
+111
+00:03:16,733 --> 00:03:18,666
+And finding our redirect URI parameter,
+
+112
+00:03:19,233 --> 00:03:22,366
+the proper dynamic preview deploy URL.
+
+113
+00:03:22,633 --> 00:03:23,166
+This means that we can
+
+114
+00:03:23,166 --> 00:03:24,533
+log in and be directed back
+
+115
+00:03:24,533 --> 00:03:26,500
+to this specific preview deploy.
+
+116
+00:03:26,733 --> 00:03:28,233
+So that's all you need to do to make sure
+
+117
+00:03:28,233 --> 00:03:29,533
+that hosted authkit is available
+
+118
+00:03:29,733 --> 00:03:31,833
+for all of your preview deploys.
+
+119
+00:03:31,833 --> 00:03:33,599
+If you found a particularly good article
+
+120
+00:03:33,599 --> 00:03:34,766
+on how to do this for
+
+121
+00:03:34,766 --> 00:03:35,966
+your specific platform,
+
+122
+00:03:36,199 --> 00:03:37,766
+please put them in the comments below.
+
+123
+00:03:37,766 --> 00:03:40,000
+I'm sure others would love to see them.
+
+124
+00:03:40,000 --> 00:03:40,500
+And if you have other
+
+125
+00:03:40,500 --> 00:03:42,000
+questions, we'd love to hear them
+
+126
+00:03:42,000 --> 00:03:43,599
+and help you get started with AuthKit.
+
+127
+00:03:43,966 --> 00:03:45,366
+I'm chantastic, I'll see
+
+128
+00:03:45,366 --> 00:03:46,466
+you in the next one, bye.
+

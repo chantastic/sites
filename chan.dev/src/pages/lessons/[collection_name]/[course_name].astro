@@ -1,7 +1,7 @@
 ---
 import Layout from '#layouts/Layout.astro'
 import PostMeta from '#components/header-post-meta.astro'
-import * as LESSONS from '#pages/lessons/lessons'
+import * as LESSONS from '#content/lessons/_lessons'
 import Prose from '#components/prose.astro'
 import {titleCase} from 'title-case'
 import React from 'react'
@@ -59,7 +59,7 @@ const lessons = await LESSONS.getCollection(
 	}
 )
 
-lessons.sort((a, b) => a.data.order - b.data.order)
+lessons.toSorted((a, b) => a.data.order - b.data.order)
 ---
 
 <Layout>
@@ -72,7 +72,6 @@ lessons.sort((a, b) => a.data.order - b.data.order)
 				{
 					Object.entries(
 						lessons.reduce((acc, lesson) => {
-							console.log(lesson.slug, lesson.data.status)
 							return {
 								...acc,
 								[lesson.data.status]:

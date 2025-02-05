@@ -1,3 +1,5 @@
-const withCSS = require("@zeit/next-css");
+const nextConfig = {
+	output: 'export'
+}
 
-module.exports = withCSS();
+module.exports = nextConfig
