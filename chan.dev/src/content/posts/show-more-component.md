@@ -6,8 +6,8 @@ tags:
   - tutorial
 ---
 
-This totorial is a complete guide to basic react hooks.
-It demonstratens simple implementations of `useState`, `useEffect`, `useRef`, `useContext`, and `useId` in a familiar, real-world component.
+This tutorial is a complete guide to basic react hooks.
+It demonstrates simple implementations of `useState`, `useEffect`, `useRef`, `useContext`, and `useId` in a familiar, real-world component.
 
 ## Contents
 
@@ -19,8 +19,8 @@ It demonstratens simple implementations of `useState`, `useEffect`, `useRef`, `u
 <details>
   <summary>Make your own</summary>
 
-Copy-paste this into your prefered React environment.
-Does not include bootstrapping with `React.creatRoot`.
+Copy-paste this into your preferred React environment.
+Does not include bootstrapping with `React.createRoot`.
 
 ```jsx
 /* START HERE */
@@ -56,7 +56,7 @@ export default function App() {
 Let's start.
 Create a Component that renders `children` and a "Show less" button
 
-<small>_(If you're sure what this code does, visit my [React Basics](/react-basics) tutorial for a primer.)_</small>
+<small>_(If you're not sure what this code does, visit my [React Basics](/react-basics) tutorial for a primer.)_</small>
 
 ```jsx {1, 5, 7}
 // 1. Create a component that destructures `children` from props
@@ -81,7 +81,7 @@ _Reference: [React Basics](https://chan.dev/react-basics), chan.dev._
 The "Show more" button should read "Show less" when expanded.
 Add a condition around the button text so that it can be toggled.
 
-<small>_(Don't worry about state. Just activate it, manually, with `true` and `false`.)_</small>
+<small>_(Don't worry about state. Just activate it manually with `true` and `false`.)_</small>
 
 ```diff lang="jsx" {7-8} del=/(less){/ ins=/{true .+}/
 function ShowMore({ children }) {
@@ -101,8 +101,8 @@ _Reference: [Conditional (ternary) Operator](https://developer.mozilla.org/en-US
 
 ## Manage `expanded` state with state with the `React.useState` hook
 
-The `React.useState` hook is how we manage UI state in React.
-Create a state, using a initial value. Then assign that state to a local variable by destructuring the returned array.
+The `React.useState` hook is how we manage the UI state in React.
+Create a state, using an initial value. Then assign that state to a local variable by destructuring the returned array.
 
 <!-- Learn how to use the `useState` hook to manage the expansion state of the content. -->
 
@@ -154,9 +154,9 @@ _Reference: [Responding to Events](https://react.dev/learn/responding-to-events)
 
 ---
 
-## Call `React.useState`'s update function with new state
+## Call `React.useState`'s update function with the new state
 
-The second value that we get from `React.useState` is a state set function.
+The second value which we get from `React.useState` is a state set function.
 Assign that function to a local variable by destructuring it from the returned array. Then call the set function in the button's `onClick` event handler.
 
 <small>_(To toggle the next state, invert the current state with `!` operator.)_</small>
@@ -258,7 +258,7 @@ function ShowMore({ children }) {
 ## Access content container's `scrollHeight` with `React.useRef`
 
 `React.useRef` is used to access the DOM node rendered from a component.
-Create a `ref` object. Then pass it to an React element via the `ref` (special) prop.
+Create a `ref` object. Then pass it to a React element via the `ref` (special) prop.
 Finally, log out the value in the `onClick` button handler to verify.
 
 ```diff lang="jsx" ins=/contentRef/ ins=/[(](contentRef.+)[)]/
@@ -298,7 +298,7 @@ _Reference: [useRef hook reference](https://reactjs.org/docs/hooks-reference.htm
 
 ## Set `scrollHeight` of DOM node on button click
 
-Any state that we need to make rendering decisious should be tracked in state.
+Any state that needs to make rendering decisions should be tracked in the state.
 Set the `scrollHeight` of our DOM node, on state, when our button is clicked.
 
 ```diff lang="jsx" ins=/setContentHeight/
@@ -378,8 +378,8 @@ _Reference: [Using CSS Transitions on Auto Dimensions](https://css-tricks.com/us
 
 ## Use `React.useEffect` to set `contentHeight`
 
-Setting `contentHeight` on click is has a major flaw.
-The first click will not saw the transition animation.
+Setting `contentHeight` on click has a major flaw.
+The first click will not see the transition animation.
 Move the `setContentHeight` function into a `React.useEffect` to set the `contentHeight` on every render.
 
 ```diff lang="jsx"
@@ -422,10 +422,10 @@ _References: [useEffect hook reference](https://react.dev/reference/react/useEff
 
 ---
 
-## Hide button if below height threshhold
+## Hide button if below height threshold
 
-This component has no purpose if content height is under our `100px` threshold.
-Hide the the "Show more" button if height is less than `100px`.
+This component has no purpose if the content height is below our `100px` threshold.
+Hide the "Show more" button if the height is less than `100px`.
 Use the Logical AND operator (`&&`).
 
 ```diff lang="jsx"
@@ -467,9 +467,9 @@ _Reference: [Logical AND operator (`&&`)](https://react.dev/learn/conditional-re
 
 ---
 
-## Update when window resizes, with `useEffect`
+## Update when the window resizes, with `useEffect`
 
-Use effect is design to sync events that external to React.
+Use effect is designed to sync events that are external to React.
 Add a new useEffect that listens for window resize events and updates `contentHeight`.
 
 ```diff lang="jsx"
@@ -537,7 +537,7 @@ _<small>(It's also easy to see this in the [profiler tab of standard Chrome DevT
 ## Refactor the resize `useEffect` to call a function by reference
 
 Writing functions inline is extremely convenient.
-But it means that we're creating a new function every render.
+But it means that we're creating a new function for every render.
 Separate the event handler declaration function and the `addEventLister` call.
 
 ```diff lang="js" ins=/handleResize/
@@ -694,7 +694,7 @@ _Reference: [createContext hook reference](https://react.dev/reference/react/cre
 ## Provide Context with the `Context.Provider` component
 
 Context is provided to children with the `Context.Provider` component.
-Wrap the `ShowMore` render function in the `ExpandedContext.Provider` component and pass the `expanded` state to it's `value` prop.
+Wrap the `ShowMore` render function in the `ExpandedContext.Provider` component and pass the `expanded` state to its `value` prop.
 
 ```diff lang="jsx"
 function ShowMore({ children }) {
@@ -871,8 +871,8 @@ function ShowMore({ children }) {
 
 Bonus:
 
-- Put this entire package into a re-usable module and rename accordingly
-- Improve accessibility of component
+- Put this entire package into a re-usable module and rename it accordingly.
+- Improve accessibility of the component.
 <!--
 
 ## Add ARIA Attributes for Expandable Content
