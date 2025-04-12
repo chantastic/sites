@@ -332,6 +332,7 @@ https://stackoverflow.com/a/21699210
   - https://jsonformatter.org/yaml-to-json
   - https://onlineyamltools.com/convert-yaml-to-json
   - https://stackoverflow.com/a/21699210/754775
+  - https://yamline.com/json/
 
 ## Keep in touch
 
