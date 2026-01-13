@@ -5,27 +5,14 @@ tags: [mode]
 dateCreated: 2023-01-03
 ---
 
-## Prerequisite
-
-- Literally any idea or project part
-
-## Location
-
-- Home office
-
 ## Hardware
+- RodeX StreamerX (Head and Video)
+- AVerMedia Live Gamer 4k 2.1(PCIe) GC575 (display capture)
 
-- Camera Rig #1 w/overhead mic
-- Apple Studio Display @720p (HiRes)
-- MacBook Pro
-- Second keyboard
-- Desk at position #3
-- Stream Deck
+## Specs
+- 720p (HiDPI) - 2560x1440 resolution
+- Record higher bitrate than stream
 
 ## Software
-
-- Ecamm live
-
-## Improvements
-
-- Stream to twitch AND YouTube
+- Restream.io
+- OBS
