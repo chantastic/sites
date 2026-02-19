@@ -46,6 +46,12 @@ The 222 is a masterclass in integrated bracelet sports watches.
 
 A beautiful pilot's watch with that unique pointer date complication.
 
+### G-Shock
+
+**[Casio G-Shock GW-BX5600-1A1](https://www.casio.com/uk/watches/gshock/product.GW-BX5600-1A1/)**
+
+My favorite G-Shock. Negative MIP display, solar, Multi-Band 6, Bluetooth.
+
 ### Microbrands & Independents
 
 **[anOrdain](https://anordain.com/)** (pretty much anything)
@@ -87,6 +93,10 @@ Affordable nylon straps with round hardware.
 **Etsy**
 
 [Handmade Horween leather NATO](https://www.etsy.com/listing/1834081595/handmade-in-the-usa-horween-full-grain?ref=share_v4_lx) - Traditional NATO in natural Horween leather, handmade in USA.
+
+**[Threaded Leather Co.](https://threadedleather.com/)**
+
+Handcrafted leather watch straps.
 
 **[StrapX Pro - Rubber strap for SPB143](https://www.strapxpro.com/products/spx1c-seiko-62mas-spb-sbdc-series-curved-ends?srsltid=AfmBOopwBIdRngPqguyqqmapG79D_OM9n_hmf-ruoJe_SETUrGBeIEqA&variant=43178917462184)**
 
