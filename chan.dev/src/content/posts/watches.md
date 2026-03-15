@@ -52,6 +52,12 @@ A beautiful pilot's watch with that unique pointer date complication.
 
 My favorite G-Shock. Negative MIP display, solar, Multi-Band 6, Bluetooth.
 
+### Timex
+
+**[Q Timex Continental Chronograph](https://timex.com/products/q-timex-continental-chronograph-40mm-stainless-steel-bracelet-watch-tw2y55900)**
+
+The blue dial is beautiful. Sporty, dressy, and very easy to want.
+
 ### Microbrands & Independents
 
 **[anOrdain](https://anordain.com/)** (pretty much anything)
@@ -97,6 +103,22 @@ Affordable nylon straps with round hardware.
 **[Threaded Leather Co.](https://threadedleather.com/)**
 
 Handcrafted leather watch straps.
+
+**[Handdn - Handmade Pilot Strap](https://handdn.com/shop/pilot-watch-strap/)**
+
+Custom handmade pilot straps with lots of leather and hardware options.
+
+**[Zuludiver Mystery Strap Expedition Pack](https://www.zuludiver.com/products/zuludiver-mystery-strap-expedition-pack)**
+
+A fun way to sample a few straps without overthinking it.
+
+**[Holben's Fine Watch Bands](https://holbensfinewatchbands.com)**
+
+Strong catalog for trying different strap styles and brands.
+
+**[Delugs](https://delugs.com/?srsltid=AfmBOoopLJ0KaZxbPEOMGY2zld0ry5eZdcmPy_9R5CnkA2QBRY1PQzAY)**
+
+Premium straps and accessories with a ton of sizing and material options.
 
 **[StrapX Pro - Rubber strap for SPB143](https://www.strapxpro.com/products/spx1c-seiko-62mas-spb-sbdc-series-curved-ends?srsltid=AfmBOopwBIdRngPqguyqqmapG79D_OM9n_hmf-ruoJe_SETUrGBeIEqA&variant=43178917462184)**
 
