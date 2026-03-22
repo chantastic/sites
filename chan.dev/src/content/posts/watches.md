@@ -22,6 +22,10 @@ The white dial version is stunning. Clean, classic, and versatile.
 
 An elegant dress watch from Seiko's Presage line.
 
+**[King Seiko SPB459](https://www.seikowatches.com/us-en/products/kingseiko/spb459j1)**
+
+The King Seiko line revived. Dress proportions with excellent finishing.
+
 ### Dive Watches
 
 **[Tudor PELAGOS FXD GMT](https://www.tudorwatch.com/en/watches/pelagos-fxd/m2542gxx7nu-0002)**
@@ -41,6 +45,10 @@ The original pilot's watch. That square case with exposed screws is iconic.
 **[Vacheron Constantin 222](https://www.vacheron-constantin.com/us/en/collections/historiques/4200h-222a-b934.html)** - Historiques
 
 The 222 is a masterclass in integrated bracelet sports watches.
+
+**[NOMOS Glashütte Club Sport Neomatik Worldtimer](https://nomos-glashuette.com/en-my/watches/new-releases/club-sport-neomatik-worldtimer)**
+
+German-made worldtimer with NOMOS's in-house neomatik movement. Clean, modern, and travel-ready.
 
 **Oris Big Crown Pointer Date 80th Anniversary Edition**
 
@@ -67,6 +75,14 @@ Scottish watchmaker known for their incredible enamel dials. Everything they mak
 **[Unimatic](https://www.unimaticwatches.com)**
 
 Italian minimalist tool watches. Clean designs, no-nonsense approach.
+
+**[Praesidus A-11 Type 44](https://praesidus.com/products/a-11-type-44-white)** (white)
+
+A-11 field watch recreation. Clean white dial, classic military proportions.
+
+**[Jack Mason Pursuit Pro Shadow](https://jackmasonbrand.com/products/pursuit-pro-shadow)**
+
+Sport-inspired with a blacked-out aesthetic. American brand, solid value.
 
 ## Strap Resources
 
