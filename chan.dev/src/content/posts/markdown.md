@@ -1,6 +1,6 @@
 ---
 title: markdown
-tags: ['code']
+tags: [code]
 ---
 
 This document describes markdown in terms of [Prettier](https://prettier.io/) defaults. If you don't use prettier, find syntax alternatives on [Daring Fireball](https://daringfireball.net/projects/markdown/).

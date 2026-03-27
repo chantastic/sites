@@ -1,6 +1,6 @@
 ---
 title: 'SavvyCal'
-tags: ['os']
+tags: [os]
 ---
 
 _Go to [/os](/os)_

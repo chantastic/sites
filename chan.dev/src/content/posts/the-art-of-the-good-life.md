@@ -1,6 +1,6 @@
 ---
 title: 'The Art of the Good Life: 52 Surprising Shortcuts to Happiness, Wealth, and Success'
-tags: ['book report']
+tags: [book report]
 dateCreated: 2020-10-22
 ---
 

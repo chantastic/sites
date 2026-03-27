@@ -2,7 +2,7 @@
 title: Dr. K on AI - Psychosis and Brain Rust
 date: 2026-01-28
 description: "Dr. K on AI-induced psychosis and cognitive atrophy. AI acts as a sycophantic echo chamber. Claude scored best; DeepSeek and Gemini scored worst."
-tags: ["ai", "psychology", "learning"]
+tags: [ai, psychology, learning]
 ---
 
 Two heavy-hitting videos from Dr. K (HealthyGamerGG) about the psychological dangers of AI usage. The tl;dr: AI might be making us psychotic and definitely making us dumber.

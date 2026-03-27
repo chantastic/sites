@@ -1,7 +1,7 @@
 ---
 title: Redding road trip
 description: 'Redding, how to get there, how to get back, and what to do while there…'
-tags: ['travel']
+tags: [travel]
 ---
 
 ## Return route

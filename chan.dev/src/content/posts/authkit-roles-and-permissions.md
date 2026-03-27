@@ -9,17 +9,7 @@ description: 'AuthKit now has permissions, completing the RBAC feature set. How 
 og:
   title: 'Mastering RBAC with AuthKit: A Complete Guide to Roles and Permissions | chan.dev'
   image: 'https://i.ytimg.com/vi/FErRN9EsKTo/maxresdefault.jpg'
-tags:
-  - AuthKit
-  - RBAC
-  - Permissions
-  - Web Security
-  - Next.js
-  - WorkOS
-  - User Management
-  - Access Control
-  - Web Development
-  - JavaScript
+tags: [workos, auth, react, web]
 ---
 
 AuthKit now has permissions — completing the RBAC feature set.

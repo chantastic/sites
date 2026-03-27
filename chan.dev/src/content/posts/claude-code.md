@@ -2,7 +2,7 @@
 title: Claude Code - Patterns and Practices
 date: 2026-01-28
 description: "Patterns for using Claude Code effectively. Includes Boris Cherny's setup: 10-15 parallel sessions, Opus with thinking, shared CLAUDE.md in git."
-tags: ["claude-code", "ai", "workflow"]
+tags: [claude-code, ai, workflow]
 ---
 
 A collection of patterns, practices, and learnings for using Claude Code effectively.

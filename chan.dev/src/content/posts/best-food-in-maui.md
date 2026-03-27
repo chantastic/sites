@@ -1,7 +1,7 @@
 ---
 title: Best food in Maui
 note: This page is a work in progress. The list is strong but shy on details.
-tags: ['food']
+tags: [food]
 ---
 
 ## Contents
