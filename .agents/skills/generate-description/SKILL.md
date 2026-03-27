@@ -1,9 +1,9 @@
 ---
-name: generate-content-description
+name: generate-description
 description: Generate SEO meta descriptions for markdown content files. Classifies posts by search intent, extracts descriptions from the content itself, and audits existing descriptions for AI-isms and content mismatches. Use when enriching frontmatter, publishing new posts, or auditing metadata quality.
 ---
 
-# Generate Content Description
+# Generate Description
 
 Write meta descriptions for markdown content by extracting from the post — not summarizing above it.
 

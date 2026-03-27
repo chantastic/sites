@@ -85,7 +85,7 @@ If the interview reveals changes, propose them. Do not rewrite without approval.
 
 ### Step 3: Generate description
 
-Use the `generate-content-description` skill technique:
+Use the `generate-description` skill technique:
 1. Classify as searchable or shareable
 2. Extract description from the post (not about the post)
 3. Validate: 150-155 chars, accurate, self-contained
@@ -94,7 +94,7 @@ Present the description for operator review. This is publication-sensitive.
 
 ### Step 4: Apply tags
 
-Query the live vocabulary (command above). Apply 1-3 tags following `generate-content-description` tagging rules. Tags are low-risk — apply without asking.
+Query the live vocabulary (command above). Apply 1-3 tags following `generate-description` tagging rules. Tags are low-risk — apply without asking.
 
 ### Step 5: Validate frontmatter
 
@@ -136,7 +136,7 @@ Present all changes:
 ## Composition
 
 **Calls (generic skills):**
-- `generate-content-description` — description extraction and tagging technique
+- `generate-description` — description extraction and tagging technique
 - `chan-dev-writing` — voice reference during interview
 - `make-it-personal` — optionally, if interview reveals the post needs deeper work
 
