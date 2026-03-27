@@ -67,6 +67,9 @@
 		"shiki-magic-move": "^0.5.0",
 		"@anthropic-ai/sdk": "^0.17.1"
 	},
+	"optionalDependencies": {
+		"@rollup/rollup-linux-x64-gnu": "4.19.1"
+	},
 	"engine": {
 		"node": ">=20.0.0"
 	},
