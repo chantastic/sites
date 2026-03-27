@@ -27,7 +27,7 @@ Posts with `publishDate` are public. Posts with only `date` get pages but aren't
 
 ## When editing or creating posts
 
-- **Always add a `description`** — SEO meta description, 150-155 chars. See `generate-description` skill.
+- **Always add a `description`** — SEO meta description, 150-155 chars. See `prepare-post` skill.
 - **Always add `tags`** from existing tags in the collection. Query live vocabulary with `rg -oP '(?<=tags: \[)[^\]]+' src/content/posts/ --glob "*.md" --no-filename | tr ',' '\n' | sed 's/^ *//' | sort | uniq -c | sort -rn`. 1-3 tags per post. Do not invent new tags unless 3+ posts would use it. Do not ask — just apply.
 - **Voice** — see `chan-dev-writing` skill for style guide.
 
