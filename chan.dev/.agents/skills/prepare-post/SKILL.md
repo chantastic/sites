@@ -178,14 +178,28 @@ If yes, it's bad.
 
 ### Step 4: Apply tags
 
-Query the live vocabulary from existing posts.
+Query the live vocabulary from the site's Astro-backed tags endpoint.
 
-Use both inline and YAML-list frontmatter styles when scanning. The existing corpus contains both.
+Canonical source:
+- `/api/tags.json`
 
-Example approach:
-- scan frontmatter for `tags: [a, b]`
-- scan frontmatter for YAML list tags under `tags:`
-- normalize to lowercase frequency counts before choosing
+This endpoint is backed by Astro content collections and already sees both supported frontmatter styles. Do **not** regex-parse frontmatter for vocabulary discovery unless the endpoint is unavailable.
+
+Use:
+- `all.tags` for the complete normalized vocabulary with counts
+- `published.tags` when you want the public vocabulary only
+- `unpublished.tags` when comparing unpublished drafts against private/internal tag usage
+- `entries` payloads when you need examples of how a tag is actually used in the corpus
+
+Selection guidance:
+- prefer tags with multiple existing examples over one-off curiosities
+- inspect representative entries before applying sparse tags like `seed`, `from:pi`, or niche topic labels
+- treat counts as guidance, not law; choose for fit, not popularity
+
+Fallback behavior if the endpoint cannot be queried:
+- use Astro collection-backed project helpers if available
+- otherwise stop and report that canonical tag vocabulary could not be loaded
+- do not fall back to brittle regex scraping as the default path
 
 Rules:
 1. Apply 1-3 tags from the existing vocabulary
