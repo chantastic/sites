@@ -1,6 +1,7 @@
 ---
 title: So, I Make My Bed
 description: "My existential dread is a morning person. So I accept defeat. The day is already lost. And I make my bed — my first act of defiance against the day."
+tags: [life]
 publishDate: 2019-11-20
 ---
 

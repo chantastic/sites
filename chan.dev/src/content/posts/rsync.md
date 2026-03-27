@@ -2,6 +2,7 @@
 title: rsync
 date: 2025-09-09
 description: "Verifying file transfers with rsync. Use rsync -avun dry run to compare source and destination. System files create false positives."
+tags: [tools, cli, reference]
 ---
 
 _A summary by Claude 4 after helping me validate a transfer_

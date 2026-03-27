@@ -1,6 +1,7 @@
 ---
 title: Write-only
 description: Doing "content" wrong. A write-only approach to doing personal work and unshackling from social algorithms.
+tags: [content]
 publishDate: 2023-07-24
 ---
 

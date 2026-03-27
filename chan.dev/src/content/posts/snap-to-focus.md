@@ -1,6 +1,7 @@
 ---
 title: Snap to Focus
 description: "Nellie told me: you're not always angry but you Snap to Focus on things that make you angry. She ruined my favorite camera feature. But she was right."
+tags: [life]
 publishDate: 2020-02-19
 ---
 

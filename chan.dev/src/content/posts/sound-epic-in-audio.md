@@ -1,6 +1,7 @@
 ---
 title: Sound Epic in Audio
 description: 'Want to sound greeat without breaking the bank? Learn how to achieve 80% epic for just $60 and find a mic that will grow with you. Visit shutupandstarttalking.com.'
+tags: [audio]
 publishDate: 2019-05-01
 ---
 

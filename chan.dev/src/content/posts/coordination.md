@@ -1,6 +1,7 @@
 ---
 title: Coordination
 description: "Reflect on coordination in teamwork, its importance, challenges in software development, and the value of past experiences in shaping one's career."
+tags: [life, career]
 publishDate: 2020-05-27
 ---
 

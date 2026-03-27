@@ -1,6 +1,7 @@
 ---
 title: My why
 description: 'When facing unemployment, I realized the importance of character and adaptability. This experience inspired me to commit to helping others discover their worth.'
+tags: [life, career]
 publishDate: 2018-09-05
 ---
 

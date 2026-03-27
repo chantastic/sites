@@ -1,6 +1,7 @@
 ---
 title: I'm Angry. Are you?
 description: "My dad wanted to be white. He went places he wasn't welcome and he took us with him. I got my confidence from him. But I came with a big white chip on my shoulder."
+tags: [life]
 publishDate: 2019-09-04
 ---
 

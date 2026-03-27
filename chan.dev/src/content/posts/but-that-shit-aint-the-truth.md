@@ -1,6 +1,7 @@
 ---
 title: But that shit ain't the truth
 description: "Jules reevaluates his identity in Pulp Fiction, admitting he's the tyranny of evil men, striving to change and become the shepherd."
+tags: [life]
 publishDate: 2020-05-06
 ---
 

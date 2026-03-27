@@ -2,6 +2,7 @@
 title: 'Create Markdown "Components" with Remark Directives'
 date: 2023-07-13
 description: "Remark Directives add component-like syntax to markdown without MDX. Text, leaf, and container directives with custom attributes."
+tags: [astro, markdown]
 ---
 
 ## Notes

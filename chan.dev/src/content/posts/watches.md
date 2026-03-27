@@ -1,6 +1,7 @@
 ---
 title: Watches
 description: "My watch wishlist, strap recommendations, and repair shops"
+tags: [gear]
 # publishDate: 2025-01-27
 ---
 

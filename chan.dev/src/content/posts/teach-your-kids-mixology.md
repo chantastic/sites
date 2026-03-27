@@ -1,6 +1,7 @@
 ---
 title: Teach Your Kids Mixology
 description: "Teach kids to make mixed drinks. Start with a citrus tradition, add bubbly, and let them create a celebratory drink for Mother's Day. Enjoy responsibly!"
+tags: [life, family]
 publishDate: 2020-05-13
 ---
 

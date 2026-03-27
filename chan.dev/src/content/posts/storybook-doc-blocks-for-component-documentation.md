@@ -2,6 +2,7 @@
 title: Doc blocks for component documentation
 date: 2023-07-10
 description: "Storybook Doc Blocks for component documentation: interface tables, interactive playgrounds, and copy-pasteable source code."
+tags: [storybook]
 ---
 
 <div data-responsive-youtube-container>

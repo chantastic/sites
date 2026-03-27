@@ -1,6 +1,7 @@
 ---
 title: Life is Right Now
 description: "I'm in bed with the flu, quarantined to my office for 6 days. I hear stories, games, neighbors visiting. There's always death. But life is right now."
+tags: [life, family]
 publishDate: 2019-07-24
 ---
 

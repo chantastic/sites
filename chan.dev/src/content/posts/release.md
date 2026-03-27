@@ -2,6 +2,7 @@
 title: Release
 publishDate: 2021-01-01
 description: 'Release. Some things lift, others pull. Let go of things that pull…'
+tags: [life]
 ---
 
 Release.  

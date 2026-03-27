@@ -2,6 +2,7 @@
 title: VS Code
 date: 2023-12-31
 description: "VS Code workspace tips. Nested .vscode directories only work at the opened path level. Symlinks can solve monorepo setups."
+tags: [vscode]
 ---
 
 **I'd like this to be a guide.**

@@ -2,6 +2,7 @@
 title: Phoenix
 date: 2023-12-11
 description: "Phoenix framework quickstart. Install Elixir, create a project with SQLite, run the server, and deploy to Fly.io."
+tags: [tools, reference]
 ---
 
 ## Prerequisite

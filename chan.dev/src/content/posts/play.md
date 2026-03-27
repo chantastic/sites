@@ -1,6 +1,7 @@
 ---
 title: 'Play'
 description: "Most rocks don't turn into diamonds under extreme pressure. Why am I pushing to be a hard diamond when I could be a happy rock?"
+tags: [life]
 publishDate: 2022-01-28
 og:
   title: '2022: Year of Play'

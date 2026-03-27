@@ -1,6 +1,7 @@
 ---
 title: Your Sense of Security is a Threat
 description: 'Fights arise from seeking security. Empathize with others to bridge gaps. Be aware of how your security needs affect others.'
+tags: [life]
 publishDate: 2019-08-28
 ---
 

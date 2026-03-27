@@ -1,6 +1,7 @@
 ---
 title: Unemployment
 description: "Unemployment can bring shame and panic, but it's important to be grateful for those who help guide us through. Share your knowledge and support others in need"
+tags: [life, career]
 publishDate: 2020-03-18
 ---
 

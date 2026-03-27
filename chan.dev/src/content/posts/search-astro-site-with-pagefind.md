@@ -2,6 +2,7 @@
 title: Search Astro Site with Pagefind
 date: 2023-12-19
 description: "Add search to an Astro site with Pagefind. Install, add a postbuild script, and create a /search route with PagefindUI."
+tags: [astro, web]
 references:
   - https://pagefind.app/
   - https://trost.codes/posts/adding-simple-search-to-an-astro-blog/

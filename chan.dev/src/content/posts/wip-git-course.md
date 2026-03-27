@@ -2,6 +2,7 @@
 title: wip git course
 date: 2024-01-19
 description: "Course outline for Practical Git for Everyday Developers. Repos, commits, staged diffs, branches, stashes, merges, and remotes."
+tags: [git, tutorial]
 ---
 
 ## Working title

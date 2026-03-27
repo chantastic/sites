@@ -1,6 +1,7 @@
 ---
 title: Imaginary
 description: "I wanted to host React Podcast since 2015. When Michael Jackson resurrected it, I was green with envy. Then he asked me to take over and I said no."
+tags: [life]
 publishDate: 2019-04-03
 ---
 

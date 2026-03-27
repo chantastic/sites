@@ -2,6 +2,7 @@
 title: Input, Output, Outcome
 date: 2025-01-15
 description: "Input, Output, Outcome — a framework for turning goals into actionable plans. Most teams confuse outputs and outcomes."
+tags: [life, career]
 ---
 
 Have you been on a team that does a lot of goal-setting but very litting goal-achieving?

@@ -2,6 +2,7 @@
 title: Borrowed
 date: 2024-11-02
 description: "Mom was always present but kept her skin intact, safely out of the game. I'm like her. But I want to have gravity."
+tags: [life, family]
 ---
 
 I have this conversation with Mom a lot these days:

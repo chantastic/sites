@@ -1,6 +1,7 @@
 ---
 title: Are We There Yet?
 description: "We daydreamed about Disney Aulani on 38k salaries. Years later we could afford it but I'd moved on to bigger dreams. Nellie said: realize the old dream first."
+tags: [life, family]
 publishDate: 2019-06-19
 ---
 

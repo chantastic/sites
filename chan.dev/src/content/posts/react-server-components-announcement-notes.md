@@ -2,6 +2,7 @@
 title: React Server Components Announcement Notes
 publishDate: 2021-01-14
 description: "Notes from watching the React Server Components announcement with friends. New packages (react-fetch, react-fs, react-pg), demo app setup, and first impressions."
+tags: [react, web]
 ---
 
 Three weeks after the announcement of React Server Components, I finally sat down [with friends](https://twitter.com/chantastic/status/1349710359049940992?s=20) to watch the event.

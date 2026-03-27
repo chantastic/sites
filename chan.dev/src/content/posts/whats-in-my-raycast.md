@@ -2,6 +2,7 @@
 title: Whats in my Raycast
 date: 2023-12-16
 description: "What's in my Raycast: calendar events, quicklinks for web apps, Arc Air Traffic Control integration, and keyboard shortcut workflows."
+tags: [tools, mac]
 references:
   - https://www.raycast.com/blog/getting-started-with-script-commands
 ---

@@ -1,6 +1,7 @@
 ---
 title: Polymorphic as prop in Astro
 description: Astro has dynamic tags — a way to accept an element or component as a prop. And they're totally different than React's polymorphic as prop pattern.
+tags: [astro, web]
 publishDate: 2023-08-23
 cover: ./astro-dynamic-tags.png
 coverAlt: Dynamic tags in Astro. The concept is represented series of 5 gems with varying color shape.

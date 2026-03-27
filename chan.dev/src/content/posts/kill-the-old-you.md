@@ -1,6 +1,7 @@
 ---
 title: Kill the Old You
 description: "I became an asshole by spending time with people in tech. The leader is just the most impetuous asshole in a room, right? So I stopped. I killed the bad program."
+tags: [life]
 publishDate: 2019-06-05
 ---
 

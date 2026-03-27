@@ -2,6 +2,7 @@
 title: Fly.io
 date: 2023-12-10
 description: "Fly.io setup notes. Install with brew, login, deploy, and core concepts."
+tags: [tools, reference]
 ---
 
 ## Setup

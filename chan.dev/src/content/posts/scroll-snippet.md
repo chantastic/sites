@@ -2,6 +2,7 @@
 title: Scroll snippet
 date: 2024-11-01
 description: "A Chrome DevTools snippet for smooth-scrolling through pages to capture video. Easing functions, configurable speed, and scroll direction."
+tags: [tools, javascript]
 ---
 
 I have this snippet stored in Chrome DevTools. 

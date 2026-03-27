@@ -1,6 +1,7 @@
 ---
 title: Fail Up
 description: "I got sunburnt twice on one vacation. I've always taken twice as long to learn anything. That used to make me feel dumb. Now I read it as twice the tenacity."
+tags: [life]
 publishDate: 2019-06-12
 ---
 

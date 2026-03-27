@@ -1,6 +1,7 @@
 ---
 title: Chan Spot
 description: "He spent 15 minutes circling for a parking spot 3 lines from a blue line. My dad wasn't in a hurry. He just had to get ahead."
+tags: [life, family]
 publishDate: 2020-10-19
 ---
 

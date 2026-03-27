@@ -2,6 +2,7 @@
 title: 'Developer Experience roles'
 date: 2025-10-01
 description: "Developer Educator and Developer Experience job listings I've collected. PlanetScale, LaunchDarkly, and others with salary ranges."
+tags: [career]
 ---
 
 ## PlanetScale

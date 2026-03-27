@@ -2,6 +2,7 @@
 title: Better defaults for Screen Studio
 date: 2025-09-23
 description: "Better defaults for Screen Studio. Cursor size 2x, click effects, Rapid smoothing, and why other smoothing options look bad."
+tags: [video, tools]
 ---
 
 Screen Studio is almost a really great tool.

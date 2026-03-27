@@ -1,6 +1,7 @@
 ---
 title: Outputs and Outcomes
 description: 'Focus on output over outcome or input. Measure tangible actions and contributions to achieve goals, rather than obsessing over uncontrollable factors.'
+tags: [life, career]
 publishDate: 2019-05-29
 ---
 

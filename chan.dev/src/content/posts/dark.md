@@ -2,6 +2,7 @@
 title: Dark
 date: 2023-11-12
 description: "We exist mostly in the dark. Like a film strip, held in darkness until — finally — exposed. Our time in light is short."
+tags: [life]
 ---
 
 We exist mostly in the dark.

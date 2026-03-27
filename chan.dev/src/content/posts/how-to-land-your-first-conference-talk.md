@@ -1,6 +1,7 @@
 ---
 title: How to land your first conference talk
 description: 'Learn the secrets of landing your first conference talk, from leveraging prior experience, to crafting irresistible titles, and using social media effectively.'
+tags: [speaking, career]
 publishDate: 2022-06-10
 ---
 

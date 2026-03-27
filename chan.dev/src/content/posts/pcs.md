@@ -2,6 +2,7 @@
 title: PCS
 date: 2025-03-12
 description: "My PC builds and their configurations. Case, CPU, motherboard, AIO, GPU, and RAM specs."
+tags: [gear, reference]
 ---
 
 # My PCs and their configurations

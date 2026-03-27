@@ -2,6 +2,7 @@
 title: Mentions
 publishDate: 2020-05-10
 description: "I'm watching Rise of Skywalker with my 9yo and he's freaking out that Chewie got his medal and I'm thinking about Twitter mentions."
+tags: [life, content]
 ---
 
 I'm stressing out about mentions

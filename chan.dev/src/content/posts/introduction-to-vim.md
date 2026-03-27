@@ -2,6 +2,7 @@
 title: Introduction to Vim
 date: 2025-09-11
 description: "Everyone teaches Vim wrong. Start with visual mode and selections. Type v, use motions, then graduate to text objects."
+tags: [vim, tutorial]
 ---
 
 # Notes

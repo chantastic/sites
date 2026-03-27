@@ -2,6 +2,7 @@
 title: 'Colocate modules with pages'
 date: 2023-06-29
 description: "Astro lets you colocate .ts modules in /pages directories alongside .astro files. Useful for collection-specific types and getter functions."
+tags: [astro, web]
 ---
 
 ## Colocate modules in pages directories

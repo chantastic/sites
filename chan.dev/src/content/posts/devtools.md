@@ -1,6 +1,7 @@
 ---
 title: DevTools (WIP)
 description: 'Notes on Chrome DevTools'
+tags: [tools, web]
 dateCreated: 2020-12-24
 ---
 

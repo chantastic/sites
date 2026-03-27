@@ -1,6 +1,7 @@
 ---
 title: I'm a Toys R Us kid
 description: "A definitely-dad frame is breaking the spirit of what I hope is his child's Penny skateboard. Crack. Thud. An inscrutable but impressive string of profanities."
+tags: [life]
 publishDate: 2019-09-18
 ---
 

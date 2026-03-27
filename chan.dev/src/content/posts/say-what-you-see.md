@@ -1,6 +1,7 @@
 ---
 title: Say What You See
 description: "Pamela Stambaugh's insight into an individual's potential led to a career change. Recognizing unrealized potential in others can be transformative."
+tags: [life, career]
 publishDate: 2020-01-15
 ---
 

@@ -1,6 +1,7 @@
 ---
 title: Do What Others Won't
 description: "Tackle tasks others won't to build dependability, boosting career capital and earning trust, opening doors to growth and new opportunities."
+tags: [life, career]
 publishDate: 2020-01-22
 ---
 

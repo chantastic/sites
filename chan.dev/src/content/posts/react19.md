@@ -2,6 +2,7 @@
 title: "React 19: The Big Picture"
 date: 2024-11-04
 description: "React 19: The Big Picture. An app developer's guide to what you need to know and everything you can ignore."
+tags: [react, web]
 mermaid: true
 ---
 

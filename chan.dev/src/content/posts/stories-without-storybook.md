@@ -2,6 +2,7 @@
 title: Build your own Storybook in Astro, using CSF
 date: 2023-08-18
 description: "You don't need Storybook to write stories. Building a lightweight story viewer in Astro using Component Story Format."
+tags: [storybook, astro]
 ---
 
 You don't need Storybook to write stories.

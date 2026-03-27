@@ -2,6 +2,7 @@
 title: Descale
 og_title: 'Descale: On Cleaning Up Mental and Emotional Hardware'
 description: "Learn the value of mental 'descaling' to tackle life's blockages, drawing inspiration from the upkeep of an espresso machine and the need for renewal."
+tags: [life]
 publishDate: 2021-09-04
 ---
 

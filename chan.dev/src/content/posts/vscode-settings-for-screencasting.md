@@ -2,6 +2,7 @@
 title: VS Code Settings for Screencasting
 date: 2023-09-19
 description: "VS Code settings I use for screencasting: disable lightbulb, hide status bar, bump font sizes, and adjust zoom level."
+tags: [vscode, video]
 references:
   - https://code.visualstudio.com/docs/editor/profiles
 ---

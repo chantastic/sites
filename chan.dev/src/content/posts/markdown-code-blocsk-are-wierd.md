@@ -2,6 +2,7 @@
 title: 'Create Markdown "Components" with Remark Containers'
 date: 2023-07-13
 description: "Remark Containers — a way to extend markdown with custom block-level elements. Incompatible with Obsidian's callout plugin."
+tags: [astro, markdown]
 ---
 
 Let's talk about how weird markdown is.

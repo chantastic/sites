@@ -2,6 +2,7 @@
 title: A Hammer Doesn't Make a Chair
 publishDate: 2019-05-15
 description: "I buy the dopest shit right away. My $10,000 DSLR didn't make photos. Shit can't make shit. I make shit."
+tags: [life, gear]
 ---
 
 When I find a new hobby, I buy the dopest shit right away.

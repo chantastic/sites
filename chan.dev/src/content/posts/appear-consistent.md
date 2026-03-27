@@ -1,6 +1,7 @@
 ---
 title: Appear Consistent
 description: "A poker friend taught me: appear consistent, build your reputation, then deviate. My defense against oblivion is the sacrament of a weekly commitment."
+tags: [life, career]
 publishDate: 2019-04-17
 ---
 

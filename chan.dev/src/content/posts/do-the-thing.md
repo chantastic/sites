@@ -1,6 +1,7 @@
 ---
 title: Do the Thing
 description: "I wanted to make training videos. Instead I built a multi-tenant app in a framework I didn't know. Creation is a battle with ego. Ego hates simple things."
+tags: [life]
 publishDate: 2019-07-17
 ---
 

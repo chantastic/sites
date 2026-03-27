@@ -1,6 +1,7 @@
 ---
 title: Intersection Observer
 description: 'A detailed explanation of the Intersection Observer API.'
+tags: [javascript, web]
 date: 2023-01-05
 cover: ./intersection-observer/intersection-observer.png
 coverAlt: |

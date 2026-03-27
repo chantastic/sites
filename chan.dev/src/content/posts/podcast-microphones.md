@@ -2,6 +2,7 @@
 title: All the microphones I've recorded with
 date: 2023-09-27
 description: "Every microphone I've recorded with, in order of purchase. From a Studio Projects C1 to a Shure SM7B, and what I learned from each."
+tags: [audio, gear]
 references:
   - https://marco.org/podcasting-microphones
 ---

@@ -1,6 +1,7 @@
 ---
 title: Failure
 description: "Failure isn't the work that doesn't land. It's the work you abandon. Pick it up. Feel the shame. Continue."
+tags: [life]
 publishDate: 2019-03-27
 ---
 

@@ -2,6 +2,7 @@
 title: Make the Cut
 publishDate: 2019-10-23
 description: "Every idea starts as a conflated ball of ideas. Your work is to cut off everything that doesn't belong. Have you seen a wild bonsai tree? It's just a shrub."
+tags: [life]
 ---
 
 Every idea starts as a conflated ball of ideas  

@@ -2,6 +2,7 @@
 title: Rest parameter dynamic routes
 date: 2023-07-12
 description: "How Astro rest parameter routes ([...thing].astro) work. Matches infinite segments, nesting in static vs dynamic directories."
+tags: [astro, web]
 ---
 
 I find [`getStaticPaths()`](https://docs.astro.build/en/reference/api-reference/#getstaticpaths 'Astro getStaticPaths() documentation') confusing.

@@ -1,6 +1,7 @@
 ---
 title: Stride Your Limp
 description: "I don't trust anyone who doesn't walk with a limp. Pain is non-negotiable. Suffering is optional. Punch up, take your losses, stride your limp."
+tags: [life, faith]
 publishDate: 2020-01-08
 ---
 

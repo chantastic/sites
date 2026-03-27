@@ -1,6 +1,7 @@
 ---
 title: Hey
 description: "Nellie and I relegated the big stuff to email early in our relationship. It gave us time to think. 14 years later, we don't email much anymore."
+tags: [life, family]
 publishDate: 2020-02-12
 ---
 

@@ -2,6 +2,7 @@
 title: Fail Fast. Fail Safe
 publishDate: 2018-09-17
 description: "At Disneyland, Disney illustrators taught me rough sketching: lay down lots of lines, surface the shape, then ink the best one. Developers can steal this."
+tags: [life, code]
 ---
 
 ![rough sketch of Baymax from Disneyland](https://res.cloudinary.com/chantastic/image/upload/c_scale,w_1280/v1685921246/chan.dev/fail-fast-fail-safe-image.jpg)

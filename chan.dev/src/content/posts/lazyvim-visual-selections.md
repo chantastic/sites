@@ -2,6 +2,7 @@
 title: Visual selections in LazyVim
 date: 2025-09-11
 description: "Making visual selections in LazyVim: physical direction keys, word motions, text objects, find and to."
+tags: [vim, reference]
 ---
 
 - Make a visual selection with physical direction keys

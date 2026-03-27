@@ -1,6 +1,7 @@
 ---
 title: Dad's Clever
 description: "When dad died, I wanted only one of his things: a $9 Chinese market cleaver. My kids won't fight over my laptops. But they'll fight over a $50 carbon steel pan."
+tags: [life, family]
 publishDate: 2020-04-29
 ---
 

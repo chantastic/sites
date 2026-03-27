@@ -2,6 +2,7 @@
 title: Create an epub Book from Markdown Files
 date: 2023-12-21
 description: "Create an epub from markdown files using pandoc. Put files in a directory, add YAML metadata in a .txt file, and run one command."
+tags: [tools, reference]
 references:
   - https://pandoc.org/epub.html
   - https://pandoc.org/MANUAL.html#epub-metadata

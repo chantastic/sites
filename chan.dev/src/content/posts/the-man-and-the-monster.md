@@ -1,6 +1,7 @@
 ---
 title: The man and the monster
 description: "Find balance between your inner creator and critic. Learn from successful creatives' tactics, overcome struggles, and achieve harmony in your work."
+tags: [life]
 publishDate: 2020-04-01
 ---
 

@@ -2,6 +2,7 @@
 title: neovim
 date: 2023-09-27
 description: "Neovim as a Vim passport — take text-editing powers to any tool. Setting up the neovim-vscode extension and sharing config via dotfiles."
+tags: [vim]
 dateUpdated: 2023-12-30
 references:
   - https://github.com/nvim-lua/kickstart.nvim

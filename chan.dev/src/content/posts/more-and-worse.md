@@ -1,6 +1,7 @@
 ---
 title: More and Worse
 description: "Marriage, bills, kids — one with cancer. At 35, now is not a time for less but better. It's a time for more and worse."
+tags: [life, family]
 publishDate: 2019-05-08
 ---
 

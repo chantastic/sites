@@ -1,6 +1,7 @@
 ---
 title: It Takes what it Takes —  On Dyslexia
 description: 'Dive into the world of dyslexia, where reading is challenging, but patience and resilience become your greatest allies.'
+tags: [life, family]
 publishDate: 2019-10-09
 ---
 

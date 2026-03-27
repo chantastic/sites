@@ -2,6 +2,7 @@
 title: Assets and artifacts
 publishDate: 2023-07-02
 description: "Work worth doing produces twice. Once as an artifact and again as an asset. Don't get paid only once. Upgrade all work from artifacts to assets."
+tags: [content, career]
 ---
 
 I believe that everyone contributes to design. As a design systems lead, I employed this belief threw a process of emergant design. Components were extracted and refined, not created in a vaccuum.

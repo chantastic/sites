@@ -4,6 +4,7 @@ title: Get Started with Storybook
 # tags: []
 date: 2023-09-06
 description: "Three ways to get started with Storybook fast: storybook.new, npx storybook init, and the Storybook tutorial."
+tags: [storybook]
 references:
   - https://new-storybook.netlify.app/
 # tldr:

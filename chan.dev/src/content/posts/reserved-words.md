@@ -1,6 +1,7 @@
 ---
 title: Reserved Words
 description: "'Bad words' or words held in reserve for special purposes."
+tags: [javascript, reference]
 ---
 
 The kids asked me what my favorite word was.

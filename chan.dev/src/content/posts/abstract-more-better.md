@@ -1,6 +1,7 @@
 ---
 title: Abstract more, better
 description: "One rule when abstracting code: one abstraction per problem. If you say 'and' when describing it, you aren't done abstracting."
+tags: [code, career]
 publishDate: 2020-04-16
 ---
 

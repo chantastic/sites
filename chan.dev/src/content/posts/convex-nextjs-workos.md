@@ -2,6 +2,7 @@
 title: Integrate Convex Next.js and WorkOS
 date: 2025-09-11
 description: "Setup notes for integrating Convex, Next.js, and WorkOS AuthKit. Order of operations, CORS, auth config, and JWT claims."
+tags: [workos, auth, web]
 references:
   - https://docs.convex.dev/auth/authkit
   - https://labs.convex.dev/auth/setup

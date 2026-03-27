@@ -1,6 +1,7 @@
 ---
 title: Compare AVO 🥑 and standard BEM Conventions
 description: 'Side-by-side comparison of AVO and standard BEM conventions for CSS blocks, elements, and modifiers. Data attributes vs class name selectors.'
+tags: [css, web]
 publishDate: 2021-02-08
 ---
 

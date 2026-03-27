@@ -1,6 +1,7 @@
 ---
 title: My 2019 Portable Podcast Rig
 description: 'Look at a portable podcast rig setup, including the recorder, microphones, accessories, and battery, designed to make on-the-go recording a breeze.'
+tags: [audio, gear]
 publishDate: 2019-10-21
 ---
 

@@ -1,6 +1,7 @@
 ---
 title: Caring Can't Get You Control
 description: "Ruby battles multiple cancers since birth, showing the harsh reality that caring doesn't grant control. Together, we face life's challenges with hope."
+tags: [life, family]
 publishDate: 2019-05-22
 ---
 

@@ -1,6 +1,7 @@
 ---
 title: 'Mourn your misses'
 description: ''
+tags: [life]
 ---
 
 Everyone misses my dad.

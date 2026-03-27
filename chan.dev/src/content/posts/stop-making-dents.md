@@ -1,6 +1,7 @@
 ---
 title: Stop making dents
 description: "Most religions agree you're cosmically unimportant. So why be so intent to make a dent? Be grateful and pass it on. There's nothing you can keep."
+tags: [life, faith]
 publishDate: 2020-04-15
 ---
 

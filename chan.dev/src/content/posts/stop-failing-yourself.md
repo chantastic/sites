@@ -1,6 +1,7 @@
 ---
 title: Stop Failing Yourself
 description: "In school, I wouldn't turn in a paper if it didn't feel good enough. Perfectionism is the horsiest of horse shits. You're an adult. You can handle rejection."
+tags: [life, faith]
 publishDate: 2019-11-27
 ---
 

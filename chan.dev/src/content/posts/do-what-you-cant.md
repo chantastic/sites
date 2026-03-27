@@ -1,6 +1,7 @@
 ---
 title: Do What You Can't
 description: "Last week I said earn your imposter syndrome. It was a half truth. Imposter syndrome is a thief and a cancer. You don't comfort it. You fight it."
+tags: [life]
 publishDate: 2020-02-05
 ---
 

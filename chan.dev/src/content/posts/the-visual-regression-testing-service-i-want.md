@@ -2,6 +2,7 @@
 title: The Visual Regression Testing Service I want
 date: 2023-08-18
 description: "I want visual regression testing designed for indie developers, not enterprise. What that looks like beyond Chromatic and Storybook."
+tags: [storybook]
 ---
 
 I want a visual regression testing service designed for indie developers, not enterprise.

@@ -1,6 +1,7 @@
 ---
 title: This is a square
 description: The power of teaching strongest truths first (and the nature of storytelling)
+tags: [content]
 ---
 
 <!-- There's a tweet somewhere too -->

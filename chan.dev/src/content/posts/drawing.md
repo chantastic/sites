@@ -1,6 +1,7 @@
 ---
 title: Drawing
 description: Stuff I use to draw
+tags: [life]
 date: 2016-11-21
 ---
 

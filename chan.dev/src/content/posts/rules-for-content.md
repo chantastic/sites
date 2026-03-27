@@ -1,6 +1,7 @@
 ---
 title: Rules for Content
 description: Explorations in engaging, durable edits
+tags: [content]
 date: 2023-02-10
 ---
 

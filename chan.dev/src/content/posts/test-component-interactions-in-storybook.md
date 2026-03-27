@@ -2,6 +2,7 @@
 title: Test Component Interactions in Storybook
 date: 2023-09-24
 description: "Testing UI in the browser with Storybook interaction tests. Why unit testing React components the wrong way creates bugs."
+tags: [storybook, react]
 cover: './test-component-interactions-in-storybook/testing-component-interactions-in-storybook.png'
 coverAlt: Screenshot of Storybook documenting a tic-tac-toe game component. The game is played via testing-library interactions.
 shoutouts: [storybook, testing-library]

@@ -1,6 +1,7 @@
 ---
 title: An off-camera mic for non-nerds
 description: "Recommending the Rode VideoMic NTG for someone who wants to ditch the headset mic without falling into A/V nerdery. USB-C, shock mount, $200."
+tags: [audio, gear]
 publishDate: 2021-01-02
 ---
 

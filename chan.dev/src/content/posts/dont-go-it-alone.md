@@ -1,6 +1,7 @@
 ---
 title: Don't Go It Alone
 description: "My dad used to say: you can do a lot by yourself, but you can't do a lot. High-level anything requires trust in others."
+tags: [life]
 publishDate: 2019-12-19
 ---
 

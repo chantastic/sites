@@ -1,6 +1,7 @@
 ---
 title: My $500 lesson on copyright
 description: "Learn from a costly lesson about copyright protection, including registering your work, defending it, and tracking earnings to ensure you're fairly compensated."
+tags: [life, content]
 publishDate: 2018-09-07
 ---
 

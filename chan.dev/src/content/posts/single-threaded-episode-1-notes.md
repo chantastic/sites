@@ -1,6 +1,7 @@
 ---
 title: single-threaded notes, E1
 description: "Notes from Jenn Creighton's Single-Threaded podcast, Episode 1 with Erin Fox. Your first insight into a company's culture is their interview process."
+tags: [career]
 publishDate: 2021-02-17
 ---
 

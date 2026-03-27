@@ -2,6 +2,7 @@
 title: macOS
 date: 2023-09-27
 description: "A collection of random macOS stuff. Native shortcuts, Readline shortcuts, forcing OS updates, and external boot drive quirks."
+tags: [mac, reference]
 ---
 
 This doc is a collection of random macOS stuff.

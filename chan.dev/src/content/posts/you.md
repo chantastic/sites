@@ -1,6 +1,7 @@
 ---
 title: You
 description: 'Thank you for being part of my journey last year. Sharing our experiences and growth made it special. Excited to see where this decade takes us.'
+tags: [life]
 publishDate: 2020-01-01
 ---
 

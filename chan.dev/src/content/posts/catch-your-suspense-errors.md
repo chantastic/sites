@@ -1,6 +1,7 @@
 ---
 title: Catch Your Suspense Errors
 description: 'Learn how to handle promise rejections in React.Suspense by using Error Boundaries, ensuring proper handling of pending, resolved, and rejected states.'
+tags: [react, web]
 publishDate: 2019-10-30
 ---
 

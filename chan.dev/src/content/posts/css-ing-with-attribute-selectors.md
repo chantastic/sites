@@ -1,6 +1,7 @@
 ---
 title: CSS-ing with Attribute Selectors
 description: 'CSS attribute selector syntax and practical use cases: styling by value, substring matching, state-based styles, and custom data attributes.'
+tags: [css, web]
 publishDate: 2021-04-22
 ---
 

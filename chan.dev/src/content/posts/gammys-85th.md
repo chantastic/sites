@@ -1,6 +1,7 @@
 ---
 title: Gammy's 85th
 description: '80 minutes of history, memories, and wisdom from my grandmother on her 85th birthday. Full audio recording and transcript.'
+tags: [life, family]
 publishDate: 2020-10-25
 og:
   audio: https://s3-us-west-1.amazonaws.com/media.chan.dev/gammy-85-interview.mp3

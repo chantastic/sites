@@ -2,6 +2,7 @@
 title: A bargain mic for yellers
 publishDate: 2021-02-21
 description: "The Elgato Wave:3 has the only reliable USB mic limiter I've tested. At $150, it's a bargain for yellers who clip their audio on stream."
+tags: [audio, gear]
 ---
 
 Kevin and Bobby started a new podcast: [Essentially Useless](https://www.youtube.com/channel/UCYSOVLrjLDr7m5LIJs876mw).

@@ -1,6 +1,7 @@
 ---
 title: DaVinci Resolve (notes)
 description: 'Notes an DaVinci Resolve'
+tags: [video, tools]
 dateCreated: 2021-06-16
 ---
 

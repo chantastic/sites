@@ -1,6 +1,7 @@
 ---
 title: Microphones
 description: 'How to buy a microphone'
+tags: [audio, gear]
 dateCreated: 2020-12-24
 dateModified: 2022-06-04
 ---
