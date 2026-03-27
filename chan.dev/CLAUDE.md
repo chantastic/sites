@@ -28,7 +28,7 @@ Posts with `publishDate` are public. Posts with only `date` get pages but aren't
 ## When editing or creating posts
 
 - **Always add a `description`** — SEO meta description, 150-155 chars. See `generate-content-description` skill.
-- **Always add `tags`** from the controlled vocabulary at `src/content/posts/_tags.md`. 1-3 tags per post. Do not invent new tags. Do not ask — just apply.
+- **Always add `tags`** from existing tags in the collection. Query live vocabulary with `rg -oP '(?<=tags: \[)[^\]]+' src/content/posts/ --glob "*.md" --no-filename | tr ',' '\n' | sed 's/^ *//' | sort | uniq -c | sort -rn`. 1-3 tags per post. Do not invent new tags unless 3+ posts would use it. Do not ask — just apply.
 - **Voice** — see `chan-dev-writing` skill for style guide.
 
 ## Search
@@ -56,8 +56,7 @@ rg -l "^publishDate:" src/content/posts/ --glob "*.md"
 
 ## Key files
 
-- `src/content/posts/_tags.md` — tag vocabulary (controlled, ~30 tags)
-- `src/content/posts/_posts.ts` — collection schema and query helpers
+- `src/content/posts/_posts.ts` — collection schema, query helpers, and `extractTags()` for deriving vocabulary
 - `src/components/header-post-meta.astro` — meta tags (description, OG, Twitter, JSON-LD)
 - `src/metadata.json` — site metadata and author links
 - `astro.config.mjs` — remark/rehype plugins, site config
