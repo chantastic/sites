@@ -15,7 +15,6 @@ import {visit} from 'unist-util-visit'
 import astro_expressive_code from 'astro-expressive-code'
 import react from '@astrojs/react'
 import cloudflare from '@astrojs/cloudflare'
-import db from '@astrojs/db'
 function process_remark_directives() {
 	// note: this function acts mutably
 	return (tree) => {
@@ -113,7 +112,6 @@ export default defineConfig({
 			},
 		}),
 		react(),
-		db(),
 	],
 	image: {
 		service: sharpImageService(),
