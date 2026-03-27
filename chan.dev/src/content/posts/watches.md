@@ -154,6 +154,24 @@ Watch repair and appraisal services.
 
 This is the one Jeremy used to repair his dad's watch. Trusted recommendation.
 
+## Budget Field Watches (AliExpress)
+
+**[RDUNAE RA05](https://www.aliexpress.us/item/3256807866492182.html)**
+
+Budget field watch that looks great.
+
+**[RDUNAE RA02](https://www.aliexpress.us/item/3256807860973913.html)**
+
+Another solid budget field option.
+
+**[RDUNAE RA01](https://www.aliexpress.us/item/3256809218816286.html)**
+
+The RA01 variant.
+
+**[Bodberry Titanium Automatic](https://www.aliexpress.us/item/3256807707753820.html)**
+
+Listed as titanium but might actually be brass. Worth investigating.
+
 ## Seiko Mods
 
 Interested in customizing your Seiko? Check out this [YouTube guide to modding Seiko watches](https://www.youtube.com/watch?v=XY03pvZODI0).
