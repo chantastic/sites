@@ -68,6 +68,7 @@
 		"@anthropic-ai/sdk": "^0.17.1"
 	},
 	"optionalDependencies": {
+		"@libsql/linux-x64-gnu": "0.3.19",
 		"@rollup/rollup-linux-x64-gnu": "4.19.1"
 	},
 	"engine": {
