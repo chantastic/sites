@@ -96,3 +96,23 @@ export function extractTags(entries: CollectionEntry[]) {
 		),
 	]
 }
+
+export function extractTagCounts(entries: CollectionEntry[]) {
+	let counts = new Map<string, number>()
+
+	for (let entry of entries) {
+		for (let tag of entry.data.tags ?? []) {
+			let normalizedTag = tag.toLowerCase()
+			counts.set(
+				normalizedTag,
+				(counts.get(normalizedTag) ?? 0) + 1
+			)
+		}
+	}
+
+	return [...counts.entries()]
+		.map(([tag, count]) => ({tag, count}))
+		.toSorted(
+			(a, b) => b.count - a.count || a.tag.localeCompare(b.tag)
+		)
+}
