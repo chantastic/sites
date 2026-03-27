@@ -33,7 +33,7 @@
 		"markdown-it": "^14.1.0",
 		"micromark": "^4.0.0",
 		"micromark-extension-gfm": "^3.0.0",
-		"pagefind": "^1.1.0",
+		"pagefind": "^1.4.0",
 		"rehype-autolink-headings": "^7.1.0",
 		"remark-deflist": "^1.0.0",
 		"remark-directive": "^3.0.0",
@@ -67,6 +67,7 @@
 		"@anthropic-ai/sdk": "^0.17.1"
 	},
 	"optionalDependencies": {
+		"@pagefind/linux-x64": "1.4.0",
 		"@rollup/rollup-linux-x64-gnu": "4.19.1"
 	},
 	"engine": {
