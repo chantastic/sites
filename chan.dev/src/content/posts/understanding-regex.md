@@ -1,6 +1,7 @@
 ---
 title: Understanding regex (for beginners)
 date: 2023-08-08
+description: "Regex basics for beginners. Exact match, capture groups, and pattern matching in JavaScript with examples."
 ---
 
 Regex is difficult to master but easy to get started with.

@@ -1,6 +1,7 @@
 ---
 title: Chromatic Accomplishments
 date: 2023-10-11
+description: "What I built at Chromatic: the Storybook YouTube channel (350k+ views), Storybook Day, egghead curriculum, and the Next.js integration groundwork."
 references:
   - https://www.youtube.com/@chromaticui
   - https://storybook.js.org/docs/react/get-started/why-storybook

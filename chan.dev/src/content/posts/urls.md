@@ -1,6 +1,7 @@
 ---
 title: URLs
 date: 2024-01-07
+description: "URL anatomy reference from Node.js docs. Protocol, auth, host, path, search, and hash — all labeled in one ASCII diagram."
 ---
 
 # [URL strings and URL objects](https://nodejs.org/api/url.html#url-strings-and-url-objects)

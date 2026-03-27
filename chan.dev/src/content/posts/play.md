@@ -1,6 +1,6 @@
 ---
 title: 'Play'
-description: "Embrace play. Be inspired by others and choose happiness over pressure. Let's play!"
+description: "Most rocks don't turn into diamonds under extreme pressure. Why am I pushing to be a hard diamond when I could be a happy rock?"
 publishDate: 2022-01-28
 og:
   title: '2022: Year of Play'

@@ -1,6 +1,7 @@
 ---
 title: Atomic Habits Notes
 date: 2024-07-01
+description: "Notes on Atomic Habits by James Clear. 1% better every day compounds to 37x in a year. You fall to the level of your systems."
 references:
   - https://s3.amazonaws.com/jamesclear/Atomic+Habits/Media.pdf
 ---

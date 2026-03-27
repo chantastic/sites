@@ -38,6 +38,8 @@ function getMetaImage() {
   <title>{domainAugmentedTitle}</title>
 </slot>
 
+{description && <meta name="description" content={description} />}
+
 <!-- Generic Open Graph -->
 <meta property="og:title" content={og?.title || domainAugmentedTitle} />
 <meta property="og:description" content={description || title} />

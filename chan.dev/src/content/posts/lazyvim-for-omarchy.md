@@ -1,6 +1,7 @@
 ---
 title: LazyVim for Omarchy
 date: 2025-08-18
+description: "What is modal editing, how Vim modes work, and getting started with LazyVim. Insert, Normal, and Command mode explained."
 ---
 
 ## What is modal editing

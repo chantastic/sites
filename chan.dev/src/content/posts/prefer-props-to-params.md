@@ -1,6 +1,7 @@
 ---
 title: Prefer props to params
 date: 2023-07-12
+description: "Prefer props over params in TypeScript function signatures. Props are named, extensible, and self-documenting."
 ---
 
 When generating pages with `getStaticProps()` you have access to `Astro.params`.

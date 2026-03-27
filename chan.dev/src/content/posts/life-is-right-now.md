@@ -1,6 +1,6 @@
 ---
 title: Life is Right Now
-description: "Life's fleeting moments are precious; seize the day and make the most of every opportunity to connect with loved ones and create unforgettable memories."
+description: "I'm in bed with the flu, quarantined to my office for 6 days. I hear stories, games, neighbors visiting. There's always death. But life is right now."
 publishDate: 2019-07-24
 ---
 

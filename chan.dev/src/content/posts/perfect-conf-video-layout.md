@@ -1,6 +1,7 @@
 ---
 title: Perfect Conference Video Layout
 date: 2024-11-09
+description: "A repeatable template for conference video layouts. 10x10 grid, content scaled to 70% height, speaker inset at 30% width."
 ---
 
 Back in 2021 the [React](https://react.dev/community/team) team put together a great online event.

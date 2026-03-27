@@ -1,6 +1,6 @@
 ---
 title: Snap to Focus
-description: 'How quickly do you jump to certain emotions or thoughts? Choose where to focus, in order to create a positive and healthy mindset.'
+description: "Nellie told me: you're not always angry but you Snap to Focus on things that make you angry. She ruined my favorite camera feature. But she was right."
 publishDate: 2020-02-19
 ---
 

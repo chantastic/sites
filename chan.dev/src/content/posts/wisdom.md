@@ -1,8 +1,12 @@
 ---
 title: wisdom
+description: "Our parents weren't set up to accumulate wisdom. Knowledge, sure. But their context windows were small."
 publishDate: 2024-01-10
 tags:
   - rant
+  - life
+  - family
+  - faith
 ---
 
 "Passing on wisdom" was a big topic this holiday break.  

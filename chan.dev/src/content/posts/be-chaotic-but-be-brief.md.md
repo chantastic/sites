@@ -1,6 +1,8 @@
 ---
 title: Be chaotic. But be brief.
+description: 'Be chaotic. But be brief.'
 publishDate: 2024-02-20
+tags: [found, note]
 ---
 
 ![Be chaotic. But be brief.](./be-chaotic-but-be-brief/be-chaotic-but-be-brief.png)

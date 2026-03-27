@@ -1,7 +1,7 @@
 ---
 title: Mentions
 publishDate: 2020-05-10
-description: "Explore the struggle of balancing social media engagement with personal well-being. Let go of mentions for the sake of creativity and life's moments."
+description: "I'm watching Rise of Skywalker with my 9yo and he's freaking out that Chewie got his medal and I'm thinking about Twitter mentions."
 ---
 
 I'm stressing out about mentions

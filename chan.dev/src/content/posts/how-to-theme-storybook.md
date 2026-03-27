@@ -1,8 +1,9 @@
 ---
 title: How to Theme Storybook
+description: 'Add a custom logo, brand colors, and light or dark mode to Storybook using the create() theming API. Quick setup with code examples.'
 publishDate: 2023-09-20
 thumbnail_concept: Storybook UI with my face as the badge
-tags: [storybook]
+tags: [storybook, web]
 references:
   - https://storybook.js.org/docs/react/configure/theming
 tldr: |

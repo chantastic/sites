@@ -1,6 +1,8 @@
 ---
 title: Dumping
+description: "I'm a fecal diagnostician — I like to sift thru problems and find the issue. But when diagnosing turns to dumping, I'm out."
 publishDate: 2023-07-28
+tags: [life, boundaries]
 ---
 
 <div style='position:relative; padding-bottom:calc(57.50% + 44px)'><iframe src='https://gfycat.com/ifr/BouncyAgitatedGerbil' frameborder='0' scrolling='no' width='100%' height='100%' style='position:absolute;top:0;left:0;' allowfullscreen></iframe></div>

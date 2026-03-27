@@ -1,6 +1,6 @@
 ---
 title: Stride Your Limp
-description: 'Face challenges and learn from them. Embrace your metaphorical limp as a symbol of growth, turning pain into valuable lessons.'
+description: "I don't trust anyone who doesn't walk with a limp. Pain is non-negotiable. Suffering is optional. Punch up, take your losses, stride your limp."
 publishDate: 2020-01-08
 ---
 

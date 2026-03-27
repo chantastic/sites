@@ -1,6 +1,7 @@
 ---
 title: React JSX
 date: 2023-08-08
+description: "JSX is a syntax extension for JavaScript — kinda like HTML but mostly not. A collection of JSX truths for debugging React."
 ---
 
 JSX is weird.

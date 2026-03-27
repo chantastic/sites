@@ -1,6 +1,8 @@
 ---
 title: React Basics
+description: 'Build React from scratch with no bundler. Step-by-step guide to ReactDOM, createElement, components, props, and event handlers using ES modules.'
 publishDate: 2023-08-09
+tags: [react, tutorial, web]
 # TODOS:
 # - [ ] Add hints to each step
 # - [ ] A video on props

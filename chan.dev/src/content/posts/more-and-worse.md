@@ -1,6 +1,6 @@
 ---
 title: More and Worse
-description: "Embrace 'more and worse' as a way to balance life's demands and find fulfillment. Learn to focus, prioritize, and make the most of brief moments of better."
+description: "Marriage, bills, kids — one with cancer. At 35, now is not a time for less but better. It's a time for more and worse."
 publishDate: 2019-05-08
 ---
 

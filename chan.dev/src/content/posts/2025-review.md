@@ -1,6 +1,7 @@
 ---
 title: 2025 Year Review
 date: 2025-01-01
+description: "Notes from going through my photo library, month by month. PCs, trips, church, selling things, and Ruby in Charlotte's Web."
 ---
 
 *Notes from going thru my photo library*

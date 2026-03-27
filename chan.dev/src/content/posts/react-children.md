@@ -1,6 +1,8 @@
 ---
 title: React Children
+description: "How React's children prop works: strings, arrays, nested arrays, named children, Children.map, Children.count, and Children.toArray with examples."
 publishDate: 2023-08-16
+tags: [react, tutorial, web]
 ---
 
 This tutorial experiments with the numerous ways we can provide (and misuse) the `children` prop in React.

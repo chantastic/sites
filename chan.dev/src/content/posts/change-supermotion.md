@@ -1,6 +1,7 @@
 ---
 title: Change
 date: 2024-10-15
+description: "100+ Vim operations starting with change inner. Text objects, motions, counts, visual mode, and plugin extensions for ci, di, and vi commands."
 docs:
   - ':help motion.txt'
   - ':help text-objects'

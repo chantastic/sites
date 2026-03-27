@@ -1,6 +1,6 @@
 ---
 title: Find Your Why
-description: "Discover your 'why' to drive success. Strong motives guide brilliant leaders and great organizations, ensuring clarity and purpose in your work."
+description: "You need a motive to convict someone of a crime. If you were on trial for your work, could 'why' convict you?"
 publishDate: 2018-09-04
 ---
 

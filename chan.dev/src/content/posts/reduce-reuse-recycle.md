@@ -1,6 +1,8 @@
 ---
 title: 'Reduce, Reuse, Recycle'
+description: 'Do it with less effort. Don''t start from scratch. Use content you''ve made on different platforms.'
 publishDate: 2021-12-31
+tags: [content, life]
 ---
 
 ### Reduce

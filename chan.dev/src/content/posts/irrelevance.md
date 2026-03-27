@@ -1,6 +1,7 @@
 ---
 title: irrelevance
 date: 2026-03-25
+description: "I feel the fear of replaceability. When I feel that way, I look for comfort a layer below my typical operation. Understanding is always the unlock."
 tags:
   - seed
   - from:pi

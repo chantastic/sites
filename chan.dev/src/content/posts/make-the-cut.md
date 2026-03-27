@@ -1,7 +1,7 @@
 ---
 title: Make the Cut
 publishDate: 2019-10-23
-description: 'Discover how to transform ideas by cutting away biases and fears, just like a bonsai artist or a skilled butcher. Patience and vision lead to perfection.'
+description: "Every idea starts as a conflated ball of ideas. Your work is to cut off everything that doesn't belong. Have you seen a wild bonsai tree? It's just a shrub."
 ---
 
 Every idea starts as a conflated ball of ideas  

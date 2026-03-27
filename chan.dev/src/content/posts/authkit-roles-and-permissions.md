@@ -5,7 +5,7 @@ references:
   - https://workos.com/docs/user-management/roles-and-permissions
   - https://workos.com/changelog/role-based-access-control-for-authkit
   - https://www.youtube.com/watch?v=FErRN9EsKTo
-description: Unlock the power of Role-Based Access Control (RBAC) with AuthKit's new permissions feature. Learn how to implement and manage user roles, create custom permissions, and secure your application with ease. Perfect for developers looking to streamline authentication in their next.js projects.
+description: 'AuthKit now has permissions, completing the RBAC feature set. How to create permissions in WorkOS, add them to roles, and check them in your Next.js app.'
 og:
   title: 'Mastering RBAC with AuthKit: A Complete Guide to Roles and Permissions | chan.dev'
   image: 'https://i.ytimg.com/vi/FErRN9EsKTo/maxresdefault.jpg'

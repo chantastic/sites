@@ -1,6 +1,8 @@
 ---
 title: Readline
+description: 'Readline keyboard shortcuts for terminal and text editing. Ctrl-a, Ctrl-e, Ctrl-k, Ctrl-w, and Meta key navigation reference.'
 publishDate: 2025-04-17
+tags: [cli, reference]
 ---
 
 |          shortcut | outcome                                                                  |

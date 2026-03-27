@@ -1,6 +1,7 @@
 ---
 title: sticky
 date: 2026-03-25
+description: "Sticky is a compliment in product. It means users can't leave. But from the user's side, sticky is just a nice word for trapped."
 tags:
   - seed
   - from:pi

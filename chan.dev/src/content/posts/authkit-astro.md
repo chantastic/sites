@@ -1,6 +1,7 @@
 ---
 title: AuthKit with Astro
 date: 2024-07-08
+description: "Step-by-step guide to setting up WorkOS AuthKit with Astro. Redirect URIs, environment variables, and the full SSO authentication flow."
 references:
   - https://workos.com/docs/user-management/1-configure-your-project/configure-a-redirect-uri
 ---

@@ -1,6 +1,7 @@
 ---
 title: 'Editing a tutorial'
 date: 2025-10-01
+description: "My editing playbook for tutorials. Face cuts, keyword overlays, slide-up and push transitions, J-cuts, and audio normalization."
 ---
 
 ## Face

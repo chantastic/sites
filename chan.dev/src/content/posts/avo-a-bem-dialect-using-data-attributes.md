@@ -1,6 +1,6 @@
 ---
 title: AVO 🥑 — A BEM Dialect Using Data Attributes
-description: 'Discover AVO 🥑, a BEM dialect using data attributes to improve legibility and reduce template repetition. Ideal for legacy codebases or utility class libraries'
+description: 'AVO is a BEM dialect using data attributes instead of class names. Better legibility, less template repetition. Side-by-side comparison with standard BEM.'
 publishDate: 2021-02-08
 ---
 

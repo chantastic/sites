@@ -1,6 +1,7 @@
 ---
 title: Editing
 date: 2025-09-24
+description: "Ed Lawrence describes my ideal edit better than I could. Quick hook, overlay chapters, hard cuts, get to the point faster, punch in to land a point."
 references:
   - https://youtu.be/dWf0AHcwKDk?si=AhfcPx-QXbkUb8Sk
   - https://youtu.be/y4aLREQsyCA

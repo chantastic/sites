@@ -1,6 +1,6 @@
 ---
 title: I'm a Toys R Us kid
-description: 'Experience a hilarious anecdote about a dad riding a skateboard, as the author explores the relatable feeling of growing older and embracing youthfulness.'
+description: "A definitely-dad frame is breaking the spirit of what I hope is his child's Penny skateboard. Crack. Thud. An inscrutable but impressive string of profanities."
 publishDate: 2019-09-18
 ---
 

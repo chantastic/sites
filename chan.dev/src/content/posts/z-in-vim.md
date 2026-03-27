@@ -1,7 +1,8 @@
 ---
 title: z in Vim
+description: "Vim z command reference: folding (za, zo, zc), screen redraw (zt, zz, zb), and save/quit (ZZ, ZQ). Includes VSCodeVim compatibility notes."
 publishDate: 2023-08-22
-tags: [vim]
+tags: [vim, reference]
 references:
   - https://vimhelp.org/
   - https://vimhelp.org/index.txt.html#z

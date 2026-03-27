@@ -1,6 +1,8 @@
 ---
 title: 'Nullish Coalescing and when you should use it'
+description: 'Nullish coalescing (??) and logical OR (||) differ when the left side is falsy but not null or undefined. Examples with numbers, strings, and booleans.'
 publishDate: 2023-10-17
+tags: [javascript, web]
 cover: ./nullish/nullish.png
 coverAlt: 'Nullish presented as a subset of falsy'
 references:

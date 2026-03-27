@@ -1,6 +1,6 @@
 ---
 title: Stop Failing Yourself
-description: "Perfectionism holds you back from sharing your work. Don't let fear of criticism stop you from growing. Embrace imperfection, share your creations, and watch your life improve. Are you hiding from your potential?"
+description: "In school, I wouldn't turn in a paper if it didn't feel good enough. Perfectionism is the horsiest of horse shits. You're an adult. You can handle rejection."
 publishDate: 2019-11-27
 ---
 

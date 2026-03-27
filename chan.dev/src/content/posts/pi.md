@@ -1,5 +1,6 @@
 ---
 title: pi
+description: "Pi is the NeoVim of coding agents — no built-in sub agents, no plan mode, but fully extensible with TypeScript. First impressions and comparison with Claude Code."
 publishDate: 2026-03-24
 tags: [ai, tools, vim]
 ---

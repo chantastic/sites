@@ -1,6 +1,8 @@
 ---
 title: Kent C. Dodds is great, btw
+description: 'Kent is my real-life Ted Lasso. Never have I met someone who thinks so positively of everyone.'
 publishDate: 2023-07-19
+tags: [people, life]
 ---
 
 Kent is my real-life Ted Lasso.

@@ -1,6 +1,6 @@
 ---
 title: Comprehending YAML
-description: 'Explore the intricacies of YAML, its relation to JSON, and how to understand complex data structures and types in YAML, with clear examples and comparisons.'
+description: 'YAML for people who already know JSON. Data types, nested structures, anchors, and the gotchas that trip everyone up. With side-by-side comparisons.'
 publishDate: 2021-02-11
 tags:
   - yaml

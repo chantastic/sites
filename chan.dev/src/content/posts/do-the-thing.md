@@ -1,6 +1,6 @@
 ---
 title: Do the Thing
-description: 'Conquer ego and embrace the simplicity of creation by focusing on your initial ideas, resisting the urge to pursue grander goals that may prevent progress.'
+description: "I wanted to make training videos. Instead I built a multi-tenant app in a framework I didn't know. Creation is a battle with ego. Ego hates simple things."
 publishDate: 2019-07-17
 ---
 

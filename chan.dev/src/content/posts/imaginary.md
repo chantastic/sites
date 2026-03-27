@@ -1,6 +1,6 @@
 ---
 title: Imaginary
-description: "Take action. Don't daydream. Stop out of your imaginary world and embrace real opportunities that make a difference."
+description: "I wanted to host React Podcast since 2015. When Michael Jackson resurrected it, I was green with envy. Then he asked me to take over and I said no."
 publishDate: 2019-04-03
 ---
 

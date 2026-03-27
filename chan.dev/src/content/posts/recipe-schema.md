@@ -1,6 +1,7 @@
 ---
 title: Recipe schema
 date: 2024-01-15
+description: "Schema.org Recipe structured data reference. Google's required and recommended properties for recipe rich results."
 references:
   - https://schema.org/Recipe
   - https://developers.google.com/search/docs/appearance/structured-data/recipe

@@ -1,6 +1,6 @@
 ---
 title: Kill the Old You
-description: 'Embark on a journey of self-transformation and leave the old you behind, learning from past mistakes to build a better, more genuine version of yourself.'
+description: "I became an asshole by spending time with people in tech. The leader is just the most impetuous asshole in a room, right? So I stopped. I killed the bad program."
 publishDate: 2019-06-05
 ---
 

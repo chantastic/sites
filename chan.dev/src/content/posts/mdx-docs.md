@@ -1,6 +1,7 @@
 ---
 title: MDX docs
 date: 2023-07-03
+description: "How to add MDX documentation pages to Storybook. Markdown plus React components with Doc Blocks for component docs."
 ---
 
 ## Intro

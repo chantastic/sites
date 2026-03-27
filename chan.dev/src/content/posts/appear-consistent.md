@@ -1,6 +1,6 @@
 ---
 title: Appear Consistent
-description: 'Build a reputation through consistency in work habits. Embrace weekly commitments to transform your productivity and overcome self-doubt.'
+description: "A poker friend taught me: appear consistent, build your reputation, then deviate. My defense against oblivion is the sacrament of a weekly commitment."
 publishDate: 2019-04-17
 ---
 

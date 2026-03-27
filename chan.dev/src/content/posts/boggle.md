@@ -1,6 +1,7 @@
 ---
 title: Boggle
 date: 2025-01-01
+description: "My family would play Boggle for hours after the new year ball drop. When I turned 10 I was invited to the adult party."
 ---
 
 Boggle. It was my favorite game as a kid.

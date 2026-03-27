@@ -1,6 +1,6 @@
 ---
 title: Chan Spot
-description: "Explore the story of 'Chan Spot' and a father's pursuit for the ideal parking spot and quickest checkout lane, shedding light on our need to feel victorious."
+description: "He spent 15 minutes circling for a parking spot 3 lines from a blue line. My dad wasn't in a hurry. He just had to get ahead."
 publishDate: 2020-10-19
 ---
 

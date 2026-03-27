@@ -1,6 +1,6 @@
 ---
 title: I'm Angry. Are you?
-description: 'Reflections on racial experiences and the anger it can provoke, while seeking ways to overcome wounds and foster understanding and unity.'
+description: "My dad wanted to be white. He went places he wasn't welcome and he took us with him. I got my confidence from him. But I came with a big white chip on my shoulder."
 publishDate: 2019-09-04
 ---
 

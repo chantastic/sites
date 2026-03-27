@@ -1,6 +1,6 @@
 ---
 title: Stop making dents
-description: "Religions remind us of our fleeting existence. Instead of striving to 'make a dent,' embrace peace, learn from the past, and share your knowledge. How can you be generous with today?"
+description: "Most religions agree you're cosmically unimportant. So why be so intent to make a dent? Be grateful and pass it on. There's nothing you can keep."
 publishDate: 2020-04-15
 ---
 

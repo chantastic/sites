@@ -1,6 +1,7 @@
 ---
 title: Securely Implement OAuth 2.0 for Public Clients with PKCE
 date: 2024-07-24
+description: "PKCE (Proof Key for Code Exchange) explained for OAuth 2.0 public clients. Flow visualization, comparison with implicit flow and client secrets."
 mermaid: true
 ---
 

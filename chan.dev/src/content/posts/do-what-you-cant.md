@@ -1,6 +1,6 @@
 ---
 title: Do What You Can't
-description: 'Fight imposter syndrome by proving it wrong. Embrace your worth, validate your experiences, and conquer challenges with the support of others.'
+description: "Last week I said earn your imposter syndrome. It was a half truth. Imposter syndrome is a thief and a cancer. You don't comfort it. You fight it."
 publishDate: 2020-02-05
 ---
 

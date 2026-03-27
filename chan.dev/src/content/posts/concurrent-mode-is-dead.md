@@ -1,6 +1,6 @@
 ---
 title: Concurrent Mode is Dead. Long live Concurrent…
-description: "Discover how React 18 introduces concurrent rendering, replacing the 'Concurrent Mode' terminology, and learn about the new concurrent APIs and features."
+description: "React 18 killed Concurrent Mode and replaced it with concurrent features you opt into per-component. Here's the terminology rebase and what actually shipped."
 publishDate: 2021-06-09
 ---
 

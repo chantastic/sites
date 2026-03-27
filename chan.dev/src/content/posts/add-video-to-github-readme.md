@@ -1,6 +1,8 @@
 ---
 title: Add video to GitHub README
+description: "YouTube embeds don't work in GitHub READMEs. Use a linked thumbnail image instead. Here's the markdown snippet."
 publishDate: 2024-07-22
+tags: [git, web]
 references:
   - https://stackoverflow.com/questions/11804820/how-can-i-embed-a-youtube-video-on-github-wiki-pages
   - https://www.get-youtube-thumbnail.co/

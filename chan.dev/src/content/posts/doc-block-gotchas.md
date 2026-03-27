@@ -1,6 +1,7 @@
 ---
 title: Storybook gotchas
 date: 2023-07-19
+description: "Storybook Doc Blocks gotchas: Source block needs a Story component, Meta must be a named export, and renaming import workarounds."
 ---
 
 ### Source doc block

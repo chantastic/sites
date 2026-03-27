@@ -1,6 +1,8 @@
 ---
 title: '10 Things I Bought and Loved in 2023'
+description: 'Things I bought in 2023 that were worth every penny. Including $15 red whips that will change your life.'
 publishDate: 2023-11-21
+tags: [gear, life]
 ---
 
 ## Red whips

@@ -1,6 +1,7 @@
 ---
 title: trust
 date: 2024-04-18
+description: "The most important thing in my life is trust. Not trust that I'll never fuck up. Trust that I'll show up for the cleanup."
 ---
 
 the most important thing in my life is trust

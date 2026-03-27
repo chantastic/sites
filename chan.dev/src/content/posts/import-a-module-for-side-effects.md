@@ -1,6 +1,6 @@
 ---
 title: Import Modules for Side Effects
-description: 'Explore the concept of importing JavaScript modules solely for their side effects, the use of conditional side effects with dynamic imports, and best practices to follow.'
+description: "Import a JavaScript module without using any of its exports. Useful for polyfills, CSS, and setup scripts. Includes conditional side effects with dynamic import()."
 publishDate: 2021-01-26
 og:
   image: 'https://res.cloudinary.com/chantastic/image/upload/v1685927001/chan.dev/import-a-module-for-side-effects.jpg'

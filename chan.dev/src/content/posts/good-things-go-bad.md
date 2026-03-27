@@ -1,6 +1,6 @@
 ---
 title: Good things go bad
-description: 'Job satisfactino is fleeting. Recognizing when to move on, using avocados as a relatable metaphor.'
+description: "There's no good time to eat an avocado. Same with jobs. They ripen, then they rot. And there's no prize for stomaching rotten ones."
 publishDate: 2020-02-24
 ---
 

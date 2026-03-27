@@ -1,6 +1,7 @@
 ---
 title: dvorak and vim and cancer
 date: 2026-03-25
+description: "In 2009 I learned Dvorak and Vim at the same time, while my newborn was in the hospital with pediatric cancer. Grasping for control, probably."
 tags:
   - seed
   - from:pi

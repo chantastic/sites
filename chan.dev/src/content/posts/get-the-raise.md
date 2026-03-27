@@ -1,6 +1,6 @@
 ---
 title: Get the Raise
-description: 'Increase your visibility and industry connections to improve your salary negatiation position.'
+description: "I'm shit at negotiation. But I learned that visible people find more opportunities than invisible people. Here's what 10 years of tech work taught me about salary."
 publishDate: 2019-06-26
 ---
 

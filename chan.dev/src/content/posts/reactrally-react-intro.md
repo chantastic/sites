@@ -1,6 +1,8 @@
 ---
 title: 'React Rally 2023'
+description: 'Workshop materials for the React Rally 2023 Intro to React workshop. Setup, itinerary, sandbox links, and additional resources.'
 publishDate: 2023-08-01
+tags: [react, speaking, workshop]
 ---
 
 https://chan.dev/reactrally-react-intro/

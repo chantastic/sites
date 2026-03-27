@@ -1,6 +1,8 @@
 ---
 title: 'To my family…'
+description: 'A note to the people who actually know me. The things you see here may feel weird. I am talking past you. With complete sincerity.'
 publishDate: 2023-07-26
+tags: [life, family]
 ---
 
 <figure>

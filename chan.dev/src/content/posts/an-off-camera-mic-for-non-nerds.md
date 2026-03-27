@@ -1,6 +1,6 @@
 ---
 title: An off-camera mic for non-nerds
-description: 'Improve online coaching with an off-camera mic like the Rode VideoMic NTG for cozy conversations. Optimize sound quality with positioning and environment.'
+description: "Recommending the Rode VideoMic NTG for someone who wants to ditch the headset mic without falling into A/V nerdery. USB-C, shock mount, $200."
 publishDate: 2021-01-02
 ---
 

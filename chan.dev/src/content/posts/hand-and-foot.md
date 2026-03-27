@@ -1,6 +1,8 @@
 ---
 title: Hand and Foot (Roth family rules)
+description: 'House rules for Hand and Foot, a canasta variant. Setup, scoring, melds, wild cards, and strategy tips for going out.'
 publishDate: 2023-12-29
+tags: [games, family]
 references:
   - https://bicyclecards.com/how-to-play/hand-and-foot
   - https://en.wikipedia.org/wiki/Canasta

@@ -1,6 +1,6 @@
 ---
 title: Hey
-description: "Discover the role of email in fostering healthy communication habits in a couple's relationship, as they navigate through life's 'big stuff.'"
+description: "Nellie and I relegated the big stuff to email early in our relationship. It gave us time to think. 14 years later, we don't email much anymore."
 publishDate: 2020-02-12
 ---
 

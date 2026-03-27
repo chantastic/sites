@@ -1,6 +1,7 @@
 ---
 title: Mac Settings
 date: 2023-08-08
+description: "My Mac settings: accessibility zoom, pointer size, flash for alerts, keyboard text replacements, and FileVault."
 ---
 
 ![Alt text](./mac-settings/mac-settings-keyboard-text-replacements.png)

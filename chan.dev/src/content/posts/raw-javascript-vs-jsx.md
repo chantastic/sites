@@ -1,6 +1,7 @@
 ---
 title: Raw JavaScript vs JSX
 date: 2023-07-17
+description: "Outline comparing raw DOM manipulation vs React, createRoot and render, JSX children, interpolation tricks, and prop spreading."
 ---
 
 ## Notes

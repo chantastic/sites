@@ -1,6 +1,7 @@
 ---
 title: 'USB cables'
 date: 2025-08-11
+description: "USB cable testing results. Type-A, Type-C PD charging wattages, data transfer speeds, and why Thunderbolt cables are worth it."
 references:
   - https://en.wikipedia.org/wiki/USB
   - https://www.nytimes.com/wirecutter/reviews/best-usb-c-cables/

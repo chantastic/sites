@@ -1,6 +1,7 @@
 ---
 title: a chantastic guide to karabiner-elements
 date: 2024-05-05
+description: "Notes on Karabiner-Elements key remapping. Never break rollover, only create layers from keys followed by a space, and prize symmetry."
 ---
 
 ## Your keyboard is under-utilized

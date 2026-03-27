@@ -1,6 +1,6 @@
 ---
 title: So, I Make My Bed
-description: 'Can making the bed be an act of defiance against daily struggles? Discover the power of this simple routine in overcoming the daunting messes from yesterday.'
+description: "My existential dread is a morning person. So I accept defeat. The day is already lost. And I make my bed — my first act of defiance against the day."
 publishDate: 2019-11-20
 ---
 

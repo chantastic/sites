@@ -1,6 +1,7 @@
 ---
 title: 'Getting My CS Degree'
 date: 2025-07-16
+description: "Notes on getting a CS degree at CSUSM as a transfer student. Application links, transcript requirements, and enrollment dates."
 ---
 
 ## CSUSM Docs

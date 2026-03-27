@@ -1,6 +1,6 @@
 ---
 title: Import Named Exports
-description: 'Explore the power of named exports in JavaScript modules while understanding the potential downside of naming collisions and their solutions.'
+description: 'How JavaScript named exports work, why name collisions are the main downside, and how to handle them with renaming.'
 publishDate: 2021-01-26
 og:
   image: 'https://res.cloudinary.com/chantastic/image/upload/v1685927001/chan.dev/import-named-exports.jpg'

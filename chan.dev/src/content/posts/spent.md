@@ -1,6 +1,7 @@
 ---
 title: Spent
 date: 2023-07-23
+description: "The day after Rock was born, we stopped off at a friend's graduation party. No kid. Just a statement: this changes nothing."
 ---
 
 The day after Rock was born, we stopped off at a friends house for a graduation party.

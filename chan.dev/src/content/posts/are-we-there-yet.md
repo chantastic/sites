@@ -1,6 +1,6 @@
 ---
 title: Are We There Yet?
-description: "Celebrate achievements by realizing old dreams before moving on to new ones. Appreciate victories and remember how far you've come."
+description: "We daydreamed about Disney Aulani on 38k salaries. Years later we could afford it but I'd moved on to bigger dreams. Nellie said: realize the old dream first."
 publishDate: 2019-06-19
 ---
 

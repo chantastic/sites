@@ -1,7 +1,7 @@
 ---
 title: React Server Components Announcement Notes
 publishDate: 2021-01-14
-description: "React Server Components announcement notes cover new packages, demo app insights, setup, and impressions. Learn how to use the server-components-demo, view deployment examples, and explore additional resources. Gain insights into this experimental feature's benefits and limitations."
+description: "Notes from watching the React Server Components announcement with friends. New packages (react-fetch, react-fs, react-pg), demo app setup, and first impressions."
 ---
 
 Three weeks after the announcement of React Server Components, I finally sat down [with friends](https://twitter.com/chantastic/status/1349710359049940992?s=20) to watch the event.

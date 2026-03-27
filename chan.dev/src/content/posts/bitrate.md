@@ -1,6 +1,7 @@
 ---
 title: On Bitrate
 date: 2024-01-05
+description: "Video bitrate reference for SDR and HDR 4K at 30 and 60fps. YouTube limits, streaming targets, and uncompressed ranges."
 references:
   - https://restream.io/learn/what-is/video-bitrate/#buffer-free-broadcasting-the-best-video-bitrates
 ---

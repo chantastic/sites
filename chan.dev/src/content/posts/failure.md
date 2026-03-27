@@ -1,6 +1,6 @@
 ---
 title: Failure
-description: 'Embrace failure as a chance to grow. Pick up abandoned projects, face shame, and continue your journey with newfound wisdom and determination.'
+description: "Failure isn't the work that doesn't land. It's the work you abandon. Pick it up. Feel the shame. Continue."
 publishDate: 2019-03-27
 ---
 

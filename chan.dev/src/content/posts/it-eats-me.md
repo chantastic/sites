@@ -1,6 +1,7 @@
 ---
 title: it eats me
 date: 2026-03-25
+description: "Watches, power tools, keyboard layouts, microphones. When I find a new thing, it eats me. Consumed first, maker second."
 tags:
   - seed
   - from:pi

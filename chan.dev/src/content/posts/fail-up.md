@@ -1,6 +1,6 @@
 ---
 title: Fail Up
-description: 'Embrace failure as a learning opportunity. Tenacity and persistence are key to improvement. Keep trying until you find the right solution.'
+description: "I got sunburnt twice on one vacation. I've always taken twice as long to learn anything. That used to make me feel dumb. Now I read it as twice the tenacity."
 publishDate: 2019-06-12
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: Ask A Relevant Question
-description: 'Improve networking by targeting key individuals and asking relevant questions. Build genuine relationships through active listening and thoughtful inquiry.'
+description: "Conference speakers left their families and flew across the country just to talk with you. Don't say 'sweet talk, bro.' Ask a relevant question."
 publishDate: 2019-04-10
 ---
 

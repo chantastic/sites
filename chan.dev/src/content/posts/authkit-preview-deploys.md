@@ -1,6 +1,8 @@
 ---
 title: 'AuthKit Preview Deploys: Step-by-Step Guide'
+description: 'Configure AuthKit redirect URIs for Vercel, Netlify, and Cloudflare preview deployments. Step-by-step guide with wildcard patterns.'
 publishDate: 2024-08-22
+tags: [workos, auth, web]
 ---
 
 I love preview deploys for quick collaboration.
