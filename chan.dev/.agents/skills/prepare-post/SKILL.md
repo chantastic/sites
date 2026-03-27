@@ -1,32 +1,43 @@
 ---
 name: prepare-post
-description: Prepare a chan.dev post for publication. Interview the author to harden the draft, generate description and tags, set publishDate, and validate frontmatter. Use when a draft is ready to go live, or when enriching metadata on existing posts.
+description: "Prepare a chan.dev post for publication or metadata enrichment. For a single post, harden the draft, generate description and tags, validate frontmatter, and optionally set publishDate. For batches, do metadata-only work: generate or audit descriptions and tags across many posts."
 ---
 
 # Prepare Post
 
-Prepare a post for publication on chan.dev. Handles the full editorial pass: harden the draft, write the description, apply tags, validate frontmatter, and set publishDate.
+Prepare chan.dev posts for publication.
+
+This skill has **two operating contexts**, not multiple modes:
+
+1. **Single post** — full editorial workflow
+2. **Batch** — metadata-only workflow
+
+The skill should infer which context to use from the input:
+- **one post path** → single-post workflow
+- **many post paths or a filter request** → batch workflow
 
 ## When to use
 
 - A post has `date` but no `publishDate` and is ready to go live
 - A new post needs metadata before publishing
 - A seed post has grown into something publishable
-- Batch enrichment: adding descriptions/tags to posts that lack them
+- Many posts need descriptions, tags, or metadata cleanup
+- You want to audit existing descriptions and tags for quality
 
 ## Inputs
 
-1. **One or more post files** — paths to markdown files in `src/content/posts/`
-2. **Mode:**
-   - `publish` (full workflow: interview → description → tags → publishDate)
-   - `enrich` (description + tags only, no interview, no publishDate change)
-   - `audit` (evaluate existing descriptions and tags, flag problems)
+1. **Either:**
+   - one post file in `src/content/posts/`
+   - multiple post files in `src/content/posts/`
+   - a natural-language filter like: `posts missing descriptions`, `all unpublished posts`, `all posts tagged react without descriptions`
 
 ## Site conventions
 
-Posts live in `src/content/posts/`. Two date fields with distinct semantics:
+Posts live in `src/content/posts/`.
+
+Two date fields have distinct semantics:
 - `publishDate` — published to feeds, sitemap, listings
-- `date` — tracks when the note was written, NOT syndicated (intentional)
+- `date` — tracks when the note was written, not syndicated
 
 When promoting a `date`-only post, keep both fields.
 
@@ -39,30 +50,58 @@ date: 2026-03-27        # when written (keep if exists)
 publishDate: 2026-03-27 # when published
 description: "150 chars max. Extracted from the post, not about the post."
 tags: [topic, subtopic]
-references:              # optional — external URLs cited
+references:
   - https://example.com
-cover: ./post-slug/image.png  # optional
-coverAlt: Alt text             # required if cover exists
+cover: ./post-slug/image.png
+coverAlt: Alt text
 ---
 ```
 
----
+## Execution profile
+
+### Single post
+
+Use the full editorial workflow:
+- assess readiness
+- interview to harden if appropriate
+- generate description
+- apply tags
+- validate frontmatter
+- ask before setting `publishDate`
+
+### Batch
+
+Use the metadata-only workflow:
+- do not interview
+- do not rewrite content
+- generate or audit descriptions
+- apply or normalize tags
+- summarize uncertain cases in a review table
+- never set `publishDate` unless explicitly asked
 
 ## Process
 
 ### Step 1: Read and assess
 
-Read the full post. Determine:
+Read the full post or posts.
+
+For a **single post**, determine:
 - **Readiness**: seed (< 5 sentences), draft (incomplete), or publication-ready?
-- **Voice**: does it sound like Chan? (Reference `chan-dev-writing` skill if uncertain.)
-- **Existing metadata**: what's present, what's missing?
+- **Voice**: does it sound like Chan? (Reference `chan-dev-writing` if uncertain.)
+- **Metadata state**: what exists, what is missing, what looks wrong?
 
-If mode is `enrich` or `audit`, skip to Step 3.
-If the post is a seed or clearly incomplete, say so and ask whether to proceed or defer.
+If the post is a seed or clearly incomplete, say so and ask whether to proceed.
 
-### Step 2: Interview to harden (publish mode only)
+For a **batch**, identify only:
+- which files match the request
+- which files are substantial enough to deserve descriptions/tags
+- which files are found notes or empty stubs and should be skipped
 
-Surface what the post is really about. Ask 3-5 questions using the questionnaire tool.
+### Step 2: Interview to harden (single post only)
+
+Only do this for a single post.
+
+Ask 3-5 questions using the questionnaire tool.
 
 **For personal essays:**
 - What's the one thing you want someone to walk away with?
@@ -74,12 +113,14 @@ Surface what the post is really about. Ask 3-5 questions using the questionnaire
 - Is there a step or concept you haven't addressed?
 - Would you link to this from another post? Which one?
 
-**For seed posts being promoted:**
+**For promoted seeds:**
 - What made you come back to this?
 - Is this its own post or a section of something bigger?
 - What's the minimum version worth publishing?
 
-If the interview reveals changes, propose them. Do not rewrite without approval. Reference `make-it-personal` skill if the post needs deeper personal work.
+If the interview reveals content changes, propose them.
+Do not rewrite without approval.
+Reference `make-it-personal` if the draft needs deeper personal work.
 
 ### Step 3: Generate description
 
@@ -96,7 +137,7 @@ If the interview reveals changes, propose them. Do not rewrite without approval.
 **For searchable posts:**
 1. Identify the primary search query
 2. Lead with the topic keyword or problem statement
-3. Include specific terms: API names, tool names, the exact problem
+3. Include specific terms: API names, tool names, exact problem
 4. Close with what the reader gets
 
 Pattern: `[Topic/problem]. [What the post covers]. [What the reader gets].`
@@ -104,109 +145,139 @@ Pattern: `[Topic/problem]. [What the post covers]. [What the reader gets].`
 **For shareable posts:**
 1. Find the most compelling line from the post itself
 2. Pull it verbatim or near-verbatim
-3. Do not genericize. Do not add moral framing the author didn't write.
+3. Do not genericize
+4. Do not add moral framing the author didn't write
 
 Pattern: Pull the hook. Use the author's words.
 
 #### Validate
 
-- **Length:** 150-155 characters for Google snippets. Shorter is fine.
+- **Length:** ~150-155 characters for Google snippets. Shorter is fine.
 - **Accuracy:** Must match what the post actually says.
 - **Self-contained:** Should make sense without the title.
 
 #### Anti-patterns
 
 Reject descriptions that:
-- **Open with imperative verbs**: "Discover", "Explore", "Learn", "Master", "Unlock", "Embrace", "Dive into"
-- **Moralize**: "turning pain into valuable lessons"
-- **Genericize**: replacing a specific story with a universal platitude
-- **Inflate**: "Unlock the power of..." when the post just shows a setup
-- **Add framing the author didn't write**: "Can making the bed be an act of defiance?" when the author states it directly
+- open with imperative verbs like `Discover`, `Explore`, `Learn`, `Master`, `Unlock`, `Embrace`, `Dive into`
+- moralize generic lessons the author didn't write
+- replace a specific story with a universal platitude
+- inflate the importance of a straightforward setup or note
+- add framing the author already stated more directly in the post
 
-The test: **could this description have been written by someone who only read the title?** If yes, it's bad.
+The test:
 
-In `publish` mode, present description for operator review (publication-sensitive).
-In `enrich` mode, apply directly for substantial posts. Present for review only when uncertain.
+**Could this description have been written by someone who only read the title?**
+
+If yes, it's bad.
+
+#### Review boundary
+
+- For a **single post being prepared for publication**, present the description for operator review.
+- For a **batch**, apply descriptions directly to substantial posts. Surface uncertain cases in the summary table instead of asking one-by-one.
 
 ### Step 4: Apply tags
 
-Query the live vocabulary:
+Query the live vocabulary from existing posts.
 
-```bash
-rg -oP '(?<=tags: \[)[^\]]+' src/content/posts/ --glob "*.md" --no-filename | tr ',' '\n' | sed 's/^ *//' | sort | uniq -c | sort -rn
-```
+Use both inline and YAML-list frontmatter styles when scanning. The existing corpus contains both.
+
+Example approach:
+- scan frontmatter for `tags: [a, b]`
+- scan frontmatter for YAML list tags under `tags:`
+- normalize to lowercase frequency counts before choosing
 
 Rules:
 1. Apply 1-3 tags from the existing vocabulary
 2. Prefer specific over general (`react` over `web`)
-3. `life` as base for personal essays; add a second for the angle (`family`, `career`, `faith`)
+3. Use `life` as the base tag for personal essays; add a second for the angle (`family`, `career`, `faith`)
 4. Content-type tags (`reference`, `tutorial`, `seed`) go alongside topic tags
-5. Do not invent new tags unless 3+ posts would use it
-6. Tags use bracket format: `tags: [life, family]`
+5. Do not invent new tags unless 3+ posts would use them
+6. Normalize tags to the site's current standard when editing (`lowercase`, bracket format preferred when touching frontmatter)
 
 Tags are low-risk and reversible. Apply without asking.
 
 ### Step 5: Validate frontmatter
 
+Check for:
+
 ```
 ✓ title
-✓ description (from step 3)
-✓ tags (from step 4)
-○ publishDate (set in step 6 if publish mode)
-○ cover / coverAlt (note if missing)
-○ references (note if post cites sources without listing them)
+✓ description
+✓ tags
+○ publishDate (single-post publication flow only)
+○ cover / coverAlt
+○ references
 ```
 
-### Step 6: Set publishDate (publish mode only)
+Also flag:
+- quoted or inconsistent tag formatting
+- empty `description` strings
+- multiline `description` accidents
+- cited links in the body that are missing from `references` when that field is already in use for similar posts
 
-Ask: **publish now or schedule?**
-- Now: set `publishDate` to today
-- Scheduled: set to specified date
+### Step 6: Set publishDate (single post only, explicit)
+
+Only set `publishDate` when explicitly requested or when working interactively on a single post and the operator confirms publication.
+
+Ask:
+- publish now?
+- or schedule for a specific date?
+
+For batches, **never set `publishDate` unless explicitly requested**.
 
 ### Step 7: Summary
 
-Present all changes:
-- Content changes (if any)
-- Description added/updated
-- Tags applied
-- publishDate set (if publish mode)
-- Warnings (missing cover, uncited references, etc.)
+For a **single post**, present:
+- content changes proposed or made
+- description added/updated
+- tags applied
+- `publishDate` set or deferred
+- warnings (missing cover, uncited references, etc.)
 
-### Step 8: Audit existing (audit mode)
+For a **batch**, present a table:
+- file
+- action taken (`description added`, `description rewritten`, `tags added`, `tags normalized`, `skipped`)
+- why skipped (found note, empty stub, uncertain)
+- any cases needing human review
 
-Read existing `description` against post content. Flag:
-1. **Content mismatch** — describes a different topic
-2. **AI-isms** — Discover, Explore, Embrace, Unlock openers
-3. **Generic self-help** — could describe any post
-4. **Too long** — over 160 characters
-5. **Empty or broken** — empty string, multiline YAML accident
-6. **Typos**
+## Audit behavior
 
-For tags, flag:
-- Missing tags on substantial posts
-- Singleton tags that should be consolidated
-- Quoted or capitalized tags that need normalizing
+When the request is clearly audit-oriented, read existing metadata and flag:
 
----
+### Description issues
+- content mismatch
+- AI-isms (`Discover`, `Explore`, `Embrace`, `Unlock`)
+- generic self-help language
+- too long (>160 chars)
+- empty or broken values
+- typos
+
+### Tag issues
+- missing tags on substantial posts
+- singleton tags that should be consolidated
+- quoted, capitalized, or inconsistent formatting
+- tags that are too vague compared to the site's current vocabulary
 
 ## Decision boundaries
 
 | Decision | Who | Why |
 |----------|-----|-----|
 | Content changes | Operator | Taste-sensitive |
-| Description (publish) | Operator reviews | Publication-sensitive |
-| Description (enrich) | Agent for substantial posts | Low-risk on unpublished |
+| Description on a single post headed to publication | Operator reviews | Publication-sensitive |
+| Description in batch enrichment | Agent | Low-risk on unpublished or maintenance work |
 | Tags | Agent | Low-risk, reversible |
-| publishDate | Operator | Publication decision |
+| `publishDate` | Operator | Publication decision |
 
 ## Composition
 
 **References:**
 - `chan-dev-writing` — voice reference
-- `make-it-personal` — when interview reveals deeper work needed
+- `make-it-personal` — use when the interview reveals the post needs deeper personal work
 
-**Called by:**
-- Operator: `prepare-post for src/content/posts/sticky.md`
-- Operator: `prepare-post --mode enrich for posts missing descriptions`
-- `shutdown-ritual` when promoting seeds
-- `video-publish` when generating companion posts
+**Typical calls:**
+- `prepare-post for src/content/posts/sticky.md`
+- `prepare-post for all unpublished posts missing descriptions`
+- `prepare-post for posts tagged react without tags`
+- `prepare-post for all posts with AI-ish descriptions`
+- `prepare-post for uncommitted posts`
