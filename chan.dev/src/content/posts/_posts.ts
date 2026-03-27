@@ -116,3 +116,12 @@ export function extractTagCounts(entries: CollectionEntry[]) {
 			(a, b) => b.count - a.count || a.tag.localeCompare(b.tag)
 		)
 }
+
+export function entriesWithTagMetadata(entries: CollectionEntry[]) {
+	return entries.map((entry) => ({
+		slug: entry.slug,
+		title: entry.data.title,
+		publishDate: entry.data.publishDate?.toISOString(),
+		tags: (entry.data.tags ?? []).map((tag) => tag.toLowerCase()),
+	}))
+}
