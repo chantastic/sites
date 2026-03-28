@@ -18,7 +18,6 @@ interface ImportMetaEnv {
   readonly WORKOS_CLIENT_ID: string
   readonly WORKOS_REDIRECT_URI?: string
   readonly WORKOS_COOKIE_PASSWORD: string
-  readonly ANTHROPIC_API_KEY: string
 }
 
 interface ImportMeta {

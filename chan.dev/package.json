@@ -51,7 +51,6 @@
 		"wrangler": "^3.67.1"
 	},
 	"dependencies": {
-		"@anthropic-ai/sdk": "^0.17.1",
 		"@astrojs/cloudflare": "^9.2.1",
 		"@astrojs/react": "^3.6.1",
 		"@stackblitz/sdk": "^1.11.0",

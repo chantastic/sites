@@ -12,13 +12,12 @@ When deploys fail, features rot, or secrets feel suspicious, verify which extern
 Search for direct environment variable usage:
 
 ```bash
-rg -n "ASTRO_STUDIO_APP_TOKEN|ANTHROPIC_API_KEY|WORKOS_API_KEY|WORKOS_CLIENT_ID|WORKOS_COOKIE_PASSWORD|WORKOS_REDIRECT_URI|YOUTUBE_API_KEY|NODE_VERSION|import\.meta\.env|process\.env" . -g '!node_modules' -g '!dist'
+rg -n "ASTRO_STUDIO_APP_TOKEN|WORKOS_API_KEY|WORKOS_CLIENT_ID|WORKOS_COOKIE_PASSWORD|WORKOS_REDIRECT_URI|YOUTUBE_API_KEY|NODE_VERSION|import\.meta\.env|process\.env" . -g '!node_modules' -g '!dist'
 ```
 
 ### Current known usage
 
-- `ANTHROPIC_API_KEY` → `src/pages/api/generate-youtube-content.ts`
-- `YOUTUBE_API_KEY` → `src/pages/talks.astro`
+- `YOUTUBE_API_KEY` → local `npm run refresh:talks` workflow via `scripts/refresh-talks.mjs`, not app runtime
 - `WORKOS_API_KEY` → `src/lib/authkit.ts`
 - `WORKOS_CLIENT_ID` → `src/lib/authkit.ts`
 - `WORKOS_REDIRECT_URI` → `src/lib/authkit.ts`
