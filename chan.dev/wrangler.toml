@@ -1,3 +1,7 @@
 name = "chandev"
 compatibility_flags = ["nodejs_compat"]
 pages_build_output_dir = "dist"
+
+[vars]
+WORKOS_REDIRECT_URI = "https://chan.dev/auth/callback"
+WORKOS_CLIENT_ID = "client_01HRBZRK6DZZ4FK5YAFNE4K388"
