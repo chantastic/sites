@@ -1,0 +1,83 @@
+---
+import PostMeta from '#components/header-post-meta.astro'
+import Layout from '#layouts/Layout.astro'
+import * as LESSONS from '#content/lessons/_lessons'
+import Prose from '#components/prose.astro'
+import {titleCase} from 'title-case'
+
+export async function getStaticPaths() {
+	const lessons = await LESSONS.getCollection()
+	const collections = LESSONS.getUniqueCollectionNames(lessons)
+
+	return collections.map((collection_name) => ({
+		params: {collection_name},
+		props: {
+			lessons: LESSONS.getLessonsForCollection(
+				lessons,
+				collection_name
+			),
+		},
+	}))
+}
+
+const {collection_name} = Astro.params
+const {lessons} = Astro.props
+const courseKeys = LESSONS.getUniqueCourseKeys(lessons)
+const looseLessons = LESSONS.getLooseLessonsForCollection(
+	lessons,
+	String(collection_name)
+)
+---
+
+<Layout>
+	<Prose>
+		<small>
+			⇠ <a href="/">chan.dev</a>
+			/ <a href={`/${LESSONS.path()}`}>lessons</a>
+		</small>
+		<main class="mt-4">
+			<h1 class="tracking-tight">{titleCase(String(collection_name))}</h1>
+			{courseKeys.length > 0 && (
+				<>
+					<h2>Courses</h2>
+					<ul>
+						{
+							courseKeys.map((courseKey) => {
+								const [, course] = courseKey.split('/')
+								return (
+									<li>
+										<a href={`/${LESSONS.coursePath(courseKey)}`}>
+											{titleCase(course.replaceAll('-', ' '))}
+										</a>
+									</li>
+								)
+							})
+						}
+					</ul>
+				</>
+			)}
+			{looseLessons.length > 0 && (
+				<>
+					<h2>Lessons</h2>
+					<ul>
+						{
+							looseLessons.map((lesson) => (
+								<li>
+									<a href={`/${LESSONS.lessonPath(lesson)}`}>
+										{lesson.data.title}
+									</a>
+								</li>
+							))
+						}
+					</ul>
+				</>
+			)}
+		</main>
+	</Prose>
+	<PostMeta
+		title={`chantastic lessons about ${titleCase(String(collection_name))}`}
+		description={`Everything I've written down about ${collection_name}`}
+		path={LESSONS.collectionPath(String(collection_name))}
+		slot="page-meta"
+	/>
+</Layout>

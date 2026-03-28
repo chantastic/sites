@@ -5,6 +5,7 @@ import Layout from '#layouts/Layout.astro'
 import * as LESSONS from '#content/lessons/_lessons'
 
 const lessons = await LESSONS.getCollection()
+const collections = LESSONS.getUniqueCollectionNames(lessons)
 ---
 
 <Layout>
@@ -16,10 +17,10 @@ const lessons = await LESSONS.getCollection()
 			<h1 class="tracking-tight">Lessons</h1>
 			<ul>
 				{
-					lessons.map((entry) => (
+					collections.map((collection) => (
 						<li>
-							<a href={`/${LESSONS.path(entry.slug)}`}>
-								{entry.slug}
+							<a href={`/${LESSONS.collectionPath(collection)}`}>
+								{collection}
 							</a>
 						</li>
 					))
