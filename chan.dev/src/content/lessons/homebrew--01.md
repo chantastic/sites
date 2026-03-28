@@ -1,8 +1,11 @@
 ---
 title: Dump your dependencies
-slug: homebrew/dump-your-deps
+date: 2026-03-28
+collection: guides
+guide: homebrew
+guide_step: dump-your-deps
+sequence: dump-your-deps
 ---
-
 Homebrew has command that will export a manifest of brew-installed packages.
 
 ```sh

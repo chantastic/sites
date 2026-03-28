@@ -1,8 +1,11 @@
 ---
 title: 'Appendix A: Basic Usage'
-slug: homebrew/basics
+date: 2026-03-28
+collection: guides
+guide: homebrew
+guide_step: basics
+sequence: basics
 ---
-
 If you're new to Homebrew, here are a few basics for adding command line applications, GUI applications, and fonts.
 
 ## Install command line applications

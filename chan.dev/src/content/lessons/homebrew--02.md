@@ -1,8 +1,11 @@
 ---
 title: Bundling from Brewfiles
-slug: homebrew/bundling-from-brewfiles
+date: 2026-03-28
+collection: guides
+guide: homebrew
+guide_step: bundling-from-brewfiles
+sequence: bundling-from-brewfiles
 ---
-
 If you've used the default name of `Brewfile`, you can run the `brew bundle` command in that directory.
 
 ```sh

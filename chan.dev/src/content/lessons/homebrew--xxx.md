@@ -1,8 +1,11 @@
 ---
 title: 'Appendix: Storing machine-specific environment variables'
-slug: 'homebrew/env-variables'
+date: 2026-03-28
+collection: guides
+guide: homebrew
+guide_step: env-variables
+sequence: env-variables
 ---
-
 ZSHELL is the default shell in MacOS.
 
 And there are several dotfiles it makes use of for very different needs.

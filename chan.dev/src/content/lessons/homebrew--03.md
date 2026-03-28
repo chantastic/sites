@@ -1,8 +1,11 @@
 ---
 title: Conditionally bundle apps with environment variables
-slug: homebrew/conditional-dependencies
+date: 2026-03-28
+collection: guides
+guide: homebrew
+guide_step: conditional-dependencies
+sequence: conditional-dependencies
 ---
-
 Brew bundle allows for conditional loading of dependencies, using environmental variables.
 
 As an examples, I use different versions of node on my work and personal machines.
