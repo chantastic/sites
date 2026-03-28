@@ -6,17 +6,18 @@ import {url} from '#modules/site'
 
 const parser = new MarkdownIt()
 
-function formatPostEntryAsJSONItem([
+async function formatPostEntryAsJSONItem([
 	file,
 	{frontmatter, compiledContent},
 ]) {
 	let itemUrl = url(file.match(/posts\/(.+)\.md/)[1])
+	let html = await compiledContent()
 
 	return {
 		id: itemUrl,
 		url: itemUrl,
 		title: frontmatter.title,
-		content_html: sanitizeHtml(compiledContent(), {
+		content_html: sanitizeHtml(html, {
 			allowedTags: [
 				...sanitizeHtml.defaults.allowedTags,
 				'img',
@@ -41,9 +42,11 @@ export async function GET() {
 		}
 	)
 
-	const posts = POSTS.processFeedEntries(
-		postImportResult,
-		formatPostEntryAsJSONItem
+	const posts = await Promise.all(
+		POSTS.processFeedEntries(
+			postImportResult,
+			formatPostEntryAsJSONItem
+		)
 	)
 
 	return new Response(

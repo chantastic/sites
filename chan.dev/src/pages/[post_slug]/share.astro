@@ -44,7 +44,7 @@ function githubusercontent_url_from_src(src: string) {
 }
 
 /* KLUDGE: this should absolutely be a proper micromark extension but I don't understand them*/
-let mutatedBody = entry.body
+let mutatedBody = entry.body ?? ''
 
 mutatedBody = mutatedBody.replace(
 	/!\[(?<altText>.*)\]\((?<imageSrc>.*)\)/g,

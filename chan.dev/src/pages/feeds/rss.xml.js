@@ -4,17 +4,19 @@ import sanitizeHtml from 'sanitize-html'
 import site from '#/metadata.json'
 import {url} from '#modules/site'
 
-function formatPostEntryAsRSSItem([
+async function formatPostEntryAsRSSItem([
 	file,
 	{frontmatter, compiledContent},
 ]) {
+	let html = await compiledContent()
+
 	return {
 		title: frontmatter.title,
 		pubDate: frontmatter.publishDate,
 		description: frontmatter.description,
 		categories: frontmatter.tags,
 		link: url(file.match(/posts\/(.+)\.md/)[1]),
-		content: sanitizeHtml(compiledContent(), {
+		content: sanitizeHtml(html, {
 			allowedTags: [
 				...sanitizeHtml.defaults.allowedTags,
 				'img',
@@ -35,9 +37,11 @@ export async function GET() {
 		}
 	)
 
-	const posts = POSTS.processFeedEntries(
-		postImportResult,
-		formatPostEntryAsRSSItem
+	const posts = await Promise.all(
+		POSTS.processFeedEntries(
+			postImportResult,
+			formatPostEntryAsRSSItem
+		)
 	)
 
 	return rss({

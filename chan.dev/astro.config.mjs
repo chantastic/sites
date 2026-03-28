@@ -76,10 +76,6 @@ const site = import.meta.env.DEV
 
 // https://astro.build/config
 export default defineConfig({
-	experimental: {
-		contentCollectionCache: true,
-		// devOverlay: true,
-	},
 	server: {
 		port: 2426,
 	},
@@ -191,6 +187,5 @@ export default defineConfig({
 			],
 		],
 	},
-	output: 'hybrid',
 	adapter: cloudflare(),
 })
