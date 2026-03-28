@@ -5,8 +5,11 @@ date: 2023-11-09
 egghead: https://app.egghead.io/lessons/egghead-host-storybook-for-free-with-chromatic
 status: draft
 order: 18
+collection: guides
+guide: the-beginners-guide-to-storybook-in-react
+guide_step: host-storybook-for-free-with-chromatic
+sequence: host-storybook-for-free-with-chromatic
 ---
-
 [be logged into github. requires github. do everything in Arc split browser]
 
 - Under project, we'll click the `Create a repository` button (to get this on GitHub)

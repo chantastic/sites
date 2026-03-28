@@ -5,8 +5,11 @@ egghead: https://app.egghead.io/lessons/egghead-integrate-storybook-into-your-de
 date: 2023-11-09
 status: draft
 order: 17
+collection: guides
+guide: the-beginners-guide-to-storybook-in-react
+guide_step: integrate-storybook-into-your-development-environment
+sequence: integrate-storybook-into-your-development-environment
 ---
-
 - Now I want to show you how to bring this into a project of your own…
 - generate a Next.js app
 - add storybook with `npx storybook@latest init`

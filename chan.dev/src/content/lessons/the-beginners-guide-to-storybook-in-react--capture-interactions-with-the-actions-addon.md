@@ -5,8 +5,11 @@ date: 2023-11-09
 status: post-production
 egghead: https://app.egghead.io/lessons/egghead-capture-interactions-with-actions-addon/edit
 order: 10
+collection: guides
+guide: the-beginners-guide-to-storybook-in-react
+guide_step: capture-interactions-with-the-actions-addon
+sequence: capture-interactions-with-the-actions-addon
 ---
-
 [React specific]
 [maybe use an example where I add `console.log` to the demo]
 

@@ -5,8 +5,11 @@ date: 2023-11-06
 status: post-production
 egghead: https://app.egghead.io/lessons/egghead-get-started-with-storybook-7-course-introduction/edit
 order: 1
+collection: guides
+guide: the-beginners-guide-to-storybook-in-react
+guide_step: get-started-with-storybook-7-course-introduction
+sequence: get-started-with-storybook-7-course-introduction
 ---
-
 <div data-responsive-youtube-container>
   <iframe src="https://drive.google.com/file/d/1l0HpRH6Bu72zYBYRyhnFCk1vQQIlVOoC/preview" width="640" height="480" allow="autoplay"></iframe>
 </div>

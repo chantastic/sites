@@ -5,8 +5,11 @@ date: 2023-11-09
 egghead: https://app.egghead.io/lessons/egghead-configure-storybook-with-global-stylesheets-and-fonts/edit
 status: post-production
 order: 15
+collection: guides
+guide: the-beginners-guide-to-storybook-in-react
+guide_step: add-global-stylesheets-and-fonts
+sequence: add-global-stylesheets-and-fonts
 ---
-
 Most projects have global stylesheets (even if just resets) and custom fonts.
 
 In Storybook configuration that impacts the entire project can be found in the `.storybook` directory.

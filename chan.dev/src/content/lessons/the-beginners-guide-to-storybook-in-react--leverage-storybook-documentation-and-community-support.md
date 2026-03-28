@@ -5,8 +5,11 @@ date: 2023-11-09
 status: post-production
 egghead: https://app.egghead.io/lessons/storybook-leverage-storybook-documentation-and-community-support-course-conclusion
 order: 19
+collection: guides
+guide: the-beginners-guide-to-storybook-in-react
+guide_step: leverage-storybook-documentation-and-community-support
+sequence: leverage-storybook-documentation-and-community-support
 ---
-
 - Hey! We made it all the way to the end. Congratulations! 🎉
 - We covered a lot and you could go off right now and start building some incredibly robust UI with just the things that we covered.
 - But _eventually_ you'll need access to more advanced features or APIs that we didn't cover in this brief beginners course.

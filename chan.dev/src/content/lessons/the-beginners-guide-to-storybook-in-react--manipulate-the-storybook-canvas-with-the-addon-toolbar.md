@@ -5,8 +5,11 @@ date: 2023-11-09
 status: post-production
 egghead: https://app.egghead.io/lessons/egghead-manipulate-the-storybook-canvas-with-the-addon-toolbar/edit
 order: 4
+collection: guides
+guide: the-beginners-guide-to-storybook-in-react
+guide_step: manipulate-the-storybook-canvas-with-the-addon-toolbar
+sequence: manipulate-the-storybook-canvas-with-the-addon-toolbar
 ---
-
 The Storybook Addon Toolbar provides one-click access to essential visual debugging tools.
 
 - Open a `Button` sample story.

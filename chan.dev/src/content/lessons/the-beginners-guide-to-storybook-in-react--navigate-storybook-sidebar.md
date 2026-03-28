@@ -5,8 +5,11 @@ date: 2023-11-06
 egghead: https://app.egghead.io/lessons/egghead-navigate-storybook-sidebar/edit
 status: post-production
 order: 3
+collection: guides
+guide: the-beginners-guide-to-storybook-in-react
+guide_step: navigate-storybook-sidebar
+sequence: navigate-storybook-sidebar
 ---
-
 To do anything in Storybook, we need to understand the Storybook sidebar.
 It's is the navigation center of Storybook — where you select which story appears in the canvas.
 

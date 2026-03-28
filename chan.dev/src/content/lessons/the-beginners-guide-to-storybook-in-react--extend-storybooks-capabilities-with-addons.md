@@ -5,8 +5,11 @@ date: 2023-11-09
 egghead: https://app.egghead.io/lessons/egghead-extend-storybook-s-capabilities-with-addons/edit
 status: post-production
 order: 13
+collection: guides
+guide: the-beginners-guide-to-storybook-in-react
+guide_step: extend-storybooks-capabilities-with-addons
+sequence: extend-storybooks-capabilities-with-addons
 ---
-
 Storybook is just the beginning.
 
 [Screen: Addons page](https://storybook.js.org/integrations)

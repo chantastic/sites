@@ -5,8 +5,11 @@ date: 2023-11-09
 status: post-production
 egghead: https://app.egghead.io/lessons/egghead-observe-component-behavior-with-actions-addon/edit
 order: 6
+collection: guides
+guide: the-beginners-guide-to-storybook-in-react
+guide_step: observe-component-behavior-with-the-actions-addon
+sequence: observe-component-behavior-with-the-actions-addon
 ---
-
 We've all added `console.log` statements to validate a component interface.
 With Storybook Actions, that's a thing of the past!
 

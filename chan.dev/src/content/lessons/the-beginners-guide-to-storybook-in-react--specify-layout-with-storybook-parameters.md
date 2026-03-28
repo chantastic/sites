@@ -5,8 +5,11 @@ date: 2023-11-09
 status: post-production
 egghead: https://app.egghead.io/lessons/egghead-specify-layout-with-storybook-parameters
 order: 12
+collection: guides
+guide: the-beginners-guide-to-storybook-in-react
+guide_step: specify-layout-with-storybook-parameters
+sequence: specify-layout-with-storybook-parameters
 ---
-
 Story objects use Parameters to set configuration in Storybook.
 
 Let's use a common Storybook Parameter (`layout`) to learn how they work.

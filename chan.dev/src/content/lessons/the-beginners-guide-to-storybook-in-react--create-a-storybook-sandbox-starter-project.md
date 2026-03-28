@@ -5,8 +5,11 @@ date: 2023-11-06
 egghead: https://app.egghead.io/lessons/egghead-create-a-storybook-sandbox-starter-project/edit
 status: post-production
 order: 2
+collection: guides
+guide: the-beginners-guide-to-storybook-in-react
+guide_step: create-a-storybook-sandbox-starter-project
+sequence: create-a-storybook-sandbox-starter-project
 ---
-
 ## Setup
 
 [Screen: StackBlitz homepage]

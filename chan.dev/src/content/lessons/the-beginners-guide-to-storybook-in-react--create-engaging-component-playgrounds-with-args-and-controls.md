@@ -5,8 +5,11 @@ date: 2023-11-09
 egghead: https://app.egghead.io/lessons/egghead-create-engaging-component-playgrounds-with-args-and-controls/edit
 status: post-production
 order: 9
+collection: guides
+guide: the-beginners-guide-to-storybook-in-react
+guide_step: create-engaging-component-playgrounds-with-args-and-controls
+sequence: create-engaging-component-playgrounds-with-args-and-controls
 ---
-
 [start on the previous story with the addons panel closed, zoomed in]
 
 When we define stories with CSF object syntax, we get Controls for free!

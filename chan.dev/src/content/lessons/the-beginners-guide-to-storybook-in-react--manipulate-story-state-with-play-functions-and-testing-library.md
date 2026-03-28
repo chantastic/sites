@@ -5,8 +5,11 @@ date: 2023-11-09
 egghead: https://app.egghead.io/lessons/egghead-manipulate-story-state-with-play-functions-and-testing-library-events/edit
 status: draft
 order: 11
+collection: guides
+guide: the-beginners-guide-to-storybook-in-react
+guide_step: manipulate-story-state-with-play-functions-and-testing-library
+sequence: manipulate-story-state-with-play-functions-and-testing-library
 ---
-
 Let's build up a story that utilizes user events.
 
 [Show `Page` component code].

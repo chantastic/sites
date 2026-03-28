@@ -5,8 +5,11 @@ date: 2023-11-09
 status: post-production
 egghead: https://app.egghead.io/lessons/egghead-explore-component-interfaces-with-storybook-controls/edit
 order: 5
+collection: guides
+guide: the-beginners-guide-to-storybook-in-react
+guide_step: explore-component-interfaces-with-storybook-controls
+sequence: explore-component-interfaces-with-storybook-controls
 ---
-
 In Storybook, we can interactively explore and stress-test components with Storybook Controls.
 
 - Open a `Button` sample story.

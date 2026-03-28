@@ -5,8 +5,11 @@ date: 2023-11-09
 status: post-production
 egghead: https://app.egghead.io/lessons/egghead-analyze-how-components-respond-to-fixed-events-with-the-interactions-addon/edit
 order: 7
+collection: guides
+guide: the-beginners-guide-to-storybook-in-react
+guide_step: analyze-how-components-respond-to-fixed-events-with-interactions-addon
+sequence: analyze-how-components-respond-to-fixed-events-with-interactions-addon
 ---
-
 The Storybook Interactions Addon can reliably replay user events atop your components, putting them into states that props alone can't.
 
 This is great for collecting and debugging user flows.

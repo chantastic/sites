@@ -5,8 +5,11 @@ date: 2023-11-09
 egghead: https://app.egghead.io/lessons/egghead-generate-documentation-effortlessly-with-autodocs/edit
 status: post-production
 order: 14
+collection: guides
+guide: the-beginners-guide-to-storybook-in-react
+guide_step: generate-documentation-effortlessly-with-autodocs
+sequence: generate-documentation-effortlessly-with-autodocs
 ---
-
 [Demo the sample stories from another example]
 Our sample stories came with this really cool documentation.
 These must be really hard to implement, right?

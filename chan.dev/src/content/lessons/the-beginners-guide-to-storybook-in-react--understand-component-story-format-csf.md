@@ -5,8 +5,11 @@ date: 2023-11-09
 egghead: https://app.egghead.io/lessons/egghead-understand-component-story-format-csf/edit
 status: post-production
 order: 8
+collection: guides
+guide: the-beginners-guide-to-storybook-in-react
+guide_step: understand-component-story-format-csf
+sequence: understand-component-story-format-csf
 ---
-
 [ensure that addon panel is disabled. we want to showcase it in the next lesson.]
 
 Now that we've covered the bulk of Storybook's UI (and where it intersets with code),

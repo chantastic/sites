@@ -4,8 +4,11 @@ description: Personalize your Storybook workspace by adding a custom logo. Learn
 date: 2023-11-09
 status: cancelled
 order: 16
+collection: guides
+guide: the-beginners-guide-to-storybook-in-react
+guide_step: brand-your-storybook-with-a-custom-logo
+sequence: brand-your-storybook-with-a-custom-logo
 ---
-
 Let's make Storybook a project logo.
 We'll start by putting all the pieces in place.
 
