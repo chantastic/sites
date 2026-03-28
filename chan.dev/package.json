@@ -58,7 +58,7 @@
 		"@types/react-dom": "^18.3.0",
 		"@workos-inc/node": "^8.10.0",
 		"iron-session": "^8.0.2",
-		"jose": "^5.6.3",
+		"jose": "^6.2.2",
 		"minimatch": "^10.0.1",
 		"react": "^18.3.1",
 		"react-dom": "^18.3.1",
