@@ -5,13 +5,14 @@ import ShareBar from '#components/post-share-bar.astro'
 import * as POSTS from '#content/posts/_posts'
 import Post from '#components/post.astro'
 import Prose from '#components/prose.astro'
+import {entrySlug} from '#lib/content-entry'
 // import * as ENTITIES from "#pages/entities/entities";
 
 export async function getStaticPaths() {
 	const posts = await POSTS.getCollection(() => true)
 
 	return posts.map((entry) => ({
-		params: {post_slug: entry.slug},
+		params: {post_slug: entrySlug(entry)},
 		props: {entry},
 	}))
 }
@@ -21,6 +22,7 @@ interface Props {
 }
 
 const {entry} = Astro.props
+const slug = entrySlug(entry)
 
 // const relatedEntities: ENTITIES.CollectionEntry[] =
 //   await getEntries(entry.data.shoutouts);
@@ -72,6 +74,6 @@ const {entry} = Astro.props
 		description={entry.data.description}
 		cover={entry.data.cover}
 		og={entry.data.og}
-		path={entry.slug}
+		path={slug}
 	/>
 </Layout>

@@ -5,6 +5,7 @@ import GlobalStyles from '#components/header-global-styles.astro'
 import BodyHidden from '#components/body-hidden.astro'
 import site from '#/metadata.json'
 import type * as POSTS from '#content/posts/_posts'
+import {entrySlug, renderEntry} from '#lib/content-entry'
 import {url} from '#modules/site'
 
 interface Props {
@@ -12,7 +13,7 @@ interface Props {
 }
 
 const {entry} = Astro.props
-let content = await entry?.render()
+let content = entry ? await renderEntry(entry) : undefined
 ---
 
 <!doctype html>
@@ -73,7 +74,7 @@ let content = await entry?.render()
 									//   height: "630",
 									// },
 								},
-								'url': url(entry.slug),
+								'url': url(entrySlug(entry)),
 								'datePublished': entry.data.publishDate,
 								// dateCreated: "2020-01-06T00:00:00.000Z",
 								// dateModified: "2020-01-06T00:00:00.000Z",
@@ -114,7 +115,7 @@ let content = await entry?.render()
 								//   height: "630",
 								// },
 							},
-							'url': url(entry.slug),
+							'url': url(entrySlug(entry)),
 							// 'datePublished': entry.data.publishDate,
 							// dateCreated: "2020-01-06T00:00:00.000Z",
 							// dateModified: "2020-01-06T00:00:00.000Z",

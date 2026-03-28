@@ -5,6 +5,7 @@ import PostMeta from '#components/header-post-meta.astro'
 import * as POSTS from '#content/posts/_posts'
 import * as COLLECTION from '#modules/collection'
 import {getPlatformShortoutsForRelatedEntities} from '#content/entities/_entities'
+import {entrySlug} from '#lib/content-entry'
 import {url} from '#modules/site'
 import {micromark} from 'micromark'
 import {gfm, gfmHtml} from 'micromark-extension-gfm'
@@ -16,7 +17,7 @@ export async function getStaticPaths() {
 	const posts = await POSTS.getCollection(() => true)
 
 	return posts.map((entry) => ({
-		params: {post_slug: entry.slug},
+		params: {post_slug: entrySlug(entry)},
 		props: {entry},
 	}))
 }
@@ -26,6 +27,7 @@ interface Props {
 }
 
 const {entry} = Astro.props
+const slug = entrySlug(entry)
 
 // @ts-ignore
 let relatedShoutouts
@@ -117,9 +119,9 @@ const simpleHTMLBody = sanitizeHtml(
 					}
 				</dd>
 				<dt>Slug:</dt>
-				<dd>{entry.slug}</dd>
+				<dd>{slug}</dd>
 				<dt>Canonical url:</dt>
-				<dd>{url(entry.slug)}</dd>
+				<dd>{url(slug)}</dd>
 				<dt>publishDate:</dt>
 				<dd>
 					{
@@ -226,9 +228,9 @@ const simpleHTMLBody = sanitizeHtml(
 		title={entry.data.title}
 		description={entry.data.description}
 		og={entry.data.og}
-		path={entry.slug}
+		path={slug}
 	>
-		<link rel="canonical" href={url(entry.slug)} />
+		<link rel="canonical" href={url(slug)} />
 		<title slot="title">{entry.data.title}</title>
 	</PostMeta>
 </Layout>

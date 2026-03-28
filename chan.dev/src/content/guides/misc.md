@@ -1,0 +1,39 @@
+---
+title: miscellaneous topics
+---
+
+- my interview with syntax
+- 1Password for developers
+  - https://developer.1password.com/docs/cli/get-started/
+  - watchtower to look for credentials on disk
+  - [SSH](https://developer.1password.com/docs/ssh/)
+  - [The glut](https://developer.1password.com/)
+- [React keys, Kent's example](https://github.com/kentcdodds/react-fundamentals/blob/0581c8ccf6d6230f798de987bcd568bff286c7f0/src/exercise/07.js#L26)
+  - https://www.youtube.com/live/-vFK-fPfAD8?si=XSIm0ilKYL3LUrHw
+- sweetalert2 refactor
+  - Make it a module that exports config, not a class. classes are a bad boundary for extensability. bad if your app doesn't own the implementation
+  - Provide all CSS fallback values as static CSS — not CSS Variable defaults — for IE11 support in Church Center
+  - Don't use `system` values, let apps map those. This leaves the apps in control and doesn't interduce an interdpendency on @planningcenter/system. The lib should remain focused on simply supplying defaults and extension points for sweetalert2
+  - Don't introduce  a new API. When we leave it unopionated, we keep the entire breadth of documentation and features available to teams using it
+  - With the current system, am I able to chain .then() onto the promises? Or is that not returned to me?
+- Node and corepack
+- Add text overlay in cloudinary
+  - https://support.cloudinary.com/hc/en-us/articles/202521442-How-to-add-a-text-overlay-
+  - https://support.cloudinary.com/hc/en-us/articles/360013245620-Adding-Text-Overlays-to-Images-with-Cloudinary-s-Management-Console
+  - https://fonts.google.com
+  - https://cloudinary.com/documentation/transformation_reference#styling_parameters
+- [URI encoding in JavaScript](https://stackoverflow.com/questions/6554039/how-do-i-url-encode-something-in-node-js)
+- [removeProperty](https://twitter.com/_jayphelps/status/1432504457191956483?s=21
+)
+- [compose event headers](https://github.com/reach/reach-ui/blob/develop/packages/utils/src/compose-event-handlers.ts)
+- NodeList
+- Intl.Numbers
+- mutationObserver
+- accessible emoji in React
+- navigator.language
+- Date.now()
+- toLocaleDateString()
+  - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleString
+  - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat/DateTimeFormat
+- composeeventhandlers
+- `:user-valid`, `:user-invalid`

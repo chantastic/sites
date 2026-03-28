@@ -1,5 +1,6 @@
 import {collectionSchema as dailies} from '#content/dailies/_dailies'
 import {collectionSchema as entities} from '#content/entities/_entities'
+import {collectionSchema as guides} from '#content/guides/_guides'
 import {collectionSchema as guide_steps} from '#content/guide_steps/_guide_steps'
 import {collectionSchema as lessons} from '#content/lessons/_lessons'
 import {collectionSchema as os} from '#content/os/_os'
@@ -11,6 +12,7 @@ import {collectionSchema as uses} from '#content/uses/_uses'
 export const collections = {
 	dailies,
 	entities,
+	guides,
 	guide_steps,
 	lessons,
 	os,

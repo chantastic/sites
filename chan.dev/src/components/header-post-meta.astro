@@ -20,6 +20,7 @@ const { title, description, path, cover, og } = Astro.props;
 const domainAugmentedTitle = `${title} | ${site.title}`;
 const uriEncodedTitle = encodeURIComponent(title);
 const defaultOGImage = `https://res.cloudinary.com/chantastic/image/upload/c_fit,g_center,h_220,l_text:rubik_40_bold_line_spacing_0_center:${uriEncodedTitle},w_460,x_-112,y_-44/v1630109662/chan.dev/chan.dev-cloud.jpg`;
+const ogAudio = og?.audio;
 
 function getMetaImage() {
   if (cover?.src) {
@@ -47,7 +48,7 @@ function getMetaImage() {
 <meta property="og:type" content="article" />
 <meta property="og:url" content={url(path)} />
 <meta property="og:image" content={getMetaImage()} />
-{og?.audio && <meta property="og:audio" content={og?.audio} />}
+{ogAudio ? <meta property="og:audio" content={ogAudio} /> : null}
 
 <!-- article -->
 <meta property="article:publisher" content={import.meta.env.SITE} />

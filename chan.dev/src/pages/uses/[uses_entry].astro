@@ -4,11 +4,12 @@ import PostMeta from '#components/header-post-meta.astro'
 import PostNotWritten from '#components/body-page-not-written.astro'
 import * as USES from '#content/uses/_uses'
 import Prose from '#components/prose.astro'
+import {entrySlug, renderEntry} from '#lib/content-entry'
 
 export async function getStaticPaths() {
 	const posts = await USES.getCollection()
 	return posts.map((entry) => ({
-		params: {uses_entry: entry.slug},
+		params: {uses_entry: entrySlug(entry)},
 		props: {entry},
 	}))
 }
@@ -18,12 +19,13 @@ interface Props {
 }
 
 const {entry} = Astro.props
-const {Content} = await entry.render()
+const {Content} = await renderEntry(entry)
+const slug = entrySlug(entry)
 
 const title =
 	entry.data.manufacturer && entry.data.model
 		? `${entry.data.manufacturer} ${entry.data.model}`
-		: entry.slug
+		: slug
 ---
 
 <Layout>
@@ -49,7 +51,7 @@ const title =
 				entry.body ? (
 					<Content />
 				) : (
-					<PostNotWritten path={USES.path(entry.slug)} />
+					<PostNotWritten path={USES.path(slug)} />
 				)
 			}
 			{
@@ -66,6 +68,6 @@ const title =
 		slot="page-meta"
 		title={title}
 		description={`${title} review`}
-		path={USES.path(entry.slug)}
+		path={USES.path(slug)}
 	/>
 </Layout>

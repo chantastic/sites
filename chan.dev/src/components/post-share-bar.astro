@@ -1,20 +1,22 @@
 ---
 import * as POSTS from '#content/posts/_posts'
+import {entrySlug} from '#lib/content-entry'
 import * as SITE from '#modules/site'
 
 const {entry} = Astro.props
+const slug = entrySlug(entry)
 ---
 
 <div class="flex py-4 mt-12 border-t-2 border-gray-100">
 	<a
 		href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(
 			`I just read "${entry.data.title}" by @chantastic\n\n`
-		)}&url=${encodeURIComponent(SITE.url(entry.slug))}`}
+		)}&url=${encodeURIComponent(SITE.url(slug))}`}
 		>Tweet this article</a
 	>
 	<div class="mx-[auto]"></div>
 	<a
-		href=`https://twitter.com/search?q=${encodeURIComponent(SITE.url(entry.slug))}`
+		href=`https://twitter.com/search?q=${encodeURIComponent(SITE.url(slug))}`
 		>Discuss on Twitter</a
 	>
 	<div class="mx-3">&middot;</div>

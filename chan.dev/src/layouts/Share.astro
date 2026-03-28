@@ -5,6 +5,7 @@ import GlobalStyles from '#components/header-global-styles.astro'
 import site from '#/metadata.json'
 import Prose from '#components/prose.astro'
 import type * as POSTS from '#content/posts/_posts'
+import {entrySlug} from '#lib/content-entry'
 import {url} from '#modules/site'
 
 interface Props {
@@ -54,7 +55,7 @@ const {entry} = Astro.props
 								'name': 'chantastic, llc',
 								'url': 'https://chan.dev',
 							},
-							'url': url(entry.slug),
+							'url': url(entrySlug(entry)),
 							'datePublished': entry.data.publishDate,
 							'description': entry.data.description,
 							'author': {

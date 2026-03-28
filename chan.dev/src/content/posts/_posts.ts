@@ -1,5 +1,6 @@
 import * as ASTRO_CONTENT from 'astro:content'
 import * as COLLECTION from '#modules/collection'
+import {entrySlug} from '#lib/content-entry'
 import {z, reference, defineCollection} from 'astro:content'
 
 export const COLLECTION_NAME = 'posts'
@@ -119,7 +120,7 @@ export function extractTagCounts(entries: CollectionEntry[]) {
 
 export function entriesWithTagMetadata(entries: CollectionEntry[]) {
 	return entries.map((entry) => ({
-		slug: entry.slug,
+		slug: entrySlug(entry),
 		title: entry.data.title,
 		publishDate: entry.data.publishDate?.toISOString(),
 		tags: (entry.data.tags ?? []).map((tag) => tag.toLowerCase()),

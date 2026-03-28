@@ -3,12 +3,13 @@ import Layout from '#layouts/Layout.astro'
 import PostMeta from '#components/header-post-meta.astro'
 import * as OS from '#content/os/_os'
 import Prose from '#components/prose.astro'
+import {entrySlug, renderEntry} from '#lib/content-entry'
 
 export async function getStaticPaths() {
 	const posts = await OS.getCollection()
 
 	return posts.map((entry) => ({
-		params: {os_entry: entry.slug},
+		params: {os_entry: entrySlug(entry)},
 		props: {entry},
 	}))
 }
@@ -18,7 +19,8 @@ interface Props {
 }
 
 const {entry} = Astro.props
-const {Content} = await entry.render()
+const {Content} = await renderEntry(entry)
+const slug = entrySlug(entry)
 ---
 
 <Layout>
@@ -39,6 +41,6 @@ const {Content} = await entry.render()
 	<PostMeta
 		slot="page-meta"
 		title={entry.data.title}
-		path={OS.path(entry.slug)}
+		path={OS.path(slug)}
 	/>
 </Layout>
