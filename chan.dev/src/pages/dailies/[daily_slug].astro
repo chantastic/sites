@@ -2,13 +2,14 @@
 import Prose from '#components/prose.astro'
 import Layout from '#layouts/Layout.astro'
 import * as DAILIES from '#content/dailies/_dailies'
+import {entrySlug, renderEntry} from '#lib/content-entry'
 
 export async function getStaticPaths() {
 	let entries = await DAILIES.getCollection()
 
 	return entries.map((entry) => ({
 		params: {
-			daily_slug: entry.slug,
+			daily_slug: entrySlug(entry),
 		},
 		props: {
 			entry,
@@ -17,12 +18,12 @@ export async function getStaticPaths() {
 }
 
 let {entry} = Astro.props
-let {Content} = await entry.render()
+let {Content} = await renderEntry(entry)
 ---
 
 <Layout>
 	<Prose as="main">
-		<h1>{entry.slug}</h1>
+		<h1>{entrySlug(entry)}</h1>
 		<Content />
 	</Prose>
 </Layout>

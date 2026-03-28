@@ -1,13 +1,14 @@
 ---
 import type * as POSTS from '#content/posts/_posts'
 import {Image} from 'astro:assets'
+import {renderEntry} from '#lib/content-entry'
 
 interface Props {
 	entry: POSTS.CollectionEntry
 }
 
 const {entry} = Astro.props
-const {Content} = await entry.render()
+const {Content} = await renderEntry(entry)
 ---
 
 <>

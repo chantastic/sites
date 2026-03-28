@@ -6,13 +6,14 @@ import Prose from "#components/prose.astro";
 import CrossPostDetails from "#components/body-hidden-share-cross-post-details.astro";
 import SocialPostDetails from "#components/body-hidden-share-social-post-details.astro";
 import { url } from "#modules/site";
+import {entrySlug, renderEntry} from '#lib/content-entry'
 
 interface Props {
   entry?: POSTS.CollectionEntry
 }
 
 const { entry } = Astro.props;
-const maybeContent = await entry?.render();
+const maybeContent = entry ? await renderEntry(entry) : undefined;
 ---
 
 <Prose>
@@ -28,9 +29,9 @@ const maybeContent = await entry?.render();
             <dt>Title: </dt>
             <dd>{entry.data.title}</dd>
             <dt>Slug: </dt>
-            <dd>{entry.slug}</dd>
+            <dd>{entrySlug(entry)}</dd>
             <dt>Canonical url: </dt>
-            <dd>{url(entry.slug)}</dd>
+            <dd>{url(entrySlug(entry))}</dd>
             {entry.data.publishDate &&
               <dt>publishDate: </dt>
               <dd>{COLLECTION.formatDate(entry.data.publishDate)}</dd>
