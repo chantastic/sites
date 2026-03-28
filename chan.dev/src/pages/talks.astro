@@ -1,96 +1,109 @@
 ---
-import Layout from "#layouts/Layout.astro";
-import PostMeta from "#components/header-post-meta.astro";
-import Prose from "#components/prose.astro";
+import Layout from '#layouts/Layout.astro'
+import PostMeta from '#components/header-post-meta.astro'
+import Prose from '#components/prose.astro'
 
-const url = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet%2CcontentDetails&maxResults=50&playlistId=PLnc_NxpmOxaPBbn1PysP30GB0_8aQGnAa&key=${
-  import.meta.env.YOUTUBE_API_KEY
-}`;
+const apiKey = import.meta.env.YOUTUBE_API_KEY
+const playlistId = 'PLnc_NxpmOxaPBbn1PysP30GB0_8aQGnAa'
 
-async function fetchData(url: RequestInfo | URL) {
-  try {
-    const response = await fetch(url);
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
-    }
-    const data = await response.json();
-    return data;
-  } catch (error) {
-    console.error(`Error fetching data: ${error}`);
-    return null;
-  }
+async function fetchVideos() {
+	if (!apiKey) {
+		console.warn('YOUTUBE_API_KEY is not set')
+		return []
+	}
+
+	const url = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet%2CcontentDetails&maxResults=50&playlistId=${playlistId}&key=${apiKey}`
+
+	try {
+		const response = await fetch(url)
+		if (!response.ok) {
+			throw new Error(`HTTP error! status: ${response.status}`)
+		}
+		const data = await response.json()
+		return Array.isArray(data?.items) ? data.items : []
+	} catch (error) {
+		console.error(`Error fetching talks: ${error}`)
+		return []
+	}
 }
 
 function truncateTitle(str: string | null | undefined) {
-  if (typeof str !== "string") {
-    return "";
-  }
+	if (typeof str !== 'string') {
+		return ''
+	}
 
-  if (str.length > 55) {
-    return str.slice(0, 55) + "...";
-  }
+	if (str.length > 55) {
+		return str.slice(0, 55) + '...'
+	}
 
-  return str;
+	return str
 }
 
-const videos = await fetchData(url);
+const videos = await fetchVideos()
 ---
 
 <!-- https://tailwindui.com/components/application-ui/lists/grid-lists --><!-- TODO: this page should not have `prose` on it -->
 <Layout>
-  <main>
-    <Prose class="mb-8">
-      <h1 class="tracking-tight">Talks</h1>
-    </Prose>
+	<main>
+		<Prose class="mb-8">
+			<h1 class="tracking-tight">Talks</h1>
+		</Prose>
 
-    <ul
-      role="list"
-      class="grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-3 sm:gap-x-6 lg:grid-cols-4 xl:gap-x-8"
-    >
-      {
-        videos.items.map(
-          (video: {
-            snippet: {
-              publishedAt: string | number | Date;
-              resourceId: { videoId: any };
-              thumbnails: {
-                high: { url: string | null | undefined };
-              };
-              title: string | null | undefined;
-            };
-          }) => (
-            <li class="relative">
-              <a
-                href={`https://www.youtube.com/watch?v=${video.snippet.resourceId.videoId}`}
-                target="_blank"
-                rel="noreferrer"
-              >
-                <div class="group aspect-w-10 aspect-h-7 block w-full overflow-hidden rounded-lg bg-gray-100 focus-within:ring-2 focus-within:ring-indigo-500 focus-within:ring-offset-2 focus-within:ring-offset-gray-100">
-                  <img
-                    src={video.snippet.thumbnails.high?.url}
-                    alt={video.snippet.title}
-                  />
-                </div>
-                <Prose class="text-sm font-medium mt-2">
-                  <p class="pointer-events-none">
-                    {truncateTitle(video.snippet.title)}
-                  </p>
-                  <p class="pointer-events-none">
-                    {new Date(video.snippet.publishedAt).toLocaleDateString(
-                      "en-US",
-                      {
-                        year: "numeric",
-                        month: "short",
-                      }
-                    )}
-                  </p>
-                </Prose>
-              </a>
-            </li>
-          )
-        )
-      }
-    </ul>
-  </main>
-  <PostMeta slot="page-meta" title="chantastic talks" path={"/talks"} />
+		{
+			videos.length ? (
+				<ul
+					role="list"
+					class="grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-3 sm:gap-x-6 lg:grid-cols-4 xl:gap-x-8"
+				>
+					{
+						videos.map(
+							(video: {
+								snippet: {
+									publishedAt: string | number | Date
+									resourceId: {videoId: string}
+									thumbnails: {
+										high?: {url?: string}
+									}
+									title: string | null | undefined
+								}
+							}) => (
+								<li class="relative">
+									<a
+										href={`https://www.youtube.com/watch?v=${video.snippet.resourceId.videoId}`}
+										target="_blank"
+										rel="noreferrer"
+									>
+										<div class="group aspect-w-10 aspect-h-7 block w-full overflow-hidden rounded-lg bg-gray-100 focus-within:ring-2 focus-within:ring-indigo-500 focus-within:ring-offset-2 focus-within:ring-offset-gray-100">
+											<img
+												src={video.snippet.thumbnails.high?.url}
+												alt={video.snippet.title}
+											/>
+										</div>
+										<Prose class="text-sm font-medium mt-2">
+											<p class="pointer-events-none">
+												{truncateTitle(video.snippet.title)}
+											</p>
+											<p class="pointer-events-none">
+												{new Date(
+													video.snippet.publishedAt
+												).toLocaleDateString('en-US', {
+													year: 'numeric',
+													month: 'short',
+												})}
+											</p>
+										</Prose>
+									</a>
+								</li>
+							)
+						)
+					}
+				</ul>
+			) : (
+				<Prose>
+					<p>Talks are temporarily unavailable.</p>
+				</Prose>
+			)
+		}
+	</main>
+	<PostMeta slot="page-meta" title="chantastic talks" path={'/talks'} />
 </Layout>
