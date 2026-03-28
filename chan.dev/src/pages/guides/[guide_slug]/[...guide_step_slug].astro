@@ -1,31 +1,52 @@
 ---
 import Layout from './_layout.astro'
-import * as GUIDE_STEPS from '#content/guide_steps/_guide_steps'
-import {renderEntry} from '#lib/content-entry'
+import * as GUIDES from '#content/guides/_guides'
+import {entrySlug} from '#lib/content-entry'
+import {
+	getGuideInstructionalEntries,
+	renderInstructionalEntry,
+	instructionalTitle,
+} from '#lib/instructional'
 
 export async function getStaticPaths() {
-	const entries = await GUIDE_STEPS.getCollection()
+	const guides = await GUIDES.getCollection()
+	const paths = []
 
-	return entries
-		.filter((entry) => !GUIDE_STEPS.isGuideIndex(entry))
-		.map((entry) => ({
-			params: {
-				guide_slug: GUIDE_STEPS.guideSlug(entry),
-				guide_step_slug: GUIDE_STEPS.stepSlug(entry) ?? undefined,
-			},
-			props: {entry},
-		}))
+	for (const guide of guides) {
+		const items = await getGuideInstructionalEntries(
+			GUIDES.guideSlug(guide)
+		)
+
+		for (const item of items) {
+			paths.push({
+				params: {
+					guide_slug: GUIDES.guideSlug(guide),
+					guide_step_slug:
+						item.kind === 'lesson'
+							? item.entry.data.guide_step ??
+								item.entry.data.sequence ??
+								entrySlug(item.entry)
+							: item.entry.id
+									.replace(`${GUIDES.guideSlug(guide)}/`, '')
+									.replace(/\.md$/, ''),
+				},
+				props: {item},
+			})
+		}
+	}
+
+	return paths
 }
 
 interface Props {
-	entry: GUIDE_STEPS.CollectionEntry
+	item: Awaited<ReturnType<typeof getGuideInstructionalEntries>>[number]
 }
 
-const {entry} = Astro.props
-const {Content} = await renderEntry(entry)
+const {item} = Astro.props
+const {Content} = await renderInstructionalEntry(item)
 ---
 
 <Layout>
-	<h1>{entry.data.title}</h1>
+	<h1>{instructionalTitle(item)}</h1>
 	<Content />
 </Layout>

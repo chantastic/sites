@@ -1,6 +1,6 @@
 import * as ASTRO_CONTENT from 'astro:content'
 import * as COLLECTION from '#modules/collection'
-import {z, defineCollection} from 'astro:content'
+import {z, defineCollection, reference} from 'astro:content'
 
 export const COLLECTION_NAME = 'lessons'
 
@@ -41,6 +41,20 @@ export function courseName(
 	return entry.data.course ?? null
 }
 
+export function guideName(
+	entry: Pick<CollectionEntry, 'data'> & {data: {guide?: string}}
+) {
+	return entry.data.guide ?? null
+}
+
+export function guideStepName(
+	entry: Pick<CollectionEntry, 'data'> & {
+		data: {guide_step?: string; sequence?: string}
+	}
+) {
+	return entry.data.guide_step ?? entry.data.sequence ?? lessonSlug(entry)
+}
+
 export function courseKey(entry: CollectionEntry) {
 	const course = courseName(entry)
 
@@ -57,6 +71,10 @@ export function collectionPath(name: string) {
 
 export function coursePath(key: string) {
 	return path('courses', key.replaceAll('/', '--'))
+}
+
+export function guidePath(name: string) {
+	return `/guides/${name}`
 }
 
 function compareSequence(a: string, b: string) {
@@ -170,6 +188,8 @@ export const collectionSchema = defineCollection({
 		sequence: z.string().optional(),
 		collection: z.string(),
 		course: z.string().optional(),
+		guide: reference('guides').optional(),
+		guide_step: z.string().optional(),
 		status: z
 			.enum([
 				'draft',

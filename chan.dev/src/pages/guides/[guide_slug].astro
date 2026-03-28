@@ -2,8 +2,12 @@
 import Layout from '#layouts/Layout.astro'
 import Prose from '#components/prose.astro'
 import {renderEntry} from '#lib/content-entry'
+import {
+	getGuideInstructionalEntries,
+	instructionalPath,
+	instructionalTitle,
+} from '#lib/instructional'
 import * as GUIDES from '#content/guides/_guides'
-import * as GUIDE_STEPS from '#content/guide_steps/_guide_steps'
 
 export async function getStaticPaths() {
 	const guides = await GUIDES.getCollection()
@@ -20,10 +24,9 @@ interface Props {
 
 const {guide} = Astro.props
 const {Content} = await renderEntry(guide)
-const steps = await GUIDE_STEPS.getEntriesForGuide(
+const lessonSteps = await getGuideInstructionalEntries(
 	GUIDES.guideSlug(guide)
 )
-const lessonSteps = steps.filter((entry) => !GUIDE_STEPS.isGuideIndex(entry))
 ---
 
 <Layout>
@@ -34,11 +37,11 @@ const lessonSteps = steps.filter((entry) => !GUIDE_STEPS.isGuideIndex(entry))
 		</main>
 		<nav>
 			<ol>
-				{lessonSteps.map((entry) => (
+				{lessonSteps.map((item) => (
 					<li>
-						<a href={GUIDE_STEPS.guideStepPath(entry)}>
-							{entry.data.title ?? GUIDE_STEPS.stepSlug(entry)}
-							{entry.data.status === 'draft' && <span> [draft]</span>}
+						<a href={instructionalPath(item)}>
+							{instructionalTitle(item)}
+							{item.entry.data.status === 'draft' && <span> [draft]</span>}
 						</a>
 					</li>
 				))}

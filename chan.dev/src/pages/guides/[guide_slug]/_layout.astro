@@ -1,13 +1,16 @@
 ---
 import ParentLayout from '#layouts/Layout.astro'
 import Prose from '#components/prose.astro'
-import * as GUIDE_STEPS from '#content/guide_steps/_guide_steps'
+import {
+	getGuideInstructionalEntries,
+	instructionalPath,
+	instructionalTitle,
+	isCurrentInstructionalEntry,
+} from '#lib/instructional'
 
 let {params} = Astro
 
-let entries = await GUIDE_STEPS.getEntriesForGuide(
-	String(params.guide_slug)
-)
+let entries = await getGuideInstructionalEntries(String(params.guide_slug))
 ---
 
 <ParentLayout>
@@ -17,32 +20,30 @@ let entries = await GUIDE_STEPS.getEntriesForGuide(
 		</main>
 		<nav>
 			<ol>
-				{entries.map((entry) => (
+				{entries.map((item) => (
 					<li
 						class:list={[
 							{
-								'bg-white rounded':
-									GUIDE_STEPS.isCurrentGuideStep(
-										entry,
-										params.guide_step_slug
-									),
+								'bg-white rounded': isCurrentInstructionalEntry(
+									item,
+									params.guide_step_slug
+								),
 							},
 						]}
 					>
 						<a
-							href={GUIDE_STEPS.guideStepPath(entry)}
+							href={instructionalPath(item)}
 							class:list={[
 								{
-									'text-slate-600':
-										GUIDE_STEPS.isCurrentGuideStep(
-											entry,
-											params.guide_step_slug
-										),
+									'text-slate-600': isCurrentInstructionalEntry(
+										item,
+										params.guide_step_slug
+									),
 								},
 							]}
 						>
-							{entry.data.title}
-							{entry.data.status === 'draft' && <span> [draft]</span>}
+							{instructionalTitle(item)}
+							{item.entry.data.status === 'draft' && <span> [draft]</span>}
 						</a>
 					</li>
 				))}
