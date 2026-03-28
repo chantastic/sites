@@ -12,7 +12,6 @@
 		"build": "astro build --remote",
 		"build:local": "op run --env-file='./.env' -- npm run build",
 		"refresh:talks": "node scripts/refresh-talks.mjs",
-		"cf:deploy-url": "node scripts/cloudflare-deploy-url.mjs",
 		"postbuild": "pagefind --site dist",
 		"preview": "npm run build:local && wrangler pages dev ./dist --port 2426",
 		"tsc": "tsc"
