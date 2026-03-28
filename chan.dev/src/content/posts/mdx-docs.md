@@ -25,8 +25,7 @@ let's dive in.
 
 ## Add an MDX file to Storybook
 
-> [!short]
-> That's how to {title}
+That's how to {title}
 
 To add an MDX file in Storybook:
 
@@ -35,11 +34,9 @@ To add an MDX file in Storybook:
 - Write any markdown you want.
 - Then import and render any components.
 
-> [!short]
-> MDX in Storybook make it easy to write documentation in markdown while utilizing the components in your component library or design system.
+MDX in Storybook make it easy to write documentation in markdown while utilizing the components in your component library or design system.
 
-> [!full]
-> Storybook has built-in support for MDX. So you don't have to do anything special. Just start writing.
+Storybook has built-in support for MDX. So you don't have to do anything special. Just start writing.
 
 ```mdx
 import {Button} from './Button.tsx'
@@ -55,12 +52,10 @@ Primary UI component for user interaction
 
 > ![bug] > `<Meta />` only seems to work when imported as a named export (directly). Not when using property accessy on a module object `* as DocBlock` `DocBlock.Meta`.
 
-> [!short]
-> That's how to… {title}
+That's how to… {title}
 
-> [!fullvideo]
-> For the title and description, I'd like to use the data we have defined in our component and eliminate this one-off text.
-> [! b-roll] show component definition
+For the title and description, I'd like to use the data we have defined in our component and eliminate this one-off text.
+
 
 - (In an MDX file)
 
@@ -71,13 +66,10 @@ Primary UI component for user interaction
 - This time the error suggests that the story moved. Using `<Meta of={}>` automaticually placed this document with our other button stories.
 - And now that we're using the stories, we can delete these duplicated text blocks.
 
-> [!short]
-> Re-using metadata ensures that your documentation stays in sync with component code. And you just saw how easy it is to achieve with Storybook doc blocks.
+Re-using metadata ensures that your documentation stays in sync with component code. And you just saw how easy it is to achieve with Storybook doc blocks.
 
-> [!full]
-> Now our documentation will stay in sync with our source code and story files. But can we do the same for this story here?
-> [!b-roll] showing the code with the docblocks but story still one-off
-> Yes.
+Now our documentation will stay in sync with our source code and story files. But can we do the same for this story here?
+Yes.
 
 ```mdx
 import {Button} from './Button.tsx'
@@ -94,10 +86,7 @@ import {Meta, Title, Description} from '@storybook/blocks'
 
 ## Add Stories to MDX
 
-> [!short]
-> That's how to {title}
-
-> [!full]
+That's how to {title}
 
 - (In an MDX file using doc blocks)
 - (import your storie file and doc blocks)

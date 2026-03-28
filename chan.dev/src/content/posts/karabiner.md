@@ -57,7 +57,7 @@ home cluster vs home row
 
 Break this up into fundamental pieces.
 
-```edn
+```
 ; links
 ;; command shorthand: https://github.com/yqrashawn/GokuRakuJoudo/blob/master/tutorial.md#command-a-to-control-1
 {:simlayers {
