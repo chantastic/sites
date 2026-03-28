@@ -1,8 +1,12 @@
 ---
 title: 'Escape: Groking Modal Editing'
 order: 2
+date: 2026-03-28
+collection: guides
+guide: vim
+guide_step: escape
+sequence: escape
 ---
-
 Every editor you've used has a single mode: *Insert mode*.  
 
 And in *Insert mode*, you have a well known cursor.

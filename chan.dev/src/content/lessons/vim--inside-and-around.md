@@ -1,8 +1,12 @@
 ---
 title: 'Inside and Around: Moving Inside and Around'
 order: 5
+date: 2026-03-28
+collection: guides
+guide: vim
+guide_step: inside-and-around
+sequence: inside-and-around
 ---
-
 <kbd>c</kbd> <kbd>i</kbd> <kbd>(</kbd>
 <kbd>c</kbd> <kbd>i</kbd> <kbd>"</kbd>
 

@@ -1,8 +1,12 @@
 ---
 title: 'Go: Moving Around'
 order: 3
+date: 2026-03-28
+collection: guides
+guide: vim
+guide_step: go
+sequence: go
 ---
-
 The <kbd>g</kbd> key is how you navigate a document in Vim.
 
 | Key                       | Description                          |

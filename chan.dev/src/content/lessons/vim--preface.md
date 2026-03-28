@@ -1,8 +1,12 @@
 ---
 title: 'Preface: How to take this course'
 order: 0
+date: 2026-03-28
+collection: guides
+guide: vim
+guide_step: preface
+sequence: preface
 ---
-
 This course is about Vim motions.  
 It is not about Vim itself, or any editor.
 

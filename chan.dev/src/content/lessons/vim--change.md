@@ -1,8 +1,12 @@
 ---
 title: 'Change: Changing Text'
 order: 4
+date: 2026-03-28
+collection: guides
+guide: vim
+guide_step: change
+sequence: change
 ---
-
 Many Vim motions take a direction, or intent.
 
 In our lesson on insert motions, we learned a handful of keys that will put you directly into Insert mode.
