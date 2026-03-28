@@ -1,5 +1,1043 @@
 {
   "playlistId": "PLnc_NxpmOxaPBbn1PysP30GB0_8aQGnAa",
-  "refreshedAt": null,
-  "items": []
+  "refreshedAt": "2026-03-28T00:42:18.804Z",
+  "items": [
+    {
+      "kind": "youtube#playlistItem",
+      "etag": "w-GUTH_LhbYuN5YzRgpTxkRc2eE",
+      "id": "UExuY19OeHBtT3hhUEJibjFQeXNQMzBHQjBfOGFRR25BYS5ENDU4Q0M4RDExNzM1Mjcy",
+      "snippet": {
+        "publishedAt": "2022-09-02T21:33:30Z",
+        "channelId": "UCXpmUxvG37qpckRHdkstf5w",
+        "title": "Michael Chan - Fail Fast; Win Well - RenderATL 2022",
+        "description": "You’re not going to want to miss what Chan had to say at Render 2022.  What a career amidst cancer, death, and pandemic taught me about winning, wellness, and well-lived life. Don’t miss what Render is doing next. Make sure you’re following @renderatl for updates!",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/GE4r2SF02R0/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/GE4r2SF02R0/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/GE4r2SF02R0/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/GE4r2SF02R0/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/GE4r2SF02R0/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "chantastic",
+        "playlistId": "PLnc_NxpmOxaPBbn1PysP30GB0_8aQGnAa",
+        "position": 0,
+        "resourceId": {
+          "kind": "youtube#video",
+          "videoId": "GE4r2SF02R0"
+        },
+        "videoOwnerChannelTitle": "RenderATL",
+        "videoOwnerChannelId": "UCyVg5SCSM87WMXqT8ip144A"
+      },
+      "contentDetails": {
+        "videoId": "GE4r2SF02R0",
+        "videoPublishedAt": "2022-07-15T16:00:10Z"
+      }
+    },
+    {
+      "kind": "youtube#playlistItem",
+      "etag": "Y0zNMjmO0Xe5m6hPswccLzvBvxA",
+      "id": "UExuY19OeHBtT3hhUEJibjFQeXNQMzBHQjBfOGFRR25BYS41QTY1Q0UxMTVCODczNThE",
+      "snippet": {
+        "publishedAt": "2022-06-02T02:43:37Z",
+        "channelId": "UCXpmUxvG37qpckRHdkstf5w",
+        "title": "Tame the Component Multiverse: Michael Chan",
+        "description": "Recorded live at Reactathon 2022. Learn more at https://reactathon.com\n\nTame the Component Multiverse\nError state, loading state, awkward breakpoint, bad data, poor formatting, browser support. Every component is a multitude of challenges. How do you actually manage it? Disable the network — temporarily. Insert bad code — just for a minute. Paw at the edge of your screen. Hack local database fixtures to bits. Frontend development is a multiverse where dimensions like time and variation result in an infinite number of UI possibilities. In this talk, we'll use Storybook to progressively develop, test, document our work and tame the multiverse of our components.\n\nAbout Michael Chan\nMichael Chan loves the web. He's the host of React Podcast. And he's building Lunch Dev, the friendliest coding community for creative, curious, and compassionate web developers.\n\nEvent production and post-production by EventLoop. Let's build your conference brand, or take it to the next level. info@eventloop.app",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/Hpx3kOtPovk/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/Hpx3kOtPovk/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/Hpx3kOtPovk/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/Hpx3kOtPovk/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/Hpx3kOtPovk/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "chantastic",
+        "playlistId": "PLnc_NxpmOxaPBbn1PysP30GB0_8aQGnAa",
+        "position": 1,
+        "resourceId": {
+          "kind": "youtube#video",
+          "videoId": "Hpx3kOtPovk"
+        },
+        "videoOwnerChannelTitle": "Real World React",
+        "videoOwnerChannelId": "UCgL3tdpvoARHuX-_3eLWEgg"
+      },
+      "contentDetails": {
+        "videoId": "Hpx3kOtPovk",
+        "videoPublishedAt": "2022-06-01T22:36:35Z"
+      }
+    },
+    {
+      "kind": "youtube#playlistItem",
+      "etag": "LMesrv4reX_dsUxLEPl2S8550uo",
+      "id": "UExuY19OeHBtT3hhUEJibjFQeXNQMzBHQjBfOGFRR25BYS4yMUQyQTQzMjRDNzMyQTMy",
+      "snippet": {
+        "publishedAt": "2022-06-05T02:32:00Z",
+        "channelId": "UCXpmUxvG37qpckRHdkstf5w",
+        "title": "The Worlds Most Expensive React Component | Michael Chan | Reliable Web Summit 2021",
+        "description": "We need to stop building expensive React components — components that promise the world but are impossible to maintain. Let’s fight the apropcylpse and set aside our prop drills with this prop-osal for a more productive way working in React.\n\nng-conf is a multi-day Angular conference focused on delivering the highest quality training in the Angular JavaScript framework. 1500+ developers from across the globe converge on Salt Lake City, UT every year to attend talks and workshops by the Angular team and community experts.\n\nJoin the Angular Community: http://www.ng-conf.org/\nGet your ng-conf tickets: https://ti.to/ng-conf\nFollow Us: https://twitter.com/ngconf\nLearn More: https://ng-conf-school.teachable \nRead More: https://medium.com/ngconf \nHear More: http://theangularshow.com \nFollow us on twitter https://twitter.com/ngconf\nOfficial Website: https://www.ng-conf.org/",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/zxVZssf2o6U/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/zxVZssf2o6U/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/zxVZssf2o6U/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/zxVZssf2o6U/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/zxVZssf2o6U/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "chantastic",
+        "playlistId": "PLnc_NxpmOxaPBbn1PysP30GB0_8aQGnAa",
+        "position": 2,
+        "resourceId": {
+          "kind": "youtube#video",
+          "videoId": "zxVZssf2o6U"
+        },
+        "videoOwnerChannelTitle": "ng-conf",
+        "videoOwnerChannelId": "UCm9iiIfgmVODUJxINecHQkA"
+      },
+      "contentDetails": {
+        "videoId": "zxVZssf2o6U",
+        "videoPublishedAt": "2022-05-26T17:00:35Z"
+      }
+    },
+    {
+      "kind": "youtube#playlistItem",
+      "etag": "b2gj0JwxLfy8ruGmo55Ajfgurmw",
+      "id": "UExuY19OeHBtT3hhUEJibjFQeXNQMzBHQjBfOGFRR25BYS45RTgxNDRBMzUwRjQ0MDhC",
+      "snippet": {
+        "publishedAt": "2022-06-05T02:32:28Z",
+        "channelId": "UCXpmUxvG37qpckRHdkstf5w",
+        "title": "The Worlds Most Expensive React Component & How to Stop Writing It – Michael Chan, React Advanced",
+        "description": "React Advanced 2021 ##ReactAdvanced #GitNation\nWebsite – https://reactadvanced.com/\n\nFollow the link to watch the full version of all the conference talks, QnA’s with speakers and hands-on workshop recordings → https://portal.gitnation.org/events/react-advanced-conference-2021\n\nTalk: The Worlds Most Expensive React Component & How to Stop Writing It\nWe need to stop building expensive React components — components that promise the world but are impossible to maintain. Let's fight the apropcylpse and set aside our prop drills with this prop-osal for a more productive way working in React.\n\n\nThis event would not take place without the support of sponsors:\n\n🏆 Platinum Sponsors\nToptal → https://www.toptal.com/freelance-jobs\nThe Graph → https://thegraph.com/en/\nFocus Reactive → https://focusreactive.com/\n\n🥇 Gold Sponsors\nStackHawk → https://www.stackhawk.com/\nSanity → https://www.sanity.io\nKontent by Kentico → https://kontent.ai/\nSourcegraph → https://about.sourcegraph.com/\nShopify → https://shopify.engineering/\nIonic → https://ionicframework.com/\nJetBrains → https://www.jetbrains.com/\nProgress KendoReact → https://www.telerik.com/kendo-react-ui/\nSentry → https://sentry.io/\nSnyk → https://snyk.io/\nNeuralegion→ https://www.neuralegion.com/\n\n🥈 Silver Sponsors\nStream → https://getstream.io/\nCodeSandbox → https://codesandbox.io/\nSmarkets → https://smarkets.com/about/\n3T → https://studio3t.com/\nModus Create → https://moduscreate.com/\nTheodo → https://www.theodo.co.uk/\nCommercetools  → https://commercetools.com/\nStrapi → https://strapi.io/\nMUX → https://mux.com/\nCallstack → https://callstack.com/\nhackajob → https://hackajob.co/talent\nHasura → https://hasura.io/\ntwilio → https://twilio.com/ahoy/\nzeroheight → http://www.zeroheight.com/",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/1haxbZEl6vY/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/1haxbZEl6vY/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/1haxbZEl6vY/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/1haxbZEl6vY/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/1haxbZEl6vY/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "chantastic",
+        "playlistId": "PLnc_NxpmOxaPBbn1PysP30GB0_8aQGnAa",
+        "position": 3,
+        "resourceId": {
+          "kind": "youtube#video",
+          "videoId": "1haxbZEl6vY"
+        },
+        "videoOwnerChannelTitle": "React Conferences by GitNation",
+        "videoOwnerChannelId": "UCsFrt8oKNYXGspSlX9u6uXw"
+      },
+      "contentDetails": {
+        "videoId": "1haxbZEl6vY",
+        "videoPublishedAt": "2021-12-27T12:00:01Z"
+      }
+    },
+    {
+      "kind": "youtube#playlistItem",
+      "etag": "-OHjRAK5AYjb7y1r0t7HDUC8Ltc",
+      "id": "UExuY19OeHBtT3hhUEJibjFQeXNQMzBHQjBfOGFRR25BYS5EQUE1NTFDRjcwMDg0NEMz",
+      "snippet": {
+        "publishedAt": "2021-11-12T16:06:43Z",
+        "channelId": "UCXpmUxvG37qpckRHdkstf5w",
+        "title": "The Most Expensive React Component and How to Stop Making It, React India",
+        "description": "v2.1 of this talk was delivered at React India on November 12th 2021. https://reactindia.io",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/gs6UV6BIE2Y/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/gs6UV6BIE2Y/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/gs6UV6BIE2Y/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/gs6UV6BIE2Y/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/gs6UV6BIE2Y/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "chantastic",
+        "playlistId": "PLnc_NxpmOxaPBbn1PysP30GB0_8aQGnAa",
+        "position": 4,
+        "resourceId": {
+          "kind": "youtube#video",
+          "videoId": "gs6UV6BIE2Y"
+        },
+        "videoOwnerChannelTitle": "chantastic",
+        "videoOwnerChannelId": "UCXpmUxvG37qpckRHdkstf5w"
+      },
+      "contentDetails": {
+        "videoId": "gs6UV6BIE2Y",
+        "videoPublishedAt": "2021-11-12T16:05:40Z"
+      }
+    },
+    {
+      "kind": "youtube#playlistItem",
+      "etag": "rC95qeXUwXfT_DQ-9K_gogN4Fg0",
+      "id": "UExuY19OeHBtT3hhUEJibjFQeXNQMzBHQjBfOGFRR25BYS4yMDhBMkNBNjRDMjQxQTg1",
+      "snippet": {
+        "publishedAt": "2022-09-07T20:57:23Z",
+        "channelId": "UCXpmUxvG37qpckRHdkstf5w",
+        "title": "React Podcast with Chantastic",
+        "description": "0:00 Introduction\n2:55 The return of React Podcast\n10:22 Creating a web dev community\n16:07 Similarities and differences between web dev communities\n28:40 Where do corporate led communities fit in the space?\n38:43 The landscape of popular frameworks\n\nAbout the episode\nIf you are a React developer, you're probably familiar with the React Podcast. Chantastic joins us today to talk about his experience working on the React Podcast for two and a half years, how he is now spending his time building the React Podcast Discord, and much more.\n\n\nNOTE: This is the video recording of the podcast. You can listen to the audio-only version of the episode at https://podrocket.logrocket.com or wherever you get your podcasts.\n\nLogRocket \nPodRocket was created by LogRocket. LogRocket is a frontend monitoring solution that combines session replay, performance monitoring, and product analytics to help software teams create an ideal product experience. Try LogRocket pro for free: https://logrocket.com/podrocket\n\nLinks\ndiscord.gg/lunchdev\nhttps://spec.fm\nhttps://www.meetup.com/ReactJSDallas\nhttps://twitter.com/chantastic\nhttps://reactpodcast.com\nhttps://twitter.com/reactpodcast\nhttps://twitter.com/ajcwebdev\nhttps://twitter.com/bendmyers\nhttps://fsjam.org\nhttps://www.twitch.tv/someanticsdev\nhttps://benmyers.dev\nhttps://twitter.com/lindsaykwardell\nhttps://viewsonvue.com",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/ywNXo5okzww/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/ywNXo5okzww/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/ywNXo5okzww/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/ywNXo5okzww/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/ywNXo5okzww/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "chantastic",
+        "playlistId": "PLnc_NxpmOxaPBbn1PysP30GB0_8aQGnAa",
+        "position": 5,
+        "resourceId": {
+          "kind": "youtube#video",
+          "videoId": "ywNXo5okzww"
+        },
+        "videoOwnerChannelTitle": "LogRocket",
+        "videoOwnerChannelId": "UCktI_HQAkbr-tJbdWnQ_osw"
+      },
+      "contentDetails": {
+        "videoId": "ywNXo5okzww",
+        "videoPublishedAt": "2021-11-05T14:00:35Z"
+      }
+    },
+    {
+      "kind": "youtube#playlistItem",
+      "etag": "1LpptWcZunTIS9dpjJP5QiVyb2c",
+      "id": "UExuY19OeHBtT3hhUEJibjFQeXNQMzBHQjBfOGFRR25BYS4zMDg5MkQ5MEVDMEM1NTg2",
+      "snippet": {
+        "publishedAt": "2021-07-19T06:20:35Z",
+        "channelId": "UCXpmUxvG37qpckRHdkstf5w",
+        "title": "State of React Ecosystem | July 2021",
+        "description": "Keep up with modern web technology advancements through these special “State of” events. This month, we’re bringing you a “State of React Ecosystem” panel, co-hosted & sponsored by Vercel. Hear from core contributors, library authors, & more about various frameworks within the React Ecosystem!",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/kqGvPb_gLJk/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/kqGvPb_gLJk/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/kqGvPb_gLJk/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/kqGvPb_gLJk/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          }
+        },
+        "channelTitle": "chantastic",
+        "playlistId": "PLnc_NxpmOxaPBbn1PysP30GB0_8aQGnAa",
+        "position": 6,
+        "resourceId": {
+          "kind": "youtube#video",
+          "videoId": "kqGvPb_gLJk"
+        },
+        "videoOwnerChannelTitle": "This Dot Media",
+        "videoOwnerChannelId": "UCHkqtrnQO2HMyW50ixOtJGw"
+      },
+      "contentDetails": {
+        "videoId": "kqGvPb_gLJk",
+        "videoPublishedAt": "2021-07-15T17:28:06Z"
+      }
+    },
+    {
+      "kind": "youtube#playlistItem",
+      "etag": "UVm_5C_xND7ZvMJo33JqJQdE7XU",
+      "id": "UExuY19OeHBtT3hhUEJibjFQeXNQMzBHQjBfOGFRR25BYS45ODRDNTg0QjA4NkFBNkQy",
+      "snippet": {
+        "publishedAt": "2021-07-05T20:58:45Z",
+        "channelId": "UCXpmUxvG37qpckRHdkstf5w",
+        "title": "Full Stack Talks Mar 2021 — ES Modules with Michael Chan",
+        "description": "Every ES Modules Feature in 30 Minutes\n\nThere's a lot of bad advice and angry tweets about ES Modules. Chantastic has a new course covering ES Modules in-depth. In this meetup, he'll share it as a 30 minute talk to help you organize, distribute, and manage your code with confidence.\n\nTopics covered:\n* Side-effects, isolation, and exports\n* Strategies for avoiding variable collisions\n* Dynamic imports and when to use them\n* Named exports, export list, and default export\n* Exactly when `default` is a bad idea\n* Tree-shaking and how smart bundlers ship less code using the same syntax",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/PUsuy8oqCzI/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/PUsuy8oqCzI/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/PUsuy8oqCzI/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/PUsuy8oqCzI/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/PUsuy8oqCzI/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "chantastic",
+        "playlistId": "PLnc_NxpmOxaPBbn1PysP30GB0_8aQGnAa",
+        "position": 7,
+        "resourceId": {
+          "kind": "youtube#video",
+          "videoId": "PUsuy8oqCzI"
+        },
+        "videoOwnerChannelTitle": "Full Stack Talks",
+        "videoOwnerChannelId": "UCpq2_V-9AYYUHSsjoJZPUTg"
+      },
+      "contentDetails": {
+        "videoId": "PUsuy8oqCzI",
+        "videoPublishedAt": "2021-03-19T15:03:46Z"
+      }
+    },
+    {
+      "kind": "youtube#playlistItem",
+      "etag": "shbL2ohSmwkbMHRrQAB9dxKD6vA",
+      "id": "UExuY19OeHBtT3hhUEJibjFQeXNQMzBHQjBfOGFRR25BYS5EMEEwRUY5M0RDRTU3NDJC",
+      "snippet": {
+        "publishedAt": "2021-07-05T20:46:31Z",
+        "channelId": "UCXpmUxvG37qpckRHdkstf5w",
+        "title": "Global React Meetup featuring Michael Chan & Tony Scialo",
+        "description": "Welcome to this edition of the Global React Meetup hosted by This Dot Media.  \n\nTalks:\n“Everything about React Suspense in 20 Minutes” Chantastic\n\"React with TypeScript” Tony Scialo\n\nHost: Patricio Vargas, Senior Software Engineer, This Dot Labs\n\nThis Meetup is sponsored by This Dot Labs, a web, mobile, and cloud consultancy offering services including mentorship, training, staff augmentation, and consulting. \n\nWhether you need help with React, Angular, Vue, Node, Bazel, mobile, GraphQL, .Net, Kubernetes, GCP, AWS, Azure, or more, you can find us online at thisdotlabs.com.",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/RoG8JlDYv1I/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/RoG8JlDYv1I/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/RoG8JlDYv1I/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/RoG8JlDYv1I/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/RoG8JlDYv1I/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "chantastic",
+        "playlistId": "PLnc_NxpmOxaPBbn1PysP30GB0_8aQGnAa",
+        "position": 8,
+        "resourceId": {
+          "kind": "youtube#video",
+          "videoId": "RoG8JlDYv1I"
+        },
+        "videoOwnerChannelTitle": "This Dot Media",
+        "videoOwnerChannelId": "UCHkqtrnQO2HMyW50ixOtJGw"
+      },
+      "contentDetails": {
+        "videoId": "RoG8JlDYv1I",
+        "videoPublishedAt": "2020-08-13T20:52:42Z"
+      }
+    },
+    {
+      "kind": "youtube#playlistItem",
+      "etag": "NJR9m6Gzm9jh8eVsBA7NfUTBxaI",
+      "id": "UExuY19OeHBtT3hhUEJibjFQeXNQMzBHQjBfOGFRR25BYS40NzZCMERDMjVEN0RFRThB",
+      "snippet": {
+        "publishedAt": "2020-05-30T16:08:15Z",
+        "channelId": "UCXpmUxvG37qpckRHdkstf5w",
+        "title": "Everything You Need To Know About React Suspense by Michael Chan",
+        "description": "Suspense is a new way to interact with asynchronous data in React. Suspense and it's declarative API changes everything about how you interact with data. Lazily load components and API data with Suspense, Load views in a predictable order with SuspenseList, Handle errors with error boundaries, And control presentation of loading states with useTransition.",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/siIhGaWZNcE/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/siIhGaWZNcE/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/siIhGaWZNcE/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/siIhGaWZNcE/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/siIhGaWZNcE/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "chantastic",
+        "playlistId": "PLnc_NxpmOxaPBbn1PysP30GB0_8aQGnAa",
+        "position": 9,
+        "resourceId": {
+          "kind": "youtube#video",
+          "videoId": "siIhGaWZNcE"
+        },
+        "videoOwnerChannelTitle": "Full Stack Talks",
+        "videoOwnerChannelId": "UCpq2_V-9AYYUHSsjoJZPUTg"
+      },
+      "contentDetails": {
+        "videoId": "siIhGaWZNcE",
+        "videoPublishedAt": "2020-01-20T18:04:50Z"
+      }
+    },
+    {
+      "kind": "youtube#playlistItem",
+      "etag": "nmyypR5Yv93Ga4BVHkcX00MUeKQ",
+      "id": "UExuY19OeHBtT3hhUEJibjFQeXNQMzBHQjBfOGFRR25BYS4wMTcyMDhGQUE4NTIzM0Y5",
+      "snippet": {
+        "publishedAt": "2019-01-13T04:06:24Z",
+        "channelId": "UCXpmUxvG37qpckRHdkstf5w",
+        "title": "Hot Garbage: Clean Code is Dead - Michael Chan - JSConf US 2018",
+        "description": "",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/xTJyi49piH4/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/xTJyi49piH4/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/xTJyi49piH4/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/xTJyi49piH4/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/xTJyi49piH4/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "chantastic",
+        "playlistId": "PLnc_NxpmOxaPBbn1PysP30GB0_8aQGnAa",
+        "position": 10,
+        "resourceId": {
+          "kind": "youtube#video",
+          "videoId": "xTJyi49piH4"
+        },
+        "videoOwnerChannelTitle": "JSConf",
+        "videoOwnerChannelId": "UCzoVCacndDCfGDf41P-z0iA"
+      },
+      "contentDetails": {
+        "videoId": "xTJyi49piH4",
+        "videoPublishedAt": "2018-11-06T17:00:06Z"
+      }
+    },
+    {
+      "kind": "youtube#playlistItem",
+      "etag": "zPFrVay7TM-BTGR-3hG-rtovfUs",
+      "id": "UExuY19OeHBtT3hhUEJibjFQeXNQMzBHQjBfOGFRR25BYS41MjE1MkI0OTQ2QzJGNzNG",
+      "snippet": {
+        "publishedAt": "2019-01-13T04:06:35Z",
+        "channelId": "UCXpmUxvG37qpckRHdkstf5w",
+        "title": "Michael Chan: Hot Garbage: Clean Code is Dead - NEJS CONF 2018",
+        "description": "Developers want to write better, faster, safer code. They want to do it quickly, consistently, and happily.\n\nThe problem is we’ve chosen the wrong tools. We obsess over the wrong metrics. We fetishize the structure and organization of the enemy with “clean code”. “Clean code” promised a future of fun and flexibility but results only in another master, vying for your precious time and attention.\n\nI’ve fought for “clean code” my 10 years as a developer. For 10 years I lost and kept losing to this monster I was creating. I was taking my team with me. Now I empower devs and designers in the war against “clean code”. I want developers and designers to win and keep winning.\n\nAfter identifying the enemy, I’ll demonstrate the shape a component takes when “clean code” is dogma. I’ll then write the same component as hot-garbage. I’ll show everyone how to create and compose in a way that prepares for the future but doesn’t bother to predict it.\n\nThe talk will be very practical and entertaining intro to a topic better known as “composite component design”.\n\nhttps://twitter.com/chantastic\nhttps://nejsconf.com\nhttps://twitter.com/nejsconf",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/7ri10aE-Idc/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/7ri10aE-Idc/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/7ri10aE-Idc/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/7ri10aE-Idc/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/7ri10aE-Idc/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "chantastic",
+        "playlistId": "PLnc_NxpmOxaPBbn1PysP30GB0_8aQGnAa",
+        "position": 11,
+        "resourceId": {
+          "kind": "youtube#video",
+          "videoId": "7ri10aE-Idc"
+        },
+        "videoOwnerChannelTitle": "NebraskaJS",
+        "videoOwnerChannelId": "UCsMSRfQ22gGRLu5kRBMYpjg"
+      },
+      "contentDetails": {
+        "videoId": "7ri10aE-Idc",
+        "videoPublishedAt": "2018-10-02T21:33:01Z"
+      }
+    },
+    {
+      "kind": "youtube#playlistItem",
+      "etag": "Fx5EAc2Snh5fSH1-7dls1k3wA1U",
+      "id": "UExuY19OeHBtT3hhUEJibjFQeXNQMzBHQjBfOGFRR25BYS41NkI0NEY2RDEwNTU3Q0M2",
+      "snippet": {
+        "publishedAt": "2019-01-13T04:06:05Z",
+        "channelId": "UCXpmUxvG37qpckRHdkstf5w",
+        "title": "Michael Chan - Hot Garbage  Clean Code is Dead",
+        "description": "",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/-NP_upexPFg/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/-NP_upexPFg/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/-NP_upexPFg/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/-NP_upexPFg/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/-NP_upexPFg/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "chantastic",
+        "playlistId": "PLnc_NxpmOxaPBbn1PysP30GB0_8aQGnAa",
+        "position": 12,
+        "resourceId": {
+          "kind": "youtube#video",
+          "videoId": "-NP_upexPFg"
+        },
+        "videoOwnerChannelTitle": "ReactRally",
+        "videoOwnerChannelId": "UCXBhQ05nu3L1abBUGeQ0ahw"
+      },
+      "contentDetails": {
+        "videoId": "-NP_upexPFg",
+        "videoPublishedAt": "2018-08-22T18:47:20Z"
+      }
+    },
+    {
+      "kind": "youtube#playlistItem",
+      "etag": "GPLpYGt0BGHtThYqoS6I2IWO2II",
+      "id": "UExuY19OeHBtT3hhUEJibjFQeXNQMzBHQjBfOGFRR25BYS5GM0Q3M0MzMzY5NTJFNTdE",
+      "snippet": {
+        "publishedAt": "2023-03-20T19:52:11Z",
+        "channelId": "UCXpmUxvG37qpckRHdkstf5w",
+        "title": "Michael Chan - Back to React: The Story of Two Apps",
+        "description": "",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/T9-Mb_axNgA/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/T9-Mb_axNgA/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/T9-Mb_axNgA/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/T9-Mb_axNgA/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/T9-Mb_axNgA/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "chantastic",
+        "playlistId": "PLnc_NxpmOxaPBbn1PysP30GB0_8aQGnAa",
+        "position": 13,
+        "resourceId": {
+          "kind": "youtube#video",
+          "videoId": "T9-Mb_axNgA"
+        },
+        "videoOwnerChannelTitle": "ReactRally",
+        "videoOwnerChannelId": "UCXBhQ05nu3L1abBUGeQ0ahw"
+      },
+      "contentDetails": {
+        "videoId": "T9-Mb_axNgA",
+        "videoPublishedAt": "2017-08-30T15:10:46Z"
+      }
+    },
+    {
+      "kind": "youtube#playlistItem",
+      "etag": "dRbWrU2hjr6uCu6NnTd6t-nT2k0",
+      "id": "UExuY19OeHBtT3hhUEJibjFQeXNQMzBHQjBfOGFRR25BYS4wOTA3OTZBNzVEMTUzOTMy",
+      "snippet": {
+        "publishedAt": "2019-01-13T04:06:44Z",
+        "channelId": "UCXpmUxvG37qpckRHdkstf5w",
+        "title": "React Component Patterns \nby Michael Chan",
+        "description": "React Component Patterns \nby Michael Chan at Full Stack Talks on Thursday February 2nd, 2017.",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/YaZg8wg39QQ/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/YaZg8wg39QQ/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/YaZg8wg39QQ/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/YaZg8wg39QQ/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/YaZg8wg39QQ/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "chantastic",
+        "playlistId": "PLnc_NxpmOxaPBbn1PysP30GB0_8aQGnAa",
+        "position": 14,
+        "resourceId": {
+          "kind": "youtube#video",
+          "videoId": "YaZg8wg39QQ"
+        },
+        "videoOwnerChannelTitle": "Full Stack Talks",
+        "videoOwnerChannelId": "UCpq2_V-9AYYUHSsjoJZPUTg"
+      },
+      "contentDetails": {
+        "videoId": "YaZg8wg39QQ",
+        "videoPublishedAt": "2017-02-03T18:20:54Z"
+      }
+    },
+    {
+      "kind": "youtube#playlistItem",
+      "etag": "bczycKbXVPY86v4Ag52YfIXOojA",
+      "id": "UExuY19OeHBtT3hhUEJibjFQeXNQMzBHQjBfOGFRR25BYS41MzJCQjBCNDIyRkJDN0VD",
+      "snippet": {
+        "publishedAt": "2019-01-13T04:08:28Z",
+        "channelId": "UCXpmUxvG37qpckRHdkstf5w",
+        "title": "Lightning Talk: Minions CSS Framework by Michael Chan",
+        "description": "Lightning Talk: Minions CSS Framework by Michael Chan at Full Stack Talks on Thursday Novermber 3rd, 2016.",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/tMg6krAVtXY/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/tMg6krAVtXY/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/tMg6krAVtXY/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/tMg6krAVtXY/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/tMg6krAVtXY/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "chantastic",
+        "playlistId": "PLnc_NxpmOxaPBbn1PysP30GB0_8aQGnAa",
+        "position": 15,
+        "resourceId": {
+          "kind": "youtube#video",
+          "videoId": "tMg6krAVtXY"
+        },
+        "videoOwnerChannelTitle": "Full Stack Talks",
+        "videoOwnerChannelId": "UCpq2_V-9AYYUHSsjoJZPUTg"
+      },
+      "contentDetails": {
+        "videoId": "tMg6krAVtXY",
+        "videoPublishedAt": "2016-11-05T01:23:09Z"
+      }
+    },
+    {
+      "kind": "youtube#playlistItem",
+      "etag": "sYiQie58py6WphjZoqssxsLVDcM",
+      "id": "UExuY19OeHBtT3hhUEJibjFQeXNQMzBHQjBfOGFRR25BYS5GNjNDRDREMDQxOThCMDQ2",
+      "snippet": {
+        "publishedAt": "2019-01-13T04:09:31Z",
+        "channelId": "UCXpmUxvG37qpckRHdkstf5w",
+        "title": "React JS Style Components",
+        "description": "React JS Style Components by Michael Chan at Full Stack Talks on Thursday August 11th, 2016.",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/gNeavlJ7lNY/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/gNeavlJ7lNY/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/gNeavlJ7lNY/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/gNeavlJ7lNY/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/gNeavlJ7lNY/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "chantastic",
+        "playlistId": "PLnc_NxpmOxaPBbn1PysP30GB0_8aQGnAa",
+        "position": 16,
+        "resourceId": {
+          "kind": "youtube#video",
+          "videoId": "gNeavlJ7lNY"
+        },
+        "videoOwnerChannelTitle": "Full Stack Talks",
+        "videoOwnerChannelId": "UCpq2_V-9AYYUHSsjoJZPUTg"
+      },
+      "contentDetails": {
+        "videoId": "gNeavlJ7lNY",
+        "videoPublishedAt": "2016-08-31T13:25:43Z"
+      }
+    },
+    {
+      "kind": "youtube#playlistItem",
+      "etag": "Ap98qLVYFC0VsGfo4nbrWkPZxyk",
+      "id": "UExuY19OeHBtT3hhUEJibjFQeXNQMzBHQjBfOGFRR25BYS5DQUNERDQ2NkIzRUQxNTY1",
+      "snippet": {
+        "publishedAt": "2019-01-13T04:08:42Z",
+        "channelId": "UCXpmUxvG37qpckRHdkstf5w",
+        "title": "Minions.css by Michael Chan",
+        "description": "Lightning Talk",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/QQYj_kBCtxc/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/QQYj_kBCtxc/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/QQYj_kBCtxc/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/QQYj_kBCtxc/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/QQYj_kBCtxc/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "chantastic",
+        "playlistId": "PLnc_NxpmOxaPBbn1PysP30GB0_8aQGnAa",
+        "position": 17,
+        "resourceId": {
+          "kind": "youtube#video",
+          "videoId": "QQYj_kBCtxc"
+        },
+        "videoOwnerChannelTitle": "Full Stack Talks",
+        "videoOwnerChannelId": "UCpq2_V-9AYYUHSsjoJZPUTg"
+      },
+      "contentDetails": {
+        "videoId": "QQYj_kBCtxc",
+        "videoPublishedAt": "2015-12-11T23:59:07Z"
+      }
+    },
+    {
+      "kind": "youtube#playlistItem",
+      "etag": "BG6VxuQQCdE1QysxgcYfySFxe1k",
+      "id": "UExuY19OeHBtT3hhUEJibjFQeXNQMzBHQjBfOGFRR25BYS4yODlGNEE0NkRGMEEzMEQy",
+      "snippet": {
+        "publishedAt": "2019-01-13T04:06:13Z",
+        "channelId": "UCXpmUxvG37qpckRHdkstf5w",
+        "title": "Michael Chan - Inline Styles: themes, media queries, contexts, & when it's best to use CSS",
+        "description": "Michael Chan at react-europe 2015.\n\nReact allows you to write styles inline and bypass a host of CSS shortcomings. Scope, dependency management, dead code elimination, these problems go away when adding your styles directly to components. But it's not all rainbows and unicorns. Things like theming and media queries become much more difficult when all your styles live directly on components. In this talk, we'll look at how to solve these problems with contexts and plain old JavaScript. We'll also look at the role of container-components and when it's better to \"just use CSS.\"",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/ERB1TJBn32c/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/ERB1TJBn32c/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/ERB1TJBn32c/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/ERB1TJBn32c/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/ERB1TJBn32c/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "chantastic",
+        "playlistId": "PLnc_NxpmOxaPBbn1PysP30GB0_8aQGnAa",
+        "position": 18,
+        "resourceId": {
+          "kind": "youtube#video",
+          "videoId": "ERB1TJBn32c"
+        },
+        "videoOwnerChannelTitle": "ReactEurope",
+        "videoOwnerChannelId": "UCorlLn2oZfgOJ-FUcF2eZ1A"
+      },
+      "contentDetails": {
+        "videoId": "ERB1TJBn32c",
+        "videoPublishedAt": "2015-07-06T15:09:59Z"
+      }
+    },
+    {
+      "kind": "youtube#playlistItem",
+      "etag": "VV7e7lV9kZutHJ21J9ZIFVFSyak",
+      "id": "UExuY19OeHBtT3hhUEJibjFQeXNQMzBHQjBfOGFRR25BYS45NDk1REZENzhEMzU5MDQz",
+      "snippet": {
+        "publishedAt": "2019-01-13T04:08:53Z",
+        "channelId": "UCXpmUxvG37qpckRHdkstf5w",
+        "title": "RailsConf 2015 - React.js on Rails",
+        "description": "By, Michael Chan\nReact is the best way to bring interactive UIs to your Rails apps. But using React.js on Rails can be hard. NPM libraries are difficult to include, JSX seems nonsensical, and “can we still use CoffeeScript?”\n\nThere’s not one obvious path for working with React.js on Rails. In this talk, we’ll review the sordid past of Rails and JavaScript, explore the complementarity of React and Rails, and navigate the woes of integrating with NPM. We’ll discover why React is a natural fit for Rails today and how to make Rails love React in the future.",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/kTSsZrub5iE/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/kTSsZrub5iE/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/kTSsZrub5iE/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/kTSsZrub5iE/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/kTSsZrub5iE/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "chantastic",
+        "playlistId": "PLnc_NxpmOxaPBbn1PysP30GB0_8aQGnAa",
+        "position": 19,
+        "resourceId": {
+          "kind": "youtube#video",
+          "videoId": "kTSsZrub5iE"
+        },
+        "videoOwnerChannelTitle": "Confreaks",
+        "videoOwnerChannelId": "UCWnPjmqvljcafA0z2U1fwKQ"
+      },
+      "contentDetails": {
+        "videoId": "kTSsZrub5iE",
+        "videoPublishedAt": "2015-05-07T17:57:46Z"
+      }
+    },
+    {
+      "kind": "youtube#playlistItem",
+      "etag": "VqXLdzL8txDdDHmIVRx1e4Wr638",
+      "id": "UExuY19OeHBtT3hhUEJibjFQeXNQMzBHQjBfOGFRR25BYS4xMkVGQjNCMUM1N0RFNEUx",
+      "snippet": {
+        "publishedAt": "2019-01-13T04:08:16Z",
+        "channelId": "UCXpmUxvG37qpckRHdkstf5w",
+        "title": "Private video",
+        "description": "This video is private.",
+        "thumbnails": {},
+        "channelTitle": "chantastic",
+        "playlistId": "PLnc_NxpmOxaPBbn1PysP30GB0_8aQGnAa",
+        "position": 20,
+        "resourceId": {
+          "kind": "youtube#video",
+          "videoId": "0aBv8dsZs84"
+        }
+      },
+      "contentDetails": {
+        "videoId": "0aBv8dsZs84"
+      }
+    }
+  ]
 }

@@ -29,6 +29,7 @@
 		"@types/sanitize-html": "^2.11.0",
 		"astro": "^4.12.3",
 		"astro-expressive-code": "^0.35.3",
+		"dotenv": "^17.3.1",
 		"hastscript": "^9.0.0",
 		"lucide": "^0.417.0",
 		"markdown-it": "^14.1.0",
