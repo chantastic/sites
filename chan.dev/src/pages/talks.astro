@@ -2,30 +2,7 @@
 import Layout from '#layouts/Layout.astro'
 import PostMeta from '#components/header-post-meta.astro'
 import Prose from '#components/prose.astro'
-
-const apiKey = import.meta.env.YOUTUBE_API_KEY
-const playlistId = 'PLnc_NxpmOxaPBbn1PysP30GB0_8aQGnAa'
-
-async function fetchVideos() {
-	if (!apiKey) {
-		console.warn('YOUTUBE_API_KEY is not set')
-		return []
-	}
-
-	const url = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet%2CcontentDetails&maxResults=50&playlistId=${playlistId}&key=${apiKey}`
-
-	try {
-		const response = await fetch(url)
-		if (!response.ok) {
-			throw new Error(`HTTP error! status: ${response.status}`)
-		}
-		const data = await response.json()
-		return Array.isArray(data?.items) ? data.items : []
-	} catch (error) {
-		console.error(`Error fetching talks: ${error}`)
-		return []
-	}
-}
+import talksData from '#data/talks.json'
 
 function truncateTitle(str: string | null | undefined) {
 	if (typeof str !== 'string') {
@@ -39,7 +16,8 @@ function truncateTitle(str: string | null | undefined) {
 	return str
 }
 
-const videos = await fetchVideos()
+const videos = Array.isArray(talksData?.items) ? talksData.items : []
+const refreshedAt = talksData?.refreshedAt
 ---
 
 <!-- https://tailwindui.com/components/application-ui/lists/grid-lists --><!-- TODO: this page should not have `prose` on it -->
@@ -47,6 +25,17 @@ const videos = await fetchVideos()
 	<main>
 		<Prose class="mb-8">
 			<h1 class="tracking-tight">Talks</h1>
+			{
+				refreshedAt ? (
+					<p class="text-sm opacity-70">
+						Updated {new Date(refreshedAt).toLocaleDateString('en-US', {
+							year: 'numeric',
+							month: 'short',
+							day: 'numeric',
+						})}
+					</p>
+				) : null
+			}
 		</Prose>
 
 		{
@@ -100,7 +89,8 @@ const videos = await fetchVideos()
 				</ul>
 			) : (
 				<Prose>
-					<p>Talks are temporarily unavailable.</p>
+					<p>No talks loaded yet.</p>
+					<p>Run <code>npm run refresh:talks</code> to pull the latest playlist.</p>
 				</Prose>
 			)
 		}
