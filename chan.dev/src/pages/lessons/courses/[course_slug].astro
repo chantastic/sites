@@ -1,0 +1,79 @@
+---
+import Layout from '#layouts/Layout.astro'
+import PostMeta from '#components/header-post-meta.astro'
+import * as LESSONS from '#content/lessons/_lessons'
+import Prose from '#components/prose.astro'
+import {titleCase} from 'title-case'
+
+export async function getStaticPaths() {
+	const lessons = await LESSONS.getCollection()
+
+	return LESSONS.getUniqueCourseKeys(lessons).map((courseKey) => ({
+		params: {
+			course_slug: courseKey.replaceAll('/', '--'),
+		},
+		props: {
+			courseKey,
+			lessons: LESSONS.getLessonsForCourse(lessons, courseKey),
+		},
+	}))
+}
+
+interface Props {
+	courseKey: string
+}
+
+const {courseKey, lessons} = Astro.props
+const [collection_name, course_name] = courseKey.split('/')
+---
+
+<Layout>
+	<Prose as="main">
+		<small>
+			⇠ <a href="/">chan.dev</a>
+			/ <a href={`/${LESSONS.path()}`}>lessons</a>
+			/ <a href={`/${LESSONS.collectionPath(collection_name)}`}>{collection_name}</a>
+		</small>
+		<h1>{titleCase(course_name.split('-').join(' '))}</h1>
+		<h2 id="Complete">Complete</h2>
+		<table>
+			<thead><tr><td>status</td><td>count</td></tr></thead>
+			<tbody>
+				{
+					Object.entries(
+						lessons.reduce((acc, lesson) => {
+							return {
+								...acc,
+								[lesson.data.status]:
+									(acc[lesson.data.status] || 0) + 1,
+							}
+						}, {})
+					).map(([status, count]) => (
+						<tr>
+							<td>{status}</td>
+							<td>{count}</td>
+						</tr>
+					))
+				}
+			</tbody>
+		</table>
+		<h2 id="outline">Outline</h2>
+		<ol class="list-none p-0">
+			{
+				lessons.map((lesson) => (
+					<li>
+						<a href={`/${LESSONS.lessonPath(lesson)}`}>
+							{lesson.data.order ? `${lesson.data.order}: ` : ''}{lesson.data.title}
+						</a>
+						{lesson.data.status && ` [${lesson.data.status}]`}
+					</li>
+				))
+			}
+		</ol>
+		<PostMeta
+			title={titleCase(course_name.split('-').join(' '))}
+			path={LESSONS.coursePath(courseKey)}
+			slot="page-meta"
+		/>
+	</Prose>
+</Layout>

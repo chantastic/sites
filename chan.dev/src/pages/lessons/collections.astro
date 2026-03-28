@@ -6,8 +6,7 @@ import Prose from '#components/prose.astro'
 
 const lessons = await LESSONS.getCollection()
 
-const collections =
-	LESSONS.getUniqueSegmentValuesFromCollection(lessons)
+const collections = LESSONS.getUniqueCollectionNames(lessons)
 ---
 
 <Layout>
@@ -21,7 +20,7 @@ const collections =
 			{
 				collections.map((collection) => (
 					<li>
-						<a href={`/${LESSONS.path(collection)}`}>
+						<a href={`/${LESSONS.collectionPath(collection)}`}>
 							{collection}
 						</a>
 					</li>
