@@ -43,7 +43,7 @@ let entries = await getGuideInstructionalEntries(String(params.guide_slug))
 							]}
 						>
 							{instructionalTitle(item)}
-							{item.entry.data.status === 'draft' && <span> [draft]</span>}
+							{item.data.status === 'draft' && <span> [draft]</span>}
 						</a>
 					</li>
 				))}

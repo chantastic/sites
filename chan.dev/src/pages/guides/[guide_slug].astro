@@ -41,7 +41,7 @@ const lessonSteps = await getGuideInstructionalEntries(
 					<li>
 						<a href={instructionalPath(item)}>
 							{instructionalTitle(item)}
-							{item.entry.data.status === 'draft' && <span> [draft]</span>}
+							{item.data.status === 'draft' && <span> [draft]</span>}
 						</a>
 					</li>
 				))}

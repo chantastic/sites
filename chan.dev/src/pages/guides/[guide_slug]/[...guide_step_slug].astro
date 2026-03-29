@@ -1,7 +1,7 @@
 ---
 import Layout from './_layout.astro'
 import * as GUIDES from '#content/guides/_guides'
-import {entrySlug} from '#lib/content-entry'
+import * as LESSONS from '#content/lessons/_lessons'
 import {
 	getGuideInstructionalEntries,
 	renderInstructionalEntry,
@@ -21,14 +21,7 @@ export async function getStaticPaths() {
 			paths.push({
 				params: {
 					guide_slug: GUIDES.guideSlug(guide),
-					guide_step_slug:
-						item.kind === 'lesson'
-							? item.entry.data.guide_step ??
-								item.entry.data.sequence ??
-								entrySlug(item.entry)
-							: item.entry.id
-									.replace(`${GUIDES.guideSlug(guide)}/`, '')
-									.replace(/\.md$/, ''),
+					guide_step_slug: LESSONS.guideStepName(item),
 				},
 				props: {item},
 			})

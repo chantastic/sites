@@ -1,75 +1,52 @@
-import {entrySlug, renderEntry} from '#lib/content-entry'
+import {renderEntry} from '#lib/content-entry'
 import type * as GUIDES from '#content/guides/_guides'
-import * as GUIDE_STEPS from '#content/guide_steps/_guide_steps'
 import * as LESSONS from '#content/lessons/_lessons'
 
 export type GuidePackage = GUIDES.CollectionEntry
-export type InstructionalEntry =
-	| {kind: 'lesson'; entry: LESSONS.CollectionEntry}
-	| {kind: 'guide_step'; entry: GUIDE_STEPS.CollectionEntry}
+export type InstructionalEntry = LESSONS.CollectionEntry
 
-export function instructionalTitle(item: InstructionalEntry) {
-	return item.entry.data.title ?? instructionalSlug(item)
+export function instructionalTitle(entry: InstructionalEntry) {
+	return entry.data.title ?? LESSONS.guideStepName(entry)
 }
 
-export function instructionalSlug(item: InstructionalEntry) {
-	if (item.kind === 'lesson') {
-		return LESSONS.lessonSlug(item.entry)
+export function instructionalGuide(entry: InstructionalEntry) {
+	return LESSONS.guideName(entry)
+}
+
+export function instructionalGuidePath(entry: InstructionalEntry) {
+	return `/guides/${instructionalGuide(entry)}`
+}
+
+export function instructionalPath(entry: InstructionalEntry) {
+	const guide = LESSONS.guideName(entry)
+	if (guide) {
+		return `/guides/${guide}/${LESSONS.guideStepName(entry)}`
 	}
 
-	return GUIDE_STEPS.guideStepSlug(item.entry)
+	return `/${LESSONS.lessonPath(entry)}`
 }
 
-export function instructionalGuide(item: InstructionalEntry) {
-	if (item.kind === 'lesson') {
-		return LESSONS.guideName(item.entry)
-	}
-
-	return GUIDE_STEPS.guideSlug(item.entry)
-}
-
-export function instructionalGuidePath(item: InstructionalEntry) {
-	return `/guides/${instructionalGuide(item)}`
-}
-
-export function instructionalPath(item: InstructionalEntry) {
-	if (item.kind === 'lesson') {
-		const guide = LESSONS.guideName(item.entry)
-		if (guide) {
-			return `/guides/${guide}/${LESSONS.guideStepName(item.entry)}`
-		}
-
-		return `/${LESSONS.lessonPath(item.entry)}`
-	}
-
-	return GUIDE_STEPS.guideStepPath(item.entry)
-}
-
-export async function renderInstructionalEntry(item: InstructionalEntry) {
-	return await renderEntry(item.entry)
+export async function renderInstructionalEntry(entry: InstructionalEntry) {
+	return await renderEntry(entry)
 }
 
 export async function getGuideInstructionalEntries(guide: string) {
-	const [lessons, guideSteps] = await Promise.all([
-		LESSONS.getCollection(
-			(entry) => LESSONS.guideName(entry) === guide
-		),
-		GUIDE_STEPS.getEntriesForGuide(guide),
-	])
-
-	if (lessons.length > 0) {
-		return lessons.map((entry) => ({
-			kind: 'lesson' as const,
-			entry,
-		}))
-	}
-
-	return guideSteps
-		.filter((entry) => !GUIDE_STEPS.isGuideIndex(entry))
-		.map((entry) => ({
-			kind: 'guide_step' as const,
-			entry,
-		}))
+	return await LESSONS.getCollection(
+		(entry) => LESSONS.guideName(entry) === guide,
+		(a, b) =>
+			(a.data.order ?? Number.MAX_SAFE_INTEGER) -
+				(b.data.order ?? Number.MAX_SAFE_INTEGER) ||
+			(a.data.sequence ?? LESSONS.guideStepName(a)).localeCompare(
+				b.data.sequence ?? LESSONS.guideStepName(b),
+				undefined,
+				{numeric: true}
+			) ||
+			LESSONS.guideStepName(a).localeCompare(
+				LESSONS.guideStepName(b),
+				undefined,
+				{numeric: true}
+			)
+	)
 }
 
 export async function getGuideInstructionalEntry(
@@ -82,34 +59,16 @@ export async function getGuideInstructionalEntry(
 			LESSONS.guideStepName(entry) === step
 	)
 
-	if (lessons[0]) {
-		return {kind: 'lesson' as const, entry: lessons[0]}
-	}
-
-	const guideSteps = await GUIDE_STEPS.getCollection(
-		(entry) =>
-			GUIDE_STEPS.guideSlug(entry) === guide &&
-			GUIDE_STEPS.stepSlug(entry) === step
-	)
-
-	if (guideSteps[0]) {
-		return {kind: 'guide_step' as const, entry: guideSteps[0]}
-	}
-
-	return null
+	return lessons[0] ?? null
 }
 
 export function isCurrentInstructionalEntry(
-	item: InstructionalEntry,
+	entry: InstructionalEntry,
 	paramsStepSlug: string | undefined
 ) {
 	if (!paramsStepSlug) {
 		return false
 	}
 
-	if (item.kind === 'lesson') {
-		return LESSONS.guideStepName(item.entry) === paramsStepSlug
-	}
-
-	return GUIDE_STEPS.stepSlug(item.entry) === paramsStepSlug
+	return LESSONS.guideStepName(entry) === paramsStepSlug
 }
