@@ -1,7 +1,6 @@
 ---
 import Layout from '#layouts/Layout.astro'
 import PostMeta from '#components/header-post-meta.astro'
-import PostNotWritten from '#components/body-page-not-written.astro'
 import * as USES from '#content/uses/_uses'
 import Prose from '#components/prose.astro'
 import {entrySlug, renderEntry} from '#lib/content-entry'
@@ -47,13 +46,7 @@ const title =
 						</div>
 					))
 			}
-			{
-				entry.body ? (
-					<Content />
-				) : (
-					<PostNotWritten path={USES.path(slug)} />
-				)
-			}
+			<Content />
 			{
 				entry.data.links && (
 					<small>

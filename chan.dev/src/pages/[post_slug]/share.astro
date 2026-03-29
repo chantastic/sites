@@ -5,12 +5,8 @@ import PostMeta from '#components/header-post-meta.astro'
 import * as POSTS from '#content/posts/_posts'
 import * as COLLECTION from '#modules/collection'
 import {getPlatformShortoutsForRelatedEntities} from '#content/entities/_entities'
-import {entrySlug} from '#lib/content-entry'
+import {entrySlug, renderEntry} from '#lib/content-entry'
 import {url} from '#modules/site'
-import {micromark} from 'micromark'
-import {gfm, gfmHtml} from 'micromark-extension-gfm'
-import sanitizeHtml from 'sanitize-html'
-import sanitize from 'sanitize-html'
 import Prose from '#components/prose.astro'
 
 export async function getStaticPaths() {
@@ -28,78 +24,18 @@ interface Props {
 
 const {entry} = Astro.props
 const slug = entrySlug(entry)
+const {Content} = await renderEntry(entry)
 
 // @ts-ignore
 let relatedShoutouts
 if (entry.collection === 'posts' && entry.data.shoutouts)
 	relatedShoutouts = await getEntries(entry.data.shoutouts)
-
-function githubusercontent_url_from_src(src: string) {
-	let [, ...segments] = src.split('/')
-
-	const result = new URL(
-		`chantastic/sites/main/chan.dev/src/content/posts/${segments.join('/')}`,
-		'https://raw.githubusercontent.com/'
-	).toString()
-
-	return result
-}
-
-/* KLUDGE: this should absolutely be a proper micromark extension but I don't understand them*/
-let mutatedBody = entry.body ?? ''
-
-mutatedBody = mutatedBody.replace(
-	/!\[(?<altText>.*)\]\((?<imageSrc>.*)\)/g,
-	(match, altText, imageSrc) => {
-		const githubusercontent_url =
-			githubusercontent_url_from_src(imageSrc)
-
-		return `![${altText}](${githubusercontent_url})`
-	}
-)
-
-mutatedBody = mutatedBody.replace(
-	/```[\S\s]*?```/gm,
-	(match) => {
-		return match.replace(/\n+/g, '\n')
-	}
-)
-
-mutatedBody = mutatedBody.replace(
-	/:::[\S\s]*?:::/gm,
-	(match) => {
-		return ''
-	}
-)
-
-mutatedBody = mutatedBody.replace(
-	/<!--[\S\s]*?-->/gm,
-	(match) => {
-		return ''
-	}
-)
-
-const simpleHTMLBody = sanitizeHtml(
-	micromark(mutatedBody, {
-		extensions: [gfm()],
-		htmlExtensions: [gfmHtml()],
-	}),
-	{
-		allowedTags: [...sanitizeHtml.defaults.allowedTags, 'img'],
-		allowedAttributes: {
-			...sanitizeHtml.defaults.allowedAttributes,
-			code: ['class'],
-		},
-	}
-).replace(/(\n)<\/code>/g, (match) => {
-	return '</code>'
-})
 ---
 
 <Layout entry={entry}>
 	<Prose>
 		<main class="mt-4">
-			<div set:html={simpleHTMLBody} />
+			<Content />
 			<div id="tooltip" role="tooltip">My tooltip</div>
 		</main>
 		<footer>

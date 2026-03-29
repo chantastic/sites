@@ -1,6 +1,5 @@
 ---
 import type * as POSTS from "#content/posts/_posts";
-import * as ASTRO from "astro/components"
 import * as COLLECTION from "#modules/collection";
 import Prose from "#components/prose.astro";
 import CrossPostDetails from "#components/body-hidden-share-cross-post-details.astro";
@@ -46,11 +45,6 @@ const maybeContent = entry ? await renderEntry(entry) : undefined;
               <dd><pre>{entry.data.tldr}</pre></dd>
             }
           </dl>
-
-          <details>
-            <summary><span class="font-black">Raw markdown</span></summary>
-            <ASTRO.Code code={entry.body} lang="markdown" wrap />
-          </details>
 
           {maybeContent?.headings && 
             <details>
