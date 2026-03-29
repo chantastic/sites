@@ -185,7 +185,5 @@ export default defineConfig({
 			],
 		],
 	},
-	adapter: cloudflare({
-		prerenderEnvironment: 'node',
-	}),
+	adapter: cloudflare(),
 })

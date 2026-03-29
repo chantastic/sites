@@ -13,7 +13,8 @@
 		"build:local": "op run --env-file='./.env' -- npm run build",
 		"refresh:talks": "node scripts/refresh-talks.mjs",
 		"postbuild": "pagefind --site dist",
-		"preview": "npm run build:local && wrangler pages dev ./dist --port 2426",
+		"preview": "npm run build:local && astro preview --port 2426",
+		"deploy": "npm run build && wrangler deploy",
 		"tsc": "tsc"
 	},
 	"devDependencies": {
