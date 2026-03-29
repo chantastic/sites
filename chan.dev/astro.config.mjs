@@ -1,5 +1,5 @@
 import {defineConfig, sharpImageService} from 'astro/config'
-import tailwind from '@astrojs/tailwind'
+import tailwindcss from '@tailwindcss/vite'
 import sitemap from '@astrojs/sitemap'
 import remark_toc from 'remark-toc'
 import remark_deflist from 'remark-deflist'
@@ -80,17 +80,15 @@ export default defineConfig({
 		port: 2426,
 	},
 	vite: {
+		plugins: [tailwindcss()],
 		optimizeDeps: {
 			exclude: ['fsevents'],
 		},
 	},
 	site,
 	integrations: [
-		tailwind(),
 		sitemap({
 			filter: (page) => {
-				// I'm building dedicated share pages that I don't want indexed.
-				// Ultimately, this may be better as a dynamic route.
 				if (page.endsWith('/share/')) {
 					return false
 				}
@@ -187,5 +185,7 @@ export default defineConfig({
 			],
 		],
 	},
-	adapter: cloudflare(),
+	adapter: cloudflare({
+		prerenderEnvironment: 'node',
+	}),
 })
