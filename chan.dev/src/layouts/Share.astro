@@ -1,5 +1,5 @@
 ---
-import {ViewTransitions} from 'astro:transitions'
+import {ClientRouter} from 'astro:transitions'
 import GoogleFonts from '#components/header-google-fonts.astro'
 import GlobalStyles from '#components/header-global-styles.astro'
 import site from '#/metadata.json'
@@ -40,7 +40,7 @@ const {entry} = Astro.props
 				{site.title}
 			</title>
 		</slot>
-		<ViewTransitions />
+		<ClientRouter />
 		{
 			entry?.collection === 'posts' && (
 				<>
