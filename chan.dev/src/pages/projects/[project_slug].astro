@@ -23,6 +23,10 @@ interface Props {
 const {entry} = Astro.props
 const {Content} = await renderEntry(entry)
 const slug = entrySlug(entry)
+const title = slug
+	.split('-')
+	.map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+	.join(' ')
 ---
 
 <Layout>
@@ -38,5 +42,9 @@ const slug = entrySlug(entry)
 			<Content />
 		</main>
 	</Prose>
-	<PostMeta slot="page-meta" path={PROJECTS.path(slug)} />
+	<PostMeta
+		slot="page-meta"
+		title={title}
+		path={PROJECTS.path(slug)}
+	/>
 </Layout>
