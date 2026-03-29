@@ -1,5 +1,6 @@
 import * as ASTRO_CONTENT from 'astro:content'
 import * as COLLECTION from '#modules/collection'
+import {entrySlug} from '#lib/content-entry'
 import {z, defineCollection} from 'astro:content'
 
 export const COLLECTION_NAME = 'dailies'
@@ -14,8 +15,8 @@ export async function getCollection(
 	},
 	sort = (a: CollectionEntry, b: CollectionEntry) => {
 		return COLLECTION.compareByDate(
-			new Date(a.slug),
-			new Date(b.slug)
+			new Date(entrySlug(a)),
+			new Date(entrySlug(b))
 		)
 	}
 ) {
