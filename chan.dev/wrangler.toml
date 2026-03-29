@@ -7,6 +7,10 @@ compatibility_flags = ["nodejs_compat"]
 binding = "STATIC_ASSETS"
 directory = "dist/client"
 
+[[kv_namespaces]]
+binding = "SESSION"
+id = "c2ae35eea2864cc5b5b9819edc49473d"
+
 [vars]
 WORKOS_REDIRECT_URI = "https://chan.dev/auth/callback"
 WORKOS_CLIENT_ID = "client_01HRBZRK6DZZ4FK5YAFNE4K388"
