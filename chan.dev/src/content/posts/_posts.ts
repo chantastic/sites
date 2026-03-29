@@ -1,6 +1,6 @@
 import * as ASTRO_CONTENT from 'astro:content'
 import * as COLLECTION from '#modules/collection'
-import {entrySlug} from '#lib/content-entry'
+import {entrySlug as contentEntrySlug} from '#lib/content-entry'
 import {z, reference, defineCollection} from 'astro:content'
 
 export const COLLECTION_NAME = 'posts'
@@ -79,6 +79,10 @@ export const collectionSchema = defineCollection({
 			mermaid: z.boolean().optional(),
 		}),
 })
+
+export function entrySlug(entry: {slug?: string; id: string}) {
+	return contentEntrySlug(entry)
+}
 
 export function entryHasTags(entry: CollectionEntry) {
 	if (entry.data.tags) {

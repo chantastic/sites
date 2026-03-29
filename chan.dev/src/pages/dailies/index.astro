@@ -2,6 +2,7 @@
 import Prose from '#components/prose.astro'
 import Layout from '#layouts/Layout.astro'
 import * as DAILIES from '#content/dailies/_dailies'
+import {entrySlug} from '#lib/content-entry'
 
 let entries = await DAILIES.getCollection()
 ---
@@ -13,7 +14,7 @@ let entries = await DAILIES.getCollection()
 			{
 				entries.map((entry) => (
 					<li>
-						<a href={`/dailies/${entry.slug}`}>{entry.slug}</a>
+						<a href={`/dailies/${entrySlug(entry)}`}>{entrySlug(entry)}</a>
 					</li>
 				))
 			}

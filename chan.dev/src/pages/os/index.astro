@@ -3,6 +3,7 @@ import PostMeta from '#components/header-post-meta.astro'
 import Prose from '#components/prose.astro'
 import Layout from '#layouts/Layout.astro'
 import * as OS from '#content/os/_os'
+import {entrySlug} from '#lib/content-entry'
 
 const entries = await OS.getCollection()
 ---
@@ -20,7 +21,7 @@ const entries = await OS.getCollection()
 				{
 					entries.map((entry) => (
 						<li>
-							<a href={`/${OS.path(entry.slug)}`}>
+							<a href={`/${OS.path(entrySlug(entry))}`}>
 								{entry.data.title}
 							</a>
 						</li>

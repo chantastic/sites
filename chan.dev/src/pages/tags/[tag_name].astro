@@ -3,6 +3,7 @@ import Layout from '#layouts/Layout.astro'
 import * as POSTS from '#content/posts/_posts'
 import PostMeta from '#components/header-post-meta.astro'
 import Prose from '#components/prose.astro'
+import {entrySlug} from '#lib/content-entry'
 
 export async function getStaticPaths() {
 	const posts = await POSTS.getCollection(({data}) => {
@@ -51,7 +52,7 @@ const {entries} = Astro.props
 				{
 					entries.map((entry) => (
 						<li>
-							<a href={`/${entry.slug}`}>{entry.data.title}</a>
+							<a href={`/${entrySlug(entry)}`}>{entry.data.title}</a>
 						</li>
 					))
 				}

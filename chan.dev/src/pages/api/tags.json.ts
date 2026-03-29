@@ -3,7 +3,7 @@ import * as POSTS from '#content/posts/_posts'
 export async function GET() {
 	const entries = await POSTS.getCollection(
 		() => true,
-		(a, b) => a.slug.localeCompare(b.slug)
+		(a, b) => POSTS.entrySlug(a).localeCompare(POSTS.entrySlug(b))
 	)
 
 	const publishedEntries = entries.filter(

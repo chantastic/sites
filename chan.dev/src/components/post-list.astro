@@ -1,19 +1,20 @@
 ---
-import type { CollectionEntry } from "astro:content";
+import type {CollectionEntry} from 'astro:content'
+import {entrySlug} from '#lib/content-entry'
 
 export interface Props {
-  posts: CollectionEntry<"posts">[];
+	posts: CollectionEntry<'posts'>[]
 }
 
-const { posts } = Astro.props;
+const {posts} = Astro.props
 ---
 
 <ul>
-  {
-    posts.map((post) => (
-      <li>
-        <a href={`/${post.slug}`}>{post.data.title}</a>
-      </li>
-    ))
-  }
+	{
+		posts.map((post) => (
+			<li>
+				<a href={`/${entrySlug(post)}`}>{post.data.title}</a>
+			</li>
+		))
+	}
 </ul>

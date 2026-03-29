@@ -4,6 +4,7 @@ import Layout from '#layouts/Layout.astro'
 import PostList from '#components/post-list.astro'
 import * as RECIPES from '#content/recipes/_recipes'
 import Prose from '#components/prose.astro'
+import {entrySlug} from '#lib/content-entry'
 
 const recipes = await RECIPES.getCollection()
 ---
@@ -19,7 +20,7 @@ const recipes = await RECIPES.getCollection()
 				{
 					recipes.map((recipe) => (
 						<li>
-							<a href={RECIPES.path(recipe.slug)}>
+							<a href={RECIPES.path(entrySlug(recipe))}>
 								{recipe.data.title}
 							</a>
 						</li>

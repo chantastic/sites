@@ -3,6 +3,7 @@ import PostMeta from '#components/header-post-meta.astro'
 import Layout from '#layouts/Layout.astro'
 import * as PROJECTS from '#content/projects/_projects'
 import Prose from '#components/prose.astro'
+import {entrySlug} from '#lib/content-entry'
 
 const projects = await PROJECTS.getCollection(
 	(p) => p.data.status === 'active'
@@ -34,8 +35,8 @@ function makeTitle(slug) {
 				{
 					projects.map((project) => (
 						<li>
-							<a href={`/projects//${project.slug}`}>
-								{makeTitle(project.slug)}
+							<a href={`/projects/${entrySlug(project)}`}>
+								{makeTitle(entrySlug(project))}
 							</a>
 						</li>
 					))
