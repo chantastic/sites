@@ -6,9 +6,9 @@ Personal site of Michael Chan (@chantastic). Astro, Cloudflare, markdown content
 
 ```
 src/content/
-  posts/       — 464 posts (essays, tutorials, notes, references, seeds)
-  guide_steps/ — step-by-step guides (git, vim, storybook, etc.)
-  lessons/     — course content (Epic React, React Holiday, SQL)
+  posts/       — essays, tutorials, notes, references, seeds
+  guides/      — guide/package metadata and landing pages
+  lessons/     — instructional content (courses, guide steps, event lessons)
   os/          — operating procedures and checklists
   uses/        — gear and services
   entities/    — people and orgs (YAML)
@@ -16,6 +16,13 @@ src/content/
   dailies/     — daily notes
   recipes/     — food recipes
 ```
+
+## Instructional content conventions
+
+- `guide_steps` is retired. Do not add new content there.
+- Guide packages live in `src/content/guides/`.
+- Instructional units live in `src/content/lessons/`, including guide-backed lessons.
+- Preserve legacy guide/lesson URLs with redirects when changing public paths.
 
 ## Frontmatter conventions
 
