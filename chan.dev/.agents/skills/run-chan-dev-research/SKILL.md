@@ -24,6 +24,7 @@ It may coordinate with global transformation skills for the raw research when th
 - report kind
 - snapshot date
 - business context or goals
+- optional source file paths containing existing research or draft findings
 
 Examples:
 
@@ -31,6 +32,7 @@ Examples:
 - source: `youtube`
 - report kind: `audit`
 - snapshot date: `2026-03-09`
+- source file paths: `/absolute/path/to/notes.md`
 
 ## Local Contract
 
@@ -90,6 +92,8 @@ This local coordinator owns:
 If no matching global skill exists, do the raw research directly and continue with the same local output contract.
 
 Do not depend on another skill's private files, caches, or manifests. Use only the explicit findings it produces.
+
+If the operator provides explicit source file paths, treat those files as the raw research input and skip the matching `analyze-*` transformation skill unless asked otherwise.
 
 ## Filename Pattern
 
@@ -170,6 +174,21 @@ At minimum, read:
 Read the deeper reference file only if you need more calibration.
 
 ### Step 3: Select the raw research path
+
+If explicit source file paths are provided:
+
+- read those files first
+- treat them as the source material
+- skip `analyze-*` skill calls by default
+
+This is the escape hatch for:
+
+- old research notes
+- draft analyses
+- scratch markdown written elsewhere
+- existing report files that need to be normalized or rewritten
+
+If no source files are provided, then:
 
 If a matching global `analyze-*` skill exists, use it first.
 
