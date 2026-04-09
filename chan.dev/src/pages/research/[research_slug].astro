@@ -1,0 +1,106 @@
+---
+import Layout from '#layouts/Layout.astro'
+import PostMeta from '#components/header-post-meta.astro'
+import Prose from '#components/prose.astro'
+import * as COLLECTION from '#modules/collection'
+import * as RESEARCH from '#content/research/_research'
+import {renderEntry} from '#lib/content-entry'
+
+export async function getStaticPaths() {
+	const entries = await RESEARCH.getCollection()
+
+	return entries.map((entry) => ({
+		params: {
+			research_slug: RESEARCH.entrySlug(entry),
+		},
+		props: {
+			entry,
+		},
+	}))
+}
+
+interface Props {
+	entry: RESEARCH.CollectionEntry
+}
+
+const {entry} = Astro.props
+const {Content} = await renderEntry(entry)
+const slug = RESEARCH.entrySlug(entry)
+---
+
+<Layout>
+	<Prose>
+		<small>
+			⇠ <a href="/">chan.dev</a>
+			/ <a href={`/${RESEARCH.path()}`}
+				>{RESEARCH.COLLECTION_NAME}</a
+			>
+		</small>
+		<main class="mt-4">
+			<h1 class="tracking-tight">{entry.data.title}</h1>
+			<p>
+				<small>
+					{entry.data.kind} ·{' '}
+					{entry.data.subject.url ? (
+						<a href={entry.data.subject.url} target="_blank">
+							{entry.data.subject.name}
+						</a>
+					) : (
+						entry.data.subject.name
+					)}{' '}
+					· snapshot{' '}
+					{COLLECTION.formatDate(
+						entry.data.snapshotDate
+					)}
+				</small>
+			</p>
+			{entry.data.tldr && (
+				<p>
+					<strong>TL;DR:</strong> {entry.data.tldr}
+				</p>
+			)}
+			{entry.data.priorities &&
+				entry.data.priorities.length > 0 && (
+					<>
+						<h2>Highest Leverage Changes</h2>
+						<ol>
+							{entry.data.priorities.map((priority) => (
+								<li>
+									<strong>{priority.title}</strong>
+									{priority.summary &&
+										` — ${priority.summary}`}
+									{(priority.impact ||
+										priority.effort) && (
+										<>
+											{' '}
+											<small>
+												(
+												{[
+													priority.impact &&
+														`impact: ${priority.impact}`,
+													priority.effort &&
+														`effort: ${priority.effort}`,
+												]
+													.filter(Boolean)
+													.join(
+														', '
+													)}
+												)
+											</small>
+										</>
+									)}
+								</li>
+							))}
+						</ol>
+					</>
+				)}
+			<Content />
+		</main>
+	</Prose>
+	<PostMeta
+		slot="page-meta"
+		title={RESEARCH.title(entry.data.title)}
+		description={entry.data.description}
+		path={RESEARCH.path(slug)}
+	/>
+</Layout>

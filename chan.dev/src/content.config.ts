@@ -7,6 +7,7 @@ import {collectionSchema as lessons} from '#content/lessons/_lessons'
 import {collectionSchema as os} from '#content/os/_os'
 import {collectionSchema as posts} from '#content/posts/_posts'
 import {collectionSchema as projects} from '#content/projects/_projects'
+import {collectionSchema as research} from '#content/research/_research'
 import {collectionSchema as recipes} from '#content/recipes/_recipes'
 import {collectionSchema as uses} from '#content/uses/_uses'
 
@@ -61,6 +62,13 @@ export const collections = {
 			pattern: markdownPattern,
 		}),
 		schema: projects.schema,
+	}),
+	research: defineCollection({
+		loader: glob({
+			base: './src/content/research',
+			pattern: markdownPattern,
+		}),
+		schema: research.schema,
 	}),
 	recipes: defineCollection({
 		loader: glob({

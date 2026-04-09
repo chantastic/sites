@@ -1,0 +1,61 @@
+---
+import PostMeta from '#components/header-post-meta.astro'
+import Layout from '#layouts/Layout.astro'
+import Prose from '#components/prose.astro'
+import * as COLLECTION from '#modules/collection'
+import * as RESEARCH from '#content/research/_research'
+
+const entries = await RESEARCH.getCollection()
+---
+
+<Layout>
+	<Prose>
+		<small>
+			⇠ <a href="/">chan.dev</a>
+		</small>
+		<main class="mt-4">
+			<h1 class="tracking-tight">Research</h1>
+			<p>
+				Structured audits, strategy notes, and reports.
+			</p>
+			<ul>
+				{
+					entries.map((entry) => (
+						<li>
+							<a
+								href={`/${RESEARCH.path(
+									RESEARCH.entrySlug(entry)
+								)}`}
+							>
+								{entry.data.title}
+							</a>
+							<br />
+							<small>
+								{entry.data.kind} ·{' '}
+								{entry.data.subject.name} ·{' '}
+								{COLLECTION.formatDate(
+									entry.data.snapshotDate
+								)}
+							</small>
+							{(entry.data.description ||
+								entry.data.tldr) && (
+								<>
+									<br />
+									<small>
+										{entry.data.description ??
+											entry.data.tldr}
+									</small>
+								</>
+							)}
+						</li>
+					))
+				}
+			</ul>
+		</main>
+	</Prose>
+	<PostMeta
+		title={RESEARCH.title()}
+		path={RESEARCH.path()}
+		slot="page-meta"
+	/>
+</Layout>
