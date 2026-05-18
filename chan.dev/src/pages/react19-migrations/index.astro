@@ -1,6 +1,7 @@
 ---
 import MagicMove from './_shiki_magic_move'
-import Layout from '#layouts/Layout.astro'
+import Layout from '#layouts/TailwindLayout.astro'
+import Prose from '#components/prose.astro'
 import * as prop_types_typescript from './prop_types_typescript'
 import * as useactionstate from './useactionstate'
 import * as async_useactionstate from './async_useactionstate'
@@ -37,7 +38,7 @@ function prepExamples(examples) {
 ---
 
 <Layout class="" style={{backgroundColor: "rgb(26, 27, 38)"}}>
-  <div class="prose">
+  <Prose>
     <h1>React 19 Actions (as Refactors)</h1>
     
     {[
@@ -92,5 +93,5 @@ function prepExamples(examples) {
     }
   });
 </script>
-  </div>
+  </Prose>
 </Layout>

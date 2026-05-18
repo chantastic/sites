@@ -3,6 +3,28 @@
     --system-ui: system-ui, "Segoe UI", Roboto, Helvetica, Arial,
       sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
       "Segoe UI Symbol";
+    --plaintext-bg: #f7f7f8;
+    --plaintext-fg: #111;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --plaintext-bg: #111;
+      --plaintext-fg: #f7f7f8;
+    }
+  }
+
+  html {
+    background: var(--plaintext-bg);
+    color: var(--plaintext-fg);
+    color-scheme: light dark;
+  }
+
+  body {
+    background: var(--plaintext-bg);
+    color: var(--plaintext-fg);
+    margin: 0;
+    padding: 40px;
   }
 
   /* Direct Links / Markdown Headers */
@@ -28,6 +50,109 @@
   }
   .heading--direct-link-icon > svg {
     display: inline-block;
+  }
+
+  /* Plaintext prose: semantic HTML, preformatted aesthetic */
+  [data-prose="plaintext"] {
+    background: var(--plaintext-bg);
+    color: var(--plaintext-fg);
+    color-scheme: light dark;
+    font-family: monospace;
+    font-size: 12px;
+    line-height: 1.5;
+    max-width: 480px;
+  }
+
+  [data-prose="plaintext"] :where(h1, h2, h3, h4, h5, h6, p, ul, ol, li, blockquote, pre, code, hr) {
+    color: inherit;
+    font: inherit;
+    margin: 0;
+  }
+
+  [data-prose="plaintext"] :where(h1, h2, h3, h4, h5, h6, p, ul, ol, blockquote, pre, hr) {
+    margin-block: 0 1.5em;
+  }
+
+  [data-prose="plaintext"] :where(h1, h2, h3, h4, h5, h6) {
+    font-weight: inherit;
+    margin-block-start: 3em;
+    text-transform: uppercase;
+  }
+
+  [data-prose="plaintext"] :where(h1, h2, h3, h4, h5, h6):first-child {
+    margin-block-start: 0;
+  }
+
+  [data-prose="plaintext"] h1::before {
+    content: "# ";
+  }
+
+  [data-prose="plaintext"] h2::before {
+    content: "## ";
+  }
+
+  [data-prose="plaintext"] h3::before {
+    content: "### ";
+  }
+
+  [data-prose="plaintext"] h4::before {
+    content: "#### ";
+  }
+
+  [data-prose="plaintext"] h5::before {
+    content: "##### ";
+  }
+
+  [data-prose="plaintext"] h6::before {
+    content: "###### ";
+  }
+
+  [data-prose="plaintext"] h1::after {
+    content: " █";
+  }
+
+  [data-prose="plaintext"] :where(ul, ol) {
+    list-style: none;
+    padding: 0;
+  }
+
+  [data-prose="plaintext"] li::before {
+    content: " - ";
+  }
+
+  [data-prose="plaintext"] hr {
+    border: 0;
+  }
+
+  [data-prose="plaintext"] hr::before {
+    content: "~~~";
+  }
+
+  [data-prose="plaintext"] :where(pre, code) {
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    padding: 0;
+    white-space: pre-wrap;
+  }
+
+  [data-prose="plaintext"] a {
+    color: inherit;
+    text-decoration: underline;
+    text-decoration-style: dotted;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.2em;
+  }
+
+  [data-prose="plaintext"] .expressive-code {
+    --ec-codeFontSize: inherit;
+    --ec-codeLineHeight: inherit;
+    font: inherit;
+  }
+
+  [data-prose="plaintext"] .expressive-code :where(figure, figcaption, pre, code, span) {
+    font-size: inherit;
+    line-height: inherit;
   }
 
   /* youtube embed */

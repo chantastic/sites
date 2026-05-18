@@ -4,10 +4,14 @@ interface Props {
   class?: string;
 }
 
-const { as: Element = "div", class: className, ...props } = Astro.props;
-const componentClasses = "prose prose-slate dark:prose-invert";
+const {
+  as: Element = "div",
+  class: className,
+  "data-prose": dataProse = "plaintext",
+  ...props
+} = Astro.props;
 ---
 
-<Element {...props} class:list={[componentClasses, className]}>
+<Element {...props} data-prose={dataProse} class={className}>
   <slot />
 </Element>

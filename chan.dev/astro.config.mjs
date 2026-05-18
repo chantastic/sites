@@ -74,6 +74,116 @@ const site = import.meta.env.DEV
 	? 'http://localhost:2426'
 	: 'https://chan.dev'
 
+const plaintextLightCodeTheme = {
+	name: 'plaintext-light',
+	type: 'light',
+	colors: {
+		'editor.background': '#ffffff',
+		'editor.foreground': '#000000',
+	},
+	tokenColors: [
+		{
+			scope: ['comment', 'punctuation.definition.comment'],
+			settings: {foreground: '#767676', fontStyle: 'italic'},
+		},
+		{
+			scope: ['keyword', 'storage', 'storage.type', 'operator', 'keyword.operator'],
+			settings: {foreground: '#000000'},
+		},
+		{
+			scope: ['string', 'constant.other.symbol'],
+			settings: {foreground: '#000000'},
+		},
+		{
+			scope: ['constant', 'constant.numeric', 'constant.language'],
+			settings: {foreground: '#000000'},
+		},
+		{
+			scope: ['entity.name.function', 'support.function'],
+			settings: {foreground: '#000000'},
+		},
+		{
+			scope: ['entity.name.type', 'support.type', 'support.class'],
+			settings: {foreground: '#000000'},
+		},
+		{
+			scope: ['variable', 'identifier', 'property', 'variable.other.property', 'support.variable.property'],
+			settings: {foreground: '#000000'},
+		},
+		{
+			scope: ['punctuation', 'meta.brace', 'meta.delimiter'],
+			settings: {foreground: '#000000'},
+		},
+		{
+			scope: ['markup.heading', 'markup.bold'],
+			settings: {foreground: '#000000', fontStyle: 'bold'},
+		},
+		{
+			scope: ['markup.italic'],
+			settings: {foreground: '#000000', fontStyle: 'italic'},
+		},
+		{
+			scope: ['invalid', 'invalid.illegal'],
+			settings: {foreground: '#000000', fontStyle: 'underline'},
+		},
+	],
+}
+
+const plaintextDarkCodeTheme = {
+	name: 'plaintext-dark',
+	type: 'dark',
+	colors: {
+		'editor.background': '#000000',
+		'editor.foreground': '#ffffff',
+	},
+	tokenColors: [
+		{
+			scope: ['comment', 'punctuation.definition.comment'],
+			settings: {foreground: '#767676', fontStyle: 'italic'},
+		},
+		{
+			scope: ['keyword', 'storage', 'storage.type', 'operator', 'keyword.operator'],
+			settings: {foreground: '#ffffff'},
+		},
+		{
+			scope: ['string', 'constant.other.symbol'],
+			settings: {foreground: '#ffffff'},
+		},
+		{
+			scope: ['constant', 'constant.numeric', 'constant.language'],
+			settings: {foreground: '#ffffff'},
+		},
+		{
+			scope: ['entity.name.function', 'support.function'],
+			settings: {foreground: '#ffffff'},
+		},
+		{
+			scope: ['entity.name.type', 'support.type', 'support.class'],
+			settings: {foreground: '#ffffff'},
+		},
+		{
+			scope: ['variable', 'identifier', 'property', 'variable.other.property', 'support.variable.property'],
+			settings: {foreground: '#ffffff'},
+		},
+		{
+			scope: ['punctuation', 'meta.brace', 'meta.delimiter'],
+			settings: {foreground: '#ffffff'},
+		},
+		{
+			scope: ['markup.heading', 'markup.bold'],
+			settings: {foreground: '#ffffff', fontStyle: 'bold'},
+		},
+		{
+			scope: ['markup.italic'],
+			settings: {foreground: '#ffffff', fontStyle: 'italic'},
+		},
+		{
+			scope: ['invalid', 'invalid.illegal'],
+			settings: {foreground: '#ffffff', fontStyle: 'underline'},
+		},
+	],
+}
+
 // https://astro.build/config
 export default defineConfig({
 	server: {
@@ -99,9 +209,21 @@ export default defineConfig({
 			},
 		}),
 		astro_expressive_code({
+			themes: [plaintextLightCodeTheme, plaintextDarkCodeTheme],
+			defaultProps: {
+				frame: 'none',
+			},
 			styleOverrides: {
 				frames: {
 					frameBoxShadowCssValue: 'none',
+				},
+				textMarkers: {
+					markBackground: 'light-dark(#dbe5ff, #001b66)',
+					markBorderColor: '#0000ff',
+					insBackground: 'light-dark(#dcffdc, #003300)',
+					insBorderColor: '#008000',
+					delBackground: 'light-dark(#ffdddd, #660000)',
+					delBorderColor: '#ff0000',
 				},
 			},
 		}),

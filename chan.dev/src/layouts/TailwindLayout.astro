@@ -1,0 +1,12 @@
+---
+import Layout from '#layouts/Layout.astro'
+import '#/styles/tailwind.css'
+
+const props = Astro.props
+---
+
+<Layout {...props}>
+	<slot />
+	<slot name="page-head" slot="page-head" />
+	<slot name="page-meta" slot="page-meta" />
+</Layout>
