@@ -1,22 +1,33 @@
-import {
-	WorkOS,
-	type User,
-	type SessionCookieData,
-} from '@workos-inc/node'
+import {WorkOS, type User} from '@workos-inc/node'
+import {env} from 'cloudflare:workers'
 import type {AstroCookieSetOptions} from 'astro'
 
 export const COOKIE_NAME = 'wos-session'
 
-function getRedirectUri() {
-	if (import.meta.env.WORKOS_REDIRECT_URI) {
-		return import.meta.env.WORKOS_REDIRECT_URI
+function getRequiredEnv(name: keyof Cloudflare.Env) {
+	const value = env[name]
+
+	if (typeof value === 'string' && value.length > 0) {
+		return value
 	}
 
-	if (import.meta.env.CF_PAGES_URL) {
-		return `${import.meta.env.CF_PAGES_URL}/auth/callback`
+	throw new Error(`${String(name)} not set`)
+}
+
+function getRedirectUri() {
+	if (env.WORKOS_REDIRECT_URI) {
+		return env.WORKOS_REDIRECT_URI
+	}
+
+	if (env.CF_PAGES_URL) {
+		return `${env.CF_PAGES_URL}/auth/callback`
 	}
 
 	throw new Error('WORKOS_REDIRECT_URI or CF_PAGES_URL not set')
+}
+
+function getCookiePassword() {
+	return getRequiredEnv('WORKOS_COOKIE_PASSWORD')
 }
 
 export const COOKIE_OPTIONS: AstroCookieSetOptions = {
@@ -41,13 +52,20 @@ let workosInstance: WorkOS | null = null
 function getWorkOSInstance(): WorkOS {
 	if (!workosInstance) {
 		workosInstance = new WorkOS(
-			import.meta.env.WORKOS_API_KEY,
+			getRequiredEnv('WORKOS_API_KEY'),
 			{
-				clientId: import.meta.env.WORKOS_CLIENT_ID,
+				clientId: getRequiredEnv('WORKOS_CLIENT_ID'),
 			}
 		)
 	}
 	return workosInstance
+}
+
+function getSealedSession(encryptedCookie: Cookie) {
+	return getWorkOSInstance().userManagement.loadSealedSession({
+		sessionData: encryptedCookie.value,
+		cookiePassword: getCookiePassword(),
+	})
 }
 
 export function getAuthorizationUrl() {
@@ -56,7 +74,7 @@ export function getAuthorizationUrl() {
 	return workos.userManagement.getAuthorizationUrl({
 		provider: 'authkit',
 		redirectUri: getRedirectUri(),
-		clientId: import.meta.env.WORKOS_CLIENT_ID,
+		clientId: getRequiredEnv('WORKOS_CLIENT_ID'),
 	})
 }
 
@@ -65,10 +83,10 @@ export async function getSessionFromCookie(
 ) {
 	const workos = getWorkOSInstance()
 
-	return (await workos.userManagement.getSessionFromCookie({
+	return await workos.userManagement.getSessionFromCookie({
 		sessionData: encryptedCookie.value,
-		cookiePassword: import.meta.env.WORKOS_COOKIE_PASSWORD,
-	})) as SessionCookieData
+		cookiePassword: getCookiePassword(),
+	})
 }
 
 export async function authenticateWithCode(code: string) {
@@ -76,10 +94,10 @@ export async function authenticateWithCode(code: string) {
 
 	return await workos.userManagement.authenticateWithCode({
 		code,
-		clientId: import.meta.env.WORKOS_CLIENT_ID,
+		clientId: getRequiredEnv('WORKOS_CLIENT_ID'),
 		session: {
 			sealSession: true,
-			cookiePassword: import.meta.env.WORKOS_COOKIE_PASSWORD,
+			cookiePassword: getCookiePassword(),
 		},
 	})
 }
@@ -87,45 +105,17 @@ export async function authenticateWithCode(code: string) {
 export async function getLogoutUrlFromSessionCookie(
 	encryptedCookie: Cookie
 ) {
-	const workos = getWorkOSInstance()
-
-	const authenticationResponse =
-		await workos.userManagement.authenticateWithSessionCookie({
-			sessionData: encryptedCookie.value,
-			cookiePassword: import.meta.env.WORKOS_COOKIE_PASSWORD,
-		})
-
-	if ('sessionId' in authenticationResponse) {
-		const logoutUrl = workos.userManagement.getLogoutUrl({
-			sessionId: authenticationResponse.sessionId,
-		})
-
-		return logoutUrl
-	}
-
-	throw new Error('Authentication failed')
+	return await getSealedSession(encryptedCookie).getLogoutUrl()
 }
 
 export async function authenticateWithSessionCookie(
 	encryptedCookie: Cookie
 ) {
-	const workos = getWorkOSInstance()
-
-	return await workos.userManagement.authenticateWithSessionCookie(
-		{
-			sessionData: encryptedCookie.value,
-			cookiePassword: import.meta.env.WORKOS_COOKIE_PASSWORD,
-		}
-	)
+	return await getSealedSession(encryptedCookie).authenticate()
 }
 
 export async function refreshAndSealSessionData(
 	encryptedCookie: Cookie
 ) {
-	const workos = getWorkOSInstance()
-
-	return await workos.userManagement.refreshAndSealSessionData({
-		sessionData: encryptedCookie.value,
-		cookiePassword: import.meta.env.WORKOS_COOKIE_PASSWORD,
-	})
+	return await getSealedSession(encryptedCookie).refresh()
 }

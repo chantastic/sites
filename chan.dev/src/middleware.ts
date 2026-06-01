@@ -32,10 +32,36 @@ async function withAuth(
 		return context.redirect('/sign-in')
 	}
 
-	const refreshResponse =
-		await AUTHKIT.refreshAndSealSessionData(cookie)
+	let sessionCookie: AUTHKIT.Cookie = cookie
 
-	if (!refreshResponse.authenticated) {
+	if (!authenticationResponse.authenticated) {
+		const refreshResponse =
+			await AUTHKIT.refreshAndSealSessionData(cookie)
+
+		if (
+			!refreshResponse.authenticated ||
+			!refreshResponse.sealedSession
+		) {
+			context.cookies.delete(
+				AUTHKIT.COOKIE_NAME,
+				AUTHKIT.COOKIE_OPTIONS
+			)
+			return context.redirect('/sign-in')
+		}
+
+		context.cookies.set(
+			AUTHKIT.COOKIE_NAME,
+			refreshResponse.sealedSession,
+			AUTHKIT.COOKIE_OPTIONS
+		)
+
+		sessionCookie = {value: refreshResponse.sealedSession}
+	}
+
+	const session =
+		await AUTHKIT.getSessionFromCookie(sessionCookie)
+
+	if (!session?.user) {
 		context.cookies.delete(
 			AUTHKIT.COOKIE_NAME,
 			AUTHKIT.COOKIE_OPTIONS
@@ -43,17 +69,7 @@ async function withAuth(
 		return context.redirect('/sign-in')
 	}
 
-	context.cookies.set(
-		AUTHKIT.COOKIE_NAME,
-		String(refreshResponse.sealedSession),
-		AUTHKIT.COOKIE_OPTIONS
-	)
-
-	const {user} = await AUTHKIT.getSessionFromCookie(
-		context.cookies.get(AUTHKIT.COOKIE_NAME)!
-	)
-
-	context.locals.user = user
+	context.locals.user = session.user
 
 	const response = await next()
 	return response

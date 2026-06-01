@@ -23,6 +23,7 @@
 		"@astrojs/react": "^5.0.2",
 		"@astrojs/rss": "^4.0.7",
 		"@astrojs/sitemap": "^3.7.2",
+		"@cloudflare/workers-types": "^4.20260601.1",
 		"@componentdriven/csf": "0.0.2-alpha.0",
 		"@remark-embedder/core": "^3.0.3",
 		"@remark-embedder/transformer-oembed": "^5.0.0",

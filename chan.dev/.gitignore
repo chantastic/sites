@@ -14,6 +14,8 @@ pnpm-debug.log*
 # environment variables
 .env
 .env.production
+.dev.vars
+.dev.vars.*
 
 # macOS-specific files
 .DS_Store
@@ -35,4 +37,3 @@ src/content/.obsidian
 convex/_generated/
 
 .env.local
-

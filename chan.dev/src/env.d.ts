@@ -1,6 +1,7 @@
 /// <reference path="../.astro/db-types.d.ts" />
 /// <reference path="../.astro/types.d.ts" />
 /// <reference types="astro/client" />
+/// <reference types="@cloudflare/workers-types/latest" />
 /// <reference types="sanitize-html" />
 
 import type {User} from '@workos-inc/node'
@@ -11,15 +12,29 @@ declare global {
 			user: User
 		}
 	}
-}
 
-interface ImportMetaEnv {
-  readonly WORKOS_API_KEY: string
-  readonly WORKOS_CLIENT_ID: string
-  readonly WORKOS_REDIRECT_URI?: string
-  readonly WORKOS_COOKIE_PASSWORD: string
-}
+	interface ImportMetaEnv {
+		readonly WORKOS_API_KEY: string
+		readonly WORKOS_CLIENT_ID: string
+		readonly WORKOS_REDIRECT_URI?: string
+		readonly WORKOS_COOKIE_PASSWORD: string
+	}
 
-interface ImportMeta {
-  readonly env: ImportMetaEnv
+	interface ImportMeta {
+		readonly env: ImportMetaEnv
+	}
+
+	namespace Cloudflare {
+		interface Env {
+			STATIC_ASSETS: Fetcher
+			ASSETS?: Fetcher
+			SESSION?: KVNamespace
+			IMAGES?: unknown
+			WORKOS_API_KEY?: string
+			WORKOS_CLIENT_ID?: string
+			WORKOS_REDIRECT_URI?: string
+			WORKOS_COOKIE_PASSWORD?: string
+			CF_PAGES_URL?: string
+		}
+	}
 }
