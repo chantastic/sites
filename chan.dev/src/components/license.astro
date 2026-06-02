@@ -1,13 +1,13 @@
 ---
 export interface Props {
-  year: string;
+  year?: string;
   url?: string;
   authorName?: string;
   authorUrl?: string;
 }
 
 const {
-  year,
+  year = String(new Date().getUTCFullYear()),
   url = "https://chan.dev",
   authorName = "Michael Chan",
   authorUrl = "https://chan.dev",

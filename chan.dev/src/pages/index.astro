@@ -6,6 +6,8 @@ import * as SITE from '#modules/site'
 import LucideIcon from '#components/lucide-icon.astro'
 import * as Icons from 'lucide'
 import Prose from '#components/prose.astro'
+
+export const prerender = false
 ---
 
 <Layout>
@@ -112,7 +114,7 @@ import Prose from '#components/prose.astro'
 			<hr />
 
 			<p>
-				<License year="2023" />
+				<License />
 			</p>
 		</main>
 	</Prose>
