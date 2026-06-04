@@ -6,6 +6,7 @@ compatibility_flags = ["nodejs_compat"]
 [assets]
 binding = "STATIC_ASSETS"
 directory = "dist/client"
+run_worker_first = true
 
 [[kv_namespaces]]
 binding = "SESSION"

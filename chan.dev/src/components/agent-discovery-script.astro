@@ -1,0 +1,72 @@
+<script is:inline data-agent-discovery="webmcp">
+	;(() => {
+		const modelContext = navigator.modelContext
+
+		if (
+			!modelContext ||
+			typeof modelContext.registerTool !== 'function'
+		) {
+			return
+		}
+
+		const controller = new AbortController()
+		const siteIndex = {
+			name: 'chan.dev',
+			sections: [
+				{label: 'Posts', url: '/posts'},
+				{label: 'Lessons', url: '/lessons'},
+				{label: 'Talks', url: '/talks'},
+				{label: 'Uses', url: '/uses'},
+				{label: 'OS', url: '/os'},
+				{label: 'Research', url: '/research'},
+			],
+			feeds: {
+				rss: '/feeds/rss.xml',
+				json: '/feeds/feed.json',
+			},
+			apis: {
+				tags: '/api/tags.json',
+				status: '/api/status.json',
+				openapi: '/openapi.json',
+			},
+		}
+
+		const tools = [
+			{
+				name: 'chan_dev_site_index',
+				description:
+					'Return the main public chan.dev sections, feeds, and API endpoints.',
+				inputSchema: {
+					type: 'object',
+					properties: {},
+					additionalProperties: false,
+				},
+				execute: async () => siteIndex,
+			},
+			{
+				name: 'chan_dev_tag_metadata',
+				description:
+					'Fetch public chan.dev post tag counts and post metadata.',
+				inputSchema: {
+					type: 'object',
+					properties: {},
+					additionalProperties: false,
+				},
+				execute: async () => {
+					const response = await fetch('/api/tags.json')
+					return response.json()
+				},
+			},
+		]
+
+		for (const tool of tools) {
+			modelContext.registerTool(tool, {
+				signal: controller.signal,
+			})
+		}
+
+		window.addEventListener('pagehide', () => controller.abort(), {
+			once: true,
+		})
+	})()
+</script>
