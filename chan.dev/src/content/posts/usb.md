@@ -12,6 +12,12 @@ Everything I know about cables after testing them.
 
 ## Charging
 
+### Test USB-C power negotiation on macOS
+
+macOS reports whether a charger and cable negotiated 60 W or 100 W before the Mac draws that much power.
+
+I documented the command, an FFmpeg load test, and what neither can prove in [Test USB-C Cable Power on macOS](/test-usb-c-cable-power-on-macos).
+
 ### Type-A
 
 Every Type-A connector I tested registered 7.8 W or fewer when charging.

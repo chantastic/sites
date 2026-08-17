@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Two approaches to rendering an animated orb</title>
+  <desc id="desc">The first pipeline uses many moving UI objects and produces several invalidated regions and display transfers. The second pipeline samples motion, updates one position, composes one small dirty rectangle, and sends one display transfer.</desc>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#11111a"/>
+      <stop offset="1" stop-color="#191529"/>
+    </linearGradient>
+    <linearGradient id="orb" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f2f1f8"/>
+      <stop offset="1" stop-color="#a783ff"/>
+    </linearGradient>
+    <filter id="glow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="12" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#77718a"/>
+    </marker>
+    <style>
+      text { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+      .eyebrow { font-size: 18px; font-weight: 700; letter-spacing: 2px; }
+      .heading { fill: #f7f5ff; font-size: 31px; font-weight: 750; }
+      .label { fill: #d8d3e6; font-size: 19px; font-weight: 650; }
+      .detail { fill: #9e98ae; font-size: 16px; }
+      .arrow { stroke: #77718a; stroke-width: 3; marker-end: url(#arrow); }
+    </style>
+  </defs>
+
+  <rect width="1200" height="675" rx="34" fill="url(#background)"/>
+
+  <text x="72" y="72" class="eyebrow" fill="#ff897d">FIRST ATTEMPT</text>
+  <text x="72" y="112" class="heading">More objects. More invalidation.</text>
+
+  <rect x="72" y="150" width="262" height="166" rx="22" fill="#201d2d" stroke="#393347" stroke-width="2"/>
+  <circle cx="137" cy="211" r="25" fill="url(#orb)" filter="url(#glow)"/>
+  <circle cx="194" cy="241" r="8" fill="#ff897d"/>
+  <circle cx="235" cy="193" r="6" fill="#f5c26b"/>
+  <circle cx="267" cy="251" r="10" fill="#76d7c4"/>
+  <path d="M111 277 C156 252 209 292 293 258" fill="none" stroke="#6f6687" stroke-width="3" stroke-dasharray="5 8"/>
+  <text x="94" y="344" class="label">moving UI objects</text>
+
+  <path d="M354 231 H425" class="arrow"/>
+
+  <rect x="450" y="150" width="258" height="166" rx="22" fill="#201d2d" stroke="#393347" stroke-width="2"/>
+  <rect x="483" y="181" width="78" height="69" rx="5" fill="#ff897d" opacity=".55"/>
+  <rect x="535" y="218" width="101" height="62" rx="5" fill="#a783ff" opacity=".55"/>
+  <rect x="602" y="173" width="72" height="89" rx="5" fill="#76d7c4" opacity=".48"/>
+  <text x="467" y="344" class="label">invalidated regions</text>
+
+  <path d="M728 231 H799" class="arrow"/>
+
+  <rect x="824" y="150" width="304" height="166" rx="22" fill="#201d2d" stroke="#393347" stroke-width="2"/>
+  <rect x="859" y="181" width="231" height="19" rx="9" fill="#ff897d"/>
+  <rect x="859" y="215" width="180" height="19" rx="9" fill="#a783ff"/>
+  <rect x="859" y="249" width="210" height="19" rx="9" fill="#76d7c4"/>
+  <text x="866" y="344" class="label">several transfers</text>
+
+  <line x1="72" y1="385" x2="1128" y2="385" stroke="#302b3e" stroke-width="2"/>
+
+  <text x="72" y="442" class="eyebrow" fill="#76d7c4">MEASURED BASELINE</text>
+  <text x="72" y="482" class="heading">One position. One dirty region. One transfer.</text>
+
+  <rect x="72" y="524" width="204" height="92" rx="20" fill="#201d2d" stroke="#393347" stroke-width="2"/>
+  <path d="M105 575 C130 544 160 605 190 564 C212 535 236 586 249 556" fill="none" stroke="#76d7c4" stroke-width="4"/>
+  <text x="104" y="647" class="detail">IMU · ~112 Hz</text>
+
+  <path d="M296 570 H349" class="arrow"/>
+
+  <rect x="374" y="524" width="204" height="92" rx="20" fill="#201d2d" stroke="#393347" stroke-width="2"/>
+  <circle cx="476" cy="570" r="25" fill="url(#orb)" filter="url(#glow)"/>
+  <text x="409" y="647" class="detail">one position</text>
+
+  <path d="M598 570 H651" class="arrow"/>
+
+  <rect x="676" y="524" width="204" height="92" rx="20" fill="#201d2d" stroke="#393347" stroke-width="2"/>
+  <rect x="739" y="540" width="78" height="60" rx="6" fill="#a783ff" opacity=".38" stroke="#c9b7ff" stroke-width="2"/>
+  <circle cx="768" cy="570" r="21" fill="url(#orb)"/>
+  <text x="704" y="647" class="detail">~60×60 pixels</text>
+
+  <path d="M900 570 H953" class="arrow"/>
+
+  <rect x="978" y="524" width="150" height="92" rx="20" fill="#201d2d" stroke="#76d7c4" stroke-width="2"/>
+  <rect x="1011" y="550" width="84" height="12" rx="6" fill="#76d7c4"/>
+  <text x="1003" y="647" class="detail">one write</text>
+</svg>
